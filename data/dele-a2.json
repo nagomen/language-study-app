@@ -1,0 +1,1202 @@
+[
+  {
+    "id": "dele-a2-001",
+    "word": "cabeza",
+    "meaning": "頭",
+    "pos": "sustantivo",
+    "category": "身体",
+    "level": "A2"
+  },
+  {
+    "id": "dele-a2-002",
+    "word": "cara",
+    "meaning": "顔",
+    "pos": "sustantivo",
+    "category": "身体",
+    "level": "A2"
+  },
+  {
+    "id": "dele-a2-003",
+    "word": "ojo",
+    "meaning": "目",
+    "pos": "sustantivo",
+    "category": "身体",
+    "level": "A2"
+  },
+  {
+    "id": "dele-a2-004",
+    "word": "nariz",
+    "meaning": "鼻",
+    "pos": "sustantivo",
+    "category": "身体",
+    "level": "A2"
+  },
+  {
+    "id": "dele-a2-005",
+    "word": "boca",
+    "meaning": "口",
+    "pos": "sustantivo",
+    "category": "身体",
+    "level": "A2"
+  },
+  {
+    "id": "dele-a2-006",
+    "word": "oreja",
+    "meaning": "耳",
+    "pos": "sustantivo",
+    "category": "身体",
+    "level": "A2"
+  },
+  {
+    "id": "dele-a2-007",
+    "word": "pelo",
+    "meaning": "髪",
+    "pos": "sustantivo",
+    "category": "身体",
+    "level": "A2"
+  },
+  {
+    "id": "dele-a2-008",
+    "word": "brazo",
+    "meaning": "腕",
+    "pos": "sustantivo",
+    "category": "身体",
+    "level": "A2"
+  },
+  {
+    "id": "dele-a2-009",
+    "word": "mano",
+    "meaning": "手",
+    "pos": "sustantivo",
+    "category": "身体",
+    "level": "A2"
+  },
+  {
+    "id": "dele-a2-010",
+    "word": "dedo",
+    "meaning": "指",
+    "pos": "sustantivo",
+    "category": "身体",
+    "level": "A2"
+  },
+  {
+    "id": "dele-a2-011",
+    "word": "pierna",
+    "meaning": "脚",
+    "pos": "sustantivo",
+    "category": "身体",
+    "level": "A2"
+  },
+  {
+    "id": "dele-a2-012",
+    "word": "pie",
+    "meaning": "足",
+    "pos": "sustantivo",
+    "category": "身体",
+    "level": "A2"
+  },
+  {
+    "id": "dele-a2-013",
+    "word": "espalda",
+    "meaning": "背中",
+    "pos": "sustantivo",
+    "category": "身体",
+    "level": "A2"
+  },
+  {
+    "id": "dele-a2-014",
+    "word": "estómago",
+    "meaning": "胃／お腹",
+    "pos": "sustantivo",
+    "category": "身体",
+    "level": "A2"
+  },
+  {
+    "id": "dele-a2-015",
+    "word": "garganta",
+    "meaning": "喉",
+    "pos": "sustantivo",
+    "category": "身体",
+    "level": "A2"
+  },
+  {
+    "id": "dele-a2-016",
+    "word": "diente",
+    "meaning": "歯",
+    "pos": "sustantivo",
+    "category": "身体",
+    "level": "A2"
+  },
+  {
+    "id": "dele-a2-017",
+    "word": "salud",
+    "meaning": "健康",
+    "pos": "sustantivo",
+    "category": "健康",
+    "level": "A2"
+  },
+  {
+    "id": "dele-a2-018",
+    "word": "dolor",
+    "meaning": "痛み",
+    "pos": "sustantivo",
+    "category": "健康",
+    "level": "A2"
+  },
+  {
+    "id": "dele-a2-019",
+    "word": "hambre",
+    "meaning": "空腹",
+    "pos": "sustantivo",
+    "category": "健康",
+    "level": "A2"
+  },
+  {
+    "id": "dele-a2-020",
+    "word": "sed",
+    "meaning": "喉の渇き",
+    "pos": "sustantivo",
+    "category": "健康",
+    "level": "A2"
+  },
+  {
+    "id": "dele-a2-021",
+    "word": "camisa",
+    "meaning": "シャツ",
+    "pos": "sustantivo",
+    "category": "衣服",
+    "level": "A2"
+  },
+  {
+    "id": "dele-a2-022",
+    "word": "camiseta",
+    "meaning": "Tシャツ",
+    "pos": "sustantivo",
+    "category": "衣服",
+    "level": "A2"
+  },
+  {
+    "id": "dele-a2-023",
+    "word": "pantalón",
+    "meaning": "ズボン",
+    "pos": "sustantivo",
+    "category": "衣服",
+    "level": "A2"
+  },
+  {
+    "id": "dele-a2-024",
+    "word": "falda",
+    "meaning": "スカート",
+    "pos": "sustantivo",
+    "category": "衣服",
+    "level": "A2"
+  },
+  {
+    "id": "dele-a2-025",
+    "word": "vestido",
+    "meaning": "ワンピース／ドレス",
+    "pos": "sustantivo",
+    "category": "衣服",
+    "level": "A2"
+  },
+  {
+    "id": "dele-a2-026",
+    "word": "zapato",
+    "meaning": "靴",
+    "pos": "sustantivo",
+    "category": "衣服",
+    "level": "A2"
+  },
+  {
+    "id": "dele-a2-027",
+    "word": "chaqueta",
+    "meaning": "ジャケット",
+    "pos": "sustantivo",
+    "category": "衣服",
+    "level": "A2"
+  },
+  {
+    "id": "dele-a2-028",
+    "word": "abrigo",
+    "meaning": "コート",
+    "pos": "sustantivo",
+    "category": "衣服",
+    "level": "A2"
+  },
+  {
+    "id": "dele-a2-029",
+    "word": "sombrero",
+    "meaning": "帽子",
+    "pos": "sustantivo",
+    "category": "衣服",
+    "level": "A2"
+  },
+  {
+    "id": "dele-a2-030",
+    "word": "gafas",
+    "meaning": "眼鏡",
+    "pos": "sustantivo",
+    "category": "衣服",
+    "level": "A2"
+  },
+  {
+    "id": "dele-a2-031",
+    "word": "ropa",
+    "meaning": "衣服",
+    "pos": "sustantivo",
+    "category": "衣服",
+    "level": "A2"
+  },
+  {
+    "id": "dele-a2-032",
+    "word": "talla",
+    "meaning": "サイズ",
+    "pos": "sustantivo",
+    "category": "衣服",
+    "level": "A2"
+  },
+  {
+    "id": "dele-a2-033",
+    "word": "calcetín",
+    "meaning": "靴下",
+    "pos": "sustantivo",
+    "category": "衣服",
+    "level": "A2"
+  },
+  {
+    "id": "dele-a2-034",
+    "word": "bolso",
+    "meaning": "バッグ",
+    "pos": "sustantivo",
+    "category": "持ち物",
+    "level": "A2"
+  },
+  {
+    "id": "dele-a2-035",
+    "word": "maleta",
+    "meaning": "スーツケース",
+    "pos": "sustantivo",
+    "category": "持ち物",
+    "level": "A2"
+  },
+  {
+    "id": "dele-a2-036",
+    "word": "salón",
+    "meaning": "居間",
+    "pos": "sustantivo",
+    "category": "住居",
+    "level": "A2"
+  },
+  {
+    "id": "dele-a2-037",
+    "word": "comedor",
+    "meaning": "食堂／ダイニング",
+    "pos": "sustantivo",
+    "category": "住居",
+    "level": "A2"
+  },
+  {
+    "id": "dele-a2-038",
+    "word": "jardín",
+    "meaning": "庭",
+    "pos": "sustantivo",
+    "category": "住居",
+    "level": "A2"
+  },
+  {
+    "id": "dele-a2-039",
+    "word": "balcón",
+    "meaning": "バルコニー",
+    "pos": "sustantivo",
+    "category": "住居",
+    "level": "A2"
+  },
+  {
+    "id": "dele-a2-040",
+    "word": "sofá",
+    "meaning": "ソファ",
+    "pos": "sustantivo",
+    "category": "住居",
+    "level": "A2"
+  },
+  {
+    "id": "dele-a2-041",
+    "word": "armario",
+    "meaning": "戸棚／クローゼット",
+    "pos": "sustantivo",
+    "category": "住居",
+    "level": "A2"
+  },
+  {
+    "id": "dele-a2-042",
+    "word": "nevera",
+    "meaning": "冷蔵庫",
+    "pos": "sustantivo",
+    "category": "住居",
+    "level": "A2"
+  },
+  {
+    "id": "dele-a2-043",
+    "word": "lavadora",
+    "meaning": "洗濯機",
+    "pos": "sustantivo",
+    "category": "住居",
+    "level": "A2"
+  },
+  {
+    "id": "dele-a2-044",
+    "word": "ducha",
+    "meaning": "シャワー",
+    "pos": "sustantivo",
+    "category": "住居",
+    "level": "A2"
+  },
+  {
+    "id": "dele-a2-045",
+    "word": "espejo",
+    "meaning": "鏡",
+    "pos": "sustantivo",
+    "category": "住居",
+    "level": "A2"
+  },
+  {
+    "id": "dele-a2-046",
+    "word": "lámpara",
+    "meaning": "ランプ",
+    "pos": "sustantivo",
+    "category": "住居",
+    "level": "A2"
+  },
+  {
+    "id": "dele-a2-047",
+    "word": "ascensor",
+    "meaning": "エレベーター",
+    "pos": "sustantivo",
+    "category": "住居",
+    "level": "A2"
+  },
+  {
+    "id": "dele-a2-048",
+    "word": "piso",
+    "meaning": "階／マンション",
+    "pos": "sustantivo",
+    "category": "住居",
+    "level": "A2"
+  },
+  {
+    "id": "dele-a2-049",
+    "word": "alquiler",
+    "meaning": "家賃／賃貸",
+    "pos": "sustantivo",
+    "category": "住居",
+    "level": "A2"
+  },
+  {
+    "id": "dele-a2-050",
+    "word": "vecino",
+    "meaning": "近所の人",
+    "pos": "sustantivo",
+    "category": "人間関係",
+    "level": "A2"
+  },
+  {
+    "id": "dele-a2-051",
+    "word": "huevo",
+    "meaning": "卵",
+    "pos": "sustantivo",
+    "category": "飲食",
+    "level": "A2"
+  },
+  {
+    "id": "dele-a2-052",
+    "word": "queso",
+    "meaning": "チーズ",
+    "pos": "sustantivo",
+    "category": "飲食",
+    "level": "A2"
+  },
+  {
+    "id": "dele-a2-053",
+    "word": "azúcar",
+    "meaning": "砂糖",
+    "pos": "sustantivo",
+    "category": "飲食",
+    "level": "A2"
+  },
+  {
+    "id": "dele-a2-054",
+    "word": "sal",
+    "meaning": "塩",
+    "pos": "sustantivo",
+    "category": "飲食",
+    "level": "A2"
+  },
+  {
+    "id": "dele-a2-055",
+    "word": "aceite",
+    "meaning": "油",
+    "pos": "sustantivo",
+    "category": "飲食",
+    "level": "A2"
+  },
+  {
+    "id": "dele-a2-056",
+    "word": "sopa",
+    "meaning": "スープ",
+    "pos": "sustantivo",
+    "category": "飲食",
+    "level": "A2"
+  },
+  {
+    "id": "dele-a2-057",
+    "word": "ensalada",
+    "meaning": "サラダ",
+    "pos": "sustantivo",
+    "category": "飲食",
+    "level": "A2"
+  },
+  {
+    "id": "dele-a2-058",
+    "word": "bocadillo",
+    "meaning": "サンドイッチ",
+    "pos": "sustantivo",
+    "category": "飲食",
+    "level": "A2"
+  },
+  {
+    "id": "dele-a2-059",
+    "word": "pastel",
+    "meaning": "ケーキ",
+    "pos": "sustantivo",
+    "category": "飲食",
+    "level": "A2"
+  },
+  {
+    "id": "dele-a2-060",
+    "word": "helado",
+    "meaning": "アイスクリーム",
+    "pos": "sustantivo",
+    "category": "飲食",
+    "level": "A2"
+  },
+  {
+    "id": "dele-a2-061",
+    "word": "botella",
+    "meaning": "瓶",
+    "pos": "sustantivo",
+    "category": "飲食",
+    "level": "A2"
+  },
+  {
+    "id": "dele-a2-062",
+    "word": "vaso",
+    "meaning": "グラス",
+    "pos": "sustantivo",
+    "category": "飲食",
+    "level": "A2"
+  },
+  {
+    "id": "dele-a2-063",
+    "word": "taza",
+    "meaning": "カップ",
+    "pos": "sustantivo",
+    "category": "飲食",
+    "level": "A2"
+  },
+  {
+    "id": "dele-a2-064",
+    "word": "menú",
+    "meaning": "メニュー",
+    "pos": "sustantivo",
+    "category": "飲食",
+    "level": "A2"
+  },
+  {
+    "id": "dele-a2-065",
+    "word": "cuenta",
+    "meaning": "勘定／口座",
+    "pos": "sustantivo",
+    "category": "飲食",
+    "level": "A2"
+  },
+  {
+    "id": "dele-a2-066",
+    "word": "bebida",
+    "meaning": "飲み物",
+    "pos": "sustantivo",
+    "category": "飲食",
+    "level": "A2"
+  },
+  {
+    "id": "dele-a2-067",
+    "word": "cerveza",
+    "meaning": "ビール",
+    "pos": "sustantivo",
+    "category": "飲食",
+    "level": "A2"
+  },
+  {
+    "id": "dele-a2-068",
+    "word": "vino",
+    "meaning": "ワイン",
+    "pos": "sustantivo",
+    "category": "飲食",
+    "level": "A2"
+  },
+  {
+    "id": "dele-a2-069",
+    "word": "zumo",
+    "meaning": "ジュース",
+    "pos": "sustantivo",
+    "category": "飲食",
+    "level": "A2"
+  },
+  {
+    "id": "dele-a2-070",
+    "word": "postre",
+    "meaning": "デザート",
+    "pos": "sustantivo",
+    "category": "飲食",
+    "level": "A2"
+  },
+  {
+    "id": "dele-a2-071",
+    "word": "levantarse",
+    "meaning": "起き上がる",
+    "pos": "verbo",
+    "category": "日課",
+    "level": "A2"
+  },
+  {
+    "id": "dele-a2-072",
+    "word": "ducharse",
+    "meaning": "シャワーを浴びる",
+    "pos": "verbo",
+    "category": "日課",
+    "level": "A2"
+  },
+  {
+    "id": "dele-a2-073",
+    "word": "lavarse",
+    "meaning": "体を洗う",
+    "pos": "verbo",
+    "category": "日課",
+    "level": "A2"
+  },
+  {
+    "id": "dele-a2-074",
+    "word": "vestirse",
+    "meaning": "服を着る",
+    "pos": "verbo",
+    "category": "日課",
+    "level": "A2"
+  },
+  {
+    "id": "dele-a2-075",
+    "word": "acostarse",
+    "meaning": "寝る",
+    "pos": "verbo",
+    "category": "日課",
+    "level": "A2"
+  },
+  {
+    "id": "dele-a2-076",
+    "word": "dormir",
+    "meaning": "眠る",
+    "pos": "verbo",
+    "category": "日課",
+    "level": "A2"
+  },
+  {
+    "id": "dele-a2-077",
+    "word": "despertarse",
+    "meaning": "目を覚ます",
+    "pos": "verbo",
+    "category": "日課",
+    "level": "A2"
+  },
+  {
+    "id": "dele-a2-078",
+    "word": "cocinar",
+    "meaning": "料理する",
+    "pos": "verbo",
+    "category": "日課",
+    "level": "A2"
+  },
+  {
+    "id": "dele-a2-079",
+    "word": "limpiar",
+    "meaning": "掃除する",
+    "pos": "verbo",
+    "category": "日課",
+    "level": "A2"
+  },
+  {
+    "id": "dele-a2-080",
+    "word": "abrir",
+    "meaning": "開ける",
+    "pos": "verbo",
+    "category": "基本動詞",
+    "level": "A2"
+  },
+  {
+    "id": "dele-a2-081",
+    "word": "cerrar",
+    "meaning": "閉める",
+    "pos": "verbo",
+    "category": "基本動詞",
+    "level": "A2"
+  },
+  {
+    "id": "dele-a2-082",
+    "word": "empezar",
+    "meaning": "始める",
+    "pos": "verbo",
+    "category": "基本動詞",
+    "level": "A2"
+  },
+  {
+    "id": "dele-a2-083",
+    "word": "terminar",
+    "meaning": "終える",
+    "pos": "verbo",
+    "category": "基本動詞",
+    "level": "A2"
+  },
+  {
+    "id": "dele-a2-084",
+    "word": "llegar",
+    "meaning": "到着する",
+    "pos": "verbo",
+    "category": "移動",
+    "level": "A2"
+  },
+  {
+    "id": "dele-a2-085",
+    "word": "salir",
+    "meaning": "出る／出発する",
+    "pos": "verbo",
+    "category": "移動",
+    "level": "A2"
+  },
+  {
+    "id": "dele-a2-086",
+    "word": "volver",
+    "meaning": "戻る",
+    "pos": "verbo",
+    "category": "移動",
+    "level": "A2"
+  },
+  {
+    "id": "dele-a2-087",
+    "word": "entrar",
+    "meaning": "入る",
+    "pos": "verbo",
+    "category": "移動",
+    "level": "A2"
+  },
+  {
+    "id": "dele-a2-088",
+    "word": "subir",
+    "meaning": "上がる",
+    "pos": "verbo",
+    "category": "移動",
+    "level": "A2"
+  },
+  {
+    "id": "dele-a2-089",
+    "word": "bajar",
+    "meaning": "下がる／降りる",
+    "pos": "verbo",
+    "category": "移動",
+    "level": "A2"
+  },
+  {
+    "id": "dele-a2-090",
+    "word": "caminar",
+    "meaning": "歩く",
+    "pos": "verbo",
+    "category": "移動",
+    "level": "A2"
+  },
+  {
+    "id": "dele-a2-091",
+    "word": "correr",
+    "meaning": "走る",
+    "pos": "verbo",
+    "category": "運動",
+    "level": "A2"
+  },
+  {
+    "id": "dele-a2-092",
+    "word": "nadar",
+    "meaning": "泳ぐ",
+    "pos": "verbo",
+    "category": "運動",
+    "level": "A2"
+  },
+  {
+    "id": "dele-a2-093",
+    "word": "jugar",
+    "meaning": "遊ぶ／競技する",
+    "pos": "verbo",
+    "category": "余暇",
+    "level": "A2"
+  },
+  {
+    "id": "dele-a2-094",
+    "word": "ayudar",
+    "meaning": "助ける",
+    "pos": "verbo",
+    "category": "基本動詞",
+    "level": "A2"
+  },
+  {
+    "id": "dele-a2-095",
+    "word": "llamar",
+    "meaning": "電話する／呼ぶ",
+    "pos": "verbo",
+    "category": "通信",
+    "level": "A2"
+  },
+  {
+    "id": "dele-a2-096",
+    "word": "viaje",
+    "meaning": "旅行",
+    "pos": "sustantivo",
+    "category": "旅行",
+    "level": "A2"
+  },
+  {
+    "id": "dele-a2-097",
+    "word": "vacaciones",
+    "meaning": "休暇",
+    "pos": "sustantivo",
+    "category": "旅行",
+    "level": "A2"
+  },
+  {
+    "id": "dele-a2-098",
+    "word": "playa",
+    "meaning": "海辺",
+    "pos": "sustantivo",
+    "category": "旅行",
+    "level": "A2"
+  },
+  {
+    "id": "dele-a2-099",
+    "word": "montaña",
+    "meaning": "山",
+    "pos": "sustantivo",
+    "category": "自然",
+    "level": "A2"
+  },
+  {
+    "id": "dele-a2-100",
+    "word": "mapa",
+    "meaning": "地図",
+    "pos": "sustantivo",
+    "category": "旅行",
+    "level": "A2"
+  },
+  {
+    "id": "dele-a2-101",
+    "word": "billete",
+    "meaning": "切符／紙幣",
+    "pos": "sustantivo",
+    "category": "旅行",
+    "level": "A2"
+  },
+  {
+    "id": "dele-a2-102",
+    "word": "equipaje",
+    "meaning": "荷物",
+    "pos": "sustantivo",
+    "category": "旅行",
+    "level": "A2"
+  },
+  {
+    "id": "dele-a2-103",
+    "word": "pasaporte",
+    "meaning": "パスポート",
+    "pos": "sustantivo",
+    "category": "旅行",
+    "level": "A2"
+  },
+  {
+    "id": "dele-a2-104",
+    "word": "reserva",
+    "meaning": "予約",
+    "pos": "sustantivo",
+    "category": "旅行",
+    "level": "A2"
+  },
+  {
+    "id": "dele-a2-105",
+    "word": "recepción",
+    "meaning": "受付",
+    "pos": "sustantivo",
+    "category": "旅行",
+    "level": "A2"
+  },
+  {
+    "id": "dele-a2-106",
+    "word": "turista",
+    "meaning": "観光客",
+    "pos": "sustantivo",
+    "category": "旅行",
+    "level": "A2"
+  },
+  {
+    "id": "dele-a2-107",
+    "word": "museo",
+    "meaning": "博物館／美術館",
+    "pos": "sustantivo",
+    "category": "文化",
+    "level": "A2"
+  },
+  {
+    "id": "dele-a2-108",
+    "word": "parque",
+    "meaning": "公園",
+    "pos": "sustantivo",
+    "category": "場所",
+    "level": "A2"
+  },
+  {
+    "id": "dele-a2-109",
+    "word": "cine",
+    "meaning": "映画館／映画",
+    "pos": "sustantivo",
+    "category": "文化",
+    "level": "A2"
+  },
+  {
+    "id": "dele-a2-110",
+    "word": "teatro",
+    "meaning": "劇場／演劇",
+    "pos": "sustantivo",
+    "category": "文化",
+    "level": "A2"
+  },
+  {
+    "id": "dele-a2-111",
+    "word": "correo",
+    "meaning": "郵便／メール",
+    "pos": "sustantivo",
+    "category": "通信",
+    "level": "A2"
+  },
+  {
+    "id": "dele-a2-112",
+    "word": "carta",
+    "meaning": "手紙／メニュー",
+    "pos": "sustantivo",
+    "category": "通信",
+    "level": "A2"
+  },
+  {
+    "id": "dele-a2-113",
+    "word": "mensaje",
+    "meaning": "メッセージ",
+    "pos": "sustantivo",
+    "category": "通信",
+    "level": "A2"
+  },
+  {
+    "id": "dele-a2-114",
+    "word": "cita",
+    "meaning": "約束／予約",
+    "pos": "sustantivo",
+    "category": "予定",
+    "level": "A2"
+  },
+  {
+    "id": "dele-a2-115",
+    "word": "dirección",
+    "meaning": "住所／方向",
+    "pos": "sustantivo",
+    "category": "個人情報",
+    "level": "A2"
+  },
+  {
+    "id": "dele-a2-116",
+    "word": "cansado",
+    "meaning": "疲れた",
+    "pos": "adjetivo",
+    "category": "状態",
+    "level": "A2"
+  },
+  {
+    "id": "dele-a2-117",
+    "word": "contento",
+    "meaning": "満足した／嬉しい",
+    "pos": "adjetivo",
+    "category": "感情",
+    "level": "A2"
+  },
+  {
+    "id": "dele-a2-118",
+    "word": "enfadado",
+    "meaning": "怒った",
+    "pos": "adjetivo",
+    "category": "感情",
+    "level": "A2"
+  },
+  {
+    "id": "dele-a2-119",
+    "word": "preocupado",
+    "meaning": "心配した",
+    "pos": "adjetivo",
+    "category": "感情",
+    "level": "A2"
+  },
+  {
+    "id": "dele-a2-120",
+    "word": "nervioso",
+    "meaning": "緊張した",
+    "pos": "adjetivo",
+    "category": "感情",
+    "level": "A2"
+  },
+  {
+    "id": "dele-a2-121",
+    "word": "tranquilo",
+    "meaning": "落ち着いた",
+    "pos": "adjetivo",
+    "category": "感情",
+    "level": "A2"
+  },
+  {
+    "id": "dele-a2-122",
+    "word": "simpático",
+    "meaning": "感じの良い",
+    "pos": "adjetivo",
+    "category": "性格",
+    "level": "A2"
+  },
+  {
+    "id": "dele-a2-123",
+    "word": "amable",
+    "meaning": "親切な",
+    "pos": "adjetivo",
+    "category": "性格",
+    "level": "A2"
+  },
+  {
+    "id": "dele-a2-124",
+    "word": "importante",
+    "meaning": "重要な",
+    "pos": "adjetivo",
+    "category": "評価",
+    "level": "A2"
+  },
+  {
+    "id": "dele-a2-125",
+    "word": "diferente",
+    "meaning": "異なる",
+    "pos": "adjetivo",
+    "category": "比較",
+    "level": "A2"
+  },
+  {
+    "id": "dele-a2-126",
+    "word": "fácil",
+    "meaning": "簡単な",
+    "pos": "adjetivo",
+    "category": "評価",
+    "level": "A2"
+  },
+  {
+    "id": "dele-a2-127",
+    "word": "difícil",
+    "meaning": "難しい",
+    "pos": "adjetivo",
+    "category": "評価",
+    "level": "A2"
+  },
+  {
+    "id": "dele-a2-128",
+    "word": "caro",
+    "meaning": "高価な",
+    "pos": "adjetivo",
+    "category": "買い物",
+    "level": "A2"
+  },
+  {
+    "id": "dele-a2-129",
+    "word": "barato",
+    "meaning": "安い",
+    "pos": "adjetivo",
+    "category": "買い物",
+    "level": "A2"
+  },
+  {
+    "id": "dele-a2-130",
+    "word": "ocupado",
+    "meaning": "忙しい／使用中の",
+    "pos": "adjetivo",
+    "category": "状態",
+    "level": "A2"
+  },
+  {
+    "id": "dele-a2-131",
+    "word": "siempre",
+    "meaning": "いつも",
+    "pos": "adverbio",
+    "category": "頻度",
+    "level": "A2"
+  },
+  {
+    "id": "dele-a2-132",
+    "word": "nunca",
+    "meaning": "決して〜ない",
+    "pos": "adverbio",
+    "category": "頻度",
+    "level": "A2"
+  },
+  {
+    "id": "dele-a2-133",
+    "word": "a veces",
+    "meaning": "時々",
+    "pos": "expresión",
+    "category": "頻度",
+    "level": "A2"
+  },
+  {
+    "id": "dele-a2-134",
+    "word": "normalmente",
+    "meaning": "普段は",
+    "pos": "adverbio",
+    "category": "頻度",
+    "level": "A2"
+  },
+  {
+    "id": "dele-a2-135",
+    "word": "todavía",
+    "meaning": "まだ",
+    "pos": "adverbio",
+    "category": "時間",
+    "level": "A2"
+  },
+  {
+    "id": "dele-a2-136",
+    "word": "ya",
+    "meaning": "もう／すでに",
+    "pos": "adverbio",
+    "category": "時間",
+    "level": "A2"
+  },
+  {
+    "id": "dele-a2-137",
+    "word": "pronto",
+    "meaning": "すぐに／早く",
+    "pos": "adverbio",
+    "category": "時間",
+    "level": "A2"
+  },
+  {
+    "id": "dele-a2-138",
+    "word": "tarde",
+    "meaning": "遅く／午後",
+    "pos": "adverbio",
+    "category": "時間",
+    "level": "A2"
+  },
+  {
+    "id": "dele-a2-139",
+    "word": "antes",
+    "meaning": "前に",
+    "pos": "adverbio",
+    "category": "時間",
+    "level": "A2"
+  },
+  {
+    "id": "dele-a2-140",
+    "word": "después",
+    "meaning": "後で",
+    "pos": "adverbio",
+    "category": "時間",
+    "level": "A2"
+  },
+  {
+    "id": "dele-a2-141",
+    "word": "aquí",
+    "meaning": "ここ",
+    "pos": "adverbio",
+    "category": "場所",
+    "level": "A2"
+  },
+  {
+    "id": "dele-a2-142",
+    "word": "allí",
+    "meaning": "そこ／あそこ",
+    "pos": "adverbio",
+    "category": "場所",
+    "level": "A2"
+  },
+  {
+    "id": "dele-a2-143",
+    "word": "cerca",
+    "meaning": "近くに",
+    "pos": "adverbio",
+    "category": "場所",
+    "level": "A2"
+  },
+  {
+    "id": "dele-a2-144",
+    "word": "lejos",
+    "meaning": "遠くに",
+    "pos": "adverbio",
+    "category": "場所",
+    "level": "A2"
+  },
+  {
+    "id": "dele-a2-145",
+    "word": "porque",
+    "meaning": "なぜなら",
+    "pos": "conjunción",
+    "category": "接続",
+    "level": "A2"
+  },
+  {
+    "id": "dele-a2-146",
+    "word": "pero",
+    "meaning": "しかし",
+    "pos": "conjunción",
+    "category": "接続",
+    "level": "A2"
+  },
+  {
+    "id": "dele-a2-147",
+    "word": "también",
+    "meaning": "〜もまた",
+    "pos": "adverbio",
+    "category": "接続",
+    "level": "A2"
+  },
+  {
+    "id": "dele-a2-148",
+    "word": "tampoco",
+    "meaning": "〜もまた…ない",
+    "pos": "adverbio",
+    "category": "接続",
+    "level": "A2"
+  },
+  {
+    "id": "dele-a2-149",
+    "word": "entonces",
+    "meaning": "それでは／その時",
+    "pos": "adverbio",
+    "category": "接続",
+    "level": "A2"
+  },
+  {
+    "id": "dele-a2-150",
+    "word": "durante",
+    "meaning": "〜の間",
+    "pos": "preposición",
+    "category": "時間",
+    "level": "A2"
+  }
+]
