@@ -1,0 +1,1877 @@
+{
+  "version": 2,
+  "level": 3,
+  "format": "HSK 2.0（日本実施形式）・写真問題は記号イラストで代替",
+  "generatedAt": "2026-08-22T07:58:49.610Z",
+  "questions": [
+    {
+      "id": "hsk3-l1-01",
+      "skill": "listening",
+      "part": 1,
+      "kind": "visual-choice",
+      "audioText": "她坐电梯到五层。",
+      "audioFile": "audio/sentences/hsk3-l1-01.wav",
+      "instruction": "请听录音，选择相应的图示。",
+      "explanation": "她坐电梯到五层。",
+      "choices": [
+        {
+          "value": "🛗",
+          "label": "🛗",
+          "ariaLabel": "エレベーターで五階へ行く人"
+        },
+        {
+          "value": "🛒",
+          "label": "🛒",
+          "ariaLabel": "スーパーでブドウを買う人"
+        },
+        {
+          "value": "🛂",
+          "label": "🛂",
+          "ariaLabel": "パスポートを持つ旅行者"
+        }
+      ],
+      "correct": "🛗"
+    },
+    {
+      "id": "hsk3-l1-02",
+      "skill": "listening",
+      "part": 1,
+      "kind": "visual-choice",
+      "audioText": "我每天坐地铁上班。",
+      "audioFile": "audio/sentences/hsk3-l1-02.wav",
+      "instruction": "请听录音，选择相应的图示。",
+      "explanation": "我每天坐地铁上班。",
+      "choices": [
+        {
+          "value": "🚇",
+          "label": "🚇",
+          "ariaLabel": "地下鉄で通勤する人"
+        },
+        {
+          "value": "📚",
+          "label": "📚",
+          "ariaLabel": "図書館で復習する学生"
+        },
+        {
+          "value": "📦",
+          "label": "📦",
+          "ariaLabel": "引っ越しをする人々"
+        }
+      ],
+      "correct": "🚇"
+    },
+    {
+      "id": "hsk3-l1-03",
+      "skill": "listening",
+      "part": 1,
+      "kind": "visual-choice",
+      "audioText": "他把房间打扫干净了。",
+      "audioFile": "audio/sentences/hsk3-l1-03.wav",
+      "instruction": "请听录音，选择相应的图示。",
+      "explanation": "他把房间打扫干净了。",
+      "choices": [
+        {
+          "value": "🧹",
+          "label": "🧹",
+          "ariaLabel": "部屋を掃除する人"
+        },
+        {
+          "value": "👥",
+          "label": "👥",
+          "ariaLabel": "事務室で会議する人々"
+        },
+        {
+          "value": "⛰️",
+          "label": "⛰️",
+          "ariaLabel": "週末に山へ登る人々"
+        }
+      ],
+      "correct": "🧹"
+    },
+    {
+      "id": "hsk3-l1-04",
+      "skill": "listening",
+      "part": 1,
+      "kind": "visual-choice",
+      "audioText": "爷爷在公园锻炼身体。",
+      "audioFile": "audio/sentences/hsk3-l1-04.wav",
+      "instruction": "请听录音，选择相应的图示。",
+      "explanation": "爷爷在公园锻炼身体。",
+      "choices": [
+        {
+          "value": "🌳",
+          "label": "🌳",
+          "ariaLabel": "公園で運動する人"
+        },
+        {
+          "value": "🛂",
+          "label": "🛂",
+          "ariaLabel": "パスポートを持つ旅行者"
+        },
+        {
+          "value": "🛗",
+          "label": "🛗",
+          "ariaLabel": "エレベーターで五階へ行く人"
+        }
+      ],
+      "correct": "🌳"
+    },
+    {
+      "id": "hsk3-l1-05",
+      "skill": "listening",
+      "part": 1,
+      "kind": "visual-choice",
+      "audioText": "她去超市买新鲜的葡萄。",
+      "audioFile": "audio/sentences/hsk3-l1-05.wav",
+      "instruction": "请听录音，选择相应的图示。",
+      "explanation": "她去超市买新鲜的葡萄。",
+      "choices": [
+        {
+          "value": "🛒",
+          "label": "🛒",
+          "ariaLabel": "スーパーでブドウを買う人"
+        },
+        {
+          "value": "📦",
+          "label": "📦",
+          "ariaLabel": "引っ越しをする人々"
+        },
+        {
+          "value": "🚇",
+          "label": "🚇",
+          "ariaLabel": "地下鉄で通勤する人"
+        }
+      ],
+      "correct": "🛒"
+    },
+    {
+      "id": "hsk3-l1-06",
+      "skill": "listening",
+      "part": 1,
+      "kind": "visual-choice",
+      "audioText": "学生在图书馆认真复习。",
+      "audioFile": "audio/sentences/hsk3-l1-06.wav",
+      "instruction": "请听录音，选择相应的图示。",
+      "explanation": "学生在图书馆认真复习。",
+      "choices": [
+        {
+          "value": "📚",
+          "label": "📚",
+          "ariaLabel": "図書館で復習する学生"
+        },
+        {
+          "value": "⛰️",
+          "label": "⛰️",
+          "ariaLabel": "週末に山へ登る人々"
+        },
+        {
+          "value": "🧹",
+          "label": "🧹",
+          "ariaLabel": "部屋を掃除する人"
+        }
+      ],
+      "correct": "📚"
+    },
+    {
+      "id": "hsk3-l1-07",
+      "skill": "listening",
+      "part": 1,
+      "kind": "visual-choice",
+      "audioText": "经理正在办公室开会。",
+      "audioFile": "audio/sentences/hsk3-l1-07.wav",
+      "instruction": "请听录音，选择相应的图示。",
+      "explanation": "经理正在办公室开会。",
+      "choices": [
+        {
+          "value": "👥",
+          "label": "👥",
+          "ariaLabel": "事務室で会議する人々"
+        },
+        {
+          "value": "🛗",
+          "label": "🛗",
+          "ariaLabel": "エレベーターで五階へ行く人"
+        },
+        {
+          "value": "🌳",
+          "label": "🌳",
+          "ariaLabel": "公園で運動する人"
+        }
+      ],
+      "correct": "👥"
+    },
+    {
+      "id": "hsk3-l1-08",
+      "skill": "listening",
+      "part": 1,
+      "kind": "visual-choice",
+      "audioText": "旅行以前别忘了带护照。",
+      "audioFile": "audio/sentences/hsk3-l1-08.wav",
+      "instruction": "请听录音，选择相应的图示。",
+      "explanation": "旅行以前别忘了带护照。",
+      "choices": [
+        {
+          "value": "🛂",
+          "label": "🛂",
+          "ariaLabel": "パスポートを持つ旅行者"
+        },
+        {
+          "value": "🚇",
+          "label": "🚇",
+          "ariaLabel": "地下鉄で通勤する人"
+        },
+        {
+          "value": "🛒",
+          "label": "🛒",
+          "ariaLabel": "スーパーでブドウを買う人"
+        }
+      ],
+      "correct": "🛂"
+    },
+    {
+      "id": "hsk3-l1-09",
+      "skill": "listening",
+      "part": 1,
+      "kind": "visual-choice",
+      "audioText": "他们正在搬家。",
+      "audioFile": "audio/sentences/hsk3-l1-09.wav",
+      "instruction": "请听录音，选择相应的图示。",
+      "explanation": "他们正在搬家。",
+      "choices": [
+        {
+          "value": "📦",
+          "label": "📦",
+          "ariaLabel": "引っ越しをする人々"
+        },
+        {
+          "value": "🧹",
+          "label": "🧹",
+          "ariaLabel": "部屋を掃除する人"
+        },
+        {
+          "value": "📚",
+          "label": "📚",
+          "ariaLabel": "図書館で復習する学生"
+        }
+      ],
+      "correct": "📦"
+    },
+    {
+      "id": "hsk3-l1-10",
+      "skill": "listening",
+      "part": 1,
+      "kind": "visual-choice",
+      "audioText": "周末我们打算去爬山。",
+      "audioFile": "audio/sentences/hsk3-l1-10.wav",
+      "instruction": "请听录音，选择相应的图示。",
+      "explanation": "周末我们打算去爬山。",
+      "choices": [
+        {
+          "value": "⛰️",
+          "label": "⛰️",
+          "ariaLabel": "週末に山へ登る人々"
+        },
+        {
+          "value": "🌳",
+          "label": "🌳",
+          "ariaLabel": "公園で運動する人"
+        },
+        {
+          "value": "👥",
+          "label": "👥",
+          "ariaLabel": "事務室で会議する人々"
+        }
+      ],
+      "correct": "⛰️"
+    },
+    {
+      "id": "hsk3-l2-01",
+      "skill": "listening",
+      "part": 2,
+      "kind": "audio-judge",
+      "audioText": "小李最近每天都锻炼，所以身体比以前好多了。",
+      "audioFile": "audio/sentences/hsk3-l2-01.wav",
+      "prompt": "小李的身体有了变化。",
+      "choices": [
+        {
+          "value": "true",
+          "label": "对"
+        },
+        {
+          "value": "false",
+          "label": "不对"
+        }
+      ],
+      "correct": "true",
+      "instruction": "请听录音，判断内容是否与句子一致。",
+      "explanation": "对"
+    },
+    {
+      "id": "hsk3-l2-02",
+      "skill": "listening",
+      "part": 2,
+      "kind": "audio-judge",
+      "audioText": "外面虽然刮风，但是太阳很好，我们还是决定去公园。",
+      "audioFile": "audio/sentences/hsk3-l2-02.wav",
+      "prompt": "因为天气不好，他们不去公园了。",
+      "choices": [
+        {
+          "value": "true",
+          "label": "对"
+        },
+        {
+          "value": "false",
+          "label": "不对"
+        }
+      ],
+      "correct": "false",
+      "instruction": "请听录音，判断内容是否与句子一致。",
+      "explanation": "不对"
+    },
+    {
+      "id": "hsk3-l2-03",
+      "skill": "listening",
+      "part": 2,
+      "kind": "audio-judge",
+      "audioText": "王老师把会议时间从上午十点换到了下午两点。",
+      "audioFile": "audio/sentences/hsk3-l2-03.wav",
+      "prompt": "会议下午两点举行。",
+      "choices": [
+        {
+          "value": "true",
+          "label": "对"
+        },
+        {
+          "value": "false",
+          "label": "不对"
+        }
+      ],
+      "correct": "true",
+      "instruction": "请听录音，判断内容是否与句子一致。",
+      "explanation": "对"
+    },
+    {
+      "id": "hsk3-l2-04",
+      "skill": "listening",
+      "part": 2,
+      "kind": "audio-judge",
+      "audioText": "我以为护照在行李箱里，后来在桌子下面找到了。",
+      "audioFile": "audio/sentences/hsk3-l2-04.wav",
+      "prompt": "护照最后在行李箱里找到了。",
+      "choices": [
+        {
+          "value": "true",
+          "label": "对"
+        },
+        {
+          "value": "false",
+          "label": "不对"
+        }
+      ],
+      "correct": "false",
+      "instruction": "请听录音，判断内容是否与句子一致。",
+      "explanation": "不对"
+    },
+    {
+      "id": "hsk3-l2-05",
+      "skill": "listening",
+      "part": 2,
+      "kind": "audio-judge",
+      "audioText": "这家宾馆离地铁站很近，房间也很干净，就是有点儿贵。",
+      "audioFile": "audio/sentences/hsk3-l2-05.wav",
+      "prompt": "这家宾馆很方便。",
+      "choices": [
+        {
+          "value": "true",
+          "label": "对"
+        },
+        {
+          "value": "false",
+          "label": "不对"
+        }
+      ],
+      "correct": "true",
+      "instruction": "请听录音，判断内容是否与句子一致。",
+      "explanation": "对"
+    },
+    {
+      "id": "hsk3-l2-06",
+      "skill": "listening",
+      "part": 2,
+      "kind": "audio-judge",
+      "audioText": "妹妹发烧了，医生说她这两天必须在家休息。",
+      "audioFile": "audio/sentences/hsk3-l2-06.wav",
+      "prompt": "妹妹应该去上班。",
+      "choices": [
+        {
+          "value": "true",
+          "label": "对"
+        },
+        {
+          "value": "false",
+          "label": "不对"
+        }
+      ],
+      "correct": "false",
+      "instruction": "请听录音，判断内容是否与句子一致。",
+      "explanation": "不对"
+    },
+    {
+      "id": "hsk3-l2-07",
+      "skill": "listening",
+      "part": 2,
+      "kind": "audio-judge",
+      "audioText": "张经理对这次表演很满意，还表示以后愿意继续帮忙。",
+      "audioFile": "audio/sentences/hsk3-l2-07.wav",
+      "prompt": "张经理喜欢这次表演。",
+      "choices": [
+        {
+          "value": "true",
+          "label": "对"
+        },
+        {
+          "value": "false",
+          "label": "不对"
+        }
+      ],
+      "correct": "true",
+      "instruction": "请听录音，判断内容是否与句子一致。",
+      "explanation": "对"
+    },
+    {
+      "id": "hsk3-l2-08",
+      "skill": "listening",
+      "part": 2,
+      "kind": "audio-judge",
+      "audioText": "我先去银行办事，然后到超市买东西，最后才回家。",
+      "audioFile": "audio/sentences/hsk3-l2-08.wav",
+      "prompt": "我回家以前去了两个地方。",
+      "choices": [
+        {
+          "value": "true",
+          "label": "对"
+        },
+        {
+          "value": "false",
+          "label": "不对"
+        }
+      ],
+      "correct": "true",
+      "instruction": "请听录音，判断内容是否与句子一致。",
+      "explanation": "对"
+    },
+    {
+      "id": "hsk3-l2-09",
+      "skill": "listening",
+      "part": 2,
+      "kind": "audio-judge",
+      "audioText": "他普通话说得不错，但是写汉字还比较慢。",
+      "audioFile": "audio/sentences/hsk3-l2-09.wav",
+      "prompt": "他不会说普通话。",
+      "choices": [
+        {
+          "value": "true",
+          "label": "对"
+        },
+        {
+          "value": "false",
+          "label": "不对"
+        }
+      ],
+      "correct": "false",
+      "instruction": "请听录音，判断内容是否与句子一致。",
+      "explanation": "不对"
+    },
+    {
+      "id": "hsk3-l2-10",
+      "skill": "listening",
+      "part": 2,
+      "kind": "audio-judge",
+      "audioText": "我们本来打算爬山，因为突然下雨，只好改去饭馆吃饭。",
+      "audioFile": "audio/sentences/hsk3-l2-10.wav",
+      "prompt": "他们最后没有去爬山。",
+      "choices": [
+        {
+          "value": "true",
+          "label": "对"
+        },
+        {
+          "value": "false",
+          "label": "不对"
+        }
+      ],
+      "correct": "true",
+      "instruction": "请听录音，判断内容是否与句子一致。",
+      "explanation": "对"
+    },
+    {
+      "id": "hsk3-l3-01",
+      "skill": "listening",
+      "part": 3,
+      "kind": "audio-dialogue",
+      "audioText": "女：你的自行车找到了吗？男：找到了，朋友说明天下午给我送来。问：自行车什么时候送来？",
+      "audioFile": "audio/sentences/hsk3-l3-01.wav",
+      "prompt": "自行车什么时候送来？",
+      "choices": [
+        {
+          "value": "明天下午",
+          "label": "明天下午"
+        },
+        {
+          "value": "今天下午",
+          "label": "今天下午"
+        },
+        {
+          "value": "明天上午",
+          "label": "明天上午"
+        }
+      ],
+      "correct": "明天下午",
+      "instruction": "请听对话，选择正确答案。",
+      "explanation": "自行车什么时候送来？ — 明天下午"
+    },
+    {
+      "id": "hsk3-l3-02",
+      "skill": "listening",
+      "part": 3,
+      "kind": "audio-dialogue",
+      "audioText": "男：你怎么不坐电梯？女：我住三楼，走楼梯还能锻炼身体。问：女的为什么走楼梯？",
+      "audioFile": "audio/sentences/hsk3-l3-02.wav",
+      "prompt": "女的为什么走楼梯？",
+      "choices": [
+        {
+          "value": "锻炼身体",
+          "label": "锻炼身体"
+        },
+        {
+          "value": "电梯坏了",
+          "label": "电梯坏了"
+        },
+        {
+          "value": "住一楼",
+          "label": "住一楼"
+        }
+      ],
+      "correct": "锻炼身体",
+      "instruction": "请听对话，选择正确答案。",
+      "explanation": "女的为什么走楼梯？ — 锻炼身体"
+    },
+    {
+      "id": "hsk3-l3-03",
+      "skill": "listening",
+      "part": 3,
+      "kind": "audio-dialogue",
+      "audioText": "女：这家饭店的菜怎么样？男：味道不错，就是服务有点儿慢。问：男的对什么不满意？",
+      "audioFile": "audio/sentences/hsk3-l3-03.wav",
+      "prompt": "男的对什么不满意？",
+      "choices": [
+        {
+          "value": "服务",
+          "label": "服务"
+        },
+        {
+          "value": "味道",
+          "label": "味道"
+        },
+        {
+          "value": "环境",
+          "label": "环境"
+        }
+      ],
+      "correct": "服务",
+      "instruction": "请听对话，选择正确答案。",
+      "explanation": "男的对什么不满意？ — 服务"
+    },
+    {
+      "id": "hsk3-l3-04",
+      "skill": "listening",
+      "part": 3,
+      "kind": "audio-dialogue",
+      "audioText": "男：听说你要搬家？女：对，新家离公司更近。问：女的为什么搬家？",
+      "audioFile": "audio/sentences/hsk3-l3-04.wav",
+      "prompt": "女的为什么搬家？",
+      "choices": [
+        {
+          "value": "离公司近",
+          "label": "离公司近"
+        },
+        {
+          "value": "房子太小",
+          "label": "房子太小"
+        },
+        {
+          "value": "换了公司",
+          "label": "换了公司"
+        }
+      ],
+      "correct": "离公司近",
+      "instruction": "请听对话，选择正确答案。",
+      "explanation": "女的为什么搬家？ — 离公司近"
+    },
+    {
+      "id": "hsk3-l3-05",
+      "skill": "listening",
+      "part": 3,
+      "kind": "audio-dialogue",
+      "audioText": "女：作业做完了吗？男：内容完成了，还要检查一下。问：男的接下来要做什么？",
+      "audioFile": "audio/sentences/hsk3-l3-05.wav",
+      "prompt": "男的接下来要做什么？",
+      "choices": [
+        {
+          "value": "检查作业",
+          "label": "检查作业"
+        },
+        {
+          "value": "开始写",
+          "label": "开始写"
+        },
+        {
+          "value": "去上课",
+          "label": "去上课"
+        }
+      ],
+      "correct": "检查作业",
+      "instruction": "请听对话，选择正确答案。",
+      "explanation": "男的接下来要做什么？ — 检查作业"
+    },
+    {
+      "id": "hsk3-l3-06",
+      "skill": "listening",
+      "part": 3,
+      "kind": "audio-dialogue",
+      "audioText": "男：会议已经开始了吗？女：还没有，经理十分钟以后才来。问：经理什么时候来？",
+      "audioFile": "audio/sentences/hsk3-l3-06.wav",
+      "prompt": "经理什么时候来？",
+      "choices": [
+        {
+          "value": "十分钟以后",
+          "label": "十分钟以后"
+        },
+        {
+          "value": "十分钟以前",
+          "label": "十分钟以前"
+        },
+        {
+          "value": "马上",
+          "label": "马上"
+        }
+      ],
+      "correct": "十分钟以后",
+      "instruction": "请听对话，选择正确答案。",
+      "explanation": "经理什么时候来？ — 十分钟以后"
+    },
+    {
+      "id": "hsk3-l3-07",
+      "skill": "listening",
+      "part": 3,
+      "kind": "audio-dialogue",
+      "audioText": "女：你的感冒好点儿了吗？男：好多了，但是医生让我再休息两天。问：医生让男的做什么？",
+      "audioFile": "audio/sentences/hsk3-l3-07.wav",
+      "prompt": "医生让男的做什么？",
+      "choices": [
+        {
+          "value": "休息",
+          "label": "休息"
+        },
+        {
+          "value": "上班",
+          "label": "上班"
+        },
+        {
+          "value": "锻炼",
+          "label": "锻炼"
+        }
+      ],
+      "correct": "休息",
+      "instruction": "请听对话，选择正确答案。",
+      "explanation": "医生让男的做什么？ — 休息"
+    },
+    {
+      "id": "hsk3-l3-08",
+      "skill": "listening",
+      "part": 3,
+      "kind": "audio-dialogue",
+      "audioText": "男：周末去爬山怎么样？女：外面下雨了，我们还是去看电影吧。问：他们决定做什么？",
+      "audioFile": "audio/sentences/hsk3-l3-08.wav",
+      "prompt": "他们决定做什么？",
+      "choices": [
+        {
+          "value": "看电影",
+          "label": "看电影"
+        },
+        {
+          "value": "去爬山",
+          "label": "去爬山"
+        },
+        {
+          "value": "去公园",
+          "label": "去公园"
+        }
+      ],
+      "correct": "看电影",
+      "instruction": "请听对话，选择正确答案。",
+      "explanation": "他们决定做什么？ — 看电影"
+    },
+    {
+      "id": "hsk3-l3-09",
+      "skill": "listening",
+      "part": 3,
+      "kind": "audio-dialogue",
+      "audioText": "女：请问，洗手间在哪儿？男：一直往前走，在电梯的右边。问：洗手间在哪儿？",
+      "audioFile": "audio/sentences/hsk3-l3-09.wav",
+      "prompt": "洗手间在哪儿？",
+      "choices": [
+        {
+          "value": "电梯右边",
+          "label": "电梯右边"
+        },
+        {
+          "value": "电梯左边",
+          "label": "电梯左边"
+        },
+        {
+          "value": "办公室旁边",
+          "label": "办公室旁边"
+        }
+      ],
+      "correct": "电梯右边",
+      "instruction": "请听对话，选择正确答案。",
+      "explanation": "洗手间在哪儿？ — 电梯右边"
+    },
+    {
+      "id": "hsk3-l3-10",
+      "skill": "listening",
+      "part": 3,
+      "kind": "audio-dialogue",
+      "audioText": "男：你觉得这次比赛怎么样？女：虽然没得第一，但是大家都很努力。问：女的怎么看这次比赛？",
+      "audioFile": "audio/sentences/hsk3-l3-10.wav",
+      "prompt": "女的怎么看这次比赛？",
+      "choices": [
+        {
+          "value": "大家很努力",
+          "label": "大家很努力"
+        },
+        {
+          "value": "比赛太容易",
+          "label": "比赛太容易"
+        },
+        {
+          "value": "成绩最好",
+          "label": "成绩最好"
+        }
+      ],
+      "correct": "大家很努力",
+      "instruction": "请听对话，选择正确答案。",
+      "explanation": "女的怎么看这次比赛？ — 大家很努力"
+    },
+    {
+      "id": "hsk3-l4-01",
+      "skill": "listening",
+      "part": 4,
+      "kind": "audio-long-dialogue",
+      "audioText": "女：你怎么才到？男：路上突然下大雨，公共汽车也来得很慢。问：男的为什么迟到？",
+      "audioFile": "audio/sentences/hsk3-l4-01.wav",
+      "prompt": "男的为什么迟到？",
+      "choices": [
+        {
+          "value": "汽车来得慢",
+          "label": "汽车来得慢"
+        },
+        {
+          "value": "忘了时间",
+          "label": "忘了时间"
+        },
+        {
+          "value": "起床晚了",
+          "label": "起床晚了"
+        }
+      ],
+      "correct": "汽车来得慢",
+      "instruction": "请听较长对话，选择正确答案。",
+      "explanation": "男的为什么迟到？ — 汽车来得慢"
+    },
+    {
+      "id": "hsk3-l4-02",
+      "skill": "listening",
+      "part": 4,
+      "kind": "audio-long-dialogue",
+      "audioText": "男：这件蓝衬衫你穿着正合适。女：可是我更喜欢那件白的。问：女的喜欢哪件？",
+      "audioFile": "audio/sentences/hsk3-l4-02.wav",
+      "prompt": "女的喜欢哪件？",
+      "choices": [
+        {
+          "value": "白衬衫",
+          "label": "白衬衫"
+        },
+        {
+          "value": "蓝衬衫",
+          "label": "蓝衬衫"
+        },
+        {
+          "value": "红裙子",
+          "label": "红裙子"
+        }
+      ],
+      "correct": "白衬衫",
+      "instruction": "请听较长对话，选择正确答案。",
+      "explanation": "女的喜欢哪件？ — 白衬衫"
+    },
+    {
+      "id": "hsk3-l4-03",
+      "skill": "listening",
+      "part": 4,
+      "kind": "audio-long-dialogue",
+      "audioText": "女：听说你找到新工作了？男：是的，下个月去银行上班。问：男的要去哪儿工作？",
+      "audioFile": "audio/sentences/hsk3-l4-03.wav",
+      "prompt": "男的要去哪儿工作？",
+      "choices": [
+        {
+          "value": "银行",
+          "label": "银行"
+        },
+        {
+          "value": "学校",
+          "label": "学校"
+        },
+        {
+          "value": "超市",
+          "label": "超市"
+        }
+      ],
+      "correct": "银行",
+      "instruction": "请听较长对话，选择正确答案。",
+      "explanation": "男的要去哪儿工作？ — 银行"
+    },
+    {
+      "id": "hsk3-l4-04",
+      "skill": "listening",
+      "part": 4,
+      "kind": "audio-long-dialogue",
+      "audioText": "男：你认识新来的同事吗？女：昨天刚见面，她很热情。问：女的觉得新同事怎么样？",
+      "audioFile": "audio/sentences/hsk3-l4-04.wav",
+      "prompt": "女的觉得新同事怎么样？",
+      "choices": [
+        {
+          "value": "很热情",
+          "label": "很热情"
+        },
+        {
+          "value": "很安静",
+          "label": "很安静"
+        },
+        {
+          "value": "很奇怪",
+          "label": "很奇怪"
+        }
+      ],
+      "correct": "很热情",
+      "instruction": "请听较长对话，选择正确答案。",
+      "explanation": "女的觉得新同事怎么样？ — 很热情"
+    },
+    {
+      "id": "hsk3-l4-05",
+      "skill": "listening",
+      "part": 4,
+      "kind": "audio-long-dialogue",
+      "audioText": "女：行李箱怎么这么重？男：里面有很多书，还有给朋友的礼物。问：箱子里主要有什么？",
+      "audioFile": "audio/sentences/hsk3-l4-05.wav",
+      "prompt": "箱子里主要有什么？",
+      "choices": [
+        {
+          "value": "书和礼物",
+          "label": "书和礼物"
+        },
+        {
+          "value": "衣服和鞋",
+          "label": "衣服和鞋"
+        },
+        {
+          "value": "水果和饮料",
+          "label": "水果和饮料"
+        }
+      ],
+      "correct": "书和礼物",
+      "instruction": "请听较长对话，选择正确答案。",
+      "explanation": "箱子里主要有什么？ — 书和礼物"
+    },
+    {
+      "id": "hsk3-l4-06",
+      "skill": "listening",
+      "part": 4,
+      "kind": "audio-long-dialogue",
+      "audioText": "男：你不是打算坐地铁吗？女：地铁今天有问题，我只好坐出租车。问：女的为什么坐出租车？",
+      "audioFile": "audio/sentences/hsk3-l4-06.wav",
+      "prompt": "女的为什么坐出租车？",
+      "choices": [
+        {
+          "value": "地铁有问题",
+          "label": "地铁有问题"
+        },
+        {
+          "value": "时间太早",
+          "label": "时间太早"
+        },
+        {
+          "value": "行李太多",
+          "label": "行李太多"
+        }
+      ],
+      "correct": "地铁有问题",
+      "instruction": "请听较长对话，选择正确答案。",
+      "explanation": "女的为什么坐出租车？ — 地铁有问题"
+    },
+    {
+      "id": "hsk3-l4-07",
+      "skill": "listening",
+      "part": 4,
+      "kind": "audio-long-dialogue",
+      "audioText": "女：这张照片是在北京照的吗？男：不是，是去年去上海旅游时照的。问：照片在哪儿照的？",
+      "audioFile": "audio/sentences/hsk3-l4-07.wav",
+      "prompt": "照片在哪儿照的？",
+      "choices": [
+        {
+          "value": "上海",
+          "label": "上海"
+        },
+        {
+          "value": "北京",
+          "label": "北京"
+        },
+        {
+          "value": "家里",
+          "label": "家里"
+        }
+      ],
+      "correct": "上海",
+      "instruction": "请听较长对话，选择正确答案。",
+      "explanation": "照片在哪儿照的？ — 上海"
+    },
+    {
+      "id": "hsk3-l4-08",
+      "skill": "listening",
+      "part": 4,
+      "kind": "audio-long-dialogue",
+      "audioText": "男：你的汉语水平提高得真快。女：我每天听新闻，还经常和中国朋友说话。问：女的怎么学习汉语？",
+      "audioFile": "audio/sentences/hsk3-l4-08.wav",
+      "prompt": "女的怎么学习汉语？",
+      "choices": [
+        {
+          "value": "听新闻说话",
+          "label": "听新闻说话"
+        },
+        {
+          "value": "只做作业",
+          "label": "只做作业"
+        },
+        {
+          "value": "只看电影",
+          "label": "只看电影"
+        }
+      ],
+      "correct": "听新闻说话",
+      "instruction": "请听较长对话，选择正确答案。",
+      "explanation": "女的怎么学习汉语？ — 听新闻说话"
+    },
+    {
+      "id": "hsk3-l4-09",
+      "skill": "listening",
+      "part": 4,
+      "kind": "audio-long-dialogue",
+      "audioText": "女：冰箱里什么都没有了。男：那我们先去超市，然后回家做饭。问：他们先做什么？",
+      "audioFile": "audio/sentences/hsk3-l4-09.wav",
+      "prompt": "他们先做什么？",
+      "choices": [
+        {
+          "value": "去超市",
+          "label": "去超市"
+        },
+        {
+          "value": "回家",
+          "label": "回家"
+        },
+        {
+          "value": "去饭馆",
+          "label": "去饭馆"
+        }
+      ],
+      "correct": "去超市",
+      "instruction": "请听较长对话，选择正确答案。",
+      "explanation": "他们先做什么？ — 去超市"
+    },
+    {
+      "id": "hsk3-l4-10",
+      "skill": "listening",
+      "part": 4,
+      "kind": "audio-long-dialogue",
+      "audioText": "男：你为什么一直看地图？女：我在找附近的宾馆，宾馆就在前面。问：女的在找什么？",
+      "audioFile": "audio/sentences/hsk3-l4-10.wav",
+      "prompt": "女的在找什么？",
+      "choices": [
+        {
+          "value": "宾馆",
+          "label": "宾馆"
+        },
+        {
+          "value": "银行",
+          "label": "银行"
+        },
+        {
+          "value": "图书馆",
+          "label": "图书馆"
+        }
+      ],
+      "correct": "宾馆",
+      "instruction": "请听较长对话，选择正确答案。",
+      "explanation": "女的在找什么？ — 宾馆"
+    },
+    {
+      "id": "hsk3-r1-01",
+      "skill": "reading",
+      "part": 1,
+      "kind": "reading-response",
+      "prompt": "你觉得这个办法怎么样？",
+      "choices": [
+        {
+          "value": "我觉得可以试一试。",
+          "label": "我觉得可以试一试。"
+        },
+        {
+          "value": "我昨天才到。",
+          "label": "我昨天才到。"
+        },
+        {
+          "value": "他正在办公室。",
+          "label": "他正在办公室。"
+        }
+      ],
+      "correct": "我觉得可以试一试。",
+      "instruction": "请选择与问句相对应的回答。",
+      "explanation": "你觉得这个办法怎么样？ — 我觉得可以试一试。"
+    },
+    {
+      "id": "hsk3-r1-02",
+      "skill": "reading",
+      "part": 1,
+      "kind": "reading-response",
+      "prompt": "会议什么时候结束？",
+      "choices": [
+        {
+          "value": "大概下午四点。",
+          "label": "大概下午四点。"
+        },
+        {
+          "value": "一共十个人。",
+          "label": "一共十个人。"
+        },
+        {
+          "value": "在银行旁边。",
+          "label": "在银行旁边。"
+        }
+      ],
+      "correct": "大概下午四点。",
+      "instruction": "请选择与问句相对应的回答。",
+      "explanation": "会议什么时候结束？ — 大概下午四点。"
+    },
+    {
+      "id": "hsk3-r1-03",
+      "skill": "reading",
+      "part": 1,
+      "kind": "reading-response",
+      "prompt": "你的护照找到了吗？",
+      "choices": [
+        {
+          "value": "找到了，在包里。",
+          "label": "找到了，在包里。"
+        },
+        {
+          "value": "我打算去旅游。",
+          "label": "我打算去旅游。"
+        },
+        {
+          "value": "这张照片很好。",
+          "label": "这张照片很好。"
+        }
+      ],
+      "correct": "找到了，在包里。",
+      "instruction": "请选择与问句相对应的回答。",
+      "explanation": "你的护照找到了吗？ — 找到了，在包里。"
+    },
+    {
+      "id": "hsk3-r1-04",
+      "skill": "reading",
+      "part": 1,
+      "kind": "reading-response",
+      "prompt": "能帮我搬一下箱子吗？",
+      "choices": [
+        {
+          "value": "当然，没问题。",
+          "label": "当然，没问题。"
+        },
+        {
+          "value": "箱子是蓝色的。",
+          "label": "箱子是蓝色的。"
+        },
+        {
+          "value": "我住在三层。",
+          "label": "我住在三层。"
+        }
+      ],
+      "correct": "当然，没问题。",
+      "instruction": "请选择与问句相对应的回答。",
+      "explanation": "能帮我搬一下箱子吗？ — 当然，没问题。"
+    },
+    {
+      "id": "hsk3-r1-05",
+      "skill": "reading",
+      "part": 1,
+      "kind": "reading-response",
+      "prompt": "你怎么又迟到了？",
+      "choices": [
+        {
+          "value": "路上堵车了。",
+          "label": "路上堵车了。"
+        },
+        {
+          "value": "考试很简单。",
+          "label": "考试很简单。"
+        },
+        {
+          "value": "我已经吃饱了。",
+          "label": "我已经吃饱了。"
+        }
+      ],
+      "correct": "路上堵车了。",
+      "instruction": "请选择与问句相对应的回答。",
+      "explanation": "你怎么又迟到了？ — 路上堵车了。"
+    },
+    {
+      "id": "hsk3-r1-06",
+      "skill": "reading",
+      "part": 1,
+      "kind": "reading-response",
+      "prompt": "医生怎么说？",
+      "choices": [
+        {
+          "value": "他说我要多休息。",
+          "label": "他说我要多休息。"
+        },
+        {
+          "value": "药在桌子上。",
+          "label": "药在桌子上。"
+        },
+        {
+          "value": "医院离这儿很近。",
+          "label": "医院离这儿很近。"
+        }
+      ],
+      "correct": "他说我要多休息。",
+      "instruction": "请选择与问句相对应的回答。",
+      "explanation": "医生怎么说？ — 他说我要多休息。"
+    },
+    {
+      "id": "hsk3-r1-07",
+      "skill": "reading",
+      "part": 1,
+      "kind": "reading-response",
+      "prompt": "你习惯这里的生活了吗？",
+      "choices": [
+        {
+          "value": "差不多已经习惯了。",
+          "label": "差不多已经习惯了。"
+        },
+        {
+          "value": "我以前住在南方。",
+          "label": "我以前住在南方。"
+        },
+        {
+          "value": "这里有很多超市。",
+          "label": "这里有很多超市。"
+        }
+      ],
+      "correct": "差不多已经习惯了。",
+      "instruction": "请选择与问句相对应的回答。",
+      "explanation": "你习惯这里的生活了吗？ — 差不多已经习惯了。"
+    },
+    {
+      "id": "hsk3-r1-08",
+      "skill": "reading",
+      "part": 1,
+      "kind": "reading-response",
+      "prompt": "周末有什么打算？",
+      "choices": [
+        {
+          "value": "我想和朋友去爬山。",
+          "label": "我想和朋友去爬山。"
+        },
+        {
+          "value": "昨天刮风了。",
+          "label": "昨天刮风了。"
+        },
+        {
+          "value": "地图在包里。",
+          "label": "地图在包里。"
+        }
+      ],
+      "correct": "我想和朋友去爬山。",
+      "instruction": "请选择与问句相对应的回答。",
+      "explanation": "周末有什么打算？ — 我想和朋友去爬山。"
+    },
+    {
+      "id": "hsk3-r1-09",
+      "skill": "reading",
+      "part": 1,
+      "kind": "reading-response",
+      "prompt": "这次比赛谁得了第一？",
+      "choices": [
+        {
+          "value": "我们班的小王。",
+          "label": "我们班的小王。"
+        },
+        {
+          "value": "比赛下周举行。",
+          "label": "比赛下周举行。"
+        },
+        {
+          "value": "我最喜欢体育。",
+          "label": "我最喜欢体育。"
+        }
+      ],
+      "correct": "我们班的小王。",
+      "instruction": "请选择与问句相对应的回答。",
+      "explanation": "这次比赛谁得了第一？ — 我们班的小王。"
+    },
+    {
+      "id": "hsk3-r1-10",
+      "skill": "reading",
+      "part": 1,
+      "kind": "reading-response",
+      "prompt": "你为什么换工作？",
+      "choices": [
+        {
+          "value": "因为新公司离家更近。",
+          "label": "因为新公司离家更近。"
+        },
+        {
+          "value": "经理正在开会。",
+          "label": "经理正在开会。"
+        },
+        {
+          "value": "工作已经完成了。",
+          "label": "工作已经完成了。"
+        }
+      ],
+      "correct": "因为新公司离家更近。",
+      "instruction": "请选择与问句相对应的回答。",
+      "explanation": "你为什么换工作？ — 因为新公司离家更近。"
+    },
+    {
+      "id": "hsk3-r2-01",
+      "skill": "reading",
+      "part": 2,
+      "kind": "reading-cloze",
+      "prompt": "请把空调＿＿＿一下，房间里有点儿冷。",
+      "choices": [
+        {
+          "value": "关",
+          "label": "关"
+        },
+        {
+          "value": "搬",
+          "label": "搬"
+        },
+        {
+          "value": "借",
+          "label": "借"
+        }
+      ],
+      "correct": "关",
+      "instruction": "请选择合适的词语填空。",
+      "explanation": "请把空调关一下，房间里有点儿冷。"
+    },
+    {
+      "id": "hsk3-r2-02",
+      "skill": "reading",
+      "part": 2,
+      "kind": "reading-cloze",
+      "prompt": "明天有考试，今天晚上我要认真＿＿＿。",
+      "choices": [
+        {
+          "value": "复习",
+          "label": "复习"
+        },
+        {
+          "value": "表演",
+          "label": "表演"
+        },
+        {
+          "value": "结婚",
+          "label": "结婚"
+        }
+      ],
+      "correct": "复习",
+      "instruction": "请选择合适的词语填空。",
+      "explanation": "明天有考试，今天晚上我要认真复习。"
+    },
+    {
+      "id": "hsk3-r2-03",
+      "skill": "reading",
+      "part": 2,
+      "kind": "reading-cloze",
+      "prompt": "这个问题不难，我相信你一定能＿＿＿。",
+      "choices": [
+        {
+          "value": "解决",
+          "label": "解决"
+        },
+        {
+          "value": "出现",
+          "label": "出现"
+        },
+        {
+          "value": "经过",
+          "label": "经过"
+        }
+      ],
+      "correct": "解决",
+      "instruction": "请选择合适的词语填空。",
+      "explanation": "这个问题不难，我相信你一定能解决。"
+    },
+    {
+      "id": "hsk3-r2-04",
+      "skill": "reading",
+      "part": 2,
+      "kind": "reading-cloze",
+      "prompt": "旅行以前别忘了＿＿＿护照。",
+      "choices": [
+        {
+          "value": "带",
+          "label": "带"
+        },
+        {
+          "value": "选择",
+          "label": "选择"
+        },
+        {
+          "value": "提高",
+          "label": "提高"
+        }
+      ],
+      "correct": "带",
+      "instruction": "请选择合适的词语填空。",
+      "explanation": "旅行以前别忘了带护照。"
+    },
+    {
+      "id": "hsk3-r2-05",
+      "skill": "reading",
+      "part": 2,
+      "kind": "reading-cloze",
+      "prompt": "我家离公司很远，坐地铁比较＿＿＿。",
+      "choices": [
+        {
+          "value": "方便",
+          "label": "方便"
+        },
+        {
+          "value": "安静",
+          "label": "安静"
+        },
+        {
+          "value": "新鲜",
+          "label": "新鲜"
+        }
+      ],
+      "correct": "方便",
+      "instruction": "请选择合适的词语填空。",
+      "explanation": "我家离公司很远，坐地铁比较方便。"
+    },
+    {
+      "id": "hsk3-r2-06",
+      "skill": "reading",
+      "part": 2,
+      "kind": "reading-cloze",
+      "prompt": "他每天坚持锻炼，身体越来越＿＿＿。",
+      "choices": [
+        {
+          "value": "健康",
+          "label": "健康"
+        },
+        {
+          "value": "简单",
+          "label": "简单"
+        },
+        {
+          "value": "年轻",
+          "label": "年轻"
+        }
+      ],
+      "correct": "健康",
+      "instruction": "请选择合适的词语填空。",
+      "explanation": "他每天坚持锻炼，身体越来越健康。"
+    },
+    {
+      "id": "hsk3-r2-07",
+      "skill": "reading",
+      "part": 2,
+      "kind": "reading-cloze",
+      "prompt": "请你再说一遍，我没听＿＿＿。",
+      "choices": [
+        {
+          "value": "清楚",
+          "label": "清楚"
+        },
+        {
+          "value": "干净",
+          "label": "干净"
+        },
+        {
+          "value": "认真",
+          "label": "认真"
+        }
+      ],
+      "correct": "清楚",
+      "instruction": "请选择合适的词语填空。",
+      "explanation": "请你再说一遍，我没听清楚。"
+    },
+    {
+      "id": "hsk3-r2-08",
+      "skill": "reading",
+      "part": 2,
+      "kind": "reading-cloze",
+      "prompt": "除了汉语以外，她＿＿＿会说英语。",
+      "choices": [
+        {
+          "value": "还",
+          "label": "还"
+        },
+        {
+          "value": "才",
+          "label": "才"
+        },
+        {
+          "value": "被",
+          "label": "被"
+        }
+      ],
+      "correct": "还",
+      "instruction": "请选择合适的词语填空。",
+      "explanation": "除了汉语以外，她还会说英语。"
+    },
+    {
+      "id": "hsk3-r2-09",
+      "skill": "reading",
+      "part": 2,
+      "kind": "reading-cloze",
+      "prompt": "这条裤子太长了，那条比较＿＿＿。",
+      "choices": [
+        {
+          "value": "短",
+          "label": "短"
+        },
+        {
+          "value": "有名",
+          "label": "有名"
+        },
+        {
+          "value": "热情",
+          "label": "热情"
+        }
+      ],
+      "correct": "短",
+      "instruction": "请选择合适的词语填空。",
+      "explanation": "这条裤子太长了，那条比较短。"
+    },
+    {
+      "id": "hsk3-r2-10",
+      "skill": "reading",
+      "part": 2,
+      "kind": "reading-cloze",
+      "prompt": "比赛马上开始，请大家＿＿＿安全。",
+      "choices": [
+        {
+          "value": "注意",
+          "label": "注意"
+        },
+        {
+          "value": "影响",
+          "label": "影响"
+        },
+        {
+          "value": "同意",
+          "label": "同意"
+        }
+      ],
+      "correct": "注意",
+      "instruction": "请选择合适的词语填空。",
+      "explanation": "比赛马上开始，请大家注意安全。"
+    },
+    {
+      "id": "hsk3-r3-01",
+      "skill": "reading",
+      "part": 3,
+      "kind": "reading-comprehension",
+      "prompt": "女：你怎么才到？男：路上突然下大雨，公共汽车也来得很慢。",
+      "subPrompt": "男的为什么迟到？",
+      "choices": [
+        {
+          "value": "汽车来得慢",
+          "label": "汽车来得慢"
+        },
+        {
+          "value": "忘了时间",
+          "label": "忘了时间"
+        },
+        {
+          "value": "起床晚了",
+          "label": "起床晚了"
+        }
+      ],
+      "correct": "汽车来得慢",
+      "instruction": "请阅读短文，选择正确答案。",
+      "explanation": "男的为什么迟到？ — 汽车来得慢"
+    },
+    {
+      "id": "hsk3-r3-02",
+      "skill": "reading",
+      "part": 3,
+      "kind": "reading-comprehension",
+      "prompt": "男：这件蓝衬衫你穿着正合适。女：可是我更喜欢那件白的。",
+      "subPrompt": "女的喜欢哪件？",
+      "choices": [
+        {
+          "value": "白衬衫",
+          "label": "白衬衫"
+        },
+        {
+          "value": "蓝衬衫",
+          "label": "蓝衬衫"
+        },
+        {
+          "value": "红裙子",
+          "label": "红裙子"
+        }
+      ],
+      "correct": "白衬衫",
+      "instruction": "请阅读短文，选择正确答案。",
+      "explanation": "女的喜欢哪件？ — 白衬衫"
+    },
+    {
+      "id": "hsk3-r3-03",
+      "skill": "reading",
+      "part": 3,
+      "kind": "reading-comprehension",
+      "prompt": "女：听说你找到新工作了？男：是的，下个月去银行上班。",
+      "subPrompt": "男的要去哪儿工作？",
+      "choices": [
+        {
+          "value": "银行",
+          "label": "银行"
+        },
+        {
+          "value": "学校",
+          "label": "学校"
+        },
+        {
+          "value": "超市",
+          "label": "超市"
+        }
+      ],
+      "correct": "银行",
+      "instruction": "请阅读短文，选择正确答案。",
+      "explanation": "男的要去哪儿工作？ — 银行"
+    },
+    {
+      "id": "hsk3-r3-04",
+      "skill": "reading",
+      "part": 3,
+      "kind": "reading-comprehension",
+      "prompt": "男：你认识新来的同事吗？女：昨天刚见面，她很热情。",
+      "subPrompt": "女的觉得新同事怎么样？",
+      "choices": [
+        {
+          "value": "很热情",
+          "label": "很热情"
+        },
+        {
+          "value": "很安静",
+          "label": "很安静"
+        },
+        {
+          "value": "很奇怪",
+          "label": "很奇怪"
+        }
+      ],
+      "correct": "很热情",
+      "instruction": "请阅读短文，选择正确答案。",
+      "explanation": "女的觉得新同事怎么样？ — 很热情"
+    },
+    {
+      "id": "hsk3-r3-05",
+      "skill": "reading",
+      "part": 3,
+      "kind": "reading-comprehension",
+      "prompt": "女：行李箱怎么这么重？男：里面有很多书，还有给朋友的礼物。",
+      "subPrompt": "箱子里主要有什么？",
+      "choices": [
+        {
+          "value": "书和礼物",
+          "label": "书和礼物"
+        },
+        {
+          "value": "衣服和鞋",
+          "label": "衣服和鞋"
+        },
+        {
+          "value": "水果和饮料",
+          "label": "水果和饮料"
+        }
+      ],
+      "correct": "书和礼物",
+      "instruction": "请阅读短文，选择正确答案。",
+      "explanation": "箱子里主要有什么？ — 书和礼物"
+    },
+    {
+      "id": "hsk3-r3-06",
+      "skill": "reading",
+      "part": 3,
+      "kind": "reading-comprehension",
+      "prompt": "男：你不是打算坐地铁吗？女：地铁今天有问题，我只好坐出租车。",
+      "subPrompt": "女的为什么坐出租车？",
+      "choices": [
+        {
+          "value": "地铁有问题",
+          "label": "地铁有问题"
+        },
+        {
+          "value": "时间太早",
+          "label": "时间太早"
+        },
+        {
+          "value": "行李太多",
+          "label": "行李太多"
+        }
+      ],
+      "correct": "地铁有问题",
+      "instruction": "请阅读短文，选择正确答案。",
+      "explanation": "女的为什么坐出租车？ — 地铁有问题"
+    },
+    {
+      "id": "hsk3-r3-07",
+      "skill": "reading",
+      "part": 3,
+      "kind": "reading-comprehension",
+      "prompt": "女：这张照片是在北京照的吗？男：不是，是去年去上海旅游时照的。",
+      "subPrompt": "照片在哪儿照的？",
+      "choices": [
+        {
+          "value": "上海",
+          "label": "上海"
+        },
+        {
+          "value": "北京",
+          "label": "北京"
+        },
+        {
+          "value": "家里",
+          "label": "家里"
+        }
+      ],
+      "correct": "上海",
+      "instruction": "请阅读短文，选择正确答案。",
+      "explanation": "照片在哪儿照的？ — 上海"
+    },
+    {
+      "id": "hsk3-r3-08",
+      "skill": "reading",
+      "part": 3,
+      "kind": "reading-comprehension",
+      "prompt": "男：你的汉语水平提高得真快。女：我每天听新闻，还经常和中国朋友说话。",
+      "subPrompt": "女的怎么学习汉语？",
+      "choices": [
+        {
+          "value": "听新闻说话",
+          "label": "听新闻说话"
+        },
+        {
+          "value": "只做作业",
+          "label": "只做作业"
+        },
+        {
+          "value": "只看电影",
+          "label": "只看电影"
+        }
+      ],
+      "correct": "听新闻说话",
+      "instruction": "请阅读短文，选择正确答案。",
+      "explanation": "女的怎么学习汉语？ — 听新闻说话"
+    },
+    {
+      "id": "hsk3-r3-09",
+      "skill": "reading",
+      "part": 3,
+      "kind": "reading-comprehension",
+      "prompt": "女：冰箱里什么都没有了。男：那我们先去超市，然后回家做饭。",
+      "subPrompt": "他们先做什么？",
+      "choices": [
+        {
+          "value": "去超市",
+          "label": "去超市"
+        },
+        {
+          "value": "回家",
+          "label": "回家"
+        },
+        {
+          "value": "去饭馆",
+          "label": "去饭馆"
+        }
+      ],
+      "correct": "去超市",
+      "instruction": "请阅读短文，选择正确答案。",
+      "explanation": "他们先做什么？ — 去超市"
+    },
+    {
+      "id": "hsk3-r3-10",
+      "skill": "reading",
+      "part": 3,
+      "kind": "reading-comprehension",
+      "prompt": "男：你为什么一直看地图？女：我在找附近的宾馆，宾馆就在前面。",
+      "subPrompt": "女的在找什么？",
+      "choices": [
+        {
+          "value": "宾馆",
+          "label": "宾馆"
+        },
+        {
+          "value": "银行",
+          "label": "银行"
+        },
+        {
+          "value": "图书馆",
+          "label": "图书馆"
+        }
+      ],
+      "correct": "宾馆",
+      "instruction": "请阅读短文，选择正确答案。",
+      "explanation": "女的在找什么？ — 宾馆"
+    },
+    {
+      "id": "hsk3-w1-01",
+      "skill": "writing",
+      "part": 1,
+      "kind": "reorder",
+      "tokens": [
+        "我",
+        "每天",
+        "学习",
+        "汉语"
+      ],
+      "answer": "我每天学习汉语。",
+      "instruction": "请把下面的词语排列成正确的句子。",
+      "selected": []
+    },
+    {
+      "id": "hsk3-w1-02",
+      "skill": "writing",
+      "part": 1,
+      "kind": "reorder",
+      "tokens": [
+        "他",
+        "正在",
+        "看",
+        "报纸"
+      ],
+      "answer": "他正在看报纸。",
+      "instruction": "请把下面的词语排列成正确的句子。",
+      "selected": []
+    },
+    {
+      "id": "hsk3-w1-03",
+      "skill": "writing",
+      "part": 1,
+      "kind": "reorder",
+      "tokens": [
+        "明天",
+        "可能",
+        "下雨"
+      ],
+      "answer": "明天可能下雨。",
+      "instruction": "请把下面的词语排列成正确的句子。",
+      "selected": []
+    },
+    {
+      "id": "hsk3-w1-04",
+      "skill": "writing",
+      "part": 1,
+      "kind": "reorder",
+      "tokens": [
+        "我家",
+        "离",
+        "学校",
+        "很近"
+      ],
+      "answer": "我家离学校很近。",
+      "instruction": "请把下面的词语排列成正确的句子。",
+      "selected": []
+    },
+    {
+      "id": "hsk3-w1-05",
+      "skill": "writing",
+      "part": 1,
+      "kind": "reorder",
+      "tokens": [
+        "她",
+        "比",
+        "我",
+        "高"
+      ],
+      "answer": "她比我高。",
+      "instruction": "请把下面的词语排列成正确的句子。",
+      "selected": []
+    },
+    {
+      "id": "hsk3-w2-01",
+      "skill": "writing",
+      "part": 2,
+      "kind": "input",
+      "sentence": "我每天七点（qǐ）床。",
+      "answer": "起",
+      "instruction": "请根据拼音在空格上写汉字。"
+    },
+    {
+      "id": "hsk3-w2-02",
+      "skill": "writing",
+      "part": 2,
+      "kind": "input",
+      "sentence": "今天天气很（rè）。",
+      "answer": "热",
+      "instruction": "请根据拼音在空格上写汉字。"
+    },
+    {
+      "id": "hsk3-w2-03",
+      "skill": "writing",
+      "part": 2,
+      "kind": "input",
+      "sentence": "请喝一（bēi）茶。",
+      "answer": "杯",
+      "instruction": "请根据拼音在空格上写汉字。"
+    },
+    {
+      "id": "hsk3-w2-04",
+      "skill": "writing",
+      "part": 2,
+      "kind": "input",
+      "sentence": "她今年二十（suì）。",
+      "answer": "岁",
+      "instruction": "请根据拼音在空格上写汉字。"
+    },
+    {
+      "id": "hsk3-w2-05",
+      "skill": "writing",
+      "part": 2,
+      "kind": "input",
+      "sentence": "我们坐公共汽（chē）去。",
+      "answer": "车",
+      "instruction": "请根据拼音在空格上写汉字。"
+    }
+  ]
+}

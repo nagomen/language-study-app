@@ -1,0 +1,346 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="description" content="言語アプリの中国語・HSK学習ページ" />
+    <title>中国語・HSK | 言語アプリ</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="メインナビゲーション">
+        <a class="brand" href="#home" aria-label="你好！ホーム">
+          <span class="brand-mark">你</span>
+          <span><strong>中国語</strong><small>HSK 1–3級</small></span>
+        </a>
+
+        <nav class="nav-list">
+          <button class="nav-item is-active" data-view="home" type="button">
+            <span aria-hidden="true">⌂</span>ホーム
+          </button>
+          <button class="nav-item" data-view="words" type="button">
+            <span aria-hidden="true">字</span>単語一覧
+          </button>
+          <button class="nav-item" data-view="examples" type="button">
+            <span aria-hidden="true">文</span>例文集
+          </button>
+          <button class="nav-item" data-view="checked" type="button">
+            <span aria-hidden="true">✓</span>チェック<b id="checked-nav-count" class="nav-count is-hidden">0</b>
+          </button>
+          <button class="nav-item" data-view="exam" type="button">
+            <span aria-hidden="true">試</span>試験対策
+          </button>
+          <button class="nav-item" data-view="progress" type="button">
+            <span aria-hidden="true">↗</span>学習記録
+          </button>
+        </nav>
+
+        <div class="language-links">
+          <a href="index.html">← 言語を選ぶ</a>
+          <a href="spanish.html">Español →</a>
+        </div>
+        <div class="sidebar-streak">
+          <span class="streak-flame" aria-hidden="true">火</span>
+          <div><strong id="sidebar-streak">0日</strong><small>連続学習</small></div>
+        </div>
+      </aside>
+      <button class="mobile-backdrop" type="button" aria-label="メニューを閉じる"></button>
+
+      <main class="main-content">
+        <header class="mobile-header">
+          <a class="brand" href="#home"><span class="brand-mark">你</span><strong>中国語</strong></a>
+          <button class="mobile-menu" type="button" aria-label="メニューを開く" aria-expanded="false">☰</button>
+        </header>
+
+        <section id="home-view" class="view is-visible" aria-labelledby="welcome-title">
+          <div class="welcome-row">
+            <div>
+              <p class="eyebrow">今日も一歩ずつ</p>
+              <h1 id="welcome-title">你好、<span>学習者さん！</span></h1>
+              <p>今日はどのレベルから始めますか？</p>
+            </div>
+            <div class="today-badge"><span>今週</span><strong id="week-count">0</strong><small>問に挑戦</small></div>
+          </div>
+
+          <div class="hero-card">
+            <div>
+              <span class="hero-kicker">DAILY CHINESE</span>
+              <h2>小さな積み重ねが、<br />大きな自信になる。</h2>
+              <p>レベルを選んで、今日の学習を始めましょう。</p>
+            </div>
+            <div class="hero-art" aria-hidden="true">
+              <span class="sun"></span><span class="mountain mountain-back"></span><span class="mountain mountain-front"></span>
+              <span class="hero-hanzi">学</span>
+            </div>
+          </div>
+
+          <div class="section-heading">
+            <div><p class="eyebrow">SELECT LEVEL</p><h2>学習レベルを選ぶ</h2></div>
+            <span id="total-words-label">読み込み中…</span>
+          </div>
+          <div class="quiz-direction-picker">
+            <div class="quiz-direction-copy">
+              <strong>出題モード</strong>
+              <small id="quiz-direction-note">中国語を見て、日本語の意味を選びます。</small>
+            </div>
+            <div class="quiz-direction-options" role="group" aria-label="単語テストの出題方向">
+              <button class="quiz-direction-button is-active" type="button" data-vocabulary-direction="cn-ja" aria-pressed="true">
+                <span>中 → 日</span><small>意味を選ぶ</small>
+              </button>
+              <button class="quiz-direction-button" type="button" data-vocabulary-direction="ja-cn" aria-pressed="false">
+                <span>日 → 中</span><small>漢字＋ピンイン</small>
+              </button>
+            </div>
+          </div>
+          <div id="level-grid" class="level-grid" aria-live="polite"></div>
+
+          <div class="quick-row">
+            <button id="random-quiz" class="quick-card" type="button">
+              <span class="quick-icon coral">随</span>
+              <span><strong>おまかせ10問</strong><small>全レベルからランダム出題</small></span>
+              <span aria-hidden="true">→</span>
+            </button>
+            <button id="review-quiz" class="quick-card" type="button">
+              <span class="quick-icon blue">復</span>
+              <span><strong>まちがい復習</strong><small id="review-count-label">復習する単語はありません</small></span>
+              <span aria-hidden="true">→</span>
+            </button>
+            <button id="open-examples" class="quick-card" type="button">
+              <span class="quick-icon green">文</span>
+              <span><strong>例文から学ぶ</strong><small>単語を文の中で覚える</small></span>
+              <span aria-hidden="true">→</span>
+            </button>
+            <button id="open-checked" class="quick-card" type="button">
+              <span class="quick-icon yellow">✓</span>
+              <span><strong>チェックした単語</strong><small id="checked-count-label">気になる単語に✓を付けましょう</small></span>
+              <span aria-hidden="true">→</span>
+            </button>
+            <button id="open-exam" class="quick-card" type="button">
+              <span class="quick-icon ink">試</span>
+              <span><strong>HSK試験対策</strong><small>聴解・読解・作文・本番模試</small></span>
+              <span aria-hidden="true">→</span>
+            </button>
+          </div>
+        </section>
+
+        <section id="quiz-view" class="view" aria-labelledby="quiz-title">
+          <div class="quiz-topbar">
+            <button id="quiz-close" class="icon-button" type="button" aria-label="クイズを終了">×</button>
+            <div class="quiz-progress-track"><span id="quiz-progress-bar"></span></div>
+            <strong id="quiz-step">1 / 10</strong>
+          </div>
+          <div class="quiz-layout">
+            <div class="quiz-meta"><span id="quiz-level" class="level-pill">HSK 1</span><span id="quiz-kind">意味を選んでください</span></div>
+            <article class="question-card">
+              <button id="speak-button" class="speak-button" type="button" aria-label="中国語の発音を聞く"><span aria-hidden="true">声</span></button>
+              <p id="question-label">この単語の意味は？</p>
+              <h1 id="quiz-hanzi">你好</h1>
+              <p id="quiz-pinyin" class="pinyin">nǐ hǎo</p>
+            </article>
+            <div id="answer-list" class="answer-list"></div>
+            <div id="answer-feedback" class="answer-feedback" aria-live="polite"></div>
+            <article id="quiz-example" class="quiz-example is-hidden" aria-live="polite">
+              <div class="quiz-example-head">
+                <span>この単語を使った例文</span>
+                <button id="quiz-example-audio" class="sentence-audio" type="button"><span aria-hidden="true">▶</span> 例文を聞く</button>
+              </div>
+              <p id="quiz-example-chinese" class="example-chinese"></p>
+              <p id="quiz-example-pinyin" class="example-pinyin"></p>
+              <p id="quiz-example-japanese" class="example-japanese"></p>
+              <p id="quiz-example-empty" class="empty-inline is-hidden">この単語の例文データはまだありません。</p>
+            </article>
+            <button id="next-question" class="primary-button is-hidden" type="button">次の問題へ <span>→</span></button>
+          </div>
+        </section>
+
+        <section id="words-view" class="view" aria-labelledby="words-title">
+          <div class="page-heading"><div><p class="eyebrow">VOCABULARY</p><h1 id="words-title">単語一覧</h1><p>JSONに登録された単語を確認できます。</p></div></div>
+          <div class="toolbar">
+            <div class="level-tabs" role="group" aria-label="HSKレベルで絞り込み">
+              <button class="filter-chip is-active" type="button" data-level="all">すべて</button>
+              <button class="filter-chip" type="button" data-level="1">HSK 1</button>
+              <button class="filter-chip" type="button" data-level="2">HSK 2</button>
+              <button class="filter-chip" type="button" data-level="3">HSK 3</button>
+            </div>
+            <button class="check-chip" type="button" data-check-filter="words" aria-pressed="false"><span aria-hidden="true">✓</span> チェックのみ</button>
+            <label class="search-box"><span aria-hidden="true">⌕</span><input id="word-search" type="search" placeholder="漢字・ピンイン・意味で検索" /></label>
+          </div>
+          <div id="word-list" class="word-list"></div>
+          <p id="empty-words" class="empty-state is-hidden">該当する単語がありません。</p>
+        </section>
+
+        <section id="examples-view" class="view" aria-labelledby="examples-title">
+          <div class="page-heading examples-heading">
+            <div><p class="eyebrow">EXAMPLE SENTENCES</p><h1 id="examples-title">例文集</h1><p>単語を文の中で覚え、自然な使い方と音を身につけましょう。</p></div>
+            <div class="example-total"><strong id="example-total-count">0</strong><span>例文</span></div>
+          </div>
+          <div class="toolbar">
+            <div class="level-tabs" role="group" aria-label="例文をHSKレベルで絞り込み">
+              <button class="example-filter-chip filter-chip is-active" type="button" data-example-level="all">すべて</button>
+              <button class="example-filter-chip filter-chip" type="button" data-example-level="1">HSK 1</button>
+              <button class="example-filter-chip filter-chip" type="button" data-example-level="2">HSK 2</button>
+              <button class="example-filter-chip filter-chip" type="button" data-example-level="3">HSK 3</button>
+            </div>
+            <button class="check-chip" type="button" data-check-filter="examples" aria-pressed="false"><span aria-hidden="true">✓</span> チェックのみ</button>
+            <label class="search-box"><span aria-hidden="true">⌕</span><input id="example-search" type="search" placeholder="単語・例文・訳から検索" /></label>
+          </div>
+          <div id="example-list" class="example-list"></div>
+          <div id="empty-examples" class="empty-state is-hidden">
+            <span class="empty-hanzi">文</span>
+            <strong>該当する例文はまだありません</strong>
+            <p>検索条件やレベルを変えてみてください。</p>
+          </div>
+        </section>
+
+        <section id="checked-view" class="view" aria-labelledby="checked-title">
+          <div class="page-heading examples-heading">
+            <div><p class="eyebrow">MARKED WORDS</p><h1 id="checked-title">チェックした単語</h1><p>気になった単語をまとめて振り返り、そのまま出題できます。</p></div>
+            <div class="example-total"><strong id="checked-total-count">0</strong><span>単語</span></div>
+          </div>
+          <div class="checked-actions">
+            <button class="primary-button" type="button" data-checked-action="quiz">チェックした単語でテスト <span>→</span></button>
+            <button class="secondary-button" type="button" data-checked-action="reading">読解の問題を見る</button>
+            <button class="secondary-button" type="button" data-checked-action="listening">聴解の問題を見る</button>
+          </div>
+          <div id="checked-list" class="checked-list"></div>
+          <div id="empty-checked" class="empty-state is-hidden">
+            <span class="empty-hanzi">✓</span>
+            <strong>チェックした単語はまだありません</strong>
+            <p>単語一覧・例文集・テストの振り返りにある ✓ ボタンで追加できます。</p>
+          </div>
+          <button id="clear-checked" class="text-button is-hidden" type="button">チェックをすべて解除</button>
+        </section>
+
+        <section id="exam-view" class="view" aria-labelledby="exam-title">
+          <div class="page-heading exam-heading">
+            <div><p class="eyebrow">HSK EXAM TRAINING</p><h1 id="exam-title">試験対策</h1><p>本番形式で「聞く・読む・書く」を鍛えます。</p></div>
+            <div class="exam-controls">
+              <span class="audio-quality-badge">固定44.1kHz音声</span>
+              <label class="exam-level-select">音声速度<select id="audio-speed"><option value="0.85">ゆっくり 0.85×</option><option value="1">標準 1.0×</option><option value="1.15">シャドーイング 1.15×</option></select></label>
+              <label class="exam-level-select">練習レベル<select id="practice-level"><option value="1">HSK 1</option><option value="2">HSK 2</option><option value="3">HSK 3</option></select></label>
+            </div>
+          </div>
+          <div class="training-grid">
+            <article class="training-card listening-card"><span class="training-kanji">听</span><p class="eyebrow">LISTENING</p><h2>聴解トレーニング</h2><p>単語・短文を聞き、意味を選択。問題中は漢字やピンインを隠します。</p><button type="button" data-practice="listening">10問練習する <span>→</span></button></article>
+            <article class="training-card reading-card"><span class="training-kanji">读</span><p class="eyebrow">READING</p><h2>読解トレーニング</h2><p>意味選択、ピンイン選択、例文の穴埋めをランダムに出題します。</p><button type="button" data-practice="reading">10問練習する <span>→</span></button></article>
+            <article class="training-card writing-card"><span class="training-kanji">写</span><p class="eyebrow">WRITING · HSK 3</p><h2>作文トレーニング</h2><p>語順の並べ替えと、ピンインから漢字を書く問題を練習します。</p><button type="button" data-practice="writing">10問練習する <span>→</span></button></article>
+            <article class="training-card review-card"><span class="training-kanji">复</span><p class="eyebrow">SMART REVIEW</p><h2>今日の間隔反復</h2><p>忘れそうな単語を優先し、1・3・7・14・30日間隔で復習します。</p><div class="training-count"><strong id="due-word-count">0</strong>語が復習対象</div><button type="button" data-practice="srs">復習を始める <span>→</span></button></article>
+          </div>
+          <div class="section-heading"><div><p class="eyebrow">FULL MOCK EXAM · HSK 2.0</p><h2>写真なし本番形式模試</h2></div><span>公式パート比率・セクション別時間／前のセクションには戻れません</span></div>
+          <div class="mock-grid">
+            <button class="mock-card" type="button" data-mock-level="1"><span>HSK 1</span><strong>40問</strong><small>聴解20・読解20／35分</small><b>模試を開始 →</b></button>
+            <button class="mock-card" type="button" data-mock-level="2"><span>HSK 2</span><strong>60問</strong><small>聴解35・読解25／50分</small><b>模試を開始 →</b></button>
+            <button class="mock-card" type="button" data-mock-level="3"><span>HSK 3</span><strong>80問</strong><small>聴解40・読解30・作文10／85分</small><b>模試を開始 →</b></button>
+          </div>
+          <aside class="mock-format-note"><strong>日本で実施中のHSK筆記1〜3級形式に準拠</strong><p>写真問題は簡易イラスト記号で代替しています。聴解は試験速度で自動的に2回再生され、模試中は速度変更できません。表示点は技能ごとの正答率を100点換算した自己採点の目安です。</p></aside>
+        </section>
+
+        <section id="practice-view" class="view" aria-labelledby="practice-title">
+          <div class="quiz-topbar practice-topbar">
+            <button id="practice-close" class="icon-button" type="button" aria-label="練習を終了">×</button>
+            <div class="quiz-progress-track"><span id="practice-progress-bar"></span></div>
+            <strong id="practice-step">1 / 10</strong>
+            <time id="practice-timer" class="practice-timer is-hidden">00:00</time>
+          </div>
+          <div class="practice-layout">
+            <div class="quiz-meta"><span id="practice-level-label" class="level-pill">HSK 1</span><span id="practice-mode-label">聴解</span></div>
+            <article id="practice-question" class="practice-question-card">
+              <p id="practice-instruction"></p>
+              <div id="practice-prompt"></div>
+              <button id="practice-audio" class="audio-play-button is-hidden" type="button"><span aria-hidden="true">▶</span> <span id="practice-audio-label">音声を再生</span> <small id="audio-play-count"></small></button>
+            </article>
+            <div id="practice-answer-area" class="practice-answer-area"></div>
+            <div id="practice-feedback" class="answer-feedback" aria-live="polite"></div>
+            <button id="practice-next" class="primary-button is-hidden" type="button">次の問題へ <span>→</span></button>
+          </div>
+        </section>
+
+        <section id="practice-result-view" class="view result-view" aria-labelledby="practice-result-title">
+          <div id="practice-result-mark" class="result-burst" aria-hidden="true">成</div>
+          <p class="eyebrow">TRAINING COMPLETE</p>
+          <h1 id="practice-result-title">トレーニング完了</h1>
+          <p id="practice-result-subtitle">今回の結果</p>
+          <div class="result-score"><strong id="practice-result-score">0</strong><span id="practice-result-unit">/ 10 問</span></div>
+          <div id="practice-breakdown" class="result-breakdown"></div>
+          <p id="practice-result-message" class="result-message"></p>
+          <section id="practice-review" class="review-panel is-hidden" data-review-key="practice" aria-labelledby="practice-review-title">
+            <div class="review-head">
+              <div><p class="eyebrow">REVIEW</p><h2 id="practice-review-title">振り返り</h2></div>
+              <div class="review-filter" role="group" aria-label="振り返りの表示切り替え">
+                <button class="review-chip is-active" type="button" data-review-scope="all" aria-pressed="true">すべて <b class="review-count-total">0</b></button>
+                <button class="review-chip" type="button" data-review-scope="wrong" aria-pressed="false">まちがい <b class="review-count-missed">0</b></button>
+              </div>
+            </div>
+            <ol class="review-list"></ol>
+            <p class="review-empty empty-inline is-hidden"></p>
+          </section>
+          <div class="result-actions"><button id="practice-retry" class="primary-button" type="button">もう一度</button><button id="practice-home" class="secondary-button" type="button">試験対策へ</button></div>
+        </section>
+
+        <section id="progress-view" class="view" aria-labelledby="progress-title">
+          <div class="page-heading"><div><p class="eyebrow">YOUR PROGRESS</p><h1 id="progress-title">学習記録</h1><p>この端末での学習状況です。</p></div></div>
+          <div class="stats-grid">
+            <article class="stat-card coral-card"><span>回答した問題</span><strong id="stat-answered">0</strong><small>問</small></article>
+            <article class="stat-card blue-card"><span>正解した問題</span><strong id="stat-correct">0</strong><small>問</small></article>
+            <article class="stat-card yellow-card"><span>正答率</span><strong id="stat-rate">—</strong><small></small></article>
+          </div>
+          <div class="mastery-grid">
+            <article><span>今日の復習</span><strong id="stat-due">0</strong><small>語</small></article>
+            <article><span>学習中</span><strong id="stat-learning">0</strong><small>語</small></article>
+            <article><span>定着</span><strong id="stat-mastered">0</strong><small>語</small></article>
+          </div>
+          <article class="progress-panel"><div class="section-heading"><div><p class="eyebrow">BY SKILL</p><h2>技能別の正答率</h2></div></div><div id="skill-progress-list" class="level-progress-list"></div></article>
+          <article class="progress-panel"><div class="section-heading"><div><p class="eyebrow">MOCK HISTORY</p><h2>模試の履歴</h2></div></div><div id="mock-history-list" class="mock-history-list"></div></article>
+          <article class="progress-panel">
+            <div class="section-heading"><div><p class="eyebrow">BY LEVEL</p><h2>レベル別の正答率</h2></div></div>
+            <div id="level-progress-list" class="level-progress-list"></div>
+          </article>
+          <button id="reset-progress" class="text-button" type="button">学習記録をリセット</button>
+        </section>
+
+        <section id="result-view" class="view result-view" aria-labelledby="result-title">
+          <div class="result-burst" aria-hidden="true">好</div>
+          <p class="eyebrow">SESSION COMPLETE</p>
+          <h1 id="result-title">おつかれさまでした！</h1>
+          <p>今回の結果</p>
+          <div class="result-score"><strong id="result-correct">0</strong><span>/ <b id="result-total">0</b> 問</span></div>
+          <p id="result-message" class="result-message"></p>
+          <section id="quiz-review" class="review-panel is-hidden" data-review-key="quiz" aria-labelledby="quiz-review-title">
+            <div class="review-head">
+              <div><p class="eyebrow">REVIEW</p><h2 id="quiz-review-title">振り返り</h2></div>
+              <div class="review-filter" role="group" aria-label="振り返りの表示切り替え">
+                <button class="review-chip is-active" type="button" data-review-scope="all" aria-pressed="true">すべて <b class="review-count-total">0</b></button>
+                <button class="review-chip" type="button" data-review-scope="wrong" aria-pressed="false">まちがい <b class="review-count-missed">0</b></button>
+              </div>
+            </div>
+            <ol class="review-list"></ol>
+            <p class="review-empty empty-inline is-hidden"></p>
+          </section>
+          <div class="result-actions">
+            <button id="retry-quiz" class="primary-button" type="button">もう一度挑戦</button>
+            <button id="back-home" class="secondary-button" type="button">ホームへ戻る</button>
+          </div>
+        </section>
+      </main>
+      <nav class="mobile-bottom-nav" aria-label="スマートフォン用ナビゲーション">
+        <button class="nav-item is-active" data-view="home" type="button"><span aria-hidden="true">⌂</span><small>ホーム</small></button>
+        <button class="nav-item" data-view="words" type="button"><span aria-hidden="true">字</span><small>単語</small></button>
+        <button class="nav-item" data-view="examples" type="button"><span aria-hidden="true">文</span><small>例文</small></button>
+        <button class="nav-item" data-view="checked" type="button"><span aria-hidden="true">✓</span><small>チェック</small></button>
+        <button class="nav-item" data-view="exam" type="button"><span aria-hidden="true">試</span><small>試験</small></button>
+        <button class="nav-item" data-view="progress" type="button"><span aria-hidden="true">↗</span><small>記録</small></button>
+      </nav>
+    </div>
+
+    <template id="level-card-template">
+      <article class="level-card">
+        <div class="level-number"><span>HSK</span><strong></strong></div>
+        <div class="level-copy"><span class="level-name"></span><h3></h3><p></p></div>
+        <div class="level-footer"><span class="word-count"></span><button class="start-level" type="button">学習する <span>→</span></button></div>
+      </article>
+    </template>
+
+    <script src="app.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,1663 @@
+{
+  "version": 2,
+  "level": 2,
+  "format": "HSK 2.0（日本実施形式）・写真問題は記号イラストで代替",
+  "generatedAt": "2026-08-22T07:58:49.609Z",
+  "questions": [
+    {
+      "id": "hsk2-l1-01",
+      "skill": "listening",
+      "part": 1,
+      "kind": "visual-judge",
+      "audioText": "弟弟正在打篮球。",
+      "audioFile": "audio/sentences/hsk2-l1-01.wav",
+      "instruction": "请听录音，判断内容是否与图示一致。",
+      "explanation": "弟弟正在打篮球。",
+      "visual": {
+        "symbol": "🏀",
+        "alt": "バスケットボールをする人"
+      },
+      "choices": [
+        {
+          "value": "true",
+          "label": "对"
+        },
+        {
+          "value": "false",
+          "label": "不对"
+        }
+      ],
+      "correct": "true"
+    },
+    {
+      "id": "hsk2-l1-02",
+      "skill": "listening",
+      "part": 1,
+      "kind": "visual-judge",
+      "audioText": "哥哥每天早上跑步。",
+      "audioFile": "audio/sentences/hsk2-l1-02.wav",
+      "instruction": "请听录音，判断内容是否与图示一致。",
+      "explanation": "哥哥每天早上跑步。",
+      "visual": {
+        "symbol": "🚲",
+        "alt": "自転車で通勤する人"
+      },
+      "choices": [
+        {
+          "value": "true",
+          "label": "对"
+        },
+        {
+          "value": "false",
+          "label": "不对"
+        }
+      ],
+      "correct": "false"
+    },
+    {
+      "id": "hsk2-l1-03",
+      "skill": "listening",
+      "part": 1,
+      "kind": "visual-judge",
+      "audioText": "她最喜欢游泳。",
+      "audioFile": "audio/sentences/hsk2-l1-03.wav",
+      "instruction": "请听录音，判断内容是否与图示一致。",
+      "explanation": "她最喜欢游泳。",
+      "visual": {
+        "symbol": "🏊",
+        "alt": "泳ぐ人"
+      },
+      "choices": [
+        {
+          "value": "true",
+          "label": "对"
+        },
+        {
+          "value": "false",
+          "label": "不对"
+        }
+      ],
+      "correct": "true"
+    },
+    {
+      "id": "hsk2-l1-04",
+      "skill": "listening",
+      "part": 1,
+      "kind": "visual-judge",
+      "audioText": "我坐公共汽车去公司。",
+      "audioFile": "audio/sentences/hsk2-l1-04.wav",
+      "instruction": "请听录音，判断内容是否与图示一致。",
+      "explanation": "我坐公共汽车去公司。",
+      "visual": {
+        "symbol": "👗",
+        "alt": "赤い服を着た人"
+      },
+      "choices": [
+        {
+          "value": "true",
+          "label": "对"
+        },
+        {
+          "value": "false",
+          "label": "不对"
+        }
+      ],
+      "correct": "false"
+    },
+    {
+      "id": "hsk2-l1-05",
+      "skill": "listening",
+      "part": 1,
+      "kind": "visual-judge",
+      "audioText": "他骑自行车上班。",
+      "audioFile": "audio/sentences/hsk2-l1-05.wav",
+      "instruction": "请听录音，判断内容是否与图示一致。",
+      "explanation": "他骑自行车上班。",
+      "visual": {
+        "symbol": "🚲",
+        "alt": "自転車で通勤する人"
+      },
+      "choices": [
+        {
+          "value": "true",
+          "label": "对"
+        },
+        {
+          "value": "false",
+          "label": "不对"
+        }
+      ],
+      "correct": "true"
+    },
+    {
+      "id": "hsk2-l1-06",
+      "skill": "listening",
+      "part": 1,
+      "kind": "visual-judge",
+      "audioText": "外面下雪了。",
+      "audioFile": "audio/sentences/hsk2-l1-06.wav",
+      "instruction": "请听录音，判断内容是否与图示一致。",
+      "explanation": "外面下雪了。",
+      "visual": {
+        "symbol": "📰",
+        "alt": "新聞を読む人"
+      },
+      "choices": [
+        {
+          "value": "true",
+          "label": "对"
+        },
+        {
+          "value": "false",
+          "label": "不对"
+        }
+      ],
+      "correct": "false"
+    },
+    {
+      "id": "hsk2-l1-07",
+      "skill": "listening",
+      "part": 1,
+      "kind": "visual-judge",
+      "audioText": "姐姐穿着红色的衣服。",
+      "audioFile": "audio/sentences/hsk2-l1-07.wav",
+      "instruction": "请听录音，判断内容是否与图示一致。",
+      "explanation": "姐姐穿着红色的衣服。",
+      "visual": {
+        "symbol": "👗",
+        "alt": "赤い服を着た人"
+      },
+      "choices": [
+        {
+          "value": "true",
+          "label": "对"
+        },
+        {
+          "value": "false",
+          "label": "不对"
+        }
+      ],
+      "correct": "true"
+    },
+    {
+      "id": "hsk2-l1-08",
+      "skill": "listening",
+      "part": 1,
+      "kind": "visual-judge",
+      "audioText": "今天是孩子的生日。",
+      "audioFile": "audio/sentences/hsk2-l1-08.wav",
+      "instruction": "请听录音，判断内容是否与图示一致。",
+      "explanation": "今天是孩子的生日。",
+      "visual": {
+        "symbol": "🥚",
+        "alt": "卵を買う人"
+      },
+      "choices": [
+        {
+          "value": "true",
+          "label": "对"
+        },
+        {
+          "value": "false",
+          "label": "不对"
+        }
+      ],
+      "correct": "false"
+    },
+    {
+      "id": "hsk2-l1-09",
+      "skill": "listening",
+      "part": 1,
+      "kind": "visual-judge",
+      "audioText": "爸爸在看报纸。",
+      "audioFile": "audio/sentences/hsk2-l1-09.wav",
+      "instruction": "请听录音，判断内容是否与图示一致。",
+      "explanation": "爸爸在看报纸。",
+      "visual": {
+        "symbol": "📰",
+        "alt": "新聞を読む人"
+      },
+      "choices": [
+        {
+          "value": "true",
+          "label": "对"
+        },
+        {
+          "value": "false",
+          "label": "不对"
+        }
+      ],
+      "correct": "true"
+    },
+    {
+      "id": "hsk2-l1-10",
+      "skill": "listening",
+      "part": 1,
+      "kind": "visual-judge",
+      "audioText": "这块手表很贵。",
+      "audioFile": "audio/sentences/hsk2-l1-10.wav",
+      "instruction": "请听录音，判断内容是否与图示一致。",
+      "explanation": "这块手表很贵。",
+      "visual": {
+        "symbol": "🎤",
+        "alt": "歌う人"
+      },
+      "choices": [
+        {
+          "value": "true",
+          "label": "对"
+        },
+        {
+          "value": "false",
+          "label": "不对"
+        }
+      ],
+      "correct": "false"
+    },
+    {
+      "id": "hsk2-l2-01",
+      "skill": "listening",
+      "part": 2,
+      "kind": "visual-choice",
+      "audioText": "我买了两公斤鸡蛋。",
+      "audioFile": "audio/sentences/hsk2-l2-01.wav",
+      "instruction": "请听录音，选择相应的图示。",
+      "explanation": "我买了两公斤鸡蛋。",
+      "choices": [
+        {
+          "value": "🥚",
+          "label": "🥚",
+          "ariaLabel": "卵を買う人"
+        },
+        {
+          "value": "🎫",
+          "label": "🎫",
+          "ariaLabel": "空港で切符を買う人"
+        },
+        {
+          "value": "☕",
+          "label": "☕",
+          "ariaLabel": "コーヒーを運ぶ店員"
+        }
+      ],
+      "correct": "🥚"
+    },
+    {
+      "id": "hsk2-l2-02",
+      "skill": "listening",
+      "part": 2,
+      "kind": "visual-choice",
+      "audioText": "她生病了，要吃药。",
+      "audioFile": "audio/sentences/hsk2-l2-02.wav",
+      "instruction": "请听录音，选择相应的图示。",
+      "explanation": "她生病了，要吃药。",
+      "choices": [
+        {
+          "value": "💊",
+          "label": "💊",
+          "ariaLabel": "薬を飲む病人"
+        },
+        {
+          "value": "🥛",
+          "label": "🥛",
+          "ariaLabel": "牛乳を飲む子ども"
+        },
+        {
+          "value": "🚪",
+          "label": "🚪",
+          "ariaLabel": "開いているドア"
+        }
+      ],
+      "correct": "💊"
+    },
+    {
+      "id": "hsk2-l2-03",
+      "skill": "listening",
+      "part": 2,
+      "kind": "visual-choice",
+      "audioText": "妹妹在唱歌。",
+      "audioFile": "audio/sentences/hsk2-l2-03.wav",
+      "instruction": "请听录音，选择相应的图示。",
+      "explanation": "妹妹在唱歌。",
+      "choices": [
+        {
+          "value": "🎤",
+          "label": "🎤",
+          "ariaLabel": "歌う人"
+        },
+        {
+          "value": "💃",
+          "label": "💃",
+          "ariaLabel": "一緒に踊る人々"
+        },
+        {
+          "value": "🧼",
+          "label": "🧼",
+          "ariaLabel": "服を洗う人"
+        }
+      ],
+      "correct": "🎤"
+    },
+    {
+      "id": "hsk2-l2-04",
+      "skill": "listening",
+      "part": 2,
+      "kind": "visual-choice",
+      "audioText": "他们下午踢足球。",
+      "audioFile": "audio/sentences/hsk2-l2-04.wav",
+      "instruction": "请听录音，选择相应的图示。",
+      "explanation": "他们下午踢足球。",
+      "choices": [
+        {
+          "value": "⚽",
+          "label": "⚽",
+          "ariaLabel": "サッカーをする人々"
+        },
+        {
+          "value": "☕",
+          "label": "☕",
+          "ariaLabel": "コーヒーを運ぶ店員"
+        },
+        {
+          "value": "🏀",
+          "label": "🏀",
+          "ariaLabel": "バスケットボールをする人"
+        }
+      ],
+      "correct": "⚽"
+    },
+    {
+      "id": "hsk2-l2-05",
+      "skill": "listening",
+      "part": 2,
+      "kind": "visual-choice",
+      "audioText": "我在机场买票。",
+      "audioFile": "audio/sentences/hsk2-l2-05.wav",
+      "instruction": "请听录音，选择相应的图示。",
+      "explanation": "我在机场买票。",
+      "choices": [
+        {
+          "value": "🎫",
+          "label": "🎫",
+          "ariaLabel": "空港で切符を買う人"
+        },
+        {
+          "value": "🚪",
+          "label": "🚪",
+          "ariaLabel": "開いているドア"
+        },
+        {
+          "value": "🏃",
+          "label": "🏃",
+          "ariaLabel": "朝に走る人"
+        }
+      ],
+      "correct": "🎫"
+    },
+    {
+      "id": "hsk2-l2-06",
+      "skill": "listening",
+      "part": 2,
+      "kind": "visual-choice",
+      "audioText": "孩子早上喝牛奶。",
+      "audioFile": "audio/sentences/hsk2-l2-06.wav",
+      "instruction": "请听录音，选择相应的图示。",
+      "explanation": "孩子早上喝牛奶。",
+      "choices": [
+        {
+          "value": "🥛",
+          "label": "🥛",
+          "ariaLabel": "牛乳を飲む子ども"
+        },
+        {
+          "value": "🧼",
+          "label": "🧼",
+          "ariaLabel": "服を洗う人"
+        },
+        {
+          "value": "🏊",
+          "label": "🏊",
+          "ariaLabel": "泳ぐ人"
+        }
+      ],
+      "correct": "🥛"
+    },
+    {
+      "id": "hsk2-l2-07",
+      "skill": "listening",
+      "part": 2,
+      "kind": "visual-choice",
+      "audioText": "她们晚上一起跳舞。",
+      "audioFile": "audio/sentences/hsk2-l2-07.wav",
+      "instruction": "请听录音，选择相应的图示。",
+      "explanation": "她们晚上一起跳舞。",
+      "choices": [
+        {
+          "value": "💃",
+          "label": "💃",
+          "ariaLabel": "一緒に踊る人々"
+        },
+        {
+          "value": "🏀",
+          "label": "🏀",
+          "ariaLabel": "バスケットボールをする人"
+        },
+        {
+          "value": "🚌",
+          "label": "🚌",
+          "ariaLabel": "バスで会社へ行く人"
+        }
+      ],
+      "correct": "💃"
+    },
+    {
+      "id": "hsk2-l2-08",
+      "skill": "listening",
+      "part": 2,
+      "kind": "visual-choice",
+      "audioText": "服务员送来两杯咖啡。",
+      "audioFile": "audio/sentences/hsk2-l2-08.wav",
+      "instruction": "请听录音，选择相应的图示。",
+      "explanation": "服务员送来两杯咖啡。",
+      "choices": [
+        {
+          "value": "☕",
+          "label": "☕",
+          "ariaLabel": "コーヒーを運ぶ店員"
+        },
+        {
+          "value": "🏃",
+          "label": "🏃",
+          "ariaLabel": "朝に走る人"
+        },
+        {
+          "value": "🚲",
+          "label": "🚲",
+          "ariaLabel": "自転車で通勤する人"
+        }
+      ],
+      "correct": "☕"
+    },
+    {
+      "id": "hsk2-l2-09",
+      "skill": "listening",
+      "part": 2,
+      "kind": "visual-choice",
+      "audioText": "请进，门开着呢。",
+      "audioFile": "audio/sentences/hsk2-l2-09.wav",
+      "instruction": "请听录音，选择相应的图示。",
+      "explanation": "请进，门开着呢。",
+      "choices": [
+        {
+          "value": "🚪",
+          "label": "🚪",
+          "ariaLabel": "開いているドア"
+        },
+        {
+          "value": "🏊",
+          "label": "🏊",
+          "ariaLabel": "泳ぐ人"
+        },
+        {
+          "value": "❄️",
+          "label": "❄️",
+          "ariaLabel": "雪の日"
+        }
+      ],
+      "correct": "🚪"
+    },
+    {
+      "id": "hsk2-l2-10",
+      "skill": "listening",
+      "part": 2,
+      "kind": "visual-choice",
+      "audioText": "他正在洗衣服。",
+      "audioFile": "audio/sentences/hsk2-l2-10.wav",
+      "instruction": "请听录音，选择相应的图示。",
+      "explanation": "他正在洗衣服。",
+      "choices": [
+        {
+          "value": "🧼",
+          "label": "🧼",
+          "ariaLabel": "服を洗う人"
+        },
+        {
+          "value": "🚌",
+          "label": "🚌",
+          "ariaLabel": "バスで会社へ行く人"
+        },
+        {
+          "value": "👗",
+          "label": "👗",
+          "ariaLabel": "赤い服を着た人"
+        }
+      ],
+      "correct": "🧼"
+    },
+    {
+      "id": "hsk2-l3-01",
+      "skill": "listening",
+      "part": 3,
+      "kind": "audio-dialogue",
+      "audioText": "男：今天冷吗？女：不冷，但是下雨了。问：今天天气怎么样？",
+      "audioFile": "audio/sentences/hsk2-l3-01.wav",
+      "prompt": "今天天气怎么样？",
+      "choices": [
+        {
+          "value": "下雨",
+          "label": "下雨",
+          "pinyin": "xiàyǔ"
+        },
+        {
+          "value": "晴",
+          "label": "晴",
+          "pinyin": "qíng"
+        },
+        {
+          "value": "雪",
+          "label": "雪",
+          "pinyin": "xuě"
+        }
+      ],
+      "correct": "下雨",
+      "instruction": "请听对话，选择正确答案。",
+      "explanation": "今天天气怎么样？ — 下雨"
+    },
+    {
+      "id": "hsk2-l3-02",
+      "skill": "listening",
+      "part": 3,
+      "kind": "audio-dialogue",
+      "audioText": "女：你怎么还没吃饭？男：我今天工作太忙了。问：男的为什么没吃饭？",
+      "audioFile": "audio/sentences/hsk2-l3-02.wav",
+      "prompt": "男的为什么没吃饭？",
+      "choices": [
+        {
+          "value": "工作忙",
+          "label": "工作忙",
+          "pinyin": "gōngzuò máng"
+        },
+        {
+          "value": "不饿",
+          "label": "不饿",
+          "pinyin": "bú è"
+        },
+        {
+          "value": "等朋友",
+          "label": "等朋友",
+          "pinyin": "děng péngyou"
+        }
+      ],
+      "correct": "工作忙",
+      "instruction": "请听对话，选择正确答案。",
+      "explanation": "男的为什么没吃饭？ — 工作忙"
+    },
+    {
+      "id": "hsk2-l3-03",
+      "skill": "listening",
+      "part": 3,
+      "kind": "audio-dialogue",
+      "audioText": "男：这件红色衣服怎么样？女：颜色不错，但是太大了。问：女的觉得衣服怎么样？",
+      "audioFile": "audio/sentences/hsk2-l3-03.wav",
+      "prompt": "女的觉得衣服怎么样？",
+      "choices": [
+        {
+          "value": "太大",
+          "label": "太大",
+          "pinyin": "tài dà"
+        },
+        {
+          "value": "太小",
+          "label": "太小",
+          "pinyin": "tài xiǎo"
+        },
+        {
+          "value": "太贵",
+          "label": "太贵",
+          "pinyin": "tài guì"
+        }
+      ],
+      "correct": "太大",
+      "instruction": "请听对话，选择正确答案。",
+      "explanation": "女的觉得衣服怎么样？ — 太大"
+    },
+    {
+      "id": "hsk2-l3-04",
+      "skill": "listening",
+      "part": 3,
+      "kind": "audio-dialogue",
+      "audioText": "女：明天一起去跑步吧。男：好，早上七点见。问：他们明天做什么？",
+      "audioFile": "audio/sentences/hsk2-l3-04.wav",
+      "prompt": "他们明天做什么？",
+      "choices": [
+        {
+          "value": "跑步",
+          "label": "跑步",
+          "pinyin": "pǎobù"
+        },
+        {
+          "value": "游泳",
+          "label": "游泳",
+          "pinyin": "yóuyǒng"
+        },
+        {
+          "value": "打篮球",
+          "label": "打篮球",
+          "pinyin": "dǎ lánqiú"
+        }
+      ],
+      "correct": "跑步",
+      "instruction": "请听对话，选择正确答案。",
+      "explanation": "他们明天做什么？ — 跑步"
+    },
+    {
+      "id": "hsk2-l3-05",
+      "skill": "listening",
+      "part": 3,
+      "kind": "audio-dialogue",
+      "audioText": "男：去机场坐出租车要多久？女：大概四十分钟。问：去机场要多长时间？",
+      "audioFile": "audio/sentences/hsk2-l3-05.wav",
+      "prompt": "去机场要多长时间？",
+      "choices": [
+        {
+          "value": "四十分钟",
+          "label": "四十分钟",
+          "pinyin": "sìshí fēnzhōng"
+        },
+        {
+          "value": "十四分钟",
+          "label": "十四分钟",
+          "pinyin": "shísì fēnzhōng"
+        },
+        {
+          "value": "一个小时",
+          "label": "一个小时",
+          "pinyin": "yí ge xiǎoshí"
+        }
+      ],
+      "correct": "四十分钟",
+      "instruction": "请听对话，选择正确答案。",
+      "explanation": "去机场要多长时间？ — 四十分钟"
+    },
+    {
+      "id": "hsk2-l3-06",
+      "skill": "listening",
+      "part": 3,
+      "kind": "audio-dialogue",
+      "audioText": "女：你为什么不坐公共汽车？男：我家离公司很近，走路就到了。问：男的怎么去公司？",
+      "audioFile": "audio/sentences/hsk2-l3-06.wav",
+      "prompt": "男的怎么去公司？",
+      "choices": [
+        {
+          "value": "走路",
+          "label": "走路",
+          "pinyin": "zǒulù"
+        },
+        {
+          "value": "坐汽车",
+          "label": "坐汽车",
+          "pinyin": "zuò qìchē"
+        },
+        {
+          "value": "骑自行车",
+          "label": "骑自行车",
+          "pinyin": "qí zìxíngchē"
+        }
+      ],
+      "correct": "走路",
+      "instruction": "请听对话，选择正确答案。",
+      "explanation": "男的怎么去公司？ — 走路"
+    },
+    {
+      "id": "hsk2-l3-07",
+      "skill": "listening",
+      "part": 3,
+      "kind": "audio-dialogue",
+      "audioText": "男：你妹妹多大？女：她今年十二岁。问：妹妹几岁？",
+      "audioFile": "audio/sentences/hsk2-l3-07.wav",
+      "prompt": "妹妹几岁？",
+      "choices": [
+        {
+          "value": "十二岁",
+          "label": "十二岁",
+          "pinyin": "shí'èr suì"
+        },
+        {
+          "value": "二十岁",
+          "label": "二十岁",
+          "pinyin": "èrshí suì"
+        },
+        {
+          "value": "十岁",
+          "label": "十岁",
+          "pinyin": "shí suì"
+        }
+      ],
+      "correct": "十二岁",
+      "instruction": "请听对话，选择正确答案。",
+      "explanation": "妹妹几岁？ — 十二岁"
+    },
+    {
+      "id": "hsk2-l3-08",
+      "skill": "listening",
+      "part": 3,
+      "kind": "audio-dialogue",
+      "audioText": "女：这条裤子一百元，那条呢？男：那条便宜二十元。问：那条裤子多少钱？",
+      "audioFile": "audio/sentences/hsk2-l3-08.wav",
+      "prompt": "那条裤子多少钱？",
+      "choices": [
+        {
+          "value": "八十元",
+          "label": "八十元",
+          "pinyin": "bāshí yuán"
+        },
+        {
+          "value": "一百元",
+          "label": "一百元",
+          "pinyin": "yìbǎi yuán"
+        },
+        {
+          "value": "一百二十元",
+          "label": "一百二十元",
+          "pinyin": "yìbǎi èrshí yuán"
+        }
+      ],
+      "correct": "八十元",
+      "instruction": "请听对话，选择正确答案。",
+      "explanation": "那条裤子多少钱？ — 八十元"
+    },
+    {
+      "id": "hsk2-l3-09",
+      "skill": "listening",
+      "part": 3,
+      "kind": "audio-dialogue",
+      "audioText": "男：你最喜欢什么运动？女：冬天打篮球，夏天游泳。问：女的夏天喜欢什么？",
+      "audioFile": "audio/sentences/hsk2-l3-09.wav",
+      "prompt": "女的夏天喜欢什么？",
+      "choices": [
+        {
+          "value": "游泳",
+          "label": "游泳",
+          "pinyin": "yóuyǒng"
+        },
+        {
+          "value": "打篮球",
+          "label": "打篮球",
+          "pinyin": "dǎ lánqiú"
+        },
+        {
+          "value": "跑步",
+          "label": "跑步",
+          "pinyin": "pǎobù"
+        }
+      ],
+      "correct": "游泳",
+      "instruction": "请听对话，选择正确答案。",
+      "explanation": "女的夏天喜欢什么？ — 游泳"
+    },
+    {
+      "id": "hsk2-l3-10",
+      "skill": "listening",
+      "part": 3,
+      "kind": "audio-dialogue",
+      "audioText": "女：你身体不舒服吗？男：我生病了，想休息。问：男的怎么了？",
+      "audioFile": "audio/sentences/hsk2-l3-10.wav",
+      "prompt": "男的怎么了？",
+      "choices": [
+        {
+          "value": "生病",
+          "label": "生病",
+          "pinyin": "shēngbìng"
+        },
+        {
+          "value": "很累",
+          "label": "很累",
+          "pinyin": "hěn lèi"
+        },
+        {
+          "value": "很饿",
+          "label": "很饿",
+          "pinyin": "hěn è"
+        }
+      ],
+      "correct": "生病",
+      "instruction": "请听对话，选择正确答案。",
+      "explanation": "男的怎么了？ — 生病"
+    },
+    {
+      "id": "hsk2-l4-01",
+      "skill": "listening",
+      "part": 4,
+      "kind": "audio-long-dialogue",
+      "audioText": "男：电影几点开始？女：晚上八点，现在七点半。问：电影还有多久开始？",
+      "audioFile": "audio/sentences/hsk2-l4-01.wav",
+      "prompt": "电影还有多久开始？",
+      "choices": [
+        {
+          "value": "半小时",
+          "label": "半小时",
+          "pinyin": "bàn xiǎoshí"
+        },
+        {
+          "value": "一小时",
+          "label": "一小时",
+          "pinyin": "yì xiǎoshí"
+        },
+        {
+          "value": "两小时",
+          "label": "两小时",
+          "pinyin": "liǎng xiǎoshí"
+        }
+      ],
+      "correct": "半小时",
+      "instruction": "请听较长对话，选择正确答案。",
+      "explanation": "电影还有多久开始？ — 半小时"
+    },
+    {
+      "id": "hsk2-l4-02",
+      "skill": "listening",
+      "part": 4,
+      "kind": "audio-long-dialogue",
+      "audioText": "女：你买了什么水果？男：我买了苹果，没买西瓜。问：男的没买什么？",
+      "audioFile": "audio/sentences/hsk2-l4-02.wav",
+      "prompt": "男的没买什么？",
+      "choices": [
+        {
+          "value": "西瓜",
+          "label": "西瓜",
+          "pinyin": "xīguā"
+        },
+        {
+          "value": "苹果",
+          "label": "苹果",
+          "pinyin": "píngguǒ"
+        },
+        {
+          "value": "水果",
+          "label": "水果",
+          "pinyin": "shuǐguǒ"
+        }
+      ],
+      "correct": "西瓜",
+      "instruction": "请听较长对话，选择正确答案。",
+      "explanation": "男的没买什么？ — 西瓜"
+    },
+    {
+      "id": "hsk2-l4-03",
+      "skill": "listening",
+      "part": 4,
+      "kind": "audio-long-dialogue",
+      "audioText": "男：考试准备好了吗？女：还没有，我正在准备。问：女的正在做什么？",
+      "audioFile": "audio/sentences/hsk2-l4-03.wav",
+      "prompt": "女的正在做什么？",
+      "choices": [
+        {
+          "value": "准备",
+          "label": "准备",
+          "pinyin": "zhǔnbèi"
+        },
+        {
+          "value": "考试",
+          "label": "考试",
+          "pinyin": "kǎoshì"
+        },
+        {
+          "value": "休息",
+          "label": "休息",
+          "pinyin": "xiūxi"
+        }
+      ],
+      "correct": "准备",
+      "instruction": "请听较长对话，选择正确答案。",
+      "explanation": "女的正在做什么？ — 准备"
+    },
+    {
+      "id": "hsk2-l4-04",
+      "skill": "listening",
+      "part": 4,
+      "kind": "audio-long-dialogue",
+      "audioText": "女：你哥哥在哪儿工作？男：他是医生，在北京医院工作。问：哥哥在哪儿工作？",
+      "audioFile": "audio/sentences/hsk2-l4-04.wav",
+      "prompt": "哥哥在哪儿工作？",
+      "choices": [
+        {
+          "value": "医院",
+          "label": "医院",
+          "pinyin": "yīyuàn"
+        },
+        {
+          "value": "学校",
+          "label": "学校",
+          "pinyin": "xuéxiào"
+        },
+        {
+          "value": "公司",
+          "label": "公司",
+          "pinyin": "gōngsī"
+        }
+      ],
+      "correct": "医院",
+      "instruction": "请听较长对话，选择正确答案。",
+      "explanation": "哥哥在哪儿工作？ — 医院"
+    },
+    {
+      "id": "hsk2-l4-05",
+      "skill": "listening",
+      "part": 4,
+      "kind": "audio-long-dialogue",
+      "audioText": "男：今天是你的生日，这本书送给你。女：谢谢，我很喜欢。问：男的送了什么？",
+      "audioFile": "audio/sentences/hsk2-l4-05.wav",
+      "prompt": "男的送了什么？",
+      "choices": [
+        {
+          "value": "书",
+          "label": "书",
+          "pinyin": "shū"
+        },
+        {
+          "value": "手表",
+          "label": "手表",
+          "pinyin": "shǒubiǎo"
+        },
+        {
+          "value": "手机",
+          "label": "手机",
+          "pinyin": "shǒujī"
+        }
+      ],
+      "correct": "书",
+      "instruction": "请听较长对话，选择正确答案。",
+      "explanation": "男的送了什么？ — 书"
+    },
+    {
+      "id": "hsk2-r1-01",
+      "skill": "reading",
+      "part": 1,
+      "kind": "reading-visual-choice",
+      "prompt": "弟弟正在打篮球。",
+      "promptPinyin": "Dìdi zhèngzài dǎ lánqiú.",
+      "choices": [
+        {
+          "value": "🏀",
+          "label": "🏀",
+          "ariaLabel": "バスケットボールをする人"
+        },
+        {
+          "value": "🚌",
+          "label": "🚌",
+          "ariaLabel": "バスで会社へ行く人"
+        },
+        {
+          "value": "👗",
+          "label": "👗",
+          "ariaLabel": "赤い服を着た人"
+        }
+      ],
+      "correct": "🏀",
+      "instruction": "请选择与句子相应的图示。",
+      "explanation": "弟弟正在打篮球。"
+    },
+    {
+      "id": "hsk2-r1-02",
+      "skill": "reading",
+      "part": 1,
+      "kind": "reading-visual-choice",
+      "prompt": "哥哥每天早上跑步。",
+      "promptPinyin": "Gēge měitiān zǎoshang pǎobù.",
+      "choices": [
+        {
+          "value": "🏃",
+          "label": "🏃",
+          "ariaLabel": "朝に走る人"
+        },
+        {
+          "value": "🚲",
+          "label": "🚲",
+          "ariaLabel": "自転車で通勤する人"
+        },
+        {
+          "value": "🎂",
+          "label": "🎂",
+          "ariaLabel": "誕生日の子ども"
+        }
+      ],
+      "correct": "🏃",
+      "instruction": "请选择与句子相应的图示。",
+      "explanation": "哥哥每天早上跑步。"
+    },
+    {
+      "id": "hsk2-r1-03",
+      "skill": "reading",
+      "part": 1,
+      "kind": "reading-visual-choice",
+      "prompt": "她最喜欢游泳。",
+      "promptPinyin": "Tā zuì xǐhuan yóuyǒng.",
+      "choices": [
+        {
+          "value": "🏊",
+          "label": "🏊",
+          "ariaLabel": "泳ぐ人"
+        },
+        {
+          "value": "❄️",
+          "label": "❄️",
+          "ariaLabel": "雪の日"
+        },
+        {
+          "value": "📰",
+          "label": "📰",
+          "ariaLabel": "新聞を読む人"
+        }
+      ],
+      "correct": "🏊",
+      "instruction": "请选择与句子相应的图示。",
+      "explanation": "她最喜欢游泳。"
+    },
+    {
+      "id": "hsk2-r1-04",
+      "skill": "reading",
+      "part": 1,
+      "kind": "reading-visual-choice",
+      "prompt": "我坐公共汽车去公司。",
+      "promptPinyin": "Wǒ zuò gōnggòng qìchē qù gōngsī.",
+      "choices": [
+        {
+          "value": "🚌",
+          "label": "🚌",
+          "ariaLabel": "バスで会社へ行く人"
+        },
+        {
+          "value": "👗",
+          "label": "👗",
+          "ariaLabel": "赤い服を着た人"
+        },
+        {
+          "value": "⌚",
+          "label": "⌚",
+          "ariaLabel": "高価な腕時計"
+        }
+      ],
+      "correct": "🚌",
+      "instruction": "请选择与句子相应的图示。",
+      "explanation": "我坐公共汽车去公司。"
+    },
+    {
+      "id": "hsk2-r1-05",
+      "skill": "reading",
+      "part": 1,
+      "kind": "reading-visual-choice",
+      "prompt": "他骑自行车上班。",
+      "promptPinyin": "Tā qí zìxíngchē shàngbān.",
+      "choices": [
+        {
+          "value": "🚲",
+          "label": "🚲",
+          "ariaLabel": "自転車で通勤する人"
+        },
+        {
+          "value": "🎂",
+          "label": "🎂",
+          "ariaLabel": "誕生日の子ども"
+        },
+        {
+          "value": "🥚",
+          "label": "🥚",
+          "ariaLabel": "卵を買う人"
+        }
+      ],
+      "correct": "🚲",
+      "instruction": "请选择与句子相应的图示。",
+      "explanation": "他骑自行车上班。"
+    },
+    {
+      "id": "hsk2-r2-01",
+      "skill": "reading",
+      "part": 2,
+      "kind": "reading-cloze",
+      "wordId": "hsk2-151",
+      "prompt": "我们一起去＿＿＿。",
+      "promptPinyin": "Wǒmen yìqǐ qù ____.",
+      "choices": [
+        {
+          "value": "hsk2-151",
+          "label": "吧",
+          "pinyin": "ba"
+        },
+        {
+          "value": "hsk2-175",
+          "label": "懂",
+          "pinyin": "dǒng"
+        },
+        {
+          "value": "hsk2-192",
+          "label": "黑",
+          "pinyin": "hēi"
+        }
+      ],
+      "correct": "hsk2-151",
+      "instruction": "请选择合适的词语填空。",
+      "explanation": "我们一起去吧。"
+    },
+    {
+      "id": "hsk2-r2-02",
+      "skill": "reading",
+      "part": 2,
+      "kind": "reading-cloze",
+      "wordId": "hsk2-152",
+      "prompt": "这件衣服是＿＿＿的。",
+      "promptPinyin": "Zhè jiàn yīfu shì ____ de.",
+      "choices": [
+        {
+          "value": "hsk2-152",
+          "label": "白",
+          "pinyin": "bái"
+        },
+        {
+          "value": "hsk2-179",
+          "label": "服务员",
+          "pinyin": "fúwùyuán"
+        },
+        {
+          "value": "hsk2-196",
+          "label": "回答",
+          "pinyin": "huídá"
+        }
+      ],
+      "correct": "hsk2-152",
+      "instruction": "请选择合适的词语填空。",
+      "explanation": "这件衣服是白的。"
+    },
+    {
+      "id": "hsk2-r2-03",
+      "skill": "reading",
+      "part": 2,
+      "kind": "reading-cloze",
+      "wordId": "hsk2-153",
+      "prompt": "这件衣服一＿＿＿元。",
+      "promptPinyin": "Zhè jiàn yīfu yì ____ yuán.",
+      "choices": [
+        {
+          "value": "hsk2-153",
+          "label": "百",
+          "pinyin": "bǎi"
+        },
+        {
+          "value": "hsk2-183",
+          "label": "给",
+          "pinyin": "gěi"
+        },
+        {
+          "value": "hsk2-200",
+          "label": "教室",
+          "pinyin": "jiàoshì"
+        }
+      ],
+      "correct": "hsk2-153",
+      "instruction": "请选择合适的词语填空。",
+      "explanation": "这件衣服一百元。"
+    },
+    {
+      "id": "hsk2-r2-04",
+      "skill": "reading",
+      "part": 2,
+      "kind": "reading-cloze",
+      "wordId": "hsk2-154",
+      "prompt": "谢谢你的＿＿＿。",
+      "promptPinyin": "Xièxie nǐ de ____.",
+      "choices": [
+        {
+          "value": "hsk2-154",
+          "label": "帮助",
+          "pinyin": "bāngzhù"
+        },
+        {
+          "value": "hsk2-187",
+          "label": "贵",
+          "pinyin": "guì"
+        },
+        {
+          "value": "hsk2-204",
+          "label": "进",
+          "pinyin": "jìn"
+        }
+      ],
+      "correct": "hsk2-154",
+      "instruction": "请选择合适的词语填空。",
+      "explanation": "谢谢你的帮助。"
+    },
+    {
+      "id": "hsk2-r2-05",
+      "skill": "reading",
+      "part": 2,
+      "kind": "reading-cloze",
+      "wordId": "hsk2-155",
+      "prompt": "爸爸在看＿＿＿。",
+      "promptPinyin": "Bàba zài kàn ____.",
+      "choices": [
+        {
+          "value": "hsk2-155",
+          "label": "报纸",
+          "pinyin": "bàozhǐ"
+        },
+        {
+          "value": "hsk2-191",
+          "label": "号",
+          "pinyin": "hào"
+        },
+        {
+          "value": "hsk2-208",
+          "label": "开始",
+          "pinyin": "kāishǐ"
+        }
+      ],
+      "correct": "hsk2-155",
+      "instruction": "请选择合适的词语填空。",
+      "explanation": "爸爸在看报纸。"
+    },
+    {
+      "id": "hsk2-r3-01",
+      "skill": "reading",
+      "part": 3,
+      "kind": "reading-judge",
+      "prompt": "我们坐船去。",
+      "promptPinyin": "Wǒmen zuò chuán qù.",
+      "subPrompt": "我们坐船去。",
+      "subPromptPinyin": "Wǒmen zuò chuán qù.",
+      "choices": [
+        {
+          "value": "true",
+          "label": "对"
+        },
+        {
+          "value": "false",
+          "label": "不对"
+        }
+      ],
+      "correct": "true",
+      "instruction": "请判断下面两句话的意思是否一致。",
+      "explanation": "对"
+    },
+    {
+      "id": "hsk2-r3-02",
+      "skill": "reading",
+      "part": 3,
+      "kind": "reading-judge",
+      "prompt": "我去过两次北京。",
+      "promptPinyin": "Wǒ qùguo liǎng cì Běijīng.",
+      "subPrompt": "我哥哥在北京工作。",
+      "subPromptPinyin": "Wǒ gēge zài Běijīng gōngzuò.",
+      "choices": [
+        {
+          "value": "true",
+          "label": "对"
+        },
+        {
+          "value": "false",
+          "label": "不对"
+        }
+      ],
+      "correct": "false",
+      "instruction": "请判断下面两句话的意思是否一致。",
+      "explanation": "不对"
+    },
+    {
+      "id": "hsk2-r3-03",
+      "skill": "reading",
+      "part": 3,
+      "kind": "reading-judge",
+      "prompt": "我从学校来。",
+      "promptPinyin": "Wǒ cóng xuéxiào lái.",
+      "subPrompt": "我从学校来。",
+      "subPromptPinyin": "Wǒ cóng xuéxiào lái.",
+      "choices": [
+        {
+          "value": "true",
+          "label": "对"
+        },
+        {
+          "value": "false",
+          "label": "不对"
+        }
+      ],
+      "correct": "true",
+      "instruction": "请判断下面两句话的意思是否一致。",
+      "explanation": "对"
+    },
+    {
+      "id": "hsk2-r3-04",
+      "skill": "reading",
+      "part": 3,
+      "kind": "reading-judge",
+      "prompt": "这个字写错了。",
+      "promptPinyin": "Zhège zì xiě cuò le.",
+      "subPrompt": "我坐公共汽车上班。",
+      "subPromptPinyin": "Wǒ zuò gōnggòng qìchē shàngbān.",
+      "choices": [
+        {
+          "value": "true",
+          "label": "对"
+        },
+        {
+          "value": "false",
+          "label": "不对"
+        }
+      ],
+      "correct": "false",
+      "instruction": "请判断下面两句话的意思是否一致。",
+      "explanation": "不对"
+    },
+    {
+      "id": "hsk2-r3-05",
+      "skill": "reading",
+      "part": 3,
+      "kind": "reading-judge",
+      "prompt": "我和朋友打篮球。",
+      "promptPinyin": "Wǒ hé péngyou dǎ lánqiú.",
+      "subPrompt": "我和朋友打篮球。",
+      "subPromptPinyin": "Wǒ hé péngyou dǎ lánqiú.",
+      "choices": [
+        {
+          "value": "true",
+          "label": "对"
+        },
+        {
+          "value": "false",
+          "label": "不对"
+        }
+      ],
+      "correct": "true",
+      "instruction": "请判断下面两句话的意思是否一致。",
+      "explanation": "对"
+    },
+    {
+      "id": "hsk2-r4-01",
+      "skill": "reading",
+      "part": 4,
+      "kind": "reading-cloze",
+      "wordId": "hsk2-191",
+      "prompt": "今天是八＿＿＿。",
+      "promptPinyin": "Jīntiān shì bā ____.",
+      "choices": [
+        {
+          "value": "hsk2-191",
+          "label": "号",
+          "pinyin": "hào"
+        },
+        {
+          "value": "hsk2-216",
+          "label": "离",
+          "pinyin": "lí"
+        },
+        {
+          "value": "hsk2-233",
+          "label": "妻子",
+          "pinyin": "qīzi"
+        }
+      ],
+      "correct": "hsk2-191",
+      "instruction": "请选择合适的词语填空。",
+      "explanation": "今天是八号。"
+    },
+    {
+      "id": "hsk2-r4-02",
+      "skill": "reading",
+      "part": 4,
+      "kind": "reading-cloze",
+      "wordId": "hsk2-192",
+      "prompt": "这只猫是＿＿＿的。",
+      "promptPinyin": "Zhè zhī māo shì ____ de.",
+      "choices": [
+        {
+          "value": "hsk2-192",
+          "label": "黑",
+          "pinyin": "hēi"
+        },
+        {
+          "value": "hsk2-218",
+          "label": "路",
+          "pinyin": "lù"
+        },
+        {
+          "value": "hsk2-235",
+          "label": "千",
+          "pinyin": "qiān"
+        }
+      ],
+      "correct": "hsk2-192",
+      "instruction": "请选择合适的词语填空。",
+      "explanation": "这只猫是黑的。"
+    },
+    {
+      "id": "hsk2-r4-03",
+      "skill": "reading",
+      "part": 4,
+      "kind": "reading-cloze",
+      "wordId": "hsk2-193",
+      "prompt": "我喜欢＿＿＿苹果。",
+      "promptPinyin": "Wǒ xǐhuan ____ píngguǒ.",
+      "choices": [
+        {
+          "value": "hsk2-193",
+          "label": "红",
+          "pinyin": "hóng"
+        },
+        {
+          "value": "hsk2-220",
+          "label": "卖",
+          "pinyin": "mài"
+        },
+        {
+          "value": "hsk2-237",
+          "label": "去年",
+          "pinyin": "qùnián"
+        }
+      ],
+      "correct": "hsk2-193",
+      "instruction": "请选择合适的词语填空。",
+      "explanation": "我喜欢红苹果。"
+    },
+    {
+      "id": "hsk2-r4-04",
+      "skill": "reading",
+      "part": 4,
+      "kind": "reading-cloze",
+      "wordId": "hsk2-194",
+      "prompt": "＿＿＿来我家。",
+      "promptPinyin": "____ lái wǒ jiā.",
+      "choices": [
+        {
+          "value": "hsk2-194",
+          "label": "欢迎",
+          "pinyin": "huānyíng"
+        },
+        {
+          "value": "hsk2-222",
+          "label": "忙",
+          "pinyin": "máng"
+        },
+        {
+          "value": "hsk2-239",
+          "label": "上班",
+          "pinyin": "shàngbān"
+        }
+      ],
+      "correct": "hsk2-194",
+      "instruction": "请选择合适的词语填空。",
+      "explanation": "欢迎来我家。"
+    },
+    {
+      "id": "hsk2-r4-05",
+      "skill": "reading",
+      "part": 4,
+      "kind": "reading-cloze",
+      "wordId": "hsk2-195",
+      "prompt": "他＿＿＿在学校。",
+      "promptPinyin": "Tā ____ zài xuéxiào.",
+      "choices": [
+        {
+          "value": "hsk3-402",
+          "label": "还",
+          "pinyin": "huán"
+        },
+        {
+          "value": "hsk2-179",
+          "label": "服务员",
+          "pinyin": "fúwùyuán"
+        },
+        {
+          "value": "hsk2-196",
+          "label": "回答",
+          "pinyin": "huídá"
+        }
+      ],
+      "correct": "hsk2-195",
+      "instruction": "请选择合适的词语填空。",
+      "explanation": "他还在学校。"
+    },
+    {
+      "id": "hsk2-r4-06",
+      "skill": "reading",
+      "part": 4,
+      "kind": "reading-cloze",
+      "wordId": "hsk2-196",
+      "prompt": "请＿＿＿这个问题。",
+      "promptPinyin": "Qǐng ____ zhège wèntí.",
+      "choices": [
+        {
+          "value": "hsk2-196",
+          "label": "回答",
+          "pinyin": "huídá"
+        },
+        {
+          "value": "hsk2-226",
+          "label": "男人",
+          "pinyin": "nánrén"
+        },
+        {
+          "value": "hsk2-243",
+          "label": "时间",
+          "pinyin": "shíjiān"
+        }
+      ],
+      "correct": "hsk2-196",
+      "instruction": "请选择合适的词语填空。",
+      "explanation": "请回答这个问题。"
+    },
+    {
+      "id": "hsk2-r4-07",
+      "skill": "reading",
+      "part": 4,
+      "kind": "reading-cloze",
+      "wordId": "hsk2-197",
+      "prompt": "我坐出租车去＿＿＿。",
+      "promptPinyin": "Wǒ zuò chūzūchē qù ____.",
+      "choices": [
+        {
+          "value": "hsk2-197",
+          "label": "机场",
+          "pinyin": "jīchǎng"
+        },
+        {
+          "value": "hsk2-228",
+          "label": "牛奶",
+          "pinyin": "niúnǎi"
+        },
+        {
+          "value": "hsk2-245",
+          "label": "手表",
+          "pinyin": "shǒubiǎo"
+        }
+      ],
+      "correct": "hsk2-197",
+      "instruction": "请选择合适的词语填空。",
+      "explanation": "我坐出租车去机场。"
+    },
+    {
+      "id": "hsk2-r4-08",
+      "skill": "reading",
+      "part": 4,
+      "kind": "reading-cloze",
+      "wordId": "hsk2-198",
+      "prompt": "我早上吃＿＿＿。",
+      "promptPinyin": "Wǒ zǎoshang chī ____.",
+      "choices": [
+        {
+          "value": "hsk2-198",
+          "label": "鸡蛋",
+          "pinyin": "jīdàn"
+        },
+        {
+          "value": "hsk2-230",
+          "label": "旁边",
+          "pinyin": "pángbiān"
+        },
+        {
+          "value": "hsk2-247",
+          "label": "送",
+          "pinyin": "sòng"
+        }
+      ],
+      "correct": "hsk2-198",
+      "instruction": "请选择合适的词语填空。",
+      "explanation": "我早上吃鸡蛋。"
+    },
+    {
+      "id": "hsk2-r4-09",
+      "skill": "reading",
+      "part": 4,
+      "kind": "reading-cloze",
+      "wordId": "hsk2-199",
+      "prompt": "我买了一＿＿＿衣服。",
+      "promptPinyin": "Wǒ mǎi le yí ____ yīfu.",
+      "choices": [
+        {
+          "value": "hsk2-199",
+          "label": "件",
+          "pinyin": "jiàn"
+        },
+        {
+          "value": "hsk2-232",
+          "label": "票",
+          "pinyin": "piào"
+        },
+        {
+          "value": "hsk2-249",
+          "label": "它",
+          "pinyin": "tā"
+        }
+      ],
+      "correct": "hsk2-199",
+      "instruction": "请选择合适的词语填空。",
+      "explanation": "我买了一件衣服。"
+    },
+    {
+      "id": "hsk2-r4-10",
+      "skill": "reading",
+      "part": 4,
+      "kind": "reading-cloze",
+      "wordId": "hsk2-200",
+      "prompt": "老师在＿＿＿里。",
+      "promptPinyin": "Lǎoshī zài ____ lǐ.",
+      "choices": [
+        {
+          "value": "hsk2-200",
+          "label": "教室",
+          "pinyin": "jiàoshì"
+        },
+        {
+          "value": "hsk2-234",
+          "label": "起床",
+          "pinyin": "qǐchuáng"
+        },
+        {
+          "value": "hsk2-251",
+          "label": "题",
+          "pinyin": "tí"
+        }
+      ],
+      "correct": "hsk2-200",
+      "instruction": "请选择合适的词语填空。",
+      "explanation": "老师在教室里。"
+    }
+  ]
+}

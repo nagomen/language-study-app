@@ -1,0 +1,1108 @@
+{
+  "version": 2,
+  "level": 1,
+  "format": "HSK 2.0（日本実施形式）・写真問題は記号イラストで代替",
+  "generatedAt": "2026-08-22T07:58:49.596Z",
+  "questions": [
+    {
+      "id": "hsk1-l1-01",
+      "skill": "listening",
+      "part": 1,
+      "kind": "visual-judge",
+      "audioText": "他在喝茶。",
+      "audioFile": "audio/sentences/hsk1-l1-01.wav",
+      "instruction": "请听录音，判断内容是否与图示一致。",
+      "explanation": "他在喝茶。",
+      "visual": {
+        "symbol": "☕",
+        "alt": "お茶を飲む人"
+      },
+      "choices": [
+        {
+          "value": "true",
+          "label": "对"
+        },
+        {
+          "value": "false",
+          "label": "不对"
+        }
+      ],
+      "correct": "true"
+    },
+    {
+      "id": "hsk1-l1-02",
+      "skill": "listening",
+      "part": 1,
+      "kind": "visual-judge",
+      "audioText": "她坐出租车去学校。",
+      "audioFile": "audio/sentences/hsk1-l1-02.wav",
+      "instruction": "请听录音，判断内容是否与图示一致。",
+      "explanation": "她坐出租车去学校。",
+      "visual": {
+        "symbol": "🐈",
+        "alt": "机の上の猫"
+      },
+      "choices": [
+        {
+          "value": "true",
+          "label": "对"
+        },
+        {
+          "value": "false",
+          "label": "不对"
+        }
+      ],
+      "correct": "false"
+    },
+    {
+      "id": "hsk1-l1-03",
+      "skill": "listening",
+      "part": 1,
+      "kind": "visual-judge",
+      "audioText": "他在看书。",
+      "audioFile": "audio/sentences/hsk1-l1-03.wav",
+      "instruction": "请听录音，判断内容是否与图示一致。",
+      "explanation": "他在看书。",
+      "visual": {
+        "symbol": "📖",
+        "alt": "本を読む人"
+      },
+      "choices": [
+        {
+          "value": "true",
+          "label": "对"
+        },
+        {
+          "value": "false",
+          "label": "不对"
+        }
+      ],
+      "correct": "true"
+    },
+    {
+      "id": "hsk1-l1-04",
+      "skill": "listening",
+      "part": 1,
+      "kind": "visual-judge",
+      "audioText": "妈妈在打电话。",
+      "audioFile": "audio/sentences/hsk1-l1-04.wav",
+      "instruction": "请听录音，判断内容是否与图示一致。",
+      "explanation": "妈妈在打电话。",
+      "visual": {
+        "symbol": "🏫",
+        "alt": "学校へ行く学生"
+      },
+      "choices": [
+        {
+          "value": "true",
+          "label": "对"
+        },
+        {
+          "value": "false",
+          "label": "不对"
+        }
+      ],
+      "correct": "false"
+    },
+    {
+      "id": "hsk1-l1-05",
+      "skill": "listening",
+      "part": 1,
+      "kind": "visual-judge",
+      "audioText": "小猫在桌子上。",
+      "audioFile": "audio/sentences/hsk1-l1-05.wav",
+      "instruction": "请听录音，判断内容是否与图示一致。",
+      "explanation": "小猫在桌子上。",
+      "visual": {
+        "symbol": "🐈",
+        "alt": "机の上の猫"
+      },
+      "choices": [
+        {
+          "value": "true",
+          "label": "对"
+        },
+        {
+          "value": "false",
+          "label": "不对"
+        }
+      ],
+      "correct": "true"
+    },
+    {
+      "id": "hsk1-l2-01",
+      "skill": "listening",
+      "part": 2,
+      "kind": "visual-choice",
+      "audioText": "我中午吃米饭。",
+      "audioFile": "audio/sentences/hsk1-l2-01.wav",
+      "instruction": "请听录音，选择相应的图示。",
+      "explanation": "我中午吃米饭。",
+      "choices": [
+        {
+          "value": "🍚",
+          "label": "🍚",
+          "ariaLabel": "ご飯を食べる人"
+        },
+        {
+          "value": "📺",
+          "label": "📺",
+          "ariaLabel": "家でテレビを見る人"
+        },
+        {
+          "value": "🍜",
+          "label": "🍜",
+          "ariaLabel": "食堂で食事する人々"
+        }
+      ],
+      "correct": "🍚"
+    },
+    {
+      "id": "hsk1-l2-02",
+      "skill": "listening",
+      "part": 2,
+      "kind": "visual-choice",
+      "audioText": "学生去学校。",
+      "audioFile": "audio/sentences/hsk1-l2-02.wav",
+      "instruction": "请听录音，选择相应的图示。",
+      "explanation": "学生去学校。",
+      "choices": [
+        {
+          "value": "🏫",
+          "label": "🏫",
+          "ariaLabel": "学校へ行く学生"
+        },
+        {
+          "value": "🍎",
+          "label": "🍎",
+          "ariaLabel": "机の上の三つのリンゴ"
+        },
+        {
+          "value": "😴",
+          "label": "😴",
+          "ariaLabel": "眠っている女の子"
+        }
+      ],
+      "correct": "🏫"
+    },
+    {
+      "id": "hsk1-l2-03",
+      "skill": "listening",
+      "part": 2,
+      "kind": "visual-choice",
+      "audioText": "今天下雨了。",
+      "audioFile": "audio/sentences/hsk1-l2-03.wav",
+      "instruction": "请听录音，选择相应的图示。",
+      "explanation": "今天下雨了。",
+      "choices": [
+        {
+          "value": "🌧️",
+          "label": "🌧️",
+          "ariaLabel": "雨の日"
+        },
+        {
+          "value": "🧑‍⚕️",
+          "label": "🧑‍⚕️",
+          "ariaLabel": "医師"
+        },
+        {
+          "value": "✍️",
+          "label": "✍️",
+          "ariaLabel": "漢字を書く先生"
+        }
+      ],
+      "correct": "🌧️"
+    },
+    {
+      "id": "hsk1-l2-04",
+      "skill": "listening",
+      "part": 2,
+      "kind": "visual-choice",
+      "audioText": "爸爸坐飞机来北京。",
+      "audioFile": "audio/sentences/hsk1-l2-04.wav",
+      "instruction": "请听录音，选择相应的图示。",
+      "explanation": "爸爸坐飞机来北京。",
+      "choices": [
+        {
+          "value": "✈️",
+          "label": "✈️",
+          "ariaLabel": "飛行機で北京へ来る人"
+        },
+        {
+          "value": "🍜",
+          "label": "🍜",
+          "ariaLabel": "食堂で食事する人々"
+        },
+        {
+          "value": "☕",
+          "label": "☕",
+          "ariaLabel": "お茶を飲む人"
+        }
+      ],
+      "correct": "✈️"
+    },
+    {
+      "id": "hsk1-l2-05",
+      "skill": "listening",
+      "part": 2,
+      "kind": "visual-choice",
+      "audioText": "她在家看电视。",
+      "audioFile": "audio/sentences/hsk1-l2-05.wav",
+      "instruction": "请听录音，选择相应的图示。",
+      "explanation": "她在家看电视。",
+      "choices": [
+        {
+          "value": "📺",
+          "label": "📺",
+          "ariaLabel": "家でテレビを見る人"
+        },
+        {
+          "value": "😴",
+          "label": "😴",
+          "ariaLabel": "眠っている女の子"
+        },
+        {
+          "value": "🚕",
+          "label": "🚕",
+          "ariaLabel": "タクシーで学校へ行く人"
+        }
+      ],
+      "correct": "📺"
+    },
+    {
+      "id": "hsk1-l3-01",
+      "skill": "listening",
+      "part": 3,
+      "kind": "visual-choice",
+      "audioText": "桌子上有三个苹果。",
+      "audioFile": "audio/sentences/hsk1-l3-01.wav",
+      "instruction": "请听录音，选择相应的图示。",
+      "explanation": "桌子上有三个苹果。",
+      "choices": [
+        {
+          "value": "🍎",
+          "label": "🍎",
+          "ariaLabel": "机の上の三つのリンゴ"
+        },
+        {
+          "value": "✍️",
+          "label": "✍️",
+          "ariaLabel": "漢字を書く先生"
+        },
+        {
+          "value": "📖",
+          "label": "📖",
+          "ariaLabel": "本を読む人"
+        }
+      ],
+      "correct": "🍎"
+    },
+    {
+      "id": "hsk1-l3-02",
+      "skill": "listening",
+      "part": 3,
+      "kind": "visual-choice",
+      "audioText": "王先生是医生。",
+      "audioFile": "audio/sentences/hsk1-l3-02.wav",
+      "instruction": "请听录音，选择相应的图示。",
+      "explanation": "王先生是医生。",
+      "choices": [
+        {
+          "value": "🧑‍⚕️",
+          "label": "🧑‍⚕️",
+          "ariaLabel": "医師"
+        },
+        {
+          "value": "☕",
+          "label": "☕",
+          "ariaLabel": "お茶を飲む人"
+        },
+        {
+          "value": "📱",
+          "label": "📱",
+          "ariaLabel": "電話をする人"
+        }
+      ],
+      "correct": "🧑‍⚕️"
+    },
+    {
+      "id": "hsk1-l3-03",
+      "skill": "listening",
+      "part": 3,
+      "kind": "visual-choice",
+      "audioText": "我们在饭馆吃饭。",
+      "audioFile": "audio/sentences/hsk1-l3-03.wav",
+      "instruction": "请听录音，选择相应的图示。",
+      "explanation": "我们在饭馆吃饭。",
+      "choices": [
+        {
+          "value": "🍜",
+          "label": "🍜",
+          "ariaLabel": "食堂で食事する人々"
+        },
+        {
+          "value": "🚕",
+          "label": "🚕",
+          "ariaLabel": "タクシーで学校へ行く人"
+        },
+        {
+          "value": "🐈",
+          "label": "🐈",
+          "ariaLabel": "机の上の猫"
+        }
+      ],
+      "correct": "🍜"
+    },
+    {
+      "id": "hsk1-l3-04",
+      "skill": "listening",
+      "part": 3,
+      "kind": "visual-choice",
+      "audioText": "女儿在睡觉。",
+      "audioFile": "audio/sentences/hsk1-l3-04.wav",
+      "instruction": "请听录音，选择相应的图示。",
+      "explanation": "女儿在睡觉。",
+      "choices": [
+        {
+          "value": "😴",
+          "label": "😴",
+          "ariaLabel": "眠っている女の子"
+        },
+        {
+          "value": "📖",
+          "label": "📖",
+          "ariaLabel": "本を読む人"
+        },
+        {
+          "value": "🍚",
+          "label": "🍚",
+          "ariaLabel": "ご飯を食べる人"
+        }
+      ],
+      "correct": "😴"
+    },
+    {
+      "id": "hsk1-l3-05",
+      "skill": "listening",
+      "part": 3,
+      "kind": "visual-choice",
+      "audioText": "老师在写汉字。",
+      "audioFile": "audio/sentences/hsk1-l3-05.wav",
+      "instruction": "请听录音，选择相应的图示。",
+      "explanation": "老师在写汉字。",
+      "choices": [
+        {
+          "value": "✍️",
+          "label": "✍️",
+          "ariaLabel": "漢字を書く先生"
+        },
+        {
+          "value": "📱",
+          "label": "📱",
+          "ariaLabel": "電話をする人"
+        },
+        {
+          "value": "🏫",
+          "label": "🏫",
+          "ariaLabel": "学校へ行く学生"
+        }
+      ],
+      "correct": "✍️"
+    },
+    {
+      "id": "hsk1-l4-01",
+      "skill": "listening",
+      "part": 4,
+      "kind": "audio-dialogue",
+      "audioText": "男：你喝茶吗？女：不，我喝水。问：女的喝什么？",
+      "audioFile": "audio/sentences/hsk1-l4-01.wav",
+      "prompt": "女的喝什么？",
+      "choices": [
+        {
+          "value": "水",
+          "label": "水",
+          "pinyin": "shuǐ"
+        },
+        {
+          "value": "茶",
+          "label": "茶",
+          "pinyin": "chá"
+        },
+        {
+          "value": "米饭",
+          "label": "米饭",
+          "pinyin": "mǐfàn"
+        }
+      ],
+      "correct": "水",
+      "instruction": "请听对话，选择正确答案。",
+      "explanation": "女的喝什么？ — 水"
+    },
+    {
+      "id": "hsk1-l4-02",
+      "skill": "listening",
+      "part": 4,
+      "kind": "audio-dialogue",
+      "audioText": "女：现在几点？男：三点。问：现在几点？",
+      "audioFile": "audio/sentences/hsk1-l4-02.wav",
+      "prompt": "现在几点？",
+      "choices": [
+        {
+          "value": "三点",
+          "label": "三点",
+          "pinyin": "sān diǎn"
+        },
+        {
+          "value": "两点",
+          "label": "两点",
+          "pinyin": "liǎng diǎn"
+        },
+        {
+          "value": "四点",
+          "label": "四点",
+          "pinyin": "sì diǎn"
+        }
+      ],
+      "correct": "三点",
+      "instruction": "请听对话，选择正确答案。",
+      "explanation": "现在几点？ — 三点"
+    },
+    {
+      "id": "hsk1-l4-03",
+      "skill": "listening",
+      "part": 4,
+      "kind": "audio-dialogue",
+      "audioText": "男：你去哪儿？女：我去学校。问：女的去哪儿？",
+      "audioFile": "audio/sentences/hsk1-l4-03.wav",
+      "prompt": "女的去哪儿？",
+      "choices": [
+        {
+          "value": "学校",
+          "label": "学校",
+          "pinyin": "xuéxiào"
+        },
+        {
+          "value": "医院",
+          "label": "医院",
+          "pinyin": "yīyuàn"
+        },
+        {
+          "value": "商店",
+          "label": "商店",
+          "pinyin": "shāngdiàn"
+        }
+      ],
+      "correct": "学校",
+      "instruction": "请听对话，选择正确答案。",
+      "explanation": "女的去哪儿？ — 学校"
+    },
+    {
+      "id": "hsk1-l4-04",
+      "skill": "listening",
+      "part": 4,
+      "kind": "audio-dialogue",
+      "audioText": "女：这是谁的猫？男：是小王的。问：猫是谁的？",
+      "audioFile": "audio/sentences/hsk1-l4-04.wav",
+      "prompt": "猫是谁的？",
+      "choices": [
+        {
+          "value": "小王的",
+          "label": "小王的",
+          "pinyin": "Xiǎo Wáng de"
+        },
+        {
+          "value": "小李的",
+          "label": "小李的",
+          "pinyin": "Xiǎo Lǐ de"
+        },
+        {
+          "value": "老师的",
+          "label": "老师的",
+          "pinyin": "lǎoshī de"
+        }
+      ],
+      "correct": "小王的",
+      "instruction": "请听对话，选择正确答案。",
+      "explanation": "猫是谁的？ — 小王的"
+    },
+    {
+      "id": "hsk1-l4-05",
+      "skill": "listening",
+      "part": 4,
+      "kind": "audio-dialogue",
+      "audioText": "男：你会做饭吗？女：不会。问：女的会做饭吗？",
+      "audioFile": "audio/sentences/hsk1-l4-05.wav",
+      "prompt": "女的会做饭吗？",
+      "choices": [
+        {
+          "value": "不会",
+          "label": "不会",
+          "pinyin": "bú huì"
+        },
+        {
+          "value": "会",
+          "label": "会",
+          "pinyin": "huì"
+        },
+        {
+          "value": "不是",
+          "label": "不是",
+          "pinyin": "bú shì"
+        }
+      ],
+      "correct": "不会",
+      "instruction": "请听对话，选择正确答案。",
+      "explanation": "女的会做饭吗？ — 不会"
+    },
+    {
+      "id": "hsk1-r1-01",
+      "skill": "reading",
+      "part": 1,
+      "kind": "reading-visual-judge",
+      "prompt": "他在喝茶。",
+      "promptPinyin": "Tā zài hē chá.",
+      "visual": {
+        "symbol": "☕",
+        "alt": "お茶を飲む人"
+      },
+      "choices": [
+        {
+          "value": "true",
+          "label": "对"
+        },
+        {
+          "value": "false",
+          "label": "不对"
+        }
+      ],
+      "correct": "true",
+      "instruction": "请判断句子是否与图示一致。",
+      "explanation": "他在喝茶。"
+    },
+    {
+      "id": "hsk1-r1-02",
+      "skill": "reading",
+      "part": 1,
+      "kind": "reading-visual-judge",
+      "prompt": "她坐出租车去学校。",
+      "promptPinyin": "Tā zuò chūzūchē qù xuéxiào.",
+      "visual": {
+        "symbol": "📱",
+        "alt": "電話をする人"
+      },
+      "choices": [
+        {
+          "value": "true",
+          "label": "对"
+        },
+        {
+          "value": "false",
+          "label": "不对"
+        }
+      ],
+      "correct": "false",
+      "instruction": "请判断句子是否与图示一致。",
+      "explanation": "她坐出租车去学校。"
+    },
+    {
+      "id": "hsk1-r1-03",
+      "skill": "reading",
+      "part": 1,
+      "kind": "reading-visual-judge",
+      "prompt": "他在看书。",
+      "promptPinyin": "Tā zài kàn shū.",
+      "visual": {
+        "symbol": "📖",
+        "alt": "本を読む人"
+      },
+      "choices": [
+        {
+          "value": "true",
+          "label": "对"
+        },
+        {
+          "value": "false",
+          "label": "不对"
+        }
+      ],
+      "correct": "true",
+      "instruction": "请判断句子是否与图示一致。",
+      "explanation": "他在看书。"
+    },
+    {
+      "id": "hsk1-r1-04",
+      "skill": "reading",
+      "part": 1,
+      "kind": "reading-visual-judge",
+      "prompt": "妈妈在打电话。",
+      "promptPinyin": "Māma zài dǎ diànhuà.",
+      "visual": {
+        "symbol": "🍚",
+        "alt": "ご飯を食べる人"
+      },
+      "choices": [
+        {
+          "value": "true",
+          "label": "对"
+        },
+        {
+          "value": "false",
+          "label": "不对"
+        }
+      ],
+      "correct": "false",
+      "instruction": "请判断句子是否与图示一致。",
+      "explanation": "妈妈在打电话。"
+    },
+    {
+      "id": "hsk1-r1-05",
+      "skill": "reading",
+      "part": 1,
+      "kind": "reading-visual-judge",
+      "prompt": "小猫在桌子上。",
+      "promptPinyin": "Xiǎomāo zài zhuōzi shàng.",
+      "visual": {
+        "symbol": "🐈",
+        "alt": "机の上の猫"
+      },
+      "choices": [
+        {
+          "value": "true",
+          "label": "对"
+        },
+        {
+          "value": "false",
+          "label": "不对"
+        }
+      ],
+      "correct": "true",
+      "instruction": "请判断句子是否与图示一致。",
+      "explanation": "小猫在桌子上。"
+    },
+    {
+      "id": "hsk1-r2-01",
+      "skill": "reading",
+      "part": 2,
+      "kind": "reading-visual-choice",
+      "prompt": "我中午吃米饭。",
+      "promptPinyin": "Wǒ zhōngwǔ chī mǐfàn.",
+      "choices": [
+        {
+          "value": "🍚",
+          "label": "🍚",
+          "ariaLabel": "ご飯を食べる人"
+        },
+        {
+          "value": "✈️",
+          "label": "✈️",
+          "ariaLabel": "飛行機で北京へ来る人"
+        },
+        {
+          "value": "🧑‍⚕️",
+          "label": "🧑‍⚕️",
+          "ariaLabel": "医師"
+        }
+      ],
+      "correct": "🍚",
+      "instruction": "请选择与句子相应的图示。",
+      "explanation": "我中午吃米饭。"
+    },
+    {
+      "id": "hsk1-r2-02",
+      "skill": "reading",
+      "part": 2,
+      "kind": "reading-visual-choice",
+      "prompt": "学生去学校。",
+      "promptPinyin": "Xuésheng qù xuéxiào.",
+      "choices": [
+        {
+          "value": "🏫",
+          "label": "🏫",
+          "ariaLabel": "学校へ行く学生"
+        },
+        {
+          "value": "📺",
+          "label": "📺",
+          "ariaLabel": "家でテレビを見る人"
+        },
+        {
+          "value": "🍜",
+          "label": "🍜",
+          "ariaLabel": "食堂で食事する人々"
+        }
+      ],
+      "correct": "🏫",
+      "instruction": "请选择与句子相应的图示。",
+      "explanation": "学生去学校。"
+    },
+    {
+      "id": "hsk1-r2-03",
+      "skill": "reading",
+      "part": 2,
+      "kind": "reading-visual-choice",
+      "prompt": "今天下雨了。",
+      "promptPinyin": "Jīntiān xiàyǔ le.",
+      "choices": [
+        {
+          "value": "🌧️",
+          "label": "🌧️",
+          "ariaLabel": "雨の日"
+        },
+        {
+          "value": "🍎",
+          "label": "🍎",
+          "ariaLabel": "机の上の三つのリンゴ"
+        },
+        {
+          "value": "😴",
+          "label": "😴",
+          "ariaLabel": "眠っている女の子"
+        }
+      ],
+      "correct": "🌧️",
+      "instruction": "请选择与句子相应的图示。",
+      "explanation": "今天下雨了。"
+    },
+    {
+      "id": "hsk1-r2-04",
+      "skill": "reading",
+      "part": 2,
+      "kind": "reading-visual-choice",
+      "prompt": "爸爸坐飞机来北京。",
+      "promptPinyin": "Bàba zuò fēijī lái Běijīng.",
+      "choices": [
+        {
+          "value": "✈️",
+          "label": "✈️",
+          "ariaLabel": "飛行機で北京へ来る人"
+        },
+        {
+          "value": "🧑‍⚕️",
+          "label": "🧑‍⚕️",
+          "ariaLabel": "医師"
+        },
+        {
+          "value": "✍️",
+          "label": "✍️",
+          "ariaLabel": "漢字を書く先生"
+        }
+      ],
+      "correct": "✈️",
+      "instruction": "请选择与句子相应的图示。",
+      "explanation": "爸爸坐飞机来北京。"
+    },
+    {
+      "id": "hsk1-r2-05",
+      "skill": "reading",
+      "part": 2,
+      "kind": "reading-visual-choice",
+      "prompt": "她在家看电视。",
+      "promptPinyin": "Tā zài jiā kàn diànshì.",
+      "choices": [
+        {
+          "value": "📺",
+          "label": "📺",
+          "ariaLabel": "家でテレビを見る人"
+        },
+        {
+          "value": "🍜",
+          "label": "🍜",
+          "ariaLabel": "食堂で食事する人々"
+        },
+        {
+          "value": "☕",
+          "label": "☕",
+          "ariaLabel": "お茶を飲む人"
+        }
+      ],
+      "correct": "📺",
+      "instruction": "请选择与句子相应的图示。",
+      "explanation": "她在家看电视。"
+    },
+    {
+      "id": "hsk1-r3-01",
+      "skill": "reading",
+      "part": 3,
+      "kind": "reading-response",
+      "prompt": "女的喝什么？",
+      "promptPinyin": "Nǚ de hē shénme?",
+      "choices": [
+        {
+          "value": "水",
+          "label": "水",
+          "pinyin": "shuǐ"
+        },
+        {
+          "value": "茶",
+          "label": "茶",
+          "pinyin": "chá"
+        },
+        {
+          "value": "米饭",
+          "label": "米饭",
+          "pinyin": "mǐfàn"
+        }
+      ],
+      "correct": "水",
+      "instruction": "请选择与问句相对应的回答。",
+      "explanation": "女的喝什么？ — 水"
+    },
+    {
+      "id": "hsk1-r3-02",
+      "skill": "reading",
+      "part": 3,
+      "kind": "reading-response",
+      "prompt": "现在几点？",
+      "promptPinyin": "Xiànzài jǐ diǎn?",
+      "choices": [
+        {
+          "value": "三点",
+          "label": "三点",
+          "pinyin": "sān diǎn"
+        },
+        {
+          "value": "两点",
+          "label": "两点",
+          "pinyin": "liǎng diǎn"
+        },
+        {
+          "value": "四点",
+          "label": "四点",
+          "pinyin": "sì diǎn"
+        }
+      ],
+      "correct": "三点",
+      "instruction": "请选择与问句相对应的回答。",
+      "explanation": "现在几点？ — 三点"
+    },
+    {
+      "id": "hsk1-r3-03",
+      "skill": "reading",
+      "part": 3,
+      "kind": "reading-response",
+      "prompt": "女的去哪儿？",
+      "promptPinyin": "Nǚ de qù nǎr?",
+      "choices": [
+        {
+          "value": "学校",
+          "label": "学校",
+          "pinyin": "xuéxiào"
+        },
+        {
+          "value": "医院",
+          "label": "医院",
+          "pinyin": "yīyuàn"
+        },
+        {
+          "value": "商店",
+          "label": "商店",
+          "pinyin": "shāngdiàn"
+        }
+      ],
+      "correct": "学校",
+      "instruction": "请选择与问句相对应的回答。",
+      "explanation": "女的去哪儿？ — 学校"
+    },
+    {
+      "id": "hsk1-r3-04",
+      "skill": "reading",
+      "part": 3,
+      "kind": "reading-response",
+      "prompt": "猫是谁的？",
+      "promptPinyin": "Māo shì shéi de?",
+      "choices": [
+        {
+          "value": "小王的",
+          "label": "小王的",
+          "pinyin": "Xiǎo Wáng de"
+        },
+        {
+          "value": "小李的",
+          "label": "小李的",
+          "pinyin": "Xiǎo Lǐ de"
+        },
+        {
+          "value": "老师的",
+          "label": "老师的",
+          "pinyin": "lǎoshī de"
+        }
+      ],
+      "correct": "小王的",
+      "instruction": "请选择与问句相对应的回答。",
+      "explanation": "猫是谁的？ — 小王的"
+    },
+    {
+      "id": "hsk1-r3-05",
+      "skill": "reading",
+      "part": 3,
+      "kind": "reading-response",
+      "prompt": "女的会做饭吗？",
+      "promptPinyin": "Nǚ de huì zuòfàn ma?",
+      "choices": [
+        {
+          "value": "不会",
+          "label": "不会",
+          "pinyin": "bú huì"
+        },
+        {
+          "value": "会",
+          "label": "会",
+          "pinyin": "huì"
+        },
+        {
+          "value": "不是",
+          "label": "不是",
+          "pinyin": "bú shì"
+        }
+      ],
+      "correct": "不会",
+      "instruction": "请选择与问句相对应的回答。",
+      "explanation": "女的会做饭吗？ — 不会"
+    },
+    {
+      "id": "hsk1-r4-01",
+      "skill": "reading",
+      "part": 4,
+      "kind": "reading-cloze",
+      "wordId": "hsk1-026",
+      "prompt": "他是我的＿＿＿。",
+      "promptPinyin": "Tā shì wǒ de ____.",
+      "choices": [
+        {
+          "value": "hsk1-026",
+          "label": "儿子",
+          "pinyin": "érzi"
+        },
+        {
+          "value": "hsk1-047",
+          "label": "她",
+          "pinyin": "tā"
+        },
+        {
+          "value": "hsk1-064",
+          "label": "猫",
+          "pinyin": "māo"
+        }
+      ],
+      "correct": "hsk1-026",
+      "instruction": "请选择合适的词语填空。",
+      "explanation": "他是我的儿子。"
+    },
+    {
+      "id": "hsk1-r4-02",
+      "skill": "reading",
+      "part": 4,
+      "kind": "reading-cloze",
+      "wordId": "hsk1-027",
+      "prompt": "今天是＿＿＿月二日。",
+      "promptPinyin": "Jīntiān shì ____yuè èr rì.",
+      "choices": [
+        {
+          "value": "hsk1-027",
+          "label": "二",
+          "pinyin": "èr"
+        },
+        {
+          "value": "hsk1-051",
+          "label": "看",
+          "pinyin": "kàn"
+        },
+        {
+          "value": "hsk1-068",
+          "label": "名字",
+          "pinyin": "míngzi"
+        }
+      ],
+      "correct": "hsk1-027",
+      "instruction": "请选择合适的词语填空。",
+      "explanation": "今天是二月二日。"
+    },
+    {
+      "id": "hsk1-r4-03",
+      "skill": "reading",
+      "part": 4,
+      "kind": "reading-cloze",
+      "wordId": "hsk1-028",
+      "prompt": "＿＿＿在前面。",
+      "promptPinyin": "____ zài qiánmiàn.",
+      "choices": [
+        {
+          "value": "hsk1-028",
+          "label": "饭馆",
+          "pinyin": "fànguǎn"
+        },
+        {
+          "value": "hsk1-055",
+          "label": "老师",
+          "pinyin": "lǎoshī"
+        },
+        {
+          "value": "hsk1-072",
+          "label": "呢",
+          "pinyin": "ne"
+        }
+      ],
+      "correct": "hsk1-028",
+      "instruction": "请选择合适的词语填空。",
+      "explanation": "饭馆在前面。"
+    },
+    {
+      "id": "hsk1-r4-04",
+      "skill": "reading",
+      "part": 4,
+      "kind": "reading-cloze",
+      "wordId": "hsk1-029",
+      "prompt": "我坐＿＿＿去北京。",
+      "promptPinyin": "Wǒ zuò ____ qù Běijīng.",
+      "choices": [
+        {
+          "value": "hsk1-029",
+          "label": "飞机",
+          "pinyin": "fēijī"
+        },
+        {
+          "value": "hsk1-059",
+          "label": "零",
+          "pinyin": "líng"
+        },
+        {
+          "value": "hsk1-076",
+          "label": "女儿",
+          "pinyin": "nǚ'ér"
+        }
+      ],
+      "correct": "hsk1-029",
+      "instruction": "请选择合适的词语填空。",
+      "explanation": "我坐飞机去北京。"
+    },
+    {
+      "id": "hsk1-r4-05",
+      "skill": "reading",
+      "part": 4,
+      "kind": "reading-cloze",
+      "wordId": "hsk1-030",
+      "prompt": "请等十＿＿＿。",
+      "promptPinyin": "Qǐng děng shí ____.",
+      "choices": [
+        {
+          "value": "hsk1-030",
+          "label": "分钟",
+          "pinyin": "fēnzhōng"
+        },
+        {
+          "value": "hsk1-063",
+          "label": "买",
+          "pinyin": "mǎi"
+        },
+        {
+          "value": "hsk1-080",
+          "label": "七",
+          "pinyin": "qī"
+        }
+      ],
+      "correct": "hsk1-030",
+      "instruction": "请选择合适的词语填空。",
+      "explanation": "请等十分钟。"
+    }
+  ]
+}

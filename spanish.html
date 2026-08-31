@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="description" content="DELE A1〜B1相当のスペイン語600語を学べる言語アプリ" />
+    <title>スペイン語・DELE相当 | 言語アプリ</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="spanish.css" />
+  </head>
+  <body class="spanish-app">
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="スペイン語ナビゲーション">
+        <a class="brand" href="#home"><span class="brand-mark">Ñ</span><span><strong>Español</strong><small>DELE A1–B1相当</small></span></a>
+        <nav class="nav-list">
+          <button class="nav-item is-active" data-view="home" type="button"><span>⌂</span>ホーム</button>
+          <button class="nav-item" data-view="words" type="button"><span>Ab</span>単語一覧</button>
+          <button class="nav-item" data-view="checked" type="button"><span>✓</span>チェック<b id="checked-nav-count" class="nav-count is-hidden">0</b></button>
+          <button class="nav-item" data-view="progress" type="button"><span>↗</span>学習記録</button>
+        </nav>
+        <div class="language-links"><a href="index.html">← 言語を選ぶ</a><a href="chinese.html">中国語 →</a></div>
+        <div class="sidebar-streak"><span class="streak-flame">✓</span><div><strong id="sidebar-streak">0日</strong><small>連続学習</small></div></div>
+      </aside>
+      <button class="mobile-backdrop" type="button" aria-label="メニューを閉じる"></button>
+
+      <main class="main-content">
+        <header class="mobile-header"><a class="brand" href="#home"><span class="brand-mark">Ñ</span><strong>Español</strong></a><button class="mobile-menu" type="button" aria-label="メニューを開く" aria-expanded="false">☰</button></header>
+
+        <section id="home-view" class="view is-visible" aria-labelledby="welcome-title">
+          <div class="welcome-row"><div><p class="eyebrow">¡HOLA! EMPECEMOS</p><h1 id="welcome-title">スペイン語を、<span>一歩ずつ。</span></h1><p>レベルを選んで、今日の10問を始めましょう。</p></div><div class="today-badge"><span>今週</span><strong id="week-count">0</strong><small>問に挑戦</small></div></div>
+          <div class="hero-card spanish-hero"><div><span class="hero-kicker">DAILY ESPAÑOL</span><h2>言葉が増えるたび、<br />旅先が近くなる。</h2><p>聞いて、選んで、繰り返して覚えます。</p></div><div class="spanish-sun" aria-hidden="true"><span>¡</span></div></div>
+          <div class="section-heading"><div><p class="eyebrow">SELECT LEVEL</p><h2>学習レベルを選ぶ</h2></div><span id="total-words-label">読み込み中…</span></div>
+          <div id="level-grid" class="level-grid" aria-live="polite"></div>
+          <div class="quick-row spanish-quick">
+            <button id="random-quiz" class="quick-card" type="button"><span class="quick-icon coral">10</span><span><strong>全レベル10問</strong><small>600語からランダム出題</small></span><span>→</span></button>
+            <button id="review-quiz" class="quick-card" type="button"><span class="quick-icon blue">復</span><span><strong>まちがい復習</strong><small id="review-count-label">復習する単語はありません</small></span><span>→</span></button>
+            <button id="open-checked" class="quick-card" type="button"><span class="quick-icon yellow">✓</span><span><strong>チェックした単語</strong><small id="checked-count-label">気になる単語に✓を付けましょう</small></span><span>→</span></button>
+          </div>
+          <aside class="source-note"><strong>この語彙について</strong><p>Instituto Cervantes「Plan Curricular」の分野別インベントリを設計基準にした独自の学習用リストです。DELEの公式固定出題語彙表ではありません。</p></aside>
+        </section>
+
+        <section id="quiz-view" class="view" aria-labelledby="quiz-title">
+          <div class="quiz-topbar"><button id="quiz-close" class="icon-button" type="button" aria-label="クイズを終了">×</button><div class="quiz-progress-track"><span id="quiz-progress-bar"></span></div><strong id="quiz-step">1 / 10</strong></div>
+          <div class="quiz-layout"><div class="quiz-meta"><span id="quiz-level" class="level-pill">A1</span><span>日本語の意味を選んでください</span></div>
+            <article class="question-card spanish-question"><button id="speak-button" class="speak-button" type="button" aria-label="スペイン語の発音を聞く"><span>▶</span></button><p>この単語の意味は？</p><h1 id="quiz-word">hola</h1><p id="quiz-category" class="pinyin">あいさつ</p></article>
+            <div id="answer-list" class="answer-list"></div><div id="answer-feedback" class="answer-feedback" aria-live="polite"></div><button id="next-question" class="primary-button is-hidden" type="button">次の問題へ <span>→</span></button>
+          </div>
+        </section>
+
+        <section id="words-view" class="view" aria-labelledby="words-title">
+          <div class="page-heading"><div><p class="eyebrow">VOCABULARIO</p><h1 id="words-title">単語一覧</h1><p>スペイン語・日本語・品詞・分野から検索できます。</p></div></div>
+          <div class="toolbar"><div class="level-tabs" role="group" aria-label="レベルで絞り込み"><button class="filter-chip is-active" data-level="all" type="button">すべて</button><button class="filter-chip" data-level="A1" type="button">A1</button><button class="filter-chip" data-level="A2" type="button">A2</button><button class="filter-chip" data-level="B1" type="button">B1</button></div><button id="check-filter" class="check-chip" type="button" aria-pressed="false"><span aria-hidden="true">✓</span> チェックのみ</button><label class="search-box"><span>⌕</span><input id="word-search" type="search" placeholder="例: viajar・旅行・動詞" /></label></div>
+          <p id="word-count" class="list-count"></p><div id="word-list" class="word-list"></div><p id="empty-words" class="empty-state is-hidden">該当する単語がありません。</p>
+        </section>
+
+        <section id="checked-view" class="view" aria-labelledby="checked-title">
+          <div class="page-heading examples-heading">
+            <div><p class="eyebrow">PALABRAS MARCADAS</p><h1 id="checked-title">チェックした単語</h1><p>気になった単語をまとめて振り返り、そのまま出題できます。</p></div>
+            <div class="example-total"><strong id="checked-total-count">0</strong><span>単語</span></div>
+          </div>
+          <div class="checked-actions"><button id="checked-quiz" class="primary-button" type="button">チェックした単語でテスト <span>→</span></button></div>
+          <div id="checked-list" class="checked-list"></div>
+          <div id="empty-checked" class="empty-state is-hidden">
+            <span class="empty-hanzi">✓</span>
+            <strong>チェックした単語はまだありません</strong>
+            <p>単語一覧やテストの振り返りにある ✓ ボタンで追加できます。</p>
+          </div>
+          <button id="clear-checked" class="text-button is-hidden" type="button">チェックをすべて解除</button>
+        </section>
+
+        <section id="progress-view" class="view" aria-labelledby="progress-title">
+          <div class="page-heading"><div><p class="eyebrow">TU PROGRESO</p><h1 id="progress-title">学習記録</h1><p>このブラウザに保存されたスペイン語の学習状況です。</p></div></div>
+          <div class="stats-grid"><article class="stat-card coral-card"><span>回答した問題</span><strong id="stat-answered">0</strong><small>問</small></article><article class="stat-card blue-card"><span>正解した問題</span><strong id="stat-correct">0</strong><small>問</small></article><article class="stat-card yellow-card"><span>正答率</span><strong id="stat-rate">—</strong></article></div>
+          <article class="progress-panel"><div class="section-heading"><div><p class="eyebrow">BY LEVEL</p><h2>レベル別の正答率</h2></div></div><div id="level-progress-list" class="level-progress-list"></div></article>
+          <button id="reset-progress" class="text-button" type="button">スペイン語の学習記録をリセット</button>
+        </section>
+
+        <section id="result-view" class="view result-view" aria-labelledby="result-title"><div class="result-burst">¡Sí!</div><p class="eyebrow">SESIÓN COMPLETADA</p><h1 id="result-title">¡Buen trabajo!</h1><p>今回の結果</p><div class="result-score"><strong id="result-correct">0</strong><span>/ <b id="result-total">0</b> 問</span></div><p id="result-message" class="result-message"></p>
+          <section id="quiz-review" class="review-panel is-hidden" data-review-key="quiz" aria-labelledby="quiz-review-title">
+            <div class="review-head">
+              <div><p class="eyebrow">REVIEW</p><h2 id="quiz-review-title">振り返り</h2></div>
+              <div class="review-filter" role="group" aria-label="振り返りの表示切り替え">
+                <button class="review-chip is-active" type="button" data-review-scope="all" aria-pressed="true">すべて <b class="review-count-total">0</b></button>
+                <button class="review-chip" type="button" data-review-scope="wrong" aria-pressed="false">まちがい <b class="review-count-missed">0</b></button>
+              </div>
+            </div>
+            <ol class="review-list"></ol>
+            <p class="review-empty empty-inline is-hidden"></p>
+          </section>
+          <div class="result-actions"><button id="retry-quiz" class="primary-button" type="button">もう一度挑戦</button><button id="back-home" class="secondary-button" type="button">ホームへ戻る</button></div></section>
+      </main>
+      <nav class="mobile-bottom-nav spanish-mobile-nav" aria-label="スマートフォン用ナビゲーション"><button class="nav-item is-active" data-view="home" type="button"><span>⌂</span><small>ホーム</small></button><button class="nav-item" data-view="words" type="button"><span>Ab</span><small>単語</small></button><button class="nav-item" data-view="checked" type="button"><span>✓</span><small>チェック</small></button><button class="nav-item" data-view="progress" type="button"><span>↗</span><small>記録</small></button></nav>
+    </div>
+    <template id="level-card-template"><article class="level-card"><div class="level-number"><span>DELE</span><strong></strong></div><div class="level-copy"><span class="level-name"></span><h3></h3><p></p></div><div class="level-footer"><span class="word-count"></span><button class="start-level" type="button">10問学習 <span>→</span></button></div></article></template>
+    <script src="spanish.js" defer></script>
+  </body>
+</html>

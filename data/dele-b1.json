@@ -1,0 +1,2402 @@
+[
+  {
+    "id": "dele-b1-001",
+    "word": "personalidad",
+    "meaning": "性格／個性",
+    "pos": "sustantivo",
+    "category": "人間関係",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-002",
+    "word": "comportamiento",
+    "meaning": "行動／振る舞い",
+    "pos": "sustantivo",
+    "category": "人間関係",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-003",
+    "word": "actitud",
+    "meaning": "態度",
+    "pos": "sustantivo",
+    "category": "人間関係",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-004",
+    "word": "confianza",
+    "meaning": "信頼／自信",
+    "pos": "sustantivo",
+    "category": "人間関係",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-005",
+    "word": "respeto",
+    "meaning": "尊敬／配慮",
+    "pos": "sustantivo",
+    "category": "人間関係",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-006",
+    "word": "paciencia",
+    "meaning": "忍耐",
+    "pos": "sustantivo",
+    "category": "人間関係",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-007",
+    "word": "relación",
+    "meaning": "関係",
+    "pos": "sustantivo",
+    "category": "人間関係",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-008",
+    "word": "pareja",
+    "meaning": "パートナー／カップル",
+    "pos": "sustantivo",
+    "category": "人間関係",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-009",
+    "word": "amistad",
+    "meaning": "友情",
+    "pos": "sustantivo",
+    "category": "人間関係",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-010",
+    "word": "discusión",
+    "meaning": "議論／口論",
+    "pos": "sustantivo",
+    "category": "人間関係",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-011",
+    "word": "acuerdo",
+    "meaning": "合意",
+    "pos": "sustantivo",
+    "category": "意見",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-012",
+    "word": "desacuerdo",
+    "meaning": "不一致／反対",
+    "pos": "sustantivo",
+    "category": "意見",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-013",
+    "word": "opinión",
+    "meaning": "意見",
+    "pos": "sustantivo",
+    "category": "意見",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-014",
+    "word": "experiencia",
+    "meaning": "経験",
+    "pos": "sustantivo",
+    "category": "経験",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-015",
+    "word": "recuerdo",
+    "meaning": "思い出／記憶",
+    "pos": "sustantivo",
+    "category": "経験",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-016",
+    "word": "sueño",
+    "meaning": "夢／眠気",
+    "pos": "sustantivo",
+    "category": "感情",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-017",
+    "word": "miedo",
+    "meaning": "恐怖",
+    "pos": "sustantivo",
+    "category": "感情",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-018",
+    "word": "vergüenza",
+    "meaning": "恥ずかしさ",
+    "pos": "sustantivo",
+    "category": "感情",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-019",
+    "word": "sorpresa",
+    "meaning": "驚き",
+    "pos": "sustantivo",
+    "category": "感情",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-020",
+    "word": "alegría",
+    "meaning": "喜び",
+    "pos": "sustantivo",
+    "category": "感情",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-021",
+    "word": "tristeza",
+    "meaning": "悲しみ",
+    "pos": "sustantivo",
+    "category": "感情",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-022",
+    "word": "enfado",
+    "meaning": "怒り",
+    "pos": "sustantivo",
+    "category": "感情",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-023",
+    "word": "preocupación",
+    "meaning": "心配",
+    "pos": "sustantivo",
+    "category": "感情",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-024",
+    "word": "estrés",
+    "meaning": "ストレス",
+    "pos": "sustantivo",
+    "category": "感情",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-025",
+    "word": "ánimo",
+    "meaning": "気力／気分",
+    "pos": "sustantivo",
+    "category": "感情",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-026",
+    "word": "sentimiento",
+    "meaning": "感情",
+    "pos": "sustantivo",
+    "category": "感情",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-027",
+    "word": "decisión",
+    "meaning": "決定",
+    "pos": "sustantivo",
+    "category": "思考",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-028",
+    "word": "costumbre",
+    "meaning": "習慣",
+    "pos": "sustantivo",
+    "category": "生活",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-029",
+    "word": "cambio",
+    "meaning": "変化／変更",
+    "pos": "sustantivo",
+    "category": "変化",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-030",
+    "word": "oportunidad",
+    "meaning": "機会",
+    "pos": "sustantivo",
+    "category": "経験",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-031",
+    "word": "empresa",
+    "meaning": "企業",
+    "pos": "sustantivo",
+    "category": "仕事",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-032",
+    "word": "oficina",
+    "meaning": "事務所",
+    "pos": "sustantivo",
+    "category": "仕事",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-033",
+    "word": "empleo",
+    "meaning": "雇用／職",
+    "pos": "sustantivo",
+    "category": "仕事",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-034",
+    "word": "puesto",
+    "meaning": "職／地位",
+    "pos": "sustantivo",
+    "category": "仕事",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-035",
+    "word": "sueldo",
+    "meaning": "給料",
+    "pos": "sustantivo",
+    "category": "仕事",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-036",
+    "word": "contrato",
+    "meaning": "契約",
+    "pos": "sustantivo",
+    "category": "仕事",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-037",
+    "word": "horario",
+    "meaning": "時間割／営業時間",
+    "pos": "sustantivo",
+    "category": "仕事",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-038",
+    "word": "reunión",
+    "meaning": "会議／集まり",
+    "pos": "sustantivo",
+    "category": "仕事",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-039",
+    "word": "entrevista",
+    "meaning": "面接／インタビュー",
+    "pos": "sustantivo",
+    "category": "仕事",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-040",
+    "word": "carrera",
+    "meaning": "学位課程／経歴",
+    "pos": "sustantivo",
+    "category": "教育",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-041",
+    "word": "profesión",
+    "meaning": "職業",
+    "pos": "sustantivo",
+    "category": "仕事",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-042",
+    "word": "formación",
+    "meaning": "教育／研修",
+    "pos": "sustantivo",
+    "category": "教育",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-043",
+    "word": "curso",
+    "meaning": "講座／コース",
+    "pos": "sustantivo",
+    "category": "教育",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-044",
+    "word": "asignatura",
+    "meaning": "科目",
+    "pos": "sustantivo",
+    "category": "教育",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-045",
+    "word": "título",
+    "meaning": "資格／題名",
+    "pos": "sustantivo",
+    "category": "教育",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-046",
+    "word": "diploma",
+    "meaning": "卒業証書／資格証",
+    "pos": "sustantivo",
+    "category": "教育",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-047",
+    "word": "beca",
+    "meaning": "奨学金",
+    "pos": "sustantivo",
+    "category": "教育",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-048",
+    "word": "matrícula",
+    "meaning": "入学登録／授業料",
+    "pos": "sustantivo",
+    "category": "教育",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-049",
+    "word": "deberes",
+    "meaning": "宿題／義務",
+    "pos": "sustantivo",
+    "category": "教育",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-050",
+    "word": "examen",
+    "meaning": "試験",
+    "pos": "sustantivo",
+    "category": "教育",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-051",
+    "word": "aprobar",
+    "meaning": "合格する／承認する",
+    "pos": "verbo",
+    "category": "教育",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-052",
+    "word": "suspender",
+    "meaning": "不合格になる／中断する",
+    "pos": "verbo",
+    "category": "教育",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-053",
+    "word": "investigar",
+    "meaning": "調査する",
+    "pos": "verbo",
+    "category": "教育",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-054",
+    "word": "presentar",
+    "meaning": "紹介する／提出する",
+    "pos": "verbo",
+    "category": "仕事",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-055",
+    "word": "solicitar",
+    "meaning": "申請する",
+    "pos": "verbo",
+    "category": "仕事",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-056",
+    "word": "contratar",
+    "meaning": "雇う／契約する",
+    "pos": "verbo",
+    "category": "仕事",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-057",
+    "word": "despedir",
+    "meaning": "解雇する／見送る",
+    "pos": "verbo",
+    "category": "仕事",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-058",
+    "word": "jubilarse",
+    "meaning": "退職する",
+    "pos": "verbo",
+    "category": "仕事",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-059",
+    "word": "colaborar",
+    "meaning": "協力する",
+    "pos": "verbo",
+    "category": "仕事",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-060",
+    "word": "habilidad",
+    "meaning": "能力／技能",
+    "pos": "sustantivo",
+    "category": "仕事",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-061",
+    "word": "transporte",
+    "meaning": "交通／輸送",
+    "pos": "sustantivo",
+    "category": "交通",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-062",
+    "word": "tráfico",
+    "meaning": "交通／渋滞",
+    "pos": "sustantivo",
+    "category": "交通",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-063",
+    "word": "atasco",
+    "meaning": "交通渋滞",
+    "pos": "sustantivo",
+    "category": "交通",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-064",
+    "word": "carretera",
+    "meaning": "道路",
+    "pos": "sustantivo",
+    "category": "交通",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-065",
+    "word": "autopista",
+    "meaning": "高速道路",
+    "pos": "sustantivo",
+    "category": "交通",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-066",
+    "word": "semáforo",
+    "meaning": "信号機",
+    "pos": "sustantivo",
+    "category": "交通",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-067",
+    "word": "cruce",
+    "meaning": "交差点／横断",
+    "pos": "sustantivo",
+    "category": "交通",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-068",
+    "word": "acera",
+    "meaning": "歩道",
+    "pos": "sustantivo",
+    "category": "交通",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-069",
+    "word": "barrio",
+    "meaning": "地区／街区",
+    "pos": "sustantivo",
+    "category": "都市",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-070",
+    "word": "edificio",
+    "meaning": "建物",
+    "pos": "sustantivo",
+    "category": "都市",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-071",
+    "word": "ayuntamiento",
+    "meaning": "市役所",
+    "pos": "sustantivo",
+    "category": "都市",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-072",
+    "word": "comisaría",
+    "meaning": "警察署",
+    "pos": "sustantivo",
+    "category": "都市",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-073",
+    "word": "alojamiento",
+    "meaning": "宿泊施設",
+    "pos": "sustantivo",
+    "category": "旅行",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-074",
+    "word": "hostal",
+    "meaning": "簡易宿泊所",
+    "pos": "sustantivo",
+    "category": "旅行",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-075",
+    "word": "camping",
+    "meaning": "キャンプ場／キャンプ",
+    "pos": "sustantivo",
+    "category": "旅行",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-076",
+    "word": "excursión",
+    "meaning": "遠足／小旅行",
+    "pos": "sustantivo",
+    "category": "旅行",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-077",
+    "word": "destino",
+    "meaning": "目的地",
+    "pos": "sustantivo",
+    "category": "旅行",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-078",
+    "word": "ruta",
+    "meaning": "道順／ルート",
+    "pos": "sustantivo",
+    "category": "旅行",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-079",
+    "word": "guía",
+    "meaning": "案内人／ガイドブック",
+    "pos": "sustantivo",
+    "category": "旅行",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-080",
+    "word": "frontera",
+    "meaning": "国境",
+    "pos": "sustantivo",
+    "category": "旅行",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-081",
+    "word": "extranjero",
+    "meaning": "外国人／外国の",
+    "pos": "sustantivo",
+    "category": "旅行",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-082",
+    "word": "moneda",
+    "meaning": "硬貨／通貨",
+    "pos": "sustantivo",
+    "category": "旅行",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-083",
+    "word": "efectivo",
+    "meaning": "現金",
+    "pos": "sustantivo",
+    "category": "旅行",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-084",
+    "word": "cajero automático",
+    "meaning": "ATM",
+    "pos": "sustantivo",
+    "category": "旅行",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-085",
+    "word": "retraso",
+    "meaning": "遅延",
+    "pos": "sustantivo",
+    "category": "旅行",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-086",
+    "word": "salida",
+    "meaning": "出口／出発",
+    "pos": "sustantivo",
+    "category": "旅行",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-087",
+    "word": "llegada",
+    "meaning": "到着",
+    "pos": "sustantivo",
+    "category": "旅行",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-088",
+    "word": "andén",
+    "meaning": "ホーム",
+    "pos": "sustantivo",
+    "category": "旅行",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-089",
+    "word": "ida y vuelta",
+    "meaning": "往復",
+    "pos": "expresión",
+    "category": "旅行",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-090",
+    "word": "vuelo",
+    "meaning": "航空便",
+    "pos": "sustantivo",
+    "category": "旅行",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-091",
+    "word": "enfermedad",
+    "meaning": "病気",
+    "pos": "sustantivo",
+    "category": "健康",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-092",
+    "word": "fiebre",
+    "meaning": "発熱",
+    "pos": "sustantivo",
+    "category": "健康",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-093",
+    "word": "tos",
+    "meaning": "咳",
+    "pos": "sustantivo",
+    "category": "健康",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-094",
+    "word": "resfriado",
+    "meaning": "風邪",
+    "pos": "sustantivo",
+    "category": "健康",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-095",
+    "word": "gripe",
+    "meaning": "インフルエンザ",
+    "pos": "sustantivo",
+    "category": "健康",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-096",
+    "word": "herida",
+    "meaning": "傷",
+    "pos": "sustantivo",
+    "category": "健康",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-097",
+    "word": "accidente",
+    "meaning": "事故",
+    "pos": "sustantivo",
+    "category": "健康",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-098",
+    "word": "enfermero",
+    "meaning": "看護師",
+    "pos": "sustantivo",
+    "category": "健康",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-099",
+    "word": "paciente",
+    "meaning": "患者",
+    "pos": "sustantivo",
+    "category": "健康",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-100",
+    "word": "medicina",
+    "meaning": "薬／医学",
+    "pos": "sustantivo",
+    "category": "健康",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-101",
+    "word": "pastilla",
+    "meaning": "錠剤",
+    "pos": "sustantivo",
+    "category": "健康",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-102",
+    "word": "receta",
+    "meaning": "処方箋／レシピ",
+    "pos": "sustantivo",
+    "category": "健康",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-103",
+    "word": "tratamiento",
+    "meaning": "治療",
+    "pos": "sustantivo",
+    "category": "健康",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-104",
+    "word": "seguro médico",
+    "meaning": "医療保険",
+    "pos": "sustantivo",
+    "category": "健康",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-105",
+    "word": "urgencias",
+    "meaning": "救急外来",
+    "pos": "sustantivo",
+    "category": "健康",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-106",
+    "word": "ambulancia",
+    "meaning": "救急車",
+    "pos": "sustantivo",
+    "category": "健康",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-107",
+    "word": "operación",
+    "meaning": "手術／操作",
+    "pos": "sustantivo",
+    "category": "健康",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-108",
+    "word": "análisis",
+    "meaning": "検査／分析",
+    "pos": "sustantivo",
+    "category": "健康",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-109",
+    "word": "dieta",
+    "meaning": "食事療法／食生活",
+    "pos": "sustantivo",
+    "category": "健康",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-110",
+    "word": "ejercicio",
+    "meaning": "運動／練習問題",
+    "pos": "sustantivo",
+    "category": "健康",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-111",
+    "word": "descansar",
+    "meaning": "休む",
+    "pos": "verbo",
+    "category": "健康",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-112",
+    "word": "doler",
+    "meaning": "痛む",
+    "pos": "verbo",
+    "category": "健康",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-113",
+    "word": "recuperarse",
+    "meaning": "回復する",
+    "pos": "verbo",
+    "category": "健康",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-114",
+    "word": "prevenir",
+    "meaning": "予防する",
+    "pos": "verbo",
+    "category": "健康",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-115",
+    "word": "cuidar",
+    "meaning": "世話する／気をつける",
+    "pos": "verbo",
+    "category": "健康",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-116",
+    "word": "sano",
+    "meaning": "健康な",
+    "pos": "adjetivo",
+    "category": "健康",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-117",
+    "word": "enfermo",
+    "meaning": "病気の",
+    "pos": "adjetivo",
+    "category": "健康",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-118",
+    "word": "grave",
+    "meaning": "重い／深刻な",
+    "pos": "adjetivo",
+    "category": "健康",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-119",
+    "word": "leve",
+    "meaning": "軽い／軽度の",
+    "pos": "adjetivo",
+    "category": "健康",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-120",
+    "word": "alergia",
+    "meaning": "アレルギー",
+    "pos": "sustantivo",
+    "category": "健康",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-121",
+    "word": "medio ambiente",
+    "meaning": "環境",
+    "pos": "sustantivo",
+    "category": "環境",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-122",
+    "word": "contaminación",
+    "meaning": "汚染",
+    "pos": "sustantivo",
+    "category": "環境",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-123",
+    "word": "clima",
+    "meaning": "気候",
+    "pos": "sustantivo",
+    "category": "環境",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-124",
+    "word": "temperatura",
+    "meaning": "温度",
+    "pos": "sustantivo",
+    "category": "環境",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-125",
+    "word": "tormenta",
+    "meaning": "嵐",
+    "pos": "sustantivo",
+    "category": "天候",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-126",
+    "word": "viento",
+    "meaning": "風",
+    "pos": "sustantivo",
+    "category": "天候",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-127",
+    "word": "lluvia",
+    "meaning": "雨",
+    "pos": "sustantivo",
+    "category": "天候",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-128",
+    "word": "nieve",
+    "meaning": "雪",
+    "pos": "sustantivo",
+    "category": "天候",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-129",
+    "word": "nube",
+    "meaning": "雲",
+    "pos": "sustantivo",
+    "category": "天候",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-130",
+    "word": "sol",
+    "meaning": "太陽",
+    "pos": "sustantivo",
+    "category": "天候",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-131",
+    "word": "bosque",
+    "meaning": "森",
+    "pos": "sustantivo",
+    "category": "自然",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-132",
+    "word": "río",
+    "meaning": "川",
+    "pos": "sustantivo",
+    "category": "自然",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-133",
+    "word": "lago",
+    "meaning": "湖",
+    "pos": "sustantivo",
+    "category": "自然",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-134",
+    "word": "mar",
+    "meaning": "海",
+    "pos": "sustantivo",
+    "category": "自然",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-135",
+    "word": "campo",
+    "meaning": "田舎／野原",
+    "pos": "sustantivo",
+    "category": "自然",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-136",
+    "word": "isla",
+    "meaning": "島",
+    "pos": "sustantivo",
+    "category": "自然",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-137",
+    "word": "animal",
+    "meaning": "動物",
+    "pos": "sustantivo",
+    "category": "自然",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-138",
+    "word": "planta",
+    "meaning": "植物／階",
+    "pos": "sustantivo",
+    "category": "自然",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-139",
+    "word": "árbol",
+    "meaning": "木",
+    "pos": "sustantivo",
+    "category": "自然",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-140",
+    "word": "flor",
+    "meaning": "花",
+    "pos": "sustantivo",
+    "category": "自然",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-141",
+    "word": "basura",
+    "meaning": "ごみ",
+    "pos": "sustantivo",
+    "category": "環境",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-142",
+    "word": "reciclaje",
+    "meaning": "リサイクル",
+    "pos": "sustantivo",
+    "category": "環境",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-143",
+    "word": "electricidad",
+    "meaning": "電気",
+    "pos": "sustantivo",
+    "category": "環境",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-144",
+    "word": "recurso",
+    "meaning": "資源／手段",
+    "pos": "sustantivo",
+    "category": "環境",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-145",
+    "word": "ahorrar",
+    "meaning": "節約する",
+    "pos": "verbo",
+    "category": "環境",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-146",
+    "word": "proteger",
+    "meaning": "守る",
+    "pos": "verbo",
+    "category": "環境",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-147",
+    "word": "destruir",
+    "meaning": "破壊する",
+    "pos": "verbo",
+    "category": "環境",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-148",
+    "word": "reducir",
+    "meaning": "減らす",
+    "pos": "verbo",
+    "category": "環境",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-149",
+    "word": "reutilizar",
+    "meaning": "再利用する",
+    "pos": "verbo",
+    "category": "環境",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-150",
+    "word": "sostenible",
+    "meaning": "持続可能な",
+    "pos": "adjetivo",
+    "category": "環境",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-151",
+    "word": "noticia",
+    "meaning": "ニュース",
+    "pos": "sustantivo",
+    "category": "メディア",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-152",
+    "word": "periódico",
+    "meaning": "新聞",
+    "pos": "sustantivo",
+    "category": "メディア",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-153",
+    "word": "revista",
+    "meaning": "雑誌",
+    "pos": "sustantivo",
+    "category": "メディア",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-154",
+    "word": "artículo",
+    "meaning": "記事／品物",
+    "pos": "sustantivo",
+    "category": "メディア",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-155",
+    "word": "anuncio",
+    "meaning": "広告／告知",
+    "pos": "sustantivo",
+    "category": "メディア",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-156",
+    "word": "publicidad",
+    "meaning": "広告",
+    "pos": "sustantivo",
+    "category": "メディア",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-157",
+    "word": "televisión",
+    "meaning": "テレビ",
+    "pos": "sustantivo",
+    "category": "メディア",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-158",
+    "word": "radio",
+    "meaning": "ラジオ",
+    "pos": "sustantivo",
+    "category": "メディア",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-159",
+    "word": "programa",
+    "meaning": "番組／プログラム",
+    "pos": "sustantivo",
+    "category": "メディア",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-160",
+    "word": "serie",
+    "meaning": "シリーズ／連続ドラマ",
+    "pos": "sustantivo",
+    "category": "メディア",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-161",
+    "word": "película",
+    "meaning": "映画",
+    "pos": "sustantivo",
+    "category": "メディア",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-162",
+    "word": "documental",
+    "meaning": "ドキュメンタリー",
+    "pos": "sustantivo",
+    "category": "メディア",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-163",
+    "word": "reportaje",
+    "meaning": "特集記事／ルポ",
+    "pos": "sustantivo",
+    "category": "メディア",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-164",
+    "word": "periodista",
+    "meaning": "記者",
+    "pos": "sustantivo",
+    "category": "メディア",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-165",
+    "word": "prensa",
+    "meaning": "報道機関",
+    "pos": "sustantivo",
+    "category": "メディア",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-166",
+    "word": "información",
+    "meaning": "情報",
+    "pos": "sustantivo",
+    "category": "メディア",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-167",
+    "word": "comunicación",
+    "meaning": "コミュニケーション",
+    "pos": "sustantivo",
+    "category": "メディア",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-168",
+    "word": "red social",
+    "meaning": "SNS",
+    "pos": "sustantivo",
+    "category": "テクノロジー",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-169",
+    "word": "aplicación",
+    "meaning": "アプリケーション",
+    "pos": "sustantivo",
+    "category": "テクノロジー",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-170",
+    "word": "pantalla",
+    "meaning": "画面",
+    "pos": "sustantivo",
+    "category": "テクノロジー",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-171",
+    "word": "teclado",
+    "meaning": "キーボード",
+    "pos": "sustantivo",
+    "category": "テクノロジー",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-172",
+    "word": "contraseña",
+    "meaning": "パスワード",
+    "pos": "sustantivo",
+    "category": "テクノロジー",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-173",
+    "word": "archivo",
+    "meaning": "ファイル",
+    "pos": "sustantivo",
+    "category": "テクノロジー",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-174",
+    "word": "descargar",
+    "meaning": "ダウンロードする",
+    "pos": "verbo",
+    "category": "テクノロジー",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-175",
+    "word": "compartir",
+    "meaning": "共有する",
+    "pos": "verbo",
+    "category": "テクノロジー",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-176",
+    "word": "publicar",
+    "meaning": "公開する",
+    "pos": "verbo",
+    "category": "メディア",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-177",
+    "word": "buscar",
+    "meaning": "探す／検索する",
+    "pos": "verbo",
+    "category": "テクノロジー",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-178",
+    "word": "navegar",
+    "meaning": "航行する／ネットを見る",
+    "pos": "verbo",
+    "category": "テクノロジー",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-179",
+    "word": "conexión",
+    "meaning": "接続",
+    "pos": "sustantivo",
+    "category": "テクノロジー",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-180",
+    "word": "usuario",
+    "meaning": "利用者",
+    "pos": "sustantivo",
+    "category": "テクノロジー",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-181",
+    "word": "sociedad",
+    "meaning": "社会",
+    "pos": "sustantivo",
+    "category": "社会",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-182",
+    "word": "gobierno",
+    "meaning": "政府",
+    "pos": "sustantivo",
+    "category": "社会",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-183",
+    "word": "ley",
+    "meaning": "法律",
+    "pos": "sustantivo",
+    "category": "社会",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-184",
+    "word": "derecho",
+    "meaning": "権利／法律",
+    "pos": "sustantivo",
+    "category": "社会",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-185",
+    "word": "obligación",
+    "meaning": "義務",
+    "pos": "sustantivo",
+    "category": "社会",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-186",
+    "word": "permiso",
+    "meaning": "許可",
+    "pos": "sustantivo",
+    "category": "社会",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-187",
+    "word": "prohibición",
+    "meaning": "禁止",
+    "pos": "sustantivo",
+    "category": "社会",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-188",
+    "word": "norma",
+    "meaning": "規則",
+    "pos": "sustantivo",
+    "category": "社会",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-189",
+    "word": "seguridad",
+    "meaning": "安全／治安",
+    "pos": "sustantivo",
+    "category": "社会",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-190",
+    "word": "policía",
+    "meaning": "警察",
+    "pos": "sustantivo",
+    "category": "社会",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-191",
+    "word": "ciudadano",
+    "meaning": "市民",
+    "pos": "sustantivo",
+    "category": "社会",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-192",
+    "word": "población",
+    "meaning": "人口／住民",
+    "pos": "sustantivo",
+    "category": "社会",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-193",
+    "word": "comunidad",
+    "meaning": "共同体／地域社会",
+    "pos": "sustantivo",
+    "category": "社会",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-194",
+    "word": "cultura",
+    "meaning": "文化",
+    "pos": "sustantivo",
+    "category": "社会",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-195",
+    "word": "tradición",
+    "meaning": "伝統",
+    "pos": "sustantivo",
+    "category": "社会",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-196",
+    "word": "religión",
+    "meaning": "宗教",
+    "pos": "sustantivo",
+    "category": "社会",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-197",
+    "word": "economía",
+    "meaning": "経済",
+    "pos": "sustantivo",
+    "category": "社会",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-198",
+    "word": "crisis",
+    "meaning": "危機",
+    "pos": "sustantivo",
+    "category": "社会",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-199",
+    "word": "precio",
+    "meaning": "価格",
+    "pos": "sustantivo",
+    "category": "社会",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-200",
+    "word": "impuesto",
+    "meaning": "税金",
+    "pos": "sustantivo",
+    "category": "社会",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-201",
+    "word": "elección",
+    "meaning": "選択／選挙",
+    "pos": "sustantivo",
+    "category": "社会",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-202",
+    "word": "voto",
+    "meaning": "投票",
+    "pos": "sustantivo",
+    "category": "社会",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-203",
+    "word": "partido",
+    "meaning": "政党／試合",
+    "pos": "sustantivo",
+    "category": "社会",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-204",
+    "word": "presidente",
+    "meaning": "大統領／会長",
+    "pos": "sustantivo",
+    "category": "社会",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-205",
+    "word": "alcalde",
+    "meaning": "市長",
+    "pos": "sustantivo",
+    "category": "社会",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-206",
+    "word": "problema",
+    "meaning": "問題",
+    "pos": "sustantivo",
+    "category": "社会",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-207",
+    "word": "solución",
+    "meaning": "解決策",
+    "pos": "sustantivo",
+    "category": "社会",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-208",
+    "word": "causa",
+    "meaning": "原因",
+    "pos": "sustantivo",
+    "category": "社会",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-209",
+    "word": "consecuencia",
+    "meaning": "結果／影響",
+    "pos": "sustantivo",
+    "category": "社会",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-210",
+    "word": "igualdad",
+    "meaning": "平等",
+    "pos": "sustantivo",
+    "category": "社会",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-211",
+    "word": "aunque",
+    "meaning": "〜だけれども",
+    "pos": "conjunción",
+    "category": "接続",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-212",
+    "word": "además",
+    "meaning": "そのうえ",
+    "pos": "adverbio",
+    "category": "接続",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-213",
+    "word": "sin embargo",
+    "meaning": "しかしながら",
+    "pos": "conector",
+    "category": "接続",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-214",
+    "word": "por eso",
+    "meaning": "そのため",
+    "pos": "conector",
+    "category": "接続",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-215",
+    "word": "por lo tanto",
+    "meaning": "したがって",
+    "pos": "conector",
+    "category": "接続",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-216",
+    "word": "mientras",
+    "meaning": "〜する間／一方で",
+    "pos": "conjunción",
+    "category": "接続",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-217",
+    "word": "en cambio",
+    "meaning": "その一方で",
+    "pos": "conector",
+    "category": "接続",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-218",
+    "word": "a pesar de",
+    "meaning": "〜にもかかわらず",
+    "pos": "conector",
+    "category": "接続",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-219",
+    "word": "según",
+    "meaning": "〜によれば／〜に応じて",
+    "pos": "preposición",
+    "category": "接続",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-220",
+    "word": "desde",
+    "meaning": "〜から",
+    "pos": "preposición",
+    "category": "関係語",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-221",
+    "word": "hasta",
+    "meaning": "〜まで",
+    "pos": "preposición",
+    "category": "関係語",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-222",
+    "word": "hacia",
+    "meaning": "〜の方へ",
+    "pos": "preposición",
+    "category": "関係語",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-223",
+    "word": "contra",
+    "meaning": "〜に反対して／接して",
+    "pos": "preposición",
+    "category": "関係語",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-224",
+    "word": "entre",
+    "meaning": "〜の間に",
+    "pos": "preposición",
+    "category": "関係語",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-225",
+    "word": "sobre",
+    "meaning": "〜の上に／〜について",
+    "pos": "preposición",
+    "category": "関係語",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-226",
+    "word": "sin",
+    "meaning": "〜なしで",
+    "pos": "preposición",
+    "category": "関係語",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-227",
+    "word": "con",
+    "meaning": "〜と一緒に／〜で",
+    "pos": "preposición",
+    "category": "関係語",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-228",
+    "word": "para",
+    "meaning": "〜のために／〜へ",
+    "pos": "preposición",
+    "category": "関係語",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-229",
+    "word": "por",
+    "meaning": "〜によって／〜を通って",
+    "pos": "preposición",
+    "category": "関係語",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-230",
+    "word": "quizá",
+    "meaning": "たぶん",
+    "pos": "adverbio",
+    "category": "推量",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-231",
+    "word": "probablemente",
+    "meaning": "おそらく",
+    "pos": "adverbio",
+    "category": "推量",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-232",
+    "word": "realmente",
+    "meaning": "実際に",
+    "pos": "adverbio",
+    "category": "様態",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-233",
+    "word": "especialmente",
+    "meaning": "特に",
+    "pos": "adverbio",
+    "category": "様態",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-234",
+    "word": "finalmente",
+    "meaning": "最終的に",
+    "pos": "adverbio",
+    "category": "順序",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-235",
+    "word": "de repente",
+    "meaning": "突然",
+    "pos": "expresión",
+    "category": "時間",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-236",
+    "word": "enseguida",
+    "meaning": "すぐに",
+    "pos": "adverbio",
+    "category": "時間",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-237",
+    "word": "al principio",
+    "meaning": "初めは",
+    "pos": "expresión",
+    "category": "順序",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-238",
+    "word": "al final",
+    "meaning": "最後には",
+    "pos": "expresión",
+    "category": "順序",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-239",
+    "word": "por ejemplo",
+    "meaning": "例えば",
+    "pos": "conector",
+    "category": "接続",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-240",
+    "word": "es decir",
+    "meaning": "つまり",
+    "pos": "conector",
+    "category": "接続",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-241",
+    "word": "pensar",
+    "meaning": "考える",
+    "pos": "verbo",
+    "category": "思考",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-242",
+    "word": "creer",
+    "meaning": "信じる／思う",
+    "pos": "verbo",
+    "category": "思考",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-243",
+    "word": "recordar",
+    "meaning": "思い出す／覚えている",
+    "pos": "verbo",
+    "category": "思考",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-244",
+    "word": "olvidar",
+    "meaning": "忘れる",
+    "pos": "verbo",
+    "category": "思考",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-245",
+    "word": "entender",
+    "meaning": "理解する",
+    "pos": "verbo",
+    "category": "思考",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-246",
+    "word": "comprender",
+    "meaning": "理解する",
+    "pos": "verbo",
+    "category": "思考",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-247",
+    "word": "explicar",
+    "meaning": "説明する",
+    "pos": "verbo",
+    "category": "伝達",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-248",
+    "word": "contar",
+    "meaning": "数える／話す",
+    "pos": "verbo",
+    "category": "伝達",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-249",
+    "word": "preguntar",
+    "meaning": "質問する",
+    "pos": "verbo",
+    "category": "伝達",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-250",
+    "word": "contestar",
+    "meaning": "答える",
+    "pos": "verbo",
+    "category": "伝達",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-251",
+    "word": "pedir",
+    "meaning": "頼む／注文する",
+    "pos": "verbo",
+    "category": "伝達",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-252",
+    "word": "ofrecer",
+    "meaning": "提供する",
+    "pos": "verbo",
+    "category": "伝達",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-253",
+    "word": "aceptar",
+    "meaning": "受け入れる",
+    "pos": "verbo",
+    "category": "判断",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-254",
+    "word": "rechazar",
+    "meaning": "断る／拒否する",
+    "pos": "verbo",
+    "category": "判断",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-255",
+    "word": "elegir",
+    "meaning": "選ぶ",
+    "pos": "verbo",
+    "category": "判断",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-256",
+    "word": "decidir",
+    "meaning": "決める",
+    "pos": "verbo",
+    "category": "判断",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-257",
+    "word": "intentar",
+    "meaning": "試みる",
+    "pos": "verbo",
+    "category": "行動",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-258",
+    "word": "esperar",
+    "meaning": "待つ／期待する",
+    "pos": "verbo",
+    "category": "行動",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-259",
+    "word": "necesitar",
+    "meaning": "必要とする",
+    "pos": "verbo",
+    "category": "行動",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-260",
+    "word": "parecer",
+    "meaning": "〜のように見える",
+    "pos": "verbo",
+    "category": "知覚",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-261",
+    "word": "sentir",
+    "meaning": "感じる",
+    "pos": "verbo",
+    "category": "知覚",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-262",
+    "word": "conocer",
+    "meaning": "知っている／知り合う",
+    "pos": "verbo",
+    "category": "知識",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-263",
+    "word": "encontrar",
+    "meaning": "見つける",
+    "pos": "verbo",
+    "category": "行動",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-264",
+    "word": "perder",
+    "meaning": "失う／負ける",
+    "pos": "verbo",
+    "category": "行動",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-265",
+    "word": "ganar",
+    "meaning": "得る／勝つ",
+    "pos": "verbo",
+    "category": "行動",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-266",
+    "word": "cambiar",
+    "meaning": "変える／変わる",
+    "pos": "verbo",
+    "category": "変化",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-267",
+    "word": "crear",
+    "meaning": "作り出す",
+    "pos": "verbo",
+    "category": "行動",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-268",
+    "word": "permitir",
+    "meaning": "許可する",
+    "pos": "verbo",
+    "category": "社会",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-269",
+    "word": "recomendar",
+    "meaning": "勧める",
+    "pos": "verbo",
+    "category": "伝達",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-270",
+    "word": "evitar",
+    "meaning": "避ける",
+    "pos": "verbo",
+    "category": "行動",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-271",
+    "word": "posible",
+    "meaning": "可能な",
+    "pos": "adjetivo",
+    "category": "評価",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-272",
+    "word": "imposible",
+    "meaning": "不可能な",
+    "pos": "adjetivo",
+    "category": "評価",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-273",
+    "word": "necesario",
+    "meaning": "必要な",
+    "pos": "adjetivo",
+    "category": "評価",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-274",
+    "word": "suficiente",
+    "meaning": "十分な",
+    "pos": "adjetivo",
+    "category": "評価",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-275",
+    "word": "completo",
+    "meaning": "完全な／満席の",
+    "pos": "adjetivo",
+    "category": "状態",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-276",
+    "word": "vacío",
+    "meaning": "空の",
+    "pos": "adjetivo",
+    "category": "状態",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-277",
+    "word": "lleno",
+    "meaning": "いっぱいの",
+    "pos": "adjetivo",
+    "category": "状態",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-278",
+    "word": "seguro",
+    "meaning": "安全な／確かな",
+    "pos": "adjetivo",
+    "category": "状態",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-279",
+    "word": "peligroso",
+    "meaning": "危険な",
+    "pos": "adjetivo",
+    "category": "状態",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-280",
+    "word": "útil",
+    "meaning": "役に立つ",
+    "pos": "adjetivo",
+    "category": "評価",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-281",
+    "word": "inútil",
+    "meaning": "役に立たない",
+    "pos": "adjetivo",
+    "category": "評価",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-282",
+    "word": "correcto",
+    "meaning": "正しい",
+    "pos": "adjetivo",
+    "category": "評価",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-283",
+    "word": "incorrecto",
+    "meaning": "正しくない",
+    "pos": "adjetivo",
+    "category": "評価",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-284",
+    "word": "verdadero",
+    "meaning": "本当の",
+    "pos": "adjetivo",
+    "category": "評価",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-285",
+    "word": "falso",
+    "meaning": "偽の",
+    "pos": "adjetivo",
+    "category": "評価",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-286",
+    "word": "principal",
+    "meaning": "主要な",
+    "pos": "adjetivo",
+    "category": "分類",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-287",
+    "word": "general",
+    "meaning": "一般的な",
+    "pos": "adjetivo",
+    "category": "分類",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-288",
+    "word": "particular",
+    "meaning": "特定の／個人的な",
+    "pos": "adjetivo",
+    "category": "分類",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-289",
+    "word": "público",
+    "meaning": "公共の",
+    "pos": "adjetivo",
+    "category": "社会",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-290",
+    "word": "privado",
+    "meaning": "私的な／民間の",
+    "pos": "adjetivo",
+    "category": "社会",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-291",
+    "word": "nacional",
+    "meaning": "国内の／国の",
+    "pos": "adjetivo",
+    "category": "社会",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-292",
+    "word": "internacional",
+    "meaning": "国際的な",
+    "pos": "adjetivo",
+    "category": "社会",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-293",
+    "word": "local",
+    "meaning": "地元の",
+    "pos": "adjetivo",
+    "category": "社会",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-294",
+    "word": "actual",
+    "meaning": "現在の",
+    "pos": "adjetivo",
+    "category": "時間",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-295",
+    "word": "antiguo",
+    "meaning": "古い／以前の",
+    "pos": "adjetivo",
+    "category": "時間",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-296",
+    "word": "reciente",
+    "meaning": "最近の",
+    "pos": "adjetivo",
+    "category": "時間",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-297",
+    "word": "próximo",
+    "meaning": "次の／近い",
+    "pos": "adjetivo",
+    "category": "時間",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-298",
+    "word": "anterior",
+    "meaning": "前の",
+    "pos": "adjetivo",
+    "category": "時間",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-299",
+    "word": "siguiente",
+    "meaning": "次の",
+    "pos": "adjetivo",
+    "category": "時間",
+    "level": "B1"
+  },
+  {
+    "id": "dele-b1-300",
+    "word": "parecido",
+    "meaning": "似ている",
+    "pos": "adjetivo",
+    "category": "比較",
+    "level": "B1"
+  }
+]

@@ -1,0 +1,1202 @@
+[
+  {
+    "id": "dele-a1-001",
+    "word": "hola",
+    "meaning": "こんにちは",
+    "pos": "interjección",
+    "category": "あいさつ",
+    "level": "A1"
+  },
+  {
+    "id": "dele-a1-002",
+    "word": "adiós",
+    "meaning": "さようなら",
+    "pos": "interjección",
+    "category": "あいさつ",
+    "level": "A1"
+  },
+  {
+    "id": "dele-a1-003",
+    "word": "gracias",
+    "meaning": "ありがとう",
+    "pos": "interjección",
+    "category": "あいさつ",
+    "level": "A1"
+  },
+  {
+    "id": "dele-a1-004",
+    "word": "por favor",
+    "meaning": "お願いします",
+    "pos": "expresión",
+    "category": "あいさつ",
+    "level": "A1"
+  },
+  {
+    "id": "dele-a1-005",
+    "word": "sí",
+    "meaning": "はい",
+    "pos": "adverbio",
+    "category": "基本表現",
+    "level": "A1"
+  },
+  {
+    "id": "dele-a1-006",
+    "word": "no",
+    "meaning": "いいえ／〜ない",
+    "pos": "adverbio",
+    "category": "基本表現",
+    "level": "A1"
+  },
+  {
+    "id": "dele-a1-007",
+    "word": "perdón",
+    "meaning": "すみません",
+    "pos": "interjección",
+    "category": "あいさつ",
+    "level": "A1"
+  },
+  {
+    "id": "dele-a1-008",
+    "word": "bien",
+    "meaning": "良く／元気に",
+    "pos": "adverbio",
+    "category": "基本表現",
+    "level": "A1"
+  },
+  {
+    "id": "dele-a1-009",
+    "word": "mal",
+    "meaning": "悪く／具合が悪い",
+    "pos": "adverbio",
+    "category": "基本表現",
+    "level": "A1"
+  },
+  {
+    "id": "dele-a1-010",
+    "word": "nombre",
+    "meaning": "名前",
+    "pos": "sustantivo",
+    "category": "個人情報",
+    "level": "A1"
+  },
+  {
+    "id": "dele-a1-011",
+    "word": "apellido",
+    "meaning": "姓",
+    "pos": "sustantivo",
+    "category": "個人情報",
+    "level": "A1"
+  },
+  {
+    "id": "dele-a1-012",
+    "word": "hombre",
+    "meaning": "男性",
+    "pos": "sustantivo",
+    "category": "人",
+    "level": "A1"
+  },
+  {
+    "id": "dele-a1-013",
+    "word": "mujer",
+    "meaning": "女性",
+    "pos": "sustantivo",
+    "category": "人",
+    "level": "A1"
+  },
+  {
+    "id": "dele-a1-014",
+    "word": "niño",
+    "meaning": "男の子",
+    "pos": "sustantivo",
+    "category": "人",
+    "level": "A1"
+  },
+  {
+    "id": "dele-a1-015",
+    "word": "niña",
+    "meaning": "女の子",
+    "pos": "sustantivo",
+    "category": "人",
+    "level": "A1"
+  },
+  {
+    "id": "dele-a1-016",
+    "word": "amigo",
+    "meaning": "男友達",
+    "pos": "sustantivo",
+    "category": "人間関係",
+    "level": "A1"
+  },
+  {
+    "id": "dele-a1-017",
+    "word": "amiga",
+    "meaning": "女友達",
+    "pos": "sustantivo",
+    "category": "人間関係",
+    "level": "A1"
+  },
+  {
+    "id": "dele-a1-018",
+    "word": "familia",
+    "meaning": "家族",
+    "pos": "sustantivo",
+    "category": "家族",
+    "level": "A1"
+  },
+  {
+    "id": "dele-a1-019",
+    "word": "padre",
+    "meaning": "父",
+    "pos": "sustantivo",
+    "category": "家族",
+    "level": "A1"
+  },
+  {
+    "id": "dele-a1-020",
+    "word": "madre",
+    "meaning": "母",
+    "pos": "sustantivo",
+    "category": "家族",
+    "level": "A1"
+  },
+  {
+    "id": "dele-a1-021",
+    "word": "hermano",
+    "meaning": "兄弟",
+    "pos": "sustantivo",
+    "category": "家族",
+    "level": "A1"
+  },
+  {
+    "id": "dele-a1-022",
+    "word": "hermana",
+    "meaning": "姉妹",
+    "pos": "sustantivo",
+    "category": "家族",
+    "level": "A1"
+  },
+  {
+    "id": "dele-a1-023",
+    "word": "hijo",
+    "meaning": "息子",
+    "pos": "sustantivo",
+    "category": "家族",
+    "level": "A1"
+  },
+  {
+    "id": "dele-a1-024",
+    "word": "hija",
+    "meaning": "娘",
+    "pos": "sustantivo",
+    "category": "家族",
+    "level": "A1"
+  },
+  {
+    "id": "dele-a1-025",
+    "word": "abuelo",
+    "meaning": "祖父",
+    "pos": "sustantivo",
+    "category": "家族",
+    "level": "A1"
+  },
+  {
+    "id": "dele-a1-026",
+    "word": "abuela",
+    "meaning": "祖母",
+    "pos": "sustantivo",
+    "category": "家族",
+    "level": "A1"
+  },
+  {
+    "id": "dele-a1-027",
+    "word": "marido",
+    "meaning": "夫",
+    "pos": "sustantivo",
+    "category": "家族",
+    "level": "A1"
+  },
+  {
+    "id": "dele-a1-028",
+    "word": "esposa",
+    "meaning": "妻",
+    "pos": "sustantivo",
+    "category": "家族",
+    "level": "A1"
+  },
+  {
+    "id": "dele-a1-029",
+    "word": "casa",
+    "meaning": "家",
+    "pos": "sustantivo",
+    "category": "住居",
+    "level": "A1"
+  },
+  {
+    "id": "dele-a1-030",
+    "word": "habitación",
+    "meaning": "部屋",
+    "pos": "sustantivo",
+    "category": "住居",
+    "level": "A1"
+  },
+  {
+    "id": "dele-a1-031",
+    "word": "cocina",
+    "meaning": "台所",
+    "pos": "sustantivo",
+    "category": "住居",
+    "level": "A1"
+  },
+  {
+    "id": "dele-a1-032",
+    "word": "baño",
+    "meaning": "浴室／トイレ",
+    "pos": "sustantivo",
+    "category": "住居",
+    "level": "A1"
+  },
+  {
+    "id": "dele-a1-033",
+    "word": "puerta",
+    "meaning": "ドア",
+    "pos": "sustantivo",
+    "category": "住居",
+    "level": "A1"
+  },
+  {
+    "id": "dele-a1-034",
+    "word": "ventana",
+    "meaning": "窓",
+    "pos": "sustantivo",
+    "category": "住居",
+    "level": "A1"
+  },
+  {
+    "id": "dele-a1-035",
+    "word": "mesa",
+    "meaning": "テーブル",
+    "pos": "sustantivo",
+    "category": "住居",
+    "level": "A1"
+  },
+  {
+    "id": "dele-a1-036",
+    "word": "silla",
+    "meaning": "椅子",
+    "pos": "sustantivo",
+    "category": "住居",
+    "level": "A1"
+  },
+  {
+    "id": "dele-a1-037",
+    "word": "cama",
+    "meaning": "ベッド",
+    "pos": "sustantivo",
+    "category": "住居",
+    "level": "A1"
+  },
+  {
+    "id": "dele-a1-038",
+    "word": "libro",
+    "meaning": "本",
+    "pos": "sustantivo",
+    "category": "学習",
+    "level": "A1"
+  },
+  {
+    "id": "dele-a1-039",
+    "word": "cuaderno",
+    "meaning": "ノート",
+    "pos": "sustantivo",
+    "category": "学習",
+    "level": "A1"
+  },
+  {
+    "id": "dele-a1-040",
+    "word": "papel",
+    "meaning": "紙",
+    "pos": "sustantivo",
+    "category": "学習",
+    "level": "A1"
+  },
+  {
+    "id": "dele-a1-041",
+    "word": "bolígrafo",
+    "meaning": "ボールペン",
+    "pos": "sustantivo",
+    "category": "学習",
+    "level": "A1"
+  },
+  {
+    "id": "dele-a1-042",
+    "word": "lápiz",
+    "meaning": "鉛筆",
+    "pos": "sustantivo",
+    "category": "学習",
+    "level": "A1"
+  },
+  {
+    "id": "dele-a1-043",
+    "word": "teléfono",
+    "meaning": "電話",
+    "pos": "sustantivo",
+    "category": "持ち物",
+    "level": "A1"
+  },
+  {
+    "id": "dele-a1-044",
+    "word": "ordenador",
+    "meaning": "コンピューター",
+    "pos": "sustantivo",
+    "category": "持ち物",
+    "level": "A1"
+  },
+  {
+    "id": "dele-a1-045",
+    "word": "reloj",
+    "meaning": "時計",
+    "pos": "sustantivo",
+    "category": "持ち物",
+    "level": "A1"
+  },
+  {
+    "id": "dele-a1-046",
+    "word": "llave",
+    "meaning": "鍵",
+    "pos": "sustantivo",
+    "category": "持ち物",
+    "level": "A1"
+  },
+  {
+    "id": "dele-a1-047",
+    "word": "dinero",
+    "meaning": "お金",
+    "pos": "sustantivo",
+    "category": "買い物",
+    "level": "A1"
+  },
+  {
+    "id": "dele-a1-048",
+    "word": "tarjeta",
+    "meaning": "カード",
+    "pos": "sustantivo",
+    "category": "買い物",
+    "level": "A1"
+  },
+  {
+    "id": "dele-a1-049",
+    "word": "agua",
+    "meaning": "水",
+    "pos": "sustantivo",
+    "category": "飲食",
+    "level": "A1"
+  },
+  {
+    "id": "dele-a1-050",
+    "word": "café",
+    "meaning": "コーヒー",
+    "pos": "sustantivo",
+    "category": "飲食",
+    "level": "A1"
+  },
+  {
+    "id": "dele-a1-051",
+    "word": "té",
+    "meaning": "お茶",
+    "pos": "sustantivo",
+    "category": "飲食",
+    "level": "A1"
+  },
+  {
+    "id": "dele-a1-052",
+    "word": "leche",
+    "meaning": "牛乳",
+    "pos": "sustantivo",
+    "category": "飲食",
+    "level": "A1"
+  },
+  {
+    "id": "dele-a1-053",
+    "word": "pan",
+    "meaning": "パン",
+    "pos": "sustantivo",
+    "category": "飲食",
+    "level": "A1"
+  },
+  {
+    "id": "dele-a1-054",
+    "word": "arroz",
+    "meaning": "米／ご飯",
+    "pos": "sustantivo",
+    "category": "飲食",
+    "level": "A1"
+  },
+  {
+    "id": "dele-a1-055",
+    "word": "carne",
+    "meaning": "肉",
+    "pos": "sustantivo",
+    "category": "飲食",
+    "level": "A1"
+  },
+  {
+    "id": "dele-a1-056",
+    "word": "pescado",
+    "meaning": "魚",
+    "pos": "sustantivo",
+    "category": "飲食",
+    "level": "A1"
+  },
+  {
+    "id": "dele-a1-057",
+    "word": "pollo",
+    "meaning": "鶏肉",
+    "pos": "sustantivo",
+    "category": "飲食",
+    "level": "A1"
+  },
+  {
+    "id": "dele-a1-058",
+    "word": "fruta",
+    "meaning": "果物",
+    "pos": "sustantivo",
+    "category": "飲食",
+    "level": "A1"
+  },
+  {
+    "id": "dele-a1-059",
+    "word": "manzana",
+    "meaning": "りんご",
+    "pos": "sustantivo",
+    "category": "飲食",
+    "level": "A1"
+  },
+  {
+    "id": "dele-a1-060",
+    "word": "naranja",
+    "meaning": "オレンジ",
+    "pos": "sustantivo",
+    "category": "飲食",
+    "level": "A1"
+  },
+  {
+    "id": "dele-a1-061",
+    "word": "verdura",
+    "meaning": "野菜",
+    "pos": "sustantivo",
+    "category": "飲食",
+    "level": "A1"
+  },
+  {
+    "id": "dele-a1-062",
+    "word": "patata",
+    "meaning": "じゃがいも",
+    "pos": "sustantivo",
+    "category": "飲食",
+    "level": "A1"
+  },
+  {
+    "id": "dele-a1-063",
+    "word": "desayuno",
+    "meaning": "朝食",
+    "pos": "sustantivo",
+    "category": "飲食",
+    "level": "A1"
+  },
+  {
+    "id": "dele-a1-064",
+    "word": "comida",
+    "meaning": "食事／昼食",
+    "pos": "sustantivo",
+    "category": "飲食",
+    "level": "A1"
+  },
+  {
+    "id": "dele-a1-065",
+    "word": "cena",
+    "meaning": "夕食",
+    "pos": "sustantivo",
+    "category": "飲食",
+    "level": "A1"
+  },
+  {
+    "id": "dele-a1-066",
+    "word": "restaurante",
+    "meaning": "レストラン",
+    "pos": "sustantivo",
+    "category": "場所",
+    "level": "A1"
+  },
+  {
+    "id": "dele-a1-067",
+    "word": "bar",
+    "meaning": "バル／酒場",
+    "pos": "sustantivo",
+    "category": "場所",
+    "level": "A1"
+  },
+  {
+    "id": "dele-a1-068",
+    "word": "tienda",
+    "meaning": "店",
+    "pos": "sustantivo",
+    "category": "場所",
+    "level": "A1"
+  },
+  {
+    "id": "dele-a1-069",
+    "word": "supermercado",
+    "meaning": "スーパーマーケット",
+    "pos": "sustantivo",
+    "category": "場所",
+    "level": "A1"
+  },
+  {
+    "id": "dele-a1-070",
+    "word": "escuela",
+    "meaning": "学校",
+    "pos": "sustantivo",
+    "category": "場所",
+    "level": "A1"
+  },
+  {
+    "id": "dele-a1-071",
+    "word": "universidad",
+    "meaning": "大学",
+    "pos": "sustantivo",
+    "category": "場所",
+    "level": "A1"
+  },
+  {
+    "id": "dele-a1-072",
+    "word": "clase",
+    "meaning": "授業／クラス",
+    "pos": "sustantivo",
+    "category": "学習",
+    "level": "A1"
+  },
+  {
+    "id": "dele-a1-073",
+    "word": "profesor",
+    "meaning": "教師",
+    "pos": "sustantivo",
+    "category": "職業",
+    "level": "A1"
+  },
+  {
+    "id": "dele-a1-074",
+    "word": "estudiante",
+    "meaning": "学生",
+    "pos": "sustantivo",
+    "category": "職業",
+    "level": "A1"
+  },
+  {
+    "id": "dele-a1-075",
+    "word": "trabajo",
+    "meaning": "仕事",
+    "pos": "sustantivo",
+    "category": "仕事",
+    "level": "A1"
+  },
+  {
+    "id": "dele-a1-076",
+    "word": "médico",
+    "meaning": "医師",
+    "pos": "sustantivo",
+    "category": "職業",
+    "level": "A1"
+  },
+  {
+    "id": "dele-a1-077",
+    "word": "camarero",
+    "meaning": "ウェイター",
+    "pos": "sustantivo",
+    "category": "職業",
+    "level": "A1"
+  },
+  {
+    "id": "dele-a1-078",
+    "word": "ciudad",
+    "meaning": "都市",
+    "pos": "sustantivo",
+    "category": "場所",
+    "level": "A1"
+  },
+  {
+    "id": "dele-a1-079",
+    "word": "pueblo",
+    "meaning": "町／村",
+    "pos": "sustantivo",
+    "category": "場所",
+    "level": "A1"
+  },
+  {
+    "id": "dele-a1-080",
+    "word": "país",
+    "meaning": "国",
+    "pos": "sustantivo",
+    "category": "場所",
+    "level": "A1"
+  },
+  {
+    "id": "dele-a1-081",
+    "word": "calle",
+    "meaning": "通り",
+    "pos": "sustantivo",
+    "category": "場所",
+    "level": "A1"
+  },
+  {
+    "id": "dele-a1-082",
+    "word": "plaza",
+    "meaning": "広場",
+    "pos": "sustantivo",
+    "category": "場所",
+    "level": "A1"
+  },
+  {
+    "id": "dele-a1-083",
+    "word": "estación",
+    "meaning": "駅",
+    "pos": "sustantivo",
+    "category": "交通",
+    "level": "A1"
+  },
+  {
+    "id": "dele-a1-084",
+    "word": "aeropuerto",
+    "meaning": "空港",
+    "pos": "sustantivo",
+    "category": "交通",
+    "level": "A1"
+  },
+  {
+    "id": "dele-a1-085",
+    "word": "hotel",
+    "meaning": "ホテル",
+    "pos": "sustantivo",
+    "category": "旅行",
+    "level": "A1"
+  },
+  {
+    "id": "dele-a1-086",
+    "word": "banco",
+    "meaning": "銀行",
+    "pos": "sustantivo",
+    "category": "場所",
+    "level": "A1"
+  },
+  {
+    "id": "dele-a1-087",
+    "word": "hospital",
+    "meaning": "病院",
+    "pos": "sustantivo",
+    "category": "場所",
+    "level": "A1"
+  },
+  {
+    "id": "dele-a1-088",
+    "word": "farmacia",
+    "meaning": "薬局",
+    "pos": "sustantivo",
+    "category": "場所",
+    "level": "A1"
+  },
+  {
+    "id": "dele-a1-089",
+    "word": "coche",
+    "meaning": "車",
+    "pos": "sustantivo",
+    "category": "交通",
+    "level": "A1"
+  },
+  {
+    "id": "dele-a1-090",
+    "word": "autobús",
+    "meaning": "バス",
+    "pos": "sustantivo",
+    "category": "交通",
+    "level": "A1"
+  },
+  {
+    "id": "dele-a1-091",
+    "word": "tren",
+    "meaning": "列車",
+    "pos": "sustantivo",
+    "category": "交通",
+    "level": "A1"
+  },
+  {
+    "id": "dele-a1-092",
+    "word": "bicicleta",
+    "meaning": "自転車",
+    "pos": "sustantivo",
+    "category": "交通",
+    "level": "A1"
+  },
+  {
+    "id": "dele-a1-093",
+    "word": "avión",
+    "meaning": "飛行機",
+    "pos": "sustantivo",
+    "category": "交通",
+    "level": "A1"
+  },
+  {
+    "id": "dele-a1-094",
+    "word": "día",
+    "meaning": "日",
+    "pos": "sustantivo",
+    "category": "時間",
+    "level": "A1"
+  },
+  {
+    "id": "dele-a1-095",
+    "word": "semana",
+    "meaning": "週",
+    "pos": "sustantivo",
+    "category": "時間",
+    "level": "A1"
+  },
+  {
+    "id": "dele-a1-096",
+    "word": "mes",
+    "meaning": "月",
+    "pos": "sustantivo",
+    "category": "時間",
+    "level": "A1"
+  },
+  {
+    "id": "dele-a1-097",
+    "word": "año",
+    "meaning": "年",
+    "pos": "sustantivo",
+    "category": "時間",
+    "level": "A1"
+  },
+  {
+    "id": "dele-a1-098",
+    "word": "hoy",
+    "meaning": "今日",
+    "pos": "adverbio",
+    "category": "時間",
+    "level": "A1"
+  },
+  {
+    "id": "dele-a1-099",
+    "word": "mañana",
+    "meaning": "明日／朝",
+    "pos": "adverbio",
+    "category": "時間",
+    "level": "A1"
+  },
+  {
+    "id": "dele-a1-100",
+    "word": "ayer",
+    "meaning": "昨日",
+    "pos": "adverbio",
+    "category": "時間",
+    "level": "A1"
+  },
+  {
+    "id": "dele-a1-101",
+    "word": "lunes",
+    "meaning": "月曜日",
+    "pos": "sustantivo",
+    "category": "時間",
+    "level": "A1"
+  },
+  {
+    "id": "dele-a1-102",
+    "word": "martes",
+    "meaning": "火曜日",
+    "pos": "sustantivo",
+    "category": "時間",
+    "level": "A1"
+  },
+  {
+    "id": "dele-a1-103",
+    "word": "miércoles",
+    "meaning": "水曜日",
+    "pos": "sustantivo",
+    "category": "時間",
+    "level": "A1"
+  },
+  {
+    "id": "dele-a1-104",
+    "word": "jueves",
+    "meaning": "木曜日",
+    "pos": "sustantivo",
+    "category": "時間",
+    "level": "A1"
+  },
+  {
+    "id": "dele-a1-105",
+    "word": "viernes",
+    "meaning": "金曜日",
+    "pos": "sustantivo",
+    "category": "時間",
+    "level": "A1"
+  },
+  {
+    "id": "dele-a1-106",
+    "word": "sábado",
+    "meaning": "土曜日",
+    "pos": "sustantivo",
+    "category": "時間",
+    "level": "A1"
+  },
+  {
+    "id": "dele-a1-107",
+    "word": "domingo",
+    "meaning": "日曜日",
+    "pos": "sustantivo",
+    "category": "時間",
+    "level": "A1"
+  },
+  {
+    "id": "dele-a1-108",
+    "word": "uno",
+    "meaning": "1／一つ",
+    "pos": "numeral",
+    "category": "数字",
+    "level": "A1"
+  },
+  {
+    "id": "dele-a1-109",
+    "word": "dos",
+    "meaning": "2／二つ",
+    "pos": "numeral",
+    "category": "数字",
+    "level": "A1"
+  },
+  {
+    "id": "dele-a1-110",
+    "word": "tres",
+    "meaning": "3／三つ",
+    "pos": "numeral",
+    "category": "数字",
+    "level": "A1"
+  },
+  {
+    "id": "dele-a1-111",
+    "word": "primero",
+    "meaning": "最初の／第一の",
+    "pos": "adjetivo",
+    "category": "順序",
+    "level": "A1"
+  },
+  {
+    "id": "dele-a1-112",
+    "word": "último",
+    "meaning": "最後の",
+    "pos": "adjetivo",
+    "category": "順序",
+    "level": "A1"
+  },
+  {
+    "id": "dele-a1-113",
+    "word": "grande",
+    "meaning": "大きい",
+    "pos": "adjetivo",
+    "category": "形容",
+    "level": "A1"
+  },
+  {
+    "id": "dele-a1-114",
+    "word": "pequeño",
+    "meaning": "小さい",
+    "pos": "adjetivo",
+    "category": "形容",
+    "level": "A1"
+  },
+  {
+    "id": "dele-a1-115",
+    "word": "bueno",
+    "meaning": "良い",
+    "pos": "adjetivo",
+    "category": "形容",
+    "level": "A1"
+  },
+  {
+    "id": "dele-a1-116",
+    "word": "malo",
+    "meaning": "悪い",
+    "pos": "adjetivo",
+    "category": "形容",
+    "level": "A1"
+  },
+  {
+    "id": "dele-a1-117",
+    "word": "nuevo",
+    "meaning": "新しい",
+    "pos": "adjetivo",
+    "category": "形容",
+    "level": "A1"
+  },
+  {
+    "id": "dele-a1-118",
+    "word": "viejo",
+    "meaning": "古い／年老いた",
+    "pos": "adjetivo",
+    "category": "形容",
+    "level": "A1"
+  },
+  {
+    "id": "dele-a1-119",
+    "word": "bonito",
+    "meaning": "きれいな／かわいい",
+    "pos": "adjetivo",
+    "category": "形容",
+    "level": "A1"
+  },
+  {
+    "id": "dele-a1-120",
+    "word": "alto",
+    "meaning": "高い／背が高い",
+    "pos": "adjetivo",
+    "category": "形容",
+    "level": "A1"
+  },
+  {
+    "id": "dele-a1-121",
+    "word": "bajo",
+    "meaning": "低い／背が低い",
+    "pos": "adjetivo",
+    "category": "形容",
+    "level": "A1"
+  },
+  {
+    "id": "dele-a1-122",
+    "word": "joven",
+    "meaning": "若い",
+    "pos": "adjetivo",
+    "category": "形容",
+    "level": "A1"
+  },
+  {
+    "id": "dele-a1-123",
+    "word": "feliz",
+    "meaning": "幸せな",
+    "pos": "adjetivo",
+    "category": "感情",
+    "level": "A1"
+  },
+  {
+    "id": "dele-a1-124",
+    "word": "triste",
+    "meaning": "悲しい",
+    "pos": "adjetivo",
+    "category": "感情",
+    "level": "A1"
+  },
+  {
+    "id": "dele-a1-125",
+    "word": "caliente",
+    "meaning": "熱い",
+    "pos": "adjetivo",
+    "category": "状態",
+    "level": "A1"
+  },
+  {
+    "id": "dele-a1-126",
+    "word": "frío",
+    "meaning": "冷たい／寒い",
+    "pos": "adjetivo",
+    "category": "状態",
+    "level": "A1"
+  },
+  {
+    "id": "dele-a1-127",
+    "word": "rojo",
+    "meaning": "赤い",
+    "pos": "adjetivo",
+    "category": "色",
+    "level": "A1"
+  },
+  {
+    "id": "dele-a1-128",
+    "word": "azul",
+    "meaning": "青い",
+    "pos": "adjetivo",
+    "category": "色",
+    "level": "A1"
+  },
+  {
+    "id": "dele-a1-129",
+    "word": "verde",
+    "meaning": "緑の",
+    "pos": "adjetivo",
+    "category": "色",
+    "level": "A1"
+  },
+  {
+    "id": "dele-a1-130",
+    "word": "blanco",
+    "meaning": "白い",
+    "pos": "adjetivo",
+    "category": "色",
+    "level": "A1"
+  },
+  {
+    "id": "dele-a1-131",
+    "word": "negro",
+    "meaning": "黒い",
+    "pos": "adjetivo",
+    "category": "色",
+    "level": "A1"
+  },
+  {
+    "id": "dele-a1-132",
+    "word": "ser",
+    "meaning": "〜である（本質）",
+    "pos": "verbo",
+    "category": "基本動詞",
+    "level": "A1"
+  },
+  {
+    "id": "dele-a1-133",
+    "word": "estar",
+    "meaning": "〜である／いる（状態）",
+    "pos": "verbo",
+    "category": "基本動詞",
+    "level": "A1"
+  },
+  {
+    "id": "dele-a1-134",
+    "word": "tener",
+    "meaning": "持っている",
+    "pos": "verbo",
+    "category": "基本動詞",
+    "level": "A1"
+  },
+  {
+    "id": "dele-a1-135",
+    "word": "hay",
+    "meaning": "〜がある／いる",
+    "pos": "verbo",
+    "category": "基本動詞",
+    "level": "A1"
+  },
+  {
+    "id": "dele-a1-136",
+    "word": "ir",
+    "meaning": "行く",
+    "pos": "verbo",
+    "category": "基本動詞",
+    "level": "A1"
+  },
+  {
+    "id": "dele-a1-137",
+    "word": "venir",
+    "meaning": "来る",
+    "pos": "verbo",
+    "category": "基本動詞",
+    "level": "A1"
+  },
+  {
+    "id": "dele-a1-138",
+    "word": "vivir",
+    "meaning": "住む／生きる",
+    "pos": "verbo",
+    "category": "基本動詞",
+    "level": "A1"
+  },
+  {
+    "id": "dele-a1-139",
+    "word": "hablar",
+    "meaning": "話す",
+    "pos": "verbo",
+    "category": "基本動詞",
+    "level": "A1"
+  },
+  {
+    "id": "dele-a1-140",
+    "word": "comer",
+    "meaning": "食べる",
+    "pos": "verbo",
+    "category": "基本動詞",
+    "level": "A1"
+  },
+  {
+    "id": "dele-a1-141",
+    "word": "beber",
+    "meaning": "飲む",
+    "pos": "verbo",
+    "category": "基本動詞",
+    "level": "A1"
+  },
+  {
+    "id": "dele-a1-142",
+    "word": "estudiar",
+    "meaning": "勉強する",
+    "pos": "verbo",
+    "category": "基本動詞",
+    "level": "A1"
+  },
+  {
+    "id": "dele-a1-143",
+    "word": "trabajar",
+    "meaning": "働く",
+    "pos": "verbo",
+    "category": "基本動詞",
+    "level": "A1"
+  },
+  {
+    "id": "dele-a1-144",
+    "word": "leer",
+    "meaning": "読む",
+    "pos": "verbo",
+    "category": "基本動詞",
+    "level": "A1"
+  },
+  {
+    "id": "dele-a1-145",
+    "word": "escribir",
+    "meaning": "書く",
+    "pos": "verbo",
+    "category": "基本動詞",
+    "level": "A1"
+  },
+  {
+    "id": "dele-a1-146",
+    "word": "escuchar",
+    "meaning": "聞く",
+    "pos": "verbo",
+    "category": "基本動詞",
+    "level": "A1"
+  },
+  {
+    "id": "dele-a1-147",
+    "word": "mirar",
+    "meaning": "見る",
+    "pos": "verbo",
+    "category": "基本動詞",
+    "level": "A1"
+  },
+  {
+    "id": "dele-a1-148",
+    "word": "comprar",
+    "meaning": "買う",
+    "pos": "verbo",
+    "category": "基本動詞",
+    "level": "A1"
+  },
+  {
+    "id": "dele-a1-149",
+    "word": "querer",
+    "meaning": "欲しい／愛する",
+    "pos": "verbo",
+    "category": "基本動詞",
+    "level": "A1"
+  },
+  {
+    "id": "dele-a1-150",
+    "word": "gustar",
+    "meaning": "好みに合う",
+    "pos": "verbo",
+    "category": "基本動詞",
+    "level": "A1"
+  }
+]
