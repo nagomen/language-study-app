@@ -213,6 +213,12 @@ function bindEvents() {
     if (action === "quiz") startCheckedQuiz(); else startCheckedPractice(action);
   }));
   $("#clear-checked").addEventListener("click", clearChecked);
+  $("#export-checked").addEventListener("click", exportChecked);
+  $("#import-checked").addEventListener("click", () => $("#import-checked-file").click());
+  $("#import-checked-file").addEventListener("change", (event) => {
+    importCheckedFile(event.target.files[0]);
+    event.target.value = "";
+  });
   $$("[data-review-scope]").forEach((button) => button.addEventListener("click", () => {
     const key = button.closest(".review-panel")?.dataset.reviewKey;
     if (!reviewSessions[key]) return;
@@ -504,6 +510,7 @@ function renderChecked() {
   }).join("");
   $("#empty-checked").classList.toggle("is-hidden", words.length > 0);
   $("#clear-checked").classList.toggle("is-hidden", words.length === 0);
+  $("#export-checked").classList.toggle("is-hidden", words.length === 0);
   $$("#checked-view [data-checked-action]").forEach((button) => { button.disabled = words.length === 0; });
 }
 
@@ -516,6 +523,52 @@ function updateCheckedSummary() {
     badge.textContent = count;
     badge.classList.toggle("is-hidden", count === 0);
   }
+}
+
+function exportChecked() {
+  const ids = getCheckedWords().map((word) => word.id);
+  if (!ids.length) return alert("チェックした単語がありません。");
+  const payload = { app: "language-study-app", type: "checked", language: "chinese", exportedAt: new Date().toISOString(), ids };
+  const blob = new Blob([`${JSON.stringify(payload, null, 2)}\n`], { type: "application/json" });
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement("a");
+  link.href = url;
+  link.download = `checked-chinese-${todayString()}.json`;
+  document.body.append(link);
+  link.click();
+  link.remove();
+  window.setTimeout(() => URL.revokeObjectURL(url), 1000);
+}
+
+function importCheckedFile(file) {
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onerror = () => alert("ファイルを読み込めませんでした。");
+  reader.onload = () => {
+    const ids = parseCheckedFile(String(reader.result));
+    if (!ids) return alert("チェックの書き出しファイルとして読み込めませんでした。");
+    const known = ids.filter((id) => state.words.some((word) => word.id === id));
+    if (!known.length) return alert("この単語データに一致するIDがありませんでした。中国語用の書き出しファイルか確認してください。");
+    const added = known.filter((id) => !state.checked.has(id));
+    const ignored = ids.length - known.length;
+    const message = `${known.length}語のチェックを読み込みます。\n新しく追加: ${added.length}語（現在のチェック${state.checked.size}語はそのまま残ります）`
+      + (ignored ? `\n一致しないID ${ignored}件は無視します。` : "");
+    if (!confirm(message)) return;
+    added.forEach((id) => state.checked.add(id));
+    saveChecked();
+    renderChecked();
+    updateCheckedSummary();
+    alert(added.length ? `${added.length}語を追加しました。` : "すべて登録済みでした。");
+  };
+  reader.readAsText(file);
+}
+
+function parseCheckedFile(text) {
+  try {
+    const parsed = JSON.parse(text);
+    const ids = Array.isArray(parsed) ? parsed : parsed?.ids;
+    return Array.isArray(ids) ? [...new Set(ids.filter((id) => typeof id === "string"))] : null;
+  } catch { return null; }
 }
 
 function clearChecked() {

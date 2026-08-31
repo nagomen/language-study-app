@@ -65,7 +65,13 @@
             <strong>チェックした単語はまだありません</strong>
             <p>単語一覧やテストの振り返りにある ✓ ボタンで追加できます。</p>
           </div>
-          <button id="clear-checked" class="text-button is-hidden" type="button">チェックをすべて解除</button>
+          <div class="checked-tools">
+            <button id="export-checked" class="text-button is-hidden" type="button">チェックを書き出す（JSON）</button>
+            <button id="import-checked" class="text-button" type="button">チェックを読み込む</button>
+            <button id="clear-checked" class="text-button is-hidden" type="button">チェックをすべて解除</button>
+            <input id="import-checked-file" class="is-hidden" type="file" accept="application/json,.json" aria-label="チェックの書き出しファイルを選ぶ" />
+          </div>
+          <p class="checked-tools-note">別の端末やGitHub Pages版とチェックを共有するときは、書き出したJSONを読み込んでください。読み込みは追加なので、今あるチェックは消えません。</p>
         </section>
 
         <section id="progress-view" class="view" aria-labelledby="progress-title">
