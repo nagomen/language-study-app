@@ -169,9 +169,12 @@ function bindEvents() {
   $("#quiz-close").addEventListener("click", () => navigate("home"));
   $("#next-question").addEventListener("click", nextQuestion);
   $("#speak-button").addEventListener("click", () => speak(state.quiz.questions[state.quiz.index], $("#speak-button")));
+  $("#quiz-example-reveal").addEventListener("click", revealQuizExample);
   $("#quiz-example-audio").addEventListener("click", () => {
     const word = state.quiz.questions[state.quiz.index];
-    if (word?.example) playAudioFile(exampleAudioFile(word), $("#quiz-example-audio"), { fallbackText: word.example, role: "female" });
+    if (!word?.example) return;
+    revealQuizExample();
+    playAudioFile(exampleAudioFile(word), $("#quiz-example-audio"), { fallbackText: word.example, role: "female" });
   });
   $("#retry-quiz").addEventListener("click", retryQuiz);
   $("#back-home").addEventListener("click", () => navigate("home"));
@@ -377,8 +380,13 @@ function showQuizExample(word) {
   const panel = $("#quiz-example");
   if (!panel) return;
   const hasExample = Boolean(word.example && word.exampleMeaning);
+  // 日→中モードでは、まず和訳だけ見せて中国語の例文はボタンで開く。
+  const hideTarget = hasExample && state.quiz.direction === "ja-cn";
   panel.classList.remove("is-hidden");
   panel.classList.toggle("is-empty", !hasExample);
+  panel.classList.toggle("is-reverse", hideTarget);
+  $("#quiz-example-target").classList.toggle("is-hidden", hideTarget);
+  $("#quiz-example-reveal").classList.toggle("is-hidden", !hideTarget);
   $("#quiz-example-chinese").innerHTML = hasExample ? highlightWord(word.example, word.hanzi) : "";
   $("#quiz-example-pinyin").textContent = hasExample ? word.examplePinyin || "" : "";
   $("#quiz-example-pinyin").classList.toggle("is-hidden", !hasExample || !word.examplePinyin);
@@ -386,6 +394,11 @@ function showQuizExample(word) {
   $("#quiz-example-japanese").classList.toggle("is-hidden", !hasExample);
   $("#quiz-example-empty").classList.toggle("is-hidden", hasExample);
   $("#quiz-example-audio").classList.toggle("is-hidden", !hasExample);
+}
+
+function revealQuizExample() {
+  $("#quiz-example-target").classList.remove("is-hidden");
+  $("#quiz-example-reveal").classList.add("is-hidden");
 }
 
 function highlightWord(sentence, hanzi) {
