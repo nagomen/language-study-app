@@ -8,6 +8,8 @@ const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const vocab = Object.fromEntries([1, 2, 3].map((level) => [level, JSON.parse(fs.readFileSync(path.join(root, "data", `hsk${level}.json`), "utf8"))]));
 const allWords = Object.values(vocab).flat();
 const byHanzi = new Map(allWords.map((word) => [word.hanzi.replace(/[（）].*?[）]/g, ""), word]));
+const levelByHanzi = new Map([1, 2, 3].flatMap((level) => vocab[level].map((word) => [word.hanzi.replace(/[（）].*?[）]/g, ""), level])));
+const levelChars = Object.fromEntries([1, 2, 3].map((level) => [level, new Set([1, 2, 3].filter((item) => item <= level).flatMap((item) => vocab[item].flatMap((word) => [...word.hanzi])))]));
 
 const SCENES = {
   1: [
@@ -103,6 +105,36 @@ const HSK3_STATEMENTS = [
   ["我们本来打算爬山，因为突然下雨，只好改去饭馆吃饭。", "他们最后没有去爬山。", true],
 ];
 
+// 選択肢は同じ品詞でそろえ、文脈から答えが一つに決まるように作る。[文, 正解, [誤答2つ], ピンイン]
+const HSK1_CLOZE = [
+  ["天气很热，我想喝＿＿＿。", "水", ["米饭", "苹果"], "Tiānqì hěn rè, wǒ xiǎng hē ____."],
+  ["我不太好，去＿＿＿看医生。", "医院", ["商店", "学校"], "Wǒ bú tài hǎo, qù ____ kàn yīshēng."],
+  ["这个字我不认识，请你＿＿＿。", "读", ["买", "坐"], "Zhège zì wǒ bú rènshi, qǐng nǐ ____."],
+  ["我的朋友很多，她的朋友很＿＿＿。", "少", ["大", "热"], "Wǒ de péngyou hěn duō, tā de péngyou hěn ____."],
+  ["我买了三＿＿＿书。", "本", ["块", "岁"], "Wǒ mǎi le sān ____ shū."],
+];
+
+const HSK2_CLOZE_P2 = [
+  ["明天有考试，我要在家＿＿＿。", "准备", ["旅游", "唱歌"], "Míngtiān yǒu kǎoshì, wǒ yào zài jiā ____."],
+  ["这个西瓜三块钱，非常＿＿＿。", "便宜", ["贵", "远"], "Zhège xīguā sān kuài qián, fēicháng ____."],
+  ["我每天早上七点＿＿＿，八点上班。", "起床", ["睡觉", "回答"], "Wǒ měitiān zǎoshang qī diǎn ____, bā diǎn shàngbān."],
+  ["今天很冷，你＿＿＿这件衣服吧。", "穿", ["洗", "卖"], "Jīntiān hěn lěng, nǐ ____ zhè jiàn yīfu ba."],
+  ["我不知道他的电话，你能＿＿＿我吗？", "告诉", ["介绍", "欢迎"], "Wǒ bù zhīdào tā de diànhuà, nǐ néng ____ wǒ ma?"],
+];
+
+const HSK2_CLOZE_P4 = [
+  ["老师说得很快，我没听＿＿＿，请再说一次。", "懂", ["完", "开"], "Lǎoshī shuō de hěn kuài, wǒ méi tīng ____, qǐng zài shuō yí cì."],
+  ["我姐姐在医院工作，她是＿＿＿。", "医生", ["老师", "服务员"], "Wǒ jiějie zài yīyuàn gōngzuò, tā shì ____."],
+  ["从我家到公司很＿＿＿，坐车要一个小时。", "远", ["近", "快"], "Cóng wǒ jiā dào gōngsī hěn ____, zuò chē yào yí ge xiǎoshí."],
+  ["我今年二十岁，我哥哥二十二岁，他比我＿＿＿两岁。", "大", ["小", "高"], "Wǒ jīnnián èrshí suì, wǒ gēge èrshí'èr suì, tā bǐ wǒ ____ liǎng suì."],
+  ["我的眼睛很累，因为我看了三个小时的＿＿＿。", "电视", ["牛奶", "房间"], "Wǒ de yǎnjing hěn lèi, yīnwèi wǒ kàn le sān ge xiǎoshí de ____."],
+  ["时间不多了，我们＿＿＿走吧。", "快", ["慢", "再"], "Shíjiān bù duō le, wǒmen ____ zǒu ba."],
+  ["明天是我妈妈的生日，我想＿＿＿她一件衣服。", "送", ["卖", "洗"], "Míngtiān shì wǒ māma de shēngrì, wǒ xiǎng ____ tā yí jiàn yīfu."],
+  ["他生病了，所以今天在家＿＿＿。", "休息", ["运动", "跳舞"], "Tā shēngbìng le, suǒyǐ jīntiān zài jiā ____."],
+  ["这个字我不会写，我想＿＿＿老师。", "问", ["告诉", "帮助"], "Zhège zì wǒ bú huì xiě, wǒ xiǎng ____ lǎoshī."],
+  ["这些鸡蛋一公斤多少＿＿＿？", "钱", ["号", "次"], "Zhèxiē jīdàn yì gōngjīn duōshao ____?"],
+];
+
 const HSK3_CLOZE = [
   ["请把空调＿＿＿一下，房间里有点儿冷。", "关", ["搬", "借"]], ["明天有考试，今天晚上我要认真＿＿＿。", "复习", ["表演", "结婚"]],
   ["这个问题不难，我相信你一定能＿＿＿。", "解决", ["出现", "经过"]], ["旅行以前别忘了＿＿＿护照。", "带", ["选择", "提高"]],
@@ -134,7 +166,8 @@ const READING_PROMPT_PINYIN = {
 };
 
 function choice(label, level, extra = {}) {
-  return { value: label, label, ...(level <= 2 && PINYIN[label] ? { pinyin: PINYIN[label] } : {}), ...extra };
+  const pinyin = PINYIN[label] || byHanzi.get(label)?.pinyin;
+  return { value: label, label, ...(level <= 2 && pinyin ? { pinyin } : {}), ...extra };
 }
 function choices(answer, distractors, level) { return [choice(answer, level), ...distractors.map((item) => choice(item, level))]; }
 function q(id, skill, part, kind, fields) { return { id, skill, part, kind, ...fields }; }
@@ -183,6 +216,21 @@ function readingResponses(level, source, part) {
   return source.map((item, index) => q(`hsk${level}-r${part}-${String(index + 1).padStart(2, "0")}`, "reading", part, "reading-response", { prompt: item[0], ...(level <= 2 && READING_PROMPT_PINYIN[item[0]] ? { promptPinyin: READING_PROMPT_PINYIN[item[0]] } : {}), choices: choices(item[1], item[2], level), correct: item[1], instruction: "请选择与问句相对应的回答。", explanation: `${item[0]} — ${item[1]}` }));
 }
 
+function authoredCloze(level, table, part) {
+  return table.map(([prompt, answer, distractors, promptPinyin], index) => {
+    const word = byHanzi.get(answer);
+    return q(`hsk${level}-r${part}-${String(index + 1).padStart(2, "0")}`, "reading", part, "reading-cloze", {
+      ...(word ? { wordId: word.id } : {}),
+      prompt,
+      ...(promptPinyin ? { promptPinyin } : {}),
+      choices: choices(answer, distractors, level),
+      correct: answer,
+      instruction: "请选择合适的词语填空。",
+      explanation: prompt.replace("＿＿＿", answer),
+    });
+  });
+}
+
 function blankPinyin(word) {
   return word.examplePinyin.replace(new RegExp(word.pinyin.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"), "i"), "____");
 }
@@ -193,7 +241,7 @@ function readingCloze(level, words, part, startOffset = 0) {
 
 function buildLevel1() {
   const listening = [...visualListening(1, 0, 5, 1, "judge"), ...visualListening(1, 5, 5, 2, "choice"), ...visualListening(1, 10, 5, 3, "choice"), ...dialogueQuestions(1, 0, 5, 4)];
-  const reading = [...readingVisual(1, 0, 5, 1, true), ...readingVisual(1, 5, 5, 2), ...readingResponses(1, DIALOGUES[1].slice(0, 5).map((item) => [item[1], item[2], item[3]]), 3), ...readingCloze(1, vocab[1].filter((word) => word.example?.includes(word.hanzi)).slice(25, 30), 4, 4)];
+  const reading = [...readingVisual(1, 0, 5, 1, true), ...readingVisual(1, 5, 5, 2), ...readingResponses(1, DIALOGUES[1].slice(0, 5).map((item) => [item[1], item[2], item[3]]), 3), ...authoredCloze(1, HSK1_CLOZE, 4)];
   return [...listening, ...reading];
 }
 
@@ -204,8 +252,7 @@ function buildLevel2() {
     const other = index % 2 ? clozeWords[30 + index] : word;
     return q(`hsk2-r3-${String(index + 1).padStart(2, "0")}`, "reading", 3, "reading-judge", { prompt: word.example, promptPinyin: word.examplePinyin, subPrompt: other.example, subPromptPinyin: other.examplePinyin, choices: [choice("true", 2, { label: "对" }), choice("false", 2, { label: "不对" })], correct: String(index % 2 === 0), instruction: "请判断下面两句话的意思是否一致。", explanation: index % 2 === 0 ? "对" : "不对" });
   });
-  const dialogueCloze = clozeWords.slice(40, 50).map((word, index) => q(`hsk2-r4-${String(index + 1).padStart(2, "0")}`, "reading", 4, "reading-cloze", { wordId: word.id, prompt: word.example.replace(word.hanzi, "＿＿＿"), promptPinyin: blankPinyin(word), choices: wordChoices(word.hanzi, 2, 8 + index), correct: word.id, instruction: "请选择合适的词语填空。", explanation: word.example }));
-  const reading = [...readingVisual(2, 0, 5, 1), ...readingCloze(2, clozeWords.slice(0, 5), 2, 7), ...readingJudge, ...dialogueCloze];
+  const reading = [...readingVisual(2, 0, 5, 1), ...authoredCloze(2, HSK2_CLOZE_P2, 2), ...readingJudge, ...authoredCloze(2, HSK2_CLOZE_P4, 4)];
   return [...listening, ...reading];
 }
 
@@ -217,7 +264,7 @@ function buildLevel3() {
   });
   const listening = [...listening1, ...listening2, ...dialogueQuestions(3, 0, 10, 3), ...dialogueQuestions(3, 10, 10, 4, true)];
   const reading1 = readingResponses(3, HSK3_RESPONSES, 1);
-  const reading2 = HSK3_CLOZE.map((item, index) => q(`hsk3-r2-${String(index + 1).padStart(2, "0")}`, "reading", 2, "reading-cloze", { prompt: item[0], choices: choices(item[1], item[2], 3), correct: item[1], instruction: "请选择合适的词语填空。", explanation: item[0].replace("＿＿＿", item[1]) }));
+  const reading2 = authoredCloze(3, HSK3_CLOZE, 2);
   const reading3 = DIALOGUES[3].slice(10, 20).map((item, index) => q(`hsk3-r3-${String(index + 1).padStart(2, "0")}`, "reading", 3, "reading-comprehension", { prompt: item[0].replace(/问：.*$/, ""), subPrompt: item[1], choices: choices(item[2], item[3], 3), correct: item[2], instruction: "请阅读短文，选择正确答案。", explanation: `${item[1]} — ${item[2]}` }));
   const reorder = [
     [["我", "每天", "学习", "汉语"], "我每天学习汉语。"], [["他", "正在", "看", "报纸"], "他正在看报纸。"], [["明天", "可能", "下雨"], "明天可能下雨。"], [["我家", "离", "学校", "很近"], "我家离学校很近。"], [["她", "比", "我", "高"], "她比我高。"],
@@ -235,6 +282,23 @@ for (const level of [1, 2, 3]) {
   if (new Set(questions.map((question) => question.id)).size !== questions.length) throw new Error(`HSK ${level}: duplicate ids`);
   const audio = questions.filter((question) => question.skill === "listening");
   if (new Set(audio.map((question) => question.audioText)).size !== audio.length) throw new Error(`HSK ${level}: duplicate listening prompts`);
+  // 穴埋め問題は、空欄・選択肢・級の範囲を検査する。
+  for (const item of questions.filter((question) => question.kind === "reading-cloze")) {
+    if (!item.prompt.includes("＿＿＿")) throw new Error(`${item.id}: 空欄（＿＿＿）がありません`);
+    if (item.prompt.replace("＿＿＿", "").includes(item.correct)) throw new Error(`${item.id}: 正解「${item.correct}」が問題文にも出ています`);
+    if (level <= 2 && !item.promptPinyin?.includes("____")) throw new Error(`${item.id}: ピンインに空欄（____）がありません`);
+    const labels = item.choices.map((entry) => entry.label);
+    if (new Set(labels).size !== labels.length) throw new Error(`${item.id}: 選択肢が重複しています`);
+    if (!labels.includes(item.correct)) throw new Error(`${item.id}: 正解が選択肢にありません`);
+    for (const label of labels) {
+      const wordLevel = levelByHanzi.get(label);
+      if (!wordLevel) throw new Error(`${item.id}: 選択肢「${label}」が語彙データにありません`);
+      if (wordLevel > level) throw new Error(`${item.id}: 選択肢「${label}」はHSK${wordLevel}の語です`);
+    }
+    for (const char of item.prompt.replace("＿＿＿", "")) {
+      if (/[一-鿿]/u.test(char) && !levelChars[level].has(char)) console.warn(`  警告 ${item.id}: 「${char}」はHSK1〜${level}の語彙にない漢字です → ${item.prompt}`);
+    }
+  }
   const payload = { version: 2, level, format: "HSK 2.0（日本実施形式）・写真問題は記号イラストで代替", generatedAt: new Date().toISOString(), questions };
   fs.writeFileSync(path.join(root, "data", `mock-hsk${level}.json`), `${JSON.stringify(payload, null, 2)}\n`);
   console.log(`HSK ${level}: ${questions.length}問（聴解${counts.listening}・読解${counts.reading}・作文${counts.writing}）`);

@@ -18,6 +18,8 @@ const femaleVoice = process.env.HSK_SENTENCE_FEMALE_VOICE || "Tingting";
 const maleVoice = process.env.HSK_SENTENCE_MALE_VOICE || "Tingting";
 const force = process.env.HSK_SENTENCE_AUDIO_FORCE === "1";
 const engineVersion = "apple-natural-v1";
+// 会話と設問（问：〜）の境目が聞き取れるよう、設問の前に長めの無音を入れる。
+const GAPS = { beforeQuestion: 1.2, betweenSpeakers: 0.45 };
 
 fs.mkdirSync(outputDir, { recursive: true });
 
@@ -70,7 +72,9 @@ let previous = { items: {} };
 try { previous = JSON.parse(fs.readFileSync(manifestPath, "utf8")); } catch {}
 
 function checksum(item) {
-  return crypto.createHash("sha256").update(JSON.stringify({ engineVersion, femaleVoice, maleVoice, level: item.level, segments: item.segments })).digest("hex");
+  // 無音の長さは複数セグメントのときだけ音に影響するため、そのときだけ検査対象に含める。
+  const gaps = item.segments.length > 1 ? GAPS : null;
+  return crypto.createHash("sha256").update(JSON.stringify({ engineVersion, femaleVoice, maleVoice, level: item.level, segments: item.segments, gaps })).digest("hex");
 }
 
 function runSay(text, voice, outputFile, rate, attempt = 1) {
@@ -127,7 +131,7 @@ async function generate(item) {
     pcmParts.push(extractPcm(fs.readFileSync(segmentFile)));
     if (index < item.segments.length - 1) {
       const nextIsQuestion = item.segments[index + 1].role === "narrator";
-      pcmParts.push(Buffer.alloc(Math.round(44100 * (nextIsQuestion ? .55 : .28)) * 2));
+      pcmParts.push(Buffer.alloc(Math.round(44100 * (nextIsQuestion ? GAPS.beforeQuestion : GAPS.betweenSpeakers)) * 2));
     }
   }
   fs.writeFileSync(outputFile, makeWave(Buffer.concat(pcmParts)));

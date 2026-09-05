@@ -2,7 +2,7 @@
   "version": 2,
   "level": 2,
   "format": "HSK 2.0（日本実施形式）・写真問題は記号イラストで代替",
-  "generatedAt": "2026-08-22T07:58:49.609Z",
+  "generatedAt": "2026-09-05T08:27:12.275Z",
   "questions": [
     {
       "id": "hsk2-l1-01",
@@ -1114,145 +1114,145 @@
       "skill": "reading",
       "part": 2,
       "kind": "reading-cloze",
-      "wordId": "hsk2-151",
-      "prompt": "我们一起去＿＿＿。",
-      "promptPinyin": "Wǒmen yìqǐ qù ____.",
+      "wordId": "hsk2-295",
+      "prompt": "明天有考试，我要在家＿＿＿。",
+      "promptPinyin": "Míngtiān yǒu kǎoshì, wǒ yào zài jiā ____.",
       "choices": [
         {
-          "value": "hsk2-151",
-          "label": "吧",
-          "pinyin": "ba"
+          "value": "准备",
+          "label": "准备",
+          "pinyin": "zhǔnbèi"
         },
         {
-          "value": "hsk2-175",
-          "label": "懂",
-          "pinyin": "dǒng"
+          "value": "旅游",
+          "label": "旅游",
+          "pinyin": "lǚyóu"
         },
         {
-          "value": "hsk2-192",
-          "label": "黑",
-          "pinyin": "hēi"
+          "value": "唱歌",
+          "label": "唱歌",
+          "pinyin": "chànggē"
         }
       ],
-      "correct": "hsk2-151",
+      "correct": "准备",
       "instruction": "请选择合适的词语填空。",
-      "explanation": "我们一起去吧。"
+      "explanation": "明天有考试，我要在家准备。"
     },
     {
       "id": "hsk2-r2-02",
       "skill": "reading",
       "part": 2,
       "kind": "reading-cloze",
-      "wordId": "hsk2-152",
-      "prompt": "这件衣服是＿＿＿的。",
-      "promptPinyin": "Zhè jiàn yīfu shì ____ de.",
+      "wordId": "hsk2-157",
+      "prompt": "这个西瓜三块钱，非常＿＿＿。",
+      "promptPinyin": "Zhège xīguā sān kuài qián, fēicháng ____.",
       "choices": [
         {
-          "value": "hsk2-152",
-          "label": "白",
-          "pinyin": "bái"
+          "value": "便宜",
+          "label": "便宜",
+          "pinyin": "piányi"
         },
         {
-          "value": "hsk2-179",
-          "label": "服务员",
-          "pinyin": "fúwùyuán"
+          "value": "贵",
+          "label": "贵",
+          "pinyin": "guì"
         },
         {
-          "value": "hsk2-196",
-          "label": "回答",
-          "pinyin": "huídá"
+          "value": "远",
+          "label": "远",
+          "pinyin": "yuǎn"
         }
       ],
-      "correct": "hsk2-152",
+      "correct": "便宜",
       "instruction": "请选择合适的词语填空。",
-      "explanation": "这件衣服是白的。"
+      "explanation": "这个西瓜三块钱，非常便宜。"
     },
     {
       "id": "hsk2-r2-03",
       "skill": "reading",
       "part": 2,
       "kind": "reading-cloze",
-      "wordId": "hsk2-153",
-      "prompt": "这件衣服一＿＿＿元。",
-      "promptPinyin": "Zhè jiàn yīfu yì ____ yuán.",
+      "wordId": "hsk2-234",
+      "prompt": "我每天早上七点＿＿＿，八点上班。",
+      "promptPinyin": "Wǒ měitiān zǎoshang qī diǎn ____, bā diǎn shàngbān.",
       "choices": [
         {
-          "value": "hsk2-153",
-          "label": "百",
-          "pinyin": "bǎi"
+          "value": "起床",
+          "label": "起床",
+          "pinyin": "qǐchuáng"
         },
         {
-          "value": "hsk2-183",
-          "label": "给",
-          "pinyin": "gěi"
+          "value": "睡觉",
+          "label": "睡觉",
+          "pinyin": "shuìjiào"
         },
         {
-          "value": "hsk2-200",
-          "label": "教室",
-          "pinyin": "jiàoshì"
+          "value": "回答",
+          "label": "回答",
+          "pinyin": "huídá"
         }
       ],
-      "correct": "hsk2-153",
+      "correct": "起床",
       "instruction": "请选择合适的词语填空。",
-      "explanation": "这件衣服一百元。"
+      "explanation": "我每天早上七点起床，八点上班。"
     },
     {
       "id": "hsk2-r2-04",
       "skill": "reading",
       "part": 2,
       "kind": "reading-cloze",
-      "wordId": "hsk2-154",
-      "prompt": "谢谢你的＿＿＿。",
-      "promptPinyin": "Xièxie nǐ de ____.",
+      "wordId": "hsk2-162",
+      "prompt": "今天很冷，你＿＿＿这件衣服吧。",
+      "promptPinyin": "Jīntiān hěn lěng, nǐ ____ zhè jiàn yīfu ba.",
       "choices": [
         {
-          "value": "hsk2-154",
-          "label": "帮助",
-          "pinyin": "bāngzhù"
+          "value": "穿",
+          "label": "穿",
+          "pinyin": "chuān"
         },
         {
-          "value": "hsk2-187",
-          "label": "贵",
-          "pinyin": "guì"
+          "value": "洗",
+          "label": "洗",
+          "pinyin": "xǐ"
         },
         {
-          "value": "hsk2-204",
-          "label": "进",
-          "pinyin": "jìn"
+          "value": "卖",
+          "label": "卖",
+          "pinyin": "mài"
         }
       ],
-      "correct": "hsk2-154",
+      "correct": "穿",
       "instruction": "请选择合适的词语填空。",
-      "explanation": "谢谢你的帮助。"
+      "explanation": "今天很冷，你穿这件衣服吧。"
     },
     {
       "id": "hsk2-r2-05",
       "skill": "reading",
       "part": 2,
       "kind": "reading-cloze",
-      "wordId": "hsk2-155",
-      "prompt": "爸爸在看＿＿＿。",
-      "promptPinyin": "Bàba zài kàn ____.",
+      "wordId": "hsk2-181",
+      "prompt": "我不知道他的电话，你能＿＿＿我吗？",
+      "promptPinyin": "Wǒ bù zhīdào tā de diànhuà, nǐ néng ____ wǒ ma?",
       "choices": [
         {
-          "value": "hsk2-155",
-          "label": "报纸",
-          "pinyin": "bàozhǐ"
+          "value": "告诉",
+          "label": "告诉",
+          "pinyin": "gàosu"
         },
         {
-          "value": "hsk2-191",
-          "label": "号",
-          "pinyin": "hào"
+          "value": "介绍",
+          "label": "介绍",
+          "pinyin": "jièshào"
         },
         {
-          "value": "hsk2-208",
-          "label": "开始",
-          "pinyin": "kāishǐ"
+          "value": "欢迎",
+          "label": "欢迎",
+          "pinyin": "huānyíng"
         }
       ],
-      "correct": "hsk2-155",
+      "correct": "告诉",
       "instruction": "请选择合适的词语填空。",
-      "explanation": "爸爸在看报纸。"
+      "explanation": "我不知道他的电话，你能告诉我吗？"
     },
     {
       "id": "hsk2-r3-01",
@@ -1374,290 +1374,290 @@
       "skill": "reading",
       "part": 4,
       "kind": "reading-cloze",
-      "wordId": "hsk2-191",
-      "prompt": "今天是八＿＿＿。",
-      "promptPinyin": "Jīntiān shì bā ____.",
+      "wordId": "hsk2-175",
+      "prompt": "老师说得很快，我没听＿＿＿，请再说一次。",
+      "promptPinyin": "Lǎoshī shuō de hěn kuài, wǒ méi tīng ____, qǐng zài shuō yí cì.",
       "choices": [
         {
-          "value": "hsk2-191",
-          "label": "号",
-          "pinyin": "hào"
+          "value": "懂",
+          "label": "懂",
+          "pinyin": "dǒng"
         },
         {
-          "value": "hsk2-216",
-          "label": "离",
-          "pinyin": "lí"
+          "value": "完",
+          "label": "完",
+          "pinyin": "wán"
         },
         {
-          "value": "hsk2-233",
-          "label": "妻子",
-          "pinyin": "qīzi"
+          "value": "开",
+          "label": "开",
+          "pinyin": "kāi"
         }
       ],
-      "correct": "hsk2-191",
+      "correct": "懂",
       "instruction": "请选择合适的词语填空。",
-      "explanation": "今天是八号。"
+      "explanation": "老师说得很快，我没听懂，请再说一次。"
     },
     {
       "id": "hsk2-r4-02",
       "skill": "reading",
       "part": 4,
       "kind": "reading-cloze",
-      "wordId": "hsk2-192",
-      "prompt": "这只猫是＿＿＿的。",
-      "promptPinyin": "Zhè zhī māo shì ____ de.",
+      "wordId": "hsk1-133",
+      "prompt": "我姐姐在医院工作，她是＿＿＿。",
+      "promptPinyin": "Wǒ jiějie zài yīyuàn gōngzuò, tā shì ____.",
       "choices": [
         {
-          "value": "hsk2-192",
-          "label": "黑",
-          "pinyin": "hēi"
+          "value": "医生",
+          "label": "医生",
+          "pinyin": "yīshēng"
         },
         {
-          "value": "hsk2-218",
-          "label": "路",
-          "pinyin": "lù"
+          "value": "老师",
+          "label": "老师",
+          "pinyin": "lǎoshī"
         },
         {
-          "value": "hsk2-235",
-          "label": "千",
-          "pinyin": "qiān"
+          "value": "服务员",
+          "label": "服务员",
+          "pinyin": "fúwùyuán"
         }
       ],
-      "correct": "hsk2-192",
+      "correct": "医生",
       "instruction": "请选择合适的词语填空。",
-      "explanation": "这只猫是黑的。"
+      "explanation": "我姐姐在医院工作，她是医生。"
     },
     {
       "id": "hsk2-r4-03",
       "skill": "reading",
       "part": 4,
       "kind": "reading-cloze",
-      "wordId": "hsk2-193",
-      "prompt": "我喜欢＿＿＿苹果。",
-      "promptPinyin": "Wǒ xǐhuan ____ píngguǒ.",
+      "wordId": "hsk2-285",
+      "prompt": "从我家到公司很＿＿＿，坐车要一个小时。",
+      "promptPinyin": "Cóng wǒ jiā dào gōngsī hěn ____, zuò chē yào yí ge xiǎoshí.",
       "choices": [
         {
-          "value": "hsk2-193",
-          "label": "红",
-          "pinyin": "hóng"
+          "value": "远",
+          "label": "远",
+          "pinyin": "yuǎn"
         },
         {
-          "value": "hsk2-220",
-          "label": "卖",
-          "pinyin": "mài"
+          "value": "近",
+          "label": "近",
+          "pinyin": "jìn"
         },
         {
-          "value": "hsk2-237",
-          "label": "去年",
-          "pinyin": "qùnián"
+          "value": "快",
+          "label": "快",
+          "pinyin": "kuài"
         }
       ],
-      "correct": "hsk2-193",
+      "correct": "远",
       "instruction": "请选择合适的词语填空。",
-      "explanation": "我喜欢红苹果。"
+      "explanation": "从我家到公司很远，坐车要一个小时。"
     },
     {
       "id": "hsk2-r4-04",
       "skill": "reading",
       "part": 4,
       "kind": "reading-cloze",
-      "wordId": "hsk2-194",
-      "prompt": "＿＿＿来我家。",
-      "promptPinyin": "____ lái wǒ jiā.",
+      "wordId": "hsk1-014",
+      "prompt": "我今年二十岁，我哥哥二十二岁，他比我＿＿＿两岁。",
+      "promptPinyin": "Wǒ jīnnián èrshí suì, wǒ gēge èrshí'èr suì, tā bǐ wǒ ____ liǎng suì.",
       "choices": [
         {
-          "value": "hsk2-194",
-          "label": "欢迎",
-          "pinyin": "huānyíng"
+          "value": "大",
+          "label": "大",
+          "pinyin": "dà"
         },
         {
-          "value": "hsk2-222",
-          "label": "忙",
-          "pinyin": "máng"
+          "value": "小",
+          "label": "小",
+          "pinyin": "xiǎo"
         },
         {
-          "value": "hsk2-239",
-          "label": "上班",
-          "pinyin": "shàngbān"
+          "value": "高",
+          "label": "高",
+          "pinyin": "gāo"
         }
       ],
-      "correct": "hsk2-194",
+      "correct": "大",
       "instruction": "请选择合适的词语填空。",
-      "explanation": "欢迎来我家。"
+      "explanation": "我今年二十岁，我哥哥二十二岁，他比我大两岁。"
     },
     {
       "id": "hsk2-r4-05",
       "skill": "reading",
       "part": 4,
       "kind": "reading-cloze",
-      "wordId": "hsk2-195",
-      "prompt": "他＿＿＿在学校。",
-      "promptPinyin": "Tā ____ zài xuéxiào.",
+      "wordId": "hsk1-018",
+      "prompt": "我的眼睛很累，因为我看了三个小时的＿＿＿。",
+      "promptPinyin": "Wǒ de yǎnjing hěn lèi, yīnwèi wǒ kàn le sān ge xiǎoshí de ____.",
       "choices": [
         {
-          "value": "hsk3-402",
-          "label": "还",
-          "pinyin": "huán"
+          "value": "电视",
+          "label": "电视",
+          "pinyin": "diànshì"
         },
         {
-          "value": "hsk2-179",
-          "label": "服务员",
-          "pinyin": "fúwùyuán"
+          "value": "牛奶",
+          "label": "牛奶",
+          "pinyin": "niúnǎi"
         },
         {
-          "value": "hsk2-196",
-          "label": "回答",
-          "pinyin": "huídá"
+          "value": "房间",
+          "label": "房间",
+          "pinyin": "fángjiān"
         }
       ],
-      "correct": "hsk2-195",
+      "correct": "电视",
       "instruction": "请选择合适的词语填空。",
-      "explanation": "他还在学校。"
+      "explanation": "我的眼睛很累，因为我看了三个小时的电视。"
     },
     {
       "id": "hsk2-r4-06",
       "skill": "reading",
       "part": 4,
       "kind": "reading-cloze",
-      "wordId": "hsk2-196",
-      "prompt": "请＿＿＿这个问题。",
-      "promptPinyin": "Qǐng ____ zhège wèntí.",
+      "wordId": "hsk2-213",
+      "prompt": "时间不多了，我们＿＿＿走吧。",
+      "promptPinyin": "Shíjiān bù duō le, wǒmen ____ zǒu ba.",
       "choices": [
         {
-          "value": "hsk2-196",
-          "label": "回答",
-          "pinyin": "huídá"
+          "value": "快",
+          "label": "快",
+          "pinyin": "kuài"
         },
         {
-          "value": "hsk2-226",
-          "label": "男人",
-          "pinyin": "nánrén"
+          "value": "慢",
+          "label": "慢",
+          "pinyin": "màn"
         },
         {
-          "value": "hsk2-243",
-          "label": "时间",
-          "pinyin": "shíjiān"
+          "value": "再",
+          "label": "再",
+          "pinyin": "zài"
         }
       ],
-      "correct": "hsk2-196",
+      "correct": "快",
       "instruction": "请选择合适的词语填空。",
-      "explanation": "请回答这个问题。"
+      "explanation": "时间不多了，我们快走吧。"
     },
     {
       "id": "hsk2-r4-07",
       "skill": "reading",
       "part": 4,
       "kind": "reading-cloze",
-      "wordId": "hsk2-197",
-      "prompt": "我坐出租车去＿＿＿。",
-      "promptPinyin": "Wǒ zuò chūzūchē qù ____.",
+      "wordId": "hsk2-247",
+      "prompt": "明天是我妈妈的生日，我想＿＿＿她一件衣服。",
+      "promptPinyin": "Míngtiān shì wǒ māma de shēngrì, wǒ xiǎng ____ tā yí jiàn yīfu.",
       "choices": [
         {
-          "value": "hsk2-197",
-          "label": "机场",
-          "pinyin": "jīchǎng"
+          "value": "送",
+          "label": "送",
+          "pinyin": "sòng"
         },
         {
-          "value": "hsk2-228",
-          "label": "牛奶",
-          "pinyin": "niúnǎi"
+          "value": "卖",
+          "label": "卖",
+          "pinyin": "mài"
         },
         {
-          "value": "hsk2-245",
-          "label": "手表",
-          "pinyin": "shǒubiǎo"
+          "value": "洗",
+          "label": "洗",
+          "pinyin": "xǐ"
         }
       ],
-      "correct": "hsk2-197",
+      "correct": "送",
       "instruction": "请选择合适的词语填空。",
-      "explanation": "我坐出租车去机场。"
+      "explanation": "明天是我妈妈的生日，我想送她一件衣服。"
     },
     {
       "id": "hsk2-r4-08",
       "skill": "reading",
       "part": 4,
       "kind": "reading-cloze",
-      "wordId": "hsk2-198",
-      "prompt": "我早上吃＿＿＿。",
-      "promptPinyin": "Wǒ zǎoshang chī ____.",
+      "wordId": "hsk2-268",
+      "prompt": "他生病了，所以今天在家＿＿＿。",
+      "promptPinyin": "Tā shēngbìng le, suǒyǐ jīntiān zài jiā ____.",
       "choices": [
         {
-          "value": "hsk2-198",
-          "label": "鸡蛋",
-          "pinyin": "jīdàn"
+          "value": "休息",
+          "label": "休息",
+          "pinyin": "xiūxi"
         },
         {
-          "value": "hsk2-230",
-          "label": "旁边",
-          "pinyin": "pángbiān"
+          "value": "运动",
+          "label": "运动",
+          "pinyin": "yùndòng"
         },
         {
-          "value": "hsk2-247",
-          "label": "送",
-          "pinyin": "sòng"
+          "value": "跳舞",
+          "label": "跳舞",
+          "pinyin": "tiàowǔ"
         }
       ],
-      "correct": "hsk2-198",
+      "correct": "休息",
       "instruction": "请选择合适的词语填空。",
-      "explanation": "我早上吃鸡蛋。"
+      "explanation": "他生病了，所以今天在家休息。"
     },
     {
       "id": "hsk2-r4-09",
       "skill": "reading",
       "part": 4,
       "kind": "reading-cloze",
-      "wordId": "hsk2-199",
-      "prompt": "我买了一＿＿＿衣服。",
-      "promptPinyin": "Wǒ mǎi le yí ____ yīfu.",
+      "wordId": "hsk2-258",
+      "prompt": "这个字我不会写，我想＿＿＿老师。",
+      "promptPinyin": "Zhège zì wǒ bú huì xiě, wǒ xiǎng ____ lǎoshī.",
       "choices": [
         {
-          "value": "hsk2-199",
-          "label": "件",
-          "pinyin": "jiàn"
+          "value": "问",
+          "label": "问",
+          "pinyin": "wèn"
         },
         {
-          "value": "hsk2-232",
-          "label": "票",
-          "pinyin": "piào"
+          "value": "告诉",
+          "label": "告诉",
+          "pinyin": "gàosu"
         },
         {
-          "value": "hsk2-249",
-          "label": "它",
-          "pinyin": "tā"
+          "value": "帮助",
+          "label": "帮助",
+          "pinyin": "bāngzhù"
         }
       ],
-      "correct": "hsk2-199",
+      "correct": "问",
       "instruction": "请选择合适的词语填空。",
-      "explanation": "我买了一件衣服。"
+      "explanation": "这个字我不会写，我想问老师。"
     },
     {
       "id": "hsk2-r4-10",
       "skill": "reading",
       "part": 4,
       "kind": "reading-cloze",
-      "wordId": "hsk2-200",
-      "prompt": "老师在＿＿＿里。",
-      "promptPinyin": "Lǎoshī zài ____ lǐ.",
+      "wordId": "hsk1-082",
+      "prompt": "这些鸡蛋一公斤多少＿＿＿？",
+      "promptPinyin": "Zhèxiē jīdàn yì gōngjīn duōshao ____?",
       "choices": [
         {
-          "value": "hsk2-200",
-          "label": "教室",
-          "pinyin": "jiàoshì"
+          "value": "钱",
+          "label": "钱",
+          "pinyin": "qián"
         },
         {
-          "value": "hsk2-234",
-          "label": "起床",
-          "pinyin": "qǐchuáng"
+          "value": "号",
+          "label": "号",
+          "pinyin": "hào"
         },
         {
-          "value": "hsk2-251",
-          "label": "题",
-          "pinyin": "tí"
+          "value": "次",
+          "label": "次",
+          "pinyin": "cì"
         }
       ],
-      "correct": "hsk2-200",
+      "correct": "钱",
       "instruction": "请选择合适的词语填空。",
-      "explanation": "老师在教室里。"
+      "explanation": "这些鸡蛋一公斤多少钱？"
     }
   ]
 }

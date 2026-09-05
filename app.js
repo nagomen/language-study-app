@@ -745,7 +745,13 @@ function startMockExam(level) {
   const config = EXAM_CONFIG[level];
   const sourceQuestions = state.mockForms[level]?.questions;
   if (!sourceQuestions?.length) return alert("模試データを読み込めませんでした。");
-  const questions = JSON.parse(JSON.stringify(sourceQuestions)).map((question) => ({ ...question, mockFormat: question.skill === "writing", selected: [] }));
+  // 模試データは正解を先頭に持つため、受けるたびに選択肢を並べ替える（对／不对は順序を保つ）。
+  const questions = JSON.parse(JSON.stringify(sourceQuestions)).map((question) => ({
+    ...question,
+    choices: question.choices && !isJudgeChoices(question.choices) ? shuffle([...question.choices]) : question.choices,
+    mockFormat: question.skill === "writing",
+    selected: [],
+  }));
   state.practice = {
     ...emptyPractice(), mode: "mock", level, questions, isMock: true,
     lastStart: { mode: "mock", level, isMock: true }, sectionStats: {},
@@ -753,6 +759,10 @@ function startMockExam(level) {
   showView("practice");
   $("#practice-timer").classList.remove("is-hidden");
   renderPracticeQuestion();
+}
+
+function isJudgeChoices(choices) {
+  return choices.every((choice) => choice.value === "true" || choice.value === "false");
 }
 
 function makeListeningQuestions(level, count, source = null) {
@@ -1327,7 +1337,7 @@ function playAudioFile(file, button, options = {}) {
   if (!file) return speakWithBrowser(options.fallbackText, button, { rate: options.fallbackRate || .78, role: options.role || "female" });
   stopAudio();
   button?.classList.add("is-playing");
-  const audio = new Audio(`${file}?v=prerendered-2`);
+  const audio = new Audio(`${file}?v=prerendered-3`);
   const playbackRate = options.lockRate ? (options.baseRate || 1) : Math.max(.7, Math.min(1.3, (options.baseRate || 1) * state.audioSpeed));
   audio.playbackRate = playbackRate;
   audio.preservesPitch = true;
@@ -1397,8 +1407,9 @@ function speakSegments(segments, button, rate = .78) {
     utterance.onend = () => {
       if (runId !== speechRunId) return;
       index += 1;
-      if (index >= segments.length) finishAudioButton(button);
-      else window.setTimeout(playNext, 230);
+      if (index >= segments.length) return finishAudioButton(button);
+      // 会話と設問（问：〜）の境目が分かるよう、設問の前は長めに間を空ける。
+      window.setTimeout(playNext, segments[index].role === "narrator" ? 1200 : 450);
     };
     utterance.onerror = () => { if (runId === speechRunId) finishAudioButton(button); };
     window.speechSynthesis.speak(utterance);
