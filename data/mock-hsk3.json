@@ -2,7 +2,7 @@
   "version": 2,
   "level": 3,
   "format": "HSK 2.0（日本実施形式）・写真問題は記号イラストで代替",
-  "generatedAt": "2026-08-22T07:58:49.610Z",
+  "generatedAt": "2026-09-05T08:27:12.275Z",
   "questions": [
     {
       "id": "hsk3-l1-01",
@@ -1269,6 +1269,7 @@
       "skill": "reading",
       "part": 2,
       "kind": "reading-cloze",
+      "wordId": "hsk3-387",
       "prompt": "请把空调＿＿＿一下，房间里有点儿冷。",
       "choices": [
         {
@@ -1293,6 +1294,7 @@
       "skill": "reading",
       "part": 2,
       "kind": "reading-cloze",
+      "wordId": "hsk3-376",
       "prompt": "明天有考试，今天晚上我要认真＿＿＿。",
       "choices": [
         {
@@ -1317,6 +1319,7 @@
       "skill": "reading",
       "part": 2,
       "kind": "reading-cloze",
+      "wordId": "hsk3-428",
       "prompt": "这个问题不难，我相信你一定能＿＿＿。",
       "choices": [
         {
@@ -1341,6 +1344,7 @@
       "skill": "reading",
       "part": 2,
       "kind": "reading-cloze",
+      "wordId": "hsk3-347",
       "prompt": "旅行以前别忘了＿＿＿护照。",
       "choices": [
         {
@@ -1365,6 +1369,7 @@
       "skill": "reading",
       "part": 2,
       "kind": "reading-cloze",
+      "wordId": "hsk3-371",
       "prompt": "我家离公司很远，坐地铁比较＿＿＿。",
       "choices": [
         {
@@ -1389,6 +1394,7 @@
       "skill": "reading",
       "part": 2,
       "kind": "reading-cloze",
+      "wordId": "hsk3-417",
       "prompt": "他每天坚持锻炼，身体越来越＿＿＿。",
       "choices": [
         {
@@ -1413,6 +1419,7 @@
       "skill": "reading",
       "part": 2,
       "kind": "reading-cloze",
+      "wordId": "hsk3-487",
       "prompt": "请你再说一遍，我没听＿＿＿。",
       "choices": [
         {
@@ -1437,6 +1444,7 @@
       "skill": "reading",
       "part": 2,
       "kind": "reading-cloze",
+      "wordId": "hsk3-402",
       "prompt": "除了汉语以外，她＿＿＿会说英语。",
       "choices": [
         {
@@ -1461,6 +1469,7 @@
       "skill": "reading",
       "part": 2,
       "kind": "reading-cloze",
+      "wordId": "hsk3-362",
       "prompt": "这条裤子太长了，那条比较＿＿＿。",
       "choices": [
         {
@@ -1485,6 +1494,7 @@
       "skill": "reading",
       "part": 2,
       "kind": "reading-cloze",
+      "wordId": "hsk3-592",
       "prompt": "比赛马上开始，请大家＿＿＿安全。",
       "choices": [
         {

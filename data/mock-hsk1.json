@@ -2,7 +2,7 @@
   "version": 2,
   "level": 1,
   "format": "HSK 2.0（日本実施形式）・写真問題は記号イラストで代替",
-  "generatedAt": "2026-08-22T07:58:49.596Z",
+  "generatedAt": "2026-09-05T08:27:12.272Z",
   "questions": [
     {
       "id": "hsk1-l1-01",
@@ -964,145 +964,145 @@
       "skill": "reading",
       "part": 4,
       "kind": "reading-cloze",
-      "wordId": "hsk1-026",
-      "prompt": "他是我的＿＿＿。",
-      "promptPinyin": "Tā shì wǒ de ____.",
+      "wordId": "hsk1-100",
+      "prompt": "天气很热，我想喝＿＿＿。",
+      "promptPinyin": "Tiānqì hěn rè, wǒ xiǎng hē ____.",
       "choices": [
         {
-          "value": "hsk1-026",
-          "label": "儿子",
-          "pinyin": "érzi"
+          "value": "水",
+          "label": "水",
+          "pinyin": "shuǐ"
         },
         {
-          "value": "hsk1-047",
-          "label": "她",
-          "pinyin": "tā"
+          "value": "米饭",
+          "label": "米饭",
+          "pinyin": "mǐfàn"
         },
         {
-          "value": "hsk1-064",
-          "label": "猫",
-          "pinyin": "māo"
+          "value": "苹果",
+          "label": "苹果",
+          "pinyin": "píngguǒ"
         }
       ],
-      "correct": "hsk1-026",
+      "correct": "水",
       "instruction": "请选择合适的词语填空。",
-      "explanation": "他是我的儿子。"
+      "explanation": "天气很热，我想喝水。"
     },
     {
       "id": "hsk1-r4-02",
       "skill": "reading",
       "part": 4,
       "kind": "reading-cloze",
-      "wordId": "hsk1-027",
-      "prompt": "今天是＿＿＿月二日。",
-      "promptPinyin": "Jīntiān shì ____yuè èr rì.",
+      "wordId": "hsk1-134",
+      "prompt": "我不太好，去＿＿＿看医生。",
+      "promptPinyin": "Wǒ bú tài hǎo, qù ____ kàn yīshēng.",
       "choices": [
         {
-          "value": "hsk1-027",
-          "label": "二",
-          "pinyin": "èr"
+          "value": "医院",
+          "label": "医院",
+          "pinyin": "yīyuàn"
         },
         {
-          "value": "hsk1-051",
-          "label": "看",
-          "pinyin": "kàn"
+          "value": "商店",
+          "label": "商店",
+          "pinyin": "shāngdiàn"
         },
         {
-          "value": "hsk1-068",
-          "label": "名字",
-          "pinyin": "míngzi"
+          "value": "学校",
+          "label": "学校",
+          "pinyin": "xuéxiào"
         }
       ],
-      "correct": "hsk1-027",
+      "correct": "医院",
       "instruction": "请选择合适的词语填空。",
-      "explanation": "今天是二月二日。"
+      "explanation": "我不太好，去医院看医生。"
     },
     {
       "id": "hsk1-r4-03",
       "skill": "reading",
       "part": 4,
       "kind": "reading-cloze",
-      "wordId": "hsk1-028",
-      "prompt": "＿＿＿在前面。",
-      "promptPinyin": "____ zài qiánmiàn.",
+      "wordId": "hsk1-022",
+      "prompt": "这个字我不认识，请你＿＿＿。",
+      "promptPinyin": "Zhège zì wǒ bú rènshi, qǐng nǐ ____.",
       "choices": [
         {
-          "value": "hsk1-028",
-          "label": "饭馆",
-          "pinyin": "fànguǎn"
+          "value": "读",
+          "label": "读",
+          "pinyin": "dú"
         },
         {
-          "value": "hsk1-055",
-          "label": "老师",
-          "pinyin": "lǎoshī"
+          "value": "买",
+          "label": "买",
+          "pinyin": "mǎi"
         },
         {
-          "value": "hsk1-072",
-          "label": "呢",
-          "pinyin": "ne"
+          "value": "坐",
+          "label": "坐",
+          "pinyin": "zuò"
         }
       ],
-      "correct": "hsk1-028",
+      "correct": "读",
       "instruction": "请选择合适的词语填空。",
-      "explanation": "饭馆在前面。"
+      "explanation": "这个字我不认识，请你读。"
     },
     {
       "id": "hsk1-r4-04",
       "skill": "reading",
       "part": 4,
       "kind": "reading-cloze",
-      "wordId": "hsk1-029",
-      "prompt": "我坐＿＿＿去北京。",
-      "promptPinyin": "Wǒ zuò ____ qù Běijīng.",
+      "wordId": "hsk1-093",
+      "prompt": "我的朋友很多，她的朋友很＿＿＿。",
+      "promptPinyin": "Wǒ de péngyou hěn duō, tā de péngyou hěn ____.",
       "choices": [
         {
-          "value": "hsk1-029",
-          "label": "飞机",
-          "pinyin": "fēijī"
+          "value": "少",
+          "label": "少",
+          "pinyin": "shǎo"
         },
         {
-          "value": "hsk1-059",
-          "label": "零",
-          "pinyin": "líng"
+          "value": "大",
+          "label": "大",
+          "pinyin": "dà"
         },
         {
-          "value": "hsk1-076",
-          "label": "女儿",
-          "pinyin": "nǚ'ér"
+          "value": "热",
+          "label": "热",
+          "pinyin": "rè"
         }
       ],
-      "correct": "hsk1-029",
+      "correct": "少",
       "instruction": "请选择合适的词语填空。",
-      "explanation": "我坐飞机去北京。"
+      "explanation": "我的朋友很多，她的朋友很少。"
     },
     {
       "id": "hsk1-r4-05",
       "skill": "reading",
       "part": 4,
       "kind": "reading-cloze",
-      "wordId": "hsk1-030",
-      "prompt": "请等十＿＿＿。",
-      "promptPinyin": "Qǐng děng shí ____.",
+      "wordId": "hsk1-006",
+      "prompt": "我买了三＿＿＿书。",
+      "promptPinyin": "Wǒ mǎi le sān ____ shū.",
       "choices": [
         {
-          "value": "hsk1-030",
-          "label": "分钟",
-          "pinyin": "fēnzhōng"
+          "value": "本",
+          "label": "本",
+          "pinyin": "běn"
         },
         {
-          "value": "hsk1-063",
-          "label": "买",
-          "pinyin": "mǎi"
+          "value": "块",
+          "label": "块",
+          "pinyin": "kuài"
         },
         {
-          "value": "hsk1-080",
-          "label": "七",
-          "pinyin": "qī"
+          "value": "岁",
+          "label": "岁",
+          "pinyin": "suì"
         }
       ],
-      "correct": "hsk1-030",
+      "correct": "本",
       "instruction": "请选择合适的词语填空。",
-      "explanation": "请等十分钟。"
+      "explanation": "我买了三本书。"
     }
   ]
 }
