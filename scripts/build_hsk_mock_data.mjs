@@ -105,6 +105,26 @@ const HSK3_STATEMENTS = [
   ["我们本来打算爬山，因为突然下雨，只好改去饭馆吃饭。", "他们最后没有去爬山。", true],
 ];
 
+// 判断对错（本番形式）。本文を読み、★の文が本文と合っているかを判断する。
+// [本文, 本文ピンイン, ★の文, ★のピンイン, 正解(true=对), 解説]
+const HSK2_JUDGE = [
+  ["我家离公司很近，走路十分钟就到。", "Wǒ jiā lí gōngsī hěn jìn, zǒulù shí fēnzhōng jiù dào.",
+    "我每天坐公共汽车上班。", "Wǒ měitiān zuò gōnggòng qìchē shàngbān.", false,
+    "本文は「歩いて10分で着く」なので、バスで通勤している★とは合いません。"],
+  ["昨天是我妻子的生日，我给她买了一件新衣服。", "Zuótiān shì wǒ qīzi de shēngrì, wǒ gěi tā mǎi le yí jiàn xīn yīfu.",
+    "我送给妻子一件衣服。", "Wǒ sòng gěi qīzi yí jiàn yīfu.", true,
+    "誕生日に妻へ服を買ったので、★の「服を贈った」と合っています。"],
+  ["明天我要去机场送朋友，不能去打篮球了。", "Míngtiān wǒ yào qù jīchǎng sòng péngyou, bù néng qù dǎ lánqiú le.",
+    "明天我去打篮球。", "Míngtiān wǒ qù dǎ lánqiú.", false,
+    "本文は「バスケットボールに行けない」と言っているので、★とは合いません。"],
+  ["这个房间里有两张桌子和四个椅子。", "Zhège fángjiān lǐ yǒu liǎng zhāng zhuōzi hé sì ge yǐzi.",
+    "房间里有桌子。", "Fángjiān lǐ yǒu zhuōzi.", true,
+    "机が2つあると書かれているので、★の「机がある」と合っています。"],
+  ["我不喜欢喝咖啡，我每天早上都喝牛奶。", "Wǒ bù xǐhuan hē kāfēi, wǒ měitiān zǎoshang dōu hē niúnǎi.",
+    "我每天早上喝咖啡。", "Wǒ měitiān zǎoshang hē kāfēi.", false,
+    "本文は毎朝牛乳を飲むと言っているので、★のコーヒーとは合いません。"],
+];
+
 // 選択肢は同じ品詞でそろえ、文脈から答えが一つに決まるように作る。[文, 正解, [誤答2つ], ピンイン]
 const HSK1_CLOZE = [
   ["天气很热，我想喝＿＿＿。", "水", ["米饭", "苹果"], "Tiānqì hěn rè, wǒ xiǎng hē ____."],
@@ -170,7 +190,24 @@ function choice(label, level, extra = {}) {
   return { value: label, label, ...(level <= 2 && pinyin ? { pinyin } : {}), ...extra };
 }
 function choices(answer, distractors, level) { return [choice(answer, level), ...distractors.map((item) => choice(item, level))]; }
-function q(id, skill, part, kind, fields) { return { id, skill, part, kind, ...fields }; }
+// 本番は指示が中国語だけなので、模試画面に日本語の補足を添える。
+const HINTS = {
+  "visual-judge": "音声を聞いて、図と内容が合っているかを判断します。",
+  "visual-choice": "音声を聞いて、内容に合う図を選びます。",
+  "audio-judge": "音声を聞いて、画面の文と内容が合っているかを判断します。",
+  "audio-response": "質問の音声を聞いて、ふさわしい受け答えを選びます。",
+  "audio-dialogue": "会話のあと、間をおいて読まれる設問（问：〜）に答えます。",
+  "audio-long-dialogue": "少し長い会話のあと、間をおいて読まれる設問（问：〜）に答えます。",
+  "reading-visual-judge": "文を読んで、図と内容が合っているかを判断します。",
+  "reading-visual-choice": "文を読んで、内容に合う図を選びます。",
+  "reading-response": "問いかけに対する受け答えとして正しいものを選びます。",
+  "reading-cloze": "空欄に入る言葉を選びます。",
+  "reading-judge": "本文を読み、★の文が本文と合っているかを判断します（一致＝对／不一致＝不对）。",
+  "reading-comprehension": "短文を読んで、設問に答えます。",
+  reorder: "示された語句を並べ替えて、正しい文を作ります。",
+  input: "カッコ内のピンインが表す漢字を書きます。",
+};
+function q(id, skill, part, kind, fields) { return { id, skill, part, kind, ...(HINTS[kind] ? { hint: HINTS[kind] } : {}), ...fields }; }
 function audioFile(id) { return `audio/sentences/${id}.wav`; }
 function wordChoices(answerWord, level, offset) {
   const pool = vocab[level];
@@ -247,11 +284,12 @@ function buildLevel1() {
 
 function buildLevel2() {
   const listening = [...visualListening(2, 0, 10, 1, "judge"), ...visualListening(2, 10, 10, 2, "choice"), ...dialogueQuestions(2, 0, 10, 3), ...dialogueQuestions(2, 10, 5, 4, true)];
-  const clozeWords = vocab[2].filter((word) => word.example?.includes(word.hanzi));
-  const readingJudge = clozeWords.slice(12, 17).map((word, index) => {
-    const other = index % 2 ? clozeWords[30 + index] : word;
-    return q(`hsk2-r3-${String(index + 1).padStart(2, "0")}`, "reading", 3, "reading-judge", { prompt: word.example, promptPinyin: word.examplePinyin, subPrompt: other.example, subPromptPinyin: other.examplePinyin, choices: [choice("true", 2, { label: "对" }), choice("false", 2, { label: "不对" })], correct: String(index % 2 === 0), instruction: "请判断下面两句话的意思是否一致。", explanation: index % 2 === 0 ? "对" : "不对" });
-  });
+  const readingJudge = HSK2_JUDGE.map(([prompt, promptPinyin, statement, statementPinyin, isTrue, note], index) =>
+    q(`hsk2-r3-${String(index + 1).padStart(2, "0")}`, "reading", 3, "reading-judge", {
+      prompt, promptPinyin, subPrompt: statement, subPromptPinyin: statementPinyin,
+      choices: [choice("true", 2, { label: "对" }), choice("false", 2, { label: "不对" })],
+      correct: String(isTrue), instruction: "请判断对错。", explanation: note,
+    }));
   const reading = [...readingVisual(2, 0, 5, 1), ...authoredCloze(2, HSK2_CLOZE_P2, 2), ...readingJudge, ...authoredCloze(2, HSK2_CLOZE_P4, 4)];
   return [...listening, ...reading];
 }
@@ -299,6 +337,18 @@ for (const level of [1, 2, 3]) {
       if (/[一-鿿]/u.test(char) && !levelChars[level].has(char)) console.warn(`  警告 ${item.id}: 「${char}」はHSK1〜${level}の語彙にない漢字です → ${item.prompt}`);
     }
   }
+  // 判断对错は、本文と★の文がそろっていて、正誤が偏っていないことを検査する。
+  const judges = questions.filter((question) => question.kind === "reading-judge");
+  for (const item of judges) {
+    if (!item.subPrompt) throw new Error(`${item.id}: ★の文がありません`);
+    if (item.prompt === item.subPrompt) throw new Error(`${item.id}: 本文と★の文が同じです`);
+    if (!["true", "false"].includes(item.correct)) throw new Error(`${item.id}: 正解が对／不对ではありません`);
+    if (level <= 2 && !(item.promptPinyin && item.subPromptPinyin)) throw new Error(`${item.id}: ピンインが足りません`);
+    for (const char of `${item.prompt}${item.subPrompt}`) {
+      if (/[一-鿿]/u.test(char) && !levelChars[level].has(char)) console.warn(`  警告 ${item.id}: 「${char}」はHSK1〜${level}の語彙にない漢字です`);
+    }
+  }
+  if (judges.length && new Set(judges.map((item) => item.correct)).size < 2) throw new Error(`HSK ${level}: 判断对错の正解が片方に偏っています`);
   const payload = { version: 2, level, format: "HSK 2.0（日本実施形式）・写真問題は記号イラストで代替", generatedAt: new Date().toISOString(), questions };
   fs.writeFileSync(path.join(root, "data", `mock-hsk${level}.json`), `${JSON.stringify(payload, null, 2)}\n`);
   console.log(`HSK ${level}: ${questions.length}問（聴解${counts.listening}・読解${counts.reading}・作文${counts.writing}）`);

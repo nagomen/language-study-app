@@ -12,7 +12,7 @@ const EXAM_CONFIG = {
 
 const SKILL_LABELS = { vocabulary: "単語", listening: "聴解", reading: "読解", writing: "作文" };
 
-const REVIEW_SUB_LABELS = { "reading-comprehension": "設問", "reading-judge": "比較する文", meaning: "ピンイン", fill: "訳" };
+const REVIEW_SUB_LABELS = { "reading-comprehension": "設問", "reading-judge": "★の文", meaning: "ピンイン", fill: "訳" };
 const reviewSessions = { quiz: { entries: [], scope: "all" }, practice: { entries: [], scope: "all" } };
 const CHECKED_KEY = "hsk-checked-words";
 
@@ -918,6 +918,11 @@ function renderPracticeQuestion() {
   $("#practice-step").textContent = `${session.index + 1} / ${session.questions.length}`;
   $("#practice-progress-bar").style.width = `${(session.index / session.questions.length) * 100}%`;
   $("#practice-instruction").textContent = question.instruction;
+  // 模試は指示が中国語だけなので、日本語の補足を添える。
+  const hint = $("#practice-hint");
+  const showHint = Boolean(session.isMock && question.hint);
+  hint.textContent = showHint ? question.hint : "";
+  hint.classList.toggle("is-hidden", !showHint);
   $("#practice-feedback").textContent = "";
   $("#practice-feedback").className = "answer-feedback";
   $("#practice-next").classList.add("is-hidden");
@@ -939,7 +944,15 @@ function renderPracticeQuestion() {
     ? `<h2 class="mock-writing-sentence">${escapeHtml(question.sentence)}</h2>`
     : `<p class="writing-hint">${escapeHtml(question.meaning)}</p><h2 class="pinyin-prompt">${escapeHtml(question.pinyin)}</h2>`;
   else if (question.kind === "reorder") prompt.innerHTML = `${question.mockFormat ? "" : `<p class="writing-hint">${escapeHtml(question.meaning)}</p>`}<div id="ordered-answer" class="ordered-answer">${question.mockFormat ? "请在这里排列句子" : "ここに語順を作ります"}</div>`;
-  else prompt.innerHTML = `<h2 class="${question.kind.startsWith("reading-") ? "mock-reading-prompt" : "reading-prompt"}">${escapeHtml(question.prompt)}</h2>${question.promptPinyin ? `<p class="mock-pinyin">${escapeHtml(question.promptPinyin)}</p>` : ""}${question.subPrompt ? `<p class="reading-subprompt">${escapeHtml(question.subPrompt)}</p>` : ""}${question.subPromptPinyin ? `<p class="mock-pinyin">${escapeHtml(question.subPromptPinyin)}</p>` : ""}`;
+  else {
+    const subPinyin = question.subPromptPinyin ? `<p class="mock-pinyin">${escapeHtml(question.subPromptPinyin)}</p>` : "";
+    // 判断对错では、判定する文を★付きの枠に入れて本文と区別する。
+    const subBlock = !question.subPrompt ? ""
+      : question.kind === "reading-judge"
+        ? `<div class="judge-statement"><span class="judge-star" aria-hidden="true">★</span><div><p class="reading-subprompt">${escapeHtml(question.subPrompt)}</p>${subPinyin}</div></div>`
+        : `<p class="reading-subprompt">${escapeHtml(question.subPrompt)}</p>${subPinyin}`;
+    prompt.innerHTML = `<h2 class="${question.kind.startsWith("reading-") ? "mock-reading-prompt" : "reading-prompt"}">${escapeHtml(question.prompt)}</h2>${question.promptPinyin ? `<p class="mock-pinyin">${escapeHtml(question.promptPinyin)}</p>` : ""}${subBlock}`;
+  }
   renderPracticeAnswers(question);
   if (session.isMock && isAudioQuestion && !(question.audioPlays > 0)) window.setTimeout(() => {
     if (state.practice === session && state.practice.questions[state.practice.index]?.id === question.id && !(question.audioPlays > 0)) playPracticeAudio(true);
