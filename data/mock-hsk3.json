@@ -2,7 +2,7 @@
   "version": 2,
   "level": 3,
   "format": "HSK 2.0（日本実施形式）・写真問題は記号イラストで代替",
-  "generatedAt": "2026-09-11T07:59:51.718Z",
+  "generatedAt": "2026-09-11T08:01:07.702Z",
   "questions": [
     {
       "id": "hsk3-l1-01",
@@ -1098,8 +1098,8 @@
       "prompt": "会议什么时候结束？",
       "choices": [
         {
-          "value": "大概下午四点。",
-          "label": "大概下午四点。"
+          "value": "下午四点左右。",
+          "label": "下午四点左右。"
         },
         {
           "value": "一共十个人。",
@@ -1110,9 +1110,9 @@
           "label": "在银行旁边。"
         }
       ],
-      "correct": "大概下午四点。",
+      "correct": "下午四点左右。",
       "instruction": "请选择与问句相对应的回答。",
-      "explanation": "会议什么时候结束？ — 大概下午四点。"
+      "explanation": "会议什么时候结束？ — 下午四点左右。"
     },
     {
       "id": "hsk3-r1-03",
@@ -1173,8 +1173,8 @@
       "prompt": "你怎么又迟到了？",
       "choices": [
         {
-          "value": "路上堵车了。",
-          "label": "路上堵车了。"
+          "value": "路上车太多了。",
+          "label": "路上车太多了。"
         },
         {
           "value": "考试很简单。",
@@ -1185,9 +1185,9 @@
           "label": "我已经吃饱了。"
         }
       ],
-      "correct": "路上堵车了。",
+      "correct": "路上车太多了。",
       "instruction": "请选择与问句相对应的回答。",
-      "explanation": "你怎么又迟到了？ — 路上堵车了。"
+      "explanation": "你怎么又迟到了？ — 路上车太多了。"
     },
     {
       "id": "hsk3-r1-06",
@@ -1220,7 +1220,7 @@
       "part": 1,
       "kind": "reading-response",
       "hint": "問いかけに対する受け答えとして正しいものを選びます。",
-      "prompt": "你习惯这里的生活了吗？",
+      "prompt": "你习惯这里的天气了吗？",
       "choices": [
         {
           "value": "差不多已经习惯了。",
@@ -1237,7 +1237,7 @@
       ],
       "correct": "差不多已经习惯了。",
       "instruction": "请选择与问句相对应的回答。",
-      "explanation": "你习惯这里的生活了吗？ — 差不多已经习惯了。"
+      "explanation": "你习惯这里的天气了吗？ — 差不多已经习惯了。"
     },
     {
       "id": "hsk3-r1-08",
@@ -1451,7 +1451,7 @@
       "kind": "reading-cloze",
       "hint": "空欄に入る言葉を選びます。",
       "wordId": "hsk3-417",
-      "prompt": "他每天坚持锻炼，身体越来越＿＿＿。",
+      "prompt": "他每天都去锻炼，身体越来越＿＿＿。",
       "choices": [
         {
           "value": "健康",
@@ -1468,7 +1468,7 @@
       ],
       "correct": "健康",
       "instruction": "请选择合适的词语填空。",
-      "explanation": "他每天坚持锻炼，身体越来越健康。"
+      "explanation": "他每天都去锻炼，身体越来越健康。"
     },
     {
       "id": "hsk3-r2-07",
@@ -1477,7 +1477,7 @@
       "kind": "reading-cloze",
       "hint": "空欄に入る言葉を選びます。",
       "wordId": "hsk3-487",
-      "prompt": "请你再说一遍，我没听＿＿＿。",
+      "prompt": "请你再说一次，我没听＿＿＿。",
       "choices": [
         {
           "value": "清楚",
@@ -1494,7 +1494,7 @@
       ],
       "correct": "清楚",
       "instruction": "请选择合适的词语填空。",
-      "explanation": "请你再说一遍，我没听清楚。"
+      "explanation": "请你再说一次，我没听清楚。"
     },
     {
       "id": "hsk3-r2-08",
@@ -1503,7 +1503,7 @@
       "kind": "reading-cloze",
       "hint": "空欄に入る言葉を選びます。",
       "wordId": "hsk3-402",
-      "prompt": "除了汉语以外，她＿＿＿会说英语。",
+      "prompt": "除了汉语以外，她＿＿＿会说日语。",
       "choices": [
         {
           "value": "还",
@@ -1520,7 +1520,7 @@
       ],
       "correct": "还",
       "instruction": "请选择合适的词语填空。",
-      "explanation": "除了汉语以外，她还会说英语。"
+      "explanation": "除了汉语以外，她还会说日语。"
     },
     {
       "id": "hsk3-r2-09",
@@ -1555,7 +1555,7 @@
       "kind": "reading-cloze",
       "hint": "空欄に入る言葉を選びます。",
       "wordId": "hsk3-592",
-      "prompt": "比赛马上开始，请大家＿＿＿安全。",
+      "prompt": "过马路的时候，请大家＿＿＿车。",
       "choices": [
         {
           "value": "注意",
@@ -1572,7 +1572,7 @@
       ],
       "correct": "注意",
       "instruction": "请选择合适的词语填空。",
-      "explanation": "比赛马上开始，请大家注意安全。"
+      "explanation": "过马路的时候，请大家注意车。"
     },
     {
       "id": "hsk3-r3-01",
