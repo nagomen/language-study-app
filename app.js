@@ -160,7 +160,10 @@ function bindEvents() {
     if (activeAudio) activeAudio.playbackRate = state.audioSpeed;
   });
   $$('[data-practice]').forEach((button) => button.addEventListener("click", () => startPractice(button.dataset.practice, Number($("#practice-level").value))));
-  $$('[data-mock-level]').forEach((button) => button.addEventListener("click", () => startMockExam(Number(button.dataset.mockLevel))));
+  $(".mock-grid").addEventListener("click", (event) => {
+    const button = event.target.closest("[data-mock-level]");
+    if (button) startMockExam(Number(button.dataset.mockLevel), button.dataset.mockSection || null);
+  });
   $("#practice-close").addEventListener("click", closePractice);
   $("#practice-next").addEventListener("click", nextPracticeQuestion);
   $("#practice-audio").addEventListener("click", () => playPracticeAudio(false));
@@ -667,7 +670,7 @@ function renderProgress() {
     return `<div class="progress-row"><strong>${SKILL_LABELS[skill]}</strong><div class="progress-bar"><span style="width:${rate}%"></span></div><span>${data.answered ? `${rate}%` : "—"}</span></div>`;
   }).join("");
   $("#mock-history-list").innerHTML = state.progress.mocks.length
-    ? state.progress.mocks.map((mock) => `<div class="mock-history-row"><span>${escapeHtml(mock.date)} · HSK ${mock.level}</span><strong>${mock.score}<small> / ${mock.maxScore}</small></strong><b class="${mock.passed ? "is-pass" : "is-retry"}">${mock.passed ? "合格" : "再挑戦"}</b></div>`).join("")
+    ? state.progress.mocks.map((mock) => `<div class="mock-history-row"><span>${escapeHtml(mock.date)} · HSK ${mock.level}${mock.section ? ` ${SKILL_LABELS[mock.section]}` : ""}</span><strong>${mock.score}<small> / ${mock.maxScore}</small></strong><b class="${mock.passed ? "is-pass" : "is-retry"}">${mock.section ? (mock.passed ? "達成" : "再挑戦") : (mock.passed ? "合格" : "再挑戦")}</b></div>`).join("")
     : '<p class="empty-inline">模試を受けると、ここに直近10回の結果が表示されます。</p>';
 }
 
@@ -712,6 +715,13 @@ function emptyPractice() {
 
 function renderExamHub() {
   $("#due-word-count").textContent = getDueWords().length;
+  // セクション別練習のボタンは、模試の構成（問数・持ち時間）から作る。
+  $$("[data-mock-sections]").forEach((container) => {
+    const level = Number(container.dataset.mockSections);
+    const config = EXAM_CONFIG[level];
+    container.innerHTML = ["listening", "reading", "writing"].filter((skill) => config[skill] > 0).map((skill) =>
+      `<button class="mock-section-button" type="button" data-mock-level="${level}" data-mock-section="${skill}">${SKILL_LABELS[skill]}だけ<small>${config[skill]}問・${config.sectionMinutes[skill]}分</small></button>`).join("");
+  });
 }
 
 function getLevelPool(level) {
@@ -741,9 +751,8 @@ function startPractice(mode, level, source = null) {
   renderPracticeQuestion();
 }
 
-function startMockExam(level) {
-  const config = EXAM_CONFIG[level];
-  const sourceQuestions = state.mockForms[level]?.questions;
+function startMockExam(level, section = null) {
+  const sourceQuestions = state.mockForms[level]?.questions?.filter((question) => !section || question.skill === section);
   if (!sourceQuestions?.length) return alert("模試データを読み込めませんでした。");
   // 模試データは正解を先頭に持つため、受けるたびに選択肢を並べ替える（对／不对は順序を保つ）。
   const questions = JSON.parse(JSON.stringify(sourceQuestions)).map((question) => ({
@@ -753,8 +762,8 @@ function startMockExam(level) {
     selected: [],
   }));
   state.practice = {
-    ...emptyPractice(), mode: "mock", level, questions, isMock: true,
-    lastStart: { mode: "mock", level, isMock: true }, sectionStats: {},
+    ...emptyPractice(), mode: "mock", level, questions, isMock: true, section,
+    lastStart: { mode: "mock", level, isMock: true, section }, sectionStats: {},
   };
   showView("practice");
   $("#practice-timer").classList.remove("is-hidden");
@@ -914,7 +923,9 @@ function renderPracticeQuestion() {
   session.answered = false;
   stopAudio();
   $("#practice-level-label").textContent = session.sourceLabel || `HSK ${session.level}`;
-  $("#practice-mode-label").textContent = session.isMock ? `写真なし模試 · ${SKILL_LABELS[question.skill]} 第${question.part || 1}部分` : (session.mode === "srs" ? `間隔反復 · ${SKILL_LABELS[question.skill]}` : SKILL_LABELS[question.skill]);
+  $("#practice-mode-label").textContent = session.isMock
+    ? `${session.section ? "セクション練習" : "写真なし模試"} · ${SKILL_LABELS[question.skill]} 第${question.part || 1}部分`
+    : (session.mode === "srs" ? `間隔反復 · ${SKILL_LABELS[question.skill]}` : SKILL_LABELS[question.skill]);
   $("#practice-step").textContent = `${session.index + 1} / ${session.questions.length}`;
   $("#practice-progress-bar").style.width = `${(session.index / session.questions.length) * 100}%`;
   $("#practice-instruction").textContent = question.instruction;
@@ -1055,20 +1066,24 @@ function finishPractice(timedOut = Boolean(state.practice.timedOutSections?.leng
   $("#practice-timer").classList.add("is-hidden");
   const attempted = Object.values(session.sectionStats).reduce((sum, item) => sum + item.answered, 0);
   $("#practice-result-mark").textContent = timedOut ? "時" : (session.isMock ? "試" : "成");
-  $("#practice-result-title").textContent = session.isMock ? `HSK ${session.level} 模試結果` : "トレーニング完了";
+  $("#practice-result-title").textContent = "トレーニング完了";
   if (session.isMock) {
     const config = EXAM_CONFIG[session.level];
-    const skills = ["listening", "reading", ...(session.level === 3 ? ["writing"] : [])];
+    const skills = session.section ? [session.section] : ["listening", "reading", ...(session.level === 3 ? ["writing"] : [])];
     // 模試では未回答も不正解として扱い、各技能を100点満点に換算する。
     const scores = skills.map((skill) => Math.round(((session.sectionStats[skill]?.correct || 0) / config[skill]) * 100));
     const total = scores.reduce((sum, score) => sum + score, 0);
-    const passed = total >= config.passScore;
+    const maxScore = skills.length * 100;
+    // 合格基準は全体で6割。セクション別練習も同じ6割を目安にする。
+    const passMark = session.section ? 60 : config.passScore;
+    const passed = total >= passMark;
+    $("#practice-result-title").textContent = session.section ? `HSK ${session.level} ${SKILL_LABELS[session.section]}の結果` : `HSK ${session.level} 模試結果`;
     $("#practice-result-score").textContent = total;
-    $("#practice-result-unit").textContent = `/ ${config.maxScore} 点`;
+    $("#practice-result-unit").textContent = `/ ${maxScore} 点`;
     $("#practice-result-subtitle").textContent = passed ? "合格ライン到達" : "合格まであと少し";
-    $("#practice-result-message").textContent = timedOut ? "時間切れです。技能別結果から復習しましょう。" : (passed ? "合格です。太棒了！" : `合格点は${config.passScore}点です。苦手技能を練習しましょう。`);
+    $("#practice-result-message").textContent = timedOut ? "時間切れです。振り返りから復習しましょう。" : (passed ? "合格ラインです。太棒了！" : `目安は${passMark}点です。振り返りで弱いところを確認しましょう。`);
     $("#practice-breakdown").innerHTML = skills.map((skill, index) => `<div><span>${SKILL_LABELS[skill]}</span><strong>${scores[index]}</strong><small>/ 100</small></div>`).join("");
-    state.progress.mocks.unshift({ date: todayString(), level: session.level, score: total, maxScore: config.maxScore, passed });
+    state.progress.mocks.unshift({ date: todayString(), level: session.level, score: total, maxScore, passed, ...(session.section ? { section: session.section } : {}) });
     state.progress.mocks = state.progress.mocks.slice(0, 10);
     saveProgress();
   } else {
@@ -1086,7 +1101,7 @@ function finishPractice(timedOut = Boolean(state.practice.timedOutSections?.leng
 function retryPractice() {
   const last = state.practice.lastStart;
   if (!last) return navigate("exam");
-  if (last.isMock) startMockExam(last.level);
+  if (last.isMock) startMockExam(last.level, last.section);
   else if (last.checked) startCheckedPractice(last.mode);
   else startPractice(last.mode, last.level);
 }

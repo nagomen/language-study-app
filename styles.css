@@ -117,6 +117,13 @@ button { color: inherit; -webkit-tap-highlight-color: transparent; }
 .review-card { background: var(--ink); color: #fff; }.review-card > p:not(.eyebrow) { color: rgba(255,255,255,.65); }.review-card .training-kanji { color: rgba(255,255,255,.055); }
 .training-count { position: absolute; right: 24px; bottom: 27px; color: rgba(255,255,255,.64); font-size: 10px; }.training-count strong { display: block; color: #fff; font-size: 25px; }
 .mock-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 17px; }
+.mock-entry { display: flex; flex-direction: column; gap: 9px; }
+.mock-entry .mock-card { flex: 1; }
+.mock-sections { display: flex; flex-wrap: wrap; gap: 8px; }
+.mock-section-button { flex: 1 1 0; min-width: 96px; padding: 9px 11px; border: 1px solid var(--line); border-radius: 12px; background: #fff; color: var(--ink); cursor: pointer; font-size: 11px; font-weight: 700; text-align: left; transition: .2s ease; }
+.mock-section-button small { display: block; margin-top: 3px; color: var(--muted); font-size: 9px; font-weight: 400; }
+.mock-section-button:hover { border-color: var(--coral); color: var(--coral-dark); background: var(--coral-soft); }
+.mock-section-button:hover small { color: var(--coral-dark); }
 .mock-card { padding: 22px; border: 1px solid var(--line); border-radius: 17px; background: #fff; cursor: pointer; text-align: left; transition: .2s ease; }
 .mock-card:hover { transform: translateY(-3px); border-color: var(--coral); box-shadow: var(--shadow); }
 .mock-card span, .mock-card strong, .mock-card small, .mock-card b { display: block; }.mock-card span { color: var(--coral); font-size: 10px; font-weight: 800; letter-spacing: .12em; }.mock-card strong { margin-top: 10px; font-size: 28px; }.mock-card small { min-height: 34px; margin-top: 5px; color: var(--muted); font-size: 10px; line-height: 1.6; }.mock-card b { margin-top: 15px; color: var(--ink); font-size: 11px; }

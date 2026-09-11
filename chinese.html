@@ -236,11 +236,20 @@
             <article class="training-card writing-card"><span class="training-kanji">写</span><p class="eyebrow">WRITING · HSK 3</p><h2>作文トレーニング</h2><p>語順の並べ替えと、ピンインから漢字を書く問題を練習します。</p><button type="button" data-practice="writing">10問練習する <span>→</span></button></article>
             <article class="training-card review-card"><span class="training-kanji">复</span><p class="eyebrow">SMART REVIEW</p><h2>今日の間隔反復</h2><p>忘れそうな単語を優先し、1・3・7・14・30日間隔で復習します。</p><div class="training-count"><strong id="due-word-count">0</strong>語が復習対象</div><button type="button" data-practice="srs">復習を始める <span>→</span></button></article>
           </div>
-          <div class="section-heading"><div><p class="eyebrow">FULL MOCK EXAM · HSK 2.0</p><h2>写真なし本番形式模試</h2></div><span>公式パート比率・セクション別時間／前のセクションには戻れません</span></div>
+          <div class="section-heading"><div><p class="eyebrow">FULL MOCK EXAM · HSK 2.0</p><h2>写真なし本番形式模試</h2></div><span>公式パート比率・セクション別時間／前のセクションには戻れません。聴解・読解・作文だけを本番の時間で受けることもできます</span></div>
           <div class="mock-grid">
-            <button class="mock-card" type="button" data-mock-level="1"><span>HSK 1</span><strong>40問</strong><small>聴解20・読解20／35分</small><b>模試を開始 →</b></button>
-            <button class="mock-card" type="button" data-mock-level="2"><span>HSK 2</span><strong>60問</strong><small>聴解35・読解25／50分</small><b>模試を開始 →</b></button>
-            <button class="mock-card" type="button" data-mock-level="3"><span>HSK 3</span><strong>80問</strong><small>聴解40・読解30・作文10／85分</small><b>模試を開始 →</b></button>
+            <article class="mock-entry">
+              <button class="mock-card" type="button" data-mock-level="1"><span>HSK 1</span><strong>40問</strong><small>聴解20・読解20／35分</small><b>模試を開始 →</b></button>
+              <div class="mock-sections" data-mock-sections="1" role="group" aria-label="HSK 1 のセクション別練習"></div>
+            </article>
+            <article class="mock-entry">
+              <button class="mock-card" type="button" data-mock-level="2"><span>HSK 2</span><strong>60問</strong><small>聴解35・読解25／50分</small><b>模試を開始 →</b></button>
+              <div class="mock-sections" data-mock-sections="2" role="group" aria-label="HSK 2 のセクション別練習"></div>
+            </article>
+            <article class="mock-entry">
+              <button class="mock-card" type="button" data-mock-level="3"><span>HSK 3</span><strong>80問</strong><small>聴解40・読解30・作文10／85分</small><b>模試を開始 →</b></button>
+              <div class="mock-sections" data-mock-sections="3" role="group" aria-label="HSK 3 のセクション別練習"></div>
+            </article>
           </div>
           <aside class="mock-format-note"><strong>日本で実施中のHSK筆記1〜3級形式に準拠</strong><p>写真問題は簡易イラスト記号で代替しています。聴解は試験速度で自動的に2回再生され、模試中は速度変更できません。表示点は技能ごとの正答率を100点換算した自己採点の目安です。</p></aside>
         </section>
