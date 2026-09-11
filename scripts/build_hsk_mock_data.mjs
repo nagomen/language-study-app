@@ -142,17 +142,28 @@ const HSK2_CLOZE_P2 = [
   ["我不知道他的电话，你能＿＿＿我吗？", "告诉", ["介绍", "欢迎"], "Wǒ bù zhīdào tā de diànhuà, nǐ néng ____ wǒ ma?"],
 ];
 
-const HSK2_CLOZE_P4 = [
-  ["老师说得很快，我没听＿＿＿，请再说一次。", "懂", ["完", "开"], "Lǎoshī shuō de hěn kuài, wǒ méi tīng ____, qǐng zài shuō yí cì."],
-  ["我姐姐在医院工作，她是＿＿＿。", "医生", ["老师", "服务员"], "Wǒ jiějie zài yīyuàn gōngzuò, tā shì ____."],
-  ["从我家到公司很＿＿＿，坐车要一个小时。", "远", ["近", "快"], "Cóng wǒ jiā dào gōngsī hěn ____, zuò chē yào yí ge xiǎoshí."],
-  ["我今年二十岁，我哥哥二十二岁，他比我＿＿＿两岁。", "大", ["小", "高"], "Wǒ jīnnián èrshí suì, wǒ gēge èrshí'èr suì, tā bǐ wǒ ____ liǎng suì."],
-  ["我的眼睛很累，因为我看了三个小时的＿＿＿。", "电视", ["牛奶", "房间"], "Wǒ de yǎnjing hěn lèi, yīnwèi wǒ kàn le sān ge xiǎoshí de ____."],
-  ["时间不多了，我们＿＿＿走吧。", "快", ["慢", "再"], "Shíjiān bù duō le, wǒmen ____ zǒu ba."],
-  ["明天是我妈妈的生日，我想＿＿＿她一件衣服。", "送", ["卖", "洗"], "Míngtiān shì wǒ māma de shēngrì, wǒ xiǎng ____ tā yí jiàn yīfu."],
-  ["他生病了，所以今天在家＿＿＿。", "休息", ["运动", "跳舞"], "Tā shēngbìng le, suǒyǐ jīntiān zài jiā ____."],
-  ["这个字我不会写，我想＿＿＿老师。", "问", ["告诉", "帮助"], "Zhège zì wǒ bú huì xiě, wǒ xiǎng ____ lǎoshī."],
-  ["这些鸡蛋一公斤多少＿＿＿？", "钱", ["号", "次"], "Zhèxiē jīdàn yì gōngjīn duōshao ____?"],
+// 句子匹配（本番形式）。左の文に対応する受け答えを選ぶ。[文, ピンイン, [[正解, ピンイン], [誤答, ピンイン] …]]
+const HSK2_MATCH = [
+  ["你的手机在哪儿？", "Nǐ de shǒujī zài nǎr?",
+    [["就在桌子上。", "Jiù zài zhuōzi shàng."], ["我住在学校旁边。", "Wǒ zhù zài xuéxiào pángbiān."], ["他去机场了。", "Tā qù jīchǎng le."]]],
+  ["这件衣服多少钱？", "Zhè jiàn yīfu duōshao qián?",
+    [["一百二十块。", "Yìbǎi èrshí kuài."], ["我买了两件。", "Wǒ mǎi le liǎng jiàn."], ["红的很漂亮。", "Hóng de hěn piàoliang."]]],
+  ["你怎么去公司？", "Nǐ zěnme qù gōngsī?",
+    [["我坐公共汽车去。", "Wǒ zuò gōnggòng qìchē qù."], ["九点开始上班。", "Jiǔ diǎn kāishǐ shàngbān."], ["公司离这儿很远。", "Gōngsī lí zhèr hěn yuǎn."]]],
+  ["明天你有时间吗？", "Míngtiān nǐ yǒu shíjiān ma?",
+    [["对不起，我要考试。", "Duìbuqǐ, wǒ yào kǎoshì."], ["昨天我很累。", "Zuótiān wǒ hěn lèi."], ["这个题我不会做。", "Zhège tí wǒ bú huì zuò."]]],
+  ["你身体好点儿了吗？", "Nǐ shēntǐ hǎo diǎnr le ma?",
+    [["好多了，谢谢。", "Hǎo duō le, xièxie."], ["我在医院工作。", "Wǒ zài yīyuàn gōngzuò."], ["他昨天生病了。", "Tā zuótiān shēngbìng le."]]],
+  ["你看见我的手表了吗？", "Nǐ kànjiàn wǒ de shǒubiǎo le ma?",
+    [["是不是在椅子上？", "Shì bu shì zài yǐzi shàng?"], ["现在八点了。", "Xiànzài bā diǎn le."], ["这个手表很贵。", "Zhège shǒubiǎo hěn guì."]]],
+  ["我们什么时候开始？", "Wǒmen shénme shíhou kāishǐ?",
+    [["等他来了就开始。", "Děng tā lái le jiù kāishǐ."], ["在教室里。", "Zài jiàoshì lǐ."], ["我们一起去吧。", "Wǒmen yìqǐ qù ba."]]],
+  ["你喜欢什么运动？", "Nǐ xǐhuan shénme yùndòng?",
+    [["我最喜欢游泳。", "Wǒ zuì xǐhuan yóuyǒng."], ["昨天我们踢足球了。", "Zuótiān wǒmen tī zúqiú le."], ["那个男人是我朋友。", "Nàge nánrén shì wǒ péngyou."]]],
+  ["欢迎你来我家玩。", "Huānyíng nǐ lái wǒ jiā wán.",
+    [["谢谢，我下午就去。", "Xièxie, wǒ xiàwǔ jiù qù."], ["他们已经到了。", "Tāmen yǐjīng dào le."], ["这是我姐姐的房间。", "Zhè shì wǒ jiějie de fángjiān."]]],
+  ["你为什么不吃了？", "Nǐ wèishénme bù chī le?",
+    [["我吃了很多了。", "Wǒ chī le hěn duō le."], ["这个菜真好吃。", "Zhège cài zhēn hǎochī."], ["我想喝点儿水。", "Wǒ xiǎng hē diǎnr shuǐ."]]],
 ];
 
 const HSK3_CLOZE = [
@@ -253,6 +264,18 @@ function readingResponses(level, source, part) {
   return source.map((item, index) => q(`hsk${level}-r${part}-${String(index + 1).padStart(2, "0")}`, "reading", part, "reading-response", { prompt: item[0], ...(level <= 2 && READING_PROMPT_PINYIN[item[0]] ? { promptPinyin: READING_PROMPT_PINYIN[item[0]] } : {}), choices: choices(item[1], item[2], level), correct: item[1], instruction: "请选择与问句相对应的回答。", explanation: `${item[0]} — ${item[1]}` }));
 }
 
+function authoredMatch(level, table, part) {
+  return table.map(([prompt, promptPinyin, options], index) =>
+    q(`hsk${level}-r${part}-${String(index + 1).padStart(2, "0")}`, "reading", part, "reading-response", {
+      prompt,
+      ...(level <= 2 && promptPinyin ? { promptPinyin } : {}),
+      choices: options.map(([label, pinyin]) => ({ value: label, label, ...(level <= 2 && pinyin ? { pinyin } : {}) })),
+      correct: options[0][0],
+      instruction: "请选择与句子相对应的一句话。",
+      explanation: `${prompt} — ${options[0][0]}`,
+    }));
+}
+
 function authoredCloze(level, table, part) {
   return table.map(([prompt, answer, distractors, promptPinyin], index) => {
     const word = byHanzi.get(answer);
@@ -290,7 +313,7 @@ function buildLevel2() {
       choices: [choice("true", 2, { label: "对" }), choice("false", 2, { label: "不对" })],
       correct: String(isTrue), instruction: "请判断对错。", explanation: note,
     }));
-  const reading = [...readingVisual(2, 0, 5, 1), ...authoredCloze(2, HSK2_CLOZE_P2, 2), ...readingJudge, ...authoredCloze(2, HSK2_CLOZE_P4, 4)];
+  const reading = [...readingVisual(2, 0, 5, 1), ...authoredCloze(2, HSK2_CLOZE_P2, 2), ...readingJudge, ...authoredMatch(2, HSK2_MATCH, 4)];
   return [...listening, ...reading];
 }
 
@@ -349,6 +372,16 @@ for (const level of [1, 2, 3]) {
     }
   }
   if (judges.length && new Set(judges.map((item) => item.correct)).size < 2) throw new Error(`HSK ${level}: 判断对错の正解が片方に偏っています`);
+  // 句子匹配は、選択肢がそろっていて級の範囲に収まっていることを検査する。
+  for (const item of questions.filter((question) => question.kind === "reading-response")) {
+    const labels = item.choices.map((entry) => entry.label);
+    if (new Set(labels).size !== labels.length) throw new Error(`${item.id}: 選択肢が重複しています`);
+    if (!labels.includes(item.correct)) throw new Error(`${item.id}: 正解が選択肢にありません`);
+    if (level <= 2 && item.choices.some((entry) => !entry.pinyin)) console.warn(`  警告 ${item.id}: ピンインのない選択肢があります`);
+    for (const char of `${item.prompt}${labels.join("")}`) {
+      if (/[一-鿿]/u.test(char) && !levelChars[level].has(char)) console.warn(`  警告 ${item.id}: 「${char}」はHSK1〜${level}の語彙にない漢字です`);
+    }
+  }
   const payload = { version: 2, level, format: "HSK 2.0（日本実施形式）・写真問題は記号イラストで代替", generatedAt: new Date().toISOString(), questions };
   fs.writeFileSync(path.join(root, "data", `mock-hsk${level}.json`), `${JSON.stringify(payload, null, 2)}\n`);
   console.log(`HSK ${level}: ${questions.length}問（聴解${counts.listening}・読解${counts.reading}・作文${counts.writing}）`);
