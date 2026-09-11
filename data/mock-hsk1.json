@@ -2,7 +2,7 @@
   "version": 2,
   "level": 1,
   "format": "HSK 2.0（日本実施形式）・写真問題は記号イラストで代替",
-  "generatedAt": "2026-09-11T07:36:00.912Z",
+  "generatedAt": "2026-09-11T07:59:51.714Z",
   "questions": [
     {
       "id": "hsk1-l1-01",
@@ -243,9 +243,9 @@
           "ariaLabel": "食堂で食事する人々"
         },
         {
-          "value": "☕",
-          "label": "☕",
-          "ariaLabel": "お茶を飲む人"
+          "value": "🚗",
+          "label": "🚗",
+          "ariaLabel": "車を運転できる父"
         }
       ],
       "correct": "✈️"
@@ -272,9 +272,9 @@
           "ariaLabel": "眠っている女の子"
         },
         {
-          "value": "🚕",
-          "label": "🚕",
-          "ariaLabel": "タクシーで学校へ行く人"
+          "value": "🏥",
+          "label": "🏥",
+          "ariaLabel": "病院で働く母"
         }
       ],
       "correct": "📺"
@@ -301,9 +301,9 @@
           "ariaLabel": "漢字を書く先生"
         },
         {
-          "value": "📖",
-          "label": "📖",
-          "ariaLabel": "本を読む人"
+          "value": "🛍️",
+          "label": "🛍️",
+          "ariaLabel": "店で買い物する人"
         }
       ],
       "correct": "🍎"
@@ -325,14 +325,14 @@
           "ariaLabel": "医師"
         },
         {
-          "value": "☕",
-          "label": "☕",
-          "ariaLabel": "お茶を飲む人"
+          "value": "🚗",
+          "label": "🚗",
+          "ariaLabel": "車を運転できる父"
         },
         {
-          "value": "📱",
-          "label": "📱",
-          "ariaLabel": "電話をする人"
+          "value": "💻",
+          "label": "💻",
+          "ariaLabel": "自分のパソコン"
         }
       ],
       "correct": "🧑‍⚕️"
@@ -354,14 +354,14 @@
           "ariaLabel": "食堂で食事する人々"
         },
         {
-          "value": "🚕",
-          "label": "🚕",
-          "ariaLabel": "タクシーで学校へ行く人"
+          "value": "🏥",
+          "label": "🏥",
+          "ariaLabel": "病院で働く母"
         },
         {
-          "value": "🐈",
-          "label": "🐈",
-          "ariaLabel": "机の上の猫"
+          "value": "💧",
+          "label": "💧",
+          "ariaLabel": "水を飲みたい人"
         }
       ],
       "correct": "🍜"
@@ -383,14 +383,14 @@
           "ariaLabel": "眠っている女の子"
         },
         {
-          "value": "📖",
-          "label": "📖",
-          "ariaLabel": "本を読む人"
+          "value": "🛍️",
+          "label": "🛍️",
+          "ariaLabel": "店で買い物する人"
         },
         {
-          "value": "🍚",
-          "label": "🍚",
-          "ariaLabel": "ご飯を食べる人"
+          "value": "👧",
+          "label": "👧",
+          "ariaLabel": "娘"
         }
       ],
       "correct": "😴"
@@ -412,14 +412,14 @@
           "ariaLabel": "漢字を書く先生"
         },
         {
-          "value": "📱",
-          "label": "📱",
-          "ariaLabel": "電話をする人"
+          "value": "💻",
+          "label": "💻",
+          "ariaLabel": "自分のパソコン"
         },
         {
-          "value": "🏫",
-          "label": "🏫",
-          "ariaLabel": "学校へ行く学生"
+          "value": "🐕",
+          "label": "🐕",
+          "ariaLabel": "飼い犬"
         }
       ],
       "correct": "✍️"
@@ -580,11 +580,11 @@
       "part": 1,
       "kind": "reading-visual-judge",
       "hint": "文を読んで、図と内容が合っているかを判断します。",
-      "prompt": "他在喝茶。",
-      "promptPinyin": "Tā zài hē chá.",
+      "prompt": "我爸爸会开车。",
+      "promptPinyin": "Wǒ bàba huì kāichē.",
       "visual": {
-        "symbol": "☕",
-        "alt": "お茶を飲む人"
+        "symbol": "🚗",
+        "alt": "車を運転できる父"
       },
       "choices": [
         {
@@ -598,7 +598,7 @@
       ],
       "correct": "true",
       "instruction": "请判断句子是否与图示一致。",
-      "explanation": "他在喝茶。"
+      "explanation": "我爸爸会开车。"
     },
     {
       "id": "hsk1-r1-02",
@@ -606,11 +606,11 @@
       "part": 1,
       "kind": "reading-visual-judge",
       "hint": "文を読んで、図と内容が合っているかを判断します。",
-      "prompt": "她坐出租车去学校。",
-      "promptPinyin": "Tā zuò chūzūchē qù xuéxiào.",
+      "prompt": "妈妈在医院工作。",
+      "promptPinyin": "Māma zài yīyuàn gōngzuò.",
       "visual": {
-        "symbol": "📱",
-        "alt": "電話をする人"
+        "symbol": "💻",
+        "alt": "自分のパソコン"
       },
       "choices": [
         {
@@ -624,7 +624,7 @@
       ],
       "correct": "false",
       "instruction": "请判断句子是否与图示一致。",
-      "explanation": "她坐出租车去学校。"
+      "explanation": "妈妈在医院工作。"
     },
     {
       "id": "hsk1-r1-03",
@@ -632,11 +632,11 @@
       "part": 1,
       "kind": "reading-visual-judge",
       "hint": "文を読んで、図と内容が合っているかを判断します。",
-      "prompt": "他在看书。",
-      "promptPinyin": "Tā zài kàn shū.",
+      "prompt": "我去商店买东西。",
+      "promptPinyin": "Wǒ qù shāngdiàn mǎi dōngxi.",
       "visual": {
-        "symbol": "📖",
-        "alt": "本を読む人"
+        "symbol": "🛍️",
+        "alt": "店で買い物する人"
       },
       "choices": [
         {
@@ -650,7 +650,7 @@
       ],
       "correct": "true",
       "instruction": "请判断句子是否与图示一致。",
-      "explanation": "他在看书。"
+      "explanation": "我去商店买东西。"
     },
     {
       "id": "hsk1-r1-04",
@@ -658,11 +658,11 @@
       "part": 1,
       "kind": "reading-visual-judge",
       "hint": "文を読んで、図と内容が合っているかを判断します。",
-      "prompt": "妈妈在打电话。",
-      "promptPinyin": "Māma zài dǎ diànhuà.",
+      "prompt": "这是我的电脑。",
+      "promptPinyin": "Zhè shì wǒ de diànnǎo.",
       "visual": {
-        "symbol": "🍚",
-        "alt": "ご飯を食べる人"
+        "symbol": "👧",
+        "alt": "娘"
       },
       "choices": [
         {
@@ -676,7 +676,7 @@
       ],
       "correct": "false",
       "instruction": "请判断句子是否与图示一致。",
-      "explanation": "妈妈在打电话。"
+      "explanation": "这是我的电脑。"
     },
     {
       "id": "hsk1-r1-05",
@@ -684,11 +684,11 @@
       "part": 1,
       "kind": "reading-visual-judge",
       "hint": "文を読んで、図と内容が合っているかを判断します。",
-      "prompt": "小猫在桌子上。",
-      "promptPinyin": "Xiǎomāo zài zhuōzi shàng.",
+      "prompt": "我想喝水。",
+      "promptPinyin": "Wǒ xiǎng hē shuǐ.",
       "visual": {
-        "symbol": "🐈",
-        "alt": "机の上の猫"
+        "symbol": "💧",
+        "alt": "水を飲みたい人"
       },
       "choices": [
         {
@@ -702,7 +702,7 @@
       ],
       "correct": "true",
       "instruction": "请判断句子是否与图示一致。",
-      "explanation": "小猫在桌子上。"
+      "explanation": "我想喝水。"
     },
     {
       "id": "hsk1-r2-01",
@@ -710,28 +710,28 @@
       "part": 2,
       "kind": "reading-visual-choice",
       "hint": "文を読んで、内容に合う図を選びます。",
-      "prompt": "我中午吃米饭。",
-      "promptPinyin": "Wǒ zhōngwǔ chī mǐfàn.",
+      "prompt": "这是我的女儿。",
+      "promptPinyin": "Zhè shì wǒ de nǚ'ér.",
       "choices": [
         {
-          "value": "🍚",
-          "label": "🍚",
-          "ariaLabel": "ご飯を食べる人"
+          "value": "👧",
+          "label": "👧",
+          "ariaLabel": "娘"
         },
         {
-          "value": "✈️",
-          "label": "✈️",
-          "ariaLabel": "飛行機で北京へ来る人"
+          "value": "🕐",
+          "label": "🕐",
+          "ariaLabel": "1時の時計"
         },
         {
-          "value": "🧑‍⚕️",
-          "label": "🧑‍⚕️",
-          "ariaLabel": "医師"
+          "value": "🚕",
+          "label": "🚕",
+          "ariaLabel": "タクシーで学校へ行く人"
         }
       ],
-      "correct": "🍚",
+      "correct": "👧",
       "instruction": "请选择与句子相应的图示。",
-      "explanation": "我中午吃米饭。"
+      "explanation": "这是我的女儿。"
     },
     {
       "id": "hsk1-r2-02",
@@ -739,28 +739,28 @@
       "part": 2,
       "kind": "reading-visual-choice",
       "hint": "文を読んで、内容に合う図を選びます。",
-      "prompt": "学生去学校。",
-      "promptPinyin": "Xuésheng qù xuéxiào.",
+      "prompt": "这是我的狗。",
+      "promptPinyin": "Zhè shì wǒ de gǒu.",
       "choices": [
         {
-          "value": "🏫",
-          "label": "🏫",
-          "ariaLabel": "学校へ行く学生"
+          "value": "🐕",
+          "label": "🐕",
+          "ariaLabel": "飼い犬"
         },
         {
-          "value": "📺",
-          "label": "📺",
-          "ariaLabel": "家でテレビを見る人"
+          "value": "📅",
+          "label": "📅",
+          "ariaLabel": "土曜日のカレンダー"
         },
         {
-          "value": "🍜",
-          "label": "🍜",
-          "ariaLabel": "食堂で食事する人々"
+          "value": "📖",
+          "label": "📖",
+          "ariaLabel": "本を読む人"
         }
       ],
-      "correct": "🏫",
+      "correct": "🐕",
       "instruction": "请选择与句子相应的图示。",
-      "explanation": "学生去学校。"
+      "explanation": "这是我的狗。"
     },
     {
       "id": "hsk1-r2-03",
@@ -768,28 +768,28 @@
       "part": 2,
       "kind": "reading-visual-choice",
       "hint": "文を読んで、内容に合う図を選びます。",
-      "prompt": "今天下雨了。",
-      "promptPinyin": "Jīntiān xiàyǔ le.",
+      "prompt": "他是我的老师。",
+      "promptPinyin": "Tā shì wǒ de lǎoshī.",
       "choices": [
         {
-          "value": "🌧️",
-          "label": "🌧️",
-          "ariaLabel": "雨の日"
+          "value": "🧑‍🏫",
+          "label": "🧑‍🏫",
+          "ariaLabel": "先生"
         },
         {
-          "value": "🍎",
-          "label": "🍎",
-          "ariaLabel": "机の上の三つのリンゴ"
+          "value": "☕",
+          "label": "☕",
+          "ariaLabel": "お茶を飲む人"
         },
         {
-          "value": "😴",
-          "label": "😴",
-          "ariaLabel": "眠っている女の子"
+          "value": "📱",
+          "label": "📱",
+          "ariaLabel": "電話をする人"
         }
       ],
-      "correct": "🌧️",
+      "correct": "🧑‍🏫",
       "instruction": "请选择与句子相应的图示。",
-      "explanation": "今天下雨了。"
+      "explanation": "他是我的老师。"
     },
     {
       "id": "hsk1-r2-04",
@@ -797,28 +797,28 @@
       "part": 2,
       "kind": "reading-visual-choice",
       "hint": "文を読んで、内容に合う図を選びます。",
-      "prompt": "爸爸坐飞机来北京。",
-      "promptPinyin": "Bàba zuò fēijī lái Běijīng.",
+      "prompt": "现在是一点。",
+      "promptPinyin": "Xiànzài shì yì diǎn.",
       "choices": [
         {
-          "value": "✈️",
-          "label": "✈️",
-          "ariaLabel": "飛行機で北京へ来る人"
+          "value": "🕐",
+          "label": "🕐",
+          "ariaLabel": "1時の時計"
         },
         {
-          "value": "🧑‍⚕️",
-          "label": "🧑‍⚕️",
-          "ariaLabel": "医師"
+          "value": "🚕",
+          "label": "🚕",
+          "ariaLabel": "タクシーで学校へ行く人"
         },
         {
-          "value": "✍️",
-          "label": "✍️",
-          "ariaLabel": "漢字を書く先生"
+          "value": "🐈",
+          "label": "🐈",
+          "ariaLabel": "机の上の猫"
         }
       ],
-      "correct": "✈️",
+      "correct": "🕐",
       "instruction": "请选择与句子相应的图示。",
-      "explanation": "爸爸坐飞机来北京。"
+      "explanation": "现在是一点。"
     },
     {
       "id": "hsk1-r2-05",
@@ -826,28 +826,28 @@
       "part": 2,
       "kind": "reading-visual-choice",
       "hint": "文を読んで、内容に合う図を選びます。",
-      "prompt": "她在家看电视。",
-      "promptPinyin": "Tā zài jiā kàn diànshì.",
+      "prompt": "明天是星期六。",
+      "promptPinyin": "Míngtiān shì xīngqīliù.",
       "choices": [
         {
-          "value": "📺",
-          "label": "📺",
-          "ariaLabel": "家でテレビを見る人"
+          "value": "📅",
+          "label": "📅",
+          "ariaLabel": "土曜日のカレンダー"
         },
         {
-          "value": "🍜",
-          "label": "🍜",
-          "ariaLabel": "食堂で食事する人々"
+          "value": "📖",
+          "label": "📖",
+          "ariaLabel": "本を読む人"
         },
         {
-          "value": "☕",
-          "label": "☕",
-          "ariaLabel": "お茶を飲む人"
+          "value": "🍚",
+          "label": "🍚",
+          "ariaLabel": "ご飯を食べる人"
         }
       ],
-      "correct": "📺",
+      "correct": "📅",
       "instruction": "请选择与句子相应的图示。",
-      "explanation": "她在家看电视。"
+      "explanation": "明天是星期六。"
     },
     {
       "id": "hsk1-r3-01",

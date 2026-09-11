@@ -3,11 +3,11 @@
   "engineVersion": "apple-natural-v1",
   "sampleRate": 44100,
   "format": "wav",
-  "generatedAt": "2026-09-05T08:12:38.335Z",
+  "generatedAt": "2026-09-11T07:58:05.302Z",
   "counts": {
-    "total": 738,
-    "generated": 738,
-    "reused": 0
+    "total": 1053,
+    "generated": 10,
+    "reused": 1043
   },
   "items": {
     "example-hsk1-001": {
@@ -7413,6 +7413,996 @@
         "Tingting"
       ]
     },
+    "hsk2-l1-011": {
+      "id": "hsk2-l1-011",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "爸爸正在喝茶。",
+      "checksum": "535978005c3f55d081589a3733afabdfa77f1ca70a6d6963c209ca4fd84b2982",
+      "file": "audio/sentences/hsk2-l1-011.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l1-012": {
+      "id": "hsk2-l1-012",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "妈妈早上喝茶。",
+      "checksum": "356a75ff876a0be93184b05905c6782d8193e18479a70c9692199c31748d7f07",
+      "file": "audio/sentences/hsk2-l1-012.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l1-013": {
+      "id": "hsk2-l1-013",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "哥哥晚上喝茶。",
+      "checksum": "7b0cb245a062660ebf2ff5f841324d78f212104430f8f8087c95a66737b20cab",
+      "file": "audio/sentences/hsk2-l1-013.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l1-014": {
+      "id": "hsk2-l1-014",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "姐姐每天喝茶。",
+      "checksum": "efa5376d217670045adeb65c76bd53776744fbcc42949c06ebea3028c417878e",
+      "file": "audio/sentences/hsk2-l1-014.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l1-015": {
+      "id": "hsk2-l1-015",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "弟弟现在喝茶。",
+      "checksum": "29999a2124ac6abca26d7a14108be9a2f5d491aecb9b10395adac6278ac83b2c",
+      "file": "audio/sentences/hsk2-l1-015.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l1-016": {
+      "id": "hsk2-l1-016",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "妹妹下午喝茶。",
+      "checksum": "b578a0e1770fdb8fe3bbe2176155f1735bbda22f353b5ccb3e9f20623e819413",
+      "file": "audio/sentences/hsk2-l1-016.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l1-017": {
+      "id": "hsk2-l1-017",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "老师今天喝茶。",
+      "checksum": "44b988a264856d8375e4d90da537e15ec18cd70f3a68a3d7daad6fcaa370fbef",
+      "file": "audio/sentences/hsk2-l1-017.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l1-018": {
+      "id": "hsk2-l1-018",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "学生明天要喝茶。",
+      "checksum": "bb674b7b8ffe30d938cde5a49568849d538fe769891469b179e7942763ab91fc",
+      "file": "audio/sentences/hsk2-l1-018.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l1-019": {
+      "id": "hsk2-l1-019",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "朋友很喜欢喝茶。",
+      "checksum": "7800ce3a8b03476dd471703b26fdbd9fc2fc16aa3140b31c70a453e8e64fa973",
+      "file": "audio/sentences/hsk2-l1-019.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l1-020": {
+      "id": "hsk2-l1-020",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "服务员也在喝茶。",
+      "checksum": "4893caf11c47055ad8202e3f7d8f9d086c4962554980aaa5040f97c947e61d57",
+      "file": "audio/sentences/hsk2-l1-020.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l1-021": {
+      "id": "hsk2-l1-021",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "爸爸正在看报纸。",
+      "checksum": "d90948902cb4150decf580218dbce81009d7c5eea1389ee27677b9526fd96a6f",
+      "file": "audio/sentences/hsk2-l1-021.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l1-022": {
+      "id": "hsk2-l1-022",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "妈妈早上看报纸。",
+      "checksum": "399efdbcf8977b3f239ccb52c60fea560b89e90b67e750ff090785c9dac1959d",
+      "file": "audio/sentences/hsk2-l1-022.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l1-023": {
+      "id": "hsk2-l1-023",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "哥哥晚上看报纸。",
+      "checksum": "ae0e63c6252c208e1a3fa2d0421571d33c3b74edc758a757e9abe41c85baab30",
+      "file": "audio/sentences/hsk2-l1-023.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l1-024": {
+      "id": "hsk2-l1-024",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "姐姐每天看报纸。",
+      "checksum": "ee6ee6d914ec2bbbe5a3fca8418786234b29fbf6e2eb9b457632ec9952a34d6f",
+      "file": "audio/sentences/hsk2-l1-024.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l1-025": {
+      "id": "hsk2-l1-025",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "弟弟现在看报纸。",
+      "checksum": "748dfa94d08d586dedc657979fc9f811dea68d37df4ce403475ca173d33be217",
+      "file": "audio/sentences/hsk2-l1-025.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l1-026": {
+      "id": "hsk2-l1-026",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "妹妹下午看报纸。",
+      "checksum": "4ad388b48f48b777685d4bee60c17e1180f3b64d51378ed21b51decb01ab2b1f",
+      "file": "audio/sentences/hsk2-l1-026.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l1-027": {
+      "id": "hsk2-l1-027",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "老师今天看报纸。",
+      "checksum": "6840e9f5777d198f6543aee5c287a588e44cdb951bb4ba3f22229d64ac60b912",
+      "file": "audio/sentences/hsk2-l1-027.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l1-028": {
+      "id": "hsk2-l1-028",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "学生明天要看报纸。",
+      "checksum": "c01200e8825157fe47287084f5c1808cf0498a6d00808998854592aa57bd0e15",
+      "file": "audio/sentences/hsk2-l1-028.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l1-029": {
+      "id": "hsk2-l1-029",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "朋友很喜欢看报纸。",
+      "checksum": "03d4c191459ea2681c5f748ed0176291255449377b29392f49a923dc180e7b03",
+      "file": "audio/sentences/hsk2-l1-029.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l1-030": {
+      "id": "hsk2-l1-030",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "服务员也在看报纸。",
+      "checksum": "841abde65537dd74036c001593402d18ea59d4c321ce16e23ea7995ca8919f2f",
+      "file": "audio/sentences/hsk2-l1-030.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l1-031": {
+      "id": "hsk2-l1-031",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "爸爸正在看电影。",
+      "checksum": "16b8f3191f6005a5c22c93a72c598430c450897089cf0994a30536bc06f7f5c0",
+      "file": "audio/sentences/hsk2-l1-031.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l1-032": {
+      "id": "hsk2-l1-032",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "妈妈早上看电影。",
+      "checksum": "8f64299f124c02bd111276eb260ec51bb2570ef524e3e8e7b6d40e3a715edd62",
+      "file": "audio/sentences/hsk2-l1-032.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l1-033": {
+      "id": "hsk2-l1-033",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "哥哥晚上看电影。",
+      "checksum": "d9ea2cf910d66fadfd5ee63ce3ba13546c24b387c324c33619d2a5042d7bd029",
+      "file": "audio/sentences/hsk2-l1-033.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l1-034": {
+      "id": "hsk2-l1-034",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "姐姐每天看电影。",
+      "checksum": "c183b7fd1db1e4c5f1845c62e96cc46edebd6f7b3d00f852fa24913866b205a9",
+      "file": "audio/sentences/hsk2-l1-034.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l1-035": {
+      "id": "hsk2-l1-035",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "弟弟现在看电影。",
+      "checksum": "d66d4ddc48803e748bd326896991ca8a01a80fb04c4467a0f0f962fceb9733d4",
+      "file": "audio/sentences/hsk2-l1-035.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l1-036": {
+      "id": "hsk2-l1-036",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "妹妹下午看电影。",
+      "checksum": "b77800f49929284996fa57f8bee48049ae8d9378ab3c815b11a544079ec6514d",
+      "file": "audio/sentences/hsk2-l1-036.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l1-037": {
+      "id": "hsk2-l1-037",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "老师今天看电影。",
+      "checksum": "973cdcd312abe3db8cdfd213c77817e8a1ad9f85e78c871907e8113119b7c152",
+      "file": "audio/sentences/hsk2-l1-037.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l1-038": {
+      "id": "hsk2-l1-038",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "学生明天要看电影。",
+      "checksum": "9632b5bf753296ef4f7773e238db37c4ad7eddc72db20b1cf6b250d3c3b7c953",
+      "file": "audio/sentences/hsk2-l1-038.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l1-039": {
+      "id": "hsk2-l1-039",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "朋友很喜欢看电影。",
+      "checksum": "ec92f57085671f7f892178ecbc6b4e4b107f4034b10dcb8b6052be40ddd3ac37",
+      "file": "audio/sentences/hsk2-l1-039.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l1-040": {
+      "id": "hsk2-l1-040",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "服务员也在看电影。",
+      "checksum": "81bdac2b1f1572f248389e259a76eac9f3af9f12f4e089efe4f4d243ab27c43d",
+      "file": "audio/sentences/hsk2-l1-040.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l1-041": {
+      "id": "hsk2-l1-041",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "爸爸正在打篮球。",
+      "checksum": "5799c722a15187f11ec18c7bddff4ee73a8cede25be5323596179aae3f5c0fad",
+      "file": "audio/sentences/hsk2-l1-041.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l1-042": {
+      "id": "hsk2-l1-042",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "妈妈早上打篮球。",
+      "checksum": "47c9e3a69104a32e25890f5f789ea2880669f224ef909d94c55efec40bd51848",
+      "file": "audio/sentences/hsk2-l1-042.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l1-043": {
+      "id": "hsk2-l1-043",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "哥哥晚上打篮球。",
+      "checksum": "41e15c247a77a539066d828b0b8c6fd4285ddeb11cba5e91770aa9e3b6df2a5d",
+      "file": "audio/sentences/hsk2-l1-043.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l1-044": {
+      "id": "hsk2-l1-044",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "姐姐每天打篮球。",
+      "checksum": "5cf122153237d9fb403f84d66d00871043c35a59d00a15ce0a66bdf927d99acc",
+      "file": "audio/sentences/hsk2-l1-044.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l1-045": {
+      "id": "hsk2-l1-045",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "弟弟现在打篮球。",
+      "checksum": "56be68ff56930487e7c84ed85a98e1c220ac58634e12732a4663974e7023c1ab",
+      "file": "audio/sentences/hsk2-l1-045.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l1-046": {
+      "id": "hsk2-l1-046",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "妹妹下午打篮球。",
+      "checksum": "6a5d59057365e79512f188e0bc361906f3d223dc1ed84ed19c5e3f3dc3dd69a5",
+      "file": "audio/sentences/hsk2-l1-046.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l1-047": {
+      "id": "hsk2-l1-047",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "老师今天打篮球。",
+      "checksum": "de8a44203b4682d2b6e298524805cb75e9746803a27cefe048dd042804e3a7c6",
+      "file": "audio/sentences/hsk2-l1-047.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l1-048": {
+      "id": "hsk2-l1-048",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "学生明天要打篮球。",
+      "checksum": "5938eaf8eef90f328c6409b47fc561ebb8eb0b9b37cf273cfdb640882ad35b30",
+      "file": "audio/sentences/hsk2-l1-048.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l1-049": {
+      "id": "hsk2-l1-049",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "朋友很喜欢打篮球。",
+      "checksum": "2048acadb972b1ab63e839287add19ba54ba63785a8f83849b8068c9ea8bab3b",
+      "file": "audio/sentences/hsk2-l1-049.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l1-050": {
+      "id": "hsk2-l1-050",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "服务员也在打篮球。",
+      "checksum": "6efc88358058805f9728fa7a46ee824e93b96af15409d738ac929c8ec94e3075",
+      "file": "audio/sentences/hsk2-l1-050.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l1-051": {
+      "id": "hsk2-l1-051",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "爸爸正在跑步。",
+      "checksum": "1be1a1776e83671ca4b232b346dd185277d14f597ade8c357e808f0d5af4245d",
+      "file": "audio/sentences/hsk2-l1-051.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l1-052": {
+      "id": "hsk2-l1-052",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "妈妈早上跑步。",
+      "checksum": "5119ff816a449645c93ac78f79409b137362f4af45b2840b8a4b537347b24980",
+      "file": "audio/sentences/hsk2-l1-052.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l1-053": {
+      "id": "hsk2-l1-053",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "哥哥晚上跑步。",
+      "checksum": "d6134ae6b8759cf0fa5fbc94552be82a1eb9c9a03ba99abd7d7a9a1a7303dcdd",
+      "file": "audio/sentences/hsk2-l1-053.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l1-054": {
+      "id": "hsk2-l1-054",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "姐姐每天跑步。",
+      "checksum": "a3c8e064f12fdd7074ef425080270d8e291917ff9e79b8dc9b4599e7f045feac",
+      "file": "audio/sentences/hsk2-l1-054.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l1-055": {
+      "id": "hsk2-l1-055",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "弟弟现在跑步。",
+      "checksum": "01778b03e1a499a2020732fca1b9acd5538ec16767d84ea60a3904778709633b",
+      "file": "audio/sentences/hsk2-l1-055.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l1-056": {
+      "id": "hsk2-l1-056",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "妹妹下午跑步。",
+      "checksum": "eec63ed437277d6bb697e56d8d7cf76b452043f2c63a654a4a1493307519365e",
+      "file": "audio/sentences/hsk2-l1-056.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l1-057": {
+      "id": "hsk2-l1-057",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "老师今天跑步。",
+      "checksum": "cea7913772f2922c845fc906dbf523d5226677a4815444e91ba8dd9cd0296045",
+      "file": "audio/sentences/hsk2-l1-057.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l1-058": {
+      "id": "hsk2-l1-058",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "学生明天要跑步。",
+      "checksum": "d918efdb3b2c19b6060822fd7589ce3f06207efb4ae99c417c6d33201311aa67",
+      "file": "audio/sentences/hsk2-l1-058.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l1-059": {
+      "id": "hsk2-l1-059",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "朋友很喜欢跑步。",
+      "checksum": "2fffbb878b882b4bf17147c4d2bd03537113a46672506a37c261ebd7d4ae64db",
+      "file": "audio/sentences/hsk2-l1-059.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l1-060": {
+      "id": "hsk2-l1-060",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "服务员也在跑步。",
+      "checksum": "bfc5854b2ecfe411ae05abcbf9f571b74697924a2c459b348da411a26d4285e4",
+      "file": "audio/sentences/hsk2-l1-060.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l1-061": {
+      "id": "hsk2-l1-061",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "爸爸正在游泳。",
+      "checksum": "703fbe260b71d91d1ac0ea343e4a96ca20cb2ef89fdd0fe7869e3ddb568b2ef3",
+      "file": "audio/sentences/hsk2-l1-061.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l1-062": {
+      "id": "hsk2-l1-062",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "妈妈早上游泳。",
+      "checksum": "df57a69661ae033cd253d45661e10128780c45cdc0082e48d463e1fc7d189e90",
+      "file": "audio/sentences/hsk2-l1-062.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l1-063": {
+      "id": "hsk2-l1-063",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "哥哥晚上游泳。",
+      "checksum": "4c88b91a80d145312241c88f094f4248fa2bea2b981acaffcca6df555d244a3e",
+      "file": "audio/sentences/hsk2-l1-063.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l1-064": {
+      "id": "hsk2-l1-064",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "姐姐每天游泳。",
+      "checksum": "5299c67ff81f086e28dc74a9f37a6bb97fa62974fc2c6052306b17202c30c905",
+      "file": "audio/sentences/hsk2-l1-064.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l1-065": {
+      "id": "hsk2-l1-065",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "弟弟现在游泳。",
+      "checksum": "85a4ae6a19d1732e3e8a324d11d3c3fbc032c6412194cb38267355d573a19810",
+      "file": "audio/sentences/hsk2-l1-065.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l1-066": {
+      "id": "hsk2-l1-066",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "妹妹下午游泳。",
+      "checksum": "068371b4b26f3ab4ea3b6a91bb685e1d4d1347f80099732e7651957e133802e4",
+      "file": "audio/sentences/hsk2-l1-066.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l1-067": {
+      "id": "hsk2-l1-067",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "老师今天游泳。",
+      "checksum": "7aab5a1c2bf27aeeb752eb561b38f48232337815359d7f50a6e904463a08dfd0",
+      "file": "audio/sentences/hsk2-l1-067.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l1-068": {
+      "id": "hsk2-l1-068",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "学生明天要游泳。",
+      "checksum": "d764e624890047446cbdf87b5d5ab7edf515cb07cd1e201c2d0484520439db86",
+      "file": "audio/sentences/hsk2-l1-068.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l1-069": {
+      "id": "hsk2-l1-069",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "朋友很喜欢游泳。",
+      "checksum": "ca138311412a1c944d07ef512caff01eeeeeee26b81729c1ec247fd777e3ec48",
+      "file": "audio/sentences/hsk2-l1-069.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l1-070": {
+      "id": "hsk2-l1-070",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "服务员也在游泳。",
+      "checksum": "0f294cd86cb4c43f93465d6c330c442ff57050bc549df1fae7a6eaf4b803af81",
+      "file": "audio/sentences/hsk2-l1-070.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l1-071": {
+      "id": "hsk2-l1-071",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "爸爸正在唱歌。",
+      "checksum": "9f4f98bf656c62bfc253d480bd34c0cb9ce780280041af33f516a9a0da7dc2da",
+      "file": "audio/sentences/hsk2-l1-071.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l1-072": {
+      "id": "hsk2-l1-072",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "妈妈早上唱歌。",
+      "checksum": "b487482a87a8d51639ae1338e5ead80d05be4f3d2efa103a57ada374e04616c5",
+      "file": "audio/sentences/hsk2-l1-072.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l1-073": {
+      "id": "hsk2-l1-073",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "哥哥晚上唱歌。",
+      "checksum": "54025d49a7968ae3c8ecec25ca303e29ebb655859f70cf75f9fc6d6532c57eb9",
+      "file": "audio/sentences/hsk2-l1-073.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l1-074": {
+      "id": "hsk2-l1-074",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "姐姐每天唱歌。",
+      "checksum": "1f9f4d8ea10f5fe47c80f5a389f58db7a4617248662ee18d312c2b3edaada0f4",
+      "file": "audio/sentences/hsk2-l1-074.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l1-075": {
+      "id": "hsk2-l1-075",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "弟弟现在唱歌。",
+      "checksum": "81a76b68877b795538319a6ebeaea61e82e2147e873a679857f6e1e9cf5a1849",
+      "file": "audio/sentences/hsk2-l1-075.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l1-076": {
+      "id": "hsk2-l1-076",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "妹妹下午唱歌。",
+      "checksum": "b59224ddc5f43af8f3bbf02af62321cf4abd843c3e3b1289105bb822a26f1446",
+      "file": "audio/sentences/hsk2-l1-076.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l1-077": {
+      "id": "hsk2-l1-077",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "老师今天唱歌。",
+      "checksum": "c72b82421e622e003cf332222c841a0833914096c1ffa1edb574e2ee889cd840",
+      "file": "audio/sentences/hsk2-l1-077.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l1-078": {
+      "id": "hsk2-l1-078",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "学生明天要唱歌。",
+      "checksum": "7c244e96b9b35d890f06d917d92abc3ef15f67daa7e41f317445599cea54177a",
+      "file": "audio/sentences/hsk2-l1-078.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l1-079": {
+      "id": "hsk2-l1-079",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "朋友很喜欢唱歌。",
+      "checksum": "5215677a7dfe26bc72a5bd745f85ed699c751856e4a47d6a2ceced9b6d28f8d1",
+      "file": "audio/sentences/hsk2-l1-079.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l1-080": {
+      "id": "hsk2-l1-080",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "服务员也在唱歌。",
+      "checksum": "f7d8449137220ce9c6d651b50389f0a53d5b720f625b15d71710103959f4de20",
+      "file": "audio/sentences/hsk2-l1-080.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l1-081": {
+      "id": "hsk2-l1-081",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "爸爸正在跳舞。",
+      "checksum": "4c4cfd291393d3726982b1dc9c7063dd42d2334072b29e5437608373b4b7fffd",
+      "file": "audio/sentences/hsk2-l1-081.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l1-082": {
+      "id": "hsk2-l1-082",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "妈妈早上跳舞。",
+      "checksum": "2435c1a6c48c53e5d440c05411e0e2fa7aabb2294a456c1af2000704485baa60",
+      "file": "audio/sentences/hsk2-l1-082.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l1-083": {
+      "id": "hsk2-l1-083",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "哥哥晚上跳舞。",
+      "checksum": "15a412265768e635b8a6783ef2e4287d47584a8435595b444ac4be32d40394e8",
+      "file": "audio/sentences/hsk2-l1-083.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l1-084": {
+      "id": "hsk2-l1-084",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "姐姐每天跳舞。",
+      "checksum": "3418df7198671698f40a9668693210b9b6da11d11456b04d04b279fe1bc508a8",
+      "file": "audio/sentences/hsk2-l1-084.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l1-085": {
+      "id": "hsk2-l1-085",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "弟弟现在跳舞。",
+      "checksum": "7730e36dfb3c5253a69f96ff000793602398eaf369bfefad3715340808464c81",
+      "file": "audio/sentences/hsk2-l1-085.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l1-086": {
+      "id": "hsk2-l1-086",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "妹妹下午跳舞。",
+      "checksum": "84dc1fb6335e6536a2d4f2a5d33d4158a1b87a94fe056170afe445d338f65ea2",
+      "file": "audio/sentences/hsk2-l1-086.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l1-087": {
+      "id": "hsk2-l1-087",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "老师今天跳舞。",
+      "checksum": "ccf0c1e5d6d1f1014b09dd392c38d4fff94192ec7b1dbdad27ea5c568c2871ca",
+      "file": "audio/sentences/hsk2-l1-087.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l1-088": {
+      "id": "hsk2-l1-088",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "学生明天要跳舞。",
+      "checksum": "511a6ecbc2660a135daa9f20c9b28785e03866792540b01bb0b0e0f9bb13fbcb",
+      "file": "audio/sentences/hsk2-l1-088.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l1-089": {
+      "id": "hsk2-l1-089",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "朋友很喜欢跳舞。",
+      "checksum": "9553c5ac2f70b26b7335eb7034bdde6348f537b7680e9c7d77ee89d52e5e15e4",
+      "file": "audio/sentences/hsk2-l1-089.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l1-090": {
+      "id": "hsk2-l1-090",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "服务员也在跳舞。",
+      "checksum": "4563768a3658fff1d04b476b541fc93b1139679318479eb8d1d99176ef0596e6",
+      "file": "audio/sentences/hsk2-l1-090.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l1-091": {
+      "id": "hsk2-l1-091",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "爸爸正在洗衣服。",
+      "checksum": "608eaced493c1584a1683c99c9cd57f180ff4d76578a97a78b01488c00b61432",
+      "file": "audio/sentences/hsk2-l1-091.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l1-092": {
+      "id": "hsk2-l1-092",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "妈妈早上洗衣服。",
+      "checksum": "b6294a9e2a68c252a8edc617c02d0973eb8936fb0471bdde801223ef2739c482",
+      "file": "audio/sentences/hsk2-l1-092.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l1-093": {
+      "id": "hsk2-l1-093",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "哥哥晚上洗衣服。",
+      "checksum": "f1adf38939cd028c779fa46a81778a6ff856ab86210c09402d01f775c318aa40",
+      "file": "audio/sentences/hsk2-l1-093.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l1-094": {
+      "id": "hsk2-l1-094",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "姐姐每天洗衣服。",
+      "checksum": "ee8ee3db3b3ce6c06557a340f91ecb8292f381c3a94ab69fbff812ae6eb0442d",
+      "file": "audio/sentences/hsk2-l1-094.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l1-095": {
+      "id": "hsk2-l1-095",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "弟弟现在洗衣服。",
+      "checksum": "aa56b86c968466086441be5b10fabf0ce5b15445fcd870e90e3ca13cc02bed8b",
+      "file": "audio/sentences/hsk2-l1-095.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l1-096": {
+      "id": "hsk2-l1-096",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "妹妹下午洗衣服。",
+      "checksum": "1f46f605934f4cb5caa0dc79426610c998a153d3938b5c2137dadd77ca48a343",
+      "file": "audio/sentences/hsk2-l1-096.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l1-097": {
+      "id": "hsk2-l1-097",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "老师今天洗衣服。",
+      "checksum": "15126f4122c4933c2b32c6a395dae3cc1610b4c3740364ddd12831a4e98556eb",
+      "file": "audio/sentences/hsk2-l1-097.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l1-098": {
+      "id": "hsk2-l1-098",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "学生明天要洗衣服。",
+      "checksum": "14dcff63b9ae08a89c2c286544da8b504654cc46d365d166f3bfb0a024dc6ccd",
+      "file": "audio/sentences/hsk2-l1-098.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l1-099": {
+      "id": "hsk2-l1-099",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "朋友很喜欢洗衣服。",
+      "checksum": "5c4b6e6e85de1dc8e7f4d1ab4125ff6567842f5c79b5c355de43a7cc878b4693",
+      "file": "audio/sentences/hsk2-l1-099.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l1-100": {
+      "id": "hsk2-l1-100",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "服务员也在洗衣服。",
+      "checksum": "6d51657b773ec32eefa47ac478d993bca2facb345fb81d9fcc1425f3a0d1edde",
+      "file": "audio/sentences/hsk2-l1-100.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
     "hsk2-l2-01": {
       "id": "hsk2-l2-01",
       "type": "mock-v2",
@@ -7519,6 +8509,996 @@
       "text": "他正在洗衣服。",
       "checksum": "35b5e594ccf5c25d72deab85d1b80f44b7f9e3c3e3ae9b54c6181f73cbfedf7e",
       "file": "audio/sentences/hsk2-l2-10.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l2-011": {
+      "id": "hsk2-l2-011",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "爸爸正在做饭。",
+      "checksum": "dd43871b981ae3c40e9d11f4e6ca43f28031e4432ff772fd296b3ac739ec1d4e",
+      "file": "audio/sentences/hsk2-l2-011.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l2-012": {
+      "id": "hsk2-l2-012",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "妈妈早上做饭。",
+      "checksum": "4cd764d42c747a2fd87060ec2a76da178a6d1631905d4f102c5f6d311a847f3a",
+      "file": "audio/sentences/hsk2-l2-012.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l2-013": {
+      "id": "hsk2-l2-013",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "哥哥晚上做饭。",
+      "checksum": "ebba73cb0e527066229fd619faf70f76265c40d2bfd465ba2d0f61eeec25ab30",
+      "file": "audio/sentences/hsk2-l2-013.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l2-014": {
+      "id": "hsk2-l2-014",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "姐姐每天做饭。",
+      "checksum": "d5c35ee756031b76b11e81e1550f6a24a138db4fb356675a291f1da336065b80",
+      "file": "audio/sentences/hsk2-l2-014.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l2-015": {
+      "id": "hsk2-l2-015",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "弟弟现在做饭。",
+      "checksum": "3aab2f3b62b4ee3f81b761b0d5e915f172afd9297768ec781c0a530121fa801b",
+      "file": "audio/sentences/hsk2-l2-015.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l2-016": {
+      "id": "hsk2-l2-016",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "妹妹下午做饭。",
+      "checksum": "0f2eb7fa8116cae4aad0c6fdd0d1c4f4040d457cfedf93772bd2492079477858",
+      "file": "audio/sentences/hsk2-l2-016.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l2-017": {
+      "id": "hsk2-l2-017",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "老师今天做饭。",
+      "checksum": "ff6bdeb5ecb4c80a73aead57b8c1ec424360c45ad35016774b1f8d9b32ed0a43",
+      "file": "audio/sentences/hsk2-l2-017.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l2-018": {
+      "id": "hsk2-l2-018",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "学生明天要做饭。",
+      "checksum": "da8177308e347b89f936524d0e0bced9ab3dfc6873aa6a31b55429c2ccdcf2f9",
+      "file": "audio/sentences/hsk2-l2-018.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l2-019": {
+      "id": "hsk2-l2-019",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "朋友很喜欢做饭。",
+      "checksum": "56ff7490ccc780e50634783c3f846682ff75e93d50f05114cd88130437e5a9c5",
+      "file": "audio/sentences/hsk2-l2-019.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l2-020": {
+      "id": "hsk2-l2-020",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "服务员也在做饭。",
+      "checksum": "b49526eff9564876a938a00647db5ad0f163c2fa220fe888af64c447851cd664",
+      "file": "audio/sentences/hsk2-l2-020.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l2-021": {
+      "id": "hsk2-l2-021",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "爸爸正在工作。",
+      "checksum": "9576c9f1d514a86905be4977f8acec73dc752614dc9482e96ed2e92a38e84bba",
+      "file": "audio/sentences/hsk2-l2-021.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l2-022": {
+      "id": "hsk2-l2-022",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "妈妈早上工作。",
+      "checksum": "fd185fe130f54f631765d6ad328a81c65472e9543a1ee5c009e0a337dfad74d4",
+      "file": "audio/sentences/hsk2-l2-022.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l2-023": {
+      "id": "hsk2-l2-023",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "哥哥晚上工作。",
+      "checksum": "0757af6d2c920dbf4573cd541fd633a420de1834172649c54783ccbf1707030f",
+      "file": "audio/sentences/hsk2-l2-023.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l2-024": {
+      "id": "hsk2-l2-024",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "姐姐每天工作。",
+      "checksum": "0fa84ca508b2a456b8375ca6432dcb780ae5f281b721a69c7917999bca2e96a3",
+      "file": "audio/sentences/hsk2-l2-024.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l2-025": {
+      "id": "hsk2-l2-025",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "弟弟现在工作。",
+      "checksum": "2433f1ff2cd4c25f69c72be5ff6cbeb3089808d4addaa82b085af20dd56a8511",
+      "file": "audio/sentences/hsk2-l2-025.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l2-026": {
+      "id": "hsk2-l2-026",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "妹妹下午工作。",
+      "checksum": "8827e07a451bdb4d70b3e66a0d5352fc27376f4eb7b54a991e3c1123a7f633c1",
+      "file": "audio/sentences/hsk2-l2-026.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l2-027": {
+      "id": "hsk2-l2-027",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "老师今天工作。",
+      "checksum": "12fdf9f289dcb9b794ade656618271bf6464c5523bc553788dd4704cdf45db35",
+      "file": "audio/sentences/hsk2-l2-027.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l2-028": {
+      "id": "hsk2-l2-028",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "学生明天要工作。",
+      "checksum": "eb400ef98c1c4c77905f3b06ac2d768a31ab0d6b5c70c4464451dfdfac6f55ec",
+      "file": "audio/sentences/hsk2-l2-028.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l2-029": {
+      "id": "hsk2-l2-029",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "朋友很喜欢工作。",
+      "checksum": "932ca2c888211f9a9a2f1726f8a524fa3f8e9cafa24956d5da6bc3115076d5d0",
+      "file": "audio/sentences/hsk2-l2-029.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l2-030": {
+      "id": "hsk2-l2-030",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "服务员也在工作。",
+      "checksum": "b4e4f9045a7d7d2288d3cf4e8804ec945216ac7cb016392a24914eba51378e90",
+      "file": "audio/sentences/hsk2-l2-030.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l2-031": {
+      "id": "hsk2-l2-031",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "爸爸正在学习汉语。",
+      "checksum": "04722926e79b8f6379fcf5265492011a1f7f40fc40dadb10619024835ce59e71",
+      "file": "audio/sentences/hsk2-l2-031.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l2-032": {
+      "id": "hsk2-l2-032",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "妈妈早上学习汉语。",
+      "checksum": "8296ed4e752b7b7e7c403fe87aa4cfd9e5b71339c151b9c5254ede949ea7082f",
+      "file": "audio/sentences/hsk2-l2-032.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l2-033": {
+      "id": "hsk2-l2-033",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "哥哥晚上学习汉语。",
+      "checksum": "160c434e2ab65eba849c764c49453837f490bb6076f2127b52214d934709b64a",
+      "file": "audio/sentences/hsk2-l2-033.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l2-034": {
+      "id": "hsk2-l2-034",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "姐姐每天学习汉语。",
+      "checksum": "8167ec3ce9c1b3bf9150c5d3d74bd132efd5b8f6832e89ece0fbfe3f5659e11f",
+      "file": "audio/sentences/hsk2-l2-034.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l2-035": {
+      "id": "hsk2-l2-035",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "弟弟现在学习汉语。",
+      "checksum": "67fd692b609dddcf3843d12310b27c4e0881a11cc83774bfccf1d27eeb607cbc",
+      "file": "audio/sentences/hsk2-l2-035.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l2-036": {
+      "id": "hsk2-l2-036",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "妹妹下午学习汉语。",
+      "checksum": "970a291a637129168a6de019c37ca36dd77e89f6b5060ce4608a6cb513feb7e5",
+      "file": "audio/sentences/hsk2-l2-036.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l2-037": {
+      "id": "hsk2-l2-037",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "老师今天学习汉语。",
+      "checksum": "ff43e43e734ef87784a8dd9c89ae057f3659093dc471abb5d1f7cdd672ce0369",
+      "file": "audio/sentences/hsk2-l2-037.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l2-038": {
+      "id": "hsk2-l2-038",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "学生明天要学习汉语。",
+      "checksum": "fe5eae6aa09676126d2b09d5cec6f5e0b8fecdc3b7b2f33edd04f2f4b61c2d28",
+      "file": "audio/sentences/hsk2-l2-038.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l2-039": {
+      "id": "hsk2-l2-039",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "朋友很喜欢学习汉语。",
+      "checksum": "bf0277f24509217c7867d04055079604a5b30710a1fd70659adb2bd496a41f1c",
+      "file": "audio/sentences/hsk2-l2-039.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l2-040": {
+      "id": "hsk2-l2-040",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "服务员也在学习汉语。",
+      "checksum": "684146990de1648792ad001a0044e42e64306b9651d494f75c4944e5131f8e66",
+      "file": "audio/sentences/hsk2-l2-040.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l2-041": {
+      "id": "hsk2-l2-041",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "爸爸正在骑自行车。",
+      "checksum": "0abda8cd7915b0e889c75798fab2e37195ef81459756ef199ff3a1af3faaace6",
+      "file": "audio/sentences/hsk2-l2-041.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l2-042": {
+      "id": "hsk2-l2-042",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "妈妈早上骑自行车。",
+      "checksum": "239ea7e8780eef0cd32531f092aa0f544a524c4d26ef02a7785db09bedf25d78",
+      "file": "audio/sentences/hsk2-l2-042.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l2-043": {
+      "id": "hsk2-l2-043",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "哥哥晚上骑自行车。",
+      "checksum": "8edc67dda8c6f7f01d5424947459b739dc961148d196d205f55f48315fa65263",
+      "file": "audio/sentences/hsk2-l2-043.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l2-044": {
+      "id": "hsk2-l2-044",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "姐姐每天骑自行车。",
+      "checksum": "4446470052004cdf3b57704044d526c220f1a4103ce023038036a216c4be805c",
+      "file": "audio/sentences/hsk2-l2-044.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l2-045": {
+      "id": "hsk2-l2-045",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "弟弟现在骑自行车。",
+      "checksum": "289b9ea15d4e42d57d54a3febed0cfae6dc9d8e461a6871649b468e1290bc2de",
+      "file": "audio/sentences/hsk2-l2-045.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l2-046": {
+      "id": "hsk2-l2-046",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "妹妹下午骑自行车。",
+      "checksum": "a8cd106e438c33fd5546303851fd39a7a3e0fe0144966d1ac515ef301102fa20",
+      "file": "audio/sentences/hsk2-l2-046.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l2-047": {
+      "id": "hsk2-l2-047",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "老师今天骑自行车。",
+      "checksum": "bedc80d3edb6777e929895ef2d832699df48746cae9240fde5f0677e278b987f",
+      "file": "audio/sentences/hsk2-l2-047.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l2-048": {
+      "id": "hsk2-l2-048",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "学生明天要骑自行车。",
+      "checksum": "27548f701eaed1b1d1cbe45f4238d60dd60fa7fb2efbf28a142ce60c8e3091ad",
+      "file": "audio/sentences/hsk2-l2-048.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l2-049": {
+      "id": "hsk2-l2-049",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "朋友很喜欢骑自行车。",
+      "checksum": "7d668d834aed758f0169976859f20b01506efa17f36e614eb41eb11bb9d7b40d",
+      "file": "audio/sentences/hsk2-l2-049.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l2-050": {
+      "id": "hsk2-l2-050",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "服务员也在骑自行车。",
+      "checksum": "a8ce6161b89a5151c99a6311e6d34cd0aaf749775e7879d532cbfde331d800aa",
+      "file": "audio/sentences/hsk2-l2-050.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l2-051": {
+      "id": "hsk2-l2-051",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "爸爸正在坐公共汽车。",
+      "checksum": "685adb2806cd93f981cffb7ea91fd0b30e5e707e7eb89170f75eaf8875a9e00f",
+      "file": "audio/sentences/hsk2-l2-051.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l2-052": {
+      "id": "hsk2-l2-052",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "妈妈早上坐公共汽车。",
+      "checksum": "c556b9658d84a61571152699d095fd0fd82a49eaa22d98155ce55aa8fbae1e2c",
+      "file": "audio/sentences/hsk2-l2-052.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l2-053": {
+      "id": "hsk2-l2-053",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "哥哥晚上坐公共汽车。",
+      "checksum": "c4b40588c353a1ad0789bef36a11f6e1713fafde60219bcb3d1de0b303af76cd",
+      "file": "audio/sentences/hsk2-l2-053.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l2-054": {
+      "id": "hsk2-l2-054",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "姐姐每天坐公共汽车。",
+      "checksum": "cdb4c29a94ecaf8f8a9bc2e7a99c6be216e73f635849dd373fd542a5082c50ae",
+      "file": "audio/sentences/hsk2-l2-054.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l2-055": {
+      "id": "hsk2-l2-055",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "弟弟现在坐公共汽车。",
+      "checksum": "91223f508140395003c13cdf50ae9a654290ae7c71216dcd7ad0762b290a9858",
+      "file": "audio/sentences/hsk2-l2-055.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l2-056": {
+      "id": "hsk2-l2-056",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "妹妹下午坐公共汽车。",
+      "checksum": "04d3f346bcd7f6be6402f7e3eb81ac7aed32a66e9727ccfb20999c00205dba4e",
+      "file": "audio/sentences/hsk2-l2-056.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l2-057": {
+      "id": "hsk2-l2-057",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "老师今天坐公共汽车。",
+      "checksum": "f741d38e2ad2249debf673e0fd9b495e39e4936716ff904add43d81cc926e9ee",
+      "file": "audio/sentences/hsk2-l2-057.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l2-058": {
+      "id": "hsk2-l2-058",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "学生明天要坐公共汽车。",
+      "checksum": "c7a9e12fed0d61d6d2a39bd17dcb7714daff1c66c0c4e67522344a73a2ab2a6b",
+      "file": "audio/sentences/hsk2-l2-058.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l2-059": {
+      "id": "hsk2-l2-059",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "朋友很喜欢坐公共汽车。",
+      "checksum": "a59d178f1555d7eba0e3c639e9e304f89e50f559d59abb91c9c6e94eb4aff8f9",
+      "file": "audio/sentences/hsk2-l2-059.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l2-060": {
+      "id": "hsk2-l2-060",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "服务员也在坐公共汽车。",
+      "checksum": "7c72a26060d571480b05125e30cbe7d51ba44a2443e5a4da55cabc006b393150",
+      "file": "audio/sentences/hsk2-l2-060.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l2-061": {
+      "id": "hsk2-l2-061",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "爸爸正在买苹果。",
+      "checksum": "aa1a02ea0130299f8b5bdaca01d1ff6867ca4e8ea0138dfb3645d846a7a958fa",
+      "file": "audio/sentences/hsk2-l2-061.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l2-062": {
+      "id": "hsk2-l2-062",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "妈妈早上买苹果。",
+      "checksum": "2f472b83b4f6624c79e1ac1ba4c4a7bfd65513bcb7eb820bd0621b5500148257",
+      "file": "audio/sentences/hsk2-l2-062.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l2-063": {
+      "id": "hsk2-l2-063",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "哥哥晚上买苹果。",
+      "checksum": "ce785df32bed553b8f386964cd91e60b062740eab6956cb422f920991aa238af",
+      "file": "audio/sentences/hsk2-l2-063.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l2-064": {
+      "id": "hsk2-l2-064",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "姐姐每天买苹果。",
+      "checksum": "cd6bbc3b38cb35bc748949c63dcc523336e060afd4f52ab7569ff60ddf491ac5",
+      "file": "audio/sentences/hsk2-l2-064.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l2-065": {
+      "id": "hsk2-l2-065",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "弟弟现在买苹果。",
+      "checksum": "f8a094acc22943052a7f86bcd41f0b0c7e3039f556642c86bd21a8a5b44a2f3a",
+      "file": "audio/sentences/hsk2-l2-065.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l2-066": {
+      "id": "hsk2-l2-066",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "妹妹下午买苹果。",
+      "checksum": "daebb3fa1f0eedbda9fd425912acebe2e038e709a48fd8ce971868a17c475538",
+      "file": "audio/sentences/hsk2-l2-066.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l2-067": {
+      "id": "hsk2-l2-067",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "老师今天买苹果。",
+      "checksum": "3e9efca742f10ee1a0a64ad4ae0df39d460a60f0f53329d938aa85f0d680869b",
+      "file": "audio/sentences/hsk2-l2-067.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l2-068": {
+      "id": "hsk2-l2-068",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "学生明天要买苹果。",
+      "checksum": "ae165c36968aa38547a86ebd600af65d05a584bfb6e355385bffa59b12e36abb",
+      "file": "audio/sentences/hsk2-l2-068.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l2-069": {
+      "id": "hsk2-l2-069",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "朋友很喜欢买苹果。",
+      "checksum": "2dbbf2e07d1d8e874654d1bcc0a0e50ccb4e72d05469ac1b12e4543ef8b84214",
+      "file": "audio/sentences/hsk2-l2-069.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l2-070": {
+      "id": "hsk2-l2-070",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "服务员也在买苹果。",
+      "checksum": "bef73fad609ffdcdef57ae18fbddd00c71e2017fbd724517bc8d84e4e0726f3d",
+      "file": "audio/sentences/hsk2-l2-070.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l2-071": {
+      "id": "hsk2-l2-071",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "爸爸正在吃米饭。",
+      "checksum": "315e2b7d3819d7fe8842b298081c12aeb40d8244e072eaf325d1b3d2a2c97106",
+      "file": "audio/sentences/hsk2-l2-071.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l2-072": {
+      "id": "hsk2-l2-072",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "妈妈早上吃米饭。",
+      "checksum": "fa04d06b89418f7f31a4ed02267ed842544297f7e06fc60057c253431304eb88",
+      "file": "audio/sentences/hsk2-l2-072.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l2-073": {
+      "id": "hsk2-l2-073",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "哥哥晚上吃米饭。",
+      "checksum": "26860cffded84db492c276f43f201e4f9fb6994e4fa7170b7deea8871f783cfd",
+      "file": "audio/sentences/hsk2-l2-073.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l2-074": {
+      "id": "hsk2-l2-074",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "姐姐每天吃米饭。",
+      "checksum": "572aac328e17329897c28800f43dcaaa606a11aec576fbc824320f5f168d219f",
+      "file": "audio/sentences/hsk2-l2-074.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l2-075": {
+      "id": "hsk2-l2-075",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "弟弟现在吃米饭。",
+      "checksum": "084dd0a7f26c37e4585fba370055d89eb28b18630857e52fdcc90ccf70373972",
+      "file": "audio/sentences/hsk2-l2-075.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l2-076": {
+      "id": "hsk2-l2-076",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "妹妹下午吃米饭。",
+      "checksum": "f433da7b8cb6e2f00e6e8b214a9f1ae230a6f03f77d5b0d1a1e0169392ff8531",
+      "file": "audio/sentences/hsk2-l2-076.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l2-077": {
+      "id": "hsk2-l2-077",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "老师今天吃米饭。",
+      "checksum": "81088dfa2e28ff6f31fabbe2746c63b0bb121465153d59a83ecf3fd9ad4751a3",
+      "file": "audio/sentences/hsk2-l2-077.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l2-078": {
+      "id": "hsk2-l2-078",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "学生明天要吃米饭。",
+      "checksum": "0fea1d3f60a7591ded0c0171cac61f2e8e18ec660538885d69027057d708f23a",
+      "file": "audio/sentences/hsk2-l2-078.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l2-079": {
+      "id": "hsk2-l2-079",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "朋友很喜欢吃米饭。",
+      "checksum": "ca3852918ba7b063d28ca9c64818b782c1ce29cdee66a8f84b7964de99273226",
+      "file": "audio/sentences/hsk2-l2-079.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l2-080": {
+      "id": "hsk2-l2-080",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "服务员也在吃米饭。",
+      "checksum": "f25c3e0cdbd1fe95385a6251769160b321b885b5ef29331dba72bae4999472a4",
+      "file": "audio/sentences/hsk2-l2-080.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l2-081": {
+      "id": "hsk2-l2-081",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "爸爸正在打电话。",
+      "checksum": "0a55cd343c66224f75e10bc6d7c923fdbb2b70b4f571e05658eae9789dea7f1a",
+      "file": "audio/sentences/hsk2-l2-081.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l2-082": {
+      "id": "hsk2-l2-082",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "妈妈早上打电话。",
+      "checksum": "15ecd2aca9b83d7772f66d71e84a6a33562f3dbea587b75a1c605e0d26b4ab98",
+      "file": "audio/sentences/hsk2-l2-082.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l2-083": {
+      "id": "hsk2-l2-083",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "哥哥晚上打电话。",
+      "checksum": "c2bed90d1743bee53ba48dc76c623872af39913d8d49217d1319b91f9612d006",
+      "file": "audio/sentences/hsk2-l2-083.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l2-084": {
+      "id": "hsk2-l2-084",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "姐姐每天打电话。",
+      "checksum": "e5c6d42ed08afb8e943780abdd50799ba3cd0cced2d37308259211f8ed782be1",
+      "file": "audio/sentences/hsk2-l2-084.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l2-085": {
+      "id": "hsk2-l2-085",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "弟弟现在打电话。",
+      "checksum": "f2ba4a423238eee979ac4b0473f741470a586ecf45247f01f87ef733d14d6d4f",
+      "file": "audio/sentences/hsk2-l2-085.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l2-086": {
+      "id": "hsk2-l2-086",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "妹妹下午打电话。",
+      "checksum": "092f8d9c3b87f133b52c5574bcaeb29c3855f520b7ab6fffe1ae2f41576c964d",
+      "file": "audio/sentences/hsk2-l2-086.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l2-087": {
+      "id": "hsk2-l2-087",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "老师今天打电话。",
+      "checksum": "d6f48a72661058b6731798df2ffbc595dc97269a2aabf53546e4f6edb2eb237f",
+      "file": "audio/sentences/hsk2-l2-087.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l2-088": {
+      "id": "hsk2-l2-088",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "学生明天要打电话。",
+      "checksum": "451c15f1fbcbfc050940f0144308a36b66a950706121b10bbb7f0e8f2f73045f",
+      "file": "audio/sentences/hsk2-l2-088.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l2-089": {
+      "id": "hsk2-l2-089",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "朋友很喜欢打电话。",
+      "checksum": "c681b12d662e861be3d871989952b4a8b861ed5a4188604258e2be6fe3aa69f7",
+      "file": "audio/sentences/hsk2-l2-089.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l2-090": {
+      "id": "hsk2-l2-090",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "服务员也在打电话。",
+      "checksum": "352305b64212fa129580d7463382cc8b65827985b045d391fab7fe3adcd8f623",
+      "file": "audio/sentences/hsk2-l2-090.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l2-091": {
+      "id": "hsk2-l2-091",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "爸爸正在看书。",
+      "checksum": "65b78734b34650dc6ee83e3b537fa78a7169ad886cc81460fa0bab285d89b163",
+      "file": "audio/sentences/hsk2-l2-091.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l2-092": {
+      "id": "hsk2-l2-092",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "妈妈早上看书。",
+      "checksum": "fd31b59bcba1c7a2e8faa233bee8c78bdd847e7ff94b07cb6deb375116e37eec",
+      "file": "audio/sentences/hsk2-l2-092.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l2-093": {
+      "id": "hsk2-l2-093",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "哥哥晚上看书。",
+      "checksum": "b66f61d112511bac2147719343c175dfcb0099d9504d02f522c5e5734e6b01d9",
+      "file": "audio/sentences/hsk2-l2-093.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l2-094": {
+      "id": "hsk2-l2-094",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "姐姐每天看书。",
+      "checksum": "bab0d80bc5fc48d11d6fbe3c5db2b30a0055d9e49aa215d18fc423b3831906df",
+      "file": "audio/sentences/hsk2-l2-094.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l2-095": {
+      "id": "hsk2-l2-095",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "弟弟现在看书。",
+      "checksum": "5d80a8f0e0a0f56de02085eabf85337e771aea6289b61a55f8c24eae562d5df6",
+      "file": "audio/sentences/hsk2-l2-095.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l2-096": {
+      "id": "hsk2-l2-096",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "妹妹下午看书。",
+      "checksum": "bdda37d422926e40564fd2731c36379bd320953af49449ef0cc393e9e93d3f5e",
+      "file": "audio/sentences/hsk2-l2-096.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l2-097": {
+      "id": "hsk2-l2-097",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "老师今天看书。",
+      "checksum": "ed0ea58fe7c79b629773833230720abef1084fce778fd1e75ad9bbcc99ebdc44",
+      "file": "audio/sentences/hsk2-l2-097.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l2-098": {
+      "id": "hsk2-l2-098",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "学生明天要看书。",
+      "checksum": "43add2dd90a5133b7b66a9d154e03c537ce22d3aa80997272b36bb4b79455c78",
+      "file": "audio/sentences/hsk2-l2-098.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l2-099": {
+      "id": "hsk2-l2-099",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "朋友很喜欢看书。",
+      "checksum": "76de2459eb08f4aedee0c46ed3cac333bedd42ea5e404bafb4dce609fd988bd3",
+      "file": "audio/sentences/hsk2-l2-099.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l2-100": {
+      "id": "hsk2-l2-100",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "服务员也在看书。",
+      "checksum": "0643d46f044fa695fcbf9b193c742c73b9c94a482bbafa16263dd5f9f91834be",
+      "file": "audio/sentences/hsk2-l2-100.wav",
       "voices": [
         "Tingting"
       ]
@@ -7633,6 +9613,996 @@
         "Tingting"
       ]
     },
+    "hsk2-l3-011": {
+      "id": "hsk2-l3-011",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "男：爸爸早上喝茶吗？女：不，爸爸早上喝水。问：爸爸喝什么？",
+      "checksum": "5aa85804c96ec342d09e07684b6b2450271e56b8886a2f9257d344313c98085d",
+      "file": "audio/sentences/hsk2-l3-011.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l3-012": {
+      "id": "hsk2-l3-012",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "男：妈妈上午喝咖啡吗？女：不，妈妈上午喝茶。问：妈妈喝什么？",
+      "checksum": "0b3003f23b60f809c80f00b106230a3d455e47d36916fc5167302c36a0dd01e9",
+      "file": "audio/sentences/hsk2-l3-012.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l3-013": {
+      "id": "hsk2-l3-013",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "男：哥哥中午喝牛奶吗？女：不，哥哥中午喝咖啡。问：哥哥喝什么？",
+      "checksum": "49ad1dcdf458a57eb35fa11a420e5bdc97eeb01c730ed260766b6667ecef3bdc",
+      "file": "audio/sentences/hsk2-l3-013.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l3-014": {
+      "id": "hsk2-l3-014",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "男：姐姐下午喝水吗？女：不，姐姐下午喝牛奶。问：姐姐喝什么？",
+      "checksum": "81e608c3f9c703fd301b50eeb54e44106a7077c61bcdf8436e91edba6a981630",
+      "file": "audio/sentences/hsk2-l3-014.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l3-015": {
+      "id": "hsk2-l3-015",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "男：弟弟晚上喝茶吗？女：不，弟弟晚上喝水。问：弟弟喝什么？",
+      "checksum": "b910c12b69b6816bdb1660fd816a31f29b035d7c8f241b518df6a2f1a9576240",
+      "file": "audio/sentences/hsk2-l3-015.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l3-016": {
+      "id": "hsk2-l3-016",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "男：妹妹今天喝咖啡吗？女：不，妹妹今天喝茶。问：妹妹喝什么？",
+      "checksum": "8fd41aac3a06d47fcfd193371f924fcf20b8f4f57b9818a6f9e20efa2a401b22",
+      "file": "audio/sentences/hsk2-l3-016.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l3-017": {
+      "id": "hsk2-l3-017",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "男：老师明天喝牛奶吗？女：不，老师明天喝咖啡。问：老师喝什么？",
+      "checksum": "f2f2141f8134816405ef505373842d21a22b162745070653e847365b1988e657",
+      "file": "audio/sentences/hsk2-l3-017.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l3-018": {
+      "id": "hsk2-l3-018",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "男：同学每天喝水吗？女：不，同学每天喝牛奶。问：同学喝什么？",
+      "checksum": "5e65b7eba9bb398900557a816a331fefd755048098534a5ccfcc75f4bc4d907b",
+      "file": "audio/sentences/hsk2-l3-018.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l3-019": {
+      "id": "hsk2-l3-019",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "男：朋友现在喝茶吗？女：不，朋友现在喝水。问：朋友喝什么？",
+      "checksum": "8de2b67c4475efa9a5eaf8655984f98cbdccf15d8e2ae4370c27fcca57cf6fbf",
+      "file": "audio/sentences/hsk2-l3-019.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l3-020": {
+      "id": "hsk2-l3-020",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "男：丈夫星期日喝咖啡吗？女：不，丈夫星期日喝茶。问：丈夫喝什么？",
+      "checksum": "42b1be0f867a6e9536fbfda3a9e7125d892bf53b63708cba5d098856f8958f04",
+      "file": "audio/sentences/hsk2-l3-020.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l3-021": {
+      "id": "hsk2-l3-021",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "女：爸爸怎么去学校？男：爸爸坐公共汽车去。问：爸爸怎么去？",
+      "checksum": "c2e7fb83bbd95f5a32b6435b5ab96260669ca3ddf820cbd2af865c8f2523196b",
+      "file": "audio/sentences/hsk2-l3-021.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l3-022": {
+      "id": "hsk2-l3-022",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "女：妈妈怎么去医院？男：妈妈坐出租车去。问：妈妈怎么去？",
+      "checksum": "ed1318fc758db5c1d954a17ab81fddfb1661045afd339168843566e40884ae5d",
+      "file": "audio/sentences/hsk2-l3-022.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l3-023": {
+      "id": "hsk2-l3-023",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "女：哥哥怎么去公司？男：哥哥骑自行车去。问：哥哥怎么去？",
+      "checksum": "7ed149e1744986075190b900065da3f0706de453904691901c5fa13f14c14b48",
+      "file": "audio/sentences/hsk2-l3-023.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l3-024": {
+      "id": "hsk2-l3-024",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "女：姐姐怎么去饭馆？男：姐姐走路去。问：姐姐怎么去？",
+      "checksum": "a833d397169546cbd636c2db6bb75f4a134469922eed49779f8ff96e3d8166bd",
+      "file": "audio/sentences/hsk2-l3-024.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l3-025": {
+      "id": "hsk2-l3-025",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "女：弟弟怎么去机场？男：弟弟坐公共汽车去。问：弟弟怎么去？",
+      "checksum": "ad4d54f4c5c2b20313b387b3c8921d7737163a5b017d413e5370a6a1de7f05ae",
+      "file": "audio/sentences/hsk2-l3-025.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l3-026": {
+      "id": "hsk2-l3-026",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "女：妹妹怎么去学校？男：妹妹坐出租车去。问：妹妹怎么去？",
+      "checksum": "ab944b5897ed61a221cbd7d61924d000af9018d3172d1182e88b118b53801f7f",
+      "file": "audio/sentences/hsk2-l3-026.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l3-027": {
+      "id": "hsk2-l3-027",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "女：老师怎么去医院？男：老师骑自行车去。问：老师怎么去？",
+      "checksum": "3eb37ad508b8de67dd68bb0ae4c989479f08b790d295958b7e24dca519069724",
+      "file": "audio/sentences/hsk2-l3-027.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l3-028": {
+      "id": "hsk2-l3-028",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "女：同学怎么去公司？男：同学走路去。问：同学怎么去？",
+      "checksum": "98a2a00c11bfac793227d9d481b57b3627f6bf65cae1e2a8f836614de9109456",
+      "file": "audio/sentences/hsk2-l3-028.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l3-029": {
+      "id": "hsk2-l3-029",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "女：朋友怎么去饭馆？男：朋友坐公共汽车去。问：朋友怎么去？",
+      "checksum": "6e9dac4c79530561ba5843237eb9a59cf6d81cf50d9ad21898dd84a2acd7fbe0",
+      "file": "audio/sentences/hsk2-l3-029.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l3-030": {
+      "id": "hsk2-l3-030",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "女：丈夫怎么去机场？男：丈夫坐出租车去。问：丈夫怎么去？",
+      "checksum": "a46e76232b733ca116231893107cc8bcad83d5e2dc0810291565e6cd4f9712fe",
+      "file": "audio/sentences/hsk2-l3-030.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l3-031": {
+      "id": "hsk2-l3-031",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "男：爸爸早上做什么？女：爸爸和朋友一起跑步。问：爸爸做什么？",
+      "checksum": "6830f98e3437b676547a456f442739dd7fa3124d34ae4b16d2c0b9d659942cbc",
+      "file": "audio/sentences/hsk2-l3-031.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l3-032": {
+      "id": "hsk2-l3-032",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "男：妈妈上午做什么？女：妈妈和朋友一起游泳。问：妈妈做什么？",
+      "checksum": "40fa7070421eddb9127b867cbe3ce8c8335353ea5927d10417a6b8a1f437068a",
+      "file": "audio/sentences/hsk2-l3-032.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l3-033": {
+      "id": "hsk2-l3-033",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "男：哥哥中午做什么？女：哥哥和朋友一起打篮球。问：哥哥做什么？",
+      "checksum": "319a396658963a253f0eadcbfcb75981158d0c4294858de589aaedb4f0293303",
+      "file": "audio/sentences/hsk2-l3-033.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l3-034": {
+      "id": "hsk2-l3-034",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "男：姐姐下午做什么？女：姐姐和朋友一起踢足球。问：姐姐做什么？",
+      "checksum": "7314f9b55e42e9ac9e0808b721084dd0fb94476b8c7bc37c2d5d49e32a233cde",
+      "file": "audio/sentences/hsk2-l3-034.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l3-035": {
+      "id": "hsk2-l3-035",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "男：弟弟晚上做什么？女：弟弟和朋友一起跳舞。问：弟弟做什么？",
+      "checksum": "1ca32ede9f1077e3bcd5c4487a37eaa5e63b678c308485d513f6a369c16c92bc",
+      "file": "audio/sentences/hsk2-l3-035.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l3-036": {
+      "id": "hsk2-l3-036",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "男：妹妹今天做什么？女：妹妹和朋友一起跑步。问：妹妹做什么？",
+      "checksum": "20813da4174dd282b335b29a7f055a7ac845c56cf919dad48ad254a0aa6100a1",
+      "file": "audio/sentences/hsk2-l3-036.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l3-037": {
+      "id": "hsk2-l3-037",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "男：老师明天做什么？女：老师和朋友一起游泳。问：老师做什么？",
+      "checksum": "347eb749405cd7b5f211a7a62d249a89e00fe77952a8c8a711288f4a980438a4",
+      "file": "audio/sentences/hsk2-l3-037.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l3-038": {
+      "id": "hsk2-l3-038",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "男：同学每天做什么？女：同学和朋友一起打篮球。问：同学做什么？",
+      "checksum": "98254c16abb873e4251546337bda2037d6535bb46aa24e0a388ccfbaed015c3e",
+      "file": "audio/sentences/hsk2-l3-038.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l3-039": {
+      "id": "hsk2-l3-039",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "男：朋友现在做什么？女：朋友和朋友一起踢足球。问：朋友做什么？",
+      "checksum": "2884c458bc2a7a8588cb2ae5692808ad8063df92639f7b3e94a733805eba577e",
+      "file": "audio/sentences/hsk2-l3-039.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l3-040": {
+      "id": "hsk2-l3-040",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "男：丈夫星期日做什么？女：丈夫和朋友一起跳舞。问：丈夫做什么？",
+      "checksum": "2a4db26762d610b7b9b03da2d679485e8d537395f1b7062decb61004600cf21b",
+      "file": "audio/sentences/hsk2-l3-040.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l3-041": {
+      "id": "hsk2-l3-041",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "女：爸爸的新衣服是红色的吗？男：是的，是红色的。问：爸爸的衣服是什么颜色？",
+      "checksum": "d7f0e5c845ec2a83964bb16e9d24676e2916e809814630ff82ed92456ed2206e",
+      "file": "audio/sentences/hsk2-l3-041.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l3-042": {
+      "id": "hsk2-l3-042",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "女：妈妈的新衣服是白色的吗？男：是的，是白色的。问：妈妈的衣服是什么颜色？",
+      "checksum": "cec1d7414d2fee14e39bd501239d92dc88ba0b55173edb4b75f544e61e57e135",
+      "file": "audio/sentences/hsk2-l3-042.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l3-043": {
+      "id": "hsk2-l3-043",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "女：哥哥的新衣服是黑色的吗？男：是的，是黑色的。问：哥哥的衣服是什么颜色？",
+      "checksum": "7d2040c4da5dbc10d0ea14647b41ef62811bc9a520705f5b9fc6b53346a966f1",
+      "file": "audio/sentences/hsk2-l3-043.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l3-044": {
+      "id": "hsk2-l3-044",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "女：姐姐的新衣服是红色的吗？男：是的，是红色的。问：姐姐的衣服是什么颜色？",
+      "checksum": "28c456fb2b3ebd83c7a7e7984d6a5fe79c6e596bc7c86d853689b8362b458d1c",
+      "file": "audio/sentences/hsk2-l3-044.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l3-045": {
+      "id": "hsk2-l3-045",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "女：弟弟的新衣服是白色的吗？男：是的，是白色的。问：弟弟的衣服是什么颜色？",
+      "checksum": "a2e92b6a7e6abf8a39bdc53e86f0096ea4932e7bcae5ab4b92853ad92456b3e7",
+      "file": "audio/sentences/hsk2-l3-045.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l3-046": {
+      "id": "hsk2-l3-046",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "女：妹妹的新衣服是黑色的吗？男：是的，是黑色的。问：妹妹的衣服是什么颜色？",
+      "checksum": "bb991ed0035fbbefa6d5def375d9a70896dcc69964485cacabac85f8d88d587b",
+      "file": "audio/sentences/hsk2-l3-046.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l3-047": {
+      "id": "hsk2-l3-047",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "女：老师的新衣服是红色的吗？男：是的，是红色的。问：老师的衣服是什么颜色？",
+      "checksum": "c85bdcf8a8ec45924ddd48ef91ad4a7c6bb264c22eeae9ff8f4610061e672749",
+      "file": "audio/sentences/hsk2-l3-047.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l3-048": {
+      "id": "hsk2-l3-048",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "女：同学的新衣服是白色的吗？男：是的，是白色的。问：同学的衣服是什么颜色？",
+      "checksum": "c6a4a205c6abe8d92cb3936794b6e21934f815da63db07a2ff43b9c3ca117666",
+      "file": "audio/sentences/hsk2-l3-048.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l3-049": {
+      "id": "hsk2-l3-049",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "女：朋友的新衣服是黑色的吗？男：是的，是黑色的。问：朋友的衣服是什么颜色？",
+      "checksum": "f6557adf48d88c36585874a24aa904ed580ca099b6817c308cf3f8ab399ca93d",
+      "file": "audio/sentences/hsk2-l3-049.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l3-050": {
+      "id": "hsk2-l3-050",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "女：丈夫的新衣服是红色的吗？男：是的，是红色的。问：丈夫的衣服是什么颜色？",
+      "checksum": "1d9ec85608820339bf2c56036b843f57b8ee8ed98a56748d757641e56cdfbf5c",
+      "file": "audio/sentences/hsk2-l3-050.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l3-051": {
+      "id": "hsk2-l3-051",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "男：爸爸早上买了什么？女：爸爸买了苹果。问：爸爸买了什么？",
+      "checksum": "16be4cab9aa8594df28a5265412964d160c4d2aa290d9abadff6cbccfc5d8980",
+      "file": "audio/sentences/hsk2-l3-051.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l3-052": {
+      "id": "hsk2-l3-052",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "男：妈妈上午买了什么？女：妈妈买了西瓜。问：妈妈买了什么？",
+      "checksum": "0ac9c5f2d2bf24241512d3a999e7674ef9b92dab6a2374f584573f3586c66d4f",
+      "file": "audio/sentences/hsk2-l3-052.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l3-053": {
+      "id": "hsk2-l3-053",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "男：哥哥中午买了什么？女：哥哥买了鸡蛋。问：哥哥买了什么？",
+      "checksum": "408848e17cd98699bdb0cc9444f6144e57612bc4533ce693c2c26515baf23026",
+      "file": "audio/sentences/hsk2-l3-053.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l3-054": {
+      "id": "hsk2-l3-054",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "男：姐姐下午买了什么？女：姐姐买了羊肉。问：姐姐买了什么？",
+      "checksum": "7e99ee1dfe0af3622e8d0261931f1b19c2de26f7835620c00c70065da2c301b2",
+      "file": "audio/sentences/hsk2-l3-054.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l3-055": {
+      "id": "hsk2-l3-055",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "男：弟弟晚上买了什么？女：弟弟买了苹果。问：弟弟买了什么？",
+      "checksum": "5a8a57d2809a658e18735cab58222638d0788d293dde9af574d1b7586a52dfdb",
+      "file": "audio/sentences/hsk2-l3-055.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l3-056": {
+      "id": "hsk2-l3-056",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "男：妹妹今天买了什么？女：妹妹买了西瓜。问：妹妹买了什么？",
+      "checksum": "3b67414beb8364c510ace49bf685ccf3ab851eae4d554f2e06c64853ae30f816",
+      "file": "audio/sentences/hsk2-l3-056.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l3-057": {
+      "id": "hsk2-l3-057",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "男：老师明天买了什么？女：老师买了鸡蛋。问：老师买了什么？",
+      "checksum": "0f12ec5dcaeb577e0fba899751ae1f3dba591222e882c296cdf856d02e8b596d",
+      "file": "audio/sentences/hsk2-l3-057.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l3-058": {
+      "id": "hsk2-l3-058",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "男：同学每天买了什么？女：同学买了羊肉。问：同学买了什么？",
+      "checksum": "b2597b0f9e8164df67d54310bd1e059913147d509d8382ea81926b44adf9b08a",
+      "file": "audio/sentences/hsk2-l3-058.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l3-059": {
+      "id": "hsk2-l3-059",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "男：朋友现在买了什么？女：朋友买了苹果。问：朋友买了什么？",
+      "checksum": "d0ec1c98659867045ad7b26f5cc582e382878460eb44289f261d68f1fd4d66f2",
+      "file": "audio/sentences/hsk2-l3-059.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l3-060": {
+      "id": "hsk2-l3-060",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "男：丈夫星期日买了什么？女：丈夫买了西瓜。问：丈夫买了什么？",
+      "checksum": "2aa3c76c000f8afd562b53f58aacbb7250b9b3767845f3c824a540ba2c51b7c9",
+      "file": "audio/sentences/hsk2-l3-060.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l3-061": {
+      "id": "hsk2-l3-061",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "女：爸爸在哪儿工作？男：爸爸在学校工作。问：爸爸在哪儿工作？",
+      "checksum": "7c70236168dbd40b61122d56b615549a69f70da870e4832c0115b1d93b4ea7bc",
+      "file": "audio/sentences/hsk2-l3-061.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l3-062": {
+      "id": "hsk2-l3-062",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "女：妈妈在哪儿工作？男：妈妈在医院工作。问：妈妈在哪儿工作？",
+      "checksum": "329cc24b29904038f3de70efa780d664b0540b44a67a9356d7eb7038d9fa0942",
+      "file": "audio/sentences/hsk2-l3-062.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l3-063": {
+      "id": "hsk2-l3-063",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "女：哥哥在哪儿工作？男：哥哥在公司工作。问：哥哥在哪儿工作？",
+      "checksum": "db9a8b2b3f90abe9687e469c212e34907aab294d7d046f2bcbdc4830ad75860f",
+      "file": "audio/sentences/hsk2-l3-063.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l3-064": {
+      "id": "hsk2-l3-064",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "女：姐姐在哪儿工作？男：姐姐在饭馆工作。问：姐姐在哪儿工作？",
+      "checksum": "5944382c506d3cef009574ad7486afc72937916059d411cb32c4cf03479aff71",
+      "file": "audio/sentences/hsk2-l3-064.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l3-065": {
+      "id": "hsk2-l3-065",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "女：弟弟在哪儿工作？男：弟弟在学校工作。问：弟弟在哪儿工作？",
+      "checksum": "50b6e22cea9c77cd21114d8911e863998e4132af57b0dafb10a46f249fc79fbd",
+      "file": "audio/sentences/hsk2-l3-065.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l3-066": {
+      "id": "hsk2-l3-066",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "女：妹妹在哪儿工作？男：妹妹在医院工作。问：妹妹在哪儿工作？",
+      "checksum": "09aa50b29413813c6ff20bd1482aacf9199bf94e1a56bd88e7bce1d76416d603",
+      "file": "audio/sentences/hsk2-l3-066.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l3-067": {
+      "id": "hsk2-l3-067",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "女：老师在哪儿工作？男：老师在公司工作。问：老师在哪儿工作？",
+      "checksum": "da60af3fd175732175d8639c8743364ba70f6377fda6fba39567351644f7aeed",
+      "file": "audio/sentences/hsk2-l3-067.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l3-068": {
+      "id": "hsk2-l3-068",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "女：同学在哪儿工作？男：同学在饭馆工作。问：同学在哪儿工作？",
+      "checksum": "0d4406924972bec9ed50329fc764768901ba8562f902e381e4960b98846c2168",
+      "file": "audio/sentences/hsk2-l3-068.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l3-069": {
+      "id": "hsk2-l3-069",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "女：朋友在哪儿工作？男：朋友在学校工作。问：朋友在哪儿工作？",
+      "checksum": "ed4f788bf8763205d38a27bc8c7d011076dd165fe07b9f3d89cdd00d535f4ba5",
+      "file": "audio/sentences/hsk2-l3-069.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l3-070": {
+      "id": "hsk2-l3-070",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "女：丈夫在哪儿工作？男：丈夫在医院工作。问：丈夫在哪儿工作？",
+      "checksum": "613cec171449b9010474b769d5684958a2c3dc090f3850065c75af988bf9f9cb",
+      "file": "audio/sentences/hsk2-l3-070.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l3-071": {
+      "id": "hsk2-l3-071",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "男：早上的电影几点开始？女：七点开始。问：电影几点开始？",
+      "checksum": "7149c00e0ffb2ee9ba6c3c974114975b20f529717f1b3b7ebc9e6ea41bf042f5",
+      "file": "audio/sentences/hsk2-l3-071.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l3-072": {
+      "id": "hsk2-l3-072",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "男：上午的考试几点开始？女：八点开始。问：考试几点开始？",
+      "checksum": "9b2b1a99ae0a67e424f4a0c9d7d2317d59af41050a9004e54df321b1b8358f17",
+      "file": "audio/sentences/hsk2-l3-072.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l3-073": {
+      "id": "hsk2-l3-073",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "男：中午的汉语课几点开始？女：九点开始。问：汉语课几点开始？",
+      "checksum": "0846571fe54c9cb8b58d32b1491408ab70b4a0fb62d2445ee7a8d2ee04334fc5",
+      "file": "audio/sentences/hsk2-l3-073.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l3-074": {
+      "id": "hsk2-l3-074",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "男：下午的工作几点开始？女：十点开始。问：工作几点开始？",
+      "checksum": "d3d148e53e8aaa4f1887307bcee9271920e6c720af2f024e381394fd13eb9b43",
+      "file": "audio/sentences/hsk2-l3-074.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l3-075": {
+      "id": "hsk2-l3-075",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "男：晚上的电影几点开始？女：十一点开始。问：电影几点开始？",
+      "checksum": "6c81cf11a6096f75be26422004ee5ca5e8555a099358ced64a214c120279224c",
+      "file": "audio/sentences/hsk2-l3-075.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l3-076": {
+      "id": "hsk2-l3-076",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "男：今天的考试几点开始？女：十二点开始。问：考试几点开始？",
+      "checksum": "1e74605fa666c099a548a01df69e2d735516728d63e18ccdacd5c8d57f1feeb3",
+      "file": "audio/sentences/hsk2-l3-076.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l3-077": {
+      "id": "hsk2-l3-077",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "男：明天的汉语课几点开始？女：一点开始。问：汉语课几点开始？",
+      "checksum": "5605902acb77fc7a67ca4b615a46d54f8bb44c6407786c1e6352aa4cb4800f81",
+      "file": "audio/sentences/hsk2-l3-077.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l3-078": {
+      "id": "hsk2-l3-078",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "男：每天的工作几点开始？女：两点开始。问：工作几点开始？",
+      "checksum": "41e1e45a8a433f51e0de61dc7df29e753f755a5e5271c6d8a32a4b7a3cac67b8",
+      "file": "audio/sentences/hsk2-l3-078.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l3-079": {
+      "id": "hsk2-l3-079",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "男：现在的电影几点开始？女：三点开始。问：电影几点开始？",
+      "checksum": "7b39606ae13b510d41fd02d1843758ce6ca431accc2fd9775e2ec073e7a6395e",
+      "file": "audio/sentences/hsk2-l3-079.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l3-080": {
+      "id": "hsk2-l3-080",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "男：星期日的考试几点开始？女：四点开始。问：考试几点开始？",
+      "checksum": "8ed02fdca22d222ea91fefc968e61ff9dabfaaea08cc064c2685f94cf7542441",
+      "file": "audio/sentences/hsk2-l3-080.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l3-081": {
+      "id": "hsk2-l3-081",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "女：爸爸，医院在哪儿？男：在学校的左边。问：医院在哪儿？",
+      "checksum": "8a07151d16289247be57d619afdefc5fb7a205971de21c7b03a09c7af3d00543",
+      "file": "audio/sentences/hsk2-l3-081.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l3-082": {
+      "id": "hsk2-l3-082",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "女：妈妈，公司在哪儿？男：在医院的右边。问：公司在哪儿？",
+      "checksum": "7895397839366719765ad6a3b2664d42c3e226401dccebe5991f43e02e483ae7",
+      "file": "audio/sentences/hsk2-l3-082.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l3-083": {
+      "id": "hsk2-l3-083",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "女：哥哥，饭馆在哪儿？男：在公司的旁边。问：饭馆在哪儿？",
+      "checksum": "eb63b8067524a62d6c8c5884b171848e56c35a65fb31410d403355a5d342dd31",
+      "file": "audio/sentences/hsk2-l3-083.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l3-084": {
+      "id": "hsk2-l3-084",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "女：姐姐，学校在哪儿？男：在饭馆的前面。问：学校在哪儿？",
+      "checksum": "5a1be4efba9ec40e638174e9c314782e5c9515ec69b2e5df6d5f3a819b210fd7",
+      "file": "audio/sentences/hsk2-l3-084.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l3-085": {
+      "id": "hsk2-l3-085",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "女：弟弟，机场在哪儿？男：在机场的后面。问：机场在哪儿？",
+      "checksum": "05233f5865c3da85d9e846c17b5bad8487c7e8336e7fa8ae0d9b2d0a22a35d41",
+      "file": "audio/sentences/hsk2-l3-085.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l3-086": {
+      "id": "hsk2-l3-086",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "女：妹妹，医院在哪儿？男：在学校的左边。问：医院在哪儿？",
+      "checksum": "4120a3c3806cf3d077b2cda0b0a9e9f255d4a37d0df9cc3962a31fdb9fb01bc5",
+      "file": "audio/sentences/hsk2-l3-086.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l3-087": {
+      "id": "hsk2-l3-087",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "女：老师，公司在哪儿？男：在医院的右边。问：公司在哪儿？",
+      "checksum": "ea692517ef23036c68d090ea71cc039c17cb3c5c5e195ed49d1ab092c0ad04f4",
+      "file": "audio/sentences/hsk2-l3-087.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l3-088": {
+      "id": "hsk2-l3-088",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "女：同学，饭馆在哪儿？男：在公司的旁边。问：饭馆在哪儿？",
+      "checksum": "f23a9cbfc246a29f13b77e6535d6ef2a574bbbe36fb6a7530377a6bf41c95e26",
+      "file": "audio/sentences/hsk2-l3-088.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l3-089": {
+      "id": "hsk2-l3-089",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "女：朋友，学校在哪儿？男：在饭馆的前面。问：学校在哪儿？",
+      "checksum": "0cd51694ee2997db4061f15ff3ebddb74575358724c78eb6e6efcde662120ec6",
+      "file": "audio/sentences/hsk2-l3-089.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l3-090": {
+      "id": "hsk2-l3-090",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "女：丈夫，机场在哪儿？男：在机场的后面。问：机场在哪儿？",
+      "checksum": "5ee3a63648363a7f0ce814656e45ebbf1c3d510a060ee8e832ad848868007d58",
+      "file": "audio/sentences/hsk2-l3-090.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l3-091": {
+      "id": "hsk2-l3-091",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "男：早上天气怎么样？女：早上是下雨。问：早上天气怎么样？",
+      "checksum": "13b30d690d09edcda8a07bdc8138ef8eb1334e05eb3f1542bffe6ca7568e826c",
+      "file": "audio/sentences/hsk2-l3-091.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l3-092": {
+      "id": "hsk2-l3-092",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "男：上午天气怎么样？女：上午是下雪。问：上午天气怎么样？",
+      "checksum": "04783188d963da0b4bfce9c9a22a89f99b14b0d755261fe004a40896abf2f634",
+      "file": "audio/sentences/hsk2-l3-092.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l3-093": {
+      "id": "hsk2-l3-093",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "男：中午天气怎么样？女：中午是晴天。问：中午天气怎么样？",
+      "checksum": "7707938d9b51a8d013ce132b24019459c8843d1b6e4fc2c6b20d240345f6f5e0",
+      "file": "audio/sentences/hsk2-l3-093.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l3-094": {
+      "id": "hsk2-l3-094",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "男：下午天气怎么样？女：下午是阴天。问：下午天气怎么样？",
+      "checksum": "052fcd8baeb64301bf88c948a083e4d0de087c94a5be42d459fab0a1a969db02",
+      "file": "audio/sentences/hsk2-l3-094.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l3-095": {
+      "id": "hsk2-l3-095",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "男：晚上天气怎么样？女：晚上是下雨。问：晚上天气怎么样？",
+      "checksum": "2d3b2ee949a760b1fffbbbcd55b9432ee6b9f50f06e8ac1de7b8faff7b42bb13",
+      "file": "audio/sentences/hsk2-l3-095.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l3-096": {
+      "id": "hsk2-l3-096",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "男：今天天气怎么样？女：今天是下雪。问：今天天气怎么样？",
+      "checksum": "6dfeb137bf1370c4a54250499dd7ea825244451bf1084a7d4c3ff229aec6aba1",
+      "file": "audio/sentences/hsk2-l3-096.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l3-097": {
+      "id": "hsk2-l3-097",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "男：明天天气怎么样？女：明天是晴天。问：明天天气怎么样？",
+      "checksum": "e2ba0ed56059b68d8ba719f442f94b5e50a9eac63a69bc48aacf153bdc2115e6",
+      "file": "audio/sentences/hsk2-l3-097.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l3-098": {
+      "id": "hsk2-l3-098",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "男：每天天气怎么样？女：每天是阴天。问：每天天气怎么样？",
+      "checksum": "7b8cf27f660d9b2fd94c7aed1249d5d162998c50f94c743d3b13360532095dd2",
+      "file": "audio/sentences/hsk2-l3-098.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l3-099": {
+      "id": "hsk2-l3-099",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "男：现在天气怎么样？女：现在是下雨。问：现在天气怎么样？",
+      "checksum": "9f06914d5481c63be7fbb9359ed0597be174b8eb9a79f238232773436bca2bfc",
+      "file": "audio/sentences/hsk2-l3-099.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l3-100": {
+      "id": "hsk2-l3-100",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "男：星期日天气怎么样？女：星期日是下雪。问：星期日天气怎么样？",
+      "checksum": "2685b5bb59735f355f4f6f8d448109126fbf132a8c24038995a7d0f3019252bc",
+      "file": "audio/sentences/hsk2-l3-100.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
     "hsk2-l4-01": {
       "id": "hsk2-l4-01",
       "type": "mock-v2",
@@ -7684,6 +10654,501 @@
       "text": "男：今天是你的生日，这本书送给你。女：谢谢，我很喜欢。问：男的送了什么？",
       "checksum": "5fffffb66cc7d8958b5ec7af9a2723d290cced32d1914f37473411180839c8b6",
       "file": "audio/sentences/hsk2-l4-05.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l4-006": {
+      "id": "hsk2-l4-006",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "女：爸爸想买一件新衣服。男：白色的一百元，红色的八十元。女：爸爸喜欢红色的。问：爸爸喜欢什么颜色的衣服？",
+      "checksum": "3aa417ccf05202dcc23de240b7185032379a618fff7190f31910a9b197c4a012",
+      "file": "audio/sentences/hsk2-l4-006.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l4-007": {
+      "id": "hsk2-l4-007",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "女：妈妈想买一件新衣服。男：黑色的一百元，白色的八十元。女：妈妈喜欢白色的。问：妈妈喜欢什么颜色的衣服？",
+      "checksum": "3e0f9f3e6053172b84a2635a5a30530c682795b821f397c1eeb41bc4f9965795",
+      "file": "audio/sentences/hsk2-l4-007.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l4-008": {
+      "id": "hsk2-l4-008",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "女：哥哥想买一件新衣服。男：红色的一百元，黑色的八十元。女：哥哥喜欢黑色的。问：哥哥喜欢什么颜色的衣服？",
+      "checksum": "77f342441cd455cb2d10731a5e801a70e18b000db2b5ebef6cdc3965d0a67e7d",
+      "file": "audio/sentences/hsk2-l4-008.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l4-009": {
+      "id": "hsk2-l4-009",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "女：姐姐想买一件新衣服。男：白色的一百元，红色的八十元。女：姐姐喜欢红色的。问：姐姐喜欢什么颜色的衣服？",
+      "checksum": "f88f95d23fc0687dc420035dae60800b62d4e8c8b77c8c99a33bc3cb90fe4d38",
+      "file": "audio/sentences/hsk2-l4-009.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l4-010": {
+      "id": "hsk2-l4-010",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "女：弟弟想买一件新衣服。男：黑色的一百元，白色的八十元。女：弟弟喜欢白色的。问：弟弟喜欢什么颜色的衣服？",
+      "checksum": "9f0e3011957707cfb3b38cdd71547a43165eeb8494c2779d4e03fe2aa8daca91",
+      "file": "audio/sentences/hsk2-l4-010.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l4-011": {
+      "id": "hsk2-l4-011",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "女：妹妹想买一件新衣服。男：红色的一百元，黑色的八十元。女：妹妹喜欢黑色的。问：妹妹喜欢什么颜色的衣服？",
+      "checksum": "e0f38d8cec48e62c81fa8d9eb63f9b113949ee63f31968f04cb4be755d284cda",
+      "file": "audio/sentences/hsk2-l4-011.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l4-012": {
+      "id": "hsk2-l4-012",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "女：老师想买一件新衣服。男：白色的一百元，红色的八十元。女：老师喜欢红色的。问：老师喜欢什么颜色的衣服？",
+      "checksum": "7405ec58489141f8b318554b093cc55ab7cf635066691e9398cd6aa9f2e61bfd",
+      "file": "audio/sentences/hsk2-l4-012.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l4-013": {
+      "id": "hsk2-l4-013",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "女：同学想买一件新衣服。男：黑色的一百元，白色的八十元。女：同学喜欢白色的。问：同学喜欢什么颜色的衣服？",
+      "checksum": "e4515c09b80641f6d1f06d3d942d57d08c2742c5dab61449327ddc013887a304",
+      "file": "audio/sentences/hsk2-l4-013.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l4-014": {
+      "id": "hsk2-l4-014",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "女：朋友想买一件新衣服。男：红色的一百元，黑色的八十元。女：朋友喜欢黑色的。问：朋友喜欢什么颜色的衣服？",
+      "checksum": "88dd8aee6e407da7837aae84cbeedb4899bfedcae4b3a6d788942d34a03a3386",
+      "file": "audio/sentences/hsk2-l4-014.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l4-015": {
+      "id": "hsk2-l4-015",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "男：电影七点开始。女：现在还早，我们等一会儿吧。男：好，我们一起进去。问：电影几点开始？",
+      "checksum": "62c90cb7cf528394ea1c2c1a501255bf4ea1621d7b1fc1ed69adae4a33111871",
+      "file": "audio/sentences/hsk2-l4-015.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l4-016": {
+      "id": "hsk2-l4-016",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "男：考试八点开始。女：现在还早，我们等一会儿吧。男：好，我们一起进去。问：考试几点开始？",
+      "checksum": "59b60c59eb97fef7b40a94ed3f67b8c5d8a4186ba1146ec753b1c41afd9d2328",
+      "file": "audio/sentences/hsk2-l4-016.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l4-017": {
+      "id": "hsk2-l4-017",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "男：汉语课九点开始。女：现在还早，我们等一会儿吧。男：好，我们一起进去。问：汉语课几点开始？",
+      "checksum": "0d9f065044163b963054731f2b6a1a9c719bea1e6548c5d375cfba79a0be89f8",
+      "file": "audio/sentences/hsk2-l4-017.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l4-018": {
+      "id": "hsk2-l4-018",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "男：电影十点开始。女：现在还早，我们等一会儿吧。男：好，我们一起进去。问：电影几点开始？",
+      "checksum": "e5a5688520aca3cf103668db90e1ad6a3a9ff59c6a789f1ef00a780275f6a93f",
+      "file": "audio/sentences/hsk2-l4-018.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l4-019": {
+      "id": "hsk2-l4-019",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "男：考试十一点开始。女：现在还早，我们等一会儿吧。男：好，我们一起进去。问：考试几点开始？",
+      "checksum": "15906592e79c8d3e44df776cdd1aa30326eb8b41f670ba658c4516a5591ed40a",
+      "file": "audio/sentences/hsk2-l4-019.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l4-020": {
+      "id": "hsk2-l4-020",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "男：汉语课十二点开始。女：现在还早，我们等一会儿吧。男：好，我们一起进去。问：汉语课几点开始？",
+      "checksum": "e32604d496115b92a689366058154c3d45941e9b260f7241b473cef96a515dd2",
+      "file": "audio/sentences/hsk2-l4-020.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l4-021": {
+      "id": "hsk2-l4-021",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "男：电影一点开始。女：现在还早，我们等一会儿吧。男：好，我们一起进去。问：电影几点开始？",
+      "checksum": "2200725d92ce1061dbdc7e2317d3bb1d2da749b2f115edb5aa7bbab0e24e0871",
+      "file": "audio/sentences/hsk2-l4-021.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l4-022": {
+      "id": "hsk2-l4-022",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "男：考试两点开始。女：现在还早，我们等一会儿吧。男：好，我们一起进去。问：考试几点开始？",
+      "checksum": "cdea03a26807f05fedde2b4397d1e4e1c2efd87ddd83ed93aac5dcbee2353bc8",
+      "file": "audio/sentences/hsk2-l4-022.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l4-023": {
+      "id": "hsk2-l4-023",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "男：汉语课三点开始。女：现在还早，我们等一会儿吧。男：好，我们一起进去。问：汉语课几点开始？",
+      "checksum": "58fe4b4c87e9014602fc370d5aaf365bc74c6b28e58411a2ef6e622e4a20f3a3",
+      "file": "audio/sentences/hsk2-l4-023.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l4-024": {
+      "id": "hsk2-l4-024",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "女：爸爸早上要去公司吗？男：是的，公司离家不远。女：那爸爸怎么去？男：爸爸坐公共汽车去。问：爸爸怎么去公司？",
+      "checksum": "658672a6d2718b6b3d805a1a62d1a7268f138b65b73f135e5ea934806a1e9eba",
+      "file": "audio/sentences/hsk2-l4-024.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l4-025": {
+      "id": "hsk2-l4-025",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "女：妈妈上午要去公司吗？男：是的，公司离家不远。女：那妈妈怎么去？男：妈妈坐出租车去。问：妈妈怎么去公司？",
+      "checksum": "a56853577aef02940bfba7ac7b994f8a706e5abc3685feb125d20c296964d669",
+      "file": "audio/sentences/hsk2-l4-025.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l4-026": {
+      "id": "hsk2-l4-026",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "女：哥哥中午要去公司吗？男：是的，公司离家不远。女：那哥哥怎么去？男：哥哥骑自行车去。问：哥哥怎么去公司？",
+      "checksum": "4dd0f515f0f189bd031c01a00558f2e58c39e614e9e2c2031e10ad31ede970bd",
+      "file": "audio/sentences/hsk2-l4-026.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l4-027": {
+      "id": "hsk2-l4-027",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "女：姐姐下午要去公司吗？男：是的，公司离家不远。女：那姐姐怎么去？男：姐姐走路去。问：姐姐怎么去公司？",
+      "checksum": "40e4cf9abd9c10157a3e49bd2403e70bc3c73790926097686c42a6fb3552eb6d",
+      "file": "audio/sentences/hsk2-l4-027.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l4-028": {
+      "id": "hsk2-l4-028",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "女：弟弟晚上要去公司吗？男：是的，公司离家不远。女：那弟弟怎么去？男：弟弟坐公共汽车去。问：弟弟怎么去公司？",
+      "checksum": "3a08a6b3c182a3d65eb4f9d7e81d989ce61af64aa554a1069f19b693c096bd81",
+      "file": "audio/sentences/hsk2-l4-028.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l4-029": {
+      "id": "hsk2-l4-029",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "女：妹妹今天要去公司吗？男：是的，公司离家不远。女：那妹妹怎么去？男：妹妹坐出租车去。问：妹妹怎么去公司？",
+      "checksum": "0e983769cdccba97cf86e11216358dc9145f488c3a579765b5bae5448988768c",
+      "file": "audio/sentences/hsk2-l4-029.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l4-030": {
+      "id": "hsk2-l4-030",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "女：老师明天要去公司吗？男：是的，公司离家不远。女：那老师怎么去？男：老师骑自行车去。问：老师怎么去公司？",
+      "checksum": "521d6067c2c53e3011529b35f0620afdf562592e7f1eb29cb0bb5135e491cfc1",
+      "file": "audio/sentences/hsk2-l4-030.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l4-031": {
+      "id": "hsk2-l4-031",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "女：同学星期六要去公司吗？男：是的，公司离家不远。女：那同学怎么去？男：同学走路去。问：同学怎么去公司？",
+      "checksum": "2132e9a206edb57e4b55053a81023d7cfe930d0d798a1aa7b76c0dccd805187a",
+      "file": "audio/sentences/hsk2-l4-031.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l4-032": {
+      "id": "hsk2-l4-032",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "女：朋友星期日要去公司吗？男：是的，公司离家不远。女：那朋友怎么去？男：朋友坐公共汽车去。问：朋友怎么去公司？",
+      "checksum": "c2d0d447e595d72f120b83b93fdf6a4e4676af0b214613cf6af8599fa7c057f4",
+      "file": "audio/sentences/hsk2-l4-032.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l4-033": {
+      "id": "hsk2-l4-033",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "男：爸爸早上怎么没来？女：爸爸生病了，身体不舒服。男：那爸爸要休息。问：爸爸要做什么？",
+      "checksum": "d3aed112534b2bacd760712ea6036260d73478839acbb58b835caf139e87b971",
+      "file": "audio/sentences/hsk2-l4-033.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l4-034": {
+      "id": "hsk2-l4-034",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "男：妈妈上午怎么没来？女：妈妈生病了，身体不舒服。男：那妈妈要吃药。问：妈妈要做什么？",
+      "checksum": "9816cb934dfb71fed63a5168ce4bd7c361714f75ab5a4e510fa682a5615b54df",
+      "file": "audio/sentences/hsk2-l4-034.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l4-035": {
+      "id": "hsk2-l4-035",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "男：哥哥中午怎么没来？女：哥哥生病了，身体不舒服。男：那哥哥要睡觉。问：哥哥要做什么？",
+      "checksum": "d00747018b7aa399b5afe26ec6f2ce3393d154d6b92d1ddf64285aca7df0b447",
+      "file": "audio/sentences/hsk2-l4-035.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l4-036": {
+      "id": "hsk2-l4-036",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "男：姐姐下午怎么没来？女：姐姐生病了，身体不舒服。男：那姐姐要去医院。问：姐姐要做什么？",
+      "checksum": "d914ff7eac5b6063363edb2a7086b9f1883f1cdb2e72384f9407d0e731e12531",
+      "file": "audio/sentences/hsk2-l4-036.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l4-037": {
+      "id": "hsk2-l4-037",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "男：弟弟晚上怎么没来？女：弟弟生病了，身体不舒服。男：那弟弟要休息。问：弟弟要做什么？",
+      "checksum": "ff6f2044ba490c10cc0d888e5a583d5dcb599c137b2c63e57cc81d3bc1d3fe81",
+      "file": "audio/sentences/hsk2-l4-037.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l4-038": {
+      "id": "hsk2-l4-038",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "男：妹妹今天怎么没来？女：妹妹生病了，身体不舒服。男：那妹妹要吃药。问：妹妹要做什么？",
+      "checksum": "8ce99957622bcaa88898489609c4eebf83c2631f86c8ed3f3a08f418cc46176a",
+      "file": "audio/sentences/hsk2-l4-038.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l4-039": {
+      "id": "hsk2-l4-039",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "男：老师明天怎么没来？女：老师生病了，身体不舒服。男：那老师要睡觉。问：老师要做什么？",
+      "checksum": "db9b46a76b6f702ad1a1bbb123f7fd23b5f12537ff391012bdfaf444bd09bcb7",
+      "file": "audio/sentences/hsk2-l4-039.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l4-040": {
+      "id": "hsk2-l4-040",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "男：同学星期六怎么没来？女：同学生病了，身体不舒服。男：那同学要去医院。问：同学要做什么？",
+      "checksum": "d016e140dd90d9f8961924cb4195baad0ee8c03061b2a9525ea800c71066b213",
+      "file": "audio/sentences/hsk2-l4-040.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l4-041": {
+      "id": "hsk2-l4-041",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "男：朋友星期日怎么没来？女：朋友生病了，身体不舒服。男：那朋友要休息。问：朋友要做什么？",
+      "checksum": "b0ab74c8770ceaa8f0fd852349c43e07123b59a7e1d532898f08af0ed69c1023",
+      "file": "audio/sentences/hsk2-l4-041.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l4-042": {
+      "id": "hsk2-l4-042",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "女：早上是爸爸的生日。男：你准备送什么？女：爸爸喜欢书，我要买一本书送给爸爸。问：女的要送什么？",
+      "checksum": "638b47cd184f254d17939d526d9f7d6e81507ba1c5653d6901c244068c1de3a2",
+      "file": "audio/sentences/hsk2-l4-042.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l4-043": {
+      "id": "hsk2-l4-043",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "女：上午是妈妈的生日。男：你准备送什么？女：妈妈喜欢手表，我要买一块手表送给妈妈。问：女的要送什么？",
+      "checksum": "6d8bdac49bf9e810607db6af343c38cc233a3d0e535d855dfddeda53c10d791f",
+      "file": "audio/sentences/hsk2-l4-043.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l4-044": {
+      "id": "hsk2-l4-044",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "女：中午是哥哥的生日。男：你准备送什么？女：哥哥喜欢手机，我要买一个手机送给哥哥。问：女的要送什么？",
+      "checksum": "e87062a0f9a63051ea8a962cbe58778e3663080747a7930e43e427c71ee36f26",
+      "file": "audio/sentences/hsk2-l4-044.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l4-045": {
+      "id": "hsk2-l4-045",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "女：下午是姐姐的生日。男：你准备送什么？女：姐姐喜欢衣服，我要买一件衣服送给姐姐。问：女的要送什么？",
+      "checksum": "49b23ee92f5cd0c39483d40b03904385aa533d2e0bcfc6d7cd8717c8f79e99ef",
+      "file": "audio/sentences/hsk2-l4-045.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l4-046": {
+      "id": "hsk2-l4-046",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "女：晚上是弟弟的生日。男：你准备送什么？女：弟弟喜欢书，我要买一本书送给弟弟。问：女的要送什么？",
+      "checksum": "1829c4ea3b4f5e5e71e7b2e2fe4619309fa4450d1173dd700e6b83e7bda54250",
+      "file": "audio/sentences/hsk2-l4-046.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l4-047": {
+      "id": "hsk2-l4-047",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "女：今天是妹妹的生日。男：你准备送什么？女：妹妹喜欢手表，我要买一块手表送给妹妹。问：女的要送什么？",
+      "checksum": "578f071ec25e8e0492f41cc04f2a58df650838822ad9ce441949b7dcc8f88e00",
+      "file": "audio/sentences/hsk2-l4-047.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l4-048": {
+      "id": "hsk2-l4-048",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "女：明天是老师的生日。男：你准备送什么？女：老师喜欢手机，我要买一个手机送给老师。问：女的要送什么？",
+      "checksum": "c750155a123e35c4941d895af6d7669e6dccbf7e9ee5394bae89c09774933995",
+      "file": "audio/sentences/hsk2-l4-048.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l4-049": {
+      "id": "hsk2-l4-049",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "女：星期六是同学的生日。男：你准备送什么？女：同学喜欢衣服，我要买一件衣服送给同学。问：女的要送什么？",
+      "checksum": "0b62eb64ae1b5d24476875c42fe4dd6ebca81de58a73cb12cec1069944081e41",
+      "file": "audio/sentences/hsk2-l4-049.wav",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk2-l4-050": {
+      "id": "hsk2-l4-050",
+      "type": "mock-v2",
+      "level": 2,
+      "text": "女：星期日是朋友的生日。男：你准备送什么？女：朋友喜欢书，我要买一本书送给朋友。问：女的要送什么？",
+      "checksum": "82cbae3c58bb6779318d4e8194e33e1d3b7558b0d829ebc14ade82ee37496474",
+      "file": "audio/sentences/hsk2-l4-050.wav",
       "voices": [
         "Tingting"
       ]
@@ -8022,8 +11487,8 @@
       "id": "hsk3-l4-01",
       "type": "mock-v2",
       "level": 3,
-      "text": "女：你怎么才到？男：路上突然下大雨，公共汽车也来得很慢。问：男的为什么迟到？",
-      "checksum": "e8efa650c2e81ad81487a43bd0d91b40ae1c0c01f6fcc3fb5272f0ee712a4305",
+      "text": "男：你的行李箱怎么这么重？女：里面有很多书，还有给朋友的礼物。男：需要我帮你拿吗？女：谢谢，你帮我拿这个包就行。问：女的让男的拿什么？",
+      "checksum": "b36349136c1fbc7777e7f294b7d773fe32ca4e3c07aa2154f4c3ef19643c8eb2",
       "file": "audio/sentences/hsk3-l4-01.wav",
       "voices": [
         "Tingting"
@@ -8033,8 +11498,8 @@
       "id": "hsk3-l4-02",
       "type": "mock-v2",
       "level": 3,
-      "text": "男：这件蓝衬衫你穿着正合适。女：可是我更喜欢那件白的。问：女的喜欢哪件？",
-      "checksum": "284f56564ddc722e6a53e3e2694dbeb1080f98fc4758d10e917aab6611c54438",
+      "text": "女：你怎么还在办公室？男：我要检查一下这个月的成绩。女：需要我帮忙吗？男：不用，我马上就完成了。问：男的在做什么？",
+      "checksum": "45776a9a6992438ca3c991a41f3396530fd8355f7b2a1665d4a266660f1f9457",
       "file": "audio/sentences/hsk3-l4-02.wav",
       "voices": [
         "Tingting"
@@ -8044,8 +11509,8 @@
       "id": "hsk3-l4-03",
       "type": "mock-v2",
       "level": 3,
-      "text": "女：听说你找到新工作了？男：是的，下个月去银行上班。问：男的要去哪儿工作？",
-      "checksum": "e56cfaa6296dc1df5c978d871aa0f4ffbdfb2396f91f21299d720d662158ce42",
+      "text": "男：听说你搬家了？女：对，上个星期刚搬完。男：新房子怎么样？女：环境很安静，就是离地铁站有点儿远。问：女的觉得新房子怎么样？",
+      "checksum": "073c1503be09edaa6f0e3aa6796df94824ff8ae838132f53bea4e4ff91fd1998",
       "file": "audio/sentences/hsk3-l4-03.wav",
       "voices": [
         "Tingting"
@@ -8055,8 +11520,8 @@
       "id": "hsk3-l4-04",
       "type": "mock-v2",
       "level": 3,
-      "text": "男：你认识新来的同事吗？女：昨天刚见面，她很热情。问：女的觉得新同事怎么样？",
-      "checksum": "0faa4439899916dfcc61b31770f694b09605bd27c21f4d4fb345081a43357109",
+      "text": "女：明天的会议几点开始？男：以前是上午九点，经理昨天换成了下午两点。女：为什么换了？男：因为几个同事上午到不了。问：会议明天什么时候开始？",
+      "checksum": "3e21606b8a98573423584e7b3b816e0eb018f6610f26a892ebacad519d98d999",
       "file": "audio/sentences/hsk3-l4-04.wav",
       "voices": [
         "Tingting"
@@ -8066,8 +11531,8 @@
       "id": "hsk3-l4-05",
       "type": "mock-v2",
       "level": 3,
-      "text": "女：行李箱怎么这么重？男：里面有很多书，还有给朋友的礼物。问：箱子里主要有什么？",
-      "checksum": "4f45067dcec6a81b8408c4f75c1a1a2b6ffd3497839ac436e2977e8f962db5dd",
+      "text": "男：你的感冒好点儿了吗？女：还是有点儿疼，医生让我多休息。男：那你今天别去上班了。女：我已经告诉经理了。问：女的今天为什么不上班？",
+      "checksum": "912a1b4b11bc1d05a0a7a45303b1ebd8ba728faa3cfb38c97f1eec32995eca8a",
       "file": "audio/sentences/hsk3-l4-05.wav",
       "voices": [
         "Tingting"
@@ -8077,8 +11542,8 @@
       "id": "hsk3-l4-06",
       "type": "mock-v2",
       "level": 3,
-      "text": "男：你不是打算坐地铁吗？女：地铁今天有问题，我只好坐出租车。问：女的为什么坐出租车？",
-      "checksum": "d840883921151f948b22fcff5fe218bf7a5ce7a15e4542bd140809fffd01d98c",
+      "text": "女：周末打算做什么？男：我想去爬山，可是听说要下雨。女：那我们下次再去吧。男：好，这个周末先去看电影。问：他们这个周末做什么？",
+      "checksum": "e47a44553929a6b636351e406042183e215f21f736fdefd6801fe72a085bc5f7",
       "file": "audio/sentences/hsk3-l4-06.wav",
       "voices": [
         "Tingting"
@@ -8088,8 +11553,8 @@
       "id": "hsk3-l4-07",
       "type": "mock-v2",
       "level": 3,
-      "text": "女：这张照片是在北京照的吗？男：不是，是去年去上海旅游时照的。问：照片在哪儿照的？",
-      "checksum": "e1cfba14d64cc62561ec532d68b2efb2ba6f69d84ad77a85b5c6673ff639b5ad",
+      "text": "男：这条裤子多少钱？女：一百五十元，比上个月便宜了五十。男：那我要一条蓝色的。女：好的，一共一百五十元。问：男的花了多少钱？",
+      "checksum": "31ab34a1677cf93faf46b21e1485f7690abd7adbfd7990303905f6ef075d4a94",
       "file": "audio/sentences/hsk3-l4-07.wav",
       "voices": [
         "Tingting"
@@ -8099,8 +11564,8 @@
       "id": "hsk3-l4-08",
       "type": "mock-v2",
       "level": 3,
-      "text": "男：你的汉语水平提高得真快。女：我每天听新闻，还经常和中国朋友说话。问：女的怎么学习汉语？",
-      "checksum": "95cfde35f53b88486e4abeca859627daefa08aba6a280e7bd7fd3e6677db2815",
+      "text": "男：这家饭馆的菜真不错。女：是啊，就是服务有点儿慢。男：下次我们早点儿来。女：好，下次先打电话。问：他们觉得这家饭馆怎么样？",
+      "checksum": "688a514f096ecee8bcbbe49f9058c1006234d3cf0aeddce70e316b9421cbc709",
       "file": "audio/sentences/hsk3-l4-08.wav",
       "voices": [
         "Tingting"
@@ -8110,8 +11575,8 @@
       "id": "hsk3-l4-09",
       "type": "mock-v2",
       "level": 3,
-      "text": "女：冰箱里什么都没有了。男：那我们先去超市，然后回家做饭。问：他们先做什么？",
-      "checksum": "ebedffad395da598a705b9ad95fd02523a273ffb63282f1ccdbfa1a27a9f2fad",
+      "text": "女：你今天怎么走着来的？男：我的自行车昨天坏了。女：那你明天怎么上班？男：我打算坐地铁。问：男的明天怎么上班？",
+      "checksum": "38d6f4435687e919fcd7bd108d5083b8b770e96a3127f5e888a5fa8450d8e0f2",
       "file": "audio/sentences/hsk3-l4-09.wav",
       "voices": [
         "Tingting"
@@ -8121,8 +11586,8 @@
       "id": "hsk3-l4-10",
       "type": "mock-v2",
       "level": 3,
-      "text": "男：你为什么一直看地图？女：我在找附近的宾馆，宾馆就在前面。问：女的在找什么？",
-      "checksum": "11452a9199a648fb19854c715e1bf34ef7fd58bf1fa9dfc912ba8125f8c86256",
+      "text": "男：这张照片是在哪儿照的？女：去年在上海，我跟同事一起去的。男：你们玩了几天？女：一共五天，还爬了山。问：女的去上海做什么？",
+      "checksum": "3854ae3a60152b6b53714e94eaf34058d1b91ca283a0b29bdf858e66ab944faf",
       "file": "audio/sentences/hsk3-l4-10.wav",
       "voices": [
         "Tingting"

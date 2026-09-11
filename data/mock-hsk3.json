@@ -2,7 +2,7 @@
   "version": 2,
   "level": 3,
   "format": "HSK 2.0（日本実施形式）・写真問題は記号イラストで代替",
-  "generatedAt": "2026-09-11T07:36:00.922Z",
+  "generatedAt": "2026-09-11T07:59:51.718Z",
   "questions": [
     {
       "id": "hsk3-l1-01",
@@ -800,26 +800,26 @@
       "part": 4,
       "kind": "audio-long-dialogue",
       "hint": "少し長い会話のあと、間をおいて読まれる設問（问：〜）に答えます。",
-      "audioText": "女：你怎么才到？男：路上突然下大雨，公共汽车也来得很慢。问：男的为什么迟到？",
+      "audioText": "男：你的行李箱怎么这么重？女：里面有很多书，还有给朋友的礼物。男：需要我帮你拿吗？女：谢谢，你帮我拿这个包就行。问：女的让男的拿什么？",
       "audioFile": "audio/sentences/hsk3-l4-01.wav",
-      "prompt": "男的为什么迟到？",
+      "prompt": "女的让男的拿什么？",
       "choices": [
         {
-          "value": "汽车来得慢",
-          "label": "汽车来得慢"
+          "value": "包",
+          "label": "包"
         },
         {
-          "value": "忘了时间",
-          "label": "忘了时间"
+          "value": "行李箱",
+          "label": "行李箱"
         },
         {
-          "value": "起床晚了",
-          "label": "起床晚了"
+          "value": "礼物",
+          "label": "礼物"
         }
       ],
-      "correct": "汽车来得慢",
+      "correct": "包",
       "instruction": "请听较长对话，选择正确答案。",
-      "explanation": "男的为什么迟到？ — 汽车来得慢"
+      "explanation": "女的让男的拿什么？ — 包"
     },
     {
       "id": "hsk3-l4-02",
@@ -827,26 +827,26 @@
       "part": 4,
       "kind": "audio-long-dialogue",
       "hint": "少し長い会話のあと、間をおいて読まれる設問（问：〜）に答えます。",
-      "audioText": "男：这件蓝衬衫你穿着正合适。女：可是我更喜欢那件白的。问：女的喜欢哪件？",
+      "audioText": "女：你怎么还在办公室？男：我要检查一下这个月的成绩。女：需要我帮忙吗？男：不用，我马上就完成了。问：男的在做什么？",
       "audioFile": "audio/sentences/hsk3-l4-02.wav",
-      "prompt": "女的喜欢哪件？",
+      "prompt": "男的在做什么？",
       "choices": [
         {
-          "value": "白衬衫",
-          "label": "白衬衫"
+          "value": "检查成绩",
+          "label": "检查成绩"
         },
         {
-          "value": "蓝衬衫",
-          "label": "蓝衬衫"
+          "value": "开会",
+          "label": "开会"
         },
         {
-          "value": "红裙子",
-          "label": "红裙子"
+          "value": "打扫办公室",
+          "label": "打扫办公室"
         }
       ],
-      "correct": "白衬衫",
+      "correct": "检查成绩",
       "instruction": "请听较长对话，选择正确答案。",
-      "explanation": "女的喜欢哪件？ — 白衬衫"
+      "explanation": "男的在做什么？ — 检查成绩"
     },
     {
       "id": "hsk3-l4-03",
@@ -854,26 +854,26 @@
       "part": 4,
       "kind": "audio-long-dialogue",
       "hint": "少し長い会話のあと、間をおいて読まれる設問（问：〜）に答えます。",
-      "audioText": "女：听说你找到新工作了？男：是的，下个月去银行上班。问：男的要去哪儿工作？",
+      "audioText": "男：听说你搬家了？女：对，上个星期刚搬完。男：新房子怎么样？女：环境很安静，就是离地铁站有点儿远。问：女的觉得新房子怎么样？",
       "audioFile": "audio/sentences/hsk3-l4-03.wav",
-      "prompt": "男的要去哪儿工作？",
+      "prompt": "女的觉得新房子怎么样？",
       "choices": [
         {
-          "value": "银行",
-          "label": "银行"
+          "value": "安静但是远",
+          "label": "安静但是远"
         },
         {
-          "value": "学校",
-          "label": "学校"
+          "value": "又近又便宜",
+          "label": "又近又便宜"
         },
         {
-          "value": "超市",
-          "label": "超市"
+          "value": "有点儿小",
+          "label": "有点儿小"
         }
       ],
-      "correct": "银行",
+      "correct": "安静但是远",
       "instruction": "请听较长对话，选择正确答案。",
-      "explanation": "男的要去哪儿工作？ — 银行"
+      "explanation": "女的觉得新房子怎么样？ — 安静但是远"
     },
     {
       "id": "hsk3-l4-04",
@@ -881,26 +881,26 @@
       "part": 4,
       "kind": "audio-long-dialogue",
       "hint": "少し長い会話のあと、間をおいて読まれる設問（问：〜）に答えます。",
-      "audioText": "男：你认识新来的同事吗？女：昨天刚见面，她很热情。问：女的觉得新同事怎么样？",
+      "audioText": "女：明天的会议几点开始？男：以前是上午九点，经理昨天换成了下午两点。女：为什么换了？男：因为几个同事上午到不了。问：会议明天什么时候开始？",
       "audioFile": "audio/sentences/hsk3-l4-04.wav",
-      "prompt": "女的觉得新同事怎么样？",
+      "prompt": "会议明天什么时候开始？",
       "choices": [
         {
-          "value": "很热情",
-          "label": "很热情"
+          "value": "下午两点",
+          "label": "下午两点"
         },
         {
-          "value": "很安静",
-          "label": "很安静"
+          "value": "上午九点",
+          "label": "上午九点"
         },
         {
-          "value": "很奇怪",
-          "label": "很奇怪"
+          "value": "明天晚上",
+          "label": "明天晚上"
         }
       ],
-      "correct": "很热情",
+      "correct": "下午两点",
       "instruction": "请听较长对话，选择正确答案。",
-      "explanation": "女的觉得新同事怎么样？ — 很热情"
+      "explanation": "会议明天什么时候开始？ — 下午两点"
     },
     {
       "id": "hsk3-l4-05",
@@ -908,26 +908,26 @@
       "part": 4,
       "kind": "audio-long-dialogue",
       "hint": "少し長い会話のあと、間をおいて読まれる設問（问：〜）に答えます。",
-      "audioText": "女：行李箱怎么这么重？男：里面有很多书，还有给朋友的礼物。问：箱子里主要有什么？",
+      "audioText": "男：你的感冒好点儿了吗？女：还是有点儿疼，医生让我多休息。男：那你今天别去上班了。女：我已经告诉经理了。问：女的今天为什么不上班？",
       "audioFile": "audio/sentences/hsk3-l4-05.wav",
-      "prompt": "箱子里主要有什么？",
+      "prompt": "女的今天为什么不上班？",
       "choices": [
         {
-          "value": "书和礼物",
-          "label": "书和礼物"
+          "value": "因为生病",
+          "label": "因为生病"
         },
         {
-          "value": "衣服和鞋",
-          "label": "衣服和鞋"
+          "value": "因为搬家",
+          "label": "因为搬家"
         },
         {
-          "value": "水果和饮料",
-          "label": "水果和饮料"
+          "value": "因为下雨",
+          "label": "因为下雨"
         }
       ],
-      "correct": "书和礼物",
+      "correct": "因为生病",
       "instruction": "请听较长对话，选择正确答案。",
-      "explanation": "箱子里主要有什么？ — 书和礼物"
+      "explanation": "女的今天为什么不上班？ — 因为生病"
     },
     {
       "id": "hsk3-l4-06",
@@ -935,26 +935,26 @@
       "part": 4,
       "kind": "audio-long-dialogue",
       "hint": "少し長い会話のあと、間をおいて読まれる設問（问：〜）に答えます。",
-      "audioText": "男：你不是打算坐地铁吗？女：地铁今天有问题，我只好坐出租车。问：女的为什么坐出租车？",
+      "audioText": "女：周末打算做什么？男：我想去爬山，可是听说要下雨。女：那我们下次再去吧。男：好，这个周末先去看电影。问：他们这个周末做什么？",
       "audioFile": "audio/sentences/hsk3-l4-06.wav",
-      "prompt": "女的为什么坐出租车？",
+      "prompt": "他们这个周末做什么？",
       "choices": [
         {
-          "value": "地铁有问题",
-          "label": "地铁有问题"
+          "value": "看电影",
+          "label": "看电影"
         },
         {
-          "value": "时间太早",
-          "label": "时间太早"
+          "value": "去爬山",
+          "label": "去爬山"
         },
         {
-          "value": "行李太多",
-          "label": "行李太多"
+          "value": "在家休息",
+          "label": "在家休息"
         }
       ],
-      "correct": "地铁有问题",
+      "correct": "看电影",
       "instruction": "请听较长对话，选择正确答案。",
-      "explanation": "女的为什么坐出租车？ — 地铁有问题"
+      "explanation": "他们这个周末做什么？ — 看电影"
     },
     {
       "id": "hsk3-l4-07",
@@ -962,26 +962,26 @@
       "part": 4,
       "kind": "audio-long-dialogue",
       "hint": "少し長い会話のあと、間をおいて読まれる設問（问：〜）に答えます。",
-      "audioText": "女：这张照片是在北京照的吗？男：不是，是去年去上海旅游时照的。问：照片在哪儿照的？",
+      "audioText": "男：这条裤子多少钱？女：一百五十元，比上个月便宜了五十。男：那我要一条蓝色的。女：好的，一共一百五十元。问：男的花了多少钱？",
       "audioFile": "audio/sentences/hsk3-l4-07.wav",
-      "prompt": "照片在哪儿照的？",
+      "prompt": "男的花了多少钱？",
       "choices": [
         {
-          "value": "上海",
-          "label": "上海"
+          "value": "一百五十元",
+          "label": "一百五十元"
         },
         {
-          "value": "北京",
-          "label": "北京"
+          "value": "二百元",
+          "label": "二百元"
         },
         {
-          "value": "家里",
-          "label": "家里"
+          "value": "五十元",
+          "label": "五十元"
         }
       ],
-      "correct": "上海",
+      "correct": "一百五十元",
       "instruction": "请听较长对话，选择正确答案。",
-      "explanation": "照片在哪儿照的？ — 上海"
+      "explanation": "男的花了多少钱？ — 一百五十元"
     },
     {
       "id": "hsk3-l4-08",
@@ -989,26 +989,26 @@
       "part": 4,
       "kind": "audio-long-dialogue",
       "hint": "少し長い会話のあと、間をおいて読まれる設問（问：〜）に答えます。",
-      "audioText": "男：你的汉语水平提高得真快。女：我每天听新闻，还经常和中国朋友说话。问：女的怎么学习汉语？",
+      "audioText": "男：这家饭馆的菜真不错。女：是啊，就是服务有点儿慢。男：下次我们早点儿来。女：好，下次先打电话。问：他们觉得这家饭馆怎么样？",
       "audioFile": "audio/sentences/hsk3-l4-08.wav",
-      "prompt": "女的怎么学习汉语？",
+      "prompt": "他们觉得这家饭馆怎么样？",
       "choices": [
         {
-          "value": "听新闻说话",
-          "label": "听新闻说话"
+          "value": "菜好服务慢",
+          "label": "菜好服务慢"
         },
         {
-          "value": "只做作业",
-          "label": "只做作业"
+          "value": "又贵又不好吃",
+          "label": "又贵又不好吃"
         },
         {
-          "value": "只看电影",
-          "label": "只看电影"
+          "value": "环境不干净",
+          "label": "环境不干净"
         }
       ],
-      "correct": "听新闻说话",
+      "correct": "菜好服务慢",
       "instruction": "请听较长对话，选择正确答案。",
-      "explanation": "女的怎么学习汉语？ — 听新闻说话"
+      "explanation": "他们觉得这家饭馆怎么样？ — 菜好服务慢"
     },
     {
       "id": "hsk3-l4-09",
@@ -1016,26 +1016,26 @@
       "part": 4,
       "kind": "audio-long-dialogue",
       "hint": "少し長い会話のあと、間をおいて読まれる設問（问：〜）に答えます。",
-      "audioText": "女：冰箱里什么都没有了。男：那我们先去超市，然后回家做饭。问：他们先做什么？",
+      "audioText": "女：你今天怎么走着来的？男：我的自行车昨天坏了。女：那你明天怎么上班？男：我打算坐地铁。问：男的明天怎么上班？",
       "audioFile": "audio/sentences/hsk3-l4-09.wav",
-      "prompt": "他们先做什么？",
+      "prompt": "男的明天怎么上班？",
       "choices": [
         {
-          "value": "去超市",
-          "label": "去超市"
+          "value": "坐地铁",
+          "label": "坐地铁"
         },
         {
-          "value": "回家",
-          "label": "回家"
+          "value": "骑自行车",
+          "label": "骑自行车"
         },
         {
-          "value": "去饭馆",
-          "label": "去饭馆"
+          "value": "走路",
+          "label": "走路"
         }
       ],
-      "correct": "去超市",
+      "correct": "坐地铁",
       "instruction": "请听较长对话，选择正确答案。",
-      "explanation": "他们先做什么？ — 去超市"
+      "explanation": "男的明天怎么上班？ — 坐地铁"
     },
     {
       "id": "hsk3-l4-10",
@@ -1043,26 +1043,26 @@
       "part": 4,
       "kind": "audio-long-dialogue",
       "hint": "少し長い会話のあと、間をおいて読まれる設問（问：〜）に答えます。",
-      "audioText": "男：你为什么一直看地图？女：我在找附近的宾馆，宾馆就在前面。问：女的在找什么？",
+      "audioText": "男：这张照片是在哪儿照的？女：去年在上海，我跟同事一起去的。男：你们玩了几天？女：一共五天，还爬了山。问：女的去上海做什么？",
       "audioFile": "audio/sentences/hsk3-l4-10.wav",
-      "prompt": "女的在找什么？",
+      "prompt": "女的去上海做什么？",
       "choices": [
         {
-          "value": "宾馆",
-          "label": "宾馆"
+          "value": "旅游",
+          "label": "旅游"
         },
         {
-          "value": "银行",
-          "label": "银行"
+          "value": "上班",
+          "label": "上班"
         },
         {
-          "value": "图书馆",
-          "label": "图书馆"
+          "value": "看病",
+          "label": "看病"
         }
       ],
-      "correct": "宾馆",
+      "correct": "旅游",
       "instruction": "请听较长对话，选择正确答案。",
-      "explanation": "女的在找什么？ — 宾馆"
+      "explanation": "女的去上海做什么？ — 旅游"
     },
     {
       "id": "hsk3-r1-01",
@@ -1580,25 +1580,25 @@
       "part": 3,
       "kind": "reading-comprehension",
       "hint": "短文を読んで、設問に答えます。",
-      "prompt": "女：你怎么才到？男：路上突然下大雨，公共汽车也来得很慢。",
-      "subPrompt": "男的为什么迟到？",
+      "prompt": "我家附近新开了一家超市，里面的水果又新鲜又便宜。虽然离我家有点儿远，但是我每个周末都会去一次。",
+      "subPrompt": "他为什么常去那家超市？",
       "choices": [
         {
-          "value": "汽车来得慢",
-          "label": "汽车来得慢"
+          "value": "水果新鲜便宜",
+          "label": "水果新鲜便宜"
         },
         {
-          "value": "忘了时间",
-          "label": "忘了时间"
+          "value": "离家很近",
+          "label": "离家很近"
         },
         {
-          "value": "起床晚了",
-          "label": "起床晚了"
+          "value": "那儿人很少",
+          "label": "那儿人很少"
         }
       ],
-      "correct": "汽车来得慢",
+      "correct": "水果新鲜便宜",
       "instruction": "请阅读短文，选择正确答案。",
-      "explanation": "男的为什么迟到？ — 汽车来得慢"
+      "explanation": "他为什么常去那家超市？ — 水果新鲜便宜"
     },
     {
       "id": "hsk3-r3-02",
@@ -1606,25 +1606,25 @@
       "part": 3,
       "kind": "reading-comprehension",
       "hint": "短文を読んで、設問に答えます。",
-      "prompt": "男：这件蓝衬衫你穿着正合适。女：可是我更喜欢那件白的。",
-      "subPrompt": "女的喜欢哪件？",
+      "prompt": "小李昨天参加了学校的比赛，虽然没得第一，但是他觉得很高兴，因为他认识了很多新朋友。",
+      "subPrompt": "小李为什么高兴？",
       "choices": [
         {
-          "value": "白衬衫",
-          "label": "白衬衫"
+          "value": "认识了新朋友",
+          "label": "认识了新朋友"
         },
         {
-          "value": "蓝衬衫",
-          "label": "蓝衬衫"
+          "value": "得了第一",
+          "label": "得了第一"
         },
         {
-          "value": "红裙子",
-          "label": "红裙子"
+          "value": "比赛很简单",
+          "label": "比赛很简单"
         }
       ],
-      "correct": "白衬衫",
+      "correct": "认识了新朋友",
       "instruction": "请阅读短文，选择正确答案。",
-      "explanation": "女的喜欢哪件？ — 白衬衫"
+      "explanation": "小李为什么高兴？ — 认识了新朋友"
     },
     {
       "id": "hsk3-r3-03",
@@ -1632,25 +1632,25 @@
       "part": 3,
       "kind": "reading-comprehension",
       "hint": "短文を読んで、設問に答えます。",
-      "prompt": "女：听说你找到新工作了？男：是的，下个月去银行上班。",
-      "subPrompt": "男的要去哪儿工作？",
+      "prompt": "明天的会议非常重要，经理让大家八点以前到办公室。如果有事不能参加，一定要提前告诉他。",
+      "subPrompt": "不能参加会议的人要做什么？",
       "choices": [
         {
-          "value": "银行",
-          "label": "银行"
+          "value": "提前告诉经理",
+          "label": "提前告诉经理"
         },
         {
-          "value": "学校",
-          "label": "学校"
+          "value": "直接不去",
+          "label": "直接不去"
         },
         {
-          "value": "超市",
-          "label": "超市"
+          "value": "下午再来",
+          "label": "下午再来"
         }
       ],
-      "correct": "银行",
+      "correct": "提前告诉经理",
       "instruction": "请阅读短文，选择正确答案。",
-      "explanation": "男的要去哪儿工作？ — 银行"
+      "explanation": "不能参加会议的人要做什么？ — 提前告诉经理"
     },
     {
       "id": "hsk3-r3-04",
@@ -1658,25 +1658,25 @@
       "part": 3,
       "kind": "reading-comprehension",
       "hint": "短文を読んで、設問に答えます。",
-      "prompt": "男：你认识新来的同事吗？女：昨天刚见面，她很热情。",
-      "subPrompt": "女的觉得新同事怎么样？",
+      "prompt": "这个城市的地铁很方便，从我家到公司只要二十分钟。以前我开车上班，经常遇到问题，现在方便多了。",
+      "subPrompt": "他现在怎么上班？",
       "choices": [
         {
-          "value": "很热情",
-          "label": "很热情"
+          "value": "坐地铁",
+          "label": "坐地铁"
         },
         {
-          "value": "很安静",
-          "label": "很安静"
+          "value": "开车",
+          "label": "开车"
         },
         {
-          "value": "很奇怪",
-          "label": "很奇怪"
+          "value": "骑自行车",
+          "label": "骑自行车"
         }
       ],
-      "correct": "很热情",
+      "correct": "坐地铁",
       "instruction": "请阅读短文，选择正确答案。",
-      "explanation": "女的觉得新同事怎么样？ — 很热情"
+      "explanation": "他现在怎么上班？ — 坐地铁"
     },
     {
       "id": "hsk3-r3-05",
@@ -1684,25 +1684,25 @@
       "part": 3,
       "kind": "reading-comprehension",
       "hint": "短文を読んで、設問に答えます。",
-      "prompt": "女：行李箱怎么这么重？男：里面有很多书，还有给朋友的礼物。",
-      "subPrompt": "箱子里主要有什么？",
+      "prompt": "我妹妹很喜欢动物，她家里有一只猫。她每天下午放学以后，都要先跟猫玩一会儿，然后才做作业。",
+      "subPrompt": "妹妹放学以后先做什么？",
       "choices": [
         {
-          "value": "书和礼物",
-          "label": "书和礼物"
+          "value": "跟猫玩",
+          "label": "跟猫玩"
         },
         {
-          "value": "衣服和鞋",
-          "label": "衣服和鞋"
+          "value": "做作业",
+          "label": "做作业"
         },
         {
-          "value": "水果和饮料",
-          "label": "水果和饮料"
+          "value": "看电视",
+          "label": "看电视"
         }
       ],
-      "correct": "书和礼物",
+      "correct": "跟猫玩",
       "instruction": "请阅读短文，选择正确答案。",
-      "explanation": "箱子里主要有什么？ — 书和礼物"
+      "explanation": "妹妹放学以后先做什么？ — 跟猫玩"
     },
     {
       "id": "hsk3-r3-06",
@@ -1710,25 +1710,25 @@
       "part": 3,
       "kind": "reading-comprehension",
       "hint": "短文を読んで、設問に答えます。",
-      "prompt": "男：你不是打算坐地铁吗？女：地铁今天有问题，我只好坐出租车。",
-      "subPrompt": "女的为什么坐出租车？",
+      "prompt": "听说这家宾馆的房间很干净，环境也很安静，就是有点儿贵。我们打算先住三天，然后去别的城市。",
+      "subPrompt": "他们觉得这家宾馆怎么样？",
       "choices": [
         {
-          "value": "地铁有问题",
-          "label": "地铁有问题"
+          "value": "干净但是贵",
+          "label": "干净但是贵"
         },
         {
-          "value": "时间太早",
-          "label": "时间太早"
+          "value": "又便宜又干净",
+          "label": "又便宜又干净"
         },
         {
-          "value": "行李太多",
-          "label": "行李太多"
+          "value": "很不方便",
+          "label": "很不方便"
         }
       ],
-      "correct": "地铁有问题",
+      "correct": "干净但是贵",
       "instruction": "请阅读短文，选择正确答案。",
-      "explanation": "女的为什么坐出租车？ — 地铁有问题"
+      "explanation": "他们觉得这家宾馆怎么样？ — 干净但是贵"
     },
     {
       "id": "hsk3-r3-07",
@@ -1736,25 +1736,25 @@
       "part": 3,
       "kind": "reading-comprehension",
       "hint": "短文を読んで、設問に答えます。",
-      "prompt": "女：这张照片是在北京照的吗？男：不是，是去年去上海旅游时照的。",
-      "subPrompt": "照片在哪儿照的？",
+      "prompt": "张老师上课很认真，他总是先讲重要的地方，然后让我们自己练习。所以同学们都很喜欢他的课。",
+      "subPrompt": "同学们为什么喜欢张老师的课？",
       "choices": [
         {
-          "value": "上海",
-          "label": "上海"
+          "value": "他讲得认真",
+          "label": "他讲得认真"
         },
         {
-          "value": "北京",
-          "label": "北京"
+          "value": "他的课很短",
+          "label": "他的课很短"
         },
         {
-          "value": "家里",
-          "label": "家里"
+          "value": "他常常唱歌",
+          "label": "他常常唱歌"
         }
       ],
-      "correct": "上海",
+      "correct": "他讲得认真",
       "instruction": "请阅读短文，选择正确答案。",
-      "explanation": "照片在哪儿照的？ — 上海"
+      "explanation": "同学们为什么喜欢张老师的课？ — 他讲得认真"
     },
     {
       "id": "hsk3-r3-08",
@@ -1762,25 +1762,25 @@
       "part": 3,
       "kind": "reading-comprehension",
       "hint": "短文を読んで、設問に答えます。",
-      "prompt": "男：你的汉语水平提高得真快。女：我每天听新闻，还经常和中国朋友说话。",
-      "subPrompt": "女的怎么学习汉语？",
+      "prompt": "昨天我坐出租车去机场，因为路上突然下大雨，车开得很慢，差点儿就迟到了。",
+      "subPrompt": "他昨天为什么差点儿迟到？",
       "choices": [
         {
-          "value": "听新闻说话",
-          "label": "听新闻说话"
+          "value": "因为下大雨",
+          "label": "因为下大雨"
         },
         {
-          "value": "只做作业",
-          "label": "只做作业"
+          "value": "因为起床晚了",
+          "label": "因为起床晚了"
         },
         {
-          "value": "只看电影",
-          "label": "只看电影"
+          "value": "因为坐错了车",
+          "label": "因为坐错了车"
         }
       ],
-      "correct": "听新闻说话",
+      "correct": "因为下大雨",
       "instruction": "请阅读短文，选择正确答案。",
-      "explanation": "女的怎么学习汉语？ — 听新闻说话"
+      "explanation": "他昨天为什么差点儿迟到？ — 因为下大雨"
     },
     {
       "id": "hsk3-r3-09",
@@ -1788,25 +1788,25 @@
       "part": 3,
       "kind": "reading-comprehension",
       "hint": "短文を読んで、設問に答えます。",
-      "prompt": "女：冰箱里什么都没有了。男：那我们先去超市，然后回家做饭。",
-      "subPrompt": "他们先做什么？",
+      "prompt": "爷爷今年七十岁了，但是身体很健康。他每天早上都去公园锻炼一个小时，然后回家吃早饭。",
+      "subPrompt": "爷爷早上做什么？",
       "choices": [
         {
-          "value": "去超市",
-          "label": "去超市"
+          "value": "在公园锻炼",
+          "label": "在公园锻炼"
         },
         {
-          "value": "回家",
-          "label": "回家"
+          "value": "在家看报纸",
+          "label": "在家看报纸"
         },
         {
-          "value": "去饭馆",
-          "label": "去饭馆"
+          "value": "去超市买东西",
+          "label": "去超市买东西"
         }
       ],
-      "correct": "去超市",
+      "correct": "在公园锻炼",
       "instruction": "请阅读短文，选择正确答案。",
-      "explanation": "他们先做什么？ — 去超市"
+      "explanation": "爷爷早上做什么？ — 在公园锻炼"
     },
     {
       "id": "hsk3-r3-10",
@@ -1814,25 +1814,25 @@
       "part": 3,
       "kind": "reading-comprehension",
       "hint": "短文を読んで、設問に答えます。",
-      "prompt": "男：你为什么一直看地图？女：我在找附近的宾馆，宾馆就在前面。",
-      "subPrompt": "女的在找什么？",
+      "prompt": "我打算下个月去北京旅游，已经买好了飞机票。听说那儿秋天的天气最舒服，所以很多人都选择这个季节去。",
+      "subPrompt": "他为什么选择下个月去北京？",
       "choices": [
         {
-          "value": "宾馆",
-          "label": "宾馆"
+          "value": "天气舒服",
+          "label": "天气舒服"
         },
         {
-          "value": "银行",
-          "label": "银行"
+          "value": "票很便宜",
+          "label": "票很便宜"
         },
         {
-          "value": "图书馆",
-          "label": "图书馆"
+          "value": "朋友在那儿",
+          "label": "朋友在那儿"
         }
       ],
-      "correct": "宾馆",
+      "correct": "天气舒服",
       "instruction": "请阅读短文，选择正确答案。",
-      "explanation": "女的在找什么？ — 宾馆"
+      "explanation": "他为什么选择下个月去北京？ — 天气舒服"
     },
     {
       "id": "hsk3-w1-01",
@@ -1841,12 +1841,13 @@
       "kind": "reorder",
       "hint": "示された語句を並べ替えて、正しい文を作ります。",
       "tokens": [
-        "我",
-        "每天",
-        "学习",
-        "汉语"
+        "他",
+        "把",
+        "房间",
+        "打扫",
+        "干净了"
       ],
-      "answer": "我每天学习汉语。",
+      "answer": "他把房间打扫干净了。",
       "instruction": "请把下面的词语排列成正确的句子。",
       "selected": []
     },
@@ -1857,12 +1858,13 @@
       "kind": "reorder",
       "hint": "示された語句を並べ替えて、正しい文を作ります。",
       "tokens": [
-        "他",
-        "正在",
-        "看",
-        "报纸"
+        "这里",
+        "的",
+        "环境",
+        "越来越",
+        "好了"
       ],
-      "answer": "他正在看报纸。",
+      "answer": "这里的环境越来越好了。",
       "instruction": "请把下面的词语排列成正确的句子。",
       "selected": []
     },
@@ -1873,11 +1875,13 @@
       "kind": "reorder",
       "hint": "示された語句を並べ替えて、正しい文を作ります。",
       "tokens": [
-        "明天",
-        "可能",
-        "下雨"
+        "她",
+        "一边",
+        "听音乐",
+        "一边",
+        "做作业"
       ],
-      "answer": "明天可能下雨。",
+      "answer": "她一边听音乐一边做作业。",
       "instruction": "请把下面的词语排列成正确的句子。",
       "selected": []
     },
@@ -1888,12 +1892,14 @@
       "kind": "reorder",
       "hint": "示された語句を並べ替えて、正しい文を作ります。",
       "tokens": [
-        "我家",
-        "离",
-        "学校",
-        "很近"
+        "我",
+        "的",
+        "自行车",
+        "被",
+        "朋友",
+        "骑走了"
       ],
-      "answer": "我家离学校很近。",
+      "answer": "我的自行车被朋友骑走了。",
       "instruction": "请把下面的词语排列成正确的句子。",
       "selected": []
     },
@@ -1904,12 +1910,13 @@
       "kind": "reorder",
       "hint": "示された語句を並べ替えて、正しい文を作ります。",
       "tokens": [
-        "她",
+        "这个",
+        "问题",
         "比",
-        "我",
-        "高"
+        "那个",
+        "容易"
       ],
-      "answer": "她比我高。",
+      "answer": "这个问题比那个容易。",
       "instruction": "请把下面的词语排列成正确的句子。",
       "selected": []
     },
@@ -1919,8 +1926,8 @@
       "part": 2,
       "kind": "input",
       "hint": "カッコ内のピンインが表す漢字を書きます。",
-      "sentence": "我每天七点（qǐ）床。",
-      "answer": "起",
+      "sentence": "我的腿有点儿（téng）。",
+      "answer": "疼",
       "instruction": "请根据拼音在空格上写汉字。"
     },
     {
@@ -1929,8 +1936,8 @@
       "part": 2,
       "kind": "input",
       "hint": "カッコ内のピンインが表す漢字を書きます。",
-      "sentence": "今天天气很（rè）。",
-      "answer": "热",
+      "sentence": "她穿了一条（lán）色的裙子。",
+      "answer": "蓝",
       "instruction": "请根据拼音在空格上写汉字。"
     },
     {
@@ -1939,8 +1946,8 @@
       "part": 2,
       "kind": "input",
       "hint": "カッコ内のピンインが表す漢字を書きます。",
-      "sentence": "请喝一（bēi）茶。",
-      "answer": "杯",
+      "sentence": "外面下雨了，别忘了带（sǎn）。",
+      "answer": "伞",
       "instruction": "请根据拼音在空格上写汉字。"
     },
     {
@@ -1949,8 +1956,8 @@
       "part": 2,
       "kind": "input",
       "hint": "カッコ内のピンインが表す漢字を書きます。",
-      "sentence": "她今年二十（suì）。",
-      "answer": "岁",
+      "sentence": "妹妹的（liǎn）红了。",
+      "answer": "脸",
       "instruction": "请根据拼音在空格上写汉字。"
     },
     {
@@ -1959,8 +1966,8 @@
       "part": 2,
       "kind": "input",
       "hint": "カッコ内のピンインが表す漢字を書きます。",
-      "sentence": "我们坐公共汽（chē）去。",
-      "answer": "车",
+      "sentence": "天黑了，请把（dēng）打开。",
+      "answer": "灯",
       "instruction": "请根据拼音在空格上写汉字。"
     }
   ]

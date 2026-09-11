@@ -21,6 +21,12 @@ const SCENES = {
     ["🍎", "桌子上有三个苹果。", "Zhuōzi shàng yǒu sān ge píngguǒ.", "机の上の三つのリンゴ"], ["🧑‍⚕️", "王先生是医生。", "Wáng xiānsheng shì yīshēng.", "医師"],
     ["🍜", "我们在饭馆吃饭。", "Wǒmen zài fànguǎn chīfàn.", "食堂で食事する人々"], ["😴", "女儿在睡觉。", "Nǚ'ér zài shuìjiào.", "眠っている女の子"],
     ["✍️", "老师在写汉字。", "Lǎoshī zài xiě Hànzì.", "漢字を書く先生"],
+    // ここから下は読解用（聴解で聞いた文を読解で再利用しないため）
+    ["🚗", "我爸爸会开车。", "Wǒ bàba huì kāichē.", "車を運転できる父"], ["🏥", "妈妈在医院工作。", "Māma zài yīyuàn gōngzuò.", "病院で働く母"],
+    ["🛍️", "我去商店买东西。", "Wǒ qù shāngdiàn mǎi dōngxi.", "店で買い物する人"], ["💻", "这是我的电脑。", "Zhè shì wǒ de diànnǎo.", "自分のパソコン"],
+    ["💧", "我想喝水。", "Wǒ xiǎng hē shuǐ.", "水を飲みたい人"], ["👧", "这是我的女儿。", "Zhè shì wǒ de nǚ'ér.", "娘"],
+    ["🐕", "这是我的狗。", "Zhè shì wǒ de gǒu.", "飼い犬"], ["🧑‍🏫", "他是我的老师。", "Tā shì wǒ de lǎoshī.", "先生"],
+    ["🕐", "现在是一点。", "Xiànzài shì yì diǎn.", "1時の時計"], ["📅", "明天是星期六。", "Míngtiān shì xīngqīliù.", "土曜日のカレンダー"],
   ],
   2: [
     ["🏀", "弟弟正在打篮球。", "Dìdi zhèngzài dǎ lánqiú.", "バスケットボールをする人"], ["🏃", "哥哥每天早上跑步。", "Gēge měitiān zǎoshang pǎobù.", "朝に走る人"],
@@ -33,6 +39,10 @@ const SCENES = {
     ["🎫", "我在机场买票。", "Wǒ zài jīchǎng mǎi piào.", "空港で切符を買う人"], ["🥛", "孩子早上喝牛奶。", "Háizi zǎoshang hē niúnǎi.", "牛乳を飲む子ども"],
     ["💃", "她们晚上一起跳舞。", "Tāmen wǎnshang yìqǐ tiàowǔ.", "一緒に踊る人々"], ["☕", "服务员送来两杯咖啡。", "Fúwùyuán sòng lái liǎng bēi kāfēi.", "コーヒーを運ぶ店員"],
     ["🚪", "请进，门开着呢。", "Qǐng jìn, mén kāizhe ne.", "開いているドア"], ["🧼", "他正在洗衣服。", "Tā zhèngzài xǐ yīfu.", "服を洗う人"],
+    // ここから下は読解用（聴解で聞いた文を読解で再利用しないため）
+    ["🍉", "我买了一个西瓜。", "Wǒ mǎi le yí ge xīguā.", "スイカを買う人"], ["🏃‍♀️", "她每天晚上运动。", "Tā měitiān wǎnshang yùndòng.", "夜に運動する人"],
+    ["🛏️", "弟弟已经睡觉了。", "Dìdi yǐjīng shuìjiào le.", "眠っている弟"], ["🚕", "他坐出租车去机场。", "Tā zuò chūzūchē qù jīchǎng.", "タクシーで空港へ行く人"],
+    ["📗", "姐姐在教室里学习。", "Jiějie zài jiàoshì lǐ xuéxí.", "教室で勉強する人"],
   ],
   3: [
     ["🛗", "她坐电梯到五层。", "Tā zuò diàntī dào wǔ céng.", "エレベーターで五階へ行く人"], ["🚇", "我每天坐地铁上班。", "Wǒ měitiān zuò dìtiě shàngbān.", "地下鉄で通勤する人"],
@@ -91,6 +101,165 @@ const DIALOGUES = {
     ["男：你为什么一直看地图？女：我在找附近的宾馆，宾馆就在前面。问：女的在找什么？", "女的在找什么？", "宾馆", ["银行", "图书馆"]],
   ],
 };
+
+// HSK2聴解は本番1回分の35問とは別に、各部分10回分（計350問）の
+// 問題プールを持つ。既存問題を残しつつ、以下のテンプレートから
+// 意味の異なる場面・会話を生成し、模試開始時に部分ごとに抽選する。
+const HSK2_SCENE_SUBJECTS = ["爸爸", "妈妈", "哥哥", "姐姐", "弟弟", "妹妹", "老师", "学生", "朋友", "服务员"];
+const HSK2_SCENE_TIMINGS = ["正在", "早上", "晚上", "每天", "现在", "下午", "今天", "明天要", "很喜欢", "也在"];
+const HSK2_SCENE_ACTIONS = [
+  ["☕", "喝茶", "お茶を飲む人"], ["📰", "看报纸", "新聞を読む人"], ["🎬", "看电影", "映画を見る人"],
+  ["🏀", "打篮球", "バスケットボールをする人"], ["🏃", "跑步", "走る人"], ["🏊", "游泳", "泳ぐ人"],
+  ["🎤", "唱歌", "歌う人"], ["💃", "跳舞", "踊る人"], ["🧼", "洗衣服", "服を洗う人"],
+  ["🍳", "做饭", "料理をする人"], ["💼", "工作", "働く人"], ["🀄", "学习汉语", "中国語を学ぶ人"],
+  ["🚲", "骑自行车", "自転車に乗る人"], ["🚌", "坐公共汽车", "バスに乗る人"], ["🍎", "买苹果", "リンゴを買う人"],
+  ["🍚", "吃米饭", "ご飯を食べる人"], ["📱", "打电话", "電話をする人"], ["📖", "看书", "本を読む人"],
+];
+
+function buildHsk2ExtraScenes() {
+  return HSK2_SCENE_ACTIONS.flatMap(([symbol, action, alt]) => HSK2_SCENE_SUBJECTS.map((subject, index) => [
+    symbol,
+    `${subject}${HSK2_SCENE_TIMINGS[index]}${action}。`,
+    "",
+    `${alt}（${subject}）`,
+  ]));
+}
+
+function rotatingDistractors(items, answer, count = 2) {
+  const start = items.indexOf(answer);
+  return Array.from({ length: count }, (_, offset) => items[(start + offset + 1) % items.length]).filter((item) => item !== answer);
+}
+
+function buildHsk2ShortDialoguePool() {
+  const people = ["爸爸", "妈妈", "哥哥", "姐姐", "弟弟", "妹妹", "老师", "同学", "朋友", "丈夫"];
+  const times = ["早上", "上午", "中午", "下午", "晚上", "今天", "明天", "每天", "现在", "星期日"];
+  const places = ["学校", "医院", "公司", "饭馆", "机场"];
+  const result = [];
+  const add = (items, build) => people.forEach((person, index) => {
+    const answer = items[index % items.length];
+    result.push(build({ person, time: times[index], place: places[index % places.length], answer, distractors: rotatingDistractors(items, answer), index }));
+  });
+
+  add(["水", "茶", "咖啡", "牛奶"], ({ person, time, answer, distractors, index }) => {
+    const other = ["水", "茶", "咖啡", "牛奶"][(index + 1) % 4];
+    return [`男：${person}${time}喝${other}吗？女：不，${person}${time}喝${answer}。问：${person}喝什么？`, `${person}喝什么？`, answer, distractors];
+  });
+  add(["公共汽车", "出租车", "自行车", "走路"], ({ person, place, answer, distractors }) => {
+    const action = { 公共汽车: "坐公共汽车", 出租车: "坐出租车", 自行车: "骑自行车", 走路: "走路" }[answer];
+    return [`女：${person}怎么去${place}？男：${person}${action}去。问：${person}怎么去？`, `${person}怎么去？`, answer, distractors];
+  });
+  add(["跑步", "游泳", "打篮球", "踢足球", "跳舞"], ({ person, time, answer, distractors }) =>
+    [`男：${person}${time}做什么？女：${person}和朋友一起${answer}。问：${person}做什么？`, `${person}做什么？`, answer, distractors]);
+  add(["红色", "白色", "黑色"], ({ person, answer, distractors, index }) =>
+    [`女：${person}的新衣服是${answer}的吗？男：是的，是${answer}的。问：${person}的衣服是什么颜色？`, `${person}的衣服是什么颜色？`, answer, [...distractors, ["红色", "白色", "黑色"][(index + 2) % 3]].slice(0, 2)]);
+  add(["苹果", "西瓜", "鸡蛋", "羊肉"], ({ person, time, answer, distractors }) =>
+    [`男：${person}${time}买了什么？女：${person}买了${answer}。问：${person}买了什么？`, `${person}买了什么？`, answer, distractors]);
+  add(["学校", "医院", "公司", "饭馆"], ({ person, answer, distractors }) =>
+    [`女：${person}在哪儿工作？男：${person}在${answer}工作。问：${person}在哪儿工作？`, `${person}在哪儿工作？`, answer, distractors]);
+  add(["七点", "八点", "九点", "十点", "十一点", "十二点", "一点", "两点", "三点", "四点"], ({ time, answer, distractors, index }) => {
+    const event = ["电影", "考试", "汉语课", "工作"][index % 4];
+    return [`男：${time}的${event}几点开始？女：${answer}开始。问：${event}几点开始？`, `${event}几点开始？`, answer, distractors];
+  });
+  add(["左边", "右边", "旁边", "前面", "后面"], ({ person, place, answer, distractors, index }) => {
+    const target = ["医院", "公司", "饭馆", "学校", "机场"][index % 5];
+    return [`女：${person}，${target}在哪儿？男：在${place}的${answer}。问：${target}在哪儿？`, `${target}在哪儿？`, answer, distractors];
+  });
+  add(["下雨", "下雪", "晴天", "阴天"], ({ time, answer, distractors }) =>
+    [`男：${time}天气怎么样？女：${time}是${answer}。问：${time}天气怎么样？`, `${time}天气怎么样？`, answer, distractors]);
+  return result;
+}
+
+function buildHsk2LongDialoguePool() {
+  const people = ["爸爸", "妈妈", "哥哥", "姐姐", "弟弟", "妹妹", "老师", "同学", "朋友"];
+  const times = ["早上", "上午", "中午", "下午", "晚上", "今天", "明天", "星期六", "星期日"];
+  const result = [];
+  const add = (items, build) => people.forEach((person, index) => {
+    const answer = items[index % items.length];
+    result.push(build({ person, time: times[index], answer, distractors: rotatingDistractors(items, answer), index }));
+  });
+
+  add(["红色", "白色", "黑色"], ({ person, answer, distractors, index }) => {
+    const other = ["红色", "白色", "黑色"][(index + 1) % 3];
+    return [`女：${person}想买一件新衣服。男：${other}的一百元，${answer}的八十元。女：${person}喜欢${answer}的。问：${person}喜欢什么颜色的衣服？`, `${person}喜欢什么颜色的衣服？`, answer, distractors];
+  });
+  add(["七点", "八点", "九点", "十点", "十一点", "十二点", "一点", "两点", "三点"], ({ answer, distractors, index }) => {
+    const event = ["电影", "考试", "汉语课"][index % 3];
+    return [`男：${event}${answer}开始。女：现在还早，我们等一会儿吧。男：好，我们一起进去。问：${event}几点开始？`, `${event}几点开始？`, answer, distractors];
+  });
+  add(["公共汽车", "出租车", "自行车", "走路"], ({ person, time, answer, distractors }) => {
+    const action = { 公共汽车: "坐公共汽车", 出租车: "坐出租车", 自行车: "骑自行车", 走路: "走路" }[answer];
+    return [`女：${person}${time}要去公司吗？男：是的，公司离家不远。女：那${person}怎么去？男：${person}${action}去。问：${person}怎么去公司？`, `${person}怎么去公司？`, answer, distractors];
+  });
+  add(["休息", "吃药", "睡觉", "去医院"], ({ person, time, answer, distractors }) =>
+    [`男：${person}${time}怎么没来？女：${person}生病了，身体不舒服。男：那${person}要${answer}。问：${person}要做什么？`, `${person}要做什么？`, answer, distractors]);
+  add(["书", "手表", "手机", "衣服"], ({ person, time, answer, distractors }) => {
+    const gift = { 书: "一本书", 手表: "一块手表", 手机: "一个手机", 衣服: "一件衣服" }[answer];
+    return [`女：${time}是${person}的生日。男：你准备送什么？女：${person}喜欢${answer}，我要买${gift}送给${person}。问：女的要送什么？`, "女的要送什么？", answer, distractors];
+  });
+  return result;
+}
+
+// 聴解第4部分は本番では4〜5往復の長い対話。[音声原文, 設問, 正解, [誤答2つ]]
+const HSK3_LONG_DIALOGUES = [
+  ["男：你的行李箱怎么这么重？女：里面有很多书，还有给朋友的礼物。男：需要我帮你拿吗？女：谢谢，你帮我拿这个包就行。问：女的让男的拿什么？",
+    "女的让男的拿什么？", "包", ["行李箱", "礼物"]],
+  ["女：你怎么还在办公室？男：我要检查一下这个月的成绩。女：需要我帮忙吗？男：不用，我马上就完成了。问：男的在做什么？",
+    "男的在做什么？", "检查成绩", ["开会", "打扫办公室"]],
+  ["男：听说你搬家了？女：对，上个星期刚搬完。男：新房子怎么样？女：环境很安静，就是离地铁站有点儿远。问：女的觉得新房子怎么样？",
+    "女的觉得新房子怎么样？", "安静但是远", ["又近又便宜", "有点儿小"]],
+  ["女：明天的会议几点开始？男：以前是上午九点，经理昨天换成了下午两点。女：为什么换了？男：因为几个同事上午到不了。问：会议明天什么时候开始？",
+    "会议明天什么时候开始？", "下午两点", ["上午九点", "明天晚上"]],
+  ["男：你的感冒好点儿了吗？女：还是有点儿疼，医生让我多休息。男：那你今天别去上班了。女：我已经告诉经理了。问：女的今天为什么不上班？",
+    "女的今天为什么不上班？", "因为生病", ["因为搬家", "因为下雨"]],
+  ["女：周末打算做什么？男：我想去爬山，可是听说要下雨。女：那我们下次再去吧。男：好，这个周末先去看电影。问：他们这个周末做什么？",
+    "他们这个周末做什么？", "看电影", ["去爬山", "在家休息"]],
+  ["男：这条裤子多少钱？女：一百五十元，比上个月便宜了五十。男：那我要一条蓝色的。女：好的，一共一百五十元。问：男的花了多少钱？",
+    "男的花了多少钱？", "一百五十元", ["二百元", "五十元"]],
+  ["男：这家饭馆的菜真不错。女：是啊，就是服务有点儿慢。男：下次我们早点儿来。女：好，下次先打电话。问：他们觉得这家饭馆怎么样？",
+    "他们觉得这家饭馆怎么样？", "菜好服务慢", ["又贵又不好吃", "环境不干净"]],
+  ["女：你今天怎么走着来的？男：我的自行车昨天坏了。女：那你明天怎么上班？男：我打算坐地铁。问：男的明天怎么上班？",
+    "男的明天怎么上班？", "坐地铁", ["骑自行车", "走路"]],
+  ["男：这张照片是在哪儿照的？女：去年在上海，我跟同事一起去的。男：你们玩了几天？女：一共五天，还爬了山。问：女的去上海做什么？",
+    "女的去上海做什么？", "旅游", ["上班", "看病"]],
+];
+
+// 読解第3部分は本番では短文＋設問。聴解と同じ素材は使わない。[短文, 設問, 正解, [誤答2つ]]
+const HSK3_PASSAGES = [
+  ["我家附近新开了一家超市，里面的水果又新鲜又便宜。虽然离我家有点儿远，但是我每个周末都会去一次。",
+    "他为什么常去那家超市？", "水果新鲜便宜", ["离家很近", "那儿人很少"]],
+  ["小李昨天参加了学校的比赛，虽然没得第一，但是他觉得很高兴，因为他认识了很多新朋友。",
+    "小李为什么高兴？", "认识了新朋友", ["得了第一", "比赛很简单"]],
+  ["明天的会议非常重要，经理让大家八点以前到办公室。如果有事不能参加，一定要提前告诉他。",
+    "不能参加会议的人要做什么？", "提前告诉经理", ["直接不去", "下午再来"]],
+  ["这个城市的地铁很方便，从我家到公司只要二十分钟。以前我开车上班，经常遇到问题，现在方便多了。",
+    "他现在怎么上班？", "坐地铁", ["开车", "骑自行车"]],
+  ["我妹妹很喜欢动物，她家里有一只猫。她每天下午放学以后，都要先跟猫玩一会儿，然后才做作业。",
+    "妹妹放学以后先做什么？", "跟猫玩", ["做作业", "看电视"]],
+  ["听说这家宾馆的房间很干净，环境也很安静，就是有点儿贵。我们打算先住三天，然后去别的城市。",
+    "他们觉得这家宾馆怎么样？", "干净但是贵", ["又便宜又干净", "很不方便"]],
+  ["张老师上课很认真，他总是先讲重要的地方，然后让我们自己练习。所以同学们都很喜欢他的课。",
+    "同学们为什么喜欢张老师的课？", "他讲得认真", ["他的课很短", "他常常唱歌"]],
+  ["昨天我坐出租车去机场，因为路上突然下大雨，车开得很慢，差点儿就迟到了。",
+    "他昨天为什么差点儿迟到？", "因为下大雨", ["因为起床晚了", "因为坐错了车"]],
+  ["爷爷今年七十岁了，但是身体很健康。他每天早上都去公园锻炼一个小时，然后回家吃早饭。",
+    "爷爷早上做什么？", "在公园锻炼", ["在家看报纸", "去超市买东西"]],
+  ["我打算下个月去北京旅游，已经买好了飞机票。听说那儿秋天的天气最舒服，所以很多人都选择这个季节去。",
+    "他为什么选择下个月去北京？", "天气舒服", ["票很便宜", "朋友在那儿"]],
+];
+
+// 書写はHSK3の文法・漢字で出題する。
+const HSK3_REORDER = [
+  [["他", "把", "房间", "打扫", "干净了"], "他把房间打扫干净了。"],
+  [["这里", "的", "环境", "越来越", "好了"], "这里的环境越来越好了。"],
+  [["她", "一边", "听音乐", "一边", "做作业"], "她一边听音乐一边做作业。"],
+  [["我", "的", "自行车", "被", "朋友", "骑走了"], "我的自行车被朋友骑走了。"],
+  [["这个", "问题", "比", "那个", "容易"], "这个问题比那个容易。"],
+];
+
+const HSK3_INPUT = [
+  ["我的腿有点儿（téng）。", "疼"], ["她穿了一条（lán）色的裙子。", "蓝"], ["外面下雨了，别忘了带（sǎn）。", "伞"],
+  ["妹妹的（liǎn）红了。", "脸"], ["天黑了，请把（dēng）打开。", "灯"],
+];
 
 const HSK3_STATEMENTS = [
   ["小李最近每天都锻炼，所以身体比以前好多了。", "小李的身体有了变化。", true],
@@ -190,6 +359,8 @@ const PINYIN = {
   十二岁:"shí'èr suì", 二十岁:"èrshí suì", 十岁:"shí suì", 八十元:"bāshí yuán", 一百元:"yìbǎi yuán", 一百二十元:"yìbǎi èrshí yuán",
   生病:"shēngbìng", 很累:"hěn lèi", 很饿:"hěn è", 半小时:"bàn xiǎoshí", 一小时:"yì xiǎoshí", 两小时:"liǎng xiǎoshí",
   苹果:"píngguǒ", 西瓜:"xīguā", 水果:"shuǐguǒ", 准备:"zhǔnbèi", 考试:"kǎoshì", 休息:"xiūxi", 公司:"gōngsī", 书:"shū", 手表:"shǒubiǎo", 手机:"shǒujī",
+  走路:"zǒulù", 红色:"hóngsè", 白色:"báisè", 黑色:"hēisè", 七点:"qī diǎn", 八点:"bā diǎn", 九点:"jiǔ diǎn", 十点:"shí diǎn",
+  十一点:"shíyī diǎn", 十二点:"shí'èr diǎn", 一点:"yī diǎn", 下雪:"xiàxuě", 晴天:"qíngtiān", 阴天:"yīntiān", 吃药:"chī yào", 去医院:"qù yīyuàn",
 };
 
 const READING_PROMPT_PINYIN = {
@@ -241,9 +412,39 @@ function visualListening(level, start, count, part, mode) {
   });
 }
 
+function differentScene(scenes, scene, offset) {
+  for (let step = 1; step <= scenes.length; step += 1) {
+    const candidate = scenes[(offset + step) % scenes.length];
+    if (candidate[0] !== scene[0]) return candidate;
+  }
+  throw new Error("図示の異なる聴解選択肢を作れません");
+}
+
+function pooledVisualListening(level, scenes, part, mode, firstNumber) {
+  return scenes.map((scene, index) => {
+    const id = `hsk${level}-l${part}-${String(firstNumber + index).padStart(3, "0")}`;
+    const fields = { audioText: scene[1], audioFile: audioFile(id), instruction: mode === "judge" ? "请听录音，判断内容是否与图示一致。" : "请听录音，选择相应的图示。", explanation: scene[1] };
+    if (mode === "judge") {
+      const isCorrect = index % 2 === 0;
+      const shown = isCorrect ? scene : differentScene(scenes, scene, index + 7);
+      return q(id, "listening", part, "visual-judge", { ...fields, visual: { symbol: shown[0], alt: shown[3] }, choices: [choice("true", level, { label: "对" }), choice("false", level, { label: "不对" })], correct: String(isCorrect) });
+    }
+    const others = [differentScene(scenes, scene, index + 11), differentScene(scenes, scene, index + 37)];
+    if (others[0][0] === others[1][0]) others[1] = differentScene(scenes, scene, index + 73);
+    return q(id, "listening", part, "visual-choice", { ...fields, choices: [scene, ...others].map((item) => choice(item[0], level, { ariaLabel: item[3] })), correct: scene[0] });
+  });
+}
+
 function dialogueQuestions(level, start, count, part, long = false) {
   return DIALOGUES[level].slice(start, start + count).map((item, index) => {
     const id = `hsk${level}-l${part}-${String(index + 1).padStart(2, "0")}`;
+    return q(id, "listening", part, long ? "audio-long-dialogue" : "audio-dialogue", { audioText: item[0], audioFile: audioFile(id), prompt: item[1], choices: choices(item[2], item[3], level), correct: item[2], instruction: long ? "请听较长对话，选择正确答案。" : "请听对话，选择正确答案。", explanation: `${item[1]} — ${item[2]}` });
+  });
+}
+
+function pooledDialogueQuestions(level, source, part, long, firstNumber) {
+  return source.map((item, index) => {
+    const id = `hsk${level}-l${part}-${String(firstNumber + index).padStart(3, "0")}`;
     return q(id, "listening", part, long ? "audio-long-dialogue" : "audio-dialogue", { audioText: item[0], audioFile: audioFile(id), prompt: item[1], choices: choices(item[2], item[3], level), correct: item[2], instruction: long ? "请听较长对话，选择正确答案。" : "请听对话，选择正确答案。", explanation: `${item[1]} — ${item[2]}` });
   });
 }
@@ -301,19 +502,31 @@ function readingCloze(level, words, part, startOffset = 0) {
 
 function buildLevel1() {
   const listening = [...visualListening(1, 0, 5, 1, "judge"), ...visualListening(1, 5, 5, 2, "choice"), ...visualListening(1, 10, 5, 3, "choice"), ...dialogueQuestions(1, 0, 5, 4)];
-  const reading = [...readingVisual(1, 0, 5, 1, true), ...readingVisual(1, 5, 5, 2), ...readingResponses(1, DIALOGUES[1].slice(0, 5).map((item) => [item[1], item[2], item[3]]), 3), ...authoredCloze(1, HSK1_CLOZE, 4)];
+  const reading = [...readingVisual(1, 15, 5, 1, true), ...readingVisual(1, 20, 5, 2), ...readingResponses(1, DIALOGUES[1].slice(0, 5).map((item) => [item[1], item[2], item[3]]), 3), ...authoredCloze(1, HSK1_CLOZE, 4)];
   return [...listening, ...reading];
 }
 
 function buildLevel2() {
-  const listening = [...visualListening(2, 0, 10, 1, "judge"), ...visualListening(2, 10, 10, 2, "choice"), ...dialogueQuestions(2, 0, 10, 3), ...dialogueQuestions(2, 10, 5, 4, true)];
+  const extraScenes = buildHsk2ExtraScenes();
+  const shortDialoguePool = buildHsk2ShortDialoguePool();
+  const longDialoguePool = buildHsk2LongDialoguePool();
+  const listening = [
+    ...visualListening(2, 0, 10, 1, "judge"),
+    ...pooledVisualListening(2, extraScenes.slice(0, 90), 1, "judge", 11),
+    ...visualListening(2, 10, 10, 2, "choice"),
+    ...pooledVisualListening(2, extraScenes.slice(90), 2, "choice", 11),
+    ...dialogueQuestions(2, 0, 10, 3),
+    ...pooledDialogueQuestions(2, shortDialoguePool, 3, false, 11),
+    ...dialogueQuestions(2, 10, 5, 4, true),
+    ...pooledDialogueQuestions(2, longDialoguePool, 4, true, 6),
+  ];
   const readingJudge = HSK2_JUDGE.map(([prompt, promptPinyin, statement, statementPinyin, isTrue, note], index) =>
     q(`hsk2-r3-${String(index + 1).padStart(2, "0")}`, "reading", 3, "reading-judge", {
       prompt, promptPinyin, subPrompt: statement, subPromptPinyin: statementPinyin,
       choices: [choice("true", 2, { label: "对" }), choice("false", 2, { label: "不对" })],
       correct: String(isTrue), instruction: "请判断对错。", explanation: note,
     }));
-  const reading = [...readingVisual(2, 0, 5, 1), ...authoredCloze(2, HSK2_CLOZE_P2, 2), ...readingJudge, ...authoredMatch(2, HSK2_MATCH, 4)];
+  const reading = [...readingVisual(2, 20, 5, 1), ...authoredCloze(2, HSK2_CLOZE_P2, 2), ...readingJudge, ...authoredMatch(2, HSK2_MATCH, 4)];
   return [...listening, ...reading];
 }
 
@@ -323,26 +536,58 @@ function buildLevel3() {
     const id = `hsk3-l2-${String(index + 1).padStart(2, "0")}`;
     return q(id, "listening", 2, "audio-judge", { audioText: item[0], audioFile: audioFile(id), prompt: item[1], choices: [choice("true", 3, { label: "对" }), choice("false", 3, { label: "不对" })], correct: String(item[2]), instruction: "请听录音，判断内容是否与句子一致。", explanation: item[2] ? "对" : "不对" });
   });
-  const listening = [...listening1, ...listening2, ...dialogueQuestions(3, 0, 10, 3), ...dialogueQuestions(3, 10, 10, 4, true)];
+  const listening4 = HSK3_LONG_DIALOGUES.map((item, index) => {
+    const id = `hsk3-l4-${String(index + 1).padStart(2, "0")}`;
+    return q(id, "listening", 4, "audio-long-dialogue", { audioText: item[0], audioFile: audioFile(id), prompt: item[1], choices: choices(item[2], item[3], 3), correct: item[2], instruction: "请听较长对话，选择正确答案。", explanation: `${item[1]} — ${item[2]}` });
+  });
+  const listening = [...listening1, ...listening2, ...dialogueQuestions(3, 0, 10, 3), ...listening4];
   const reading1 = readingResponses(3, HSK3_RESPONSES, 1);
   const reading2 = authoredCloze(3, HSK3_CLOZE, 2);
-  const reading3 = DIALOGUES[3].slice(10, 20).map((item, index) => q(`hsk3-r3-${String(index + 1).padStart(2, "0")}`, "reading", 3, "reading-comprehension", { prompt: item[0].replace(/问：.*$/, ""), subPrompt: item[1], choices: choices(item[2], item[3], 3), correct: item[2], instruction: "请阅读短文，选择正确答案。", explanation: `${item[1]} — ${item[2]}` }));
-  const reorder = [
-    [["我", "每天", "学习", "汉语"], "我每天学习汉语。"], [["他", "正在", "看", "报纸"], "他正在看报纸。"], [["明天", "可能", "下雨"], "明天可能下雨。"], [["我家", "离", "学校", "很近"], "我家离学校很近。"], [["她", "比", "我", "高"], "她比我高。"],
-  ].map((item, index) => q(`hsk3-w1-${String(index + 1).padStart(2, "0")}`, "writing", 1, "reorder", { tokens: item[0], answer: item[1], instruction: "请把下面的词语排列成正确的句子。", selected: [] }));
-  const input = [["我每天七点（qǐ）床。", "起"], ["今天天气很（rè）。", "热"], ["请喝一（bēi）茶。", "杯"], ["她今年二十（suì）。", "岁"], ["我们坐公共汽（chē）去。", "车"]].map((item, index) => q(`hsk3-w2-${String(index + 1).padStart(2, "0")}`, "writing", 2, "input", { sentence: item[0], answer: item[1], instruction: "请根据拼音在空格上写汉字。" }));
+  const reading3 = HSK3_PASSAGES.map((item, index) => q(`hsk3-r3-${String(index + 1).padStart(2, "0")}`, "reading", 3, "reading-comprehension", { prompt: item[0], subPrompt: item[1], choices: choices(item[2], item[3], 3), correct: item[2], instruction: "请阅读短文，选择正确答案。", explanation: `${item[1]} — ${item[2]}` }));
+  const reorder = HSK3_REORDER.map((item, index) => q(`hsk3-w1-${String(index + 1).padStart(2, "0")}`, "writing", 1, "reorder", { tokens: item[0], answer: item[1], instruction: "请把下面的词语排列成正确的句子。", selected: [] }));
+  const input = HSK3_INPUT.map((item, index) => q(`hsk3-w2-${String(index + 1).padStart(2, "0")}`, "writing", 2, "input", { sentence: item[0], answer: item[1], instruction: "请根据拼音在空格上写汉字。" }));
   return [...listening, ...reading1, ...reading2, ...reading3, ...reorder, ...input];
 }
 
 const forms = { 1: buildLevel1(), 2: buildLevel2(), 3: buildLevel3() };
-const expected = { 1: { total: 40, listening: 20, reading: 20, writing: 0 }, 2: { total: 60, listening: 35, reading: 25, writing: 0 }, 3: { total: 80, listening: 40, reading: 30, writing: 10 } };
+const expected = { 1: { total: 40, listening: 20, reading: 20, writing: 0 }, 2: { total: 375, listening: 350, reading: 25, writing: 0 }, 3: { total: 80, listening: 40, reading: 30, writing: 10 } };
 for (const level of [1, 2, 3]) {
   const questions = forms[level];
   const counts = Object.fromEntries(["listening", "reading", "writing"].map((skill) => [skill, questions.filter((question) => question.skill === skill).length]));
   if (questions.length !== expected[level].total || Object.entries(counts).some(([skill, count]) => count !== expected[level][skill])) throw new Error(`HSK ${level} count mismatch: ${JSON.stringify(counts)}`);
   if (new Set(questions.map((question) => question.id)).size !== questions.length) throw new Error(`HSK ${level}: duplicate ids`);
   const audio = questions.filter((question) => question.skill === "listening");
-  if (new Set(audio.map((question) => question.audioText)).size !== audio.length) throw new Error(`HSK ${level}: duplicate listening prompts`);
+  const duplicateAudio = audio.filter((question, index) => audio.findIndex((item) => item.audioText === question.audioText) !== index);
+  if (duplicateAudio.length) throw new Error(`HSK ${level}: duplicate listening prompts: ${duplicateAudio.map((question) => question.id).join(", ")}`);
+  for (const item of audio) {
+    const values = item.choices?.map((entry) => entry.value) || [];
+    if (new Set(values).size !== values.length) throw new Error(`${item.id}: 聴解の選択肢が重複しています`);
+    if (!values.includes(item.correct)) throw new Error(`${item.id}: 聴解の正解が選択肢にありません`);
+  }
+  if (level === 2) {
+    const expectedParts = { 1: 100, 2: 100, 3: 100, 4: 50 };
+    for (const [part, count] of Object.entries(expectedParts)) {
+      const actual = audio.filter((question) => question.part === Number(part)).length;
+      if (actual !== count) throw new Error(`HSK 2 listening part ${part}: expected ${count}, got ${actual}`);
+    }
+  }
+  // 聴解で聞いた素材を読解でもう一度出さない（聞き取れなくても読めば解けてしまうため）。
+  const listeningTexts = questions.filter((question) => question.skill === "listening").map((question) => (question.audioText || "").split("问：")[0]).filter(Boolean);
+  for (const item of questions.filter((question) => question.skill === "reading")) {
+    const body = `${item.prompt || ""}${item.subPrompt || ""}`;
+    const shared = listeningTexts.find((text) => text.length > 8 && body.includes(text));
+    if (shared) throw new Error(`${item.id}: 聴解と同じ素材を読解でも使っています → ${shared.slice(0, 24)}`);
+  }
+  // HSK3第4部分の対話は第3部分より長いこと（本番は較長対話）。
+  const turns = (text) => (text.match(/[男女]：/g) || []).length;
+  const shortDialogues = questions.filter((question) => question.kind === "audio-dialogue");
+  const longDialogues = questions.filter((question) => question.kind === "audio-long-dialogue");
+  if (level === 3 && longDialogues.length) {
+    const average = (items) => items.reduce((sum, item) => sum + turns(item.audioText), 0) / items.length;
+    if (average(longDialogues) <= average(shortDialogues)) throw new Error(`HSK ${level}: 第4部分の対話が第3部分より長くありません`);
+    const tooShort = longDialogues.find((item) => turns(item.audioText) < 3);
+    if (tooShort) throw new Error(`${tooShort.id}: 較長対話の発話が3つ未満です（${turns(tooShort.audioText)}）`);
+  }
   // 穴埋め問題は、空欄・選択肢・級の範囲を検査する。
   for (const item of questions.filter((question) => question.kind === "reading-cloze")) {
     if (!item.prompt.includes("＿＿＿")) throw new Error(`${item.id}: 空欄（＿＿＿）がありません`);
@@ -382,7 +627,14 @@ for (const level of [1, 2, 3]) {
       if (/[一-鿿]/u.test(char) && !levelChars[level].has(char)) console.warn(`  警告 ${item.id}: 「${char}」はHSK1〜${level}の語彙にない漢字です`);
     }
   }
-  const payload = { version: 2, level, format: "HSK 2.0（日本実施形式）・写真問題は記号イラストで代替", generatedAt: new Date().toISOString(), questions };
+  const payload = {
+    version: level === 2 ? 3 : 2,
+    level,
+    format: "HSK 2.0（日本実施形式）・写真問題は記号イラストで代替",
+    generatedAt: new Date().toISOString(),
+    ...(level === 2 ? { questionSelection: { listening: { 1: 10, 2: 10, 3: 10, 4: 5 } } } : {}),
+    questions,
+  };
   fs.writeFileSync(path.join(root, "data", `mock-hsk${level}.json`), `${JSON.stringify(payload, null, 2)}\n`);
   console.log(`HSK ${level}: ${questions.length}問（聴解${counts.listening}・読解${counts.reading}・作文${counts.writing}）`);
 }
