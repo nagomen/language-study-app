@@ -12,10 +12,10 @@ const appDir = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const outputDir = path.join(appDir, "audio", "sentences");
 const manifestPath = path.join(appDir, "audio", "manifest.json");
 const temporaryDir = fs.mkdtempSync(path.join(os.tmpdir(), "hsk-sentence-audio-"));
-// 収録済み音声はすべて Tingting で生成されている。Sandy などの新しい声は音声データが
-// 端末にダウンロードされていないと低品質な代替音で合成されるため、既定は Tingting とする。
+// 女性役と設問は聞き取りやすい Tingting、男性役は中国本土向けの Reed を使う。
+// Reed が未導入の端末では、macOSの「システムの声」で先にダウンロードすること。
 const femaleVoice = process.env.HSK_SENTENCE_FEMALE_VOICE || "Tingting";
-const maleVoice = process.env.HSK_SENTENCE_MALE_VOICE || "Tingting";
+const maleVoice = process.env.HSK_SENTENCE_MALE_VOICE || "Reed (中国語（中国本土）)";
 const force = process.env.HSK_SENTENCE_AUDIO_FORCE === "1";
 const engineVersion = "apple-natural-v1";
 // 会話と設問（问：〜）の境目が聞き取れるよう、設問の前に長めの無音を入れる。
@@ -74,7 +74,13 @@ try { previous = JSON.parse(fs.readFileSync(manifestPath, "utf8")); } catch {}
 function checksum(item) {
   // 無音の長さは複数セグメントのときだけ音に影響するため、そのときだけ検査対象に含める。
   const gaps = item.segments.length > 1 ? GAPS : null;
-  return crypto.createHash("sha256").update(JSON.stringify({ engineVersion, femaleVoice, maleVoice, level: item.level, segments: item.segments, gaps })).digest("hex");
+  const voices = item.segments.map((segment) => segment.role === "male" ? maleVoice : femaleVoice);
+  return crypto.createHash("sha256").update(JSON.stringify({ engineVersion, voices, level: item.level, segments: item.segments, gaps })).digest("hex");
+}
+
+function legacyChecksum(item) {
+  const gaps = item.segments.length > 1 ? GAPS : null;
+  return crypto.createHash("sha256").update(JSON.stringify({ engineVersion, femaleVoice, maleVoice: "Tingting", level: item.level, segments: item.segments, gaps })).digest("hex");
 }
 
 function runSay(text, voice, outputFile, rate, attempt = 1) {
@@ -121,7 +127,10 @@ function makeWave(pcm) {
 async function generate(item) {
   const outputFile = path.join(outputDir, `${item.id}.wav`);
   const itemChecksum = checksum(item);
-  if (!force && previous.items?.[item.id]?.checksum === itemChecksum && fs.existsSync(outputFile) && fs.statSync(outputFile).size > 44) return { ...item, checksum: itemChecksum, file: `audio/sentences/${item.id}.wav`, skipped: true };
+  const previousChecksum = previous.items?.[item.id]?.checksum;
+  const hasMaleSegment = item.segments.some((segment) => segment.role === "male");
+  const canReuseLegacyFemaleAudio = !hasMaleSegment && previousChecksum === legacyChecksum(item);
+  if (!force && (previousChecksum === itemChecksum || canReuseLegacyFemaleAudio) && fs.existsSync(outputFile) && fs.statSync(outputFile).size > 44) return { ...item, checksum: itemChecksum, file: `audio/sentences/${item.id}.wav`, skipped: true };
   const rate = ({ 1: 145, 2: 152, 3: 158 }[item.level] || 150);
   const pcmParts = [];
   for (let index = 0; index < item.segments.length; index += 1) {

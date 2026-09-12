@@ -102,103 +102,6 @@ const DIALOGUES = {
   ],
 };
 
-// HSK2聴解は本番1回分の35問とは別に、各部分10回分（計350問）の
-// 問題プールを持つ。既存問題を残しつつ、以下のテンプレートから
-// 意味の異なる場面・会話を生成し、模試開始時に部分ごとに抽選する。
-const HSK2_SCENE_SUBJECTS = ["爸爸", "妈妈", "哥哥", "姐姐", "弟弟", "妹妹", "老师", "学生", "朋友", "服务员"];
-const HSK2_SCENE_TIMINGS = ["正在", "早上", "晚上", "每天", "现在", "下午", "今天", "明天要", "很喜欢", "也在"];
-const HSK2_SCENE_ACTIONS = [
-  ["☕", "喝茶", "お茶を飲む人"], ["📰", "看报纸", "新聞を読む人"], ["🎬", "看电影", "映画を見る人"],
-  ["🏀", "打篮球", "バスケットボールをする人"], ["🏃", "跑步", "走る人"], ["🏊", "游泳", "泳ぐ人"],
-  ["🎤", "唱歌", "歌う人"], ["💃", "跳舞", "踊る人"], ["🧼", "洗衣服", "服を洗う人"],
-  ["🍳", "做饭", "料理をする人"], ["💼", "工作", "働く人"], ["🀄", "学习汉语", "中国語を学ぶ人"],
-  ["🚲", "骑自行车", "自転車に乗る人"], ["🚌", "坐公共汽车", "バスに乗る人"], ["🍎", "买苹果", "リンゴを買う人"],
-  ["🍚", "吃米饭", "ご飯を食べる人"], ["📱", "打电话", "電話をする人"], ["📖", "看书", "本を読む人"],
-];
-
-function buildHsk2ExtraScenes() {
-  return HSK2_SCENE_ACTIONS.flatMap(([symbol, action, alt]) => HSK2_SCENE_SUBJECTS.map((subject, index) => [
-    symbol,
-    `${subject}${HSK2_SCENE_TIMINGS[index]}${action}。`,
-    "",
-    `${alt}（${subject}）`,
-  ]));
-}
-
-function rotatingDistractors(items, answer, count = 2) {
-  const start = items.indexOf(answer);
-  return Array.from({ length: count }, (_, offset) => items[(start + offset + 1) % items.length]).filter((item) => item !== answer);
-}
-
-function buildHsk2ShortDialoguePool() {
-  const people = ["爸爸", "妈妈", "哥哥", "姐姐", "弟弟", "妹妹", "老师", "同学", "朋友", "丈夫"];
-  const times = ["早上", "上午", "中午", "下午", "晚上", "今天", "明天", "每天", "现在", "星期日"];
-  const places = ["学校", "医院", "公司", "饭馆", "机场"];
-  const result = [];
-  const add = (items, build) => people.forEach((person, index) => {
-    const answer = items[index % items.length];
-    result.push(build({ person, time: times[index], place: places[index % places.length], answer, distractors: rotatingDistractors(items, answer), index }));
-  });
-
-  add(["水", "茶", "咖啡", "牛奶"], ({ person, time, answer, distractors, index }) => {
-    const other = ["水", "茶", "咖啡", "牛奶"][(index + 1) % 4];
-    return [`男：${person}${time}喝${other}吗？女：不，${person}${time}喝${answer}。问：${person}喝什么？`, `${person}喝什么？`, answer, distractors];
-  });
-  add(["公共汽车", "出租车", "自行车", "走路"], ({ person, place, answer, distractors }) => {
-    const action = { 公共汽车: "坐公共汽车", 出租车: "坐出租车", 自行车: "骑自行车", 走路: "走路" }[answer];
-    return [`女：${person}怎么去${place}？男：${person}${action}去。问：${person}怎么去？`, `${person}怎么去？`, answer, distractors];
-  });
-  add(["跑步", "游泳", "打篮球", "踢足球", "跳舞"], ({ person, time, answer, distractors }) =>
-    [`男：${person}${time}做什么？女：${person}和朋友一起${answer}。问：${person}做什么？`, `${person}做什么？`, answer, distractors]);
-  add(["红色", "白色", "黑色"], ({ person, answer, distractors, index }) =>
-    [`女：${person}的新衣服是${answer}的吗？男：是的，是${answer}的。问：${person}的衣服是什么颜色？`, `${person}的衣服是什么颜色？`, answer, [...distractors, ["红色", "白色", "黑色"][(index + 2) % 3]].slice(0, 2)]);
-  add(["苹果", "西瓜", "鸡蛋", "羊肉"], ({ person, time, answer, distractors }) =>
-    [`男：${person}${time}买了什么？女：${person}买了${answer}。问：${person}买了什么？`, `${person}买了什么？`, answer, distractors]);
-  add(["学校", "医院", "公司", "饭馆"], ({ person, answer, distractors }) =>
-    [`女：${person}在哪儿工作？男：${person}在${answer}工作。问：${person}在哪儿工作？`, `${person}在哪儿工作？`, answer, distractors]);
-  add(["七点", "八点", "九点", "十点", "十一点", "十二点", "一点", "两点", "三点", "四点"], ({ time, answer, distractors, index }) => {
-    const event = ["电影", "考试", "汉语课", "工作"][index % 4];
-    return [`男：${time}的${event}几点开始？女：${answer}开始。问：${event}几点开始？`, `${event}几点开始？`, answer, distractors];
-  });
-  add(["左边", "右边", "旁边", "前面", "后面"], ({ person, place, answer, distractors, index }) => {
-    const target = ["医院", "公司", "饭馆", "学校", "机场"][index % 5];
-    return [`女：${person}，${target}在哪儿？男：在${place}的${answer}。问：${target}在哪儿？`, `${target}在哪儿？`, answer, distractors];
-  });
-  add(["下雨", "下雪", "晴天", "阴天"], ({ time, answer, distractors }) =>
-    [`男：${time}天气怎么样？女：${time}是${answer}。问：${time}天气怎么样？`, `${time}天气怎么样？`, answer, distractors]);
-  return result;
-}
-
-function buildHsk2LongDialoguePool() {
-  const people = ["爸爸", "妈妈", "哥哥", "姐姐", "弟弟", "妹妹", "老师", "同学", "朋友"];
-  const times = ["早上", "上午", "中午", "下午", "晚上", "今天", "明天", "星期六", "星期日"];
-  const result = [];
-  const add = (items, build) => people.forEach((person, index) => {
-    const answer = items[index % items.length];
-    result.push(build({ person, time: times[index], answer, distractors: rotatingDistractors(items, answer), index }));
-  });
-
-  add(["红色", "白色", "黑色"], ({ person, answer, distractors, index }) => {
-    const other = ["红色", "白色", "黑色"][(index + 1) % 3];
-    return [`女：${person}想买一件新衣服。男：${other}的一百元，${answer}的八十元。女：${person}喜欢${answer}的。问：${person}喜欢什么颜色的衣服？`, `${person}喜欢什么颜色的衣服？`, answer, distractors];
-  });
-  add(["七点", "八点", "九点", "十点", "十一点", "十二点", "一点", "两点", "三点"], ({ answer, distractors, index }) => {
-    const event = ["电影", "考试", "汉语课"][index % 3];
-    return [`男：${event}${answer}开始。女：现在还早，我们等一会儿吧。男：好，我们一起进去。问：${event}几点开始？`, `${event}几点开始？`, answer, distractors];
-  });
-  add(["公共汽车", "出租车", "自行车", "走路"], ({ person, time, answer, distractors }) => {
-    const action = { 公共汽车: "坐公共汽车", 出租车: "坐出租车", 自行车: "骑自行车", 走路: "走路" }[answer];
-    return [`女：${person}${time}要去公司吗？男：是的，公司离家不远。女：那${person}怎么去？男：${person}${action}去。问：${person}怎么去公司？`, `${person}怎么去公司？`, answer, distractors];
-  });
-  add(["休息", "吃药", "睡觉", "去医院"], ({ person, time, answer, distractors }) =>
-    [`男：${person}${time}怎么没来？女：${person}生病了，身体不舒服。男：那${person}要${answer}。问：${person}要做什么？`, `${person}要做什么？`, answer, distractors]);
-  add(["书", "手表", "手机", "衣服"], ({ person, time, answer, distractors }) => {
-    const gift = { 书: "一本书", 手表: "一块手表", 手机: "一个手机", 衣服: "一件衣服" }[answer];
-    return [`女：${time}是${person}的生日。男：你准备送什么？女：${person}喜欢${answer}，我要买${gift}送给${person}。问：女的要送什么？`, "女的要送什么？", answer, distractors];
-  });
-  return result;
-}
-
 // 聴解第4部分は本番では4〜5往復の長い対話。[音声原文, 設問, 正解, [誤答2つ]]
 const HSK3_LONG_DIALOGUES = [
   ["男：你的行李箱怎么这么重？女：里面有很多书，还有给朋友的礼物。男：需要我帮你拿吗？女：谢谢，你帮我拿这个包就行。问：女的让男的拿什么？",
@@ -276,6 +179,58 @@ const HSK3_STATEMENTS = [
 
 // 判断对错（本番形式）。本文を読み、★の文が本文と合っているかを判断する。
 // [本文, 本文ピンイン, ★の文, ★のピンイン, 正解(true=对), 解説]
+// 聴解第3部分の出題プール（本番形式の短い対話＋設問）。場面と設問の種類を散らす。
+const HSK2_SHORT_DIALOGUES = [
+  ["女：你家离学校远吗？男：不远，走路十分钟就到。问：男的怎么去学校？", "男的怎么去学校？", "走路", ["坐车", "骑自行车"]],
+  ["男：明天要下雪吗？女：不，明天是晴天。问：明天天气怎么样？", "明天天气怎么样？", "晴天", ["下雪", "下雨"]],
+  ["女：你想喝咖啡还是茶？男：我要一杯咖啡。问：男的要喝什么？", "男的要喝什么？", "咖啡", ["茶", "牛奶"]],
+  ["男：现在几点了？女：七点五十。问：现在几点？", "现在几点？", "七点五十", ["八点十分", "六点五十"]],
+  ["女：你们家有几个人？男：四个，爸爸妈妈和弟弟。问：男的家有几个人？", "男的家有几个人？", "四个", ["三个", "五个"]],
+  ["男：这个多少钱？女：三十五块。问：这个东西多少钱？", "这个东西多少钱？", "三十五块", ["三十块", "五十块"]],
+  ["女：你在哪儿等我？男：我在教室里等你。问：男的在哪儿等？", "男的在哪儿等？", "教室", ["机场", "医院"]],
+  ["男：你怎么了？女：我有点儿累，想休息一下。问：女的想做什么？", "女的想做什么？", "休息", ["跑步", "工作"]],
+  ["女：你给妹妹买了什么？男：我买了一块手表。问：男的买了什么？", "男的买了什么？", "手表", ["手机", "衣服"]],
+  ["男：外面冷吗？女：很冷，你穿这件衣服吧。问：女的让男的做什么？", "女的让男的做什么？", "穿衣服", ["开门", "喝水"]],
+  ["女：我们坐公共汽车去吧。男：太慢了，我们坐出租车。问：他们打算怎么去？", "他们打算怎么去？", "坐出租车", ["坐公共汽车", "走路"]],
+  ["男：你吃过饭了吗？女：还没有，我在等你。问：女的为什么没吃饭？", "女的为什么没吃饭？", "在等男的", ["不饿", "太忙"]],
+  ["女：你今天几点下班？男：今天很忙，可能八点。问：男的今天几点下班？", "男的今天几点下班？", "八点", ["六点", "五点"]],
+  ["男：你学汉语多长时间了？女：已经一年了。问：女的学汉语多久了？", "女的学汉语多久了？", "一年", ["两年", "一个月"]],
+  ["女：这是你姐姐吗？男：不是，这是我妹妹。问：照片上的人是谁？", "照片上的人是谁？", "男的妹妹", ["男的姐姐", "男的妻子"]],
+  ["男：你周末做什么？女：我常常去游泳。问：女的周末做什么？", "女的周末做什么？", "游泳", ["唱歌", "跳舞"]],
+  ["女：我的手机在哪儿？男：就在桌子上。问：手机在哪儿？", "手机在哪儿？", "桌子上", ["椅子上", "房间外"]],
+  ["男：明天去踢足球吗？女：听说明天下雨，别去了。问：他们明天做什么？", "他们明天做什么？", "不去踢足球", ["去踢足球", "去跑步"]],
+  ["女：你买了几个鸡蛋？男：我买了一公斤。问：男的买了多少鸡蛋？", "男的买了多少鸡蛋？", "一公斤", ["两公斤", "十个"]],
+  ["男：这本书是谁的？女：是老师的。问：书是谁的？", "书是谁的？", "老师的", ["学生的", "男的"]],
+  ["女：你给谁打电话？男：给我哥哥打电话。问：男的给谁打电话？", "男的给谁打电话？", "哥哥", ["姐姐", "朋友"]],
+  ["男：你喜欢什么颜色？女：我最喜欢白色。问：女的喜欢什么颜色？", "女的喜欢什么颜色？", "白色", ["红色", "黑色"]],
+  ["女：你去过北京吗？男：去年去过一次。问：男的什么时候去的北京？", "男的什么时候去的北京？", "去年", ["今年", "上个月"]],
+  ["男：明天有汉语课吗？女：没有，明天是星期六。问：明天为什么没有课？", "明天为什么没有课？", "是星期六", ["老师生病了", "教室太小"]],
+];
+
+// 聴解第4部分の出題プール（3〜4往復の較長対話）。
+const HSK2_LONG_DIALOGUES = [
+  ["男：外面还在下雨吗？女：是的，雨很大。男：那我们等一会儿再走。女：好，我也不想现在出去。问：他们为什么不走？",
+    "他们为什么不走？", "因为下大雨", ["因为太累", "因为没时间"]],
+  ["女：你昨天去哪儿了？男：我和朋友去看电影了。女：电影好看吗？男：很好看，你有时间也去吧。问：男的昨天做什么了？",
+    "男的昨天做什么了？", "看电影", ["打篮球", "学习"]],
+  ["男：这件衣服多少钱？女：一百二十块。男：太贵了，便宜点儿吧。女：那一百块吧。问：男的最后花了多少钱？",
+    "男的最后花了多少钱？", "一百块", ["一百二十块", "二十块"]],
+  ["女：明天几点开始上课？男：早上八点。女：那我七点起床。男：好，我们一起去学校。问：女的明天几点起床？",
+    "女的明天几点起床？", "七点", ["八点", "六点"]],
+  ["男：你的身体好点儿了吗？女：好多了，谢谢。男：还要吃药吗？女：医生说不用了。问：女的还要吃药吗？",
+    "女的还要吃药吗？", "不用了", ["还要吃", "不知道"]],
+  ["女：你会做中国菜吗？男：会一点儿，我最会做鱼。女：那今天晚上你做饭吧。男：没问题。问：男的今天晚上做什么？",
+    "男的今天晚上做什么？", "做饭", ["洗衣服", "看电视"]],
+  ["男：我们什么时候去旅游？女：下个月怎么样？男：下个月我很忙。女：那就等到十月吧。问：他们打算什么时候去旅游？",
+    "他们打算什么时候去旅游？", "十月", ["下个月", "这个月"]],
+  ["女：你找什么呢？男：我的手表不见了。女：是不是在房间里？男：我找过了，没有。问：男的在找什么？",
+    "男的在找什么？", "手表", ["手机", "报纸"]],
+  ["男：你每天怎么上班？女：我骑自行车，不坐公共汽车了。男：为什么？女：骑车又快又便宜。问：女的怎么上班？",
+    "女的怎么上班？", "骑自行车", ["坐公共汽车", "走路"]],
+  ["女：这个星期六你有时间吗？男：有，怎么了？女：我想请你来我家吃饭。男：太好了，我会去的。问：女的请男的做什么？",
+    "女的请男的做什么？", "去她家吃饭", ["一起看电影", "去买东西"]],
+];
+
 const HSK2_JUDGE = [
   ["我家离公司很近，走路十分钟就到。", "Wǒ jiā lí gōngsī hěn jìn, zǒulù shí fēnzhōng jiù dào.",
     "我每天坐公共汽车上班。", "Wǒ měitiān zuò gōnggòng qìchē shàngbān.", false,
@@ -412,29 +367,6 @@ function visualListening(level, start, count, part, mode) {
   });
 }
 
-function differentScene(scenes, scene, offset) {
-  for (let step = 1; step <= scenes.length; step += 1) {
-    const candidate = scenes[(offset + step) % scenes.length];
-    if (candidate[0] !== scene[0]) return candidate;
-  }
-  throw new Error("図示の異なる聴解選択肢を作れません");
-}
-
-function pooledVisualListening(level, scenes, part, mode, firstNumber) {
-  return scenes.map((scene, index) => {
-    const id = `hsk${level}-l${part}-${String(firstNumber + index).padStart(3, "0")}`;
-    const fields = { audioText: scene[1], audioFile: audioFile(id), instruction: mode === "judge" ? "请听录音，判断内容是否与图示一致。" : "请听录音，选择相应的图示。", explanation: scene[1] };
-    if (mode === "judge") {
-      const isCorrect = index % 2 === 0;
-      const shown = isCorrect ? scene : differentScene(scenes, scene, index + 7);
-      return q(id, "listening", part, "visual-judge", { ...fields, visual: { symbol: shown[0], alt: shown[3] }, choices: [choice("true", level, { label: "对" }), choice("false", level, { label: "不对" })], correct: String(isCorrect) });
-    }
-    const others = [differentScene(scenes, scene, index + 11), differentScene(scenes, scene, index + 37)];
-    if (others[0][0] === others[1][0]) others[1] = differentScene(scenes, scene, index + 73);
-    return q(id, "listening", part, "visual-choice", { ...fields, choices: [scene, ...others].map((item) => choice(item[0], level, { ariaLabel: item[3] })), correct: scene[0] });
-  });
-}
-
 function dialogueQuestions(level, start, count, part, long = false) {
   return DIALOGUES[level].slice(start, start + count).map((item, index) => {
     const id = `hsk${level}-l${part}-${String(index + 1).padStart(2, "0")}`;
@@ -442,10 +374,62 @@ function dialogueQuestions(level, start, count, part, long = false) {
   });
 }
 
-function pooledDialogueQuestions(level, source, part, long, firstNumber) {
-  return source.map((item, index) => {
-    const id = `hsk${level}-l${part}-${String(firstNumber + index).padStart(3, "0")}`;
-    return q(id, "listening", part, long ? "audio-long-dialogue" : "audio-dialogue", { audioText: item[0], audioFile: audioFile(id), prompt: item[1], choices: choices(item[2], item[3], level), correct: item[2], instruction: long ? "请听较长对话，选择正确答案。" : "请听对话，选择正确答案。", explanation: `${item[1]} — ${item[2]}` });
+function dialoguePool(level, items, part, long = false) {
+  return items.map((item, index) => {
+    const id = `hsk${level}-l${part}-${String(index + 1).padStart(2, "0")}`;
+    return q(id, "listening", part, long ? "audio-long-dialogue" : "audio-dialogue", {
+      audioText: item[0], audioFile: audioFile(id), prompt: item[1], choices: choices(item[2], item[3], level), correct: item[2],
+      instruction: long ? "请听较长对话，选择正确答案。" : "请听对话，选择正确答案。", explanation: `${item[1]} — ${item[2]}`,
+    });
+  });
+}
+
+function wordForms(word) {
+  return [word.hanzi.replace(/（[^）]*）/g, ""), ...[...word.hanzi.matchAll(/（([^）]*)）/g)].map((match) => match[1])].filter(Boolean);
+}
+
+function vocabularyDialogueQuestions(words, part, long = false) {
+  const levelPool = [...vocab[1], ...vocab[2]];
+  const shortOpeners = [
+    "男：请你再说一次。", "男：我没听清楚。", "男：请说慢一点。", "男：你能再说一次吗？", "男：我想再听一次。",
+    "男：请再说一遍。", "男：刚才说了什么？", "男：你再说一次吧。", "男：我想听清楚。", "男：请大声一点。",
+  ];
+  const longOpeners = [
+    ["男：我在练习听力。", "女：你想听什么？", "男：请你说一个句子。"],
+    ["女：我们一起学习汉语吧。", "男：好，我想练习听句子。", "女：那你认真听。"],
+    ["男：这个问题我没听懂。", "女：我可以再说一次。", "男：好，请说慢一点。"],
+    ["女：你准备好了吗？", "男：准备好了。", "女：那我说一个句子。"],
+    ["男：今天我们练习什么？", "女：练习听句子。", "男：好，请开始吧。"],
+  ];
+  const usedAudio = new Set();
+  return words.map((word, index) => {
+    const questionText = "问：女的句子里有哪个词？";
+    let body = long
+      ? `${longOpeners[index % longOpeners.length].join("")}女：${word.example}`
+      : `${shortOpeners[index % shortOpeners.length]}女：${word.example}`;
+    let audioText = `${body}${questionText}`;
+    while (usedAudio.has(audioText)) {
+      body += "男：好的。";
+      audioText = `${body}${questionText}`;
+    }
+    usedAudio.add(audioText);
+    if (!wordForms(word).some((form) => word.example.includes(form))) throw new Error(`${word.id}: 例文に見出し語がありません`);
+    const candidates = levelPool.filter((candidate) => candidate.id !== word.id && !wordForms(candidate).some((form) => audioText.includes(form)));
+    const start = (index * 37) % candidates.length;
+    const distractors = [candidates[start], candidates[(start + 71) % candidates.length]];
+    if (!distractors.every(Boolean) || distractors[0].id === distractors[1].id) throw new Error(`${word.id}: 聴解の誤答を作れません`);
+    const id = `hsk2-l${part}-v${String(index + 1).padStart(3, "0")}`;
+    const toChoice = (item) => ({ value: item.id, label: item.hanzi, pinyin: item.pinyin });
+    return q(id, "listening", part, long ? "audio-long-dialogue" : "audio-dialogue", {
+      wordId: word.id,
+      audioText,
+      audioFile: audioFile(id),
+      prompt: "女的句子里有哪个词？",
+      choices: [word, ...distractors].map(toChoice),
+      correct: word.id,
+      instruction: long ? "请听较长对话，选择正确答案。" : "请听对话，选择正确答案。",
+      explanation: `${word.example} — ${word.hanzi}（${word.pinyin}）`,
+    });
   });
 }
 
@@ -507,18 +491,12 @@ function buildLevel1() {
 }
 
 function buildLevel2() {
-  const extraScenes = buildHsk2ExtraScenes();
-  const shortDialoguePool = buildHsk2ShortDialoguePool();
-  const longDialoguePool = buildHsk2LongDialoguePool();
+  const levelWords = [...vocab[1], ...vocab[2]];
   const listening = [
     ...visualListening(2, 0, 10, 1, "judge"),
-    ...pooledVisualListening(2, extraScenes.slice(0, 90), 1, "judge", 11),
     ...visualListening(2, 10, 10, 2, "choice"),
-    ...pooledVisualListening(2, extraScenes.slice(90), 2, "choice", 11),
-    ...dialogueQuestions(2, 0, 10, 3),
-    ...pooledDialogueQuestions(2, shortDialoguePool, 3, false, 11),
-    ...dialogueQuestions(2, 10, 5, 4, true),
-    ...pooledDialogueQuestions(2, longDialoguePool, 4, true, 6),
+    ...dialoguePool(2, [...DIALOGUES[2].slice(0, 10), ...HSK2_SHORT_DIALOGUES], 3),
+    ...dialoguePool(2, [...DIALOGUES[2].slice(10, 15), ...HSK2_LONG_DIALOGUES], 4, true),
   ];
   const readingJudge = HSK2_JUDGE.map(([prompt, promptPinyin, statement, statementPinyin, isTrue, note], index) =>
     q(`hsk2-r3-${String(index + 1).padStart(2, "0")}`, "reading", 3, "reading-judge", {
@@ -550,11 +528,23 @@ function buildLevel3() {
 }
 
 const forms = { 1: buildLevel1(), 2: buildLevel2(), 3: buildLevel3() };
-const expected = { 1: { total: 40, listening: 20, reading: 20, writing: 0 }, 2: { total: 375, listening: 350, reading: 25, writing: 0 }, 3: { total: 80, listening: 40, reading: 30, writing: 10 } };
+// HSK2の聴解は出題プール制。1回の模試で出す問数（questionSelection）と読解・作文の数を検査する。
+const MOCK_SELECTION = { 2: { listening: { 1: 10, 2: 10, 3: 10, 4: 5 } } };
+const expected = { 1: { total: 40, listening: 20, reading: 20, writing: 0 }, 2: { listening: 35, reading: 25, writing: 0 }, 3: { total: 80, listening: 40, reading: 30, writing: 10 } };
 for (const level of [1, 2, 3]) {
   const questions = forms[level];
   const counts = Object.fromEntries(["listening", "reading", "writing"].map((skill) => [skill, questions.filter((question) => question.skill === skill).length]));
-  if (questions.length !== expected[level].total || Object.entries(counts).some(([skill, count]) => count !== expected[level][skill])) throw new Error(`HSK ${level} count mismatch: ${JSON.stringify(counts)}`);
+  const selection = MOCK_SELECTION[level]?.listening;
+  if (selection) {
+    // プール制の級は、部分ごとに出題数以上そろっていること。
+    for (const [part, count] of Object.entries(selection)) {
+      const available = questions.filter((question) => question.skill === "listening" && question.part === Number(part)).length;
+      if (available < count) throw new Error(`HSK ${level} 聴解第${part}部分: ${count}問必要ですが${available}問しかありません`);
+    }
+    if (counts.reading !== expected[level].reading || counts.writing !== expected[level].writing) throw new Error(`HSK ${level} count mismatch: ${JSON.stringify(counts)}`);
+  } else if (questions.length !== expected[level].total || Object.entries(counts).some(([skill, count]) => count !== expected[level][skill])) {
+    throw new Error(`HSK ${level} count mismatch: ${JSON.stringify(counts)}`);
+  }
   if (new Set(questions.map((question) => question.id)).size !== questions.length) throw new Error(`HSK ${level}: duplicate ids`);
   const audio = questions.filter((question) => question.skill === "listening");
   const duplicateAudio = audio.filter((question, index) => audio.findIndex((item) => item.audioText === question.audioText) !== index);
@@ -564,11 +554,20 @@ for (const level of [1, 2, 3]) {
     if (new Set(values).size !== values.length) throw new Error(`${item.id}: 聴解の選択肢が重複しています`);
     if (!values.includes(item.correct)) throw new Error(`${item.id}: 聴解の正解が選択肢にありません`);
   }
-  if (level === 2) {
-    const expectedParts = { 1: 100, 2: 100, 3: 100, 4: 50 };
-    for (const [part, count] of Object.entries(expectedParts)) {
-      const actual = audio.filter((question) => question.part === Number(part)).length;
-      if (actual !== count) throw new Error(`HSK 2 listening part ${part}: expected ${count}, got ${actual}`);
+  // 似たような問題ばかりにならないよう、同じ部分の中で言い回しが近すぎる組を弾く。
+  const bigrams = (text) => new Set(Array.from({ length: Math.max(0, text.length - 1) }, (_, index) => text.slice(index, index + 2)));
+  const similarity = (a, b) => {
+    const [left, right] = [bigrams(a), bigrams(b)];
+    const shared = [...left].filter((gram) => right.has(gram)).length;
+    return shared / Math.max(1, new Set([...left, ...right]).size);
+  };
+  for (const part of [1, 2, 3, 4]) {
+    const items = questions.filter((question) => question.skill === "listening" && question.part === part && question.audioText);
+    for (let i = 0; i < items.length; i += 1) {
+      for (let j = i + 1; j < items.length; j += 1) {
+        const score = similarity(items[i].audioText, items[j].audioText);
+        if (score > 0.6) throw new Error(`${items[i].id} と ${items[j].id} の言い回しが近すぎます（類似度${score.toFixed(2)}）`);
+      }
     }
   }
   // 聴解で聞いた素材を読解でもう一度出さない（聞き取れなくても読めば解けてしまうため）。

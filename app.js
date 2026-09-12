@@ -1381,7 +1381,7 @@ function playAudioFile(file, button, options = {}) {
   if (!file) return speakWithBrowser(options.fallbackText, button, { rate: options.fallbackRate || .78, role: options.role || "female" });
   stopAudio();
   button?.classList.add("is-playing");
-  const audio = new Audio(`${file}?v=prerendered-3`);
+  const audio = new Audio(`${file}?v=prerendered-4`);
   const playbackRate = options.lockRate ? (options.baseRate || 1) : Math.max(.7, Math.min(1.3, (options.baseRate || 1) * state.audioSpeed));
   audio.playbackRate = playbackRate;
   audio.preservesPitch = true;
