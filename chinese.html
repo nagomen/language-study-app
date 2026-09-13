@@ -22,6 +22,9 @@
           <button class="nav-item" data-view="words" type="button">
             <span aria-hidden="true">字</span>単語一覧
           </button>
+          <button class="nav-item" data-view="categories" type="button">
+            <span aria-hidden="true">類</span>分類から学ぶ
+          </button>
           <button class="nav-item" data-view="examples" type="button">
             <span aria-hidden="true">文</span>例文集
           </button>
@@ -63,11 +66,14 @@
             <div class="today-badge"><span>今週</span><strong id="week-count">0</strong><small>問に挑戦</small></div>
           </div>
 
-          <div class="hero-card">
-            <div>
-              <span class="hero-kicker">DAILY CHINESE</span>
-              <h2>小さな積み重ねが、<br />大きな自信になる。</h2>
-              <p>レベルを選んで、今日の学習を始めましょう。</p>
+          <div class="hero-card daily-hero" aria-labelledby="daily-banner-title">
+            <div class="daily-hero-copy">
+              <span class="hero-kicker">DAILY 20 · HSK 3</span>
+              <h2 id="daily-banner-title">今日の20語</h2>
+              <p id="daily-banner-note">毎日20語ずつ、300語を15日で一周します。</p>
+              <div class="daily-progress"><span id="daily-progress-bar"></span></div>
+              <small id="daily-progress-label">DAY 1 / 15</small>
+              <button id="daily-open" class="primary-button" type="button">今日の学習を開く <span>→</span></button>
             </div>
             <div class="hero-art" aria-hidden="true">
               <span class="sun"></span><span class="mountain mountain-back"></span><span class="mountain mountain-front"></span>
@@ -104,6 +110,11 @@
             <button id="review-quiz" class="quick-card" type="button">
               <span class="quick-icon blue">復</span>
               <span><strong>まちがい復習</strong><small id="review-count-label">復習する単語はありません</small></span>
+              <span aria-hidden="true">→</span>
+            </button>
+            <button id="open-categories" class="quick-card" type="button">
+              <span class="quick-icon plum">類</span>
+              <span><strong>分類から学ぶ</strong><small id="category-count-label">数詞・形容詞・旅行などの括りで出題</small></span>
               <span aria-hidden="true">→</span>
             </button>
             <button id="open-examples" class="quick-card" type="button">
@@ -158,7 +169,7 @@
         </section>
 
         <section id="words-view" class="view" aria-labelledby="words-title">
-          <div class="page-heading"><div><p class="eyebrow">VOCABULARY</p><h1 id="words-title">単語一覧</h1><p>JSONに登録された単語を確認できます。</p></div></div>
+          <div class="page-heading"><div><p class="eyebrow">VOCABULARY</p><h1 id="words-title">単語一覧</h1><p>HSK1〜3の600語を、レベル・分類・チェックで絞り込んで確認できます。</p></div></div>
           <div class="toolbar">
             <div class="level-tabs" role="group" aria-label="HSKレベルで絞り込み">
               <button class="filter-chip is-active" type="button" data-level="all">すべて</button>
@@ -166,11 +177,107 @@
               <button class="filter-chip" type="button" data-level="2">HSK 2</button>
               <button class="filter-chip" type="button" data-level="3">HSK 3</button>
             </div>
+            <label class="category-select">分類<select id="word-category" aria-label="分類で絞り込み"><option value="all">すべての分類</option></select></label>
             <button class="check-chip" type="button" data-check-filter="words" aria-pressed="false"><span aria-hidden="true">✓</span> チェックのみ</button>
             <label class="search-box"><span aria-hidden="true">⌕</span><input id="word-search" type="search" placeholder="漢字・ピンイン・意味で検索" /></label>
           </div>
           <div id="word-list" class="word-list"></div>
           <p id="empty-words" class="empty-state is-hidden">該当する単語がありません。</p>
+        </section>
+
+        <section id="daily-view" class="view" aria-labelledby="daily-title">
+          <div class="page-heading examples-heading">
+            <div><p class="eyebrow">DAILY 20 · HSK 3</p><h1 id="daily-title">今日の20語</h1><p id="daily-lead">その日の20語と、前回まちがえた単語をまとめて出題します。同じ単語が新出として二度出ることはありません。</p></div>
+            <div class="daily-progress-card">
+              <strong id="daily-day-label">DAY 1 / 15</strong>
+              <div class="daily-progress"><span id="daily-page-progress-bar"></span></div>
+              <small id="daily-learned-label">学習済み 0 / 300語</small>
+            </div>
+          </div>
+          <div id="daily-status" class="daily-status"></div>
+          <div class="daily-actions">
+            <button id="daily-start" class="primary-button" type="button">今日のテストを始める <span>→</span></button>
+            <button id="daily-retry" class="primary-button is-hidden" type="button">今日の20語をもう一度テストする <span>→</span></button>
+            <button id="daily-review-quiz" class="secondary-button is-hidden" type="button">まちがえた単語だけ復習する</button>
+          </div>
+          <div id="daily-review" class="daily-review is-hidden"></div>
+          <h2 class="daily-section-title" id="daily-list-title">今日の20語</h2>
+          <div id="daily-word-list" class="word-list"></div>
+          <div id="daily-history" class="daily-history"></div>
+          <div class="checked-tools">
+            <button id="daily-reset" class="text-button" type="button">毎日20語の進み具合をリセット</button>
+          </div>
+          <p class="checked-tools-note">進み具合はこの端末のブラウザに保存されます（学習記録のリセットでは消えません）。日付ではなく学習した回数で進むので、1日空いても続きから始められます。</p>
+        </section>
+
+        <section id="categories-view" class="view" aria-labelledby="categories-title">
+          <div class="page-heading examples-heading" id="category-page-heading">
+            <div><p class="eyebrow">WORD CATEGORIES</p><h1 id="categories-title">分類から学ぶ</h1><p>数詞・形容詞・旅行など、用途ごとにHSK1〜3の600語をまとめました。一覧で眺めて、そのままテストできます。</p></div>
+            <div class="example-total"><strong id="category-total-count">0</strong><span>分類</span></div>
+          </div>
+          <div id="category-detail-head" class="category-detail-head-wrap is-hidden">
+            <button id="category-back" class="text-button" type="button">← 分類の一覧へ戻る</button>
+            <div class="page-heading examples-heading category-detail-head">
+              <div><p class="eyebrow" id="category-detail-group">CATEGORY</p><h2 id="category-detail-title">分類</h2><p id="category-detail-description"></p></div>
+              <div class="example-total"><strong id="category-detail-count">0</strong><span>単語</span></div>
+            </div>
+          </div>
+          <div class="toolbar">
+            <div class="level-tabs" role="group" aria-label="分類をHSKレベルで絞り込み">
+              <button class="category-filter-chip filter-chip is-active" type="button" data-category-level="all">すべて</button>
+              <button class="category-filter-chip filter-chip" type="button" data-category-level="1">HSK 1</button>
+              <button class="category-filter-chip filter-chip" type="button" data-category-level="2">HSK 2</button>
+              <button class="category-filter-chip filter-chip" type="button" data-category-level="3">HSK 3</button>
+            </div>
+            <button class="check-chip" type="button" data-check-filter="categories" aria-pressed="false"><span aria-hidden="true">✓</span> チェックのみ</button>
+            <label class="search-box"><span aria-hidden="true">⌕</span><input id="category-search" type="search" placeholder="分類名・単語で検索" /></label>
+          </div>
+          <div id="guide-band" class="guide-band">
+            <button class="guide-card" type="button" data-guide-open="de">
+              <span class="guide-card-mark">得</span>
+              <span class="guide-card-body"><strong>動作の様子を言う（的・得・地）</strong><small>3つのdeの使い分けと様態補語。解説＋練習10問</small></span>
+              <span class="guide-card-go" aria-hidden="true">→</span>
+            </button>
+            <button class="guide-card" type="button" data-category-open="measure">
+              <span class="guide-card-mark">量</span>
+              <span class="guide-card-body"><strong>量詞（助数詞）の使い分け</strong><small>「数＋量詞＋名詞」で覚える特設ページ。量詞クイズつき</small></span>
+              <span class="guide-card-go" aria-hidden="true">→</span>
+            </button>
+          </div>
+          <div id="category-groups" class="category-groups"></div>
+          <p id="empty-categories" class="empty-state is-hidden">条件に合う分類がありません。</p>
+
+          <div id="category-detail" class="category-detail is-hidden">
+            <button id="category-guide-link" class="guide-link is-hidden" type="button" data-guide-open="de">
+              <span class="guide-card-mark">得</span>
+              <span class="guide-card-body"><strong>解説ページ：動作の様子を言う（的・得・地）</strong><small>この分類の的・得・地を、位置と形から整理します</small></span>
+              <span class="guide-card-go" aria-hidden="true">→</span>
+            </button>
+            <div class="category-detail-actions">
+              <button id="measure-quiz" class="primary-button is-hidden" type="button">量詞クイズ10問 <span>→</span></button>
+              <button id="category-quiz" class="secondary-button" type="button">この分類でテスト</button>
+              <button class="secondary-button" type="button" data-category-practice="reading">読解の問題を見る</button>
+              <button class="secondary-button" type="button" data-category-practice="listening">聴解の問題を見る</button>
+              <button id="category-open-words" class="secondary-button" type="button">単語一覧で見る</button>
+            </div>
+            <p class="category-quiz-note">出題の向き（中→日／日→中）はホームの設定に従います。10語に満たない分類では、まぎらわしい選択肢を全600語から補います。</p>
+            <div id="measure-guide" class="measure-guide is-hidden"></div>
+            <div id="category-word-list" class="word-list"></div>
+            <p id="empty-category-words" class="empty-state is-hidden">条件に合う単語がありません。レベルやチェックの絞り込みを外してみてください。</p>
+          </div>
+        </section>
+
+        <section id="guide-view" class="view" aria-labelledby="guide-title">
+          <button id="guide-back" class="text-button" type="button">← 分類の一覧へ戻る</button>
+          <div class="page-heading examples-heading">
+            <div><p class="eyebrow" id="guide-eyebrow">GRAMMAR GUIDE</p><h1 id="guide-title">解説</h1><p id="guide-summary"></p></div>
+            <div class="example-total level-total"><strong id="guide-level">HSK</strong><span>目安</span></div>
+          </div>
+          <div class="category-detail-actions">
+            <button id="guide-practice" class="primary-button" type="button">文法ドリル10問 <span>→</span></button>
+          </div>
+          <div id="guide-related" class="guide-related"></div>
+          <div id="guide-sections" class="guide-sections"></div>
         </section>
 
         <section id="examples-view" class="view" aria-labelledby="examples-title">
@@ -345,6 +452,7 @@
       <nav class="mobile-bottom-nav" aria-label="スマートフォン用ナビゲーション">
         <button class="nav-item is-active" data-view="home" type="button"><span aria-hidden="true">⌂</span><small>ホーム</small></button>
         <button class="nav-item" data-view="words" type="button"><span aria-hidden="true">字</span><small>単語</small></button>
+        <button class="nav-item" data-view="categories" type="button"><span aria-hidden="true">類</span><small>分類</small></button>
         <button class="nav-item" data-view="examples" type="button"><span aria-hidden="true">文</span><small>例文</small></button>
         <button class="nav-item" data-view="checked" type="button"><span aria-hidden="true">✓</span><small>チェック</small></button>
         <button class="nav-item" data-view="exam" type="button"><span aria-hidden="true">試</span><small>試験</small></button>

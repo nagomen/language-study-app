@@ -16,10 +16,11 @@ const temporaryDir = fs.mkdtempSync(path.join(os.tmpdir(), "hsk-sentence-audio-"
 // Reed が未導入の端末では、macOSの「システムの声」で先にダウンロードすること。
 const femaleVoice = process.env.HSK_SENTENCE_FEMALE_VOICE || "Tingting";
 const maleVoice = process.env.HSK_SENTENCE_MALE_VOICE || "Reed (中国語（中国本土）)";
+const cueVoice = process.env.HSK_SENTENCE_CUE_VOICE || "Samantha";
 const force = process.env.HSK_SENTENCE_AUDIO_FORCE === "1";
 const engineVersion = "apple-natural-v1";
-// 会話と設問（问：〜）の境目が聞き取れるよう、設問の前に長めの無音を入れる。
-const GAPS = { beforeQuestion: 1.2, betweenSpeakers: 0.45 };
+// 会話のあとに間を置き、英語の「Question」を挟んでから設問を読む。
+const GAPS = { beforeCue: 1.2, afterCue: 0.45, betweenSpeakers: 0.45 };
 
 fs.mkdirSync(outputDir, { recursive: true });
 
@@ -44,6 +45,7 @@ const parseDialogue = (text) => {
   const pattern = /([男女问])：([\s\S]*?)(?=(?:男|女|问)：|$)/g;
   let match;
   while ((match = pattern.exec(text)) !== null) {
+    if (match[1] === "问") segments.push({ role: "cue", text: "Question" });
     segments.push({ role: match[1] === "男" ? "male" : (match[1] === "女" ? "female" : "narrator"), text: match[2].trim() });
   }
   return segments;
@@ -74,8 +76,14 @@ try { previous = JSON.parse(fs.readFileSync(manifestPath, "utf8")); } catch {}
 function checksum(item) {
   // 無音の長さは複数セグメントのときだけ音に影響するため、そのときだけ検査対象に含める。
   const gaps = item.segments.length > 1 ? GAPS : null;
-  const voices = item.segments.map((segment) => segment.role === "male" ? maleVoice : femaleVoice);
+  const voices = item.segments.map((segment) => voiceForRole(segment.role));
   return crypto.createHash("sha256").update(JSON.stringify({ engineVersion, voices, level: item.level, segments: item.segments, gaps })).digest("hex");
+}
+
+function voiceForRole(role) {
+  if (role === "male") return maleVoice;
+  if (role === "cue") return cueVoice;
+  return femaleVoice;
 }
 
 function legacyChecksum(item) {
@@ -136,11 +144,12 @@ async function generate(item) {
   for (let index = 0; index < item.segments.length; index += 1) {
     const segment = item.segments[index];
     const segmentFile = path.join(temporaryDir, `${item.id}-${index}.wav`);
-    await runSay(segment.text, segment.role === "male" ? maleVoice : femaleVoice, segmentFile, rate);
+    await runSay(segment.text, voiceForRole(segment.role), segmentFile, segment.role === "cue" ? 175 : rate);
     pcmParts.push(extractPcm(fs.readFileSync(segmentFile)));
     if (index < item.segments.length - 1) {
-      const nextIsQuestion = item.segments[index + 1].role === "narrator";
-      pcmParts.push(Buffer.alloc(Math.round(44100 * (nextIsQuestion ? GAPS.beforeQuestion : GAPS.betweenSpeakers)) * 2));
+      const nextRole = item.segments[index + 1].role;
+      const gap = nextRole === "cue" ? GAPS.beforeCue : (segment.role === "cue" ? GAPS.afterCue : GAPS.betweenSpeakers);
+      pcmParts.push(Buffer.alloc(Math.round(44100 * gap) * 2));
     }
   }
   fs.writeFileSync(outputFile, makeWave(Buffer.concat(pcmParts)));
@@ -153,7 +162,7 @@ try {
     results.push(await generate(catalog[index]));
     if ((index + 1) % 20 === 0 || index + 1 === catalog.length) console.log(`${index + 1} / ${catalog.length} 音声を処理`);
   }
-  const items = Object.fromEntries(results.map(({ skipped, segments, ...item }) => [item.id, { ...item, voices: [...new Set(segments.map((segment) => segment.role === "male" ? maleVoice : femaleVoice))] }]));
+  const items = Object.fromEntries(results.map(({ skipped, segments, ...item }) => [item.id, { ...item, voices: [...new Set(segments.map((segment) => voiceForRole(segment.role)))] }]));
   fs.writeFileSync(manifestPath, `${JSON.stringify({ version: 1, engineVersion, sampleRate: 44100, format: "wav", generatedAt: new Date().toISOString(), counts: { total: results.length, generated: results.filter((item) => !item.skipped).length, reused: results.filter((item) => item.skipped).length }, items }, null, 2)}\n`);
   console.log(`完了: ${results.length}件（生成${results.filter((item) => !item.skipped).length} / 再利用${results.filter((item) => item.skipped).length}）`);
 } finally {

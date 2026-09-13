@@ -1,0 +1,315 @@
+{
+  "slot": {
+    "title": "量詞は「数」と「名詞」の間に入る",
+    "cells": [
+      { "label": "数詞", "value": "三", "pinyin": "sān" },
+      { "label": "量詞", "value": "本", "pinyin": "běn" },
+      { "label": "名詞", "value": "书", "pinyin": "shū" }
+    ],
+    "reading": "sān běn shū",
+    "meaning": "3冊の本"
+  },
+  "rules": [
+    {
+      "title": "数字と名詞は直接つながらない",
+      "body": "「3冊の本」は数字のあとに必ず量詞を入れます。量詞を抜かすのがいちばん多い間違いです。",
+      "example": { "cn": "三本书", "pinyin": "sān běn shū", "ja": "3冊の本" }
+    },
+    {
+      "title": "这・那・几・每のあとにも入る",
+      "body": "「この・あの・いくつ」のあとにも量詞が必要です。数字がなくても省けません。",
+      "example": { "cn": "这张票", "pinyin": "zhè zhāng piào", "ja": "このチケット" }
+    },
+    {
+      "title": "「2つ」は二ではなく两",
+      "body": "量詞の前に来る2は两を使います。二を使うのは番号や順番を言うときです。",
+      "example": { "cn": "两个人", "pinyin": "liǎng ge rén", "ja": "2人" }
+    },
+    {
+      "title": "迷ったら个でだいたい通じる",
+      "body": "正しい量詞が出てこないときは个で代用できます。そのうえで、よく使う組み合わせから覚えていきましょう。",
+      "example": { "cn": "一个问题", "pinyin": "yí ge wèntí", "ja": "1つの問題" }
+    }
+  ],
+  "groups": [
+    { "id": "thing", "label": "もの・人を数える", "description": "形やまとまりで使い分けます。名詞とセットで覚えるのが近道です。" },
+    { "id": "time", "label": "時間・日づけ", "description": "時刻と時間の長さでは使う語が変わります。" },
+    { "id": "money", "label": "お金", "description": "話し言葉と書き言葉で言い方が変わります。" },
+    { "id": "unit", "label": "単位・回数", "description": "重さ・長さ・回数を数えます。" }
+  ],
+  "quiz": [
+    {
+      "wordId": "hsk1-032",
+      "prompt": "我每天学习两＿＿小时。",
+      "subPrompt": "私は毎日2時間勉強します。",
+      "choices": ["个", "次", "点", "张"],
+      "correct": "个",
+      "explanation": "小时の前には个が必要です（两个小时）。分钟には个を付けません。"
+    },
+    {
+      "wordId": "hsk1-030",
+      "prompt": "请等十＿＿。",
+      "subPrompt": "10分待ってください。",
+      "choices": ["分钟", "小时", "点", "次"],
+      "correct": "分钟",
+      "explanation": "時間の長さは分钟。時刻の「10分」は十分と言います。"
+    },
+    {
+      "wordId": "hsk2-164",
+      "prompt": "我去过两＿＿北京。",
+      "subPrompt": "私は北京へ2回行ったことがあります。",
+      "choices": ["次", "个", "条", "张"],
+      "correct": "次",
+      "explanation": "動作の回数は次。動詞（去过）のあとに置きます。"
+    },
+    {
+      "wordId": "hsk2-191",
+      "prompt": "今天是八＿＿。",
+      "subPrompt": "今日は8日です。",
+      "choices": ["号", "岁", "年", "点"],
+      "correct": "号",
+      "explanation": "日づけは号。書き言葉では日を使います。"
+    },
+    {
+      "wordId": "hsk1-105",
+      "prompt": "我女儿八＿＿。",
+      "subPrompt": "私の娘は8歳です。",
+      "choices": ["岁", "号", "年", "次"],
+      "correct": "岁",
+      "explanation": "年齢は岁。子どもの年齢は你几岁？とたずねます。"
+    },
+    {
+      "wordId": "hsk1-016",
+      "prompt": "现在三＿＿一刻。",
+      "subPrompt": "今は3時15分です。",
+      "choices": ["点", "分", "号", "次"],
+      "correct": "点",
+      "explanation": "時刻の「〜時」は点。一刻＝15分なので、三点一刻＝3時15分。"
+    }
+  ],
+  "items": [
+    {
+      "wordId": "hsk1-032",
+      "group": "thing",
+      "use": "人でも物でも使える、いちばん広い量詞",
+      "nouns": ["hsk1-086", "hsk1-077", "hsk1-079", "hsk2-259"],
+      "phrase": { "cn": "三个人", "pinyin": "sān ge rén", "ja": "3人" },
+      "tip": "书は本、票は张のように決まった組み合わせだけ覚えて、あとは个で乗り切れます。"
+    },
+    {
+      "wordId": "hsk3-532",
+      "group": "thing",
+      "drill": true,
+      "use": "人を敬って数える",
+      "nouns": ["hsk1-055", "hsk1-133", "hsk3-441"],
+      "phrase": { "cn": "两位老师", "pinyin": "liǎng wèi lǎoshī", "ja": "2人の先生" },
+      "tip": "友達や子どもには个、先生・お客様・目上の人には位を使います。"
+    },
+    {
+      "wordId": "hsk3-443",
+      "group": "thing",
+      "use": "家族の人数を数える",
+      "nouns": ["hsk1-086", "hsk1-045"],
+      "phrase": { "cn": "四口人", "pinyin": "sì kǒu rén", "ja": "4人家族" },
+      "tip": "「何人家族ですか」は你家有几口人？。家族以外の人数には使いません。"
+    },
+    {
+      "wordId": "hsk1-006",
+      "group": "thing",
+      "drill": true,
+      "use": "本・ノートなど冊子になっているもの",
+      "nouns": ["hsk1-098", "hsk3-595"],
+      "phrase": { "cn": "一本书", "pinyin": "yì běn shū", "ja": "1冊の本" },
+      "tip": "読むもの・めくるものは本。新聞（报纸）は张で数えます。"
+    },
+    {
+      "wordId": "hsk2-289",
+      "group": "thing",
+      "drill": true,
+      "use": "紙や机など、平らな面のあるもの",
+      "nouns": ["hsk2-232", "hsk1-146", "hsk3-583", "hsk3-356"],
+      "phrase": { "cn": "两张票", "pinyin": "liǎng zhāng piào", "ja": "チケット2枚" },
+      "tip": "「面」で数えるイメージ。切符・写真・地図・机・ベッドが代表です。"
+    },
+    {
+      "wordId": "hsk2-199",
+      "group": "thing",
+      "drill": true,
+      "use": "上に着る服、そして「事がら」",
+      "nouns": ["hsk1-132", "hsk3-335", "hsk2-244"],
+      "phrase": { "cn": "一件衣服", "pinyin": "yí jiàn yīfu", "ja": "服1着" },
+      "tip": "上半身の服は件、ズボンやスカートは条。用事も一件事情と数えます。"
+    },
+    {
+      "wordId": "hsk3-519",
+      "group": "thing",
+      "drill": true,
+      "use": "細長い形のもの",
+      "nouns": ["hsk3-445", "hsk2-283", "hsk2-218", "hsk3-395"],
+      "phrase": { "cn": "一条鱼", "pinyin": "yì tiáo yú", "ja": "魚1匹" },
+      "tip": "ズボン・道・川・魚など、細長いものは条でまとめて覚えられます。"
+    },
+    {
+      "wordId": "hsk3-508",
+      "group": "thing",
+      "drill": true,
+      "use": "2つで1組になるもの",
+      "nouns": ["hsk3-546", "hsk3-446"],
+      "phrase": { "cn": "一双鞋", "pinyin": "yì shuāng xié", "ja": "靴1足" },
+      "tip": "靴・箸・手袋のようにペアで使うものは双です。"
+    },
+    {
+      "wordId": "hsk3-454",
+      "group": "thing",
+      "drill": true,
+      "use": "車輪のついた乗り物",
+      "nouns": ["hsk1-012", "hsk2-297", "hsk2-184"],
+      "phrase": { "cn": "一辆自行车", "pinyin": "yí liàng zìxíngchē", "ja": "自転車1台" },
+      "tip": "車・自転車・バスは辆。飛行機や船は別の量詞を使います。"
+    },
+    {
+      "wordId": "hsk3-588",
+      "group": "thing",
+      "use": "種類を数える",
+      "nouns": ["hsk1-101", "hsk2-270", "hsk3-309"],
+      "phrase": { "cn": "两种颜色", "pinyin": "liǎng zhǒng yánsè", "ja": "2種類の色" },
+      "tip": "「〜種類」と言いたいときは种。数ではなくバリエーションを数えます。"
+    },
+    {
+      "wordId": "hsk1-124",
+      "group": "thing",
+      "use": "はっきりしない数量（いくつか）",
+      "nouns": ["hsk1-020", "hsk1-101", "hsk1-077"],
+      "phrase": { "cn": "一些水果", "pinyin": "yìxiē shuǐguǒ", "ja": "少しの果物" },
+      "tip": "一些・这些・那些の形で使います。二些・三些とは言えません。"
+    },
+    {
+      "wordId": "hsk3-331",
+      "group": "thing",
+      "use": "建物の階",
+      "nouns": ["hsk3-457", "hsk1-090"],
+      "phrase": { "cn": "五层楼", "pinyin": "wǔ céng lóu", "ja": "5階建て" },
+      "tip": "「5階に住む」は住在五层。階数をたずねるときは几层。"
+    },
+    {
+      "wordId": "hsk3-363",
+      "group": "thing",
+      "use": "道のり・時間・話のひと区切り",
+      "nouns": ["hsk2-218", "hsk2-243", "hsk3-385"],
+      "phrase": { "cn": "一段时间", "pinyin": "yí duàn shíjiān", "ja": "しばらくの間" },
+      "tip": "長さのあるものを区切って数えます。一段路・一段故事もよく使います。"
+    },
+    {
+      "wordId": "hsk1-016",
+      "group": "time",
+      "use": "時刻の「〜時」",
+      "nouns": [],
+      "phrase": { "cn": "三点", "pinyin": "sān diǎn", "ja": "3時" },
+      "tip": "「何時ですか」は现在几点？。2時は两点で、二点とは言いません。"
+    },
+    {
+      "wordId": "hsk3-374",
+      "group": "time",
+      "use": "時刻の「〜分」",
+      "nouns": [],
+      "phrase": { "cn": "九点十分", "pinyin": "jiǔ diǎn shí fēn", "ja": "9時10分" },
+      "tip": "お金の単位（五分钱）やテストの点数（一百分）にも使う字です。"
+    },
+    {
+      "wordId": "hsk3-440",
+      "group": "time",
+      "use": "15分をひとかたまりで言う",
+      "nouns": [],
+      "phrase": { "cn": "三点一刻", "pinyin": "sān diǎn yí kè", "ja": "3時15分" },
+      "tip": "一刻＝15分、三刻＝45分。三点半（3時半）とセットで覚えましょう。"
+    },
+    {
+      "wordId": "hsk1-030",
+      "group": "time",
+      "use": "時間の長さの「〜分間」",
+      "nouns": [],
+      "phrase": { "cn": "十分钟", "pinyin": "shí fēnzhōng", "ja": "10分間" },
+      "tip": "時刻の「10分」は十分、長さの「10分間」は十分钟と使い分けます。"
+    },
+    {
+      "wordId": "hsk2-264",
+      "group": "time",
+      "use": "時間の長さの「〜時間」",
+      "nouns": [],
+      "phrase": { "cn": "两个小时", "pinyin": "liǎng ge xiǎoshí", "ja": "2時間" },
+      "tip": "小时の前には个が必要です。分钟には个を付けません。"
+    },
+    {
+      "wordId": "hsk1-075",
+      "group": "time",
+      "use": "年数を数える",
+      "nouns": [],
+      "phrase": { "cn": "三年", "pinyin": "sān nián", "ja": "3年間" },
+      "tip": "年はそれ自体が量詞なので、三个年とは言いません。"
+    },
+    {
+      "wordId": "hsk1-105",
+      "group": "time",
+      "use": "年齢を数える",
+      "nouns": [],
+      "phrase": { "cn": "八岁", "pinyin": "bā suì", "ja": "8歳" },
+      "tip": "子どもには你几岁？、大人には你多大？とたずねます。"
+    },
+    {
+      "wordId": "hsk2-191",
+      "group": "time",
+      "use": "日づけ・番号",
+      "nouns": [],
+      "phrase": { "cn": "八号", "pinyin": "bā hào", "ja": "8日" },
+      "tip": "話し言葉は号、書き言葉は日。部屋番号や靴のサイズにも使います。"
+    },
+    {
+      "wordId": "hsk1-053",
+      "group": "money",
+      "use": "お金の「〜元」（話し言葉）",
+      "nouns": ["hsk1-082"],
+      "phrase": { "cn": "十块钱", "pinyin": "shí kuài qián", "ja": "10元" },
+      "tip": "買い物の会話ではほとんど块。多少钱？への答えもふつう块です。"
+    },
+    {
+      "wordId": "hsk2-284",
+      "group": "money",
+      "use": "お金の「〜元」（書き言葉）",
+      "nouns": ["hsk1-082"],
+      "phrase": { "cn": "二十元", "pinyin": "èrshí yuán", "ja": "20元" },
+      "tip": "値札やレシート、試験の文章では元が使われます。金額は块と同じです。"
+    },
+    {
+      "wordId": "hsk3-419",
+      "group": "money",
+      "use": "1元の10分の1",
+      "nouns": ["hsk1-082"],
+      "phrase": { "cn": "五角钱", "pinyin": "wǔ jiǎo qián", "ja": "5角" },
+      "tip": "話し言葉では毛とも言います。一块五角＝1.5元。"
+    },
+    {
+      "wordId": "hsk2-185",
+      "group": "unit",
+      "use": "重さ（キログラム）",
+      "nouns": ["hsk1-079", "hsk2-272", "hsk3-480"],
+      "phrase": { "cn": "一公斤苹果", "pinyin": "yì gōngjīn píngguǒ", "ja": "リンゴ1キロ" },
+      "tip": "市場では半公斤を一斤と言うことが多く、値段も斤で示されます。"
+    },
+    {
+      "wordId": "hsk3-463",
+      "group": "unit",
+      "use": "長さ（メートル）",
+      "nouns": [],
+      "phrase": { "cn": "一百米", "pinyin": "yìbǎi mǐ", "ja": "100メートル" },
+      "tip": "米饭の米と同じ字ですが、ここでは長さの単位です。"
+    },
+    {
+      "wordId": "hsk2-164",
+      "group": "unit",
+      "use": "動作の回数",
+      "nouns": [],
+      "phrase": { "cn": "两次", "pinyin": "liǎng cì", "ja": "2回" },
+      "tip": "動詞のあとに置きます（去过两次＝2回行ったことがある）。"
+    }
+  ]
+}

@@ -12,9 +12,25 @@ const EXAM_CONFIG = {
 
 const SKILL_LABELS = { vocabulary: "単語", listening: "聴解", reading: "読解", writing: "作文" };
 
-const REVIEW_SUB_LABELS = { "reading-comprehension": "設問", "reading-judge": "★の文", meaning: "ピンイン", fill: "訳" };
+const REVIEW_SUB_LABELS = { "reading-comprehension": "設問", "reading-judge": "★の文", meaning: "ピンイン", fill: "訳", grammar: "訳" };
 const reviewSessions = { quiz: { entries: [], scope: "all" }, practice: { entries: [], scope: "all" } };
 const CHECKED_KEY = "hsk-checked-words";
+
+// HSK3を毎日20語ずつ。並び順は固定の種から作るので、日ごとの20語は毎回同じで重複もしない。
+const DAILY_KEY = "hsk3-daily-v1";
+const DAILY_LEVEL = 3;
+const DAILY_SIZE = 20;
+const DAILY_SEED = 20260913;
+
+// 分類ページのグループ見出し。data/word-tags.json の group と対応する。
+const CATEGORY_GROUP_META = {
+  pos: { eyebrow: "PARTS OF SPEECH", label: "品詞でさがす", description: "数詞・量詞・形容詞など、ことばの種類ごとにまとめています。" },
+  topic: { eyebrow: "TOPICS & SCENES", label: "場面・テーマでさがす", description: "旅行・食事・仕事など、使う場面ごとにまとめています。" },
+};
+// この語数以上の分類は、まぎらわしい選択肢を同じ分類の中から作る。
+const CATEGORY_QUIZ_MIN_POOL = 10;
+// 分類ページから開ける解説ページ。分類ID → ガイドID。
+const CATEGORY_GUIDES = { particle: "de" };
 
 const WRITING_BANK = [
   { type: "reorder", tokens: ["我", "每天", "学习", "汉语"], answer: "我每天学习汉语。", meaning: "私は毎日中国語を勉強します。" },
@@ -90,14 +106,23 @@ const MOCK_DIALOGUE_BANK = [
 
 const state = {
   words: [],
+  categories: [],
+  guides: [],
+  measure: null,
+  selectedGuide: null,
   mockForms: {},
   audioSpeed: loadAudioSpeed(),
   vocabularyDirection: loadVocabularyDirection(),
   currentView: "home",
   wordFilter: "all",
+  wordCategory: "all",
   exampleFilter: "all",
+  categoryFilter: "all",
+  selectedCategory: null,
   checked: loadChecked(),
-  checkedOnly: { words: false, examples: false },
+  checkedOnly: { words: false, examples: false, categories: false },
+  daily: loadDaily(),
+  dailyDays: [],
   quiz: { questions: [], index: 0, correct: 0, answered: false, source: null, direction: "cn-ja", answers: [] },
   practice: emptyPractice(),
   progress: loadProgress(),
@@ -114,10 +139,14 @@ document.addEventListener("DOMContentLoaded", init);
 async function init() {
   bindEvents();
   await loadWords();
+  state.dailyDays = buildDailyDays();
   renderLevels();
+  renderWordCategoryOptions();
   renderWords();
+  renderCategories();
   renderExamples();
   renderChecked();
+  renderDaily();
   renderProgress();
   updateSummary();
   routeFromHash();
@@ -126,12 +155,26 @@ async function init() {
 async function loadWords() {
   try {
     const responses = await Promise.all([1, 2, 3].map((level) => fetch(`data/hsk${level}.json`)));
-    const mockResponses = await Promise.all([1, 2, 3].map((level) => fetch(`data/mock-hsk${level}.json`)));
+    const [tagResponse, guideResponse, measureResponse, ...mockResponses] = await Promise.all([
+      fetch("data/word-tags.json"),
+      fetch("data/guides.json"),
+      fetch("data/measure-words.json"),
+      ...[1, 2, 3].map((level) => fetch(`data/mock-hsk${level}.json`)),
+    ]);
     if (responses.some((response) => !response.ok)) throw new Error("JSONの読み込みに失敗しました");
     if (mockResponses.some((response) => !response.ok)) throw new Error("模試データの読み込みに失敗しました");
+    if (!tagResponse.ok) throw new Error("分類データの読み込みに失敗しました");
+    if (!guideResponse.ok || !measureResponse.ok) throw new Error("解説データの読み込みに失敗しました");
     const groups = await Promise.all(responses.map((response) => response.json()));
     const mockGroups = await Promise.all(mockResponses.map((response) => response.json()));
-    state.words = groups.flatMap((group, index) => group.map((word, wordIndex) => ({ ...word, level: index + 1, id: word.id || `hsk${index + 1}-${wordIndex + 1}` })));
+    const tagData = await tagResponse.json();
+    state.categories = tagData.categories || [];
+    state.guides = (await guideResponse.json()).guides || [];
+    state.measure = await measureResponse.json();
+    state.words = groups.flatMap((group, index) => group.map((word, wordIndex) => {
+      const id = word.id || `hsk${index + 1}-${wordIndex + 1}`;
+      return { ...word, level: index + 1, id, tags: tagData.words?.[id] || [] };
+    }));
     mockGroups.forEach((form) => { state.mockForms[form.level] = form; });
   } catch (error) {
     $("#level-grid").innerHTML = `<p class="empty-state">単語データを読み込めませんでした。<br><code>スタート.command</code> から起動してください。</p>`;
@@ -152,6 +195,12 @@ function bindEvents() {
   $("#random-quiz").addEventListener("click", () => startQuiz(state.words, "all", state.vocabularyDirection));
   $("#review-quiz").addEventListener("click", () => startReviewQuiz(state.vocabularyDirection));
   $("#open-examples").addEventListener("click", () => navigate("examples"));
+  $("#open-categories").addEventListener("click", () => closeCategoryDetail());
+  $("#daily-open").addEventListener("click", () => navigate("daily"));
+  $("#daily-start").addEventListener("click", startDailySession);
+  $("#daily-retry").addEventListener("click", startDailyRetry);
+  $("#daily-review-quiz").addEventListener("click", startDailyReview);
+  $("#daily-reset").addEventListener("click", resetDaily);
   $("#open-exam").addEventListener("click", () => navigate("exam"));
   $("#audio-speed").value = String(state.audioSpeed);
   $("#audio-speed").addEventListener("change", (event) => {
@@ -168,7 +217,14 @@ function bindEvents() {
   $("#practice-next").addEventListener("click", nextPracticeQuestion);
   $("#practice-audio").addEventListener("click", () => playPracticeAudio(false));
   $("#practice-retry").addEventListener("click", retryPractice);
-  $("#practice-home").addEventListener("click", () => navigate("exam"));
+  $("#practice-home").addEventListener("click", () => {
+    // 分類・解説から始めた練習は、元のページへ戻れるほうが続けやすい。
+    const last = state.practice.lastStart;
+    if (last?.guideId === "measure") openCategory("measure");
+    else if (last?.guideId) openGuide(last.guideId);
+    else if (last?.categoryId) openCategory(last.categoryId);
+    else navigate("exam");
+  });
   $("#quiz-close").addEventListener("click", () => navigate("home"));
   $("#next-question").addEventListener("click", nextQuestion);
   $("#speak-button").addEventListener("click", () => speak(state.quiz.questions[state.quiz.index], $("#speak-button")));
@@ -183,6 +239,27 @@ function bindEvents() {
   $("#back-home").addEventListener("click", () => navigate("home"));
   $("#word-search").addEventListener("input", renderWords);
   $("#example-search").addEventListener("input", renderExamples);
+  $("#category-search").addEventListener("input", renderCategories);
+  $("#word-category").addEventListener("change", (event) => {
+    state.wordCategory = event.target.value;
+    renderWords();
+  });
+  $$(".category-filter-chip").forEach((button) => button.addEventListener("click", () => {
+    state.categoryFilter = button.dataset.categoryLevel;
+    $$(".category-filter-chip").forEach((chip) => chip.classList.toggle("is-active", chip === button));
+    renderCategories();
+  }));
+  $("#category-back").addEventListener("click", closeCategoryDetail);
+  $("#guide-back").addEventListener("click", closeCategoryDetail);
+  $("#guide-practice").addEventListener("click", () => startGuidePractice());
+  $("#measure-quiz").addEventListener("click", startMeasurePractice);
+  $("#category-quiz").addEventListener("click", () => startCategoryQuiz());
+  $$("[data-category-practice]").forEach((button) => button.addEventListener("click", () => startCategoryPractice(button.dataset.categoryPractice)));
+  $("#category-open-words").addEventListener("click", () => {
+    state.wordCategory = state.selectedCategory || "all";
+    $("#word-category").value = state.wordCategory;
+    navigate("words");
+  });
   $$(".filter-chip").forEach((button) => button.addEventListener("click", () => {
     if (!button.dataset.level) return;
     state.wordFilter = button.dataset.level;
@@ -196,8 +273,18 @@ function bindEvents() {
   }));
   $("#reset-progress").addEventListener("click", resetProgress);
   document.addEventListener("click", (event) => {
-    const button = event.target.closest("[data-check-id]");
-    if (button) toggleChecked(button.dataset.checkId);
+    const checkButton = event.target.closest("[data-check-id]");
+    if (checkButton) toggleChecked(checkButton.dataset.checkId);
+    const categoryButton = event.target.closest("[data-category-open]");
+    if (categoryButton) openCategory(categoryButton.dataset.categoryOpen);
+    const guideButton = event.target.closest("[data-guide-open]");
+    if (guideButton) openGuide(guideButton.dataset.guideOpen);
+    // 解説・量詞ページの短いフレーズには録音がないので、ブラウザの音声で読み上げる。
+    const speakButton = event.target.closest("[data-speak]");
+    if (speakButton) {
+      stopAudio();
+      speakWithBrowser(speakButton.dataset.speak, speakButton, { rate: Math.max(.6, .75 * state.audioSpeed) });
+    }
   });
   $("#open-checked").addEventListener("click", () => navigate("checked"));
   $$("[data-check-filter]").forEach((button) => button.addEventListener("click", () => {
@@ -205,7 +292,9 @@ function bindEvents() {
     state.checkedOnly[target] = !state.checkedOnly[target];
     button.classList.toggle("is-active", state.checkedOnly[target]);
     button.setAttribute("aria-pressed", String(state.checkedOnly[target]));
-    if (target === "words") renderWords(); else renderExamples();
+    if (target === "words") renderWords();
+    else if (target === "categories") renderCategories();
+    else renderExamples();
   }));
   $("#checked-list").addEventListener("click", (event) => {
     const button = event.target.closest("[data-checked-audio]");
@@ -239,9 +328,17 @@ function navigate(view) {
 }
 
 function routeFromHash() {
-  const requested = window.location.hash.replace("#", "") || "home";
-  const publicViews = ["home", "words", "examples", "checked", "exam", "progress"];
-  showView(publicViews.includes(requested) ? requested : state.currentView);
+  const [requested, param] = (window.location.hash.replace("#", "") || "home").split("/");
+  const publicViews = ["home", "daily", "words", "categories", "guide", "examples", "checked", "exam", "progress"];
+  if (!publicViews.includes(requested)) return showView(state.currentView);
+  // 分類ページは #categories/travel、解説ページは #guide/de の形で、開いている内容まで復元する。
+  if (requested === "categories") state.selectedCategory = param && categoryById(param) ? param : null;
+  if (requested === "guide") {
+    const guide = guideById(param) || guideById(state.selectedGuide) || state.guides[0];
+    if (!guide) return showView(state.currentView);
+    state.selectedGuide = guide.id;
+  }
+  showView(requested);
 }
 
 function showView(view) {
@@ -249,7 +346,10 @@ function showView(view) {
   $$(".view").forEach((section) => section.classList.toggle("is-visible", section.id === `${view}-view`));
   $$(".nav-item").forEach((item) => item.classList.toggle("is-active", item.dataset.view === view));
   setMobileMenu(false);
+  if (view === "daily") renderDaily();
   if (view === "words") renderWords();
+  if (view === "categories") renderCategories();
+  if (view === "guide") renderGuide();
   if (view === "examples") renderExamples();
   if (view === "checked") renderChecked();
   if (view === "exam") renderExamHub();
@@ -281,14 +381,17 @@ function renderLevels() {
   });
 }
 
-function startQuiz(pool, source, direction = "cn-ja", distractorPool = null) {
+function startQuiz(pool, source, direction = "cn-ja", distractorPool = null, options = {}) {
   if (!pool.length) {
     alert("このレベルにはまだ単語が登録されていません。");
     return;
   }
   // 出題数が少ない復習・チェックでは、選択肢が足りなくならないよう全単語から誤答を作る。
   const choicePool = distractorPool?.length ? [...distractorPool] : [...pool];
-  state.quiz = { questions: shuffle([...pool]).slice(0, Math.min(10, pool.length)), choicePool, index: 0, correct: 0, answered: false, source, direction, answers: [] };
+  // 毎日20語は順番（復習→新出）を保ったまま全問出す。ふだんの単語テストは10問までランダム。
+  const ordered = options.keepOrder ? [...pool] : shuffle([...pool]);
+  const questions = ordered.slice(0, Math.min(options.limit || 10, pool.length));
+  state.quiz = { questions, choicePool, index: 0, correct: 0, answered: false, source, direction, answers: [] };
   showView("quiz");
   renderQuestion();
 }
@@ -416,6 +519,12 @@ function nextQuestion() {
 }
 
 function finishQuiz() {
+  const isDaily = String(state.quiz.source).startsWith("daily");
+  if (isDaily) completeDailySession();
+  // 毎日20語は終えると次の日に進むので、「もう一度」ではなく次に進むボタンにする。
+  $("#retry-quiz").textContent = isDaily
+    ? (state.quiz.source === "daily-review" ? "もう一度復習する" : "今日の20語をもう一度")
+    : "もう一度挑戦";
   $("#result-correct").textContent = state.quiz.correct;
   $("#result-total").textContent = state.quiz.questions.length;
   const rate = state.quiz.questions.length ? state.quiz.correct / state.quiz.questions.length : 0;
@@ -430,6 +539,10 @@ function retryQuiz() {
   const direction = state.quiz.direction || "cn-ja";
   if (source === "review") return startReviewQuiz(direction);
   if (source === "checked") return startCheckedQuiz();
+  if (source === "daily") return startDailySession();
+  if (source === "daily-retry") return startDailyRetry();
+  if (source === "daily-review") return startDailyReview();
+  if (typeof source === "string" && source.startsWith("category:")) return startCategoryQuiz(source.slice("category:".length));
   const pool = source === "all" ? state.words : state.words.filter((word) => word.level === Number(source));
   startQuiz(pool, source, direction);
 }
@@ -438,24 +551,616 @@ function renderWords() {
   const query = $("#word-search").value.trim().toLowerCase();
   const filtered = state.words.filter((word) => {
     const matchesLevel = state.wordFilter === "all" || word.level === Number(state.wordFilter);
-    const haystack = `${word.hanzi} ${word.pinyin} ${word.meaning}`.toLowerCase();
-    return matchesLevel && haystack.includes(query) && (!state.checkedOnly.words || state.checked.has(word.id));
+    const matchesCategory = state.wordCategory === "all" || (word.tags || []).includes(state.wordCategory);
+    return matchesLevel && matchesCategory && wordHaystack(word).includes(query) && (!state.checkedOnly.words || state.checked.has(word.id));
   });
-  $("#word-list").innerHTML = filtered.map((word) => `
-    <article class="word-row">
-      <span class="mini-level">HSK ${word.level}</span>
-      <div><div class="hanzi">${escapeHtml(word.hanzi)}</div><div class="pinyin">${escapeHtml(word.pinyin)}</div></div>
-      <div class="meaning">${escapeHtml(word.meaning)}</div>
+  $("#word-list").innerHTML = filtered.map((word) => wordRowHtml(word)).join("");
+  bindWordRowAudio($("#word-list"));
+  $("#empty-words").classList.toggle("is-hidden", filtered.length > 0);
+}
+
+function wordHaystack(word) {
+  return `${word.hanzi} ${word.pinyin} ${word.meaning}`.toLowerCase();
+}
+
+function wordRowHtml(word, { showExample = false } = {}) {
+  const hasExample = showExample && Boolean(word.example);
+  return `
+    <article class="word-row${hasExample ? " has-example" : ""}">
+      <div class="word-main">
+        <div class="word-headline">
+          <span class="hanzi">${escapeHtml(word.hanzi)}</span>
+          <span class="pinyin">${escapeHtml(word.pinyin)}</span>
+          <span class="mini-level">HSK ${word.level}</span>
+        </div>
+        <p class="meaning">${escapeHtml(word.meaning)}</p>
+        ${wordTagsHtml(word)}
+      </div>
       <div class="row-actions">
         ${checkButtonHtml(word.id)}
         <button class="speak-mini" type="button" data-word-id="${escapeHtml(word.id)}" aria-label="${escapeHtml(word.hanzi)}の中国語発音を聞く"><span aria-hidden="true">声</span></button>
       </div>
-    </article>`).join("");
-  $$("#word-list .speak-mini").forEach((button) => button.addEventListener("click", () => {
-    const word = state.words.find((item) => item.id === button.dataset.wordId);
-    speak(word, button);
+      ${hasExample ? `<div class="word-example">
+        <div><p class="example-chinese">${escapeHtml(word.example)}</p>${word.exampleMeaning ? `<p class="example-japanese">${escapeHtml(word.exampleMeaning)}</p>` : ""}</div>
+        <button class="speak-mini example-mini" type="button" data-example-id="${escapeHtml(word.id)}" aria-label="${escapeHtml(word.hanzi)}の例文を聞く"><span aria-hidden="true">▶</span></button>
+      </div>` : ""}
+    </article>`;
+}
+
+function wordTagsHtml(word) {
+  const tags = (word.tags || []).map((id) => categoryById(id)).filter(Boolean);
+  if (!tags.length) return "";
+  return `<div class="word-tags">${tags.map((category) => `<button class="tag-chip" type="button" data-category-open="${escapeHtml(category.id)}" title="「${escapeHtml(category.label)}」の分類を開く">${escapeHtml(category.label)}</button>`).join("")}</div>`;
+}
+
+function bindWordRowAudio(container) {
+  if (!container) return;
+  container.querySelectorAll("[data-word-id]").forEach((button) => button.addEventListener("click", () => {
+    speak(state.words.find((item) => item.id === button.dataset.wordId), button);
   }));
-  $("#empty-words").classList.toggle("is-hidden", filtered.length > 0);
+  container.querySelectorAll("[data-example-id]").forEach((button) => button.addEventListener("click", () => {
+    const word = state.words.find((item) => item.id === button.dataset.exampleId);
+    playAudioFile(exampleAudioFile(word), button, { fallbackText: word?.example, role: "female" });
+  }));
+}
+
+function categoryById(id) {
+  return state.categories.find((category) => category.id === id) || null;
+}
+
+// 分類ページのレベル・チェックの絞り込みを通した単語。withQuery で検索語も反映する。
+function categoryWords(id, { withQuery = false } = {}) {
+  const query = withQuery ? $("#category-search").value.trim().toLowerCase() : "";
+  return state.words.filter((word) => (word.tags || []).includes(id)
+    && (state.categoryFilter === "all" || word.level === Number(state.categoryFilter))
+    && (!state.checkedOnly.categories || state.checked.has(word.id))
+    && (!query || wordHaystack(word).includes(query)));
+}
+
+function renderCategories() {
+  const detail = state.selectedCategory ? categoryById(state.selectedCategory) : null;
+  $("#category-detail").classList.toggle("is-hidden", !detail);
+  $("#category-groups").classList.toggle("is-hidden", Boolean(detail));
+  $("#guide-band").classList.toggle("is-hidden", Boolean(detail));
+  $("#category-page-heading").classList.toggle("is-hidden", Boolean(detail));
+  $("#category-detail-head").classList.toggle("is-hidden", !detail);
+  if (detail) {
+    $("#empty-categories").classList.add("is-hidden");
+    renderCategoryDetail(detail);
+  } else {
+    renderCategoryGrid();
+  }
+}
+
+function renderCategoryGrid() {
+  const query = $("#category-search").value.trim().toLowerCase();
+  let visible = 0;
+  const html = Object.entries(CATEGORY_GROUP_META).map(([group, meta]) => {
+    const cards = state.categories.filter((category) => category.group === group).map((category) => {
+      const words = categoryWords(category.id);
+      const matchesName = `${category.label} ${category.description}`.toLowerCase().includes(query);
+      if (!words.length) return "";
+      if (query && !matchesName && !words.some((word) => wordHaystack(word).includes(query))) return "";
+      visible += 1;
+      const preview = words.slice(0, 4).map((word) => word.hanzi).join("・");
+      return `
+        <button class="category-card" type="button" data-category-open="${escapeHtml(category.id)}">
+          <span class="category-count"><strong>${words.length}</strong><small>語</small></span>
+          <span class="category-card-body">
+            <strong>${escapeHtml(category.label)}</strong>
+            <small>${escapeHtml(category.description)}</small>
+            <em>${escapeHtml(preview)}${words.length > 4 ? " …" : ""}</em>
+          </span>
+          <span class="category-card-go" aria-hidden="true">→</span>
+        </button>`;
+    }).join("");
+    if (!cards) return "";
+    return `
+      <section class="category-group">
+        <header class="category-group-head"><p class="eyebrow">${meta.eyebrow}</p><h2>${meta.label}</h2><p>${meta.description}</p></header>
+        <div class="category-grid">${cards}</div>
+      </section>`;
+  }).join("");
+  $("#category-groups").innerHTML = html;
+  $("#category-total-count").textContent = visible;
+  $("#empty-categories").classList.toggle("is-hidden", visible > 0);
+}
+
+function renderCategoryDetail(category) {
+  const words = categoryWords(category.id, { withQuery: true });
+  $("#category-detail-group").textContent = CATEGORY_GROUP_META[category.group]?.label || "CATEGORY";
+  $("#category-detail-title").textContent = category.label;
+  $("#category-detail-description").textContent = category.description;
+  $("#category-detail-count").textContent = words.length;
+  $("#category-total-count").textContent = state.categories.length;
+  // 量詞は単語を並べるより、数え方ごとにまとめたほうが覚えやすいので専用の表示にする。
+  const isMeasure = category.id === "measure" && Boolean(state.measure);
+  $("#measure-guide").classList.toggle("is-hidden", !isMeasure);
+  $("#measure-quiz").classList.toggle("is-hidden", !isMeasure);
+  $("#category-word-list").classList.toggle("is-hidden", isMeasure);
+  const guideId = CATEGORY_GUIDES[category.id];
+  const guideLink = $("#category-guide-link");
+  guideLink.classList.toggle("is-hidden", !guideId);
+  if (guideId) guideLink.dataset.guideOpen = guideId;
+  if (isMeasure) renderMeasureGuide(words);
+  else {
+    $("#category-word-list").innerHTML = words.map((word) => wordRowHtml(word, { showExample: true })).join("");
+    bindWordRowAudio($("#category-word-list"));
+  }
+  $("#empty-category-words").classList.toggle("is-hidden", words.length > 0);
+  $$("#category-quiz, #measure-quiz, [data-category-practice]").forEach((button) => { button.disabled = words.length === 0; });
+}
+
+function openCategory(id) {
+  if (!categoryById(id)) return;
+  state.selectedCategory = id;
+  if (window.location.hash === `#categories/${id}`) showView("categories");
+  else window.location.hash = `categories/${id}`;
+}
+
+function closeCategoryDetail() {
+  state.selectedCategory = null;
+  navigate("categories");
+}
+
+function startCategoryQuiz(id = state.selectedCategory) {
+  const category = categoryById(id);
+  if (!category) return;
+  const pool = categoryWords(category.id, { withQuery: true });
+  if (!pool.length) {
+    alert("この条件に合う単語がありません。レベルやチェックの絞り込みを外してください。");
+    return;
+  }
+  // 語数が十分な分類は同じ分類の中から、少ない分類は全単語から誤答の選択肢を作る。
+  const distractorPool = pool.length >= CATEGORY_QUIZ_MIN_POOL ? pool : state.words;
+  startQuiz(pool, `category:${category.id}`, state.vocabularyDirection, distractorPool);
+}
+
+function guideById(id) {
+  return state.guides.find((guide) => guide.id === id) || null;
+}
+
+function openGuide(id) {
+  if (!guideById(id)) return;
+  state.selectedGuide = id;
+  if (window.location.hash === `#guide/${id}`) showView("guide");
+  else window.location.hash = `guide/${id}`;
+}
+
+function renderGuide() {
+  const guide = guideById(state.selectedGuide) || state.guides[0];
+  if (!guide) return;
+  state.selectedGuide = guide.id;
+  $("#guide-eyebrow").textContent = guide.eyebrow || "GRAMMAR GUIDE";
+  $("#guide-title").textContent = guide.title;
+  $("#guide-summary").textContent = guide.summary;
+  $("#guide-level").textContent = guide.level || "HSK";
+  $("#guide-related").innerHTML = (guide.relatedCategories || []).map((id) => categoryById(id)).filter(Boolean)
+    .map((category) => `<button class="tag-chip" type="button" data-category-open="${escapeHtml(category.id)}">${escapeHtml(category.label)}の単語を見る</button>`).join("");
+  $("#guide-sections").innerHTML = (guide.sections || []).map(guideSectionHtml).join("");
+  bindWordRowAudio($("#guide-sections"));
+}
+
+function guideSectionHtml(section) {
+  const parts = [];
+  if (section.body) parts.push(`<p class="guide-body">${escapeHtml(section.body)}</p>`);
+  if (section.table) {
+    const head = section.table.columns.map((column) => `<th>${escapeHtml(column)}</th>`).join("");
+    const rows = section.table.rows.map((row) => `<tr>${row.map((cell, index) => `<td${index === 0 ? ' class="guide-table-key"' : ""}>${escapeHtml(cell)}</td>`).join("")}</tr>`).join("");
+    parts.push(`<div class="guide-table-wrap"><table class="guide-table"><thead><tr>${head}</tr></thead><tbody>${rows}</tbody></table></div>`);
+  }
+  if (section.patterns) parts.push(`<div class="pattern-list">${section.patterns.map((pattern) => `
+    <article class="pattern-card">
+      <p class="pattern-formula">${escapeHtml(pattern.formula)}</p>
+      ${phraseBlockHtml(pattern.example)}
+      ${pattern.note ? `<p class="pattern-note">${escapeHtml(pattern.note)}</p>` : ""}
+    </article>`).join("")}</div>`);
+  if (section.wordExamples) parts.push(`<div class="guide-word-grid">${section.wordExamples.map((entry) => {
+    const word = state.words.find((item) => item.id === entry.wordId);
+    if (!word) return "";
+    return `<article class="guide-word">
+      <header class="guide-word-head">
+        <div><strong>${escapeHtml(word.hanzi)}</strong><span>${escapeHtml(word.pinyin)}</span><small>${escapeHtml(word.meaning)}</small></div>
+        <div class="row-actions">${checkButtonHtml(word.id)}<button class="speak-mini" type="button" data-word-id="${escapeHtml(word.id)}" aria-label="${escapeHtml(word.hanzi)}の発音を聞く"><span aria-hidden="true">声</span></button></div>
+      </header>
+      ${phraseBlockHtml(entry.phrase)}
+    </article>`;
+  }).join("")}</div>`);
+  if (section.compare) parts.push(`<div class="compare-list">${section.compare.map((pair) => `
+    <article class="compare-card">
+      <p class="compare-wrong"><span aria-hidden="true">×</span>${escapeHtml(pair.wrong)}</p>
+      <p class="compare-right"><span aria-hidden="true">○</span>${escapeHtml(pair.right)}${speakButtonHtml(pair.right, "正しい文を聞く")}</p>
+      <p class="compare-note">${escapeHtml(pair.meaning ? `「${pair.meaning}」と言いたいとき。${pair.note}` : pair.note)}</p>
+    </article>`).join("")}</div>`);
+  return `<section class="guide-section"><h2>${escapeHtml(section.heading)}</h2>${parts.join("")}</section>`;
+}
+
+function phraseBlockHtml(phrase) {
+  if (!phrase) return "";
+  return `<div class="phrase-block">
+    <div><p class="example-chinese">${escapeHtml(phrase.cn)}</p><p class="example-pinyin">${escapeHtml(phrase.pinyin)}</p><p class="example-japanese">${escapeHtml(phrase.ja)}</p></div>
+    ${speakButtonHtml(phrase.cn, `${phrase.cn}を聞く`)}
+  </div>`;
+}
+
+function speakButtonHtml(text, label) {
+  return `<button class="phrase-audio" type="button" data-speak="${escapeHtml(text)}" aria-label="${escapeHtml(label)}"><span aria-hidden="true">▶</span></button>`;
+}
+
+// 量詞は「数＋量詞＋名詞」の形と、数える対象をセットで見せる。
+function renderMeasureGuide(words) {
+  const data = state.measure;
+  const container = $("#measure-guide");
+  const visible = new Set(words.map((word) => word.id));
+  const slot = `<section class="measure-slot">
+    <h2>${escapeHtml(data.slot.title)}</h2>
+    <div class="slot-row">${data.slot.cells.map((cell, index) => `
+      <div class="slot-cell"><small>${escapeHtml(cell.label)}</small><strong>${escapeHtml(cell.value)}</strong><span>${escapeHtml(cell.pinyin)}</span></div>
+      ${index < data.slot.cells.length - 1 ? `<span class="slot-plus" aria-hidden="true">＋</span>` : ""}`).join("")}</div>
+    <p class="slot-reading">${escapeHtml(data.slot.reading)}<span>${escapeHtml(data.slot.meaning)}</span>${speakButtonHtml(data.slot.cells.map((cell) => cell.value).join(""), "例を聞く")}</p>
+  </section>`;
+  const rules = `<section class="measure-rules">
+    <h2>使うときの4つのきまり</h2>
+    <div class="measure-rule-grid">${data.rules.map((rule) => `
+      <article class="measure-rule">
+        <strong>${escapeHtml(rule.title)}</strong>
+        <p>${escapeHtml(rule.body)}</p>
+        <p class="measure-rule-example"><b>${escapeHtml(rule.example.cn)}</b><span>${escapeHtml(rule.example.pinyin)}</span><span>${escapeHtml(rule.example.ja)}</span>${speakButtonHtml(rule.example.cn, `${rule.example.cn}を聞く`)}</p>
+      </article>`).join("")}</div>
+  </section>`;
+  const groups = data.groups.map((group) => {
+    const items = data.items.filter((item) => item.group === group.id && visible.has(item.wordId));
+    if (!items.length) return "";
+    return `<section class="measure-group">
+      <header class="measure-group-head"><h2>${escapeHtml(group.label)}<small>${items.length}語</small></h2><p>${escapeHtml(group.description)}</p></header>
+      <div class="measure-grid">${items.map(measureCardHtml).join("")}</div>
+    </section>`;
+  }).join("");
+  container.innerHTML = slot + rules + groups;
+  bindWordRowAudio(container);
+}
+
+function measureCardHtml(item) {
+  const word = state.words.find((entry) => entry.id === item.wordId);
+  if (!word) return "";
+  const nouns = (item.nouns || []).map((id) => state.words.find((entry) => entry.id === id)).filter(Boolean);
+  return `<article class="measure-card">
+    <header class="measure-card-head">
+      <div class="measure-hanzi"><strong>${escapeHtml(word.hanzi)}</strong><span>${escapeHtml(word.pinyin)}</span></div>
+      <span class="mini-level">HSK ${word.level}</span>
+      <div class="row-actions">${checkButtonHtml(word.id)}<button class="speak-mini" type="button" data-word-id="${escapeHtml(word.id)}" aria-label="${escapeHtml(word.hanzi)}の発音を聞く"><span aria-hidden="true">声</span></button></div>
+    </header>
+    <p class="measure-use">${escapeHtml(item.use)}</p>
+    <p class="measure-phrase"><b>${escapeHtml(item.phrase.cn)}</b><span>${escapeHtml(item.phrase.pinyin)}</span><span>${escapeHtml(item.phrase.ja)}</span>${speakButtonHtml(item.phrase.cn, `${item.phrase.cn}を聞く`)}</p>
+    ${nouns.length ? `<div class="measure-nouns"><small>よく数えるもの</small><div class="word-tags">${nouns.map((noun) => `<button class="tag-chip" type="button" data-word-id="${escapeHtml(noun.id)}" title="${escapeHtml(noun.meaning)}">${escapeHtml(noun.hanzi)}<small>${escapeHtml(noun.meaning)}</small></button>`).join("")}</div></div>` : ""}
+    ${word.example ? `<div class="measure-example"><div><p class="example-chinese">${escapeHtml(word.example)}</p><p class="example-pinyin">${escapeHtml(word.examplePinyin || "")}</p><p class="example-japanese">${escapeHtml(word.exampleMeaning || "")}</p></div><button class="speak-mini example-mini" type="button" data-example-id="${escapeHtml(word.id)}" aria-label="例文を聞く"><span aria-hidden="true">▶</span></button></div>` : ""}
+    <p class="measure-tip"><span aria-hidden="true">◎</span>${escapeHtml(item.tip)}</p>
+  </article>`;
+}
+
+// 的・得・地は「どこに置くか」を問うドリル、語順は組み立て、間違いやすい形は○×で確かめる。
+const DE_NOTES = { 的: "名詞の前", 地: "動詞の前", 得: "動詞のあと" };
+
+function startGuidePractice(id = state.selectedGuide) {
+  const guide = guideById(id);
+  if (!guide) return;
+  const authored = guide.practice.map((item) => {
+    if (item.kind === "reorder") {
+      return { skill: "writing", kind: "reorder", wordId: item.wordId, tokens: [...item.tokens], slots: item.slots, answer: item.answer, meaning: item.meaning, instruction: item.instruction || "語句を並べ替えて文を作ってください", explanation: item.explanation };
+    }
+    const isDeDrill = item.choices.every((label) => label.length <= 2 && /[的得地]$/.test(label));
+    return {
+      skill: "reading", kind: isDeDrill ? "slot-de" : "grammar", wordId: item.wordId,
+      prompt: item.prompt, subPrompt: item.subPrompt,
+      choices: shuffle(item.choices.map((label) => ({ value: label, label, ...(DE_NOTES[label] ? { note: DE_NOTES[label] } : {}) }))),
+      correct: item.correct, instruction: item.instruction || (isDeDrill ? "空いているところに入るのはどれでしょう" : "正しいものを選んでください"),
+      explanation: item.explanation,
+    };
+  });
+  // 「よくある間違い」は、正しい文と間違った文を交互に見せて○×で判断させる。
+  const compare = guide.sections.flatMap((section) => section.compare || []);
+  const judges = shuffle(compare).slice(0, 3).map((pair, index) => {
+    const showWrong = index % 2 === 0;
+    return {
+      skill: "reading", kind: "grammar",
+      prompt: showWrong ? pair.wrong : pair.right,
+      subPrompt: `「${pair.meaning}」と言いたいとき、この言い方は正しいでしょうか。`,
+      choices: [{ value: "true", label: "对（正しい）" }, { value: "false", label: "不对（間違い）" }],
+      correct: String(!showWrong),
+      instruction: "文が正しいかどうかを選んでください",
+      explanation: `${pair.note}正しくは「${pair.right}」。`,
+    };
+  });
+  // 3つの形式が必ず混ざるようにする（de選び5・語順2・○×3）。
+  const reorders = authored.filter((question) => question.kind === "reorder");
+  const rest = authored.filter((question) => question.kind !== "reorder");
+  const orderCount = Math.min(2, reorders.length);
+  const questions = [...shuffle(rest).slice(0, 10 - judges.length - orderCount), ...shuffle(reorders).slice(0, orderCount), ...judges];
+  startCustomPractice(shuffle(questions), { label: guide.title, modeLabel: "文法ドリル", level: 3, guideId: guide.id });
+}
+
+function startMeasurePractice() {
+  const questions = measurePracticeQuestions();
+  if (!questions.length) return alert("量詞の問題を作れませんでした。");
+  startCustomPractice(questions, { label: "量詞（助数詞）", modeLabel: "量詞クイズ", level: 2, guideId: "measure" });
+}
+
+function multiAnswerValue(question, picked) {
+  const order = question.choices.map((choice) => choice.value);
+  return [...new Set(picked)].sort((left, right) => order.indexOf(left) - order.indexOf(right)).join("、");
+}
+
+// 量詞クイズは「数詞＋量詞＋名詞」の形に合わせて3種類を混ぜる。
+//   スロット穴埋め … 三＋□＋书 の□を選ぶ
+//   仕分け … その量詞で数えるものを全部選ぶ
+//   時間・お金 … 引っかかりやすい手作りの問題
+function measurePracticeQuestions(count = 10) {
+  const data = state.measure;
+  if (!data) return [];
+  const wordOf = (id) => state.words.find((word) => word.id === id);
+  const nounOwners = new Map();
+  data.items.forEach((item) => (item.nouns || []).forEach((nounId) => {
+    if (!nounOwners.has(nounId)) nounOwners.set(nounId, new Set());
+    nounOwners.get(nounId).add(item.wordId);
+  }));
+  const drills = data.items.filter((item) => item.drill && item.nouns?.length);
+  const explain = (item, measureWord) => `${measureWord.hanzi}（${measureWord.pinyin}）は${item.use}。${item.phrase.cn}＝${item.phrase.ja}`;
+
+  // 数詞は声調が変わらない「三」にそろえ、量詞だけを考えさせる。
+  const slots = shuffle(drills.flatMap((item) => item.nouns.map((nounId) => ({ item, nounId })))).flatMap(({ item, nounId }) => {
+    const measureWord = wordOf(item.wordId);
+    const noun = wordOf(nounId);
+    if (!measureWord || !noun) return [];
+    const distractors = shuffle(drills.filter((other) => other.wordId !== item.wordId && !nounOwners.get(nounId).has(other.wordId)))
+      .slice(0, 3).map((other) => wordOf(other.wordId)).filter(Boolean);
+    if (distractors.length < 3) return [];
+    return [{
+      skill: "reading", kind: "slot", wordId: item.wordId,
+      slot: { number: "三", numberPinyin: "sān", noun: noun.hanzi, nounPinyin: noun.pinyin, meaning: `${noun.meaning}を3つ` },
+      choices: shuffle([measureWord, ...distractors].map((word) => ({ value: word.hanzi, label: word.hanzi, pinyin: word.pinyin }))),
+      correct: measureWord.hanzi, instruction: "空いているところに入る量詞を選んでください",
+      explanation: explain(item, measureWord),
+    }];
+  });
+
+  const multis = shuffle(drills.filter((item) => (item.nouns || []).length >= 3)).flatMap((item) => {
+    const measureWord = wordOf(item.wordId);
+    const answers = item.nouns.map((id) => wordOf(id)).filter(Boolean).slice(0, 3);
+    const others = [...new Set(data.items.filter((other) => other.wordId !== item.wordId).flatMap((other) => other.nouns || []))]
+      .filter((id) => !nounOwners.get(id)?.has(item.wordId));
+    const distractors = shuffle(others).slice(0, 6 - answers.length).map((id) => wordOf(id)).filter(Boolean);
+    if (!measureWord || answers.length < 2 || distractors.length < 2) return [];
+    const choices = shuffle([...answers, ...distractors]).map((word) => ({ value: word.hanzi, label: word.hanzi, pinyin: word.pinyin, meaning: word.meaning }));
+    const question = {
+      skill: "reading", kind: "multi", wordId: item.wordId,
+      prompt: measureWord.hanzi, promptPinyin: measureWord.pinyin, subPrompt: item.use,
+      choices, correctCount: answers.length,
+      instruction: `「${measureWord.hanzi}」で数えるものをすべて選んでください`,
+      explanation: explain(item, measureWord),
+    };
+    question.correct = multiAnswerValue(question, answers.map((word) => word.hanzi));
+    return [question];
+  });
+
+  const authored = shuffle([...(data.quiz || [])]).map((item) => ({
+    skill: "reading", kind: "grammar", wordId: item.wordId,
+    prompt: item.prompt, subPrompt: item.subPrompt,
+    choices: shuffle(item.choices.map((label) => ({ value: label, label, pinyin: state.words.find((word) => word.hanzi === label)?.pinyin }))),
+    correct: item.correct, instruction: "空欄に入る量詞を選んでください", explanation: item.explanation,
+  }));
+
+  const picked = [...slots.slice(0, 5), ...multis.slice(0, 2), ...authored.slice(0, 3)];
+  return shuffle(picked).slice(0, count);
+}
+
+function startCustomPractice(questions, { label, modeLabel, level, guideId }) {
+  clearPracticeTimer();
+  if (!questions.length) return;
+  state.practice = {
+    ...emptyPractice(),
+    mode: "guide",
+    level,
+    questions,
+    sourceLabel: label,
+    modeLabel,
+    lastStart: { mode: "guide", level, isMock: false, guideId },
+    sectionStats: {},
+  };
+  showView("practice");
+  renderPracticeQuestion();
+}
+
+function startCategoryPractice(mode, id = state.selectedCategory) {
+  const category = categoryById(id);
+  if (!category) return;
+  const pool = categoryWords(category.id, { withQuery: true });
+  if (!pool.length) return alert("この条件に合う単語がありません。レベルやチェックの絞り込みを外してください。");
+  const level = state.categoryFilter === "all" ? 3 : Number(state.categoryFilter);
+  startPractice(mode, level, pool, { label: `${category.label}の単語`, categoryId: category.id });
+}
+
+function renderWordCategoryOptions() {
+  const select = $("#word-category");
+  if (!select) return;
+  const groups = Object.entries(CATEGORY_GROUP_META).map(([group, meta]) => {
+    const options = state.categories.filter((category) => category.group === group).map((category) => {
+      const count = state.words.filter((word) => (word.tags || []).includes(category.id)).length;
+      return `<option value="${escapeHtml(category.id)}">${escapeHtml(category.label)}（${count}）</option>`;
+    }).join("");
+    return options ? `<optgroup label="${escapeHtml(meta.label)}">${options}</optgroup>` : "";
+  }).join("");
+  select.innerHTML = `<option value="all">すべての分類</option>${groups}`;
+  select.value = state.wordCategory;
+  const label = $("#category-count-label");
+  if (label && state.categories.length) label.textContent = `数詞・形容詞・旅行など${state.categories.length}分類から出題`;
+}
+
+function loadDaily() {
+  const empty = { day: 1, lastDate: "", pendingReview: [], history: [] };
+  try {
+    const saved = JSON.parse(localStorage.getItem(DAILY_KEY) || "null");
+    if (!saved || typeof saved !== "object") return empty;
+    return {
+      day: Math.max(1, Number(saved.day) || 1),
+      lastDate: String(saved.lastDate || ""),
+      pendingReview: Array.isArray(saved.pendingReview) ? saved.pendingReview : [],
+      history: Array.isArray(saved.history) ? saved.history : [],
+    };
+  } catch { return empty; }
+}
+
+function saveDaily() {
+  try { localStorage.setItem(DAILY_KEY, JSON.stringify(state.daily)); } catch {}
+}
+
+// 固定の種から並べ替えるので、何度開いても同じ順番になり、日をまたいで単語が重複しない。
+function buildDailyDays() {
+  const pool = state.words.filter((word) => word.level === DAILY_LEVEL);
+  let seed = DAILY_SEED;
+  const random = () => {
+    seed = (seed * 1664525 + 1013904223) % 4294967296;
+    return seed / 4294967296;
+  };
+  const ordered = [...pool];
+  for (let index = ordered.length - 1; index > 0; index -= 1) {
+    const swap = Math.floor(random() * (index + 1));
+    [ordered[index], ordered[swap]] = [ordered[swap], ordered[index]];
+  }
+  const days = [];
+  for (let index = 0; index < ordered.length; index += DAILY_SIZE) days.push(ordered.slice(index, index + DAILY_SIZE));
+  return days;
+}
+
+function dailySnapshot() {
+  const days = state.dailyDays;
+  const index = state.daily.day - 1;
+  const finished = index >= days.length;
+  // 今日テストを終えたら、次の20語は翌日まで開かない（1日1セット）。
+  const locked = state.daily.lastDate === todayString() && !finished;
+  const shownIndex = locked ? index - 1 : index;
+  return {
+    days,
+    index,
+    finished,
+    locked,
+    // ロック中は「今日学んだ20語」を見せる。
+    shownDay: shownIndex + 1,
+    words: finished ? [] : (days[shownIndex] || []),
+    review: state.daily.pendingReview.map((id) => state.words.find((word) => word.id === id)).filter(Boolean),
+    learned: Math.min(index, days.length) * DAILY_SIZE,
+    total: days.reduce((sum, day) => sum + day.length, 0),
+  };
+}
+
+function renderDailyBanner() {
+  const banner = $("#daily-banner-title");
+  if (!banner || !state.dailyDays.length) return;
+  const daily = dailySnapshot();
+  const bar = $("#daily-progress-bar");
+  if (bar) bar.style.width = `${Math.round((daily.learned / daily.total) * 100)}%`;
+  $("#daily-progress-label").textContent = daily.finished
+    ? `全${daily.total}語を学習しました`
+    : `DAY ${state.daily.day} / ${daily.days.length}　（学習済み ${daily.learned}語 / ${daily.total}語）`;
+  banner.textContent = daily.finished ? "300語を一周しました" : (daily.locked ? "今日の分は終わりました" : "今日の20語");
+  const note = $("#daily-banner-note");
+  note.textContent = daily.finished
+    ? `まちがえた${daily.review.length}語の復習か、リセットして最初からやり直せます。`
+    : (daily.locked ? `次の DAY ${state.daily.day} の20語は明日から始められます。`
+      : (daily.review.length ? `今日の${daily.words.length}語に、前回まちがえた${daily.review.length}語を加えた${dailySessionPool(daily).length}問です。` : `今日の${daily.words.length}語を1問ずつ出題します。`));
+  $("#daily-open").textContent = daily.finished ? "復習ページを開く" : (daily.locked ? "今日の20語を見直す" : "今日の学習を開く");
+}
+
+function renderDaily() {
+  if (!state.dailyDays.length) return;
+  const daily = dailySnapshot();
+  $("#daily-day-label").textContent = daily.finished ? `全${daily.days.length}日 完了` : `DAY ${state.daily.day} / ${daily.days.length}`;
+  $("#daily-learned-label").textContent = `学習済み ${daily.learned}語 / ${daily.total}語`;
+  $("#daily-page-progress-bar").style.width = `${Math.round((daily.learned / daily.total) * 100)}%`;
+  $("#daily-title").textContent = daily.finished ? "300語を一周しました" : (daily.locked ? `DAY ${daily.shownDay} は完了しました` : "今日の20語");
+  const status = [];
+  if (daily.locked) status.push(`<p class="daily-note"><strong>今日の分は完了しています。</strong>次の DAY ${state.daily.day} の20語は明日から始められます。今日はこのまま見直すか、まちがえた単語を復習しましょう。</p>`);
+  if (daily.finished) status.push(`<p class="daily-note"><strong>全${daily.total}語の学習が終わりました。</strong>まちがえた単語の復習を続けるか、下のボタンでリセットして最初から回せます。</p>`);
+  const last = state.daily.history[0];
+  if (last) status.push(`<p class="daily-note">前回（DAY ${last.day}・${last.date}）は ${last.correct} / ${last.total} 問正解でした。`
+    + `${last.wrong ? `まちがえた${last.wrong}語は${daily.locked ? "次回" : "今日"}の出題に入ります。` : "全問正解です。"}</p>`);
+  $("#daily-status").innerHTML = status.join("");
+  const questionCount = dailySessionPool(daily).length;
+  $("#daily-start").classList.toggle("is-hidden", daily.finished || daily.locked);
+  $("#daily-start").textContent = `今日のテストを始める（${questionCount}問）`;
+  $("#daily-retry").classList.toggle("is-hidden", !daily.locked);
+  $("#daily-retry").textContent = `今日の20語をもう一度テストする（${questionCount}問）`;
+  $("#daily-review-quiz").classList.toggle("is-hidden", daily.review.length === 0);
+  $("#daily-review-quiz").textContent = `まちがえた${daily.review.length}語だけ復習する`;
+  $("#daily-review").classList.toggle("is-hidden", daily.review.length === 0);
+  if (daily.review.length) {
+    $("#daily-review").innerHTML = `<h2 class="daily-section-title">前回まちがえた${daily.review.length}語</h2>
+      <div class="word-list">${daily.review.map((word) => wordRowHtml(word, { showExample: true })).join("")}</div>`;
+    bindWordRowAudio($("#daily-review"));
+  }
+  $("#daily-list-title").textContent = daily.finished ? "" : `DAY ${daily.shownDay} の20語`;
+  $("#daily-list-title").classList.toggle("is-hidden", daily.finished);
+  $("#daily-word-list").innerHTML = daily.words.map((word) => wordRowHtml(word, { showExample: true })).join("");
+  bindWordRowAudio($("#daily-word-list"));
+  $("#daily-history").innerHTML = state.daily.history.length
+    ? `<h2 class="daily-section-title">これまでの記録</h2><div class="daily-history-list">${state.daily.history.slice(0, 10).map((item) => `
+        <div class="daily-history-row"><span>DAY ${item.day}</span><small>${escapeHtml(item.date)}</small><strong>${item.correct} / ${item.total}</strong><small>${item.wrong ? `まちがい${item.wrong}語` : "全問正解"}</small></div>`).join("")}</div>`
+    : "";
+  renderDailyBanner();
+}
+
+// まちがえた単語を先に、そのあと今日の20語。解き直しでは同じ語が二度出ないようにする。
+function dailySessionPool(daily) {
+  const reviewIds = new Set(daily.review.map((word) => word.id));
+  return [...daily.review, ...shuffle(daily.words.filter((word) => !reviewIds.has(word.id)))];
+}
+
+function startDailySession() {
+  const daily = dailySnapshot();
+  if (daily.finished) return startDailyReview();
+  // 今日の分が済んでいるときは、次の20語ではなく同じ20語の解き直しにする。
+  if (daily.locked) return startDailyRetry();
+  const pool = dailySessionPool(daily);
+  if (!pool.length) return;
+  // 1語1問なので出題数は絞らない。
+  startQuiz(pool, "daily", state.vocabularyDirection, state.words, { limit: pool.length, keepOrder: true });
+}
+
+// 解き直しはまちがいの記録には反映するが、日付は進めない。
+function startDailyRetry() {
+  const daily = dailySnapshot();
+  const pool = dailySessionPool(daily);
+  if (!pool.length) return;
+  startQuiz(pool, "daily-retry", state.vocabularyDirection, state.words, { limit: pool.length, keepOrder: true });
+}
+
+function startDailyReview() {
+  const daily = dailySnapshot();
+  if (!daily.review.length) return alert("復習する単語はありません。");
+  startQuiz(daily.review, "daily-review", state.vocabularyDirection, state.words, { limit: daily.review.length, keepOrder: true });
+}
+
+// テスト終了時に、まちがえた単語を次回へ回す（正解するまで持ち越す）。
+function completeDailySession() {
+  const { questions, answers, source } = state.quiz;
+  const wrong = questions.filter((word, index) => !answers[index]?.correct).map((word) => word.id);
+  const asked = new Set(questions.map((word) => word.id));
+  const daily = state.daily;
+  daily.pendingReview = [...new Set([...daily.pendingReview.filter((id) => !asked.has(id) || wrong.includes(id)), ...wrong])];
+  if (source === "daily") {
+    daily.history.unshift({ day: daily.day, date: todayString(), total: questions.length, correct: state.quiz.correct, wrong: wrong.length });
+    daily.history = daily.history.slice(0, 30);
+    daily.lastDate = todayString();
+    daily.day = Math.min(daily.day + 1, state.dailyDays.length + 1);
+  }
+  saveDaily();
+  renderDailyBanner();
+}
+
+function resetDaily() {
+  if (!window.confirm("毎日20語の進み具合をリセットします。DAY 1 からやり直しますか？")) return;
+  state.daily = { day: 1, lastDate: "", pendingReview: [], history: [] };
+  saveDaily();
+  renderDaily();
 }
 
 function loadChecked() {
@@ -492,6 +1197,7 @@ function toggleChecked(id) {
   if (state.currentView === "checked") renderChecked();
   if (state.currentView === "words" && state.checkedOnly.words) renderWords();
   if (state.currentView === "examples" && state.checkedOnly.examples) renderExamples();
+  if (state.currentView === "categories" && state.checkedOnly.categories) renderCategories();
 }
 
 function getCheckedWords() {
@@ -685,6 +1391,7 @@ function updateSummary() {
   const dueLabel = $("#due-word-count");
   if (dueLabel) dueLabel.textContent = getDueWords().length;
   updateCheckedSummary();
+  renderDailyBanner();
 }
 
 function loadProgress() {
@@ -731,7 +1438,7 @@ function getLevelPool(level) {
   return state.words.filter((word) => word.level <= level);
 }
 
-function startPractice(mode, level, source = null) {
+function startPractice(mode, level, source = null, sourceMeta = null) {
   clearPracticeTimer();
   let questions = [];
   let actualLevel = level;
@@ -749,7 +1456,16 @@ function startPractice(mode, level, source = null) {
     questions = reviewPool.slice(0, 10).map((word, index) => index % 2 ? makeReadingQuestion(word, actualLevel, index) : makeListeningQuestion(word, actualLevel, index));
   }
   if (!questions.length) return alert("出題できる問題がありません。");
-  state.practice = { ...emptyPractice(), mode, level: actualLevel, questions, sourceLabel: source ? "チェックした単語" : "", lastStart: { mode, level: actualLevel, isMock: false, checked: Boolean(source) }, sectionStats: {} };
+  const categoryId = sourceMeta?.categoryId || null;
+  state.practice = {
+    ...emptyPractice(),
+    mode,
+    level: actualLevel,
+    questions,
+    sourceLabel: source ? sourceMeta?.label || "チェックした単語" : "",
+    lastStart: { mode, level: actualLevel, isMock: false, checked: Boolean(source) && !categoryId, categoryId },
+    sectionStats: {},
+  };
   showView("practice");
   renderPracticeQuestion();
 }
@@ -941,7 +1657,7 @@ function renderPracticeQuestion() {
   $("#practice-level-label").textContent = session.sourceLabel || `HSK ${session.level}`;
   $("#practice-mode-label").textContent = session.isMock
     ? `${session.section ? "セクション練習" : "写真なし模試"} · ${SKILL_LABELS[question.skill]} 第${question.part || 1}部分`
-    : (session.mode === "srs" ? `間隔反復 · ${SKILL_LABELS[question.skill]}` : SKILL_LABELS[question.skill]);
+    : (session.modeLabel || (session.mode === "srs" ? `間隔反復 · ${SKILL_LABELS[question.skill]}` : SKILL_LABELS[question.skill]));
   $("#practice-step").textContent = `${session.index + 1} / ${session.questions.length}`;
   $("#practice-progress-bar").style.width = `${(session.index / session.questions.length) * 100}%`;
   $("#practice-instruction").textContent = question.instruction;
@@ -970,7 +1686,21 @@ function renderPracticeQuestion() {
   else if (question.kind === "input") prompt.innerHTML = question.mockFormat
     ? `<h2 class="mock-writing-sentence">${escapeHtml(question.sentence)}</h2>`
     : `<p class="writing-hint">${escapeHtml(question.meaning)}</p><h2 class="pinyin-prompt">${escapeHtml(question.pinyin)}</h2>`;
-  else if (question.kind === "reorder") prompt.innerHTML = `${question.mockFormat ? "" : `<p class="writing-hint">${escapeHtml(question.meaning)}</p>`}<div id="ordered-answer" class="ordered-answer">${question.mockFormat ? "请在这里排列句子" : "ここに語順を作ります"}</div>`;
+  else if (question.kind === "reorder") prompt.innerHTML = `${question.mockFormat ? "" : `<p class="writing-hint">${escapeHtml(question.meaning)}</p>`}${question.slots ? `<div class="slot-guide">${question.slots.map((label) => `<span>${escapeHtml(label)}</span>`).join(`<b aria-hidden="true">＋</b>`)}</div>` : ""}<div id="ordered-answer" class="ordered-answer">${question.mockFormat ? "请在这里排列句子" : "ここに語順を作ります"}</div>`;
+  // 量詞は「数詞＋量詞＋名詞」の形のまま、空いたところを埋めさせる。
+  else if (question.kind === "slot") prompt.innerHTML = `
+    <div class="quiz-slot-row">
+      <span class="quiz-slot"><strong>${escapeHtml(question.slot.number)}</strong><small>${escapeHtml(question.slot.numberPinyin)}</small></span>
+      <b aria-hidden="true">＋</b>
+      <span class="quiz-slot is-blank"><strong>？</strong><small>量詞</small></span>
+      <b aria-hidden="true">＋</b>
+      <span class="quiz-slot"><strong>${escapeHtml(question.slot.noun)}</strong><small>${escapeHtml(question.slot.nounPinyin)}</small></span>
+    </div>
+    <p class="quiz-slot-meaning">${escapeHtml(question.slot.meaning)}</p>`;
+  // 量詞は「何を数えるか」がまとまりなので、当てはまるものを全部選ばせる。
+  else if (question.kind === "multi") prompt.innerHTML = `
+    <div class="quiz-measure-head"><strong>${escapeHtml(question.prompt)}</strong><span>${escapeHtml(question.promptPinyin || "")}</span></div>
+    <p class="reading-subprompt">${escapeHtml(question.subPrompt || "")}</p>`;
   else {
     const subPinyin = question.subPromptPinyin ? `<p class="mock-pinyin">${escapeHtml(question.subPromptPinyin)}</p>` : "";
     // 判断对错では、判定する文を★付きの枠に入れて本文と区別する。
@@ -988,8 +1718,23 @@ function renderPracticeQuestion() {
 
 function renderPracticeAnswers(question) {
   const area = $("#practice-answer-area");
-  if (question.choices) {
-    area.innerHTML = `<div class="answer-list">${question.choices.map((choice, index) => `<button class="answer-button practice-choice${/^\p{Extended_Pictographic}/u.test(choice.label) ? " visual-choice-button" : ""}" type="button" data-value="${escapeHtml(choice.value)}" data-key="${String.fromCharCode(65 + index)}"${choice.ariaLabel ? ` aria-label="${escapeHtml(choice.ariaLabel)}"` : ""}><span class="choice-main">${escapeHtml(choice.label)}</span>${choice.pinyin ? `<small class="choice-pinyin">${escapeHtml(choice.pinyin)}</small>` : ""}</button>`).join("")}</div>`;
+  if (question.kind === "multi") {
+    // 複数選択。選んでから「解答する」で答え合わせする。
+    area.innerHTML = `<div class="answer-list multi-list">${question.choices.map((choice, index) => `<button class="answer-button practice-choice multi-choice" type="button" data-value="${escapeHtml(choice.value)}" data-key="${String.fromCharCode(65 + index)}"><span class="choice-main">${escapeHtml(choice.label)}</span>${choice.pinyin ? `<small class="choice-pinyin">${escapeHtml(choice.pinyin)}</small>` : ""}${choice.meaning ? `<small class="choice-meaning">${escapeHtml(choice.meaning)}</small>` : ""}</button>`).join("")}</div>
+      <div class="writing-actions"><button id="multi-submit" class="primary-button" type="button">解答する（${question.correctCount}つ）</button></div>`;
+    $$(".multi-choice").forEach((button) => button.addEventListener("click", () => {
+      if (state.practice.answered) return;
+      button.classList.toggle("is-selected");
+      button.setAttribute("aria-pressed", String(button.classList.contains("is-selected")));
+    }));
+    $("#multi-submit").addEventListener("click", () => {
+      const picked = $$(".multi-choice.is-selected").map((button) => button.dataset.value);
+      if (!picked.length) return;
+      answerPractice(multiAnswerValue(question, picked), $("#multi-submit"));
+    });
+  } else if (question.choices) {
+    const kindClass = { slot: " slot-choice", "slot-de": " de-choice" }[question.kind] || "";
+    area.innerHTML = `<div class="answer-list${kindClass ? " chip-list" : ""}">${question.choices.map((choice, index) => `<button class="answer-button practice-choice${kindClass}${/^\p{Extended_Pictographic}/u.test(choice.label) ? " visual-choice-button" : ""}" type="button" data-value="${escapeHtml(choice.value)}" data-key="${String.fromCharCode(65 + index)}"${choice.ariaLabel ? ` aria-label="${escapeHtml(choice.ariaLabel)}"` : ""}><span class="choice-main">${escapeHtml(choice.label)}</span>${choice.pinyin ? `<small class="choice-pinyin">${escapeHtml(choice.pinyin)}</small>` : ""}${choice.note ? `<small class="choice-note">${escapeHtml(choice.note)}</small>` : ""}</button>`).join("")}</div>`;
     $$(".practice-choice").forEach((button) => button.addEventListener("click", () => answerPractice(button.dataset.value, button)));
   } else if (question.kind === "reorder") {
     question.selected = [];
@@ -1029,7 +1774,15 @@ function answerPractice(value, selectedButton) {
   state.progress.byLevel[level].correct += correct ? 1 : 0;
   if (word) state.progress.mistakes[word.id] = correct ? Math.max(0, (state.progress.mistakes[word.id] || 0) - 1) : (state.progress.mistakes[word.id] || 0) + 1;
   recordStudy(word, correct, question.skill);
-  if (question.choices) {
+  if (question.kind === "multi") {
+    const answers = new Set(String(question.correct).split("、"));
+    $$(".multi-choice").forEach((button) => {
+      button.disabled = true;
+      if (answers.has(button.dataset.value)) button.classList.add("is-correct");
+      else if (button.classList.contains("is-selected")) button.classList.add("is-wrong");
+    });
+    $("#multi-submit").disabled = true;
+  } else if (question.choices) {
     $$(".practice-choice").forEach((button) => {
       button.disabled = true;
       if (normalizeAnswer(button.dataset.value) === normalizeAnswer(question.correct)) button.classList.add("is-correct");
@@ -1118,6 +1871,9 @@ function retryPractice() {
   const last = state.practice.lastStart;
   if (!last) return navigate("exam");
   if (last.isMock) startMockExam(last.level, last.section);
+  else if (last.guideId === "measure") startMeasurePractice();
+  else if (last.guideId) startGuidePractice(last.guideId);
+  else if (last.categoryId) startCategoryPractice(last.mode, last.categoryId);
   else if (last.checked) startCheckedPractice(last.mode);
   else startPractice(last.mode, last.level);
 }
@@ -1228,6 +1984,7 @@ function reviewLines(question) {
   const lines = [];
   if (question.audioText) lines.push({ label: "音声原文", text: question.audioText });
   else if (question.audioWord) lines.push({ label: "音声", text: `${question.audioWord.hanzi}（${question.audioWord.pinyin}）` });
+  if (question.kind === "slot") lines.push({ label: "問題", text: `${question.slot.number} ＋ ？ ＋ ${question.slot.noun}（${question.slot.meaning}）` });
   if (question.kind === "reorder") lines.push({ label: "語句", text: question.tokens.join(" / ") });
   if (question.kind === "input" && question.sentence) lines.push({ label: "問題", text: question.sentence });
   if (question.kind === "input" && question.pinyin) lines.push({ label: "ピンイン", text: question.pinyin });
@@ -1381,7 +2138,7 @@ function playAudioFile(file, button, options = {}) {
   if (!file) return speakWithBrowser(options.fallbackText, button, { rate: options.fallbackRate || .78, role: options.role || "female" });
   stopAudio();
   button?.classList.add("is-playing");
-  const audio = new Audio(`${file}?v=prerendered-4`);
+  const audio = new Audio(`${file}?v=prerendered-5`);
   const playbackRate = options.lockRate ? (options.baseRate || 1) : Math.max(.7, Math.min(1.3, (options.baseRate || 1) * state.audioSpeed));
   audio.playbackRate = playbackRate;
   audio.preservesPitch = true;
@@ -1427,6 +2184,7 @@ function speakDialogue(text, button, rate = .78) {
   const pattern = /([男女问])：([\s\S]*?)(?=(?:男|女|问)：|$)/g;
   let match;
   while ((match = pattern.exec(text)) !== null) {
+    if (match[1] === "问") segments.push({ text: "Question", role: "cue" });
     segments.push({ text: match[2].trim(), role: match[1] === "男" ? "male" : (match[1] === "女" ? "female" : "narrator") });
   }
   speakSegments(segments.length ? segments : [{ text, role: "narrator" }], button, rate);
@@ -1443,22 +2201,27 @@ function speakSegments(segments, button, rate = .78) {
     const segment = segments[index];
     if (!segment) return finishAudioButton(button);
     const utterance = new SpeechSynthesisUtterance(cleanSpeechText(segment.text));
-    utterance.lang = "zh-CN";
-    utterance.rate = rate;
+    utterance.lang = segment.role === "cue" ? "en-US" : "zh-CN";
+    utterance.rate = segment.role === "cue" ? Math.max(.8, rate) : rate;
     utterance.pitch = segment.role === "male" ? .92 : (segment.role === "female" ? 1.04 : 1);
     utterance.volume = 1;
-    utterance.voice = selectChineseVoice(segment.role);
+    utterance.voice = segment.role === "cue" ? selectEnglishVoice() : selectChineseVoice(segment.role);
     utterance.onend = () => {
       if (runId !== speechRunId) return;
       index += 1;
       if (index >= segments.length) return finishAudioButton(button);
-      // 会話と設問（问：〜）の境目が分かるよう、設問の前は長めに間を空ける。
-      window.setTimeout(playNext, segments[index].role === "narrator" ? 1200 : 450);
+      const nextRole = segments[index].role;
+      window.setTimeout(playNext, nextRole === "cue" ? 1200 : 450);
     };
     utterance.onerror = () => { if (runId === speechRunId) finishAudioButton(button); };
     window.speechSynthesis.speak(utterance);
   };
   playNext();
+}
+
+function selectEnglishVoice() {
+  const voices = window.speechSynthesis.getVoices();
+  return voices.find((voice) => voice.name.includes("Samantha")) || voices.find((voice) => /^en[-_]US$/i.test(voice.lang)) || null;
 }
 
 function selectChineseVoice(role) {

@@ -3,11 +3,11 @@
   "engineVersion": "apple-natural-v1",
   "sampleRate": 44100,
   "format": "wav",
-  "generatedAt": "2026-09-11T09:26:05.869Z",
+  "generatedAt": "2026-09-13T09:11:19.044Z",
   "counts": {
-    "total": 772,
-    "generated": 34,
-    "reused": 738
+    "total": 782,
+    "generated": 0,
+    "reused": 782
   },
   "items": {
     "example-hsk1-001": {
@@ -6923,11 +6923,12 @@
       "type": "mock-dialogue",
       "level": 1,
       "text": "男：你喝茶吗？女：不，我喝水。问：女的喝什么？",
-      "checksum": "5a9a741af530b54abf9d0122d017efbbeef37d4d39226918de6dc3c4c03e8557",
+      "checksum": "d28a3b647336a02486ebe2e9a15080123ed8fdac0373127be74977a18cd8faad",
       "file": "audio/sentences/mock-dialogue-001.wav",
       "voices": [
         "Reed (中国語（中国本土）)",
-        "Tingting"
+        "Tingting",
+        "Samantha"
       ]
     },
     "mock-dialogue-002": {
@@ -6935,11 +6936,12 @@
       "type": "mock-dialogue",
       "level": 1,
       "text": "女：现在几点？男：三点。问：现在几点？",
-      "checksum": "19b1783826cf3042f5c9f1a9c4d0f4dc7ab750d0899557d96037d6d46ca0417f",
+      "checksum": "7722db91789d4aa86967b80c54566c3ae11aa8ebbdf96f93938bdc02d7bdd6b3",
       "file": "audio/sentences/mock-dialogue-002.wav",
       "voices": [
         "Tingting",
-        "Reed (中国語（中国本土）)"
+        "Reed (中国語（中国本土）)",
+        "Samantha"
       ]
     },
     "mock-dialogue-003": {
@@ -6947,11 +6949,12 @@
       "type": "mock-dialogue",
       "level": 1,
       "text": "男：你去哪儿？女：我去学校。问：女的去哪儿？",
-      "checksum": "b620f68fc8be2ecc99d7215233cf3aa5ddbedd578646afe9a23b42756a3b2048",
+      "checksum": "053c9bc749392026df5eeaa8edfe4c4dde94103558fb4b8df9ec4c03846608f2",
       "file": "audio/sentences/mock-dialogue-003.wav",
       "voices": [
         "Reed (中国語（中国本土）)",
-        "Tingting"
+        "Tingting",
+        "Samantha"
       ]
     },
     "mock-dialogue-004": {
@@ -6959,11 +6962,12 @@
       "type": "mock-dialogue",
       "level": 1,
       "text": "女：这是谁的猫？男：是小王的。问：猫是谁的？",
-      "checksum": "c25e3a2558235e1224232f13c0dc2b922442ed8c747cbb2f11682ce4594a1187",
+      "checksum": "db287b120df72d43fe20b1b206d0e23a442711b96dcc0dc3586085f3867d2ec6",
       "file": "audio/sentences/mock-dialogue-004.wav",
       "voices": [
         "Tingting",
-        "Reed (中国語（中国本土）)"
+        "Reed (中国語（中国本土）)",
+        "Samantha"
       ]
     },
     "mock-dialogue-005": {
@@ -6971,11 +6975,12 @@
       "type": "mock-dialogue",
       "level": 1,
       "text": "男：你会做饭吗？女：不会。问：女的会做饭吗？",
-      "checksum": "d15184b40b5412a595363e4d26a69793ea37808c37b6592221882f1fee559939",
+      "checksum": "acbc03bd4218174f7391cd62470681f327042c25e6c83fb576262430ae095d04",
       "file": "audio/sentences/mock-dialogue-005.wav",
       "voices": [
         "Reed (中国語（中国本土）)",
-        "Tingting"
+        "Tingting",
+        "Samantha"
       ]
     },
     "mock-dialogue-006": {
@@ -6983,11 +6988,12 @@
       "type": "mock-dialogue",
       "level": 2,
       "text": "男：今天冷吗？女：不冷，但是下雨了。问：今天天气怎么样？",
-      "checksum": "c3d69b0c8ff0225f318805ea961b24d620503db3072cf5be00c31a53d3bcbc88",
+      "checksum": "56591a5a6fca8530c278836849fea816d0fd79f6503d8fc33737f2c297303419",
       "file": "audio/sentences/mock-dialogue-006.wav",
       "voices": [
         "Reed (中国語（中国本土）)",
-        "Tingting"
+        "Tingting",
+        "Samantha"
       ]
     },
     "mock-dialogue-007": {
@@ -6995,11 +7001,12 @@
       "type": "mock-dialogue",
       "level": 2,
       "text": "女：你怎么还没吃饭？男：我刚下班。问：男的为什么没吃饭？",
-      "checksum": "283bbcf6e58fe94b0e4af9a2caf2f65bdbf9f00bbbe6885ef4ef9bcf1a38ab96",
+      "checksum": "70a03eedd96459cb72643dc9abbb1a89ca053997c6049d5072ed12a5c89d1a83",
       "file": "audio/sentences/mock-dialogue-007.wav",
       "voices": [
         "Tingting",
-        "Reed (中国語（中国本土）)"
+        "Reed (中国語（中国本土）)",
+        "Samantha"
       ]
     },
     "mock-dialogue-008": {
@@ -7007,11 +7014,12 @@
       "type": "mock-dialogue",
       "level": 2,
       "text": "男：这件红色的怎么样？女：颜色不错，但是太大了。问：女的觉得衣服怎么样？",
-      "checksum": "0e9b00d3fd104eb580079c92da62a770b014c9a5fff7149e831b22276f4011b2",
+      "checksum": "56b1a4915f171fb9acd663e5e9db6a5393b45f981d90ba30decc4d18ed5219c4",
       "file": "audio/sentences/mock-dialogue-008.wav",
       "voices": [
         "Reed (中国語（中国本土）)",
-        "Tingting"
+        "Tingting",
+        "Samantha"
       ]
     },
     "mock-dialogue-009": {
@@ -7019,11 +7027,12 @@
       "type": "mock-dialogue",
       "level": 2,
       "text": "女：明天一起去跑步吧。男：好，早上七点见。问：他们明天做什么？",
-      "checksum": "5dab079ae56e62d2bfbb0a7eb70fa2dddbe3455d3a921d99cc60f2f07216fd99",
+      "checksum": "2d23f3bc78441bf3327938f1c6494ebf3bb50e0c8a67539564cecbeb209bd91b",
       "file": "audio/sentences/mock-dialogue-009.wav",
       "voices": [
         "Tingting",
-        "Reed (中国語（中国本土）)"
+        "Reed (中国語（中国本土）)",
+        "Samantha"
       ]
     },
     "mock-dialogue-010": {
@@ -7031,11 +7040,12 @@
       "type": "mock-dialogue",
       "level": 2,
       "text": "男：去机场坐出租车要多久？女：大概四十分钟。问：去机场要多长时间？",
-      "checksum": "e5ca11cb08f70d55fa1e3b3dd5c5c2d39a64ed73fc357991dd732025ec7ec6d4",
+      "checksum": "45fdc6a802f2a7ac832cbe95a9e3fdb83fe9eb07e9b68f81c07fcad8ef32ee20",
       "file": "audio/sentences/mock-dialogue-010.wav",
       "voices": [
         "Reed (中国語（中国本土）)",
-        "Tingting"
+        "Tingting",
+        "Samantha"
       ]
     },
     "mock-dialogue-011": {
@@ -7043,11 +7053,12 @@
       "type": "mock-dialogue",
       "level": 3,
       "text": "女：你的自行车修好了吗？男：还没有，师傅说明天下午才能修好。问：自行车什么时候能修好？",
-      "checksum": "9d8f4a03fa43999c4b060756ec8bdfbfc7e9922d5322ac8e1d3c7d641c7b75f0",
+      "checksum": "9ef6a58362cb072bce8a286c9a1124fee869261c4bb765aec24c34fda23fb420",
       "file": "audio/sentences/mock-dialogue-011.wav",
       "voices": [
         "Tingting",
-        "Reed (中国語（中国本土）)"
+        "Reed (中国語（中国本土）)",
+        "Samantha"
       ]
     },
     "mock-dialogue-012": {
@@ -7055,11 +7066,12 @@
       "type": "mock-dialogue",
       "level": 3,
       "text": "男：你怎么不坐电梯？女：我住三楼，走楼梯还能锻炼身体。问：女的为什么走楼梯？",
-      "checksum": "5acf06c96bc8e8989b2c2fdc1b3af39de703bcc385e250162d11710a5dc9c178",
+      "checksum": "c1b3915d6af46559c8309bb1e96905a335a70b3aa62535f38797f95b8ba65d34",
       "file": "audio/sentences/mock-dialogue-012.wav",
       "voices": [
         "Reed (中国語（中国本土）)",
-        "Tingting"
+        "Tingting",
+        "Samantha"
       ]
     },
     "mock-dialogue-013": {
@@ -7067,11 +7079,12 @@
       "type": "mock-dialogue",
       "level": 3,
       "text": "女：这家饭店的菜怎么样？男：味道不错，就是服务有点儿慢。问：男的对什么不满意？",
-      "checksum": "5162b18f512f417b2d9c0c386e8992a277bf55a1c1aafb5e414d53dce7834a7b",
+      "checksum": "a5c99e3976b5f0abde38f6c8f4b8ba7725826da7ed58dd2d50f0f4b2eea7652b",
       "file": "audio/sentences/mock-dialogue-013.wav",
       "voices": [
         "Tingting",
-        "Reed (中国語（中国本土）)"
+        "Reed (中国語（中国本土）)",
+        "Samantha"
       ]
     },
     "mock-dialogue-014": {
@@ -7079,11 +7092,12 @@
       "type": "mock-dialogue",
       "level": 3,
       "text": "男：听说你要搬家？女：对，新家离公司更近。问：女的为什么搬家？",
-      "checksum": "4ab839c6f473b5df05228f911b0fcae9c05ca44a69ab40da423d58c954a2a96b",
+      "checksum": "fa81678b3a92ed4dac2b57ca30532e6577e1d60934d545f2fc38ad0640d819ef",
       "file": "audio/sentences/mock-dialogue-014.wav",
       "voices": [
         "Reed (中国語（中国本土）)",
-        "Tingting"
+        "Tingting",
+        "Samantha"
       ]
     },
     "mock-dialogue-015": {
@@ -7091,11 +7105,12 @@
       "type": "mock-dialogue",
       "level": 3,
       "text": "女：报告写完了吗？男：内容写完了，还要检查一下。问：男的接下来要做什么？",
-      "checksum": "4dfbcaba6987742bde8cdaf291a6b1b5bba5bcb96d071095bcd549b01a6f5b0d",
+      "checksum": "843d4ab85226824c547e45defb9e3440e23a22da77347e733ae16acfc6eee44a",
       "file": "audio/sentences/mock-dialogue-015.wav",
       "voices": [
         "Tingting",
-        "Reed (中国語（中国本土）)"
+        "Reed (中国語（中国本土）)",
+        "Samantha"
       ]
     },
     "hsk1-l1-01": {
@@ -7268,11 +7283,12 @@
       "type": "mock-v2",
       "level": 1,
       "text": "男：你喝茶吗？女：不，我喝水。问：女的喝什么？",
-      "checksum": "5a9a741af530b54abf9d0122d017efbbeef37d4d39226918de6dc3c4c03e8557",
+      "checksum": "d28a3b647336a02486ebe2e9a15080123ed8fdac0373127be74977a18cd8faad",
       "file": "audio/sentences/hsk1-l4-01.wav",
       "voices": [
         "Reed (中国語（中国本土）)",
-        "Tingting"
+        "Tingting",
+        "Samantha"
       ]
     },
     "hsk1-l4-02": {
@@ -7280,11 +7296,12 @@
       "type": "mock-v2",
       "level": 1,
       "text": "女：现在几点？男：三点。问：现在几点？",
-      "checksum": "19b1783826cf3042f5c9f1a9c4d0f4dc7ab750d0899557d96037d6d46ca0417f",
+      "checksum": "7722db91789d4aa86967b80c54566c3ae11aa8ebbdf96f93938bdc02d7bdd6b3",
       "file": "audio/sentences/hsk1-l4-02.wav",
       "voices": [
         "Tingting",
-        "Reed (中国語（中国本土）)"
+        "Reed (中国語（中国本土）)",
+        "Samantha"
       ]
     },
     "hsk1-l4-03": {
@@ -7292,11 +7309,12 @@
       "type": "mock-v2",
       "level": 1,
       "text": "男：你去哪儿？女：我去学校。问：女的去哪儿？",
-      "checksum": "b620f68fc8be2ecc99d7215233cf3aa5ddbedd578646afe9a23b42756a3b2048",
+      "checksum": "053c9bc749392026df5eeaa8edfe4c4dde94103558fb4b8df9ec4c03846608f2",
       "file": "audio/sentences/hsk1-l4-03.wav",
       "voices": [
         "Reed (中国語（中国本土）)",
-        "Tingting"
+        "Tingting",
+        "Samantha"
       ]
     },
     "hsk1-l4-04": {
@@ -7304,11 +7322,12 @@
       "type": "mock-v2",
       "level": 1,
       "text": "女：这是谁的猫？男：是小王的。问：猫是谁的？",
-      "checksum": "c25e3a2558235e1224232f13c0dc2b922442ed8c747cbb2f11682ce4594a1187",
+      "checksum": "db287b120df72d43fe20b1b206d0e23a442711b96dcc0dc3586085f3867d2ec6",
       "file": "audio/sentences/hsk1-l4-04.wav",
       "voices": [
         "Tingting",
-        "Reed (中国語（中国本土）)"
+        "Reed (中国語（中国本土）)",
+        "Samantha"
       ]
     },
     "hsk1-l4-05": {
@@ -7316,11 +7335,12 @@
       "type": "mock-v2",
       "level": 1,
       "text": "男：你会做饭吗？女：不会。问：女的会做饭吗？",
-      "checksum": "d15184b40b5412a595363e4d26a69793ea37808c37b6592221882f1fee559939",
+      "checksum": "acbc03bd4218174f7391cd62470681f327042c25e6c83fb576262430ae095d04",
       "file": "audio/sentences/hsk1-l4-05.wav",
       "voices": [
         "Reed (中国語（中国本土）)",
-        "Tingting"
+        "Tingting",
+        "Samantha"
       ]
     },
     "hsk2-l1-01": {
@@ -7548,11 +7568,12 @@
       "type": "mock-v2",
       "level": 2,
       "text": "男：今天冷吗？女：不冷，但是下雨了。问：今天天气怎么样？",
-      "checksum": "c3d69b0c8ff0225f318805ea961b24d620503db3072cf5be00c31a53d3bcbc88",
+      "checksum": "56591a5a6fca8530c278836849fea816d0fd79f6503d8fc33737f2c297303419",
       "file": "audio/sentences/hsk2-l3-01.wav",
       "voices": [
         "Reed (中国語（中国本土）)",
-        "Tingting"
+        "Tingting",
+        "Samantha"
       ]
     },
     "hsk2-l3-02": {
@@ -7560,11 +7581,12 @@
       "type": "mock-v2",
       "level": 2,
       "text": "女：你怎么还没吃饭？男：我今天工作太忙了。问：男的为什么没吃饭？",
-      "checksum": "b0b8d9a96055a43b533a48c23e6dea5249689db358eb6554453413a000ceae19",
+      "checksum": "52587d51f8bb7b81bef6d146bb35b52bcaf5933dbe59f4aede01dac9a3dba735",
       "file": "audio/sentences/hsk2-l3-02.wav",
       "voices": [
         "Tingting",
-        "Reed (中国語（中国本土）)"
+        "Reed (中国語（中国本土）)",
+        "Samantha"
       ]
     },
     "hsk2-l3-03": {
@@ -7572,11 +7594,12 @@
       "type": "mock-v2",
       "level": 2,
       "text": "男：这件红色衣服怎么样？女：颜色不错，但是太大了。问：女的觉得衣服怎么样？",
-      "checksum": "59c56275dcba3415aeb26d2a23d2a705f006153ecf15b71dbfd1bb14858418fd",
+      "checksum": "ada2b005b118fca341d901d37429d39cd840aac9dd9081e480601bdb31880925",
       "file": "audio/sentences/hsk2-l3-03.wav",
       "voices": [
         "Reed (中国語（中国本土）)",
-        "Tingting"
+        "Tingting",
+        "Samantha"
       ]
     },
     "hsk2-l3-04": {
@@ -7584,11 +7607,12 @@
       "type": "mock-v2",
       "level": 2,
       "text": "女：明天一起去跑步吧。男：好，早上七点见。问：他们明天做什么？",
-      "checksum": "5dab079ae56e62d2bfbb0a7eb70fa2dddbe3455d3a921d99cc60f2f07216fd99",
+      "checksum": "2d23f3bc78441bf3327938f1c6494ebf3bb50e0c8a67539564cecbeb209bd91b",
       "file": "audio/sentences/hsk2-l3-04.wav",
       "voices": [
         "Tingting",
-        "Reed (中国語（中国本土）)"
+        "Reed (中国語（中国本土）)",
+        "Samantha"
       ]
     },
     "hsk2-l3-05": {
@@ -7596,11 +7620,12 @@
       "type": "mock-v2",
       "level": 2,
       "text": "男：去机场坐出租车要多久？女：大概四十分钟。问：去机场要多长时间？",
-      "checksum": "e5ca11cb08f70d55fa1e3b3dd5c5c2d39a64ed73fc357991dd732025ec7ec6d4",
+      "checksum": "45fdc6a802f2a7ac832cbe95a9e3fdb83fe9eb07e9b68f81c07fcad8ef32ee20",
       "file": "audio/sentences/hsk2-l3-05.wav",
       "voices": [
         "Reed (中国語（中国本土）)",
-        "Tingting"
+        "Tingting",
+        "Samantha"
       ]
     },
     "hsk2-l3-06": {
@@ -7608,11 +7633,12 @@
       "type": "mock-v2",
       "level": 2,
       "text": "女：你为什么不坐公共汽车？男：我家离公司很近，走路就到了。问：男的怎么去公司？",
-      "checksum": "2c5085df41cfcd2f3d932c664c568692c42b73eddb594cb6e00ced1cfb06df09",
+      "checksum": "f687e1284095416741f4cc6c2fa7ccf0d994e39fa7f347efd29e3564cfcd2b36",
       "file": "audio/sentences/hsk2-l3-06.wav",
       "voices": [
         "Tingting",
-        "Reed (中国語（中国本土）)"
+        "Reed (中国語（中国本土）)",
+        "Samantha"
       ]
     },
     "hsk2-l3-07": {
@@ -7620,11 +7646,12 @@
       "type": "mock-v2",
       "level": 2,
       "text": "男：你妹妹多大？女：她今年十二岁。问：妹妹几岁？",
-      "checksum": "066fb18b5b33c849703f31d9c924f4427cc8503c488b94ba5e34ad7dcc49a602",
+      "checksum": "171390447769213fe2f1a5158d6349eb8ddfed6de072729a2ca17de39c04967d",
       "file": "audio/sentences/hsk2-l3-07.wav",
       "voices": [
         "Reed (中国語（中国本土）)",
-        "Tingting"
+        "Tingting",
+        "Samantha"
       ]
     },
     "hsk2-l3-08": {
@@ -7632,11 +7659,12 @@
       "type": "mock-v2",
       "level": 2,
       "text": "女：这条裤子一百元，那条呢？男：那条便宜二十元。问：那条裤子多少钱？",
-      "checksum": "572d1573939e0e0a1b7f46fb6c6878400aff0eb208e248ba7dbf2b616814898d",
+      "checksum": "0cd2f310b22f3e9e42897c42ea6528a8c2ec16db0a69f52795aa3b024fb49a26",
       "file": "audio/sentences/hsk2-l3-08.wav",
       "voices": [
         "Tingting",
-        "Reed (中国語（中国本土）)"
+        "Reed (中国語（中国本土）)",
+        "Samantha"
       ]
     },
     "hsk2-l3-09": {
@@ -7644,11 +7672,12 @@
       "type": "mock-v2",
       "level": 2,
       "text": "男：你最喜欢什么运动？女：冬天打篮球，夏天游泳。问：女的夏天喜欢什么？",
-      "checksum": "3c9f116fae953762e344b13b1b2c89e84a21b006919c2c434f188b60626cd29c",
+      "checksum": "392c079e2dddefdbfb297ec2cf7f7626dac7e756aa4a16ecd9f8e039f81ea5a2",
       "file": "audio/sentences/hsk2-l3-09.wav",
       "voices": [
         "Reed (中国語（中国本土）)",
-        "Tingting"
+        "Tingting",
+        "Samantha"
       ]
     },
     "hsk2-l3-10": {
@@ -7656,11 +7685,12 @@
       "type": "mock-v2",
       "level": 2,
       "text": "女：你身体不舒服吗？男：我生病了，想休息。问：男的怎么了？",
-      "checksum": "930dfe5d77cfffb90b27b54797701e1d9b74cd8fa53a93c5a27bc61ecaa2c56c",
+      "checksum": "4ece0d9c166622a63897ffeda9d8a94803e679f203d3b4b3c6c4a97d64d1cbaa",
       "file": "audio/sentences/hsk2-l3-10.wav",
       "voices": [
         "Tingting",
-        "Reed (中国語（中国本土）)"
+        "Reed (中国語（中国本土）)",
+        "Samantha"
       ]
     },
     "hsk2-l3-11": {
@@ -7668,11 +7698,12 @@
       "type": "mock-v2",
       "level": 2,
       "text": "女：你家离学校远吗？男：不远，走路十分钟就到。问：男的怎么去学校？",
-      "checksum": "788635916f7aa2ac55d09284a87e7d887f9a254e7b346f41e24b238f1b1e617d",
+      "checksum": "a401228ff83ec588fa75e85bd76c4d63c5b394f1e5c904089650c0cd9d7f03e0",
       "file": "audio/sentences/hsk2-l3-11.wav",
       "voices": [
         "Tingting",
-        "Reed (中国語（中国本土）)"
+        "Reed (中国語（中国本土）)",
+        "Samantha"
       ]
     },
     "hsk2-l3-12": {
@@ -7680,11 +7711,12 @@
       "type": "mock-v2",
       "level": 2,
       "text": "男：明天要下雪吗？女：不，明天是晴天。问：明天天气怎么样？",
-      "checksum": "6353fa963f3b83d1d7b395046144e534e9f427b1e9c29ee4cacbf57068fcf003",
+      "checksum": "ed5d8c5112fa8c439e9ed2b136181104ca0d22172eb6c5e64065c7763c388af3",
       "file": "audio/sentences/hsk2-l3-12.wav",
       "voices": [
         "Reed (中国語（中国本土）)",
-        "Tingting"
+        "Tingting",
+        "Samantha"
       ]
     },
     "hsk2-l3-13": {
@@ -7692,11 +7724,12 @@
       "type": "mock-v2",
       "level": 2,
       "text": "女：你想喝咖啡还是茶？男：我要一杯咖啡。问：男的要喝什么？",
-      "checksum": "59261f457e9f8451ff0c82b1bf62920da9e33e93aab3ecd2c5e7c0539db53c2e",
+      "checksum": "98f635da741187e1d34f29a10d5b426ba853c5e921b8a1f120cdead6ec5eebfc",
       "file": "audio/sentences/hsk2-l3-13.wav",
       "voices": [
         "Tingting",
-        "Reed (中国語（中国本土）)"
+        "Reed (中国語（中国本土）)",
+        "Samantha"
       ]
     },
     "hsk2-l3-14": {
@@ -7704,11 +7737,12 @@
       "type": "mock-v2",
       "level": 2,
       "text": "男：现在几点了？女：七点五十。问：现在几点？",
-      "checksum": "b1d412bdd54ebc50bcffeb0f4e17b1ae5bb3a65165cce9953ada4ff4a8ba71a7",
+      "checksum": "f2f8235ea7da9fad25d12197c49f31e0a726a5439a2b46a2858ddc5783afa739",
       "file": "audio/sentences/hsk2-l3-14.wav",
       "voices": [
         "Reed (中国語（中国本土）)",
-        "Tingting"
+        "Tingting",
+        "Samantha"
       ]
     },
     "hsk2-l3-15": {
@@ -7716,11 +7750,12 @@
       "type": "mock-v2",
       "level": 2,
       "text": "女：你们家有几个人？男：四个，爸爸妈妈和弟弟。问：男的家有几个人？",
-      "checksum": "7bde87e91fd16f4173022b3e654bfa6dca80d56fce4862458e1bfcdbdb0718a5",
+      "checksum": "a5dfdf9d04e4317bb065b87a726d61d0477e3867467ff719e8e48619c435a881",
       "file": "audio/sentences/hsk2-l3-15.wav",
       "voices": [
         "Tingting",
-        "Reed (中国語（中国本土）)"
+        "Reed (中国語（中国本土）)",
+        "Samantha"
       ]
     },
     "hsk2-l3-16": {
@@ -7728,11 +7763,12 @@
       "type": "mock-v2",
       "level": 2,
       "text": "男：这个多少钱？女：三十五块。问：这个东西多少钱？",
-      "checksum": "48b971eb437816dd9c4ec9f30d8f8bcf88387d07ba2f58de26bd48695dbb32b6",
+      "checksum": "2e7cdd6f8140983e3b2cbe994e75cac7ba669d1625003d73544005990e489a4a",
       "file": "audio/sentences/hsk2-l3-16.wav",
       "voices": [
         "Reed (中国語（中国本土）)",
-        "Tingting"
+        "Tingting",
+        "Samantha"
       ]
     },
     "hsk2-l3-17": {
@@ -7740,11 +7776,12 @@
       "type": "mock-v2",
       "level": 2,
       "text": "女：你在哪儿等我？男：我在教室里等你。问：男的在哪儿等？",
-      "checksum": "28f9506069b146273b07f2bb43cbcf117075927aeda77810ee760c97d4831520",
+      "checksum": "ee4beb911a54b418a7002cbb9bf720ba85d3dce4a317581dce763c23c4ced440",
       "file": "audio/sentences/hsk2-l3-17.wav",
       "voices": [
         "Tingting",
-        "Reed (中国語（中国本土）)"
+        "Reed (中国語（中国本土）)",
+        "Samantha"
       ]
     },
     "hsk2-l3-18": {
@@ -7752,11 +7789,12 @@
       "type": "mock-v2",
       "level": 2,
       "text": "男：你怎么了？女：我有点儿累，想休息一下。问：女的想做什么？",
-      "checksum": "73606b0ab3635e120758caef0ffcd5bc08a942b30e595d9a25e7f9bc0444cc59",
+      "checksum": "63e372185a7f1f9e5a2d3230f179ad7984a04d19521a5edf8c74a169c878cf04",
       "file": "audio/sentences/hsk2-l3-18.wav",
       "voices": [
         "Reed (中国語（中国本土）)",
-        "Tingting"
+        "Tingting",
+        "Samantha"
       ]
     },
     "hsk2-l3-19": {
@@ -7764,11 +7802,12 @@
       "type": "mock-v2",
       "level": 2,
       "text": "女：你给妹妹买了什么？男：我买了一块手表。问：男的买了什么？",
-      "checksum": "8c99b17cb7015d96bed8e6351dadabd740ab4a5b1dfc4a36f9c6c3ac01a22fb7",
+      "checksum": "7d7dab916983cbc709c383e9f3aad422a249a8b831b2a79607aa483d0e0d7502",
       "file": "audio/sentences/hsk2-l3-19.wav",
       "voices": [
         "Tingting",
-        "Reed (中国語（中国本土）)"
+        "Reed (中国語（中国本土）)",
+        "Samantha"
       ]
     },
     "hsk2-l3-20": {
@@ -7776,11 +7815,12 @@
       "type": "mock-v2",
       "level": 2,
       "text": "男：外面冷吗？女：很冷，你穿这件衣服吧。问：女的让男的做什么？",
-      "checksum": "a760ab4162e06003aa75a6c49a455fa4f13ec3002103a08e22c3c079fdb4b58c",
+      "checksum": "42ab350bbf69016fb79a781105a004fc609227c45c8c2669e5e911dab9672cac",
       "file": "audio/sentences/hsk2-l3-20.wav",
       "voices": [
         "Reed (中国語（中国本土）)",
-        "Tingting"
+        "Tingting",
+        "Samantha"
       ]
     },
     "hsk2-l3-21": {
@@ -7788,11 +7828,12 @@
       "type": "mock-v2",
       "level": 2,
       "text": "女：我们坐公共汽车去吧。男：太慢了，我们坐出租车。问：他们打算怎么去？",
-      "checksum": "56fd8389a14e561eca35884b3324c459afaba6c79b711f04111f2a7e55cb6346",
+      "checksum": "7fe510ddd5e65b4dd4c4aa6b86dcc27cb1d206e30e15ec95a431320c708e1606",
       "file": "audio/sentences/hsk2-l3-21.wav",
       "voices": [
         "Tingting",
-        "Reed (中国語（中国本土）)"
+        "Reed (中国語（中国本土）)",
+        "Samantha"
       ]
     },
     "hsk2-l3-22": {
@@ -7800,11 +7841,12 @@
       "type": "mock-v2",
       "level": 2,
       "text": "男：你吃过饭了吗？女：还没有，我在等你。问：女的为什么没吃饭？",
-      "checksum": "aaebd8a7e0183d53e51641f7943ccb05163ded43d206d698d107ff9bab241038",
+      "checksum": "be4af84b28a367ad8f81d3424ddab92ca7ad24308710ff9e51223c2a3b9c87da",
       "file": "audio/sentences/hsk2-l3-22.wav",
       "voices": [
         "Reed (中国語（中国本土）)",
-        "Tingting"
+        "Tingting",
+        "Samantha"
       ]
     },
     "hsk2-l3-23": {
@@ -7812,11 +7854,12 @@
       "type": "mock-v2",
       "level": 2,
       "text": "女：你今天几点下班？男：今天很忙，可能八点。问：男的今天几点下班？",
-      "checksum": "0df5ab7409cd599482acb1da4d6038140a1d1a34f2db2669967a7ed49b3fd12b",
+      "checksum": "4f7b555e837ec2cce34a6779bf208f259654b6ed9b7385a026b8e4f7b582d2f5",
       "file": "audio/sentences/hsk2-l3-23.wav",
       "voices": [
         "Tingting",
-        "Reed (中国語（中国本土）)"
+        "Reed (中国語（中国本土）)",
+        "Samantha"
       ]
     },
     "hsk2-l3-24": {
@@ -7824,11 +7867,12 @@
       "type": "mock-v2",
       "level": 2,
       "text": "男：你学汉语多长时间了？女：已经一年了。问：女的学汉语多久了？",
-      "checksum": "e304adf78c2a15e69f28edc880d5a2b626ed0e9d82d2108fed7fb0d75de3f23f",
+      "checksum": "b0b9c6e8ba9b040d4a7c4513743354c3262776ac45f7cf243435104ef17edfe6",
       "file": "audio/sentences/hsk2-l3-24.wav",
       "voices": [
         "Reed (中国語（中国本土）)",
-        "Tingting"
+        "Tingting",
+        "Samantha"
       ]
     },
     "hsk2-l3-25": {
@@ -7836,11 +7880,12 @@
       "type": "mock-v2",
       "level": 2,
       "text": "女：这是你姐姐吗？男：不是，这是我妹妹。问：照片上的人是谁？",
-      "checksum": "9cf361c55fb3f342e650675faa43be668c847dd200ac51aa231e5c58f98de85d",
+      "checksum": "e9e9d7cfd25754f5ebcb715b9d73359153f9512941f247f674d36440bab90f11",
       "file": "audio/sentences/hsk2-l3-25.wav",
       "voices": [
         "Tingting",
-        "Reed (中国語（中国本土）)"
+        "Reed (中国語（中国本土）)",
+        "Samantha"
       ]
     },
     "hsk2-l3-26": {
@@ -7848,11 +7893,12 @@
       "type": "mock-v2",
       "level": 2,
       "text": "男：你周末做什么？女：我常常去游泳。问：女的周末做什么？",
-      "checksum": "37adb3a8763604ba60525d995f7230cf9c5525ff4c4269bbb0b838b4de46a85a",
+      "checksum": "45ab31a9a5af369987290e9b26b17cba200c1cfc2b00fc701b3189c9926b5d4e",
       "file": "audio/sentences/hsk2-l3-26.wav",
       "voices": [
         "Reed (中国語（中国本土）)",
-        "Tingting"
+        "Tingting",
+        "Samantha"
       ]
     },
     "hsk2-l3-27": {
@@ -7860,11 +7906,12 @@
       "type": "mock-v2",
       "level": 2,
       "text": "女：我的手机在哪儿？男：就在桌子上。问：手机在哪儿？",
-      "checksum": "3b2ebfebcd33a4347b600c428484c0608043d44c0479325b1700723a148f73aa",
+      "checksum": "2ddb7071de9ed8605ef71703199ea71b288252e9be7bca114a2148edc77474a8",
       "file": "audio/sentences/hsk2-l3-27.wav",
       "voices": [
         "Tingting",
-        "Reed (中国語（中国本土）)"
+        "Reed (中国語（中国本土）)",
+        "Samantha"
       ]
     },
     "hsk2-l3-28": {
@@ -7872,11 +7919,12 @@
       "type": "mock-v2",
       "level": 2,
       "text": "男：明天去踢足球吗？女：听说明天下雨，别去了。问：他们明天做什么？",
-      "checksum": "deadbbe3041aacc4a520859cdd83bf6350518ece079287647efb313b35017ac5",
+      "checksum": "8081151b4d2f188078078b53dcf59822c3d48057f96fc23559c32b06bcf08d6c",
       "file": "audio/sentences/hsk2-l3-28.wav",
       "voices": [
         "Reed (中国語（中国本土）)",
-        "Tingting"
+        "Tingting",
+        "Samantha"
       ]
     },
     "hsk2-l3-29": {
@@ -7884,11 +7932,12 @@
       "type": "mock-v2",
       "level": 2,
       "text": "女：你买了几个鸡蛋？男：我买了一公斤。问：男的买了多少鸡蛋？",
-      "checksum": "a02673eece90bf25abaa4fcd08e021f284b07ad353888dc6784b89e40e156643",
+      "checksum": "6b9ea1296a0c390d16fdf9809f12b499ff72a46e60cd666bdffe3177bbe7178e",
       "file": "audio/sentences/hsk2-l3-29.wav",
       "voices": [
         "Tingting",
-        "Reed (中国語（中国本土）)"
+        "Reed (中国語（中国本土）)",
+        "Samantha"
       ]
     },
     "hsk2-l3-30": {
@@ -7896,11 +7945,12 @@
       "type": "mock-v2",
       "level": 2,
       "text": "男：这本书是谁的？女：是老师的。问：书是谁的？",
-      "checksum": "7ca4967dc5d520f84418ab6c4202adbc2219795b66f28963380013a7ef193722",
+      "checksum": "e4c9da79237aeeb84d042df67c48eab42bc2f24ef44ee483e3c44b42ac2a1de7",
       "file": "audio/sentences/hsk2-l3-30.wav",
       "voices": [
         "Reed (中国語（中国本土）)",
-        "Tingting"
+        "Tingting",
+        "Samantha"
       ]
     },
     "hsk2-l3-31": {
@@ -7908,11 +7958,12 @@
       "type": "mock-v2",
       "level": 2,
       "text": "女：你给谁打电话？男：给我哥哥打电话。问：男的给谁打电话？",
-      "checksum": "588e725ad41431d40bbfedf14ff8a5949023a5136a81cb57f5b73f8c14ec8c0f",
+      "checksum": "5229676cee02c3639c4e64e4ae03de263d8a8f1f04a7f9468dbc8af0daa6abe8",
       "file": "audio/sentences/hsk2-l3-31.wav",
       "voices": [
         "Tingting",
-        "Reed (中国語（中国本土）)"
+        "Reed (中国語（中国本土）)",
+        "Samantha"
       ]
     },
     "hsk2-l3-32": {
@@ -7920,11 +7971,12 @@
       "type": "mock-v2",
       "level": 2,
       "text": "男：你喜欢什么颜色？女：我最喜欢白色。问：女的喜欢什么颜色？",
-      "checksum": "94ebe17b55da511e3d7a232fe879615ba591e5efa133cd9a915380f654925131",
+      "checksum": "4d31313257ea02578acdc9bf57e62fc6883f576dc70b1f3d071e3070ce71df93",
       "file": "audio/sentences/hsk2-l3-32.wav",
       "voices": [
         "Reed (中国語（中国本土）)",
-        "Tingting"
+        "Tingting",
+        "Samantha"
       ]
     },
     "hsk2-l3-33": {
@@ -7932,11 +7984,12 @@
       "type": "mock-v2",
       "level": 2,
       "text": "女：你去过北京吗？男：去年去过一次。问：男的什么时候去的北京？",
-      "checksum": "10446981e63f2f2bb5a8a0838759502f3551042afb01ee01ab06bf65ba551945",
+      "checksum": "ea54af153ff198811f2418883f1a55b8d91d94868517e144e5ff04ad0a6ef04a",
       "file": "audio/sentences/hsk2-l3-33.wav",
       "voices": [
         "Tingting",
-        "Reed (中国語（中国本土）)"
+        "Reed (中国語（中国本土）)",
+        "Samantha"
       ]
     },
     "hsk2-l3-34": {
@@ -7944,11 +7997,12 @@
       "type": "mock-v2",
       "level": 2,
       "text": "男：明天有汉语课吗？女：没有，明天是星期六。问：明天为什么没有课？",
-      "checksum": "01a9e50856c7d62485262c31b43bccf56b935fdd81fa6f6fc4c050a97b3c8a74",
+      "checksum": "466b18a93ee1bebab313de8cd3e432a34a72025fc49ff9bcc7606617837989bd",
       "file": "audio/sentences/hsk2-l3-34.wav",
       "voices": [
         "Reed (中国語（中国本土）)",
-        "Tingting"
+        "Tingting",
+        "Samantha"
       ]
     },
     "hsk2-l4-01": {
@@ -7956,11 +8010,12 @@
       "type": "mock-v2",
       "level": 2,
       "text": "男：电影几点开始？女：晚上八点，现在七点半。问：电影还有多久开始？",
-      "checksum": "c33e4fd81c66e15e7a57f2aba8db69cd94c883584c01fe16288bfe48bf99aa03",
+      "checksum": "bc18cbe2cfa6bb1c10a1be16c181810dc193cad42d19b25c43674f6331a005ab",
       "file": "audio/sentences/hsk2-l4-01.wav",
       "voices": [
         "Reed (中国語（中国本土）)",
-        "Tingting"
+        "Tingting",
+        "Samantha"
       ]
     },
     "hsk2-l4-02": {
@@ -7968,11 +8023,12 @@
       "type": "mock-v2",
       "level": 2,
       "text": "女：你买了什么水果？男：我买了苹果，没买西瓜。问：男的没买什么？",
-      "checksum": "43cfbbdaa6bcb0825736c30d7a8123dba43ae6244aa959e603a548ab46989a24",
+      "checksum": "90b45b94a3834d09481bb77397e35f95676cbf5b6dbb5384a17fc0d851f3db18",
       "file": "audio/sentences/hsk2-l4-02.wav",
       "voices": [
         "Tingting",
-        "Reed (中国語（中国本土）)"
+        "Reed (中国語（中国本土）)",
+        "Samantha"
       ]
     },
     "hsk2-l4-03": {
@@ -7980,11 +8036,12 @@
       "type": "mock-v2",
       "level": 2,
       "text": "男：考试准备好了吗？女：还没有，我正在准备。问：女的正在做什么？",
-      "checksum": "4dc1730af43c5eb7e683eff592e338d3faeb51761452062c12d65784ef15ea28",
+      "checksum": "934f77000d5c11eccd0ce4a2ba515161055e5f7ec61d3e8dcc3329867b943058",
       "file": "audio/sentences/hsk2-l4-03.wav",
       "voices": [
         "Reed (中国語（中国本土）)",
-        "Tingting"
+        "Tingting",
+        "Samantha"
       ]
     },
     "hsk2-l4-04": {
@@ -7992,11 +8049,12 @@
       "type": "mock-v2",
       "level": 2,
       "text": "女：你哥哥在哪儿工作？男：他是医生，在北京医院工作。问：哥哥在哪儿工作？",
-      "checksum": "573eccd1a603611841ed8a9bc23aa4103cba5f64d42d6e0733cfaad7af5f2fe6",
+      "checksum": "d1020e1860da6aca67d595aba4764ad0d4e54960bf5c9d9b8a9548bfa57b2a65",
       "file": "audio/sentences/hsk2-l4-04.wav",
       "voices": [
         "Tingting",
-        "Reed (中国語（中国本土）)"
+        "Reed (中国語（中国本土）)",
+        "Samantha"
       ]
     },
     "hsk2-l4-05": {
@@ -8004,11 +8062,12 @@
       "type": "mock-v2",
       "level": 2,
       "text": "男：今天是你的生日，这本书送给你。女：谢谢，我很喜欢。问：男的送了什么？",
-      "checksum": "fc8cc3ed4f69a927794969b91d9eef9eb3b8b37bc50e7af01b98fdd3b0a7db1d",
+      "checksum": "58efddfafa3edd2a8da8936f126932b72dbaaa5800501ea14a07844f708c6618",
       "file": "audio/sentences/hsk2-l4-05.wav",
       "voices": [
         "Reed (中国語（中国本土）)",
-        "Tingting"
+        "Tingting",
+        "Samantha"
       ]
     },
     "hsk2-l4-06": {
@@ -8016,11 +8075,12 @@
       "type": "mock-v2",
       "level": 2,
       "text": "男：外面还在下雨吗？女：是的，雨很大。男：那我们等一会儿再走。女：好，我也不想现在出去。问：他们为什么不走？",
-      "checksum": "2c97dd09e083e7018855841f89e10f8dc3624663de519557718d0b75e1a84c67",
+      "checksum": "7c03ed7fb3b515b7733be09b574ac62e263e946a7521131949ab38f075b8a3eb",
       "file": "audio/sentences/hsk2-l4-06.wav",
       "voices": [
         "Reed (中国語（中国本土）)",
-        "Tingting"
+        "Tingting",
+        "Samantha"
       ]
     },
     "hsk2-l4-07": {
@@ -8028,11 +8088,12 @@
       "type": "mock-v2",
       "level": 2,
       "text": "女：你昨天去哪儿了？男：我和朋友去看电影了。女：电影好看吗？男：很好看，你有时间也去吧。问：男的昨天做什么了？",
-      "checksum": "a608ac57a51c611a5f7a891d7dd3d8e1a6e423a2b458823ba38773dce7769521",
+      "checksum": "f1e34dc3a6e51a69b4b401bcf3241f7006486b2bfb69ece7a1932485a6e52b10",
       "file": "audio/sentences/hsk2-l4-07.wav",
       "voices": [
         "Tingting",
-        "Reed (中国語（中国本土）)"
+        "Reed (中国語（中国本土）)",
+        "Samantha"
       ]
     },
     "hsk2-l4-08": {
@@ -8040,11 +8101,12 @@
       "type": "mock-v2",
       "level": 2,
       "text": "男：这件衣服多少钱？女：一百二十块。男：太贵了，便宜点儿吧。女：那一百块吧。问：男的最后花了多少钱？",
-      "checksum": "1edacc11c3e69089c71841e0ea42b418740c279f71196b869c1316cabae89c03",
+      "checksum": "9cb051ef2d0cbfeddde6cfc5d31957a576b7eb6fe99e1b265237c7a26a30ac7d",
       "file": "audio/sentences/hsk2-l4-08.wav",
       "voices": [
         "Reed (中国語（中国本土）)",
-        "Tingting"
+        "Tingting",
+        "Samantha"
       ]
     },
     "hsk2-l4-09": {
@@ -8052,11 +8114,12 @@
       "type": "mock-v2",
       "level": 2,
       "text": "女：明天几点开始上课？男：早上八点。女：那我七点起床。男：好，我们一起去学校。问：女的明天几点起床？",
-      "checksum": "a91e66fab0b8d6d76395533da07695fa02b7ce7c904a010c01da48738c80518c",
+      "checksum": "f3a0a9d437d40a235ced510ad5b13b0ae084c98979f2701dc625054bcef8b79f",
       "file": "audio/sentences/hsk2-l4-09.wav",
       "voices": [
         "Tingting",
-        "Reed (中国語（中国本土）)"
+        "Reed (中国語（中国本土）)",
+        "Samantha"
       ]
     },
     "hsk2-l4-10": {
@@ -8064,11 +8127,12 @@
       "type": "mock-v2",
       "level": 2,
       "text": "男：你的身体好点儿了吗？女：好多了，谢谢。男：还要吃药吗？女：医生说不用了。问：女的还要吃药吗？",
-      "checksum": "ad83df4c3f545b3f52db7b1536a22e6d5efbd6455b14b93c5ccc151616764cb4",
+      "checksum": "ff910f9e9f244030cf57f3cd6feb7c81490dca48ce88db532c4973cd3fbc3829",
       "file": "audio/sentences/hsk2-l4-10.wav",
       "voices": [
         "Reed (中国語（中国本土）)",
-        "Tingting"
+        "Tingting",
+        "Samantha"
       ]
     },
     "hsk2-l4-11": {
@@ -8076,11 +8140,12 @@
       "type": "mock-v2",
       "level": 2,
       "text": "女：你会做中国菜吗？男：会一点儿，我最会做鱼。女：那今天晚上你做饭吧。男：没问题。问：男的今天晚上做什么？",
-      "checksum": "557e1083bf46d5427f062aea9fd0619889fdf1ccb2bdbb2d8c5ce68f6a040b96",
+      "checksum": "b4504380f65b3d66a9a03d1c67822bb22d45c46dbc5a63e71e756039bb9b5e98",
       "file": "audio/sentences/hsk2-l4-11.wav",
       "voices": [
         "Tingting",
-        "Reed (中国語（中国本土）)"
+        "Reed (中国語（中国本土）)",
+        "Samantha"
       ]
     },
     "hsk2-l4-12": {
@@ -8088,11 +8153,12 @@
       "type": "mock-v2",
       "level": 2,
       "text": "男：我们什么时候去旅游？女：下个月怎么样？男：下个月我很忙。女：那就等到十月吧。问：他们打算什么时候去旅游？",
-      "checksum": "a594912df8130fedbaf2169c777090d71aac7f7d04c50793bfd1a14b2d8387f2",
+      "checksum": "a0895b5d68b9e4b492ecb08f6f03874319ab0e8946f8406b49cbbe1f65fafd2e",
       "file": "audio/sentences/hsk2-l4-12.wav",
       "voices": [
         "Reed (中国語（中国本土）)",
-        "Tingting"
+        "Tingting",
+        "Samantha"
       ]
     },
     "hsk2-l4-13": {
@@ -8100,11 +8166,12 @@
       "type": "mock-v2",
       "level": 2,
       "text": "女：你找什么呢？男：我的手表不见了。女：是不是在房间里？男：我找过了，没有。问：男的在找什么？",
-      "checksum": "45f08a00a5e831893fa6b9afecc817f0efd72692cd84970ae99c15dcf78950be",
+      "checksum": "447271597f03bfa12b6b0a99cc2204d91e61297bb1a941865b7eec39fc9e0a37",
       "file": "audio/sentences/hsk2-l4-13.wav",
       "voices": [
         "Tingting",
-        "Reed (中国語（中国本土）)"
+        "Reed (中国語（中国本土）)",
+        "Samantha"
       ]
     },
     "hsk2-l4-14": {
@@ -8112,11 +8179,12 @@
       "type": "mock-v2",
       "level": 2,
       "text": "男：你每天怎么上班？女：我骑自行车，不坐公共汽车了。男：为什么？女：骑车又快又便宜。问：女的怎么上班？",
-      "checksum": "ebb1d9e77c29dca60f79d81e9dd53a4ee300e18b4573c9e711c8dab14d954fad",
+      "checksum": "9c48c245174710660c3aca1a10ae8986457570b7ce8f364d7bca07e11fd691c1",
       "file": "audio/sentences/hsk2-l4-14.wav",
       "voices": [
         "Reed (中国語（中国本土）)",
-        "Tingting"
+        "Tingting",
+        "Samantha"
       ]
     },
     "hsk2-l4-15": {
@@ -8124,11 +8192,12 @@
       "type": "mock-v2",
       "level": 2,
       "text": "女：这个星期六你有时间吗？男：有，怎么了？女：我想请你来我家吃饭。男：太好了，我会去的。问：女的请男的做什么？",
-      "checksum": "a008f8a5d8176a823fc47182236099913b3dfcdb58b01b09c56a03618f46e29e",
+      "checksum": "cc2495ec11c9e478d431ee65ee9b57a6a5b7c4244dff77b71293d7ea7451cb0f",
       "file": "audio/sentences/hsk2-l4-15.wav",
       "voices": [
         "Tingting",
-        "Reed (中国語（中国本土）)"
+        "Reed (中国語（中国本土）)",
+        "Samantha"
       ]
     },
     "hsk3-l1-01": {
@@ -8201,8 +8270,8 @@
       "id": "hsk3-l1-07",
       "type": "mock-v2",
       "level": 3,
-      "text": "经理正在办公室开会。",
-      "checksum": "23aaf6dcb60b36293b513a80e835a8b6cfc7fb863d35366d5c4f49123e876260",
+      "text": "同事们正在办公室开会。",
+      "checksum": "fc30ade071f0c6af2a80b417379a8fcaa472728b534684fc0f5a3ef4b0ea38d7",
       "file": "audio/sentences/hsk3-l1-07.wav",
       "voices": [
         "Tingting"
@@ -8267,8 +8336,8 @@
       "id": "hsk3-l2-03",
       "type": "mock-v2",
       "level": 3,
-      "text": "王老师把会议时间从上午十点换到了下午两点。",
-      "checksum": "b89cf1aac2ba618584e7dcd709c5fb793b5ab07e82238f2c9be49e92a4a62145",
+      "text": "我的手机昨天坏了，今天下午拿去检查。",
+      "checksum": "c01b8e6f8236ba994fd8b5b421c9f44efa25f118ce07e2fb9a52585f52f04f4f",
       "file": "audio/sentences/hsk3-l2-03.wav",
       "voices": [
         "Tingting"
@@ -8289,8 +8358,8 @@
       "id": "hsk3-l2-05",
       "type": "mock-v2",
       "level": 3,
-      "text": "这家宾馆离地铁站很近，房间也很干净，就是有点儿贵。",
-      "checksum": "d29856814cbcd676fd695155b0b7e1b93fe7a051cc723f52ec08487446a2d646",
+      "text": "这家宾馆离火车站很近，房间也很干净，就是有点儿贵。",
+      "checksum": "444f7cf79cb0b9f83271bb0ebd8d1f91b44647cee785986a06ce95d17955c610",
       "file": "audio/sentences/hsk3-l2-05.wav",
       "voices": [
         "Tingting"
@@ -8311,8 +8380,8 @@
       "id": "hsk3-l2-07",
       "type": "mock-v2",
       "level": 3,
-      "text": "张经理对这次表演很满意，还表示以后愿意继续帮忙。",
-      "checksum": "d4164b87bb49aa8c186f7dbb14dee818f56f64644872ba8cde1bebf468b48f0e",
+      "text": "张经理对这次表演很满意，还表示以后愿意帮忙。",
+      "checksum": "2b4d6dc6428db182ac1b9e6c2dbe9388db9c1605c9fa4fcbede38ce268bc5cbe",
       "file": "audio/sentences/hsk3-l2-07.wav",
       "voices": [
         "Tingting"
@@ -8322,8 +8391,8 @@
       "id": "hsk3-l2-08",
       "type": "mock-v2",
       "level": 3,
-      "text": "我先去银行办事，然后到超市买东西，最后才回家。",
-      "checksum": "2ba8cfc65291a5c6e0550933f750a76a10d503825439639d6f53e0c58a5936e2",
+      "text": "我先去银行，然后到超市买东西，最后才回家。",
+      "checksum": "c2be94584a023dd916c4530ab604ee1edd604d774f49c3f21c0cd9a3916a867e",
       "file": "audio/sentences/hsk3-l2-08.wav",
       "voices": [
         "Tingting"
@@ -8344,8 +8413,8 @@
       "id": "hsk3-l2-10",
       "type": "mock-v2",
       "level": 3,
-      "text": "我们本来打算爬山，因为突然下雨，只好改去饭馆吃饭。",
-      "checksum": "fcb7aaba8bdbe505cc5f838d171a7e67b5a3d56c23dafa97448f3fa7129692b7",
+      "text": "这本字典是姐姐送我的生日礼物，我一直放在书包里。",
+      "checksum": "da0e4ed6c9b1f65f184dff447f3bf3d6b112292370d1db9f2972d5ff754a396e",
       "file": "audio/sentences/hsk3-l2-10.wav",
       "voices": [
         "Tingting"
@@ -8356,59 +8425,64 @@
       "type": "mock-v2",
       "level": 3,
       "text": "女：你的自行车找到了吗？男：找到了，朋友说明天下午给我送来。问：自行车什么时候送来？",
-      "checksum": "d13bfb87a0891bf85f346e048fb060434d564162365e323c602ff1509f985426",
+      "checksum": "3da8586999181f15207bbb8c256ea744b08e73665b1fcba2c21e87ace7d02eef",
       "file": "audio/sentences/hsk3-l3-01.wav",
       "voices": [
         "Tingting",
-        "Reed (中国語（中国本土）)"
+        "Reed (中国語（中国本土）)",
+        "Samantha"
       ]
     },
     "hsk3-l3-02": {
       "id": "hsk3-l3-02",
       "type": "mock-v2",
       "level": 3,
-      "text": "男：你怎么不坐电梯？女：我住三楼，走楼梯还能锻炼身体。问：女的为什么走楼梯？",
-      "checksum": "5acf06c96bc8e8989b2c2fdc1b3af39de703bcc385e250162d11710a5dc9c178",
+      "text": "男：你怎么不坐电梯？女：我住三层，自己走上去还能锻炼身体。问：女的为什么不坐电梯？",
+      "checksum": "c9ea54f6baec327f12e998353a6f639d91a9997cc191968d5715520f520bfdf8",
       "file": "audio/sentences/hsk3-l3-02.wav",
       "voices": [
         "Reed (中国語（中国本土）)",
-        "Tingting"
+        "Tingting",
+        "Samantha"
       ]
     },
     "hsk3-l3-03": {
       "id": "hsk3-l3-03",
       "type": "mock-v2",
       "level": 3,
-      "text": "女：这家饭店的菜怎么样？男：味道不错，就是服务有点儿慢。问：男的对什么不满意？",
-      "checksum": "5162b18f512f417b2d9c0c386e8992a277bf55a1c1aafb5e414d53dce7834a7b",
+      "text": "女：您好，您要喝点儿什么？男：一杯咖啡，再来一块蛋糕。问：他们最可能在哪儿？",
+      "checksum": "a68905ab7764fb38607602cfda1c8fe5b8dcec8d85e2864fc0d79d709a5a9e67",
       "file": "audio/sentences/hsk3-l3-03.wav",
       "voices": [
         "Tingting",
-        "Reed (中国語（中国本土）)"
+        "Reed (中国語（中国本土）)",
+        "Samantha"
       ]
     },
     "hsk3-l3-04": {
       "id": "hsk3-l3-04",
       "type": "mock-v2",
       "level": 3,
-      "text": "男：听说你要搬家？女：对，新家离公司更近。问：女的为什么搬家？",
-      "checksum": "4ab839c6f473b5df05228f911b0fcae9c05ca44a69ab40da423d58c954a2a96b",
+      "text": "男：明天是妈妈的生日，我们送什么好？女：她最喜欢花，我们买些花吧。问：他们打算送什么？",
+      "checksum": "d3e9c072288a6c0ac0295f6474bad718043c7c21398ede7be0861793bfc01cbb",
       "file": "audio/sentences/hsk3-l3-04.wav",
       "voices": [
         "Reed (中国語（中国本土）)",
-        "Tingting"
+        "Tingting",
+        "Samantha"
       ]
     },
     "hsk3-l3-05": {
       "id": "hsk3-l3-05",
       "type": "mock-v2",
       "level": 3,
-      "text": "女：作业做完了吗？男：内容完成了，还要检查一下。问：男的接下来要做什么？",
-      "checksum": "47f21114b90db5d1bb55bc53da6e4fdcf5e60b27fe203f8a5559819e99e55638",
+      "text": "女：作业做完了吗？男：都写完了，还要检查一下。问：男的接下来要做什么？",
+      "checksum": "c446efde72ee2544511908bcaa09ecc8b1feb1748a07924c888fbcc2b37d367e",
       "file": "audio/sentences/hsk3-l3-05.wav",
       "voices": [
         "Tingting",
-        "Reed (中国語（中国本土）)"
+        "Reed (中国語（中国本土）)",
+        "Samantha"
       ]
     },
     "hsk3-l3-06": {
@@ -8416,47 +8490,51 @@
       "type": "mock-v2",
       "level": 3,
       "text": "男：会议已经开始了吗？女：还没有，经理十分钟以后才来。问：经理什么时候来？",
-      "checksum": "0f1123c6836073ce304a104c1b85339ba2afcf121877563bf5a26152248aefae",
+      "checksum": "85260491e802a224ab4e6416facc9fa2fdc92b3256506a317cf308f793c7ebc4",
       "file": "audio/sentences/hsk3-l3-06.wav",
       "voices": [
         "Reed (中国語（中国本土）)",
-        "Tingting"
+        "Tingting",
+        "Samantha"
       ]
     },
     "hsk3-l3-07": {
       "id": "hsk3-l3-07",
       "type": "mock-v2",
       "level": 3,
-      "text": "女：你的感冒好点儿了吗？男：好多了，但是医生让我再休息两天。问：医生让男的做什么？",
-      "checksum": "b8c70e9a9822aaf8f838f8c56a33f83594299869e95927ed17a74e7bf348ce68",
+      "text": "女：你的数学成绩怎么样？男：这次比上次提高了不少。问：男的数学成绩怎么样？",
+      "checksum": "6c03e8606a34e1802d829298f77cfcb54a7b479cfa0032f410a9c83862fda5f6",
       "file": "audio/sentences/hsk3-l3-07.wav",
       "voices": [
         "Tingting",
-        "Reed (中国語（中国本土）)"
+        "Reed (中国語（中国本土）)",
+        "Samantha"
       ]
     },
     "hsk3-l3-08": {
       "id": "hsk3-l3-08",
       "type": "mock-v2",
       "level": 3,
-      "text": "男：周末去爬山怎么样？女：外面下雨了，我们还是去看电影吧。问：他们决定做什么？",
-      "checksum": "70fa262f28c3a007ef03e0e00db59bec4aa4ea2e614e085dd0edb3a49c57d9df",
+      "text": "男：外面这么冷，你怎么只穿一件衬衫？女：我出门的时候太阳还很好。问：关于女的，可以知道什么？",
+      "checksum": "f4c5f9b4f4f257f71eae49e2e848939a4195afeacb4ee64729738130145c6f78",
       "file": "audio/sentences/hsk3-l3-08.wav",
       "voices": [
         "Reed (中国語（中国本土）)",
-        "Tingting"
+        "Tingting",
+        "Samantha"
       ]
     },
     "hsk3-l3-09": {
       "id": "hsk3-l3-09",
       "type": "mock-v2",
       "level": 3,
-      "text": "女：请问，洗手间在哪儿？男：一直往前走，在电梯的右边。问：洗手间在哪儿？",
-      "checksum": "c5a74ef9153b6ee006b38192e20d28cf12db115d79e2e6e4eb4a8ae2f55a7bb0",
+      "text": "女：请问，洗手间在哪儿？男：一直向前走，在电梯的右边。问：洗手间在哪儿？",
+      "checksum": "1915e10d199357d7677c490394ea29be6d08ee97fa5b0a0e2ac437018a7dcb55",
       "file": "audio/sentences/hsk3-l3-09.wav",
       "voices": [
         "Tingting",
-        "Reed (中国語（中国本土）)"
+        "Reed (中国語（中国本土）)",
+        "Samantha"
       ]
     },
     "hsk3-l3-10": {
@@ -8464,11 +8542,142 @@
       "type": "mock-v2",
       "level": 3,
       "text": "男：你觉得这次比赛怎么样？女：虽然没得第一，但是大家都很努力。问：女的怎么看这次比赛？",
-      "checksum": "0222f3d12c03e629a04b164772efba6a04e3cf7f4bc11e3fc5ced73646fb6be7",
+      "checksum": "79d8459896e33690eb7d6257e96b417633108c7918ce6ebb4d5e2b8baa2edf8b",
       "file": "audio/sentences/hsk3-l3-10.wav",
       "voices": [
         "Reed (中国語（中国本土）)",
-        "Tingting"
+        "Tingting",
+        "Samantha"
+      ]
+    },
+    "hsk3-l3-11": {
+      "id": "hsk3-l3-11",
+      "type": "mock-v2",
+      "level": 3,
+      "text": "女：你怎么才到？男：路上突然下大雨，公共汽车也来得很慢。问：男的为什么迟到？",
+      "checksum": "284c22c5b645d39b1a777f977865a189cfcf09ae55b0455169c97ecd70106649",
+      "file": "audio/sentences/hsk3-l3-11.wav",
+      "voices": [
+        "Tingting",
+        "Reed (中国語（中国本土）)",
+        "Samantha"
+      ]
+    },
+    "hsk3-l3-12": {
+      "id": "hsk3-l3-12",
+      "type": "mock-v2",
+      "level": 3,
+      "text": "男：这件蓝衬衫你穿着很好看。女：可是我更喜欢那件白的。问：女的喜欢哪件？",
+      "checksum": "df9abcb14b24cd7d11d081c85b5f9ad7a415b7b4a12b64ae249e41cad9a30053",
+      "file": "audio/sentences/hsk3-l3-12.wav",
+      "voices": [
+        "Reed (中国語（中国本土）)",
+        "Tingting",
+        "Samantha"
+      ]
+    },
+    "hsk3-l3-13": {
+      "id": "hsk3-l3-13",
+      "type": "mock-v2",
+      "level": 3,
+      "text": "女：听说你找到新工作了？男：是的，下个月去银行上班。问：男的要去哪儿工作？",
+      "checksum": "a4545118d953d5aede6a5c10fe3ec2f6b47bf77b3c514f09f990a16644633538",
+      "file": "audio/sentences/hsk3-l3-13.wav",
+      "voices": [
+        "Tingting",
+        "Reed (中国語（中国本土）)",
+        "Samantha"
+      ]
+    },
+    "hsk3-l3-14": {
+      "id": "hsk3-l3-14",
+      "type": "mock-v2",
+      "level": 3,
+      "text": "男：你认识新来的同事吗？女：昨天刚见面，她很热情。问：女的觉得新同事怎么样？",
+      "checksum": "cd58cdd94b8dae842575c39e5cb826deff4a2889db58d0de5b9be661d899cad7",
+      "file": "audio/sentences/hsk3-l3-14.wav",
+      "voices": [
+        "Reed (中国語（中国本土）)",
+        "Tingting",
+        "Samantha"
+      ]
+    },
+    "hsk3-l3-15": {
+      "id": "hsk3-l3-15",
+      "type": "mock-v2",
+      "level": 3,
+      "text": "男：你的房间真干净。女：我每个星期六都打扫一次。问：女的多久打扫一次房间？",
+      "checksum": "c9ea1c74caf07b229b37406cd63a67e5d32e856ca4c6adc09aa7c8affd838937",
+      "file": "audio/sentences/hsk3-l3-15.wav",
+      "voices": [
+        "Reed (中国語（中国本土）)",
+        "Tingting",
+        "Samantha"
+      ]
+    },
+    "hsk3-l3-16": {
+      "id": "hsk3-l3-16",
+      "type": "mock-v2",
+      "level": 3,
+      "text": "男：你不是打算坐地铁吗？女：地铁今天有问题，我就坐出租车了。问：女的为什么坐出租车？",
+      "checksum": "c97c601686e53ef14f59cc276f2442a599565f9813f6fae5f9484e305b8ba6c2",
+      "file": "audio/sentences/hsk3-l3-16.wav",
+      "voices": [
+        "Reed (中国語（中国本土）)",
+        "Tingting",
+        "Samantha"
+      ]
+    },
+    "hsk3-l3-17": {
+      "id": "hsk3-l3-17",
+      "type": "mock-v2",
+      "level": 3,
+      "text": "女：这个字我不认识，你能教我吗？男：好，我先写给你看。问：男的要做什么？",
+      "checksum": "60e4aa769d2010b259646a3c533295ac12791498290b0a7f1e60dba884412bcc",
+      "file": "audio/sentences/hsk3-l3-17.wav",
+      "voices": [
+        "Tingting",
+        "Reed (中国語（中国本土）)",
+        "Samantha"
+      ]
+    },
+    "hsk3-l3-18": {
+      "id": "hsk3-l3-18",
+      "type": "mock-v2",
+      "level": 3,
+      "text": "男：你的汉语水平提高得真快。女：我每天听新闻，还经常和中国朋友说话。问：女的怎么学习汉语？",
+      "checksum": "333b6af6d4882f8e14d0259f4b49e148e1ec3796450284b2814f48054c0a14df",
+      "file": "audio/sentences/hsk3-l3-18.wav",
+      "voices": [
+        "Reed (中国語（中国本土）)",
+        "Tingting",
+        "Samantha"
+      ]
+    },
+    "hsk3-l3-19": {
+      "id": "hsk3-l3-19",
+      "type": "mock-v2",
+      "level": 3,
+      "text": "女：冰箱里什么都没有了。男：那我们先去超市，然后回家做饭。问：他们先做什么？",
+      "checksum": "6dd8a0eaf035d91f09014f48907796b6a4b3915414fcb8327a6098a80d6783ee",
+      "file": "audio/sentences/hsk3-l3-19.wav",
+      "voices": [
+        "Tingting",
+        "Reed (中国語（中国本土）)",
+        "Samantha"
+      ]
+    },
+    "hsk3-l3-20": {
+      "id": "hsk3-l3-20",
+      "type": "mock-v2",
+      "level": 3,
+      "text": "男：你为什么一直看地图？女：我在找附近的宾馆，宾馆就在前面。问：女的在找什么？",
+      "checksum": "b1d04b71d0b35a6c99fd8d01fd3ee0ab77fd7604e94b2d371e84f2b26d0fe30e",
+      "file": "audio/sentences/hsk3-l3-20.wav",
+      "voices": [
+        "Reed (中国語（中国本土）)",
+        "Tingting",
+        "Samantha"
       ]
     },
     "hsk3-l4-01": {
@@ -8476,11 +8685,12 @@
       "type": "mock-v2",
       "level": 3,
       "text": "男：你的行李箱怎么这么重？女：里面有很多书，还有给朋友的礼物。男：需要我帮你拿吗？女：谢谢，你帮我拿这个包就行。问：女的让男的拿什么？",
-      "checksum": "9ead9069696b85ed9ffd0071cc37c3aaf1dcd7510de55d59174c5eb15994f94b",
+      "checksum": "b1d41c5296d63a6f7700dd23c77856c6f86f86aca076aa796b79b2f1a95a1db7",
       "file": "audio/sentences/hsk3-l4-01.wav",
       "voices": [
         "Reed (中国語（中国本土）)",
-        "Tingting"
+        "Tingting",
+        "Samantha"
       ]
     },
     "hsk3-l4-02": {
@@ -8488,11 +8698,12 @@
       "type": "mock-v2",
       "level": 3,
       "text": "女：你怎么还在办公室？男：我要检查一下这个月的成绩。女：需要我帮忙吗？男：不用，我马上就完成了。问：男的在做什么？",
-      "checksum": "791fa48469a8a02eb6cc38a38b89330ee35163b92dc85724d26f5b5915d218ed",
+      "checksum": "fc212426860f189af62f962d063f800239bff585966985fa9502953afd9fb57a",
       "file": "audio/sentences/hsk3-l4-02.wav",
       "voices": [
         "Tingting",
-        "Reed (中国語（中国本土）)"
+        "Reed (中国語（中国本土）)",
+        "Samantha"
       ]
     },
     "hsk3-l4-03": {
@@ -8500,11 +8711,12 @@
       "type": "mock-v2",
       "level": 3,
       "text": "男：听说你搬家了？女：对，上个星期刚搬完。男：新房子怎么样？女：环境很安静，就是离地铁站有点儿远。问：女的觉得新房子怎么样？",
-      "checksum": "85a0d26547fed639ea8c9c9f60f417950cee38b55fc4b23bebcef0aba55c5673",
+      "checksum": "58a42f8feb12b4d75688a627e045d2701656b0b23e42e7970f6c4ed4a50b4516",
       "file": "audio/sentences/hsk3-l4-03.wav",
       "voices": [
         "Reed (中国語（中国本土）)",
-        "Tingting"
+        "Tingting",
+        "Samantha"
       ]
     },
     "hsk3-l4-04": {
@@ -8512,11 +8724,12 @@
       "type": "mock-v2",
       "level": 3,
       "text": "女：明天的会议几点开始？男：以前是上午九点，经理昨天换成了下午两点。女：为什么换了？男：因为几个同事上午到不了。问：会议明天什么时候开始？",
-      "checksum": "c1936c8a471d613a5729c685d93ddb20d75c074250d8deb66a3158895877d580",
+      "checksum": "71174e76f4363c9405c4aa41f1a75d8c67a26c304ae18bf92684f33aa7c45f95",
       "file": "audio/sentences/hsk3-l4-04.wav",
       "voices": [
         "Tingting",
-        "Reed (中国語（中国本土）)"
+        "Reed (中国語（中国本土）)",
+        "Samantha"
       ]
     },
     "hsk3-l4-05": {
@@ -8524,11 +8737,12 @@
       "type": "mock-v2",
       "level": 3,
       "text": "男：你的感冒好点儿了吗？女：还是有点儿疼，医生让我多休息。男：那你今天别去上班了。女：我已经告诉经理了。问：女的今天为什么不上班？",
-      "checksum": "22c35ce35e3ee44bac6a9cc8079c8d729e89550c20110577c7dc7fad72c58885",
+      "checksum": "8f82a63d5df3602b0a3e8dcd4d5e5495d73d634020b17cb74c2bbd75763e8f76",
       "file": "audio/sentences/hsk3-l4-05.wav",
       "voices": [
         "Reed (中国語（中国本土）)",
-        "Tingting"
+        "Tingting",
+        "Samantha"
       ]
     },
     "hsk3-l4-06": {
@@ -8536,23 +8750,25 @@
       "type": "mock-v2",
       "level": 3,
       "text": "女：周末打算做什么？男：我想去爬山，可是听说要下雨。女：那我们下次再去吧。男：好，这个周末先去看电影。问：他们这个周末做什么？",
-      "checksum": "d0b0f405e60e9943e254a18c4cade0831122247b145179562ca7b97ff77be155",
+      "checksum": "7f7336703dba1abdd500c79131c326741577c57391702c09181129df7c341348",
       "file": "audio/sentences/hsk3-l4-06.wav",
       "voices": [
         "Tingting",
-        "Reed (中国語（中国本土）)"
+        "Reed (中国語（中国本土）)",
+        "Samantha"
       ]
     },
     "hsk3-l4-07": {
       "id": "hsk3-l4-07",
       "type": "mock-v2",
       "level": 3,
-      "text": "男：这条裤子多少钱？女：一百五十元，比上个月便宜了五十。男：那我要一条蓝色的。女：好的，一共一百五十元。问：男的花了多少钱？",
-      "checksum": "870d8bf9076697a4aa8fa11d29c3d71af9e01741e17c23dc1323d8baaf1a3eb1",
+      "text": "男：这条裤子多少钱？女：一百五十元，比上个月便宜了五十。男：那我要一条蓝色的。女：好的，给你。问：这条裤子上个月多少钱？",
+      "checksum": "75aebde3b47e4d3b68ac2ab69e24e2748c276c2942f7f20d8931c5bcfa0d5681",
       "file": "audio/sentences/hsk3-l4-07.wav",
       "voices": [
         "Reed (中国語（中国本土）)",
-        "Tingting"
+        "Tingting",
+        "Samantha"
       ]
     },
     "hsk3-l4-08": {
@@ -8560,11 +8776,12 @@
       "type": "mock-v2",
       "level": 3,
       "text": "男：这家饭馆的菜真不错。女：是啊，就是服务有点儿慢。男：下次我们早点儿来。女：好，下次先打电话。问：他们觉得这家饭馆怎么样？",
-      "checksum": "6af23c0c504e66673530d9e85acfc207331a5d1d6f03de70638dcc3c5cc82ced",
+      "checksum": "f59c88688cf897e5f9634ef8973e593561004131361219c58122728ef50a3e56",
       "file": "audio/sentences/hsk3-l4-08.wav",
       "voices": [
         "Reed (中国語（中国本土）)",
-        "Tingting"
+        "Tingting",
+        "Samantha"
       ]
     },
     "hsk3-l4-09": {
@@ -8572,11 +8789,12 @@
       "type": "mock-v2",
       "level": 3,
       "text": "女：你今天怎么走着来的？男：我的自行车昨天坏了。女：那你明天怎么上班？男：我打算坐地铁。问：男的明天怎么上班？",
-      "checksum": "9f5ed4609e4d41f25b2c7b6e5f3a68e30a55a9b44319dd2ffdd38aa2c86da166",
+      "checksum": "a7aa6604e3c700782732fa583c68a6409689d9ec169db8ef537051bc02be7835",
       "file": "audio/sentences/hsk3-l4-09.wav",
       "voices": [
         "Tingting",
-        "Reed (中国語（中国本土）)"
+        "Reed (中国語（中国本土）)",
+        "Samantha"
       ]
     },
     "hsk3-l4-10": {
@@ -8584,11 +8802,12 @@
       "type": "mock-v2",
       "level": 3,
       "text": "男：这张照片是在哪儿照的？女：去年在上海，我跟同事一起去的。男：你们玩了几天？女：一共五天，还爬了山。问：女的去上海做什么？",
-      "checksum": "40cd9c3c3137dea6749627533f9d63e5ace53d5af7d3b87249abb59d0d6c6773",
+      "checksum": "0f2382e89b36a771b98c8271d4f5d8de60642e964fa5808f814c7e702e655a98",
       "file": "audio/sentences/hsk3-l4-10.wav",
       "voices": [
         "Reed (中国語（中国本土）)",
-        "Tingting"
+        "Tingting",
+        "Samantha"
       ]
     }
   }

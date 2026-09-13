@@ -1,0 +1,2261 @@
+{
+  "categories": [
+    {
+      "id": "number",
+      "group": "pos",
+      "label": "数詞",
+      "description": "一・二・百など、数を表す語"
+    },
+    {
+      "id": "measure",
+      "group": "pos",
+      "label": "量詞（助数詞）",
+      "description": "个・本・张など、数を数えるときの単位"
+    },
+    {
+      "id": "pronoun",
+      "group": "pos",
+      "label": "代名詞",
+      "description": "我・你・这・自己など、人や物を指す語"
+    },
+    {
+      "id": "question",
+      "group": "pos",
+      "label": "疑問詞",
+      "description": "什么・谁・怎么など、たずねるときの語"
+    },
+    {
+      "id": "verb",
+      "group": "pos",
+      "label": "動詞",
+      "description": "吃・去・做など、動作や行為を表す語"
+    },
+    {
+      "id": "adjective",
+      "group": "pos",
+      "label": "形容詞",
+      "description": "高い・低いなど、様子や性質を表す語"
+    },
+    {
+      "id": "adverb",
+      "group": "pos",
+      "label": "副詞",
+      "description": "很・都・已经など、動作や様子を修飾する語"
+    },
+    {
+      "id": "modal",
+      "group": "pos",
+      "label": "助動詞",
+      "description": "会・能・可以・应该など、できる／すべきを表す語"
+    },
+    {
+      "id": "preposition",
+      "group": "pos",
+      "label": "介詞（前置詞）",
+      "description": "在・从・跟・把など、名詞の前に置く語"
+    },
+    {
+      "id": "conjunction",
+      "group": "pos",
+      "label": "接続詞",
+      "description": "和・但是・因为など、文や語をつなぐ語"
+    },
+    {
+      "id": "particle",
+      "group": "pos",
+      "label": "助詞・語気詞",
+      "description": "的・了・吗・吧など、文法の働きをする語"
+    },
+    {
+      "id": "degree",
+      "group": "pos",
+      "label": "程度・比較",
+      "description": "很・非常・比・最など、程度や比べ方を表す語"
+    },
+    {
+      "id": "greeting",
+      "group": "topic",
+      "label": "あいさつ・決まり文句",
+      "description": "你好・谢谢・对不起など、そのまま使える表現"
+    },
+    {
+      "id": "family",
+      "group": "topic",
+      "label": "家族",
+      "description": "爸爸・妈妈・哥哥など、家族と親族の呼び方"
+    },
+    {
+      "id": "people",
+      "group": "topic",
+      "label": "人・職業",
+      "description": "医生・服务员・同事など、人を表す語"
+    },
+    {
+      "id": "food",
+      "group": "topic",
+      "label": "食べ物・飲み物",
+      "description": "菜・米饭・咖啡など、食事とレストランの語"
+    },
+    {
+      "id": "shopping",
+      "group": "topic",
+      "label": "買い物・お金",
+      "description": "买・钱・便宜など、店とお金の語"
+    },
+    {
+      "id": "travel",
+      "group": "topic",
+      "label": "旅行・交通",
+      "description": "飞机・车票・宾馆など、移動と旅行の語"
+    },
+    {
+      "id": "time",
+      "group": "topic",
+      "label": "時間・日付",
+      "description": "今天・星期・小时など、時をあらわす語"
+    },
+    {
+      "id": "school",
+      "group": "topic",
+      "label": "学校・勉強",
+      "description": "学生・考试・作业など、学びの場の語"
+    },
+    {
+      "id": "language",
+      "group": "topic",
+      "label": "ことば・表現",
+      "description": "汉语・句子・意思など、言葉そのものに関する語"
+    },
+    {
+      "id": "work",
+      "group": "topic",
+      "label": "仕事・オフィス",
+      "description": "公司・会议・经理など、働く場面の語"
+    },
+    {
+      "id": "home",
+      "group": "topic",
+      "label": "家・住まい",
+      "description": "房间・桌子・厨房など、家の中の語"
+    },
+    {
+      "id": "daily",
+      "group": "topic",
+      "label": "毎日の生活",
+      "description": "起床・洗澡・打扫など、日課と習慣の語"
+    },
+    {
+      "id": "body",
+      "group": "topic",
+      "label": "体・健康",
+      "description": "眼睛・感冒・医院など、体調と体の部位"
+    },
+    {
+      "id": "weather",
+      "group": "topic",
+      "label": "天気・季節・自然",
+      "description": "天气・雪・春など、自然と季節の語"
+    },
+    {
+      "id": "color",
+      "group": "topic",
+      "label": "色",
+      "description": "红・蓝・颜色など、色に関する語"
+    },
+    {
+      "id": "direction",
+      "group": "topic",
+      "label": "方位・場所",
+      "description": "上・里・旁边・东など、位置を示す語"
+    },
+    {
+      "id": "emotion",
+      "group": "topic",
+      "label": "気持ち・感情",
+      "description": "高兴・生气・担心など、感情を表す語"
+    },
+    {
+      "id": "thinking",
+      "group": "topic",
+      "label": "考え・意見",
+      "description": "觉得・决定・相信など、考えを伝える語"
+    },
+    {
+      "id": "hobby",
+      "group": "topic",
+      "label": "趣味・スポーツ",
+      "description": "唱歌・游泳・音乐など、余暇と運動の語"
+    },
+    {
+      "id": "tech",
+      "group": "topic",
+      "label": "電話・IT・メディア",
+      "description": "手机・上网・新闻など、通信と情報の語"
+    },
+    {
+      "id": "animal",
+      "group": "topic",
+      "label": "動物",
+      "description": "猫・狗・熊猫など、動物の語"
+    },
+    {
+      "id": "clothes",
+      "group": "topic",
+      "label": "服・身につける物",
+      "description": "衣服・鞋・眼镜など、着る物と持ち物"
+    }
+  ],
+  "words": {
+    "hsk1-001": [
+      "verb",
+      "emotion"
+    ],
+    "hsk1-002": [
+      "number"
+    ],
+    "hsk1-003": [
+      "family"
+    ],
+    "hsk1-004": [
+      "food",
+      "home"
+    ],
+    "hsk1-005": [
+      "travel"
+    ],
+    "hsk1-006": [
+      "measure"
+    ],
+    "hsk1-007": [
+      "adverb"
+    ],
+    "hsk1-008": [
+      "greeting"
+    ],
+    "hsk1-009": [
+      "food"
+    ],
+    "hsk1-010": [
+      "food"
+    ],
+    "hsk1-011": [
+      "verb",
+      "food"
+    ],
+    "hsk1-012": [
+      "travel"
+    ],
+    "hsk1-013": [
+      "verb",
+      "tech"
+    ],
+    "hsk1-014": [
+      "adjective"
+    ],
+    "hsk1-015": [
+      "particle"
+    ],
+    "hsk1-016": [
+      "measure",
+      "time"
+    ],
+    "hsk1-017": [
+      "tech"
+    ],
+    "hsk1-018": [
+      "tech"
+    ],
+    "hsk1-019": [
+      "hobby"
+    ],
+    "hsk1-020": [
+      "shopping"
+    ],
+    "hsk1-021": [
+      "adverb"
+    ],
+    "hsk1-022": [
+      "verb",
+      "school"
+    ],
+    "hsk1-023": [
+      "greeting"
+    ],
+    "hsk1-024": [
+      "adjective",
+      "degree"
+    ],
+    "hsk1-025": [
+      "question",
+      "degree"
+    ],
+    "hsk1-026": [
+      "family"
+    ],
+    "hsk1-027": [
+      "number"
+    ],
+    "hsk1-028": [
+      "food"
+    ],
+    "hsk1-029": [
+      "travel"
+    ],
+    "hsk1-030": [
+      "measure",
+      "time"
+    ],
+    "hsk1-031": [
+      "adjective",
+      "emotion"
+    ],
+    "hsk1-032": [
+      "measure"
+    ],
+    "hsk1-033": [
+      "verb",
+      "work"
+    ],
+    "hsk1-034": [
+      "animal"
+    ],
+    "hsk1-035": [
+      "language"
+    ],
+    "hsk1-036": [
+      "adjective"
+    ],
+    "hsk1-037": [
+      "verb",
+      "food"
+    ],
+    "hsk1-038": [
+      "conjunction"
+    ],
+    "hsk1-039": [
+      "adverb",
+      "degree"
+    ],
+    "hsk1-040": [
+      "direction"
+    ],
+    "hsk1-041": [
+      "verb",
+      "travel"
+    ],
+    "hsk1-042": [
+      "modal"
+    ],
+    "hsk1-043": [
+      "travel"
+    ],
+    "hsk1-044": [
+      "question",
+      "number"
+    ],
+    "hsk1-045": [
+      "home",
+      "family"
+    ],
+    "hsk1-046": [
+      "verb",
+      "greeting"
+    ],
+    "hsk1-047": [
+      "pronoun"
+    ],
+    "hsk1-048": [
+      "time"
+    ],
+    "hsk1-049": [
+      "number"
+    ],
+    "hsk1-050": [
+      "verb"
+    ],
+    "hsk1-051": [
+      "verb"
+    ],
+    "hsk1-052": [
+      "verb"
+    ],
+    "hsk1-053": [
+      "measure",
+      "shopping"
+    ],
+    "hsk1-054": [
+      "verb"
+    ],
+    "hsk1-055": [
+      "people",
+      "school"
+    ],
+    "hsk1-056": [
+      "adjective",
+      "weather"
+    ],
+    "hsk1-057": [
+      "direction"
+    ],
+    "hsk1-058": [
+      "particle"
+    ],
+    "hsk1-059": [
+      "number"
+    ],
+    "hsk1-060": [
+      "number"
+    ],
+    "hsk1-061": [
+      "family"
+    ],
+    "hsk1-062": [
+      "particle",
+      "question"
+    ],
+    "hsk1-063": [
+      "verb",
+      "shopping"
+    ],
+    "hsk1-064": [
+      "animal"
+    ],
+    "hsk1-065": [
+      "adverb"
+    ],
+    "hsk1-066": [
+      "greeting"
+    ],
+    "hsk1-067": [
+      "food"
+    ],
+    "hsk1-068": [
+      "people",
+      "greeting"
+    ],
+    "hsk1-069": [
+      "time"
+    ],
+    "hsk1-070": [
+      "question",
+      "pronoun"
+    ],
+    "hsk1-071": [
+      "pronoun"
+    ],
+    "hsk1-072": [
+      "particle"
+    ],
+    "hsk1-073": [
+      "modal"
+    ],
+    "hsk1-074": [
+      "pronoun"
+    ],
+    "hsk1-075": [
+      "measure",
+      "time"
+    ],
+    "hsk1-076": [
+      "family"
+    ],
+    "hsk1-077": [
+      "family",
+      "people"
+    ],
+    "hsk1-078": [
+      "adjective"
+    ],
+    "hsk1-079": [
+      "food"
+    ],
+    "hsk1-080": [
+      "number"
+    ],
+    "hsk1-081": [
+      "direction"
+    ],
+    "hsk1-082": [
+      "shopping"
+    ],
+    "hsk1-083": [
+      "verb",
+      "greeting"
+    ],
+    "hsk1-084": [
+      "verb",
+      "travel"
+    ],
+    "hsk1-085": [
+      "adjective",
+      "weather"
+    ],
+    "hsk1-086": [
+      "people"
+    ],
+    "hsk1-087": [
+      "verb",
+      "people"
+    ],
+    "hsk1-088": [
+      "time"
+    ],
+    "hsk1-089": [
+      "number"
+    ],
+    "hsk1-090": [
+      "shopping"
+    ],
+    "hsk1-091": [
+      "direction"
+    ],
+    "hsk1-092": [
+      "time"
+    ],
+    "hsk1-093": [
+      "adjective",
+      "degree"
+    ],
+    "hsk1-094": [
+      "number"
+    ],
+    "hsk1-095": [
+      "question"
+    ],
+    "hsk1-096": [
+      "time"
+    ],
+    "hsk1-097": [
+      "verb"
+    ],
+    "hsk1-098": [
+      "school"
+    ],
+    "hsk1-099": [
+      "question",
+      "pronoun"
+    ],
+    "hsk1-100": [
+      "food"
+    ],
+    "hsk1-101": [
+      "food"
+    ],
+    "hsk1-102": [
+      "verb",
+      "daily"
+    ],
+    "hsk1-103": [
+      "verb",
+      "language"
+    ],
+    "hsk1-104": [
+      "number"
+    ],
+    "hsk1-105": [
+      "measure",
+      "time"
+    ],
+    "hsk1-106": [
+      "pronoun"
+    ],
+    "hsk1-107": [
+      "adverb",
+      "degree"
+    ],
+    "hsk1-108": [
+      "weather"
+    ],
+    "hsk1-109": [
+      "verb"
+    ],
+    "hsk1-110": [
+      "people",
+      "school"
+    ],
+    "hsk1-111": [
+      "greeting",
+      "tech"
+    ],
+    "hsk1-112": [
+      "pronoun"
+    ],
+    "hsk1-113": [
+      "pronoun"
+    ],
+    "hsk1-114": [
+      "number"
+    ],
+    "hsk1-115": [
+      "verb",
+      "emotion"
+    ],
+    "hsk1-116": [
+      "direction"
+    ],
+    "hsk1-117": [
+      "time"
+    ],
+    "hsk1-118": [
+      "verb",
+      "weather"
+    ],
+    "hsk1-119": [
+      "people",
+      "greeting"
+    ],
+    "hsk1-120": [
+      "time"
+    ],
+    "hsk1-121": [
+      "modal",
+      "thinking"
+    ],
+    "hsk1-122": [
+      "adjective"
+    ],
+    "hsk1-123": [
+      "people",
+      "greeting"
+    ],
+    "hsk1-124": [
+      "measure",
+      "degree"
+    ],
+    "hsk1-125": [
+      "verb",
+      "school"
+    ],
+    "hsk1-126": [
+      "greeting"
+    ],
+    "hsk1-127": [
+      "time"
+    ],
+    "hsk1-128": [
+      "people",
+      "school"
+    ],
+    "hsk1-129": [
+      "verb",
+      "school"
+    ],
+    "hsk1-130": [
+      "school"
+    ],
+    "hsk1-131": [
+      "number"
+    ],
+    "hsk1-132": [
+      "clothes"
+    ],
+    "hsk1-133": [
+      "people",
+      "body"
+    ],
+    "hsk1-134": [
+      "body"
+    ],
+    "hsk1-135": [
+      "home"
+    ],
+    "hsk1-136": [
+      "verb"
+    ],
+    "hsk1-137": [
+      "time"
+    ],
+    "hsk1-138": [
+      "greeting"
+    ],
+    "hsk1-139": [
+      "preposition",
+      "verb"
+    ],
+    "hsk1-140": [
+      "question"
+    ],
+    "hsk1-141": [
+      "question"
+    ],
+    "hsk1-142": [
+      "pronoun"
+    ],
+    "hsk1-143": [
+      "travel"
+    ],
+    "hsk1-144": [
+      "time"
+    ],
+    "hsk1-145": [
+      "verb",
+      "home"
+    ],
+    "hsk1-146": [
+      "home"
+    ],
+    "hsk1-147": [
+      "language",
+      "school"
+    ],
+    "hsk1-148": [
+      "time"
+    ],
+    "hsk1-149": [
+      "verb",
+      "travel"
+    ],
+    "hsk1-150": [
+      "verb"
+    ],
+    "hsk2-151": [
+      "particle"
+    ],
+    "hsk2-152": [
+      "adjective",
+      "color"
+    ],
+    "hsk2-153": [
+      "number"
+    ],
+    "hsk2-154": [
+      "verb",
+      "people"
+    ],
+    "hsk2-155": [
+      "tech"
+    ],
+    "hsk2-156": [
+      "preposition",
+      "degree"
+    ],
+    "hsk2-157": [
+      "adjective",
+      "shopping"
+    ],
+    "hsk2-158": [
+      "adverb"
+    ],
+    "hsk2-159": [
+      "adjective"
+    ],
+    "hsk2-160": [
+      "verb",
+      "hobby"
+    ],
+    "hsk2-161": [
+      "verb"
+    ],
+    "hsk2-162": [
+      "verb",
+      "clothes"
+    ],
+    "hsk2-163": [
+      "travel"
+    ],
+    "hsk2-164": [
+      "measure"
+    ],
+    "hsk2-165": [
+      "preposition"
+    ],
+    "hsk2-166": [
+      "adjective"
+    ],
+    "hsk2-167": [
+      "verb",
+      "hobby"
+    ],
+    "hsk2-168": [
+      "pronoun",
+      "people"
+    ],
+    "hsk2-169": [
+      "conjunction"
+    ],
+    "hsk2-170": [
+      "verb",
+      "travel"
+    ],
+    "hsk2-171": [
+      "particle"
+    ],
+    "hsk2-172": [
+      "verb"
+    ],
+    "hsk2-173": [
+      "family"
+    ],
+    "hsk2-174": [
+      "number"
+    ],
+    "hsk2-175": [
+      "verb",
+      "thinking"
+    ],
+    "hsk2-176": [
+      "adjective",
+      "preposition"
+    ],
+    "hsk2-177": [
+      "home"
+    ],
+    "hsk2-178": [
+      "adverb",
+      "degree"
+    ],
+    "hsk2-179": [
+      "people",
+      "food"
+    ],
+    "hsk2-180": [
+      "adjective"
+    ],
+    "hsk2-181": [
+      "verb",
+      "language"
+    ],
+    "hsk2-182": [
+      "family"
+    ],
+    "hsk2-183": [
+      "verb",
+      "preposition"
+    ],
+    "hsk2-184": [
+      "travel"
+    ],
+    "hsk2-185": [
+      "measure",
+      "shopping"
+    ],
+    "hsk2-186": [
+      "work"
+    ],
+    "hsk2-187": [
+      "adjective",
+      "shopping"
+    ],
+    "hsk2-188": [
+      "particle"
+    ],
+    "hsk2-189": [
+      "family",
+      "people"
+    ],
+    "hsk2-190": [
+      "adjective",
+      "food"
+    ],
+    "hsk2-191": [
+      "measure",
+      "time"
+    ],
+    "hsk2-192": [
+      "adjective",
+      "color"
+    ],
+    "hsk2-193": [
+      "adjective",
+      "color"
+    ],
+    "hsk2-194": [
+      "verb",
+      "greeting"
+    ],
+    "hsk2-195": [
+      "adverb"
+    ],
+    "hsk2-196": [
+      "verb",
+      "school"
+    ],
+    "hsk2-197": [
+      "travel"
+    ],
+    "hsk2-198": [
+      "food"
+    ],
+    "hsk2-199": [
+      "measure",
+      "clothes"
+    ],
+    "hsk2-200": [
+      "school"
+    ],
+    "hsk2-201": [
+      "family"
+    ],
+    "hsk2-202": [
+      "verb",
+      "greeting"
+    ],
+    "hsk2-203": [
+      "adjective",
+      "direction"
+    ],
+    "hsk2-204": [
+      "verb"
+    ],
+    "hsk2-205": [
+      "adverb"
+    ],
+    "hsk2-206": [
+      "verb",
+      "thinking"
+    ],
+    "hsk2-207": [
+      "food"
+    ],
+    "hsk2-208": [
+      "verb"
+    ],
+    "hsk2-209": [
+      "school"
+    ],
+    "hsk2-210": [
+      "modal",
+      "adverb"
+    ],
+    "hsk2-211": [
+      "modal"
+    ],
+    "hsk2-212": [
+      "school"
+    ],
+    "hsk2-213": [
+      "adjective"
+    ],
+    "hsk2-214": [
+      "adjective",
+      "emotion"
+    ],
+    "hsk2-215": [
+      "adjective",
+      "body"
+    ],
+    "hsk2-216": [
+      "preposition",
+      "travel"
+    ],
+    "hsk2-217": [
+      "number"
+    ],
+    "hsk2-218": [
+      "travel"
+    ],
+    "hsk2-219": [
+      "verb",
+      "travel"
+    ],
+    "hsk2-220": [
+      "verb",
+      "shopping"
+    ],
+    "hsk2-221": [
+      "adjective"
+    ],
+    "hsk2-222": [
+      "adjective",
+      "work"
+    ],
+    "hsk2-223": [
+      "pronoun"
+    ],
+    "hsk2-224": [
+      "family"
+    ],
+    "hsk2-225": [
+      "home"
+    ],
+    "hsk2-226": [
+      "people"
+    ],
+    "hsk2-227": [
+      "pronoun",
+      "greeting"
+    ],
+    "hsk2-228": [
+      "food"
+    ],
+    "hsk2-229": [
+      "people"
+    ],
+    "hsk2-230": [
+      "direction"
+    ],
+    "hsk2-231": [
+      "verb",
+      "hobby"
+    ],
+    "hsk2-232": [
+      "travel",
+      "shopping"
+    ],
+    "hsk2-233": [
+      "family"
+    ],
+    "hsk2-234": [
+      "verb",
+      "daily"
+    ],
+    "hsk2-235": [
+      "number"
+    ],
+    "hsk2-236": [
+      "adjective",
+      "weather"
+    ],
+    "hsk2-237": [
+      "time"
+    ],
+    "hsk2-238": [
+      "verb"
+    ],
+    "hsk2-239": [
+      "verb",
+      "work"
+    ],
+    "hsk2-240": [
+      "body"
+    ],
+    "hsk2-241": [
+      "verb",
+      "body"
+    ],
+    "hsk2-242": [
+      "time",
+      "family"
+    ],
+    "hsk2-243": [
+      "time"
+    ],
+    "hsk2-244": [
+      "daily"
+    ],
+    "hsk2-245": [
+      "clothes",
+      "time"
+    ],
+    "hsk2-246": [
+      "tech"
+    ],
+    "hsk2-247": [
+      "verb"
+    ],
+    "hsk2-248": [
+      "conjunction"
+    ],
+    "hsk2-249": [
+      "pronoun"
+    ],
+    "hsk2-250": [
+      "verb",
+      "hobby"
+    ],
+    "hsk2-251": [
+      "school"
+    ],
+    "hsk2-252": [
+      "verb",
+      "hobby"
+    ],
+    "hsk2-253": [
+      "direction"
+    ],
+    "hsk2-254": [
+      "verb"
+    ],
+    "hsk2-255": [
+      "verb",
+      "hobby"
+    ],
+    "hsk2-256": [
+      "time"
+    ],
+    "hsk2-257": [
+      "question"
+    ],
+    "hsk2-258": [
+      "verb",
+      "language"
+    ],
+    "hsk2-259": [
+      "school",
+      "thinking"
+    ],
+    "hsk2-260": [
+      "food"
+    ],
+    "hsk2-261": [
+      "verb",
+      "emotion"
+    ],
+    "hsk2-262": [
+      "verb",
+      "daily"
+    ],
+    "hsk2-263": [
+      "preposition",
+      "direction"
+    ],
+    "hsk2-264": [
+      "measure",
+      "time"
+    ],
+    "hsk2-265": [
+      "verb",
+      "emotion"
+    ],
+    "hsk2-266": [
+      "adjective"
+    ],
+    "hsk2-267": [
+      "verb",
+      "greeting"
+    ],
+    "hsk2-268": [
+      "verb",
+      "daily"
+    ],
+    "hsk2-269": [
+      "weather"
+    ],
+    "hsk2-270": [
+      "color"
+    ],
+    "hsk2-271": [
+      "body"
+    ],
+    "hsk2-272": [
+      "food"
+    ],
+    "hsk2-273": [
+      "body"
+    ],
+    "hsk2-274": [
+      "modal",
+      "verb"
+    ],
+    "hsk2-275": [
+      "adverb"
+    ],
+    "hsk2-276": [
+      "adverb"
+    ],
+    "hsk2-277": [
+      "adverb",
+      "time"
+    ],
+    "hsk2-278": [
+      "language"
+    ],
+    "hsk2-279": [
+      "conjunction"
+    ],
+    "hsk2-280": [
+      "adjective",
+      "weather"
+    ],
+    "hsk2-281": [
+      "verb",
+      "hobby"
+    ],
+    "hsk2-282": [
+      "direction"
+    ],
+    "hsk2-283": [
+      "food",
+      "animal"
+    ],
+    "hsk2-284": [
+      "measure",
+      "shopping"
+    ],
+    "hsk2-285": [
+      "adjective",
+      "direction"
+    ],
+    "hsk2-286": [
+      "verb",
+      "hobby"
+    ],
+    "hsk2-287": [
+      "adverb"
+    ],
+    "hsk2-288": [
+      "time"
+    ],
+    "hsk2-289": [
+      "measure"
+    ],
+    "hsk2-290": [
+      "family"
+    ],
+    "hsk2-291": [
+      "verb"
+    ],
+    "hsk2-292": [
+      "adverb",
+      "degree"
+    ],
+    "hsk2-293": [
+      "adverb",
+      "time"
+    ],
+    "hsk2-294": [
+      "verb",
+      "thinking"
+    ],
+    "hsk2-295": [
+      "verb"
+    ],
+    "hsk2-296": [
+      "particle"
+    ],
+    "hsk2-297": [
+      "travel"
+    ],
+    "hsk2-298": [
+      "verb"
+    ],
+    "hsk2-299": [
+      "adverb",
+      "degree"
+    ],
+    "hsk2-300": [
+      "direction"
+    ],
+    "hsk3-301": [
+      "family",
+      "people"
+    ],
+    "hsk3-302": [
+      "particle"
+    ],
+    "hsk3-303": [
+      "adjective"
+    ],
+    "hsk3-304": [
+      "hobby"
+    ],
+    "hsk3-305": [
+      "adjective"
+    ],
+    "hsk3-306": [
+      "preposition"
+    ],
+    "hsk3-307": [
+      "school"
+    ],
+    "hsk3-308": [
+      "verb",
+      "home"
+    ],
+    "hsk3-309": [
+      "thinking"
+    ],
+    "hsk3-310": [
+      "work"
+    ],
+    "hsk3-311": [
+      "number",
+      "time"
+    ],
+    "hsk3-312": [
+      "verb",
+      "people"
+    ],
+    "hsk3-313": [
+      "clothes"
+    ],
+    "hsk3-314": [
+      "adjective",
+      "food"
+    ],
+    "hsk3-315": [
+      "direction"
+    ],
+    "hsk3-316": [
+      "preposition"
+    ],
+    "hsk3-317": [
+      "body"
+    ],
+    "hsk3-318": [
+      "adverb",
+      "degree"
+    ],
+    "hsk3-319": [
+      "hobby"
+    ],
+    "hsk3-320": [
+      "modal",
+      "adverb"
+    ],
+    "hsk3-321": [
+      "verb"
+    ],
+    "hsk3-322": [
+      "verb",
+      "language"
+    ],
+    "hsk3-323": [
+      "verb",
+      "hobby"
+    ],
+    "hsk3-324": [
+      "pronoun",
+      "people"
+    ],
+    "hsk3-325": [
+      "travel"
+    ],
+    "hsk3-326": [
+      "home"
+    ],
+    "hsk3-327": [
+      "adverb"
+    ],
+    "hsk3-328": [
+      "food"
+    ],
+    "hsk3-329": [
+      "verb"
+    ],
+    "hsk3-330": [
+      "weather"
+    ],
+    "hsk3-331": [
+      "measure",
+      "home"
+    ],
+    "hsk3-332": [
+      "adjective"
+    ],
+    "hsk3-333": [
+      "verb"
+    ],
+    "hsk3-334": [
+      "shopping"
+    ],
+    "hsk3-335": [
+      "clothes"
+    ],
+    "hsk3-336": [
+      "school"
+    ],
+    "hsk3-337": [
+      "travel"
+    ],
+    "hsk3-338": [
+      "verb",
+      "time"
+    ],
+    "hsk3-339": [
+      "verb"
+    ],
+    "hsk3-340": [
+      "preposition"
+    ],
+    "hsk3-341": [
+      "home"
+    ],
+    "hsk3-342": [
+      "weather",
+      "time"
+    ],
+    "hsk3-343": [
+      "language"
+    ],
+    "hsk3-344": [
+      "adjective"
+    ],
+    "hsk3-345": [
+      "verb",
+      "daily",
+      "home"
+    ],
+    "hsk3-346": [
+      "verb",
+      "thinking"
+    ],
+    "hsk3-347": [
+      "verb"
+    ],
+    "hsk3-348": [
+      "verb",
+      "emotion"
+    ],
+    "hsk3-349": [
+      "food"
+    ],
+    "hsk3-350": [
+      "adverb"
+    ],
+    "hsk3-351": [
+      "home"
+    ],
+    "hsk3-352": [
+      "adjective"
+    ],
+    "hsk3-353": [
+      "particle"
+    ],
+    "hsk3-354": [
+      "direction"
+    ],
+    "hsk3-355": [
+      "travel"
+    ],
+    "hsk3-356": [
+      "travel"
+    ],
+    "hsk3-357": [
+      "home"
+    ],
+    "hsk3-358": [
+      "tech"
+    ],
+    "hsk3-359": [
+      "direction"
+    ],
+    "hsk3-360": [
+      "weather",
+      "time"
+    ],
+    "hsk3-361": [
+      "animal"
+    ],
+    "hsk3-362": [
+      "adjective"
+    ],
+    "hsk3-363": [
+      "measure"
+    ],
+    "hsk3-364": [
+      "verb",
+      "body"
+    ],
+    "hsk3-365": [
+      "adverb",
+      "degree"
+    ],
+    "hsk3-366": [
+      "adjective",
+      "body"
+    ],
+    "hsk3-367": [
+      "conjunction"
+    ],
+    "hsk3-368": [
+      "body"
+    ],
+    "hsk3-369": [
+      "verb",
+      "body"
+    ],
+    "hsk3-370": [
+      "verb"
+    ],
+    "hsk3-371": [
+      "adjective"
+    ],
+    "hsk3-372": [
+      "verb"
+    ],
+    "hsk3-373": [
+      "verb",
+      "emotion"
+    ],
+    "hsk3-374": [
+      "measure",
+      "time"
+    ],
+    "hsk3-375": [
+      "direction",
+      "travel"
+    ],
+    "hsk3-376": [
+      "verb",
+      "school"
+    ],
+    "hsk3-377": [
+      "adjective"
+    ],
+    "hsk3-378": [
+      "modal"
+    ],
+    "hsk3-379": [
+      "verb",
+      "body"
+    ],
+    "hsk3-380": [
+      "adverb",
+      "time"
+    ],
+    "hsk3-381": [
+      "preposition"
+    ],
+    "hsk3-382": [
+      "preposition",
+      "conjunction"
+    ],
+    "hsk3-383": [
+      "adverb",
+      "degree"
+    ],
+    "hsk3-384": [
+      "travel"
+    ],
+    "hsk3-385": [
+      "hobby",
+      "language"
+    ],
+    "hsk3-386": [
+      "verb",
+      "weather"
+    ],
+    "hsk3-387": [
+      "verb",
+      "home"
+    ],
+    "hsk3-388": [
+      "people"
+    ],
+    "hsk3-389": [
+      "verb",
+      "emotion"
+    ],
+    "hsk3-390": [
+      "preposition"
+    ],
+    "hsk3-391": [
+      "travel"
+    ],
+    "hsk3-392": [
+      "food"
+    ],
+    "hsk3-393": [
+      "time"
+    ],
+    "hsk3-394": [
+      "verb",
+      "emotion"
+    ],
+    "hsk3-395": [
+      "weather"
+    ],
+    "hsk3-396": [
+      "school"
+    ],
+    "hsk3-397": [
+      "travel"
+    ],
+    "hsk3-398": [
+      "weather",
+      "shopping"
+    ],
+    "hsk3-399": [
+      "home",
+      "weather"
+    ],
+    "hsk3-400": [
+      "verb",
+      "hobby"
+    ],
+    "hsk3-401": [
+      "adjective"
+    ],
+    "hsk3-402": [
+      "verb"
+    ],
+    "hsk3-403": [
+      "conjunction"
+    ],
+    "hsk3-404": [
+      "weather"
+    ],
+    "hsk3-405": [
+      "verb",
+      "shopping"
+    ],
+    "hsk3-406": [
+      "adjective",
+      "color"
+    ],
+    "hsk3-407": [
+      "work"
+    ],
+    "hsk3-408": [
+      "conjunction"
+    ],
+    "hsk3-409": [
+      "work",
+      "thinking"
+    ],
+    "hsk3-410": [
+      "adverb",
+      "degree"
+    ],
+    "hsk3-411": [
+      "adverb",
+      "degree"
+    ],
+    "hsk3-412": [
+      "verb",
+      "thinking"
+    ],
+    "hsk3-413": [
+      "weather",
+      "time"
+    ],
+    "hsk3-414": [
+      "verb"
+    ],
+    "hsk3-415": [
+      "adjective"
+    ],
+    "hsk3-416": [
+      "verb",
+      "people"
+    ],
+    "hsk3-417": [
+      "adjective",
+      "body"
+    ],
+    "hsk3-418": [
+      "verb",
+      "language"
+    ],
+    "hsk3-419": [
+      "measure",
+      "shopping"
+    ],
+    "hsk3-420": [
+      "body"
+    ],
+    "hsk3-421": [
+      "verb",
+      "school"
+    ],
+    "hsk3-422": [
+      "verb"
+    ],
+    "hsk3-423": [
+      "travel",
+      "direction"
+    ],
+    "hsk3-424": [
+      "tech",
+      "hobby"
+    ],
+    "hsk3-425": [
+      "time"
+    ],
+    "hsk3-426": [
+      "verb",
+      "family"
+    ],
+    "hsk3-427": [
+      "verb"
+    ],
+    "hsk3-428": [
+      "verb",
+      "thinking"
+    ],
+    "hsk3-429": [
+      "verb"
+    ],
+    "hsk3-430": [
+      "adverb",
+      "time"
+    ],
+    "hsk3-431": [
+      "verb",
+      "travel"
+    ],
+    "hsk3-432": [
+      "work",
+      "people"
+    ],
+    "hsk3-433": [
+      "adjective",
+      "time"
+    ],
+    "hsk3-434": [
+      "adjective"
+    ],
+    "hsk3-435": [
+      "verb"
+    ],
+    "hsk3-436": [
+      "language"
+    ],
+    "hsk3-437": [
+      "verb",
+      "thinking"
+    ],
+    "hsk3-438": [
+      "adjective"
+    ],
+    "hsk3-439": [
+      "adjective",
+      "body"
+    ],
+    "hsk3-440": [
+      "measure",
+      "time"
+    ],
+    "hsk3-441": [
+      "people"
+    ],
+    "hsk3-442": [
+      "home"
+    ],
+    "hsk3-443": [
+      "measure",
+      "body"
+    ],
+    "hsk3-444": [
+      "verb",
+      "emotion"
+    ],
+    "hsk3-445": [
+      "clothes"
+    ],
+    "hsk3-446": [
+      "food"
+    ],
+    "hsk3-447": [
+      "adjective",
+      "color"
+    ],
+    "hsk3-448": [
+      "adjective"
+    ],
+    "hsk3-449": [
+      "verb",
+      "travel"
+    ],
+    "hsk3-450": [
+      "shopping"
+    ],
+    "hsk3-451": [
+      "school"
+    ],
+    "hsk3-452": [
+      "body"
+    ],
+    "hsk3-453": [
+      "verb",
+      "school"
+    ],
+    "hsk3-454": [
+      "measure",
+      "travel"
+    ],
+    "hsk3-455": [
+      "verb",
+      "thinking"
+    ],
+    "hsk3-456": [
+      "people"
+    ],
+    "hsk3-457": [
+      "home"
+    ],
+    "hsk3-458": [
+      "adjective",
+      "color"
+    ],
+    "hsk3-459": [
+      "animal"
+    ],
+    "hsk3-460": [
+      "adverb",
+      "time"
+    ],
+    "hsk3-461": [
+      "adjective",
+      "emotion"
+    ],
+    "hsk3-462": [
+      "clothes"
+    ],
+    "hsk3-463": [
+      "measure"
+    ],
+    "hsk3-464": [
+      "food"
+    ],
+    "hsk3-465": [
+      "food"
+    ],
+    "hsk3-466": [
+      "verb",
+      "thinking"
+    ],
+    "hsk3-467": [
+      "verb"
+    ],
+    "hsk3-468": [
+      "family"
+    ],
+    "hsk3-469": [
+      "direction"
+    ],
+    "hsk3-470": [
+      "adjective"
+    ],
+    "hsk3-471": [
+      "adjective",
+      "emotion"
+    ],
+    "hsk3-472": [
+      "school"
+    ],
+    "hsk3-473": [
+      "adjective"
+    ],
+    "hsk3-474": [
+      "animal"
+    ],
+    "hsk3-475": [
+      "verb",
+      "school"
+    ],
+    "hsk3-476": [
+      "verb",
+      "hobby"
+    ],
+    "hsk3-477": [
+      "food",
+      "home"
+    ],
+    "hsk3-478": [
+      "adjective",
+      "body"
+    ],
+    "hsk3-479": [
+      "food"
+    ],
+    "hsk3-480": [
+      "food"
+    ],
+    "hsk3-481": [
+      "language"
+    ],
+    "hsk3-482": [
+      "adverb"
+    ],
+    "hsk3-483": [
+      "pronoun"
+    ],
+    "hsk3-484": [
+      "adjective"
+    ],
+    "hsk3-485": [
+      "verb",
+      "travel"
+    ],
+    "hsk3-486": [
+      "school"
+    ],
+    "hsk3-487": [
+      "adjective"
+    ],
+    "hsk3-488": [
+      "weather",
+      "time"
+    ],
+    "hsk3-489": [
+      "clothes"
+    ],
+    "hsk3-490": [
+      "conjunction",
+      "time"
+    ],
+    "hsk3-491": [
+      "adjective",
+      "emotion"
+    ],
+    "hsk3-492": [
+      "verb",
+      "thinking"
+    ],
+    "hsk3-493": [
+      "adjective"
+    ],
+    "hsk3-494": [
+      "adjective"
+    ],
+    "hsk3-495": [
+      "conjunction"
+    ],
+    "hsk3-496": [
+      "clothes",
+      "weather"
+    ],
+    "hsk3-497": [
+      "verb",
+      "tech"
+    ],
+    "hsk3-498": [
+      "verb",
+      "emotion"
+    ],
+    "hsk3-499": [
+      "language"
+    ],
+    "hsk3-500": [
+      "verb"
+    ],
+    "hsk3-501": [
+      "travel"
+    ],
+    "hsk3-502": [
+      "adjective",
+      "body"
+    ],
+    "hsk3-503": [
+      "family"
+    ],
+    "hsk3-504": [
+      "adjective",
+      "body"
+    ],
+    "hsk3-505": [
+      "weather"
+    ],
+    "hsk3-506": [
+      "school"
+    ],
+    "hsk3-507": [
+      "verb",
+      "daily"
+    ],
+    "hsk3-508": [
+      "measure",
+      "clothes"
+    ],
+    "hsk3-509": [
+      "school"
+    ],
+    "hsk3-510": [
+      "people",
+      "travel"
+    ],
+    "hsk3-511": [
+      "conjunction"
+    ],
+    "hsk3-512": [
+      "weather"
+    ],
+    "hsk3-513": [
+      "food"
+    ],
+    "hsk3-514": [
+      "adverb",
+      "degree"
+    ],
+    "hsk3-515": [
+      "adjective",
+      "body"
+    ],
+    "hsk3-516": [
+      "verb"
+    ],
+    "hsk3-517": [
+      "school",
+      "hobby"
+    ],
+    "hsk3-518": [
+      "adjective",
+      "food"
+    ],
+    "hsk3-519": [
+      "measure"
+    ],
+    "hsk3-520": [
+      "people",
+      "work"
+    ],
+    "hsk3-521": [
+      "verb",
+      "thinking"
+    ],
+    "hsk3-522": [
+      "body"
+    ],
+    "hsk3-523": [
+      "adverb"
+    ],
+    "hsk3-524": [
+      "school"
+    ],
+    "hsk3-525": [
+      "body"
+    ],
+    "hsk3-526": [
+      "verb"
+    ],
+    "hsk3-527": [
+      "food",
+      "home"
+    ],
+    "hsk3-528": [
+      "number"
+    ],
+    "hsk3-529": [
+      "verb",
+      "thinking"
+    ],
+    "hsk3-530": [
+      "preposition"
+    ],
+    "hsk3-531": [
+      "preposition",
+      "conjunction"
+    ],
+    "hsk3-532": [
+      "measure",
+      "people"
+    ],
+    "hsk3-533": [
+      "school"
+    ],
+    "hsk3-534": [
+      "direction"
+    ],
+    "hsk3-535": [
+      "verb",
+      "daily"
+    ],
+    "hsk3-536": [
+      "home",
+      "travel"
+    ],
+    "hsk3-537": [
+      "verb",
+      "daily"
+    ],
+    "hsk3-538": [
+      "weather",
+      "time"
+    ],
+    "hsk3-539": [
+      "adverb",
+      "time"
+    ],
+    "hsk3-540": [
+      "adjective",
+      "degree"
+    ],
+    "hsk3-541": [
+      "verb",
+      "thinking"
+    ],
+    "hsk3-542": [
+      "food"
+    ],
+    "hsk3-543": [
+      "verb"
+    ],
+    "hsk3-544": [
+      "verb"
+    ],
+    "hsk3-545": [
+      "people",
+      "school"
+    ],
+    "hsk3-546": [
+      "clothes"
+    ],
+    "hsk3-547": [
+      "tech"
+    ],
+    "hsk3-548": [
+      "adjective",
+      "food"
+    ],
+    "hsk3-549": [
+      "language"
+    ],
+    "hsk3-550": [
+      "hobby"
+    ],
+    "hsk3-551": [
+      "travel"
+    ],
+    "hsk3-552": [
+      "animal"
+    ],
+    "hsk3-553": [
+      "verb"
+    ],
+    "hsk3-554": [
+      "verb",
+      "thinking"
+    ],
+    "hsk3-555": [
+      "clothes",
+      "body"
+    ],
+    "hsk3-556": [
+      "verb"
+    ],
+    "hsk3-557": [
+      "family"
+    ],
+    "hsk3-558": [
+      "adjective",
+      "adverb"
+    ],
+    "hsk3-559": [
+      "adverb"
+    ],
+    "hsk3-560": [
+      "adverb"
+    ],
+    "hsk3-561": [
+      "adverb",
+      "degree"
+    ],
+    "hsk3-562": [
+      "time"
+    ],
+    "hsk3-563": [
+      "adjective",
+      "degree"
+    ],
+    "hsk3-564": [
+      "adverb"
+    ],
+    "hsk3-565": [
+      "time"
+    ],
+    "hsk3-566": [
+      "time"
+    ],
+    "hsk3-567": [
+      "verb",
+      "thinking"
+    ],
+    "hsk3-568": [
+      "hobby"
+    ],
+    "hsk3-569": [
+      "shopping",
+      "travel"
+    ],
+    "hsk3-570": [
+      "modal"
+    ],
+    "hsk3-571": [
+      "verb"
+    ],
+    "hsk3-572": [
+      "verb"
+    ],
+    "hsk3-573": [
+      "hobby",
+      "tech"
+    ],
+    "hsk3-574": [
+      "adjective"
+    ],
+    "hsk3-575": [
+      "adverb"
+    ],
+    "hsk3-576": [
+      "verb",
+      "people"
+    ],
+    "hsk3-577": [
+      "modal",
+      "thinking"
+    ],
+    "hsk3-578": [
+      "weather"
+    ],
+    "hsk3-579": [
+      "adverb",
+      "degree"
+    ],
+    "hsk3-580": [
+      "weather"
+    ],
+    "hsk3-581": [
+      "verb",
+      "travel"
+    ],
+    "hsk3-582": [
+      "verb",
+      "people"
+    ],
+    "hsk3-583": [
+      "tech",
+      "hobby"
+    ],
+    "hsk3-584": [
+      "tech",
+      "hobby"
+    ],
+    "hsk3-585": [
+      "adverb"
+    ],
+    "hsk3-586": [
+      "direction"
+    ],
+    "hsk3-587": [
+      "adverb",
+      "time"
+    ],
+    "hsk3-588": [
+      "measure"
+    ],
+    "hsk3-589": [
+      "adjective"
+    ],
+    "hsk3-590": [
+      "time"
+    ],
+    "hsk3-591": [
+      "adjective",
+      "adverb"
+    ],
+    "hsk3-592": [
+      "verb"
+    ],
+    "hsk3-593": [
+      "verb",
+      "greeting"
+    ],
+    "hsk3-594": [
+      "verb",
+      "emotion"
+    ],
+    "hsk3-595": [
+      "school",
+      "language"
+    ],
+    "hsk3-596": [
+      "pronoun"
+    ],
+    "hsk3-597": [
+      "adverb",
+      "time"
+    ],
+    "hsk3-598": [
+      "time"
+    ],
+    "hsk3-599": [
+      "school"
+    ],
+    "hsk3-600": [
+      "work",
+      "thinking"
+    ]
+  }
+}

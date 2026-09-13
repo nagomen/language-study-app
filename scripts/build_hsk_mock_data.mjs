@@ -11,6 +11,22 @@ const byHanzi = new Map(allWords.map((word) => [word.hanzi.replace(/[（）].*?[
 const levelByHanzi = new Map([1, 2, 3].flatMap((level) => vocab[level].map((word) => [word.hanzi.replace(/[（）].*?[）]/g, ""), level])));
 const levelChars = Object.fromEntries([1, 2, 3].map((level) => [level, new Set([1, 2, 3].filter((item) => item <= level).flatMap((item) => vocab[item].flatMap((word) => [...word.hanzi])))]));
 
+// 本番でも固有名詞は級外の字を使うので、人名・地名の字だけは語彙チェックの対象外にする。
+const PROPER_NOUN_CHARS = new Set(["王", "李", "海"]);
+// 字はHSK1〜3にあるがHSK4以上の語。字面のチェックでは拾えないため語として弾く。
+const BLOCKED_WORDS = ["楼梯", "味道", "本来", "只好", "提前", "差点儿", "差不多", "左右", "放学", "马路", "办事", "直接", "内容", "日语", "试一试"];
+// 語彙の基準を満たしている級。HSK2は本文の整理が済むまで警告のみ。
+const STRICT_VOCAB_LEVELS = new Set([1, 3]);
+// 別の問題と丸ごと重なってはいけない文字数。
+const DUPLICATE_NGRAM = 6;
+// 同じ場面の語が1回の模試で何問まで出てよいかの目安。
+const TOPIC_LIMIT = 4;
+// 場面を表すラベル（data/word-tags.json）が付いた語を「題材」とみなす。
+// 時間・気持ち・考えなどの語はどの問題にも自然に出るので数えない。
+const wordTagData = JSON.parse(fs.readFileSync(path.join(root, "data", "word-tags.json"), "utf8"));
+const wordTags = wordTagData.words;
+const TOPIC_TAGS = new Set(["travel", "food", "shopping", "school", "work", "home", "body", "weather", "hobby", "tech", "animal", "clothes", "people", "family"]);
+
 const SCENES = {
   1: [
     ["☕", "他在喝茶。", "Tā zài hē chá.", "お茶を飲む人"], ["🚕", "她坐出租车去学校。", "Tā zuò chūzūchē qù xuéxiào.", "タクシーで学校へ行く人"],
@@ -48,7 +64,7 @@ const SCENES = {
     ["🛗", "她坐电梯到五层。", "Tā zuò diàntī dào wǔ céng.", "エレベーターで五階へ行く人"], ["🚇", "我每天坐地铁上班。", "Wǒ měitiān zuò dìtiě shàngbān.", "地下鉄で通勤する人"],
     ["🧹", "他把房间打扫干净了。", "Tā bǎ fángjiān dǎsǎo gānjìng le.", "部屋を掃除する人"], ["🌳", "爷爷在公园锻炼身体。", "Yéye zài gōngyuán duànliàn shēntǐ.", "公園で運動する人"],
     ["🛒", "她去超市买新鲜的葡萄。", "Tā qù chāoshì mǎi xīnxiān de pútao.", "スーパーでブドウを買う人"], ["📚", "学生在图书馆认真复习。", "Xuésheng zài túshūguǎn rènzhēn fùxí.", "図書館で復習する学生"],
-    ["👥", "经理正在办公室开会。", "Jīnglǐ zhèngzài bàngōngshì kāihuì.", "事務室で会議する人々"], ["🛂", "旅行以前别忘了带护照。", "Lǚxíng yǐqián bié wàng le dài hùzhào.", "パスポートを持つ旅行者"],
+    ["👥", "同事们正在办公室开会。", "Tóngshìmen zhèngzài bàngōngshì kāihuì.", "事務室で会議する人々"], ["🛂", "旅行以前别忘了带护照。", "Lǚxíng yǐqián bié wàng le dài hùzhào.", "パスポートを持つ旅行者"],
     ["📦", "他们正在搬家。", "Tāmen zhèngzài bānjiā.", "引っ越しをする人々"], ["⛰️", "周末我们打算去爬山。", "Zhōumò wǒmen dǎsuàn qù páshān.", "週末に山へ登る人々"],
   ],
 };
@@ -56,7 +72,7 @@ const SCENES = {
 const DIALOGUES = {
   1: [
     ["男：你喝茶吗？女：不，我喝水。问：女的喝什么？", "女的喝什么？", "水", ["茶", "米饭"]],
-    ["女：现在几点？男：三点。问：现在几点？", "现在几点？", "三点", ["两点", "四点"]],
+    ["女：现在几点？男：三点。问：现在几点？", "现在几点？", "三点", ["五点", "四点"]],
     ["男：你去哪儿？女：我去学校。问：女的去哪儿？", "女的去哪儿？", "学校", ["医院", "商店"]],
     ["女：这是谁的猫？男：是小王的。问：猫是谁的？", "猫是谁的？", "小王的", ["小李的", "老师的"]],
     ["男：你会做饭吗？女：不会。问：女的会做饭吗？", "女的会做饭吗？", "不会", ["会", "不是"]],
@@ -80,22 +96,22 @@ const DIALOGUES = {
   ],
   3: [
     ["女：你的自行车找到了吗？男：找到了，朋友说明天下午给我送来。问：自行车什么时候送来？", "自行车什么时候送来？", "明天下午", ["今天下午", "明天上午"]],
-    ["男：你怎么不坐电梯？女：我住三楼，走楼梯还能锻炼身体。问：女的为什么走楼梯？", "女的为什么走楼梯？", "锻炼身体", ["电梯坏了", "住一楼"]],
-    ["女：这家饭店的菜怎么样？男：味道不错，就是服务有点儿慢。问：男的对什么不满意？", "男的对什么不满意？", "服务", ["味道", "环境"]],
-    ["男：听说你要搬家？女：对，新家离公司更近。问：女的为什么搬家？", "女的为什么搬家？", "离公司近", ["房子太小", "换了公司"]],
-    ["女：作业做完了吗？男：内容完成了，还要检查一下。问：男的接下来要做什么？", "男的接下来要做什么？", "检查作业", ["开始写", "去上课"]],
+    ["男：你怎么不坐电梯？女：我住三层，自己走上去还能锻炼身体。问：女的为什么不坐电梯？", "女的为什么不坐电梯？", "锻炼身体", ["电梯坏了", "住一层"]],
+    ["女：您好，您要喝点儿什么？男：一杯咖啡，再来一块蛋糕。问：他们最可能在哪儿？", "他们最可能在哪儿？", "饭馆", ["银行", "教室"]],
+    ["男：明天是妈妈的生日，我们送什么好？女：她最喜欢花，我们买些花吧。问：他们打算送什么？", "他们打算送什么？", "花", ["蛋糕", "手表"]],
+    ["女：作业做完了吗？男：都写完了，还要检查一下。问：男的接下来要做什么？", "男的接下来要做什么？", "检查作业", ["开始写", "去上课"]],
     ["男：会议已经开始了吗？女：还没有，经理十分钟以后才来。问：经理什么时候来？", "经理什么时候来？", "十分钟以后", ["十分钟以前", "马上"]],
-    ["女：你的感冒好点儿了吗？男：好多了，但是医生让我再休息两天。问：医生让男的做什么？", "医生让男的做什么？", "休息", ["上班", "锻炼"]],
-    ["男：周末去爬山怎么样？女：外面下雨了，我们还是去看电影吧。问：他们决定做什么？", "他们决定做什么？", "看电影", ["去爬山", "去公园"]],
-    ["女：请问，洗手间在哪儿？男：一直往前走，在电梯的右边。问：洗手间在哪儿？", "洗手间在哪儿？", "电梯右边", ["电梯左边", "办公室旁边"]],
+    ["女：你的数学成绩怎么样？男：这次比上次提高了不少。问：男的数学成绩怎么样？", "男的数学成绩怎么样？", "比以前好", ["没有变化", "越来越差"]],
+    ["男：外面这么冷，你怎么只穿一件衬衫？女：我出门的时候太阳还很好。问：关于女的，可以知道什么？", "关于女的，可以知道什么？", "穿得太少", ["带了伞", "生病了"]],
+    ["女：请问，洗手间在哪儿？男：一直向前走，在电梯的右边。问：洗手间在哪儿？", "洗手间在哪儿？", "电梯右边", ["电梯左边", "办公室旁边"]],
     ["男：你觉得这次比赛怎么样？女：虽然没得第一，但是大家都很努力。问：女的怎么看这次比赛？", "女的怎么看这次比赛？", "大家很努力", ["比赛太容易", "成绩最好"]],
     ["女：你怎么才到？男：路上突然下大雨，公共汽车也来得很慢。问：男的为什么迟到？", "男的为什么迟到？", "汽车来得慢", ["忘了时间", "起床晚了"]],
-    ["男：这件蓝衬衫你穿着正合适。女：可是我更喜欢那件白的。问：女的喜欢哪件？", "女的喜欢哪件？", "白衬衫", ["蓝衬衫", "红裙子"]],
+    ["男：这件蓝衬衫你穿着很好看。女：可是我更喜欢那件白的。问：女的喜欢哪件？", "女的喜欢哪件？", "白衬衫", ["蓝衬衫", "红裙子"]],
     ["女：听说你找到新工作了？男：是的，下个月去银行上班。问：男的要去哪儿工作？", "男的要去哪儿工作？", "银行", ["学校", "超市"]],
     ["男：你认识新来的同事吗？女：昨天刚见面，她很热情。问：女的觉得新同事怎么样？", "女的觉得新同事怎么样？", "很热情", ["很安静", "很奇怪"]],
-    ["女：行李箱怎么这么重？男：里面有很多书，还有给朋友的礼物。问：箱子里主要有什么？", "箱子里主要有什么？", "书和礼物", ["衣服和鞋", "水果和饮料"]],
-    ["男：你不是打算坐地铁吗？女：地铁今天有问题，我只好坐出租车。问：女的为什么坐出租车？", "女的为什么坐出租车？", "地铁有问题", ["时间太早", "行李太多"]],
-    ["女：这张照片是在北京照的吗？男：不是，是去年去上海旅游时照的。问：照片在哪儿照的？", "照片在哪儿照的？", "上海", ["北京", "家里"]],
+    ["男：你的房间真干净。女：我每个星期六都打扫一次。问：女的多久打扫一次房间？", "女的多久打扫一次房间？", "每星期一次", ["每天一次", "每月一次"]],
+    ["男：你不是打算坐地铁吗？女：地铁今天有问题，我就坐出租车了。问：女的为什么坐出租车？", "女的为什么坐出租车？", "地铁有问题", ["时间太早", "行李太多"]],
+    ["女：这个字我不认识，你能教我吗？男：好，我先写给你看。问：男的要做什么？", "男的要做什么？", "写给她看", ["教她唱歌", "给她字典"]],
     ["男：你的汉语水平提高得真快。女：我每天听新闻，还经常和中国朋友说话。问：女的怎么学习汉语？", "女的怎么学习汉语？", "听新闻说话", ["只做作业", "只看电影"]],
     ["女：冰箱里什么都没有了。男：那我们先去超市，然后回家做饭。问：他们先做什么？", "他们先做什么？", "去超市", ["回家", "去饭馆"]],
     ["男：你为什么一直看地图？女：我在找附近的宾馆，宾馆就在前面。问：女的在找什么？", "女的在找什么？", "宾馆", ["银行", "图书馆"]],
@@ -116,8 +132,8 @@ const HSK3_LONG_DIALOGUES = [
     "女的今天为什么不上班？", "因为生病", ["因为搬家", "因为下雨"]],
   ["女：周末打算做什么？男：我想去爬山，可是听说要下雨。女：那我们下次再去吧。男：好，这个周末先去看电影。问：他们这个周末做什么？",
     "他们这个周末做什么？", "看电影", ["去爬山", "在家休息"]],
-  ["男：这条裤子多少钱？女：一百五十元，比上个月便宜了五十。男：那我要一条蓝色的。女：好的，一共一百五十元。问：男的花了多少钱？",
-    "男的花了多少钱？", "一百五十元", ["二百元", "五十元"]],
+  ["男：这条裤子多少钱？女：一百五十元，比上个月便宜了五十。男：那我要一条蓝色的。女：好的，给你。问：这条裤子上个月多少钱？",
+    "这条裤子上个月多少钱？", "二百元", ["一百五十元", "五十元"]],
   ["男：这家饭馆的菜真不错。女：是啊，就是服务有点儿慢。男：下次我们早点儿来。女：好，下次先打电话。问：他们觉得这家饭馆怎么样？",
     "他们觉得这家饭馆怎么样？", "菜好服务慢", ["又贵又不好吃", "环境不干净"]],
   ["女：你今天怎么走着来的？男：我的自行车昨天坏了。女：那你明天怎么上班？男：我打算坐地铁。问：男的明天怎么上班？",
@@ -129,30 +145,30 @@ const HSK3_LONG_DIALOGUES = [
 // 読解第3部分は本番では短文＋設問。聴解と同じ素材は使わない。[短文, 設問, 正解, [誤答2つ]]
 const HSK3_PASSAGES = [
   ["我家附近新开了一家超市，里面的水果又新鲜又便宜。虽然离我家有点儿远，但是我每个周末都会去一次。",
-    "他为什么常去那家超市？", "水果新鲜便宜", ["离家很近", "那儿人很少"]],
-  ["小李昨天参加了学校的比赛，虽然没得第一，但是他觉得很高兴，因为他认识了很多新朋友。",
-    "小李为什么高兴？", "认识了新朋友", ["得了第一", "比赛很简单"]],
-  ["明天的会议非常重要，经理让大家八点以前到办公室。如果有事不能参加，一定要提前告诉他。",
-    "不能参加会议的人要做什么？", "提前告诉经理", ["直接不去", "下午再来"]],
-  ["这个城市的地铁很方便，从我家到公司只要二十分钟。以前我开车上班，经常遇到问题，现在方便多了。",
-    "他现在怎么上班？", "坐地铁", ["开车", "骑自行车"]],
-  ["我妹妹很喜欢动物，她家里有一只猫。她每天下午放学以后，都要先跟猫玩一会儿，然后才做作业。",
-    "妹妹放学以后先做什么？", "跟猫玩", ["做作业", "看电视"]],
-  ["听说这家宾馆的房间很干净，环境也很安静，就是有点儿贵。我们打算先住三天，然后去别的城市。",
-    "他们觉得这家宾馆怎么样？", "干净但是贵", ["又便宜又干净", "很不方便"]],
+    "他为什么常去那家超市？", "水果新鲜便宜", ["因为离我家很远", "因为每天都去一次"]],
+  ["小李昨天参加了学校的音乐表演。开始的时候他有点儿着急，但是同学们都说他唱得很好。",
+    "同学们觉得小李唱得怎么样？", "唱得很好", ["有点儿着急", "同学们都没参加"]],
+  ["明天的考试非常重要，老师让大家八点以前到教室。如果有事不能参加，一定要早点儿告诉他。",
+    "不能参加考试的人要做什么？", "早点儿告诉老师", ["八点以前到教室", "考试以后告诉老师"]],
+  ["学校的图书馆周末也开门，那儿又大又安静。我常常在那儿看一下午书，有时候还能遇到同学。",
+    "根据这段话，可以知道什么？", "图书馆周末开门", ["图书馆周末不开门", "同学们都不去那儿"]],
+  ["我妹妹很喜欢动物，她家里有一只猫。她每天下课以后，都要先跟猫玩一会儿，然后才做作业。",
+    "妹妹下课以后先做什么？", "跟猫玩", ["做作业", "看电视"]],
+  ["这个城市春天的花园最漂亮，很多人都来照相。夏天热的时候，大家喜欢去河边玩。",
+    "根据这段话，春天这个城市怎么样？", "花园很漂亮", ["夏天的花园最漂亮", "很多人去河边照相"]],
   ["张老师上课很认真，他总是先讲重要的地方，然后让我们自己练习。所以同学们都很喜欢他的课。",
     "同学们为什么喜欢张老师的课？", "他讲得认真", ["他的课很短", "他常常唱歌"]],
-  ["昨天我坐出租车去机场，因为路上突然下大雨，车开得很慢，差点儿就迟到了。",
-    "他昨天为什么差点儿迟到？", "因为下大雨", ["因为起床晚了", "因为坐错了车"]],
-  ["爷爷今年七十岁了，但是身体很健康。他每天早上都去公园锻炼一个小时，然后回家吃早饭。",
-    "爷爷早上做什么？", "在公园锻炼", ["在家看报纸", "去超市买东西"]],
+  ["昨天我坐出租车去机场，路上的车太多，开得很慢，所以我迟到了十分钟。",
+    "他昨天为什么迟到？", "路上车太多", ["起床晚了", "坐错了车"]],
+  ["我爸爸今年五十岁了，还是很喜欢运动。他每天早上都去河边跑步，然后回家吃早饭。",
+    "爸爸早上做什么？", "去跑步", ["看报纸", "去超市买东西"]],
   ["我打算下个月去北京旅游，已经买好了飞机票。听说那儿秋天的天气最舒服，所以很多人都选择这个季节去。",
     "他为什么选择下个月去北京？", "天气舒服", ["票很便宜", "朋友在那儿"]],
 ];
 
 // 書写はHSK3の文法・漢字で出題する。
 const HSK3_REORDER = [
-  [["他", "把", "房间", "打扫", "干净了"], "他把房间打扫干净了。"],
+  [["他", "把", "那本", "字典", "放在", "桌子上"], "他把那本字典放在桌子上。"],
   [["这里", "的", "环境", "越来越", "好了"], "这里的环境越来越好了。"],
   [["她", "一边", "听音乐", "一边", "做作业"], "她一边听音乐一边做作业。"],
   [["我", "的", "自行车", "被", "朋友", "骑走了"], "我的自行车被朋友骑走了。"],
@@ -160,21 +176,21 @@ const HSK3_REORDER = [
 ];
 
 const HSK3_INPUT = [
-  ["我的腿有点儿（téng）。", "疼"], ["她穿了一条（lán）色的裙子。", "蓝"], ["外面下雨了，别忘了带（sǎn）。", "伞"],
+  ["我的腿有点儿（téng）。", "疼"], ["她穿了一条（lán）色的裙子。", "蓝"], ["今天下午有雨，出门要带（sǎn）。", "伞"],
   ["妹妹的（liǎn）红了。", "脸"], ["天黑了，请把（dēng）打开。", "灯"],
 ];
 
 const HSK3_STATEMENTS = [
   ["小李最近每天都锻炼，所以身体比以前好多了。", "小李的身体有了变化。", true],
   ["外面虽然刮风，但是太阳很好，我们还是决定去公园。", "因为天气不好，他们不去公园了。", false],
-  ["王老师把会议时间从上午十点换到了下午两点。", "会议下午两点举行。", true],
+  ["我的手机昨天坏了，今天下午拿去检查。", "他的手机出了问题。", true],
   ["我以为护照在行李箱里，后来在桌子下面找到了。", "护照最后在行李箱里找到了。", false],
-  ["这家宾馆离地铁站很近，房间也很干净，就是有点儿贵。", "这家宾馆很方便。", true],
-  ["妹妹发烧了，医生说她这两天必须在家休息。", "妹妹应该去上班。", false],
-  ["张经理对这次表演很满意，还表示以后愿意继续帮忙。", "张经理喜欢这次表演。", true],
-  ["我先去银行办事，然后到超市买东西，最后才回家。", "我回家以前去了两个地方。", true],
+  ["这家宾馆离火车站很近，房间也很干净，就是有点儿贵。", "这家宾馆很方便。", true],
+  ["妹妹发烧了，医生说她这两天必须在家休息。", "妹妹这两天要去学校。", false],
+  ["张经理对这次表演很满意，还表示以后愿意帮忙。", "张经理喜欢这次表演。", true],
+  ["我先去银行，然后到超市买东西，最后才回家。", "我回家以前去了两个地方。", true],
   ["他普通话说得不错，但是写汉字还比较慢。", "他不会说普通话。", false],
-  ["我们本来打算爬山，因为突然下雨，只好改去饭馆吃饭。", "他们最后没有去爬山。", true],
+  ["这本字典是姐姐送我的生日礼物，我一直放在书包里。", "字典是他自己买的。", false],
 ];
 
 // 判断对错（本番形式）。本文を読み、★の文が本文と合っているかを判断する。
@@ -250,6 +266,15 @@ const HSK2_JUDGE = [
 ];
 
 // 選択肢は同じ品詞でそろえ、文脈から答えが一つに決まるように作る。[文, 正解, [誤答2つ], ピンイン]
+// HSK1読解第3部分。聴解で使った対話は流用しない。[問いかけ, 正解, [誤答2つ]]
+const HSK1_RESPONSES = [
+  ["你叫什么名字？", "我叫小李。", ["我很高兴。", "这是我的书。"]],
+  ["你喜欢喝什么？", "我喜欢喝茶。", ["我会做菜。", "我在家里。"]],
+  ["今天星期几？", "今天星期六。", ["现在八点。", "我们去学校。"]],
+  ["这是谁的书？", "是老师的。", ["在桌子上。", "我不认识。"]],
+  ["你有几个朋友？", "我有三个。", ["他是学生。", "我很喜欢。"]],
+];
+
 const HSK1_CLOZE = [
   ["天气很热，我想喝＿＿＿。", "水", ["米饭", "苹果"], "Tiānqì hěn rè, wǒ xiǎng hē ____."],
   ["我不太好，去＿＿＿看医生。", "医院", ["商店", "学校"], "Wǒ bú tài hǎo, qù ____ kàn yīshēng."],
@@ -292,17 +317,17 @@ const HSK2_MATCH = [
 
 const HSK3_CLOZE = [
   ["请把空调＿＿＿一下，房间里有点儿冷。", "关", ["搬", "借"]], ["明天有考试，今天晚上我要认真＿＿＿。", "复习", ["表演", "结婚"]],
-  ["这个问题不难，我相信你一定能＿＿＿。", "解决", ["出现", "经过"]], ["旅行以前别忘了＿＿＿护照。", "带", ["选择", "提高"]],
-  ["我家离公司很远，坐地铁比较＿＿＿。", "方便", ["安静", "新鲜"]], ["他每天都去锻炼，身体越来越＿＿＿。", "健康", ["简单", "年轻"]],
-  ["请你再说一次，我没听＿＿＿。", "清楚", ["干净", "认真"]], ["除了汉语以外，她＿＿＿会说日语。", "还", ["才", "被"]],
-  ["这条裤子太长了，那条比较＿＿＿。", "短", ["有名", "热情"]], ["过马路的时候，请大家＿＿＿车。", "注意", ["影响", "同意"]],
+  ["这个问题不难，我相信你一定能＿＿＿。", "解决", ["出现", "经过"]], ["明天要用的东西，别忘了＿＿＿在包里。", "放", ["选择", "提高"]],
+  ["在网上买东西不用出门，比较＿＿＿。", "方便", ["安静", "新鲜"]], ["他每天都去锻炼，身体越来越＿＿＿。", "健康", ["简单", "年轻"]],
+  ["请你再说一次，我没听＿＿＿。", "清楚", ["干净", "认真"]], ["除了苹果以外，她＿＿＿喜欢吃香蕉。", "还", ["才", "被"]],
+  ["这条裤子太长了，那条比较＿＿＿。", "短", ["有名", "热情"]], ["开车的时候，请大家＿＿＿前面的车。", "注意", ["影响", "同意"]],
 ];
 
 const HSK3_RESPONSES = [
-  ["你觉得这个办法怎么样？", "我觉得可以试一试。", ["我昨天才到。", "他正在办公室。"]], ["会议什么时候结束？", "下午四点左右。", ["一共十个人。", "在银行旁边。"]],
+  ["你觉得这个办法怎么样？", "我觉得很不错。", ["我昨天才到。", "他正在办公室。"]], ["会议什么时候结束？", "下午四点半。", ["一共十个人。", "在银行旁边。"]],
   ["你的护照找到了吗？", "找到了，在包里。", ["我打算去旅游。", "这张照片很好。"]], ["能帮我搬一下箱子吗？", "当然，没问题。", ["箱子是蓝色的。", "我住在三层。"]],
   ["你怎么又迟到了？", "路上车太多了。", ["考试很简单。", "我已经吃饱了。"]], ["医生怎么说？", "他说我要多休息。", ["药在桌子上。", "医院离这儿很近。"]],
-  ["你习惯这里的天气了吗？", "差不多已经习惯了。", ["我以前住在南方。", "这里有很多超市。"]], ["周末有什么打算？", "我想和朋友去爬山。", ["昨天刮风了。", "地图在包里。"]],
+  ["你习惯这里的天气了吗？", "已经习惯了。", ["我以前住在南方。", "这里有很多超市。"]], ["周末有什么打算？", "我想和朋友去爬山。", ["昨天刮风了。", "地图在包里。"]],
   ["这次比赛谁得了第一？", "我们班的小王。", ["比赛下周举行。", "我最喜欢体育。"]], ["你为什么换工作？", "因为新公司离家更近。", ["经理正在开会。", "工作已经完成了。"]],
 ];
 
@@ -315,10 +340,17 @@ const PINYIN = {
   生病:"shēngbìng", 很累:"hěn lèi", 很饿:"hěn è", 半小时:"bàn xiǎoshí", 一小时:"yì xiǎoshí", 两小时:"liǎng xiǎoshí",
   苹果:"píngguǒ", 西瓜:"xīguā", 水果:"shuǐguǒ", 准备:"zhǔnbèi", 考试:"kǎoshì", 休息:"xiūxi", 公司:"gōngsī", 书:"shū", 手表:"shǒubiǎo", 手机:"shǒujī",
   走路:"zǒulù", 红色:"hóngsè", 白色:"báisè", 黑色:"hēisè", 七点:"qī diǎn", 八点:"bā diǎn", 九点:"jiǔ diǎn", 十点:"shí diǎn",
+  "我叫小李。":"Wǒ jiào Xiǎo Lǐ.", "我很高兴。":"Wǒ hěn gāoxìng.", "这是我的书。":"Zhè shì wǒ de shū.",
+  "我喜欢喝茶。":"Wǒ xǐhuan hē chá.", "我会做菜。":"Wǒ huì zuò cài.", "我在家里。":"Wǒ zài jiā lǐ.",
+  "今天星期六。":"Jīntiān xīngqīliù.", "现在八点。":"Xiànzài bā diǎn.", "我们去学校。":"Wǒmen qù xuéxiào.",
+  "是老师的。":"Shì lǎoshī de.", "在桌子上。":"Zài zhuōzi shang.", "我不认识。":"Wǒ bú rènshi.",
+  "我有三个。":"Wǒ yǒu sān ge.", "他是学生。":"Tā shì xuésheng.", "我很喜欢。":"Wǒ hěn xǐhuan.",
   十一点:"shíyī diǎn", 十二点:"shí'èr diǎn", 一点:"yī diǎn", 下雪:"xiàxuě", 晴天:"qíngtiān", 阴天:"yīntiān", 吃药:"chī yào", 去医院:"qù yīyuàn",
 };
 
 const READING_PROMPT_PINYIN = {
+  "你叫什么名字？": "Nǐ jiào shénme míngzi?", "你喜欢喝什么？": "Nǐ xǐhuan hē shénme?", "今天星期几？": "Jīntiān xīngqī jǐ?",
+  "这是谁的书？": "Zhè shì shéi de shū?", "你有几个朋友？": "Nǐ yǒu jǐ ge péngyou?",
   "女的喝什么？": "Nǚ de hē shénme?", "现在几点？": "Xiànzài jǐ diǎn?", "女的去哪儿？": "Nǚ de qù nǎr?", "猫是谁的？": "Māo shì shéi de?", "女的会做饭吗？": "Nǚ de huì zuòfàn ma?",
 };
 
@@ -486,7 +518,7 @@ function readingCloze(level, words, part, startOffset = 0) {
 
 function buildLevel1() {
   const listening = [...visualListening(1, 0, 5, 1, "judge"), ...visualListening(1, 5, 5, 2, "choice"), ...visualListening(1, 10, 5, 3, "choice"), ...dialogueQuestions(1, 0, 5, 4)];
-  const reading = [...readingVisual(1, 15, 5, 1, true), ...readingVisual(1, 20, 5, 2), ...readingResponses(1, DIALOGUES[1].slice(0, 5).map((item) => [item[1], item[2], item[3]]), 3), ...authoredCloze(1, HSK1_CLOZE, 4)];
+  const reading = [...readingVisual(1, 15, 5, 1, true), ...readingVisual(1, 20, 5, 2), ...readingResponses(1, HSK1_RESPONSES, 3), ...authoredCloze(1, HSK1_CLOZE, 4)];
   return [...listening, ...reading];
 }
 
@@ -518,7 +550,7 @@ function buildLevel3() {
     const id = `hsk3-l4-${String(index + 1).padStart(2, "0")}`;
     return q(id, "listening", 4, "audio-long-dialogue", { audioText: item[0], audioFile: audioFile(id), prompt: item[1], choices: choices(item[2], item[3], 3), correct: item[2], instruction: "请听较长对话，选择正确答案。", explanation: `${item[1]} — ${item[2]}` });
   });
-  const listening = [...listening1, ...listening2, ...dialogueQuestions(3, 0, 10, 3), ...listening4];
+  const listening = [...listening1, ...listening2, ...dialoguePool(3, DIALOGUES[3], 3), ...listening4];
   const reading1 = readingResponses(3, HSK3_RESPONSES, 1);
   const reading2 = authoredCloze(3, HSK3_CLOZE, 2);
   const reading3 = HSK3_PASSAGES.map((item, index) => q(`hsk3-r3-${String(index + 1).padStart(2, "0")}`, "reading", 3, "reading-comprehension", { prompt: item[0], subPrompt: item[1], choices: choices(item[2], item[3], 3), correct: item[2], instruction: "请阅读短文，选择正确答案。", explanation: `${item[1]} — ${item[2]}` }));
@@ -529,7 +561,7 @@ function buildLevel3() {
 
 const forms = { 1: buildLevel1(), 2: buildLevel2(), 3: buildLevel3() };
 // HSK2の聴解は出題プール制。1回の模試で出す問数（questionSelection）と読解・作文の数を検査する。
-const MOCK_SELECTION = { 2: { listening: { 1: 10, 2: 10, 3: 10, 4: 5 } } };
+const MOCK_SELECTION = { 2: { listening: { 1: 10, 2: 10, 3: 10, 4: 5 } }, 3: { listening: { 1: 10, 2: 10, 3: 10, 4: 10 } } };
 const expected = { 1: { total: 40, listening: 20, reading: 20, writing: 0 }, 2: { listening: 35, reading: 25, writing: 0 }, 3: { total: 80, listening: 40, reading: 30, writing: 10 } };
 for (const level of [1, 2, 3]) {
   const questions = forms[level];
@@ -600,9 +632,6 @@ for (const level of [1, 2, 3]) {
       if (!wordLevel) throw new Error(`${item.id}: 選択肢「${label}」が語彙データにありません`);
       if (wordLevel > level) throw new Error(`${item.id}: 選択肢「${label}」はHSK${wordLevel}の語です`);
     }
-    for (const char of item.prompt.replace("＿＿＿", "")) {
-      if (/[一-鿿]/u.test(char) && !levelChars[level].has(char)) console.warn(`  警告 ${item.id}: 「${char}」はHSK1〜${level}の語彙にない漢字です → ${item.prompt}`);
-    }
   }
   // 判断对错は、本文と★の文がそろっていて、正誤が偏っていないことを検査する。
   const judges = questions.filter((question) => question.kind === "reading-judge");
@@ -611,9 +640,6 @@ for (const level of [1, 2, 3]) {
     if (item.prompt === item.subPrompt) throw new Error(`${item.id}: 本文と★の文が同じです`);
     if (!["true", "false"].includes(item.correct)) throw new Error(`${item.id}: 正解が对／不对ではありません`);
     if (level <= 2 && !(item.promptPinyin && item.subPromptPinyin)) throw new Error(`${item.id}: ピンインが足りません`);
-    for (const char of `${item.prompt}${item.subPrompt}`) {
-      if (/[一-鿿]/u.test(char) && !levelChars[level].has(char)) console.warn(`  警告 ${item.id}: 「${char}」はHSK1〜${level}の語彙にない漢字です`);
-    }
   }
   if (judges.length && new Set(judges.map((item) => item.correct)).size < 2) throw new Error(`HSK ${level}: 判断对错の正解が片方に偏っています`);
   // 句子匹配は、選択肢がそろっていて級の範囲に収まっていることを検査する。
@@ -622,16 +648,76 @@ for (const level of [1, 2, 3]) {
     if (new Set(labels).size !== labels.length) throw new Error(`${item.id}: 選択肢が重複しています`);
     if (!labels.includes(item.correct)) throw new Error(`${item.id}: 正解が選択肢にありません`);
     if (level <= 2 && item.choices.some((entry) => !entry.pinyin)) console.warn(`  警告 ${item.id}: ピンインのない選択肢があります`);
-    for (const char of `${item.prompt}${labels.join("")}`) {
-      if (/[一-鿿]/u.test(char) && !levelChars[level].has(char)) console.warn(`  警告 ${item.id}: 「${char}」はHSK1〜${level}の語彙にない漢字です`);
+  }
+  // 技能・部分をまたいだ素材の使い回しと、級外の語彙を全問まとめて検査する。
+  // HSK1・3は基準を満たしているのでエラー、HSK2の本文は整理が済むまで警告に留める。
+  const strict = STRICT_VOCAB_LEVELS.has(level);
+  const issues = [];
+  const flag = (message) => { if (strict) issues.push(message); else console.warn(`  警告 ${message}`); };
+  // 設問（「男的要做什么？」など）は本番でも同じ言い回しが繰り返されるので、素材だけを見る。
+  const STEM_FIELD = { "audio-dialogue": "prompt", "audio-long-dialogue": "prompt", "reading-comprehension": "subPrompt" };
+  const bodyText = (item) => ["audioText", "prompt", "subPrompt", "sentence", "answer"]
+    .filter((field) => field !== STEM_FIELD[item.kind])
+    .map((field) => (field === "audioText" ? String(item[field] || "").split("问：")[0] : item[field]))
+    .filter(Boolean).map(String).join("").replace(/[男女问]：/g, "").replace(/[＿_]+/g, "").replace(/[。，、？！?!,.\s]/g, "");
+  // 同じ言い回しが別の問題にも出ていないか（穴埋めの空欄や話者記号は外して比べる）。
+  const owners = new Map();
+  for (const item of questions) {
+    const text = bodyText(item);
+    for (const gram of new Set(Array.from({ length: Math.max(0, text.length - DUPLICATE_NGRAM + 1) }, (_, index) => text.slice(index, index + DUPLICATE_NGRAM)))) {
+      if (!owners.has(gram)) owners.set(gram, new Set());
+      owners.get(gram).add(item.id);
     }
   }
+  const overlaps = new Map();
+  for (const [gram, ids] of owners) {
+    if (ids.size < 2) continue;
+    const key = [...ids].sort().join(" × ");
+    if (!overlaps.has(key) || overlaps.get(key).length < gram.length) overlaps.set(key, gram);
+  }
+  for (const [pair, gram] of overlaps) flag(`${pair}: 同じ言い回し「${gram}」を使い回しています`);
+  // 本文・選択肢の語彙が級の範囲に収まっているか（判断对错の对／不对は出題形式なので除く）。
+  for (const item of questions) {
+    const texts = [item.audioText, item.prompt, item.subPrompt, item.sentence, item.answer,
+      ...(item.choices || []).filter((entry) => !["true", "false"].includes(entry.value)).map((entry) => entry.label)]
+      .filter(Boolean).map((text) => String(text).replace(/[男女问]：/g, ""));
+    for (const text of texts) {
+      for (const char of text) {
+        if (/[一-鿿]/u.test(char) && !levelChars[level].has(char) && !PROPER_NOUN_CHARS.has(char)) flag(`${item.id}: HSK1〜${level}の語彙にない漢字「${char}」→ ${text}`);
+      }
+      for (const word of BLOCKED_WORDS) {
+        if (text.includes(word)) flag(`${item.id}: HSK4以上の語「${word}」→ ${text}`);
+      }
+    }
+  }
+  // 同じ題材ばかりの模試にならないよう、場面を表す語が1回の受験で何問に出るかを数える。
+  // プール制の部分は「出題数 ÷ 収録数」で割り引いて期待値にする。
+  const weightOf = (item) => {
+    const count = MOCK_SELECTION[level]?.[item.skill]?.[item.part];
+    if (!count) return 1;
+    const available = questions.filter((other) => other.skill === item.skill && other.part === item.part).length;
+    return available ? count / available : 1;
+  };
+  const topicWords = allWords.filter((word) => (wordTags[word.id] || []).some((tag) => TOPIC_TAGS.has(tag)) && word.hanzi.length >= 2);
+  const exposure = new Map();
+  for (const item of questions) {
+    const text = [item.audioText, item.prompt, item.subPrompt, item.sentence, item.answer].filter(Boolean).join("");
+    for (const word of topicWords) {
+      if (!text.includes(word.hanzi)) continue;
+      exposure.set(word.hanzi, (exposure.get(word.hanzi) || 0) + weightOf(item));
+    }
+  }
+  const crowded = [...exposure].filter(([, count]) => count > TOPIC_LIMIT).sort((left, right) => right[1] - left[1]);
+  for (const [word, count] of crowded) console.warn(`  警告 HSK ${level}: 「${word}」が1回の模試で約${count.toFixed(1)}問に出ます（目安${TOPIC_LIMIT}問）`);
+
+  if (issues.length) throw new Error(`HSK ${level} の作問に問題があります:\n  - ${issues.join("\n  - ")}`);
+
   const payload = {
-    version: level === 2 ? 3 : 2,
+    version: MOCK_SELECTION[level] ? 3 : 2,
     level,
     format: "HSK 2.0（日本実施形式）・写真問題は記号イラストで代替",
     generatedAt: new Date().toISOString(),
-    ...(level === 2 ? { questionSelection: { listening: { 1: 10, 2: 10, 3: 10, 4: 5 } } } : {}),
+    ...(MOCK_SELECTION[level] ? { questionSelection: MOCK_SELECTION[level] } : {}),
     questions,
   };
   fs.writeFileSync(path.join(root, "data", `mock-hsk${level}.json`), `${JSON.stringify(payload, null, 2)}\n`);

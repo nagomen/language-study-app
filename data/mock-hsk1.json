@@ -2,7 +2,7 @@
   "version": 2,
   "level": 1,
   "format": "HSK 2.0（日本実施形式）・写真問題は記号イラストで代替",
-  "generatedAt": "2026-09-11T09:25:00.668Z",
+  "generatedAt": "2026-09-13T11:27:47.565Z",
   "questions": [
     {
       "id": "hsk1-l1-01",
@@ -470,9 +470,8 @@
           "pinyin": "sān diǎn"
         },
         {
-          "value": "两点",
-          "label": "两点",
-          "pinyin": "liǎng diǎn"
+          "value": "五点",
+          "label": "五点"
         },
         {
           "value": "四点",
@@ -855,28 +854,28 @@
       "part": 3,
       "kind": "reading-response",
       "hint": "問いかけに対する受け答えとして正しいものを選びます。",
-      "prompt": "女的喝什么？",
-      "promptPinyin": "Nǚ de hē shénme?",
+      "prompt": "你叫什么名字？",
+      "promptPinyin": "Nǐ jiào shénme míngzi?",
       "choices": [
         {
-          "value": "水",
-          "label": "水",
-          "pinyin": "shuǐ"
+          "value": "我叫小李。",
+          "label": "我叫小李。",
+          "pinyin": "Wǒ jiào Xiǎo Lǐ."
         },
         {
-          "value": "茶",
-          "label": "茶",
-          "pinyin": "chá"
+          "value": "我很高兴。",
+          "label": "我很高兴。",
+          "pinyin": "Wǒ hěn gāoxìng."
         },
         {
-          "value": "米饭",
-          "label": "米饭",
-          "pinyin": "mǐfàn"
+          "value": "这是我的书。",
+          "label": "这是我的书。",
+          "pinyin": "Zhè shì wǒ de shū."
         }
       ],
-      "correct": "水",
+      "correct": "我叫小李。",
       "instruction": "请选择与问句相对应的回答。",
-      "explanation": "女的喝什么？ — 水"
+      "explanation": "你叫什么名字？ — 我叫小李。"
     },
     {
       "id": "hsk1-r3-02",
@@ -884,28 +883,28 @@
       "part": 3,
       "kind": "reading-response",
       "hint": "問いかけに対する受け答えとして正しいものを選びます。",
-      "prompt": "现在几点？",
-      "promptPinyin": "Xiànzài jǐ diǎn?",
+      "prompt": "你喜欢喝什么？",
+      "promptPinyin": "Nǐ xǐhuan hē shénme?",
       "choices": [
         {
-          "value": "三点",
-          "label": "三点",
-          "pinyin": "sān diǎn"
+          "value": "我喜欢喝茶。",
+          "label": "我喜欢喝茶。",
+          "pinyin": "Wǒ xǐhuan hē chá."
         },
         {
-          "value": "两点",
-          "label": "两点",
-          "pinyin": "liǎng diǎn"
+          "value": "我会做菜。",
+          "label": "我会做菜。",
+          "pinyin": "Wǒ huì zuò cài."
         },
         {
-          "value": "四点",
-          "label": "四点",
-          "pinyin": "sì diǎn"
+          "value": "我在家里。",
+          "label": "我在家里。",
+          "pinyin": "Wǒ zài jiā lǐ."
         }
       ],
-      "correct": "三点",
+      "correct": "我喜欢喝茶。",
       "instruction": "请选择与问句相对应的回答。",
-      "explanation": "现在几点？ — 三点"
+      "explanation": "你喜欢喝什么？ — 我喜欢喝茶。"
     },
     {
       "id": "hsk1-r3-03",
@@ -913,28 +912,28 @@
       "part": 3,
       "kind": "reading-response",
       "hint": "問いかけに対する受け答えとして正しいものを選びます。",
-      "prompt": "女的去哪儿？",
-      "promptPinyin": "Nǚ de qù nǎr?",
+      "prompt": "今天星期几？",
+      "promptPinyin": "Jīntiān xīngqī jǐ?",
       "choices": [
         {
-          "value": "学校",
-          "label": "学校",
-          "pinyin": "xuéxiào"
+          "value": "今天星期六。",
+          "label": "今天星期六。",
+          "pinyin": "Jīntiān xīngqīliù."
         },
         {
-          "value": "医院",
-          "label": "医院",
-          "pinyin": "yīyuàn"
+          "value": "现在八点。",
+          "label": "现在八点。",
+          "pinyin": "Xiànzài bā diǎn."
         },
         {
-          "value": "商店",
-          "label": "商店",
-          "pinyin": "shāngdiàn"
+          "value": "我们去学校。",
+          "label": "我们去学校。",
+          "pinyin": "Wǒmen qù xuéxiào."
         }
       ],
-      "correct": "学校",
+      "correct": "今天星期六。",
       "instruction": "请选择与问句相对应的回答。",
-      "explanation": "女的去哪儿？ — 学校"
+      "explanation": "今天星期几？ — 今天星期六。"
     },
     {
       "id": "hsk1-r3-04",
@@ -942,28 +941,28 @@
       "part": 3,
       "kind": "reading-response",
       "hint": "問いかけに対する受け答えとして正しいものを選びます。",
-      "prompt": "猫是谁的？",
-      "promptPinyin": "Māo shì shéi de?",
+      "prompt": "这是谁的书？",
+      "promptPinyin": "Zhè shì shéi de shū?",
       "choices": [
         {
-          "value": "小王的",
-          "label": "小王的",
-          "pinyin": "Xiǎo Wáng de"
+          "value": "是老师的。",
+          "label": "是老师的。",
+          "pinyin": "Shì lǎoshī de."
         },
         {
-          "value": "小李的",
-          "label": "小李的",
-          "pinyin": "Xiǎo Lǐ de"
+          "value": "在桌子上。",
+          "label": "在桌子上。",
+          "pinyin": "Zài zhuōzi shang."
         },
         {
-          "value": "老师的",
-          "label": "老师的",
-          "pinyin": "lǎoshī de"
+          "value": "我不认识。",
+          "label": "我不认识。",
+          "pinyin": "Wǒ bú rènshi."
         }
       ],
-      "correct": "小王的",
+      "correct": "是老师的。",
       "instruction": "请选择与问句相对应的回答。",
-      "explanation": "猫是谁的？ — 小王的"
+      "explanation": "这是谁的书？ — 是老师的。"
     },
     {
       "id": "hsk1-r3-05",
@@ -971,28 +970,28 @@
       "part": 3,
       "kind": "reading-response",
       "hint": "問いかけに対する受け答えとして正しいものを選びます。",
-      "prompt": "女的会做饭吗？",
-      "promptPinyin": "Nǚ de huì zuòfàn ma?",
+      "prompt": "你有几个朋友？",
+      "promptPinyin": "Nǐ yǒu jǐ ge péngyou?",
       "choices": [
         {
-          "value": "不会",
-          "label": "不会",
-          "pinyin": "bú huì"
+          "value": "我有三个。",
+          "label": "我有三个。",
+          "pinyin": "Wǒ yǒu sān ge."
         },
         {
-          "value": "会",
-          "label": "会",
-          "pinyin": "huì"
+          "value": "他是学生。",
+          "label": "他是学生。",
+          "pinyin": "Tā shì xuésheng."
         },
         {
-          "value": "不是",
-          "label": "不是",
-          "pinyin": "bú shì"
+          "value": "我很喜欢。",
+          "label": "我很喜欢。",
+          "pinyin": "Wǒ hěn xǐhuan."
         }
       ],
-      "correct": "不会",
+      "correct": "我有三个。",
       "instruction": "请选择与问句相对应的回答。",
-      "explanation": "女的会做饭吗？ — 不会"
+      "explanation": "你有几个朋友？ — 我有三个。"
     },
     {
       "id": "hsk1-r4-01",
