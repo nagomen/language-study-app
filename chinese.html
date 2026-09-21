@@ -20,13 +20,10 @@
             <span aria-hidden="true">⌂</span>ホーム
           </button>
           <button class="nav-item" data-view="words" type="button">
-            <span aria-hidden="true">字</span>単語一覧
+            <span aria-hidden="true">字</span>単語帳
           </button>
           <button class="nav-item" data-view="categories" type="button">
             <span aria-hidden="true">類</span>分類から学ぶ
-          </button>
-          <button class="nav-item" data-view="examples" type="button">
-            <span aria-hidden="true">文</span>例文集
           </button>
           <button class="nav-item" data-view="checked" type="button">
             <span aria-hidden="true">✓</span>チェック<b id="checked-nav-count" class="nav-count is-hidden">0</b>
@@ -76,7 +73,7 @@
               <button id="daily-open" class="primary-button" type="button">今日の学習を開く <span>→</span></button>
             </div>
             <div class="hero-art" aria-hidden="true">
-              <span class="sun"></span><span class="mountain mountain-back"></span><span class="mountain mountain-front"></span>
+              <span class="sun"></span>
               <span class="hero-hanzi">学</span>
             </div>
           </div>
@@ -117,9 +114,9 @@
               <span><strong>分類から学ぶ</strong><small id="category-count-label">数詞・形容詞・旅行などの括りで出題</small></span>
               <span aria-hidden="true">→</span>
             </button>
-            <button id="open-examples" class="quick-card" type="button">
-              <span class="quick-icon green">文</span>
-              <span><strong>例文から学ぶ</strong><small>単語を文の中で覚える</small></span>
+            <button class="quick-card" type="button" data-guide-open="hsk3-grammar">
+              <span class="quick-icon green">法</span>
+              <span><strong>HSK3の必修文法</strong><small>了・比較・把・補語・是…的・複文の解説と文法ドリル</small></span>
               <span aria-hidden="true">→</span>
             </button>
             <button id="open-checked" class="quick-card" type="button">
@@ -154,7 +151,10 @@
             <article id="quiz-example" class="quiz-example is-hidden" aria-live="polite">
               <div class="quiz-example-head">
                 <span>この単語を使った例文</span>
-                <button id="quiz-example-audio" class="sentence-audio" type="button"><span aria-hidden="true">▶</span> 例文を聞く</button>
+                <div class="quiz-example-actions">
+                  <button id="quiz-check" class="check-chip" type="button" data-check-id="" aria-pressed="false"><span aria-hidden="true">✓</span> 気になる</button>
+                  <button id="quiz-example-audio" class="sentence-audio" type="button"><span aria-hidden="true">▶</span> 例文を聞く</button>
+                </div>
               </div>
               <div id="quiz-example-target" class="quiz-example-target">
                 <p id="quiz-example-chinese" class="example-chinese"></p>
@@ -169,25 +169,33 @@
         </section>
 
         <section id="words-view" class="view" aria-labelledby="words-title">
-          <div class="page-heading"><div><p class="eyebrow">VOCABULARY</p><h1 id="words-title">単語一覧</h1><p>HSK1〜3の600語を、レベル・分類・チェックで絞り込んで確認できます。</p></div></div>
-          <div class="toolbar">
-            <div class="level-tabs" role="group" aria-label="HSKレベルで絞り込み">
-              <button class="filter-chip is-active" type="button" data-level="all">すべて</button>
-              <button class="filter-chip" type="button" data-level="1">HSK 1</button>
-              <button class="filter-chip" type="button" data-level="2">HSK 2</button>
-              <button class="filter-chip" type="button" data-level="3">HSK 3</button>
-            </div>
-            <label class="category-select">分類<select id="word-category" aria-label="分類で絞り込み"><option value="all">すべての分類</option></select></label>
-            <button class="check-chip" type="button" data-check-filter="words" aria-pressed="false"><span aria-hidden="true">✓</span> チェックのみ</button>
-            <label class="search-box"><span aria-hidden="true">⌕</span><input id="word-search" type="search" placeholder="漢字・ピンイン・意味で検索" /></label>
+          <div class="page-heading examples-heading">
+            <div><p class="eyebrow">VOCABULARY</p><h1 id="words-title">単語帳</h1><p>HSK1〜3の600語を、意味・分類・例文つきで引けます。</p></div>
+            <div class="example-total"><strong id="word-count-label">600語</strong><span>表示中</span></div>
           </div>
-          <div id="word-list" class="word-list"></div>
+          <div class="word-toolbar">
+            <label class="search-box"><span aria-hidden="true">⌕</span><input id="word-search" type="search" placeholder="漢字・ピンイン・意味・例文で検索" /></label>
+            <div class="word-toolbar-row">
+              <div class="level-tabs" role="group" aria-label="HSKレベルで絞り込み">
+                <button class="filter-chip is-active" type="button" data-level="all">すべて</button>
+                <button class="filter-chip" type="button" data-level="1">HSK 1</button>
+                <button class="filter-chip" type="button" data-level="2">HSK 2</button>
+                <button class="filter-chip" type="button" data-level="3">HSK 3</button>
+              </div>
+              <label class="category-select">分類<select id="word-category" aria-label="分類で絞り込み"><option value="all">すべての分類</option></select></label>
+              <div class="toolbar-toggles">
+                <button class="check-chip" type="button" data-check-filter="words" aria-pressed="false"><span aria-hidden="true">✓</span> チェックのみ</button>
+                <button id="word-hide-meaning" class="check-chip" type="button" aria-pressed="false"><span aria-hidden="true">◑</span> 意味をかくす</button>
+              </div>
+            </div>
+          </div>
+          <div id="word-list" class="word-grid"></div>
           <p id="empty-words" class="empty-state is-hidden">該当する単語がありません。</p>
         </section>
 
         <section id="daily-view" class="view" aria-labelledby="daily-title">
           <div class="page-heading examples-heading">
-            <div><p class="eyebrow">DAILY 20 · HSK 3</p><h1 id="daily-title">今日の20語</h1><p id="daily-lead">その日の20語と、前回まちがえた単語をまとめて出題します。同じ単語が新出として二度出ることはありません。</p></div>
+            <div><p class="eyebrow">DAILY 20 · HSK 3</p><h1 id="daily-title">今日の20語</h1><p id="daily-lead">その日の20語と、前回まちがえた単語をまとめて出題します。最後まで解かずにやめた回は完了にならず、同じ問題がもう一度出ます。</p></div>
             <div class="daily-progress-card">
               <strong id="daily-day-label">DAY 1 / 15</strong>
               <div class="daily-progress"><span id="daily-page-progress-bar"></span></div>
@@ -232,18 +240,7 @@
             <button class="check-chip" type="button" data-check-filter="categories" aria-pressed="false"><span aria-hidden="true">✓</span> チェックのみ</button>
             <label class="search-box"><span aria-hidden="true">⌕</span><input id="category-search" type="search" placeholder="分類名・単語で検索" /></label>
           </div>
-          <div id="guide-band" class="guide-band">
-            <button class="guide-card" type="button" data-guide-open="de">
-              <span class="guide-card-mark">得</span>
-              <span class="guide-card-body"><strong>動作の様子を言う（的・得・地）</strong><small>3つのdeの使い分けと様態補語。解説＋練習10問</small></span>
-              <span class="guide-card-go" aria-hidden="true">→</span>
-            </button>
-            <button class="guide-card" type="button" data-category-open="measure">
-              <span class="guide-card-mark">量</span>
-              <span class="guide-card-body"><strong>量詞（助数詞）の使い分け</strong><small>「数＋量詞＋名詞」で覚える特設ページ。量詞クイズつき</small></span>
-              <span class="guide-card-go" aria-hidden="true">→</span>
-            </button>
-          </div>
+          <div id="guide-band" class="guide-band"></div>
           <div id="category-groups" class="category-groups"></div>
           <p id="empty-categories" class="empty-state is-hidden">条件に合う分類がありません。</p>
 
@@ -258,7 +255,7 @@
               <button id="category-quiz" class="secondary-button" type="button">この分類でテスト</button>
               <button class="secondary-button" type="button" data-category-practice="reading">読解の問題を見る</button>
               <button class="secondary-button" type="button" data-category-practice="listening">聴解の問題を見る</button>
-              <button id="category-open-words" class="secondary-button" type="button">単語一覧で見る</button>
+              <button id="category-open-words" class="secondary-button" type="button">単語帳で見る</button>
             </div>
             <p class="category-quiz-note">出題の向き（中→日／日→中）はホームの設定に従います。10語に満たない分類では、まぎらわしい選択肢を全600語から補います。</p>
             <div id="measure-guide" class="measure-guide is-hidden"></div>
@@ -280,29 +277,6 @@
           <div id="guide-sections" class="guide-sections"></div>
         </section>
 
-        <section id="examples-view" class="view" aria-labelledby="examples-title">
-          <div class="page-heading examples-heading">
-            <div><p class="eyebrow">EXAMPLE SENTENCES</p><h1 id="examples-title">例文集</h1><p>単語を文の中で覚え、自然な使い方と音を身につけましょう。</p></div>
-            <div class="example-total"><strong id="example-total-count">0</strong><span>例文</span></div>
-          </div>
-          <div class="toolbar">
-            <div class="level-tabs" role="group" aria-label="例文をHSKレベルで絞り込み">
-              <button class="example-filter-chip filter-chip is-active" type="button" data-example-level="all">すべて</button>
-              <button class="example-filter-chip filter-chip" type="button" data-example-level="1">HSK 1</button>
-              <button class="example-filter-chip filter-chip" type="button" data-example-level="2">HSK 2</button>
-              <button class="example-filter-chip filter-chip" type="button" data-example-level="3">HSK 3</button>
-            </div>
-            <button class="check-chip" type="button" data-check-filter="examples" aria-pressed="false"><span aria-hidden="true">✓</span> チェックのみ</button>
-            <label class="search-box"><span aria-hidden="true">⌕</span><input id="example-search" type="search" placeholder="単語・例文・訳から検索" /></label>
-          </div>
-          <div id="example-list" class="example-list"></div>
-          <div id="empty-examples" class="empty-state is-hidden">
-            <span class="empty-hanzi">文</span>
-            <strong>該当する例文はまだありません</strong>
-            <p>検索条件やレベルを変えてみてください。</p>
-          </div>
-        </section>
-
         <section id="checked-view" class="view" aria-labelledby="checked-title">
           <div class="page-heading examples-heading">
             <div><p class="eyebrow">MARKED WORDS</p><h1 id="checked-title">チェックした単語</h1><p>気になった単語をまとめて振り返り、そのまま出題できます。</p></div>
@@ -317,7 +291,7 @@
           <div id="empty-checked" class="empty-state is-hidden">
             <span class="empty-hanzi">✓</span>
             <strong>チェックした単語はまだありません</strong>
-            <p>単語一覧・例文集・テストの振り返りにある ✓ ボタンで追加できます。</p>
+            <p>単語帳・テストの振り返りにある ✓ ボタンで追加できます。</p>
           </div>
           <div class="checked-tools">
             <button id="export-checked" class="text-button is-hidden" type="button">チェックを書き出す（JSON）</button>
@@ -332,7 +306,7 @@
           <div class="page-heading exam-heading">
             <div><p class="eyebrow">HSK EXAM TRAINING</p><h1 id="exam-title">試験対策</h1><p>本番形式で「聞く・読む・書く」を鍛えます。</p></div>
             <div class="exam-controls">
-              <span class="audio-quality-badge">固定44.1kHz音声</span>
+              <span class="audio-quality-badge">収録音声つき</span>
               <label class="exam-level-select">音声速度<select id="audio-speed"><option value="0.85">ゆっくり 0.85×</option><option value="1">標準 1.0×</option><option value="1.15">シャドーイング 1.15×</option></select></label>
               <label class="exam-level-select">練習レベル<select id="practice-level"><option value="1">HSK 1</option><option value="2">HSK 2</option><option value="3">HSK 3</option></select></label>
             </div>
@@ -343,6 +317,11 @@
             <article class="training-card writing-card"><span class="training-kanji">写</span><p class="eyebrow">WRITING · HSK 3</p><h2>作文トレーニング</h2><p>語順の並べ替えと、ピンインから漢字を書く問題を練習します。</p><button type="button" data-practice="writing">10問練習する <span>→</span></button></article>
             <article class="training-card review-card"><span class="training-kanji">复</span><p class="eyebrow">SMART REVIEW</p><h2>今日の間隔反復</h2><p>忘れそうな単語を優先し、1・3・7・14・30日間隔で復習します。</p><div class="training-count"><strong id="due-word-count">0</strong>語が復習対象</div><button type="button" data-practice="srs">復習を始める <span>→</span></button></article>
           </div>
+          <button class="guide-link" type="button" data-guide-open="hsk3-grammar">
+            <span class="guide-card-mark">法</span>
+            <span class="guide-card-body"><strong>HSK3の必修文法</strong><small>了・比較・把・補語・是…的・複文の解説と文法ドリル10問</small></span>
+            <span class="guide-card-go" aria-hidden="true">→</span>
+          </button>
           <div class="section-heading"><div><p class="eyebrow">FULL MOCK EXAM · HSK 2.0</p><h2>写真なし本番形式模試</h2></div><span>公式パート比率・セクション別時間／前のセクションには戻れません。聴解・読解・作文だけを本番の時間で受けることもできます</span></div>
           <div class="mock-grid">
             <article class="mock-entry">
@@ -378,6 +357,13 @@
             </article>
             <div id="practice-answer-area" class="practice-answer-area"></div>
             <div id="practice-feedback" class="answer-feedback" aria-live="polite"></div>
+            <article id="practice-script" class="practice-script is-hidden" aria-live="polite">
+              <header class="practice-script-head">
+                <span id="practice-script-title">音声のスクリプト</span>
+                <button id="practice-script-audio" class="sentence-audio" type="button"><span aria-hidden="true">▶</span> <span id="practice-script-audio-label">もう一度聞く</span></button>
+              </header>
+              <div id="practice-script-body" class="practice-script-body"></div>
+            </article>
             <button id="practice-next" class="primary-button is-hidden" type="button">次の問題へ <span>→</span></button>
           </div>
         </section>
@@ -453,7 +439,6 @@
         <button class="nav-item is-active" data-view="home" type="button"><span aria-hidden="true">⌂</span><small>ホーム</small></button>
         <button class="nav-item" data-view="words" type="button"><span aria-hidden="true">字</span><small>単語</small></button>
         <button class="nav-item" data-view="categories" type="button"><span aria-hidden="true">類</span><small>分類</small></button>
-        <button class="nav-item" data-view="examples" type="button"><span aria-hidden="true">文</span><small>例文</small></button>
         <button class="nav-item" data-view="checked" type="button"><span aria-hidden="true">✓</span><small>チェック</small></button>
         <button class="nav-item" data-view="exam" type="button"><span aria-hidden="true">試</span><small>試験</small></button>
         <button class="nav-item" data-view="progress" type="button"><span aria-hidden="true">↗</span><small>記録</small></button>

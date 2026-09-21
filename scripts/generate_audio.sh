@@ -8,6 +8,8 @@ AUDIO_DIR="$APP_DIR/audio"
 VOICE="${HSK_AUDIO_VOICE:-Tingting}"
 RATE="${HSK_AUDIO_RATE:-150}"
 FORCE="${HSK_AUDIO_FORCE:-0}"
+# 配信はAAC 48kbps。WAVのままだと10倍以上の容量になる（docs/audio.md）
+BITRATE="${HSK_AUDIO_BITRATE:-48000}"
 
 mkdir -p "$AUDIO_DIR"
 cd "$APP_DIR"
@@ -23,9 +25,12 @@ node -e '
     }
   }
 ' | while IFS=$'\t' read -r word_id spoken_text; do
-  output_file="$AUDIO_DIR/$word_id.wav"
+  output_file="$AUDIO_DIR/$word_id.m4a"
   if [[ "$FORCE" == "1" || ! -s "$output_file" ]]; then
-    say -v "$VOICE" -r "$RATE" -o "$output_file" --file-format=WAVE --data-format=LEI16@44100 "$spoken_text"
+    temp_file="$(mktemp -t hsk-word-audio).wav"
+    say -v "$VOICE" -r "$RATE" -o "$temp_file" --file-format=WAVE --data-format=LEI16@44100 "$spoken_text"
+    afconvert -f m4af -d aac -b "$BITRATE" "$temp_file" "$output_file"
+    rm -f "$temp_file"
   fi
   generated_count=$((generated_count + 1))
   if (( generated_count % 25 == 0 )); then
@@ -33,4 +38,4 @@ node -e '
   fi
 done
 
-echo "音声生成完了: $(find "$AUDIO_DIR" -type f -name '*.wav' | wc -l | tr -d ' ') 語（$VOICE / 44.1kHz）"
+echo "音声生成完了: $(find "$AUDIO_DIR" -maxdepth 1 -type f -name '*.m4a' | wc -l | tr -d ' ') 語（$VOICE / AAC ${BITRATE}bps）"

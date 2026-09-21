@@ -2,7 +2,7 @@
   "version": 3,
   "level": 3,
   "format": "HSK 2.0（日本実施形式）・写真問題は記号イラストで代替",
-  "generatedAt": "2026-09-13T11:27:47.617Z",
+  "generatedAt": "2026-09-21T05:14:24.662Z",
   "questionSelection": {
     "listening": {
       "1": 10,
@@ -19,7 +19,7 @@
       "kind": "visual-choice",
       "hint": "音声を聞いて、内容に合う図を選びます。",
       "audioText": "她坐电梯到五层。",
-      "audioFile": "audio/sentences/hsk3-l1-01.wav",
+      "audioFile": "audio/sentences/hsk3-l1-01.m4a",
       "instruction": "请听录音，选择相应的图示。",
       "explanation": "她坐电梯到五层。",
       "choices": [
@@ -48,7 +48,7 @@
       "kind": "visual-choice",
       "hint": "音声を聞いて、内容に合う図を選びます。",
       "audioText": "我每天坐地铁上班。",
-      "audioFile": "audio/sentences/hsk3-l1-02.wav",
+      "audioFile": "audio/sentences/hsk3-l1-02.m4a",
       "instruction": "请听录音，选择相应的图示。",
       "explanation": "我每天坐地铁上班。",
       "choices": [
@@ -77,7 +77,7 @@
       "kind": "visual-choice",
       "hint": "音声を聞いて、内容に合う図を選びます。",
       "audioText": "他把房间打扫干净了。",
-      "audioFile": "audio/sentences/hsk3-l1-03.wav",
+      "audioFile": "audio/sentences/hsk3-l1-03.m4a",
       "instruction": "请听录音，选择相应的图示。",
       "explanation": "他把房间打扫干净了。",
       "choices": [
@@ -106,7 +106,7 @@
       "kind": "visual-choice",
       "hint": "音声を聞いて、内容に合う図を選びます。",
       "audioText": "爷爷在公园锻炼身体。",
-      "audioFile": "audio/sentences/hsk3-l1-04.wav",
+      "audioFile": "audio/sentences/hsk3-l1-04.m4a",
       "instruction": "请听录音，选择相应的图示。",
       "explanation": "爷爷在公园锻炼身体。",
       "choices": [
@@ -135,7 +135,7 @@
       "kind": "visual-choice",
       "hint": "音声を聞いて、内容に合う図を選びます。",
       "audioText": "她去超市买新鲜的葡萄。",
-      "audioFile": "audio/sentences/hsk3-l1-05.wav",
+      "audioFile": "audio/sentences/hsk3-l1-05.m4a",
       "instruction": "请听录音，选择相应的图示。",
       "explanation": "她去超市买新鲜的葡萄。",
       "choices": [
@@ -164,7 +164,7 @@
       "kind": "visual-choice",
       "hint": "音声を聞いて、内容に合う図を選びます。",
       "audioText": "学生在图书馆认真复习。",
-      "audioFile": "audio/sentences/hsk3-l1-06.wav",
+      "audioFile": "audio/sentences/hsk3-l1-06.m4a",
       "instruction": "请听录音，选择相应的图示。",
       "explanation": "学生在图书馆认真复习。",
       "choices": [
@@ -193,7 +193,7 @@
       "kind": "visual-choice",
       "hint": "音声を聞いて、内容に合う図を選びます。",
       "audioText": "同事们正在办公室开会。",
-      "audioFile": "audio/sentences/hsk3-l1-07.wav",
+      "audioFile": "audio/sentences/hsk3-l1-07.m4a",
       "instruction": "请听录音，选择相应的图示。",
       "explanation": "同事们正在办公室开会。",
       "choices": [
@@ -222,7 +222,7 @@
       "kind": "visual-choice",
       "hint": "音声を聞いて、内容に合う図を選びます。",
       "audioText": "旅行以前别忘了带护照。",
-      "audioFile": "audio/sentences/hsk3-l1-08.wav",
+      "audioFile": "audio/sentences/hsk3-l1-08.m4a",
       "instruction": "请听录音，选择相应的图示。",
       "explanation": "旅行以前别忘了带护照。",
       "choices": [
@@ -251,7 +251,7 @@
       "kind": "visual-choice",
       "hint": "音声を聞いて、内容に合う図を選びます。",
       "audioText": "他们正在搬家。",
-      "audioFile": "audio/sentences/hsk3-l1-09.wav",
+      "audioFile": "audio/sentences/hsk3-l1-09.m4a",
       "instruction": "请听录音，选择相应的图示。",
       "explanation": "他们正在搬家。",
       "choices": [
@@ -280,7 +280,7 @@
       "kind": "visual-choice",
       "hint": "音声を聞いて、内容に合う図を選びます。",
       "audioText": "周末我们打算去爬山。",
-      "audioFile": "audio/sentences/hsk3-l1-10.wav",
+      "audioFile": "audio/sentences/hsk3-l1-10.m4a",
       "instruction": "请听录音，选择相应的图示。",
       "explanation": "周末我们打算去爬山。",
       "choices": [
@@ -309,7 +309,7 @@
       "kind": "audio-judge",
       "hint": "音声を聞いて、画面の文と内容が合っているかを判断します。",
       "audioText": "小李最近每天都锻炼，所以身体比以前好多了。",
-      "audioFile": "audio/sentences/hsk3-l2-01.wav",
+      "audioFile": "audio/sentences/hsk3-l2-01.m4a",
       "prompt": "小李的身体有了变化。",
       "choices": [
         {
@@ -332,7 +332,7 @@
       "kind": "audio-judge",
       "hint": "音声を聞いて、画面の文と内容が合っているかを判断します。",
       "audioText": "外面虽然刮风，但是太阳很好，我们还是决定去公园。",
-      "audioFile": "audio/sentences/hsk3-l2-02.wav",
+      "audioFile": "audio/sentences/hsk3-l2-02.m4a",
       "prompt": "因为天气不好，他们不去公园了。",
       "choices": [
         {
@@ -355,7 +355,7 @@
       "kind": "audio-judge",
       "hint": "音声を聞いて、画面の文と内容が合っているかを判断します。",
       "audioText": "我的手机昨天坏了，今天下午拿去检查。",
-      "audioFile": "audio/sentences/hsk3-l2-03.wav",
+      "audioFile": "audio/sentences/hsk3-l2-03.m4a",
       "prompt": "他的手机出了问题。",
       "choices": [
         {
@@ -378,7 +378,7 @@
       "kind": "audio-judge",
       "hint": "音声を聞いて、画面の文と内容が合っているかを判断します。",
       "audioText": "我以为护照在行李箱里，后来在桌子下面找到了。",
-      "audioFile": "audio/sentences/hsk3-l2-04.wav",
+      "audioFile": "audio/sentences/hsk3-l2-04.m4a",
       "prompt": "护照最后在行李箱里找到了。",
       "choices": [
         {
@@ -401,7 +401,7 @@
       "kind": "audio-judge",
       "hint": "音声を聞いて、画面の文と内容が合っているかを判断します。",
       "audioText": "这家宾馆离火车站很近，房间也很干净，就是有点儿贵。",
-      "audioFile": "audio/sentences/hsk3-l2-05.wav",
+      "audioFile": "audio/sentences/hsk3-l2-05.m4a",
       "prompt": "这家宾馆很方便。",
       "choices": [
         {
@@ -424,7 +424,7 @@
       "kind": "audio-judge",
       "hint": "音声を聞いて、画面の文と内容が合っているかを判断します。",
       "audioText": "妹妹发烧了，医生说她这两天必须在家休息。",
-      "audioFile": "audio/sentences/hsk3-l2-06.wav",
+      "audioFile": "audio/sentences/hsk3-l2-06.m4a",
       "prompt": "妹妹这两天要去学校。",
       "choices": [
         {
@@ -447,7 +447,7 @@
       "kind": "audio-judge",
       "hint": "音声を聞いて、画面の文と内容が合っているかを判断します。",
       "audioText": "张经理对这次表演很满意，还表示以后愿意帮忙。",
-      "audioFile": "audio/sentences/hsk3-l2-07.wav",
+      "audioFile": "audio/sentences/hsk3-l2-07.m4a",
       "prompt": "张经理喜欢这次表演。",
       "choices": [
         {
@@ -470,7 +470,7 @@
       "kind": "audio-judge",
       "hint": "音声を聞いて、画面の文と内容が合っているかを判断します。",
       "audioText": "我先去银行，然后到超市买东西，最后才回家。",
-      "audioFile": "audio/sentences/hsk3-l2-08.wav",
+      "audioFile": "audio/sentences/hsk3-l2-08.m4a",
       "prompt": "我回家以前去了两个地方。",
       "choices": [
         {
@@ -493,7 +493,7 @@
       "kind": "audio-judge",
       "hint": "音声を聞いて、画面の文と内容が合っているかを判断します。",
       "audioText": "他普通话说得不错，但是写汉字还比较慢。",
-      "audioFile": "audio/sentences/hsk3-l2-09.wav",
+      "audioFile": "audio/sentences/hsk3-l2-09.m4a",
       "prompt": "他不会说普通话。",
       "choices": [
         {
@@ -516,7 +516,7 @@
       "kind": "audio-judge",
       "hint": "音声を聞いて、画面の文と内容が合っているかを判断します。",
       "audioText": "这本字典是姐姐送我的生日礼物，我一直放在书包里。",
-      "audioFile": "audio/sentences/hsk3-l2-10.wav",
+      "audioFile": "audio/sentences/hsk3-l2-10.m4a",
       "prompt": "字典是他自己买的。",
       "choices": [
         {
@@ -539,7 +539,7 @@
       "kind": "audio-dialogue",
       "hint": "会話のあと、間をおいて読まれる設問（问：〜）に答えます。",
       "audioText": "女：你的自行车找到了吗？男：找到了，朋友说明天下午给我送来。问：自行车什么时候送来？",
-      "audioFile": "audio/sentences/hsk3-l3-01.wav",
+      "audioFile": "audio/sentences/hsk3-l3-01.m4a",
       "prompt": "自行车什么时候送来？",
       "choices": [
         {
@@ -566,7 +566,7 @@
       "kind": "audio-dialogue",
       "hint": "会話のあと、間をおいて読まれる設問（问：〜）に答えます。",
       "audioText": "男：你怎么不坐电梯？女：我住三层，自己走上去还能锻炼身体。问：女的为什么不坐电梯？",
-      "audioFile": "audio/sentences/hsk3-l3-02.wav",
+      "audioFile": "audio/sentences/hsk3-l3-02.m4a",
       "prompt": "女的为什么不坐电梯？",
       "choices": [
         {
@@ -593,7 +593,7 @@
       "kind": "audio-dialogue",
       "hint": "会話のあと、間をおいて読まれる設問（问：〜）に答えます。",
       "audioText": "女：您好，您要喝点儿什么？男：一杯咖啡，再来一块蛋糕。问：他们最可能在哪儿？",
-      "audioFile": "audio/sentences/hsk3-l3-03.wav",
+      "audioFile": "audio/sentences/hsk3-l3-03.m4a",
       "prompt": "他们最可能在哪儿？",
       "choices": [
         {
@@ -620,7 +620,7 @@
       "kind": "audio-dialogue",
       "hint": "会話のあと、間をおいて読まれる設問（问：〜）に答えます。",
       "audioText": "男：明天是妈妈的生日，我们送什么好？女：她最喜欢花，我们买些花吧。问：他们打算送什么？",
-      "audioFile": "audio/sentences/hsk3-l3-04.wav",
+      "audioFile": "audio/sentences/hsk3-l3-04.m4a",
       "prompt": "他们打算送什么？",
       "choices": [
         {
@@ -647,7 +647,7 @@
       "kind": "audio-dialogue",
       "hint": "会話のあと、間をおいて読まれる設問（问：〜）に答えます。",
       "audioText": "女：作业做完了吗？男：都写完了，还要检查一下。问：男的接下来要做什么？",
-      "audioFile": "audio/sentences/hsk3-l3-05.wav",
+      "audioFile": "audio/sentences/hsk3-l3-05.m4a",
       "prompt": "男的接下来要做什么？",
       "choices": [
         {
@@ -674,7 +674,7 @@
       "kind": "audio-dialogue",
       "hint": "会話のあと、間をおいて読まれる設問（问：〜）に答えます。",
       "audioText": "男：会议已经开始了吗？女：还没有，经理十分钟以后才来。问：经理什么时候来？",
-      "audioFile": "audio/sentences/hsk3-l3-06.wav",
+      "audioFile": "audio/sentences/hsk3-l3-06.m4a",
       "prompt": "经理什么时候来？",
       "choices": [
         {
@@ -701,7 +701,7 @@
       "kind": "audio-dialogue",
       "hint": "会話のあと、間をおいて読まれる設問（问：〜）に答えます。",
       "audioText": "女：你的数学成绩怎么样？男：这次比上次提高了不少。问：男的数学成绩怎么样？",
-      "audioFile": "audio/sentences/hsk3-l3-07.wav",
+      "audioFile": "audio/sentences/hsk3-l3-07.m4a",
       "prompt": "男的数学成绩怎么样？",
       "choices": [
         {
@@ -728,7 +728,7 @@
       "kind": "audio-dialogue",
       "hint": "会話のあと、間をおいて読まれる設問（问：〜）に答えます。",
       "audioText": "男：外面这么冷，你怎么只穿一件衬衫？女：我出门的时候太阳还很好。问：关于女的，可以知道什么？",
-      "audioFile": "audio/sentences/hsk3-l3-08.wav",
+      "audioFile": "audio/sentences/hsk3-l3-08.m4a",
       "prompt": "关于女的，可以知道什么？",
       "choices": [
         {
@@ -755,7 +755,7 @@
       "kind": "audio-dialogue",
       "hint": "会話のあと、間をおいて読まれる設問（问：〜）に答えます。",
       "audioText": "女：请问，洗手间在哪儿？男：一直向前走，在电梯的右边。问：洗手间在哪儿？",
-      "audioFile": "audio/sentences/hsk3-l3-09.wav",
+      "audioFile": "audio/sentences/hsk3-l3-09.m4a",
       "prompt": "洗手间在哪儿？",
       "choices": [
         {
@@ -782,7 +782,7 @@
       "kind": "audio-dialogue",
       "hint": "会話のあと、間をおいて読まれる設問（问：〜）に答えます。",
       "audioText": "男：你觉得这次比赛怎么样？女：虽然没得第一，但是大家都很努力。问：女的怎么看这次比赛？",
-      "audioFile": "audio/sentences/hsk3-l3-10.wav",
+      "audioFile": "audio/sentences/hsk3-l3-10.m4a",
       "prompt": "女的怎么看这次比赛？",
       "choices": [
         {
@@ -809,7 +809,7 @@
       "kind": "audio-dialogue",
       "hint": "会話のあと、間をおいて読まれる設問（问：〜）に答えます。",
       "audioText": "女：你怎么才到？男：路上突然下大雨，公共汽车也来得很慢。问：男的为什么迟到？",
-      "audioFile": "audio/sentences/hsk3-l3-11.wav",
+      "audioFile": "audio/sentences/hsk3-l3-11.m4a",
       "prompt": "男的为什么迟到？",
       "choices": [
         {
@@ -836,7 +836,7 @@
       "kind": "audio-dialogue",
       "hint": "会話のあと、間をおいて読まれる設問（问：〜）に答えます。",
       "audioText": "男：这件蓝衬衫你穿着很好看。女：可是我更喜欢那件白的。问：女的喜欢哪件？",
-      "audioFile": "audio/sentences/hsk3-l3-12.wav",
+      "audioFile": "audio/sentences/hsk3-l3-12.m4a",
       "prompt": "女的喜欢哪件？",
       "choices": [
         {
@@ -863,7 +863,7 @@
       "kind": "audio-dialogue",
       "hint": "会話のあと、間をおいて読まれる設問（问：〜）に答えます。",
       "audioText": "女：听说你找到新工作了？男：是的，下个月去银行上班。问：男的要去哪儿工作？",
-      "audioFile": "audio/sentences/hsk3-l3-13.wav",
+      "audioFile": "audio/sentences/hsk3-l3-13.m4a",
       "prompt": "男的要去哪儿工作？",
       "choices": [
         {
@@ -890,7 +890,7 @@
       "kind": "audio-dialogue",
       "hint": "会話のあと、間をおいて読まれる設問（问：〜）に答えます。",
       "audioText": "男：你认识新来的同事吗？女：昨天刚见面，她很热情。问：女的觉得新同事怎么样？",
-      "audioFile": "audio/sentences/hsk3-l3-14.wav",
+      "audioFile": "audio/sentences/hsk3-l3-14.m4a",
       "prompt": "女的觉得新同事怎么样？",
       "choices": [
         {
@@ -917,7 +917,7 @@
       "kind": "audio-dialogue",
       "hint": "会話のあと、間をおいて読まれる設問（问：〜）に答えます。",
       "audioText": "男：你的房间真干净。女：我每个星期六都打扫一次。问：女的多久打扫一次房间？",
-      "audioFile": "audio/sentences/hsk3-l3-15.wav",
+      "audioFile": "audio/sentences/hsk3-l3-15.m4a",
       "prompt": "女的多久打扫一次房间？",
       "choices": [
         {
@@ -944,7 +944,7 @@
       "kind": "audio-dialogue",
       "hint": "会話のあと、間をおいて読まれる設問（问：〜）に答えます。",
       "audioText": "男：你不是打算坐地铁吗？女：地铁今天有问题，我就坐出租车了。问：女的为什么坐出租车？",
-      "audioFile": "audio/sentences/hsk3-l3-16.wav",
+      "audioFile": "audio/sentences/hsk3-l3-16.m4a",
       "prompt": "女的为什么坐出租车？",
       "choices": [
         {
@@ -971,7 +971,7 @@
       "kind": "audio-dialogue",
       "hint": "会話のあと、間をおいて読まれる設問（问：〜）に答えます。",
       "audioText": "女：这个字我不认识，你能教我吗？男：好，我先写给你看。问：男的要做什么？",
-      "audioFile": "audio/sentences/hsk3-l3-17.wav",
+      "audioFile": "audio/sentences/hsk3-l3-17.m4a",
       "prompt": "男的要做什么？",
       "choices": [
         {
@@ -998,7 +998,7 @@
       "kind": "audio-dialogue",
       "hint": "会話のあと、間をおいて読まれる設問（问：〜）に答えます。",
       "audioText": "男：你的汉语水平提高得真快。女：我每天听新闻，还经常和中国朋友说话。问：女的怎么学习汉语？",
-      "audioFile": "audio/sentences/hsk3-l3-18.wav",
+      "audioFile": "audio/sentences/hsk3-l3-18.m4a",
       "prompt": "女的怎么学习汉语？",
       "choices": [
         {
@@ -1025,7 +1025,7 @@
       "kind": "audio-dialogue",
       "hint": "会話のあと、間をおいて読まれる設問（问：〜）に答えます。",
       "audioText": "女：冰箱里什么都没有了。男：那我们先去超市，然后回家做饭。问：他们先做什么？",
-      "audioFile": "audio/sentences/hsk3-l3-19.wav",
+      "audioFile": "audio/sentences/hsk3-l3-19.m4a",
       "prompt": "他们先做什么？",
       "choices": [
         {
@@ -1052,7 +1052,7 @@
       "kind": "audio-dialogue",
       "hint": "会話のあと、間をおいて読まれる設問（问：〜）に答えます。",
       "audioText": "男：你为什么一直看地图？女：我在找附近的宾馆，宾馆就在前面。问：女的在找什么？",
-      "audioFile": "audio/sentences/hsk3-l3-20.wav",
+      "audioFile": "audio/sentences/hsk3-l3-20.m4a",
       "prompt": "女的在找什么？",
       "choices": [
         {
@@ -1079,7 +1079,7 @@
       "kind": "audio-long-dialogue",
       "hint": "少し長い会話のあと、間をおいて読まれる設問（问：〜）に答えます。",
       "audioText": "男：你的行李箱怎么这么重？女：里面有很多书，还有给朋友的礼物。男：需要我帮你拿吗？女：谢谢，你帮我拿这个包就行。问：女的让男的拿什么？",
-      "audioFile": "audio/sentences/hsk3-l4-01.wav",
+      "audioFile": "audio/sentences/hsk3-l4-01.m4a",
       "prompt": "女的让男的拿什么？",
       "choices": [
         {
@@ -1106,7 +1106,7 @@
       "kind": "audio-long-dialogue",
       "hint": "少し長い会話のあと、間をおいて読まれる設問（问：〜）に答えます。",
       "audioText": "女：你怎么还在办公室？男：我要检查一下这个月的成绩。女：需要我帮忙吗？男：不用，我马上就完成了。问：男的在做什么？",
-      "audioFile": "audio/sentences/hsk3-l4-02.wav",
+      "audioFile": "audio/sentences/hsk3-l4-02.m4a",
       "prompt": "男的在做什么？",
       "choices": [
         {
@@ -1133,7 +1133,7 @@
       "kind": "audio-long-dialogue",
       "hint": "少し長い会話のあと、間をおいて読まれる設問（问：〜）に答えます。",
       "audioText": "男：听说你搬家了？女：对，上个星期刚搬完。男：新房子怎么样？女：环境很安静，就是离地铁站有点儿远。问：女的觉得新房子怎么样？",
-      "audioFile": "audio/sentences/hsk3-l4-03.wav",
+      "audioFile": "audio/sentences/hsk3-l4-03.m4a",
       "prompt": "女的觉得新房子怎么样？",
       "choices": [
         {
@@ -1160,7 +1160,7 @@
       "kind": "audio-long-dialogue",
       "hint": "少し長い会話のあと、間をおいて読まれる設問（问：〜）に答えます。",
       "audioText": "女：明天的会议几点开始？男：以前是上午九点，经理昨天换成了下午两点。女：为什么换了？男：因为几个同事上午到不了。问：会议明天什么时候开始？",
-      "audioFile": "audio/sentences/hsk3-l4-04.wav",
+      "audioFile": "audio/sentences/hsk3-l4-04.m4a",
       "prompt": "会议明天什么时候开始？",
       "choices": [
         {
@@ -1187,7 +1187,7 @@
       "kind": "audio-long-dialogue",
       "hint": "少し長い会話のあと、間をおいて読まれる設問（问：〜）に答えます。",
       "audioText": "男：你的感冒好点儿了吗？女：还是有点儿疼，医生让我多休息。男：那你今天别去上班了。女：我已经告诉经理了。问：女的今天为什么不上班？",
-      "audioFile": "audio/sentences/hsk3-l4-05.wav",
+      "audioFile": "audio/sentences/hsk3-l4-05.m4a",
       "prompt": "女的今天为什么不上班？",
       "choices": [
         {
@@ -1214,7 +1214,7 @@
       "kind": "audio-long-dialogue",
       "hint": "少し長い会話のあと、間をおいて読まれる設問（问：〜）に答えます。",
       "audioText": "女：周末打算做什么？男：我想去爬山，可是听说要下雨。女：那我们下次再去吧。男：好，这个周末先去看电影。问：他们这个周末做什么？",
-      "audioFile": "audio/sentences/hsk3-l4-06.wav",
+      "audioFile": "audio/sentences/hsk3-l4-06.m4a",
       "prompt": "他们这个周末做什么？",
       "choices": [
         {
@@ -1241,7 +1241,7 @@
       "kind": "audio-long-dialogue",
       "hint": "少し長い会話のあと、間をおいて読まれる設問（问：〜）に答えます。",
       "audioText": "男：这条裤子多少钱？女：一百五十元，比上个月便宜了五十。男：那我要一条蓝色的。女：好的，给你。问：这条裤子上个月多少钱？",
-      "audioFile": "audio/sentences/hsk3-l4-07.wav",
+      "audioFile": "audio/sentences/hsk3-l4-07.m4a",
       "prompt": "这条裤子上个月多少钱？",
       "choices": [
         {
@@ -1268,7 +1268,7 @@
       "kind": "audio-long-dialogue",
       "hint": "少し長い会話のあと、間をおいて読まれる設問（问：〜）に答えます。",
       "audioText": "男：这家饭馆的菜真不错。女：是啊，就是服务有点儿慢。男：下次我们早点儿来。女：好，下次先打电话。问：他们觉得这家饭馆怎么样？",
-      "audioFile": "audio/sentences/hsk3-l4-08.wav",
+      "audioFile": "audio/sentences/hsk3-l4-08.m4a",
       "prompt": "他们觉得这家饭馆怎么样？",
       "choices": [
         {
@@ -1295,7 +1295,7 @@
       "kind": "audio-long-dialogue",
       "hint": "少し長い会話のあと、間をおいて読まれる設問（问：〜）に答えます。",
       "audioText": "女：你今天怎么走着来的？男：我的自行车昨天坏了。女：那你明天怎么上班？男：我打算坐地铁。问：男的明天怎么上班？",
-      "audioFile": "audio/sentences/hsk3-l4-09.wav",
+      "audioFile": "audio/sentences/hsk3-l4-09.m4a",
       "prompt": "男的明天怎么上班？",
       "choices": [
         {
@@ -1322,7 +1322,7 @@
       "kind": "audio-long-dialogue",
       "hint": "少し長い会話のあと、間をおいて読まれる設問（问：〜）に答えます。",
       "audioText": "男：这张照片是在哪儿照的？女：去年在上海，我跟同事一起去的。男：你们玩了几天？女：一共五天，还爬了山。问：女的去上海做什么？",
-      "audioFile": "audio/sentences/hsk3-l4-10.wav",
+      "audioFile": "audio/sentences/hsk3-l4-10.m4a",
       "prompt": "女的去上海做什么？",
       "choices": [
         {
@@ -2127,6 +2127,8 @@
         "桌子上"
       ],
       "answer": "他把那本字典放在桌子上。",
+      "meaning": "彼はその辞書を机の上に置きました。",
+      "answerAudioFile": "audio/sentences/hsk3-w1-01-answer.m4a",
       "instruction": "请把下面的词语排列成正确的句子。",
       "selected": []
     },
@@ -2144,6 +2146,8 @@
         "好了"
       ],
       "answer": "这里的环境越来越好了。",
+      "meaning": "ここの環境はますます良くなりました。",
+      "answerAudioFile": "audio/sentences/hsk3-w1-02-answer.m4a",
       "instruction": "请把下面的词语排列成正确的句子。",
       "selected": []
     },
@@ -2161,6 +2165,8 @@
         "做作业"
       ],
       "answer": "她一边听音乐一边做作业。",
+      "meaning": "彼女は音楽を聴きながら宿題をします。",
+      "answerAudioFile": "audio/sentences/hsk3-w1-03-answer.m4a",
       "instruction": "请把下面的词语排列成正确的句子。",
       "selected": []
     },
@@ -2179,6 +2185,8 @@
         "骑走了"
       ],
       "answer": "我的自行车被朋友骑走了。",
+      "meaning": "私の自転車は友達に乗って行かれました。",
+      "answerAudioFile": "audio/sentences/hsk3-w1-04-answer.m4a",
       "instruction": "请把下面的词语排列成正确的句子。",
       "selected": []
     },
@@ -2196,6 +2204,8 @@
         "容易"
       ],
       "answer": "这个问题比那个容易。",
+      "meaning": "この問題はあの問題より簡単です。",
+      "answerAudioFile": "audio/sentences/hsk3-w1-05-answer.m4a",
       "instruction": "请把下面的词语排列成正确的句子。",
       "selected": []
     },
@@ -2207,6 +2217,8 @@
       "hint": "カッコ内のピンインが表す漢字を書きます。",
       "sentence": "我的腿有点儿（téng）。",
       "answer": "疼",
+      "meaning": "私の脚は少し痛いです。",
+      "answerAudioFile": "audio/sentences/hsk3-w2-01-answer.m4a",
       "instruction": "请根据拼音在空格上写汉字。"
     },
     {
@@ -2217,6 +2229,8 @@
       "hint": "カッコ内のピンインが表す漢字を書きます。",
       "sentence": "她穿了一条（lán）色的裙子。",
       "answer": "蓝",
+      "meaning": "彼女は青いスカートをはいています。",
+      "answerAudioFile": "audio/sentences/hsk3-w2-02-answer.m4a",
       "instruction": "请根据拼音在空格上写汉字。"
     },
     {
@@ -2227,6 +2241,8 @@
       "hint": "カッコ内のピンインが表す漢字を書きます。",
       "sentence": "今天下午有雨，出门要带（sǎn）。",
       "answer": "伞",
+      "meaning": "今日の午後は雨なので、出かけるときは傘を持っていく必要があります。",
+      "answerAudioFile": "audio/sentences/hsk3-w2-03-answer.m4a",
       "instruction": "请根据拼音在空格上写汉字。"
     },
     {
@@ -2237,6 +2253,8 @@
       "hint": "カッコ内のピンインが表す漢字を書きます。",
       "sentence": "妹妹的（liǎn）红了。",
       "answer": "脸",
+      "meaning": "妹の顔が赤くなりました。",
+      "answerAudioFile": "audio/sentences/hsk3-w2-04-answer.m4a",
       "instruction": "请根据拼音在空格上写汉字。"
     },
     {
@@ -2247,6 +2265,8 @@
       "hint": "カッコ内のピンインが表す漢字を書きます。",
       "sentence": "天黑了，请把（dēng）打开。",
       "answer": "灯",
+      "meaning": "暗くなったので、明かりをつけてください。",
+      "answerAudioFile": "audio/sentences/hsk3-w2-05-answer.m4a",
       "instruction": "请根据拼音在空格上写汉字。"
     }
   ]

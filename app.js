@@ -30,7 +30,7 @@ const CATEGORY_GROUP_META = {
 // この語数以上の分類は、まぎらわしい選択肢を同じ分類の中から作る。
 const CATEGORY_QUIZ_MIN_POOL = 10;
 // 分類ページから開ける解説ページ。分類ID → ガイドID。
-const CATEGORY_GUIDES = { particle: "de" };
+const CATEGORY_GUIDES = { particle: "de", degree: "bi", preposition: "ba", conjunction: "conjunction", direction: "complement", verb: "complement" };
 
 const WRITING_BANK = [
   { type: "reorder", tokens: ["我", "每天", "学习", "汉语"], answer: "我每天学习汉语。", meaning: "私は毎日中国語を勉強します。" },
@@ -43,17 +43,20 @@ const WRITING_BANK = [
   { type: "reorder", tokens: ["这件", "衣服", "太贵", "了"], answer: "这件衣服太贵了。", meaning: "この服は高すぎます。" },
   { type: "reorder", tokens: ["我", "已经", "完成", "作业", "了"], answer: "我已经完成作业了。", meaning: "私はもう宿題を終えました。" },
   { type: "reorder", tokens: ["妈妈", "在", "厨房", "做饭"], answer: "妈妈在厨房做饭。", meaning: "母は台所で料理しています。" },
-  { type: "input", pinyin: "qǐ", answer: "起", meaning: "起きる", sentence: "我每天七点（qǐ）床。" },
-  { type: "input", pinyin: "rè", answer: "热", meaning: "暑い", sentence: "今天天气很（rè）。" },
-  { type: "input", pinyin: "shū", answer: "书", meaning: "本", sentence: "我想买一本（shū）。" },
-  { type: "input", pinyin: "bēi", answer: "杯", meaning: "杯", sentence: "请喝一（bēi）茶。" },
-  { type: "input", pinyin: "yǒu", answer: "友", meaning: "友", sentence: "他是我的好朋（yǒu）。" },
-  { type: "input", pinyin: "suì", answer: "岁", meaning: "歳", sentence: "她今年二十（suì）。" },
-  { type: "input", pinyin: "chē", answer: "车", meaning: "車", sentence: "我们坐公共汽（chē）去。" },
-  { type: "input", pinyin: "chī", answer: "吃", meaning: "食べる", sentence: "妹妹喜欢（chī）苹果。" },
-  { type: "input", pinyin: "mén", answer: "门", meaning: "ドア", sentence: "请打开（mén）。" },
-  { type: "input", pinyin: "yǔ", answer: "雨", meaning: "雨", sentence: "外面下（yǔ）了。" },
+  { type: "input", pinyin: "qǐ", answer: "起", meaning: "私は毎日7時に起きます。", sentence: "我每天七点（qǐ）床。" },
+  { type: "input", pinyin: "rè", answer: "热", meaning: "今日はとても暑いです。", sentence: "今天天气很（rè）。" },
+  { type: "input", pinyin: "shū", answer: "书", meaning: "私は本を1冊買いたいです。", sentence: "我想买一本（shū）。" },
+  { type: "input", pinyin: "bēi", answer: "杯", meaning: "お茶を1杯どうぞ。", sentence: "请喝一（bēi）茶。" },
+  { type: "input", pinyin: "yǒu", answer: "友", meaning: "彼は私の親しい友達です。", sentence: "他是我的好朋（yǒu）。" },
+  { type: "input", pinyin: "suì", answer: "岁", meaning: "彼女は今年20歳です。", sentence: "她今年二十（suì）。" },
+  { type: "input", pinyin: "chē", answer: "车", meaning: "私たちはバスで行きます。", sentence: "我们坐公共汽（chē）去。" },
+  { type: "input", pinyin: "chī", answer: "吃", meaning: "妹はリンゴを食べるのが好きです。", sentence: "妹妹喜欢（chī）苹果。" },
+  { type: "input", pinyin: "mén", answer: "门", meaning: "ドアを開けてください。", sentence: "请打开（mén）。" },
+  { type: "input", pinyin: "yǔ", answer: "雨", meaning: "外は雨が降っています。", sentence: "外面下（yǔ）了。" },
 ];
+
+// 作文トレーニングの正解音声。並びが変わるとファイルとずれるので、元の並び順の番号で固定する。
+const WRITING_ITEMS = WRITING_BANK.map((item, index) => ({ ...item, answerAudioFile: `audio/sentences/writing-bank-${String(index + 1).padStart(3, "0")}.m4a` }));
 
 const MOCK_RESPONSE_BANK = [
   { level: 1, prompt: "你好吗？", answer: "我很好。" },
@@ -116,11 +119,11 @@ const state = {
   currentView: "home",
   wordFilter: "all",
   wordCategory: "all",
-  exampleFilter: "all",
+  wordHideMeaning: false,
   categoryFilter: "all",
   selectedCategory: null,
   checked: loadChecked(),
-  checkedOnly: { words: false, examples: false, categories: false },
+  checkedOnly: { words: false, categories: false },
   daily: loadDaily(),
   dailyDays: [],
   quiz: { questions: [], index: 0, correct: 0, answered: false, source: null, direction: "cn-ja", answers: [] },
@@ -144,7 +147,6 @@ async function init() {
   renderWordCategoryOptions();
   renderWords();
   renderCategories();
-  renderExamples();
   renderChecked();
   renderDaily();
   renderProgress();
@@ -194,7 +196,6 @@ function bindEvents() {
   setVocabularyDirection(state.vocabularyDirection);
   $("#random-quiz").addEventListener("click", () => startQuiz(state.words, "all", state.vocabularyDirection));
   $("#review-quiz").addEventListener("click", () => startReviewQuiz(state.vocabularyDirection));
-  $("#open-examples").addEventListener("click", () => navigate("examples"));
   $("#open-categories").addEventListener("click", () => closeCategoryDetail());
   $("#daily-open").addEventListener("click", () => navigate("daily"));
   $("#daily-start").addEventListener("click", startDailySession);
@@ -216,6 +217,7 @@ function bindEvents() {
   $("#practice-close").addEventListener("click", closePractice);
   $("#practice-next").addEventListener("click", nextPracticeQuestion);
   $("#practice-audio").addEventListener("click", () => playPracticeAudio(false));
+  $("#practice-script-audio").addEventListener("click", playPracticeReviewAudio);
   $("#practice-retry").addEventListener("click", retryPractice);
   $("#practice-home").addEventListener("click", () => {
     // 分類・解説から始めた練習は、元のページへ戻れるほうが続けやすい。
@@ -225,7 +227,15 @@ function bindEvents() {
     else if (last?.categoryId) openCategory(last.categoryId);
     else navigate("exam");
   });
-  $("#quiz-close").addEventListener("click", () => navigate("home"));
+  $("#quiz-close").addEventListener("click", () => {
+    const { source, questions, answers } = state.quiz;
+    const isDaily = String(source).startsWith("daily");
+    const answered = answers.filter(Boolean).length;
+    // 途中でやめた回は完了にせず、同じ問題をもう一度出す。先に知らせてから閉じる。
+    if (isDaily && answered > 0 && answered < questions.length
+      && !window.confirm(`まだ${questions.length - answered}問残っています。途中でやめると今日の分は完了にならず、同じ${questions.length}問をもう一度出題します。やめますか？`)) return;
+    navigate(isDaily ? "daily" : "home");
+  });
   $("#next-question").addEventListener("click", nextQuestion);
   $("#speak-button").addEventListener("click", () => speak(state.quiz.questions[state.quiz.index], $("#speak-button")));
   $("#quiz-example-reveal").addEventListener("click", revealQuizExample);
@@ -238,8 +248,18 @@ function bindEvents() {
   $("#retry-quiz").addEventListener("click", retryQuiz);
   $("#back-home").addEventListener("click", () => navigate("home"));
   $("#word-search").addEventListener("input", renderWords);
-  $("#example-search").addEventListener("input", renderExamples);
   $("#category-search").addEventListener("input", renderCategories);
+  $("#word-hide-meaning").addEventListener("click", () => {
+    state.wordHideMeaning = !state.wordHideMeaning;
+    $("#word-hide-meaning").classList.toggle("is-checked", state.wordHideMeaning);
+    $("#word-hide-meaning").setAttribute("aria-pressed", String(state.wordHideMeaning));
+    renderWords();
+  });
+  $("#word-list").addEventListener("click", (event) => {
+    if (!state.wordHideMeaning || event.target.closest("button")) return;
+    const card = event.target.closest(".word-entry");
+    if (card) card.classList.toggle("is-open");
+  });
   $("#word-category").addEventListener("change", (event) => {
     state.wordCategory = event.target.value;
     renderWords();
@@ -250,7 +270,12 @@ function bindEvents() {
     renderCategories();
   }));
   $("#category-back").addEventListener("click", closeCategoryDetail);
-  $("#guide-back").addEventListener("click", closeCategoryDetail);
+  // トピックのページからは、まとめのページへ戻る。
+  $("#guide-back").addEventListener("click", () => {
+    const parent = guideById(state.selectedGuide)?.parent;
+    if (parent && guideById(parent)) openGuide(parent);
+    else closeCategoryDetail();
+  });
   $("#guide-practice").addEventListener("click", () => startGuidePractice());
   $("#measure-quiz").addEventListener("click", startMeasurePractice);
   $("#category-quiz").addEventListener("click", () => startCategoryQuiz());
@@ -265,11 +290,6 @@ function bindEvents() {
     state.wordFilter = button.dataset.level;
     $$(".filter-chip").forEach((chip) => chip.classList.toggle("is-active", chip === button));
     renderWords();
-  }));
-  $$(".example-filter-chip").forEach((button) => button.addEventListener("click", () => {
-    state.exampleFilter = button.dataset.exampleLevel;
-    $$(".example-filter-chip").forEach((chip) => chip.classList.toggle("is-active", chip === button));
-    renderExamples();
   }));
   $("#reset-progress").addEventListener("click", resetProgress);
   document.addEventListener("click", (event) => {
@@ -292,9 +312,7 @@ function bindEvents() {
     state.checkedOnly[target] = !state.checkedOnly[target];
     button.classList.toggle("is-active", state.checkedOnly[target]);
     button.setAttribute("aria-pressed", String(state.checkedOnly[target]));
-    if (target === "words") renderWords();
-    else if (target === "categories") renderCategories();
-    else renderExamples();
+    if (target === "categories") renderCategories(); else renderWords();
   }));
   $("#checked-list").addEventListener("click", (event) => {
     const button = event.target.closest("[data-checked-audio]");
@@ -329,7 +347,7 @@ function navigate(view) {
 
 function routeFromHash() {
   const [requested, param] = (window.location.hash.replace("#", "") || "home").split("/");
-  const publicViews = ["home", "daily", "words", "categories", "guide", "examples", "checked", "exam", "progress"];
+  const publicViews = ["home", "daily", "words", "categories", "guide", "checked", "exam", "progress"];
   if (!publicViews.includes(requested)) return showView(state.currentView);
   // 分類ページは #categories/travel、解説ページは #guide/de の形で、開いている内容まで復元する。
   if (requested === "categories") state.selectedCategory = param && categoryById(param) ? param : null;
@@ -350,7 +368,6 @@ function showView(view) {
   if (view === "words") renderWords();
   if (view === "categories") renderCategories();
   if (view === "guide") renderGuide();
-  if (view === "examples") renderExamples();
   if (view === "checked") renderChecked();
   if (view === "exam") renderExamHub();
   if (view === "progress") renderProgress();
@@ -391,7 +408,7 @@ function startQuiz(pool, source, direction = "cn-ja", distractorPool = null, opt
   // 毎日20語は順番（復習→新出）を保ったまま全問出す。ふだんの単語テストは10問までランダム。
   const ordered = options.keepOrder ? [...pool] : shuffle([...pool]);
   const questions = ordered.slice(0, Math.min(options.limit || 10, pool.length));
-  state.quiz = { questions, choicePool, index: 0, correct: 0, answered: false, source, direction, answers: [] };
+  state.quiz = { questions, choicePool, index: 0, correct: 0, answered: false, source, direction, answers: [], markedForReview: new Set() };
   showView("quiz");
   renderQuestion();
 }
@@ -500,6 +517,15 @@ function showQuizExample(word) {
   $("#quiz-example-japanese").classList.toggle("is-hidden", !hasExample);
   $("#quiz-example-empty").classList.toggle("is-hidden", hasExample);
   $("#quiz-example-audio").classList.toggle("is-hidden", !hasExample);
+  // 正解でも「気になる」を付けられるように、答え合わせの画面にもマークを出す。
+  const check = $("#quiz-check");
+  const isChecked = state.checked.has(word.id);
+  const label = isChecked ? "チェックを外す" : "チェックを付ける";
+  check.dataset.checkId = word.id;
+  check.classList.toggle("is-checked", isChecked);
+  check.setAttribute("aria-pressed", String(isChecked));
+  check.setAttribute("aria-label", `${word.hanzi}に${label}`);
+  check.title = label;
 }
 
 function revealQuizExample() {
@@ -554,15 +580,51 @@ function renderWords() {
     const matchesCategory = state.wordCategory === "all" || (word.tags || []).includes(state.wordCategory);
     return matchesLevel && matchesCategory && wordHaystack(word).includes(query) && (!state.checkedOnly.words || state.checked.has(word.id));
   });
-  $("#word-list").innerHTML = filtered.map((word) => wordRowHtml(word)).join("");
-  bindWordRowAudio($("#word-list"));
+  const list = $("#word-list");
+  list.classList.toggle("is-quiz-mode", state.wordHideMeaning);
+  list.innerHTML = filtered.map((word) => wordCardHtml(word)).join("");
+  bindWordRowAudio(list);
   $("#empty-words").classList.toggle("is-hidden", filtered.length > 0);
+  $("#word-count-label").textContent = `${filtered.length}語`;
+}
+
+// 単語帳は1語1行。左に見出しと意味、右に例文を置く。
+function wordCardHtml(word) {
+  const tags = (word.tags || []).map((id) => categoryById(id)).filter(Boolean).slice(0, 2);
+  return `
+    <article class="word-entry" data-level="${word.level}" data-card-id="${escapeHtml(word.id)}">
+      <div class="entry-head">
+        <div class="entry-word">
+          <span class="hanzi">${escapeHtml(word.hanzi)}</span>
+          <span class="pinyin">${escapeHtml(word.pinyin)}</span>
+        </div>
+        <span class="mini-level">HSK ${word.level}</span>
+      </div>
+      <div class="entry-body">
+        <p class="meaning">${escapeHtml(word.meaning)}</p>
+        ${tags.length ? `<div class="word-tags">${tags.map((category) => `<button class="tag-chip" type="button" data-category-open="${escapeHtml(category.id)}" title="「${escapeHtml(category.label)}」の分類を開く">${escapeHtml(category.label)}</button>`).join("")}</div>` : ""}
+      </div>
+      ${word.example ? `<div class="entry-example">
+        <div>
+          <p class="example-chinese">${escapeHtml(word.example)}</p>
+          ${word.examplePinyin ? `<p class="example-pinyin">${escapeHtml(word.examplePinyin)}</p>` : ""}
+          <p class="example-japanese">${escapeHtml(word.exampleMeaning || "")}</p>
+        </div>
+        <button class="speak-mini example-mini" type="button" data-example-id="${escapeHtml(word.id)}" aria-label="${escapeHtml(word.hanzi)}の例文を聞く"><span aria-hidden="true">▶</span></button>
+      </div>` : `<div class="entry-example is-empty"></div>`}
+      <p class="entry-cover">タップして意味と例文を見る</p>
+      <div class="entry-actions">
+        ${checkButtonHtml(word.id)}
+        <button class="speak-mini" type="button" data-word-id="${escapeHtml(word.id)}" aria-label="${escapeHtml(word.hanzi)}の中国語発音を聞く"><span aria-hidden="true">声</span></button>
+      </div>
+    </article>`;
 }
 
 function wordHaystack(word) {
-  return `${word.hanzi} ${word.pinyin} ${word.meaning}`.toLowerCase();
+  return `${word.hanzi} ${word.pinyin} ${word.meaning} ${word.example || ""} ${word.examplePinyin || ""} ${word.exampleMeaning || ""}`.toLowerCase();
 }
 
+// 毎日20語・分類ページの一覧行。例文つきでも表示できる。
 function wordRowHtml(word, { showExample = false } = {}) {
   const hasExample = showExample && Boolean(word.example);
   return `
@@ -628,6 +690,7 @@ function renderCategories() {
     $("#empty-categories").classList.add("is-hidden");
     renderCategoryDetail(detail);
   } else {
+    renderGuideBand();
     renderCategoryGrid();
   }
 }
@@ -678,10 +741,16 @@ function renderCategoryDetail(category) {
   $("#measure-guide").classList.toggle("is-hidden", !isMeasure);
   $("#measure-quiz").classList.toggle("is-hidden", !isMeasure);
   $("#category-word-list").classList.toggle("is-hidden", isMeasure);
-  const guideId = CATEGORY_GUIDES[category.id];
+  // その分類に対応する解説ページがあれば、一覧の上から直接開けるようにする。
+  const guide = guideById(CATEGORY_GUIDES[category.id]);
   const guideLink = $("#category-guide-link");
-  guideLink.classList.toggle("is-hidden", !guideId);
-  if (guideId) guideLink.dataset.guideOpen = guideId;
+  guideLink.classList.toggle("is-hidden", !guide);
+  if (guide) {
+    guideLink.dataset.guideOpen = guide.id;
+    guideLink.innerHTML = `<span class="guide-card-mark">${escapeHtml(guide.mark || "文")}</span>
+      <span class="guide-card-body"><strong>解説ページ：${escapeHtml(guide.title)}</strong><small>${escapeHtml(guide.blurb || "")}</small></span>
+      <span class="guide-card-go" aria-hidden="true">→</span>`;
+  }
   if (isMeasure) renderMeasureGuide(words);
   else {
     $("#category-word-list").innerHTML = words.map((word) => wordRowHtml(word, { showExample: true })).join("");
@@ -727,10 +796,31 @@ function openGuide(id) {
   else window.location.hash = `guide/${id}`;
 }
 
+// 解説ページのカード。分類ページ上部の帯と、まとめページの目次で共通に使う。
+function guideCardHtml({ attr, mark, title, note }) {
+  return `<button class="guide-card" type="button" ${attr}>
+    <span class="guide-card-mark">${escapeHtml(mark || "文")}</span>
+    <span class="guide-card-body"><strong>${escapeHtml(title)}</strong><small>${escapeHtml(note || "")}</small></span>
+    <span class="guide-card-go" aria-hidden="true">→</span>
+  </button>`;
+}
+
+const MEASURE_CARD = { attr: 'data-category-open="measure"', mark: "量", title: "量詞（助数詞）の使い分け", note: "「数＋量詞＋名詞」で覚える特設ページ。量詞クイズつき" };
+
+// 帯にはまとめのページだけを出す（トピック別はまとめのページの中から開く）。
+function renderGuideBand() {
+  const band = $("#guide-band");
+  if (!band) return;
+  const cards = state.guides.filter((guide) => !guide.parent)
+    .map((guide) => guideCardHtml({ attr: `data-guide-open="${escapeHtml(guide.id)}"`, mark: guide.mark, title: guide.title, note: guide.blurb || guide.summary }));
+  band.innerHTML = [...cards, guideCardHtml(MEASURE_CARD)].join("");
+}
+
 function renderGuide() {
   const guide = guideById(state.selectedGuide) || state.guides[0];
   if (!guide) return;
   state.selectedGuide = guide.id;
+  $("#guide-back").textContent = guide.parent ? `← ${guideById(guide.parent)?.title || "まとめ"}へ戻る` : "← 分類の一覧へ戻る";
   $("#guide-eyebrow").textContent = guide.eyebrow || "GRAMMAR GUIDE";
   $("#guide-title").textContent = guide.title;
   $("#guide-summary").textContent = guide.summary;
@@ -744,6 +834,10 @@ function renderGuide() {
 function guideSectionHtml(section) {
   const parts = [];
   if (section.body) parts.push(`<p class="guide-body">${escapeHtml(section.body)}</p>`);
+  if (section.links) parts.push(`<div class="guide-band guide-links">${section.links.map((link) => guideCardHtml({
+    attr: link.guideId ? `data-guide-open="${escapeHtml(link.guideId)}"` : `data-category-open="${escapeHtml(link.categoryId)}"`,
+    mark: link.mark, title: link.label, note: link.note,
+  })).join("")}</div>`);
   if (section.table) {
     const head = section.table.columns.map((column) => `<th>${escapeHtml(column)}</th>`).join("");
     const rows = section.table.rows.map((row) => `<tr>${row.map((cell, index) => `<td${index === 0 ? ' class="guide-table-key"' : ""}>${escapeHtml(cell)}</td>`).join("")}</tr>`).join("");
@@ -1066,7 +1160,7 @@ function renderDailyBanner() {
   note.textContent = daily.finished
     ? `まちがえた${daily.review.length}語の復習か、リセットして最初からやり直せます。`
     : (daily.locked ? `次の DAY ${state.daily.day} の20語は明日から始められます。`
-      : (daily.review.length ? `今日の${daily.words.length}語に、前回まちがえた${daily.review.length}語を加えた${dailySessionPool(daily).length}問です。` : `今日の${daily.words.length}語を1問ずつ出題します。`));
+      : (daily.review.length ? `今日の${daily.words.length}語に、もう一度出す${daily.review.length}語を加えた${dailySessionPool(daily).length}問です。` : `今日の${daily.words.length}語を1問ずつ出題します。`));
   $("#daily-open").textContent = daily.finished ? "復習ページを開く" : (daily.locked ? "今日の20語を見直す" : "今日の学習を開く");
 }
 
@@ -1090,10 +1184,11 @@ function renderDaily() {
   $("#daily-retry").classList.toggle("is-hidden", !daily.locked);
   $("#daily-retry").textContent = `今日の20語をもう一度テストする（${questionCount}問）`;
   $("#daily-review-quiz").classList.toggle("is-hidden", daily.review.length === 0);
-  $("#daily-review-quiz").textContent = `まちがえた${daily.review.length}語だけ復習する`;
+  $("#daily-review-quiz").textContent = `もう一度出す${daily.review.length}語だけ復習する`;
   $("#daily-review").classList.toggle("is-hidden", daily.review.length === 0);
   if (daily.review.length) {
-    $("#daily-review").innerHTML = `<h2 class="daily-section-title">前回まちがえた${daily.review.length}語</h2>
+    $("#daily-review").innerHTML = `<h2 class="daily-section-title">もう一度出す${daily.review.length}語</h2>
+      <p class="daily-review-note">前回まちがえた語と、気になる✓を付けた語です。正解すると次回から外れます。</p>
       <div class="word-list">${daily.review.map((word) => wordRowHtml(word, { showExample: true })).join("")}</div>`;
     bindWordRowAudio($("#daily-review"));
   }
@@ -1144,8 +1239,10 @@ function completeDailySession() {
   const { questions, answers, source } = state.quiz;
   const wrong = questions.filter((word, index) => !answers[index]?.correct).map((word) => word.id);
   const asked = new Set(questions.map((word) => word.id));
+  const marked = state.quiz.markedForReview || new Set();
   const daily = state.daily;
-  daily.pendingReview = [...new Set([...daily.pendingReview.filter((id) => !asked.has(id) || wrong.includes(id)), ...wrong])];
+  // 出題して正解した語は外す。ただし、まちがえた語と「気になる」を付けた語は残す。
+  daily.pendingReview = [...new Set([...daily.pendingReview.filter((id) => !asked.has(id) || wrong.includes(id) || marked.has(id)), ...wrong])];
   if (source === "daily") {
     daily.history.unshift({ day: daily.day, date: todayString(), total: questions.length, correct: state.quiz.correct, wrong: wrong.length });
     daily.history = daily.history.slice(0, 30);
@@ -1193,11 +1290,26 @@ function toggleChecked(id) {
     button.setAttribute("aria-label", label);
     button.title = label;
   });
+  if (checked) markWordForDailyReview(word);
   updateCheckedSummary();
   if (state.currentView === "checked") renderChecked();
   if (state.currentView === "words" && state.checkedOnly.words) renderWords();
-  if (state.currentView === "examples" && state.checkedOnly.examples) renderExamples();
   if (state.currentView === "categories" && state.checkedOnly.categories) renderCategories();
+}
+
+// 気になるマークを付けた語は、まちがえたときと同じように次回の毎日20語へ回す。
+function markWordForDailyReview(word) {
+  if (word.level !== DAILY_LEVEL || !state.dailyDays.length) return;
+  const index = state.dailyDays.findIndex((day) => day.some((item) => item.id === word.id));
+  // まだ学んでいない先の日の単語は前倒ししない。
+  if (index < 0 || index + 1 > state.daily.day) return;
+  // テスト中に付けた場合、その回で正解していても出題から外さない。
+  if (state.quiz.markedForReview) state.quiz.markedForReview.add(word.id);
+  if (state.daily.pendingReview.includes(word.id)) return;
+  state.daily.pendingReview.push(word.id);
+  saveDaily();
+  renderDailyBanner();
+  if (state.currentView === "daily") renderDaily();
 }
 
 function getCheckedWords() {
@@ -1319,43 +1431,6 @@ function startCheckedPractice(mode) {
   startPractice(mode, 3, words);
 }
 
-function renderExamples() {
-  const input = $("#example-search");
-  if (!input) return;
-  const query = input.value.trim().toLowerCase();
-  const withExamples = state.words.filter((word) => word.example && word.exampleMeaning);
-  const filtered = withExamples.filter((word) => {
-    const matchesLevel = state.exampleFilter === "all" || word.level === Number(state.exampleFilter);
-    const haystack = `${word.hanzi} ${word.pinyin} ${word.meaning} ${word.example} ${word.examplePinyin || ""} ${word.exampleMeaning}`.toLowerCase();
-    return matchesLevel && haystack.includes(query) && (!state.checkedOnly.examples || state.checked.has(word.id));
-  });
-  $("#example-total-count").textContent = state.exampleFilter === "all" ? withExamples.length : filtered.length;
-  $("#example-list").innerHTML = filtered.map((word) => `
-    <article class="example-card">
-      <header class="example-card-head">
-        <span class="mini-level">HSK ${word.level}</span>
-        <div class="example-word"><strong>${escapeHtml(word.hanzi)}</strong><span>${escapeHtml(word.pinyin)}</span><small>${escapeHtml(word.meaning)}</small></div>
-        <div class="row-actions">
-          ${checkButtonHtml(word.id)}
-          <button class="speak-mini example-word-audio" type="button" data-word-id="${escapeHtml(word.id)}" aria-label="${escapeHtml(word.hanzi)}の発音を聞く"><span aria-hidden="true">声</span></button>
-        </div>
-      </header>
-      <div class="example-sentence">
-        <div><p class="example-chinese">${escapeHtml(word.example)}</p>${word.examplePinyin ? `<p class="example-pinyin">${escapeHtml(word.examplePinyin)}</p>` : ""}<p class="example-japanese">${escapeHtml(word.exampleMeaning)}</p></div>
-        <button class="sentence-audio" type="button" data-example-id="${escapeHtml(word.id)}" aria-label="例文を中国語で聞く"><span aria-hidden="true">▶</span> 例文を聞く</button>
-      </div>
-    </article>`).join("");
-  $$(".example-word-audio").forEach((button) => button.addEventListener("click", () => {
-    const word = state.words.find((item) => item.id === button.dataset.wordId);
-    speak(word, button);
-  }));
-  $$(".sentence-audio").forEach((button) => button.addEventListener("click", () => {
-    const word = state.words.find((item) => item.id === button.dataset.exampleId);
-    playAudioFile(exampleAudioFile(word), button, { fallbackText: word?.example, role: "female" });
-  }));
-  $("#empty-examples").classList.toggle("is-hidden", filtered.length > 0);
-}
-
 function renderProgress() {
   const { answered, correct, byLevel } = state.progress;
   $("#stat-answered").textContent = answered;
@@ -1438,6 +1513,42 @@ function getLevelPool(level) {
   return state.words.filter((word) => word.level <= level);
 }
 
+// 練習の出題語は、選んだ級の語を7割、下の級を復習として3割にし、1回の中では同じ語を出さない。
+const PRACTICE_TARGET_RATIO = 0.7;
+
+function drawPracticeWords(level, count, source = null) {
+  if (count <= 0) return [];
+  if (source?.length) return repeatToCount(shuffle([...source]), count);
+  const target = shuffle(state.words.filter((word) => word.level === level));
+  const review = shuffle(state.words.filter((word) => word.level < level));
+  const targetCount = review.length ? Math.min(target.length, Math.round(count * PRACTICE_TARGET_RATIO)) : count;
+  const picked = [...target.slice(0, targetCount), ...review.slice(0, count - targetCount)];
+  return shuffle(repeatToCount([...picked, ...target.slice(targetCount), ...review.slice(count - targetCount)], count));
+}
+
+// 分類やチェックのように語数が問題数より少ないときだけ、ひと通り出し切ってから繰り返す。
+function repeatToCount(words, count) {
+  if (!words.length) return [];
+  const result = [...words];
+  while (result.length < count) result.push(...shuffle([...words]));
+  return result.slice(0, count);
+}
+
+// 誤答の選択肢は正解と同じ級の語から作る（足りないときだけ全体から補う）。
+function sameLevelDistractors(word, pool) {
+  const same = pool.filter((item) => item.level === word.level && item.id !== word.id);
+  return same.length >= 8 ? same : pool.filter((item) => item.id !== word.id);
+}
+
+// 出題形式の比率。級が上がるほど、1語の聞き取りから例文・対話へ比重を移す。
+function mixedKinds(mix, count) {
+  const total = Object.values(mix).reduce((sum, share) => sum + share, 0);
+  const kinds = Object.entries(mix).flatMap(([kind, share]) => Array(Math.round(count * share / total)).fill(kind));
+  const fallback = Object.keys(mix)[0];
+  while (kinds.length < count) kinds.push(fallback);
+  return shuffle(kinds.slice(0, count));
+}
+
 function startPractice(mode, level, source = null, sourceMeta = null) {
   clearPracticeTimer();
   let questions = [];
@@ -1453,7 +1564,10 @@ function startPractice(mode, level, source = null, sourceMeta = null) {
   } else if (mode === "srs") {
     const due = getDueWords();
     const reviewPool = due.length ? due : shuffle([...getLevelPool(actualLevel)]).sort((a, b) => masteryScore(a) - masteryScore(b)).slice(0, 10);
-    questions = reviewPool.slice(0, 10).map((word, index) => index % 2 ? makeReadingQuestion(word, actualLevel, index) : makeListeningQuestion(word, actualLevel, index));
+    const readingKinds = ["meaning", "pinyin", "fill"];
+    questions = reviewPool.slice(0, 10).map((word, index) => index % 2
+      ? makeReadingQuestion(word, word.level, readingKinds[Math.floor(index / 2) % readingKinds.length])
+      : makeListeningQuestion(word, word.level, index % 4 ? "sentence" : "word"));
   }
   if (!questions.length) return alert("出題できる問題がありません。");
   const categoryId = sourceMeta?.categoryId || null;
@@ -1506,18 +1620,43 @@ function isJudgeChoices(choices) {
   return choices.every((choice) => choice.value === "true" || choice.value === "false");
 }
 
+const LISTENING_MIX = {
+  1: { word: 7, sentence: 3 },
+  2: { word: 5, sentence: 4, dialogue: 1 },
+  3: { word: 3, sentence: 5, dialogue: 2 },
+};
+
 function makeListeningQuestions(level, count, source = null) {
-  const pool = source?.length ? source : getLevelPool(level);
-  const examplePool = pool.filter((word) => word.example && word.exampleMeaning);
-  return Array.from({ length: count }, (_, index) => {
-    const source = index % 2 && examplePool.length ? examplePool : pool;
-    return makeListeningQuestion(shuffle([...source])[0], level, index);
+  const banked = MOCK_DIALOGUE_BANK
+    .map((item, index) => ({ ...item, audioFile: `audio/sentences/mock-dialogue-${String(index + 1).padStart(3, "0")}.m4a` }))
+    .filter((item) => item.level <= level);
+  // 対話も選んだ級のものを先に使い、足りないときだけ下の級から出す。
+  const dialogues = [...shuffle(banked.filter((item) => item.level === level)), ...shuffle(banked.filter((item) => item.level < level))];
+  // 分類・チェックの練習では、その語と関係のない対話は出さない。
+  const canUseDialogue = dialogues.length > 0 && !source?.length;
+  const kinds = mixedKinds(LISTENING_MIX[level] || LISTENING_MIX[3], count)
+    .map((kind) => (kind === "dialogue" && !canUseDialogue ? "sentence" : kind));
+  const words = drawPracticeWords(level, kinds.filter((kind) => kind !== "dialogue").length, source);
+  if (!words.length) return [];
+  let wordIndex = 0;
+  let dialogueIndex = 0;
+  return kinds.map((kind) => {
+    if (kind === "dialogue") return makeListeningDialogueQuestion(dialogues[dialogueIndex++ % dialogues.length]);
+    return makeListeningQuestion(words[wordIndex++], level, kind);
   });
 }
 
+function makeListeningDialogueQuestion(item) {
+  return {
+    skill: "listening", kind: "audio-dialogue", audioText: item.audio, audioFile: item.audioFile,
+    choices: shuffle([item.answer, ...item.distractors]).map((label) => ({ value: label, label })), correct: item.answer,
+    instruction: "対話を聞いて、質問の答えを選んでください", explanation: `${item.prompt} — ${item.answer}`, audioPlays: 0,
+  };
+}
+
 function makeMockListeningQuestions(level, count) {
-  const responsePool = MOCK_RESPONSE_BANK.map((item, index) => ({ ...item, audioFile: `audio/sentences/mock-response-${String(index + 1).padStart(3, "0")}.wav` })).filter((item) => item.level <= level);
-  const dialoguePool = MOCK_DIALOGUE_BANK.map((item, index) => ({ ...item, audioFile: `audio/sentences/mock-dialogue-${String(index + 1).padStart(3, "0")}.wav` })).filter((item) => item.level <= level);
+  const responsePool = MOCK_RESPONSE_BANK.map((item, index) => ({ ...item, audioFile: `audio/sentences/mock-response-${String(index + 1).padStart(3, "0")}.m4a` })).filter((item) => item.level <= level);
+  const dialoguePool = MOCK_DIALOGUE_BANK.map((item, index) => ({ ...item, audioFile: `audio/sentences/mock-dialogue-${String(index + 1).padStart(3, "0")}.m4a` })).filter((item) => item.level <= level);
   const examplePool = getLevelPool(level).filter((word) => word.example);
   const responseItems = shuffle([...responsePool]);
   const dialogueItems = shuffle([...dialoguePool]);
@@ -1553,9 +1692,9 @@ function makeMockListeningQuestions(level, count) {
   });
 }
 
-function makeListeningQuestion(word, level, index) {
-  const pool = getLevelPool(level);
-  if (index % 2 && word.example) {
+function makeListeningQuestion(word, level, kind = "word") {
+  const pool = sameLevelDistractors(word, getLevelPool(level));
+  if (kind === "sentence" && word.example) {
     const candidates = pool.filter((item) => item.exampleMeaning && item.id !== word.id);
     const choices = uniqueChoices([{ value: word.id, label: word.exampleMeaning }, ...shuffle(candidates).slice(0, 3).map((item) => ({ value: item.id, label: item.exampleMeaning }))]);
     return { skill: "listening", kind: "audio-sentence", wordId: word.id, audioText: word.example, audioFile: exampleAudioFile(word), choices: shuffle(choices), correct: word.id, instruction: "音声の内容として正しいものを選んでください", explanation: `${word.example}（${word.exampleMeaning}）`, audioPlays: 0 };
@@ -1564,9 +1703,17 @@ function makeListeningQuestion(word, level, index) {
   return { skill: "listening", kind: "audio-word", wordId: word.id, audioWord: word, choices: shuffle(choices), correct: word.id, instruction: "音声で聞こえた単語の意味を選んでください", explanation: `${word.hanzi}（${word.pinyin}）— ${word.meaning}`, audioPlays: 0 };
 }
 
+const READING_MIX = {
+  1: { meaning: 4, pinyin: 4, fill: 2 },
+  2: { meaning: 4, pinyin: 3, fill: 3 },
+  3: { meaning: 3, pinyin: 2, fill: 5 },
+};
+
 function makeReadingQuestions(level, count, source = null) {
-  const pool = source?.length ? source : getLevelPool(level);
-  return Array.from({ length: count }, (_, index) => makeReadingQuestion(shuffle([...pool])[0], level, index));
+  const kinds = mixedKinds(READING_MIX[level] || READING_MIX[3], count);
+  const words = drawPracticeWords(level, count, source);
+  if (!words.length) return [];
+  return words.map((word, index) => makeReadingQuestion(word, level, kinds[index]));
 }
 
 function makeMockReadingQuestions(level, count) {
@@ -1616,14 +1763,13 @@ function makeMockReadingQuestions(level, count) {
   });
 }
 
-function makeReadingQuestion(word, level, index) {
-  const pool = getLevelPool(level);
-  const type = index % 3;
-  if (type === 1) {
+function makeReadingQuestion(word, level, kind = "meaning") {
+  const pool = sameLevelDistractors(word, getLevelPool(level));
+  if (kind === "pinyin") {
     const choices = uniqueChoices([{ value: word.id, label: word.pinyin }, ...shuffle(pool.filter((item) => item.id !== word.id && item.pinyin !== word.pinyin)).slice(0, 3).map((item) => ({ value: item.id, label: item.pinyin }))]);
     return { skill: "reading", kind: "pinyin", wordId: word.id, prompt: word.hanzi, choices: shuffle(choices), correct: word.id, instruction: "正しいピンインを選んでください", explanation: `${word.hanzi} — ${word.pinyin} — ${word.meaning}` };
   }
-  if (type === 2 && word.example?.includes(word.hanzi)) {
+  if (kind === "fill" && word.example?.includes(word.hanzi)) {
     const choices = uniqueChoices([{ value: word.id, label: word.hanzi }, ...shuffle(pool.filter((item) => item.id !== word.id && item.hanzi !== word.hanzi)).slice(0, 3).map((item) => ({ value: item.id, label: item.hanzi }))]);
     return { skill: "reading", kind: "fill", wordId: word.id, prompt: word.example.replace(word.hanzi, "＿＿＿"), subPrompt: word.exampleMeaning, choices: shuffle(choices), correct: word.id, instruction: "空欄に入る単語を選んでください", explanation: `${word.example}（${word.exampleMeaning}）` };
   }
@@ -1632,8 +1778,8 @@ function makeReadingQuestion(word, level, index) {
 }
 
 function makeWritingQuestions(count, isMock = false) {
-  const reorder = shuffle(WRITING_BANK.filter((item) => item.type === "reorder"));
-  const input = shuffle(WRITING_BANK.filter((item) => item.type === "input"));
+  const reorder = shuffle(WRITING_ITEMS.filter((item) => item.type === "reorder"));
+  const input = shuffle(WRITING_ITEMS.filter((item) => item.type === "input"));
   const half = Math.ceil(count / 2);
   return [...reorder.slice(0, half), ...input.slice(0, count - half)].map((item) => ({
     ...item, skill: "writing", kind: item.type, mockFormat: isMock,
@@ -1668,6 +1814,10 @@ function renderPracticeQuestion() {
   hint.classList.toggle("is-hidden", !showHint);
   $("#practice-feedback").textContent = "";
   $("#practice-feedback").className = "answer-feedback";
+  $("#practice-script").classList.add("is-hidden");
+  $("#practice-script").classList.remove("writing-result-panel");
+  $("#practice-script-title").textContent = "音声のスクリプト";
+  $("#practice-script-audio-label").textContent = "もう一度聞く";
   $("#practice-next").classList.add("is-hidden");
   $("#practice-next").innerHTML = `次の問題へ <span>→</span>`;
   const audioButton = $("#practice-audio");
@@ -1686,7 +1836,7 @@ function renderPracticeQuestion() {
   else if (question.kind === "input") prompt.innerHTML = question.mockFormat
     ? `<h2 class="mock-writing-sentence">${escapeHtml(question.sentence)}</h2>`
     : `<p class="writing-hint">${escapeHtml(question.meaning)}</p><h2 class="pinyin-prompt">${escapeHtml(question.pinyin)}</h2>`;
-  else if (question.kind === "reorder") prompt.innerHTML = `${question.mockFormat ? "" : `<p class="writing-hint">${escapeHtml(question.meaning)}</p>`}${question.slots ? `<div class="slot-guide">${question.slots.map((label) => `<span>${escapeHtml(label)}</span>`).join(`<b aria-hidden="true">＋</b>`)}</div>` : ""}<div id="ordered-answer" class="ordered-answer">${question.mockFormat ? "请在这里排列句子" : "ここに語順を作ります"}</div>`;
+  else if (question.kind === "reorder") prompt.innerHTML = `${question.mockFormat ? "" : `<p class="writing-hint">${escapeHtml(question.meaning)}</p>`}${question.slots ? `<div class="slot-guide">${question.slots.map((label) => `<span>${escapeHtml(label)}</span>`).join(`<b aria-hidden="true">＋</b>`)}</div>` : ""}<div id="ordered-answer" class="ordered-answer" aria-label="並べた語句" aria-live="polite"><span class="ordered-placeholder">${question.mockFormat ? "请在这里排列句子" : "ここに語順を作ります"}</span></div>`;
   // 量詞は「数詞＋量詞＋名詞」の形のまま、空いたところを埋めさせる。
   else if (question.kind === "slot") prompt.innerHTML = `
     <div class="quiz-slot-row">
@@ -1738,20 +1888,111 @@ function renderPracticeAnswers(question) {
     $$(".practice-choice").forEach((button) => button.addEventListener("click", () => answerPractice(button.dataset.value, button)));
   } else if (question.kind === "reorder") {
     question.selected = [];
-    area.innerHTML = `<div class="token-bank">${shuffle(question.tokens.map((token, index) => ({ token, index }))).map((item) => `<button type="button" class="word-token" data-token-index="${item.index}">${escapeHtml(item.token)}</button>`).join("")}</div><div class="writing-actions"><button id="reset-order" class="secondary-button" type="button">${question.mockFormat ? "重新排列" : "やり直す"}</button><button id="submit-order" class="primary-button" type="button">${question.mockFormat ? "提交答案" : "解答する"}</button></div>`;
-    $$(".word-token").forEach((button) => button.addEventListener("click", () => {
-      if (button.disabled) return;
-      question.selected.push(question.tokens[Number(button.dataset.tokenIndex)]);
-      button.disabled = true;
-      $("#ordered-answer").textContent = question.selected.join("");
-    }));
+    const shuffledTokens = shuffle(question.tokens.map((token, index) => ({ token, index })));
+    area.innerHTML = `<div class="token-bank" aria-label="並べ替える語句">${shuffledTokens.map((item) => `<button type="button" class="word-token" draggable="true" data-token-index="${item.index}">${escapeHtml(item.token)}</button>`).join("")}</div><p class="drag-help">クリックで追加／ドラッグで順番を入れ替え</p><div class="writing-actions"><button id="reset-order" class="secondary-button" type="button">${question.mockFormat ? "重新排列" : "やり直す"}</button><button id="submit-order" class="primary-button" type="button">${question.mockFormat ? "提交答案" : "解答する"}</button></div>`;
+    setupReorderInteraction(question);
     $("#reset-order").addEventListener("click", () => renderPracticeQuestion());
-    $("#submit-order").addEventListener("click", () => answerPractice(question.selected.join(""), $("#submit-order")));
+    $("#submit-order").addEventListener("click", () => {
+      if (!question.selected.length) return;
+      answerPractice(reorderAnswer(question), $("#submit-order"));
+    });
   } else {
     area.innerHTML = `<form id="writing-form" class="writing-form"><label for="writing-input">${question.mockFormat ? "请写一个汉字" : "漢字で入力"}</label><input id="writing-input" type="text" lang="zh-CN" autocomplete="off" placeholder="${question.mockFormat ? "输入汉字" : "答えを入力"}" /><button class="primary-button" type="submit">${question.mockFormat ? "提交答案" : "解答する"}</button></form>`;
     $("#writing-form").addEventListener("submit", (event) => { event.preventDefault(); answerPractice($("#writing-input").value, $("#writing-form button")); });
     $("#writing-input").focus();
   }
+}
+
+function reorderAnswer(question) {
+  return question.selected.map((index) => question.tokens[index]).join("");
+}
+
+function setupReorderInteraction(question) {
+  const bank = $(".token-bank");
+  const answer = $("#ordered-answer");
+  if (!bank || !answer) return;
+  let draggedElement = null;
+
+  const render = () => {
+    const selected = new Set(question.selected);
+    bank.querySelectorAll(".word-token").forEach((button) => {
+      button.disabled = selected.has(Number(button.dataset.tokenIndex));
+    });
+    answer.classList.toggle("has-tokens", question.selected.length > 0);
+    answer.innerHTML = question.selected.length
+      ? question.selected.map((index) => `<button type="button" class="word-token selected-token" draggable="true" data-token-index="${index}" aria-label="${escapeHtml(question.tokens[index])}を移動または候補に戻す">${escapeHtml(question.tokens[index])}</button>`).join("")
+      : `<span class="ordered-placeholder">${question.mockFormat ? "请在这里排列句子" : "ここに語順を作ります"}</span>`;
+  };
+
+  const addToken = (index) => {
+    if (!question.selected.includes(index)) question.selected.push(index);
+    render();
+  };
+  const removeToken = (index) => {
+    question.selected = question.selected.filter((selectedIndex) => selectedIndex !== index);
+    render();
+  };
+  const moveToken = (index, beforeIndex = null) => {
+    if (index === beforeIndex) return;
+    const next = question.selected.filter((selectedIndex) => selectedIndex !== index);
+    const position = beforeIndex === null ? next.length : next.indexOf(beforeIndex);
+    next.splice(position < 0 ? next.length : position, 0, index);
+    question.selected = next;
+    render();
+  };
+  const clearDragState = () => {
+    draggedElement?.classList.remove("is-dragging");
+    draggedElement = null;
+    bank.classList.remove("is-drag-over");
+    answer.classList.remove("is-drag-over");
+  };
+  const beginDrag = (event) => {
+    const token = event.target.closest(".word-token");
+    if (!token || token.disabled || state.practice.answered) return;
+    draggedElement = token;
+    token.classList.add("is-dragging");
+    event.dataTransfer.effectAllowed = "move";
+    event.dataTransfer.setData("text/plain", token.dataset.tokenIndex);
+  };
+
+  bank.addEventListener("click", (event) => {
+    const token = event.target.closest(".word-token");
+    if (token && !token.disabled && !state.practice.answered) addToken(Number(token.dataset.tokenIndex));
+  });
+  answer.addEventListener("click", (event) => {
+    const token = event.target.closest(".selected-token");
+    if (token && !state.practice.answered) removeToken(Number(token.dataset.tokenIndex));
+  });
+  bank.addEventListener("dragstart", beginDrag);
+  answer.addEventListener("dragstart", beginDrag);
+  [bank, answer].forEach((container) => container.addEventListener("dragend", clearDragState));
+  answer.addEventListener("dragover", (event) => {
+    if (state.practice.answered) return;
+    event.preventDefault();
+    event.dataTransfer.dropEffect = "move";
+    answer.classList.add("is-drag-over");
+  });
+  answer.addEventListener("drop", (event) => {
+    event.preventDefault();
+    const index = Number(event.dataTransfer.getData("text/plain"));
+    const target = event.target.closest(".selected-token");
+    const beforeIndex = target ? Number(target.dataset.tokenIndex) : null;
+    if (Number.isInteger(index)) moveToken(index, beforeIndex);
+    clearDragState();
+  });
+  bank.addEventListener("dragover", (event) => {
+    if (state.practice.answered) return;
+    event.preventDefault();
+    event.dataTransfer.dropEffect = "move";
+    bank.classList.add("is-drag-over");
+  });
+  bank.addEventListener("drop", (event) => {
+    event.preventDefault();
+    const index = Number(event.dataTransfer.getData("text/plain"));
+    if (Number.isInteger(index)) removeToken(index);
+    clearDragState();
+  });
+  render();
 }
 
 function answerPractice(value, selectedButton) {
@@ -1790,16 +2031,86 @@ function answerPractice(value, selectedButton) {
     if (!correct) selectedButton?.classList.add("is-wrong");
   } else {
     $$(".practice-answer-area button, .practice-answer-area input").forEach((element) => { element.disabled = true; });
+    if (question.kind === "reorder") {
+      $$("#ordered-answer .word-token").forEach((element) => { element.disabled = true; });
+      $("#ordered-answer")?.classList.add("is-locked");
+    }
   }
-  if (!session.isMock) {
+  if (question.skill === "writing") {
+    // 正解の文と訳はパネルに出すので、ここには解説（文法ドリルのみ）を添える。
+    const detail = !session.isMock && question.explanation ? ` ${question.explanation}` : "";
+    $("#practice-feedback").textContent = `${correct ? "正解！" : "正解を確認しましょう。"}${detail}`;
+    $("#practice-feedback").classList.add(correct ? "correct" : "wrong");
+    revealWritingAnswer(question);
+  } else if (!session.isMock) {
     $("#practice-feedback").textContent = correct ? `正解！ ${question.explanation || question.answer}` : `正解：${question.explanation || question.answer}`;
     $("#practice-feedback").classList.add(correct ? "correct" : "wrong");
+    if (question.skill === "listening") enableListeningReplay(question);
+  } else if (question.skill === "listening") {
+    revealListeningScript(question);
   }
   saveProgress();
   const next = session.questions[session.index + 1];
   if (session.isMock && next && next.skill !== question.skill) $("#practice-next").innerHTML = `${SKILL_LABELS[next.skill]}へ進む <span>→</span>`;
   $("#practice-next").classList.remove("is-hidden");
   $("#practice-next").focus();
+}
+
+// 解答が済んだ聴解問題は、回数制限なしで聞き直せるようにする。
+function enableListeningReplay(question) {
+  question.scriptRevealed = true;
+  $("#practice-audio").disabled = false;
+  $("#practice-audio-label").textContent = "もう一度聞く";
+  $("#audio-play-count").textContent = "";
+}
+
+// 模試は解説を出さないので、答えたあとに原文を見せて勉強できるようにする。
+function revealListeningScript(question) {
+  const panel = $("#practice-script");
+  const body = $("#practice-script-body");
+  if (!panel || !body) return;
+  body.innerHTML = question.audioWord
+    ? `<p class="script-line"><span class="script-role">単</span>${escapeHtml(question.audioWord.hanzi)}（${escapeHtml(question.audioWord.pinyin)}）</p>`
+    : scriptLinesHtml(question.audioText || "");
+  panel.classList.remove("is-hidden");
+  enableListeningReplay(question);
+}
+
+function writingAnswerSentence(question) {
+  if (question.kind === "input") return String(question.sentence || "").replace(/（[^）]+）/, question.answer || "");
+  return question.answer || "";
+}
+
+function revealWritingAnswer(question) {
+  const panel = $("#practice-script");
+  const body = $("#practice-script-body");
+  if (!panel || !body) return;
+  $("#practice-script-title").textContent = "正解と日本語の意味";
+  $("#practice-script-audio-label").textContent = "正解を聞く";
+  body.innerHTML = `<div class="writing-result-answer"><span>正解</span><strong lang="zh-CN">${escapeHtml(writingAnswerSentence(question))}</strong></div>
+    <div class="writing-result-meaning"><span>意味</span><p>${escapeHtml(question.meaning || "日本語訳はありません")}</p></div>`;
+  panel.classList.add("writing-result-panel");
+  panel.classList.remove("is-hidden");
+}
+
+function playPracticeReviewAudio() {
+  const question = state.practice.questions[state.practice.index];
+  const button = $("#practice-script-audio");
+  if (!question || !button) return;
+  if (question.skill !== "writing") return playPracticeAudio(false);
+  const text = writingAnswerSentence(question);
+  if (question.answerAudioFile) playAudioFile(question.answerAudioFile, button, { fallbackText: text, role: "female", fallbackRate: .86, baseRate: 1 });
+  else {
+    stopAudio();
+    speakWithBrowser(text, button, { rate: .86, role: "female" });
+  }
+}
+
+function scriptLinesHtml(text) {
+  const roles = { 男: "男", 女: "女", 问: "問" };
+  const parts = [...String(text).matchAll(/([男女问])：([\s\S]*?)(?=(?:男|女|问)：|$)/g)];
+  if (!parts.length) return `<p class="script-line">${escapeHtml(text)}</p>`;
+  return parts.map(([, role, line]) => `<p class="script-line"><span class="script-role">${roles[role] || role}</span>${escapeHtml(line.trim())}</p>`).join("");
 }
 
 function nextPracticeQuestion() {
@@ -1809,7 +2120,7 @@ function nextPracticeQuestion() {
 
 function playPracticeAudio(autoRepeat = false) {
   const question = state.practice.questions[state.practice.index];
-  if (!question || question.audioPlays >= 2) return;
+  if (!question || (question.audioPlays >= 2 && !question.scriptRevealed)) return;
   question.audioPlays = (question.audioPlays || 0) + 1;
   const button = $("#practice-audio");
   if (question.audioWord) {
@@ -1824,8 +2135,16 @@ function playPracticeAudio(autoRepeat = false) {
     if (question.kind === "audio-dialogue") speakDialogue(question.audioText, button, rate);
     else speakWithBrowser(question.audioText, button, { rate, role: "narrator" });
   }
+  if (question.scriptRevealed) {
+    $("#audio-play-count").textContent = "";
+    return;
+  }
   $("#audio-play-count").textContent = state.practice.isMock ? (question.audioPlays < 2 ? "正在按考试速度播放" : "已播放两次") : `残り${2 - question.audioPlays}回`;
-  if (question.audioPlays >= 2) window.setTimeout(() => { button.disabled = true; }, 100);
+  // 解答済み・次の問題へ進んだあとにこのタイマーが効いてボタンを塞がないようにする。
+  if (question.audioPlays >= 2) window.setTimeout(() => {
+    if (question.scriptRevealed || state.practice.questions[state.practice.index] !== question) return;
+    button.disabled = true;
+  }, 100);
 }
 
 function finishPractice(timedOut = Boolean(state.practice.timedOutSections?.length)) {
@@ -2101,7 +2420,7 @@ function calculateStreak() {
 }
 function addDays(dateString, days) { const date = new Date(`${dateString}T12:00:00`); date.setDate(date.getDate() + days); return date.toISOString().slice(0, 10); }
 function normalizeAnswer(value) { return String(value || "").replace(/[\s。！？,.，?!]/g, "").toLowerCase(); }
-function exampleAudioFile(word) { return word?.id ? `audio/sentences/example-${word.id}.wav` : ""; }
+function exampleAudioFile(word) { return word?.id ? `audio/sentences/example-${word.id}.m4a` : ""; }
 function loadAudioSpeed() {
   try {
     const value = Number(localStorage.getItem("hsk-audio-speed") || "1");
@@ -2131,14 +2450,14 @@ function setVocabularyDirection(direction) {
 
 function speak(word, button) {
   if (!word?.hanzi) return;
-  playAudioFile(`audio/${encodeURIComponent(word.id)}.wav`, button, { fallbackText: word.hanzi, role: "female" });
+  playAudioFile(`audio/${encodeURIComponent(word.id)}.m4a`, button, { fallbackText: word.hanzi, role: "female" });
 }
 
 function playAudioFile(file, button, options = {}) {
   if (!file) return speakWithBrowser(options.fallbackText, button, { rate: options.fallbackRate || .78, role: options.role || "female" });
   stopAudio();
   button?.classList.add("is-playing");
-  const audio = new Audio(`${file}?v=prerendered-5`);
+  const audio = new Audio(`${file}?v=aac48`);
   const playbackRate = options.lockRate ? (options.baseRate || 1) : Math.max(.7, Math.min(1.3, (options.baseRate || 1) * state.audioSpeed));
   audio.playbackRate = playbackRate;
   audio.preservesPitch = true;

@@ -19,6 +19,9 @@ const maleVoice = process.env.HSK_SENTENCE_MALE_VOICE || "Reed (中国語（中�
 const cueVoice = process.env.HSK_SENTENCE_CUE_VOICE || "Samantha";
 const force = process.env.HSK_SENTENCE_AUDIO_FORCE === "1";
 const engineVersion = "apple-natural-v1";
+// 配信形式。音源は10kHz以下しか含まないため、AAC 48kbpsでWAVと聞き分けられない
+// （詳しくは docs/audio.md）。チェックサムは読み上げ内容を表すもので、形式は含めない。
+const AUDIO = { ext: "m4a", codec: "aac", bitrate: Number(process.env.HSK_SENTENCE_AUDIO_BITRATE) || 48000 };
 // 会話のあとに間を置き、英語の「Question」を挟んでから設問を読む。
 const GAPS = { beforeCue: 1.2, afterCue: 0.45, betweenSpeakers: 0.45 };
 
@@ -32,14 +35,20 @@ const sandbox = {
 };
 vm.createContext(sandbox);
 vm.runInContext(fs.readFileSync(path.join(appDir, "app.js"), "utf8"), sandbox);
-const banks = JSON.parse(vm.runInContext("JSON.stringify({ responses: MOCK_RESPONSE_BANK, dialogues: MOCK_DIALOGUE_BANK })", sandbox));
+const banks = JSON.parse(vm.runInContext("JSON.stringify({ responses: MOCK_RESPONSE_BANK, dialogues: MOCK_DIALOGUE_BANK, writing: WRITING_BANK })", sandbox));
 
 const words = [1, 2, 3].flatMap((level) => JSON.parse(fs.readFileSync(path.join(appDir, "data", `hsk${level}.json`), "utf8")).map((word) => ({ ...word, level })));
-const mockQuestions = [1, 2, 3].flatMap((level) => {
+const mockForms = [1, 2, 3].map((level) => {
   const form = JSON.parse(fs.readFileSync(path.join(appDir, "data", `mock-hsk${level}.json`), "utf8"));
-  return form.questions.filter((question) => question.skill === "listening").map((question) => ({ ...question, level }));
+  return form.questions.map((question) => ({ ...question, level }));
 });
+const mockQuestions = mockForms.flat().filter((question) => question.skill === "listening");
+const mockWritingQuestions = mockForms.flat().filter((question) => question.skill === "writing");
 const pad = (value) => String(value).padStart(3, "0");
+// 模試の問題は kind、app.js の WRITING_BANK は type で種類を持つ。
+const writingAnswerText = (question) => (question.kind || question.type) === "input"
+  ? question.sentence.replace(/（[^）]+）/, question.answer)
+  : question.answer;
 const parseDialogue = (text) => {
   const segments = [];
   const pattern = /([男女问])：([\s\S]*?)(?=(?:男|女|问)：|$)/g;
@@ -68,6 +77,15 @@ const catalog = [
     id: item.id, type: "mock-v2", level: item.level, text: item.audioText,
     segments: item.kind.includes("dialogue") ? parseDialogue(item.audioText) : [{ role: "female", text: item.audioText }],
   })),
+  ...mockWritingQuestions.map((item) => ({
+    id: `${item.id}-answer`, type: "writing-answer", level: item.level, text: writingAnswerText(item),
+    segments: [{ role: "female", text: writingAnswerText(item) }],
+  })),
+  // 作文トレーニングの正解文（app.js の WRITING_BANK。並び順の番号でファイル名を決める）
+  ...banks.writing.map((item, index) => ({
+    id: `writing-bank-${pad(index + 1)}`, type: "writing-answer", level: 3, text: writingAnswerText(item),
+    segments: [{ role: "female", text: writingAnswerText(item) }],
+  })),
 ];
 
 let previous = { items: {} };
@@ -86,9 +104,15 @@ function voiceForRole(role) {
   return femaleVoice;
 }
 
-function legacyChecksum(item) {
-  const gaps = item.segments.length > 1 ? GAPS : null;
-  return crypto.createHash("sha256").update(JSON.stringify({ engineVersion, femaleVoice, maleVoice: "Tingting", level: item.level, segments: item.segments, gaps })).digest("hex");
+// WAVをそのまま置くと1文で最大1.4MBになるため、AACに変換してから保存する。
+function encode(wavFile, outputFile) {
+  return new Promise((resolve, reject) => {
+    const child = spawn("afconvert", ["-f", "m4af", "-d", AUDIO.codec, "-b", String(AUDIO.bitrate), wavFile, outputFile]);
+    let error = "";
+    child.stderr.on("data", (chunk) => { error += chunk; });
+    child.on("error", reject);
+    child.on("close", (code) => code === 0 ? resolve() : reject(new Error(error || `afconvert exited with ${code}`)));
+  });
 }
 
 function runSay(text, voice, outputFile, rate, attempt = 1) {
@@ -133,12 +157,11 @@ function makeWave(pcm) {
 }
 
 async function generate(item) {
-  const outputFile = path.join(outputDir, `${item.id}.wav`);
+  const outputFile = path.join(outputDir, `${item.id}.${AUDIO.ext}`);
   const itemChecksum = checksum(item);
   const previousChecksum = previous.items?.[item.id]?.checksum;
-  const hasMaleSegment = item.segments.some((segment) => segment.role === "male");
-  const canReuseLegacyFemaleAudio = !hasMaleSegment && previousChecksum === legacyChecksum(item);
-  if (!force && (previousChecksum === itemChecksum || canReuseLegacyFemaleAudio) && fs.existsSync(outputFile) && fs.statSync(outputFile).size > 44) return { ...item, checksum: itemChecksum, file: `audio/sentences/${item.id}.wav`, skipped: true };
+  const relativeFile = `audio/sentences/${item.id}.${AUDIO.ext}`;
+  if (!force && previousChecksum === itemChecksum && fs.existsSync(outputFile) && fs.statSync(outputFile).size > 256) return { ...item, checksum: itemChecksum, file: relativeFile, skipped: true };
   const rate = ({ 1: 145, 2: 152, 3: 158 }[item.level] || 150);
   const pcmParts = [];
   for (let index = 0; index < item.segments.length; index += 1) {
@@ -152,8 +175,10 @@ async function generate(item) {
       pcmParts.push(Buffer.alloc(Math.round(44100 * gap) * 2));
     }
   }
-  fs.writeFileSync(outputFile, makeWave(Buffer.concat(pcmParts)));
-  return { ...item, checksum: itemChecksum, file: `audio/sentences/${item.id}.wav`, skipped: false };
+  const wavFile = path.join(temporaryDir, `${item.id}.wav`);
+  fs.writeFileSync(wavFile, makeWave(Buffer.concat(pcmParts)));
+  await encode(wavFile, outputFile);
+  return { ...item, checksum: itemChecksum, file: relativeFile, skipped: false };
 }
 
 const results = [];
@@ -163,7 +188,7 @@ try {
     if ((index + 1) % 20 === 0 || index + 1 === catalog.length) console.log(`${index + 1} / ${catalog.length} 音声を処理`);
   }
   const items = Object.fromEntries(results.map(({ skipped, segments, ...item }) => [item.id, { ...item, voices: [...new Set(segments.map((segment) => voiceForRole(segment.role)))] }]));
-  fs.writeFileSync(manifestPath, `${JSON.stringify({ version: 1, engineVersion, sampleRate: 44100, format: "wav", generatedAt: new Date().toISOString(), counts: { total: results.length, generated: results.filter((item) => !item.skipped).length, reused: results.filter((item) => item.skipped).length }, items }, null, 2)}\n`);
+  fs.writeFileSync(manifestPath, `${JSON.stringify({ version: 2, engineVersion, sampleRate: 44100, format: AUDIO.ext, codec: AUDIO.codec, bitrate: AUDIO.bitrate, generatedAt: new Date().toISOString(), counts: { total: results.length, generated: results.filter((item) => !item.skipped).length, reused: results.filter((item) => item.skipped).length }, items }, null, 2)}\n`);
   console.log(`完了: ${results.length}件（生成${results.filter((item) => !item.skipped).length} / 再利用${results.filter((item) => item.skipped).length}）`);
 } finally {
   fs.rmSync(temporaryDir, { recursive: true, force: true });
