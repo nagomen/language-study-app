@@ -124,7 +124,7 @@ for (const guide of guides) {
       if (!question.choices?.includes(question.correct)) errors.push(`${questionLabel}: 正解「${question.correct}」が選択肢にありません`);
     } else if (question.kind === "reorder") {
       if (!question.meaning) errors.push(`${questionLabel}: 意味が未設定`);
-      // 採点は句読点を無視するので（app.js の normalizeAnswer）、検証もそろえる。
+      // 採点は句読点を無視するので（js/chinese/util.js の normalizeAnswer）、検証もそろえる。
       const dropMarks = (text) => String(text).replace(/[\s。！？，、,.?!]/g, "");
       const answerChars = [...dropMarks(question.answer)].sort().join("");
       const tokenChars = [...dropMarks((question.tokens || []).join(""))].sort().join("");

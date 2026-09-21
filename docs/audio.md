@@ -119,7 +119,7 @@ macOS標準の `afconvert` で全1,382ファイルを実際に変換し（所要
 
 - [x] `scripts/generate_audio.sh` … `say` でWAVを作り、`afconvert` で `.m4a` に変換して保存。`HSK_AUDIO_BITRATE` で変更可
 - [x] `scripts/generate_sentence_audio.mjs` … 同上（`encode()` を追加）。manifest に `format` / `codec` / `bitrate` を記録
-- [x] `app.js` … `speak()`・`exampleAudioFile()`・聴解練習の `mock-response-*` / `mock-dialogue-*` の4か所と、キャッシュ用の `?v=` を更新
+- [x] `app.js`（現 `js/chinese/audio.js` ほか）… `speak()`・`exampleAudioFile()`・聴解練習の `mock-response-*` / `mock-dialogue-*` の4か所と、キャッシュ用の `?v=` を更新
 - [x] `scripts/build_hsk_mock_data.mjs` … `audioFile()` の拡張子。`data/mock-hsk1〜3.json` を再生成
 - [x] `README.md` / 試験対策ページのバッジ … 「固定44.1kHz音声」の表記を差し替え
 - [x] 旧 `.wav` 1,382件を削除

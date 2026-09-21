@@ -1,3 +1,5 @@
+import { $, $$, escapeHtml, shuffle, localDateKey, setMobileMenu, loadCheckedIds, saveCheckedIds, checkButtonHtml, resetCheckButtons, updateCheckedBadge, downloadCheckedFile, readCheckedFile } from "./js/shared.js";
+
 "use strict";
 
 const LEVELS = ["A1", "A2", "B1"];
