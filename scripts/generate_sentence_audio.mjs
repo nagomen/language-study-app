@@ -5,7 +5,6 @@ import fs from "node:fs";
 import os from "node:os";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import vm from "node:vm";
 import { spawn } from "node:child_process";
 
 const appDir = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -27,15 +26,7 @@ const GAPS = { beforeCue: 1.2, afterCue: 0.45, betweenSpeakers: 0.45 };
 
 fs.mkdirSync(outputDir, { recursive: true });
 
-const sandbox = {
-  console: { log() {}, error() {} },
-  document: { addEventListener() {}, querySelector() { return null; }, querySelectorAll() { return []; } },
-  window: {}, localStorage: { getItem() { return null; } }, Audio: function Audio() {},
-  SpeechSynthesisUtterance: function SpeechSynthesisUtterance() {}, setTimeout,
-};
-vm.createContext(sandbox);
-vm.runInContext(fs.readFileSync(path.join(appDir, "app.js"), "utf8"), sandbox);
-const banks = JSON.parse(vm.runInContext("JSON.stringify({ responses: MOCK_RESPONSE_BANK, dialogues: MOCK_DIALOGUE_BANK, writing: WRITING_BANK })", sandbox));
+const banks = JSON.parse(fs.readFileSync(path.join(appDir, "data", "practice-banks.json"), "utf8"));
 
 const words = [1, 2, 3].flatMap((level) => JSON.parse(fs.readFileSync(path.join(appDir, "data", `hsk${level}.json`), "utf8")).map((word) => ({ ...word, level })));
 const mockForms = [1, 2, 3].map((level) => {
@@ -45,7 +36,7 @@ const mockForms = [1, 2, 3].map((level) => {
 const mockQuestions = mockForms.flat().filter((question) => question.skill === "listening");
 const mockWritingQuestions = mockForms.flat().filter((question) => question.skill === "writing");
 const pad = (value) => String(value).padStart(3, "0");
-// 模試の問題は kind、app.js の WRITING_BANK は type で種類を持つ。
+// 模試の問題は kind、練習バンクは type で種類を持つ。
 const writingAnswerText = (question) => (question.kind || question.type) === "input"
   ? question.sentence.replace(/（[^）]+）/, question.answer)
   : question.answer;
@@ -65,11 +56,11 @@ const catalog = [
     id: `example-${word.id}`, type: "example", level: word.level, text: word.example,
     segments: [{ role: "female", text: word.example }],
   })),
-  ...banks.responses.map((item, index) => ({
+  ...banks.listeningResponses.map((item, index) => ({
     id: `mock-response-${pad(index + 1)}`, type: "mock-response", level: item.level, text: item.prompt,
     segments: [{ role: "female", text: item.prompt }],
   })),
-  ...banks.dialogues.map((item, index) => ({
+  ...banks.listeningDialogues.map((item, index) => ({
     id: `mock-dialogue-${pad(index + 1)}`, type: "mock-dialogue", level: item.level, text: item.audio,
     segments: parseDialogue(item.audio),
   })),
@@ -81,7 +72,7 @@ const catalog = [
     id: `${item.id}-answer`, type: "writing-answer", level: item.level, text: writingAnswerText(item),
     segments: [{ role: "female", text: writingAnswerText(item) }],
   })),
-  // 作文トレーニングの正解文（app.js の WRITING_BANK。並び順の番号でファイル名を決める）
+  // 作文トレーニングの正解文（並び順の番号でファイル名を決める）
   ...banks.writing.map((item, index) => ({
     id: `writing-bank-${pad(index + 1)}`, type: "writing-answer", level: 3, text: writingAnswerText(item),
     segments: [{ role: "female", text: writingAnswerText(item) }],

@@ -1,0 +1,479 @@
+{
+  "_注意": "配列の順番は音声ファイル名（writing-bank-NNN / mock-dialogue-NNN / mock-response-NNN）の連番に対応します。並べ替えると音声とずれます。",
+  "writing": [
+    {
+      "type": "reorder",
+      "tokens": [
+        "我",
+        "每天",
+        "学习",
+        "汉语"
+      ],
+      "answer": "我每天学习汉语。",
+      "meaning": "私は毎日中国語を勉強します。"
+    },
+    {
+      "type": "reorder",
+      "tokens": [
+        "他",
+        "正在",
+        "看",
+        "报纸"
+      ],
+      "answer": "他正在看报纸。",
+      "meaning": "彼は新聞を読んでいます。"
+    },
+    {
+      "type": "reorder",
+      "tokens": [
+        "明天",
+        "可能",
+        "下雨"
+      ],
+      "answer": "明天可能下雨。",
+      "meaning": "明日は雨かもしれません。"
+    },
+    {
+      "type": "reorder",
+      "tokens": [
+        "我家",
+        "离",
+        "学校",
+        "很近"
+      ],
+      "answer": "我家离学校很近。",
+      "meaning": "私の家は学校から近いです。"
+    },
+    {
+      "type": "reorder",
+      "tokens": [
+        "她",
+        "比",
+        "我",
+        "高"
+      ],
+      "answer": "她比我高。",
+      "meaning": "彼女は私より背が高いです。"
+    },
+    {
+      "type": "reorder",
+      "tokens": [
+        "我们",
+        "一起",
+        "去",
+        "公园",
+        "吧"
+      ],
+      "answer": "我们一起去公园吧。",
+      "meaning": "一緒に公園へ行きましょう。"
+    },
+    {
+      "type": "reorder",
+      "tokens": [
+        "你",
+        "为什么",
+        "迟到"
+      ],
+      "answer": "你为什么迟到？",
+      "meaning": "なぜ遅刻したのですか？"
+    },
+    {
+      "type": "reorder",
+      "tokens": [
+        "这件",
+        "衣服",
+        "太贵",
+        "了"
+      ],
+      "answer": "这件衣服太贵了。",
+      "meaning": "この服は高すぎます。"
+    },
+    {
+      "type": "reorder",
+      "tokens": [
+        "我",
+        "已经",
+        "完成",
+        "作业",
+        "了"
+      ],
+      "answer": "我已经完成作业了。",
+      "meaning": "私はもう宿題を終えました。"
+    },
+    {
+      "type": "reorder",
+      "tokens": [
+        "妈妈",
+        "在",
+        "厨房",
+        "做饭"
+      ],
+      "answer": "妈妈在厨房做饭。",
+      "meaning": "母は台所で料理しています。"
+    },
+    {
+      "type": "input",
+      "pinyin": "qǐ",
+      "answer": "起",
+      "meaning": "私は毎日7時に起きます。",
+      "sentence": "我每天七点（qǐ）床。"
+    },
+    {
+      "type": "input",
+      "pinyin": "rè",
+      "answer": "热",
+      "meaning": "今日はとても暑いです。",
+      "sentence": "今天天气很（rè）。"
+    },
+    {
+      "type": "input",
+      "pinyin": "shū",
+      "answer": "书",
+      "meaning": "私は本を1冊買いたいです。",
+      "sentence": "我想买一本（shū）。"
+    },
+    {
+      "type": "input",
+      "pinyin": "bēi",
+      "answer": "杯",
+      "meaning": "お茶を1杯どうぞ。",
+      "sentence": "请喝一（bēi）茶。"
+    },
+    {
+      "type": "input",
+      "pinyin": "yǒu",
+      "answer": "友",
+      "meaning": "彼は私の親しい友達です。",
+      "sentence": "他是我的好朋（yǒu）。"
+    },
+    {
+      "type": "input",
+      "pinyin": "suì",
+      "answer": "岁",
+      "meaning": "彼女は今年20歳です。",
+      "sentence": "她今年二十（suì）。"
+    },
+    {
+      "type": "input",
+      "pinyin": "chē",
+      "answer": "车",
+      "meaning": "私たちはバスで行きます。",
+      "sentence": "我们坐公共汽（chē）去。"
+    },
+    {
+      "type": "input",
+      "pinyin": "chī",
+      "answer": "吃",
+      "meaning": "妹はリンゴを食べるのが好きです。",
+      "sentence": "妹妹喜欢（chī）苹果。"
+    },
+    {
+      "type": "input",
+      "pinyin": "mén",
+      "answer": "门",
+      "meaning": "ドアを開けてください。",
+      "sentence": "请打开（mén）。"
+    },
+    {
+      "type": "input",
+      "pinyin": "yǔ",
+      "answer": "雨",
+      "meaning": "外は雨が降っています。",
+      "sentence": "外面下（yǔ）了。"
+    }
+  ],
+  "listeningResponses": [
+    {
+      "level": 1,
+      "prompt": "你好吗？",
+      "answer": "我很好。"
+    },
+    {
+      "level": 1,
+      "prompt": "你叫什么名字？",
+      "answer": "我叫王明。"
+    },
+    {
+      "level": 1,
+      "prompt": "你是哪国人？",
+      "answer": "我是日本人。"
+    },
+    {
+      "level": 1,
+      "prompt": "你家有几口人？",
+      "answer": "我家有三口人。"
+    },
+    {
+      "level": 1,
+      "prompt": "现在几点？",
+      "answer": "现在三点。"
+    },
+    {
+      "level": 1,
+      "prompt": "今天天气怎么样？",
+      "answer": "今天天气很好。"
+    },
+    {
+      "level": 1,
+      "prompt": "你想喝什么？",
+      "answer": "我想喝茶。"
+    },
+    {
+      "level": 1,
+      "prompt": "你在哪儿工作？",
+      "answer": "我在学校工作。"
+    },
+    {
+      "level": 1,
+      "prompt": "这是谁的书？",
+      "answer": "这是我的书。"
+    },
+    {
+      "level": 1,
+      "prompt": "你会说汉语吗？",
+      "answer": "我会说一点儿。"
+    },
+    {
+      "level": 1,
+      "prompt": "谢谢你。",
+      "answer": "不客气。"
+    },
+    {
+      "level": 2,
+      "prompt": "你为什么迟到了？",
+      "answer": "因为路上很堵。"
+    },
+    {
+      "level": 2,
+      "prompt": "你怎么去公司？",
+      "answer": "我坐地铁去。"
+    },
+    {
+      "level": 2,
+      "prompt": "这件衣服怎么样？",
+      "answer": "很好看，就是有点儿贵。"
+    },
+    {
+      "level": 2,
+      "prompt": "你什么时候回来？",
+      "answer": "我晚上八点回来。"
+    },
+    {
+      "level": 2,
+      "prompt": "你觉得这本书怎么样？",
+      "answer": "很有意思。"
+    },
+    {
+      "level": 2,
+      "prompt": "请问，洗手间在哪儿？",
+      "answer": "在前面左边。"
+    },
+    {
+      "level": 2,
+      "prompt": "你最喜欢什么运动？",
+      "answer": "我最喜欢游泳。"
+    },
+    {
+      "level": 2,
+      "prompt": "你身体不舒服吗？",
+      "answer": "我有点儿头疼。"
+    },
+    {
+      "level": 2,
+      "prompt": "周末你打算做什么？",
+      "answer": "我打算和朋友一起看电影。"
+    },
+    {
+      "level": 3,
+      "prompt": "你为什么换工作？",
+      "answer": "因为我想有更多的发展机会。"
+    },
+    {
+      "level": 3,
+      "prompt": "会议什么时候开始？",
+      "answer": "还有十分钟就开始。"
+    },
+    {
+      "level": 3,
+      "prompt": "这次考试你准备得怎么样？",
+      "answer": "我已经复习得差不多了。"
+    },
+    {
+      "level": 3,
+      "prompt": "你对这个城市的印象怎么样？",
+      "answer": "这里很方便，人也很热情。"
+    },
+    {
+      "level": 3,
+      "prompt": "你的护照找到了吗？",
+      "answer": "找到了，在书包里。"
+    },
+    {
+      "level": 3,
+      "prompt": "你能帮我打印这份材料吗？",
+      "answer": "没问题，我现在就去。"
+    },
+    {
+      "level": 3,
+      "prompt": "医生怎么说？",
+      "answer": "他说我要多休息。"
+    },
+    {
+      "level": 3,
+      "prompt": "你习惯这里的生活了吗？",
+      "answer": "基本上已经习惯了。"
+    }
+  ],
+  "listeningDialogues": [
+    {
+      "level": 1,
+      "audio": "男：你喝茶吗？女：不，我喝水。问：女的喝什么？",
+      "prompt": "女的喝什么？",
+      "answer": "水",
+      "distractors": [
+        "茶",
+        "咖啡"
+      ]
+    },
+    {
+      "level": 1,
+      "audio": "女：现在几点？男：三点。问：现在几点？",
+      "prompt": "现在几点？",
+      "answer": "三点",
+      "distractors": [
+        "两点",
+        "四点"
+      ]
+    },
+    {
+      "level": 1,
+      "audio": "男：你去哪儿？女：我去学校。问：女的去哪儿？",
+      "prompt": "女的去哪儿？",
+      "answer": "学校",
+      "distractors": [
+        "医院",
+        "商店"
+      ]
+    },
+    {
+      "level": 1,
+      "audio": "女：这是谁的猫？男：是小王的。问：猫是谁的？",
+      "prompt": "猫是谁的？",
+      "answer": "小王的",
+      "distractors": [
+        "小李的",
+        "老师的"
+      ]
+    },
+    {
+      "level": 1,
+      "audio": "男：你会做饭吗？女：不会。问：女的会做饭吗？",
+      "prompt": "女的会做饭吗？",
+      "answer": "不会",
+      "distractors": [
+        "会",
+        "不知道"
+      ]
+    },
+    {
+      "level": 2,
+      "audio": "男：今天冷吗？女：不冷，但是下雨了。问：今天天气怎么样？",
+      "prompt": "今天天气怎么样？",
+      "answer": "下雨了",
+      "distractors": [
+        "很冷",
+        "下雪了"
+      ]
+    },
+    {
+      "level": 2,
+      "audio": "女：你怎么还没吃饭？男：我刚下班。问：男的为什么没吃饭？",
+      "prompt": "男的为什么没吃饭？",
+      "answer": "他刚下班",
+      "distractors": [
+        "他不饿",
+        "他在等朋友"
+      ]
+    },
+    {
+      "level": 2,
+      "audio": "男：这件红色的怎么样？女：颜色不错，但是太大了。问：女的觉得衣服怎么样？",
+      "prompt": "女的觉得衣服怎么样？",
+      "answer": "太大了",
+      "distractors": [
+        "太小了",
+        "颜色不好"
+      ]
+    },
+    {
+      "level": 2,
+      "audio": "女：明天一起去跑步吧。男：好，早上七点见。问：他们明天做什么？",
+      "prompt": "他们明天做什么？",
+      "answer": "跑步",
+      "distractors": [
+        "游泳",
+        "打篮球"
+      ]
+    },
+    {
+      "level": 2,
+      "audio": "男：去机场坐出租车要多久？女：大概四十分钟。问：去机场要多长时间？",
+      "prompt": "去机场要多长时间？",
+      "answer": "四十分钟",
+      "distractors": [
+        "十四分钟",
+        "一个小时"
+      ]
+    },
+    {
+      "level": 3,
+      "audio": "女：你的自行车修好了吗？男：还没有，师傅说明天下午才能修好。问：自行车什么时候能修好？",
+      "prompt": "自行车什么时候能修好？",
+      "answer": "明天下午",
+      "distractors": [
+        "今天下午",
+        "明天上午"
+      ]
+    },
+    {
+      "level": 3,
+      "audio": "男：你怎么不坐电梯？女：我住三楼，走楼梯还能锻炼身体。问：女的为什么走楼梯？",
+      "prompt": "女的为什么走楼梯？",
+      "answer": "想锻炼身体",
+      "distractors": [
+        "电梯坏了",
+        "她住一楼"
+      ]
+    },
+    {
+      "level": 3,
+      "audio": "女：这家饭店的菜怎么样？男：味道不错，就是服务有点儿慢。问：男的对什么不满意？",
+      "prompt": "男的对什么不满意？",
+      "answer": "服务",
+      "distractors": [
+        "味道",
+        "环境"
+      ]
+    },
+    {
+      "level": 3,
+      "audio": "男：听说你要搬家？女：对，新家离公司更近。问：女的为什么搬家？",
+      "prompt": "女的为什么搬家？",
+      "answer": "新家离公司近",
+      "distractors": [
+        "现在的房子太小",
+        "她换了公司"
+      ]
+    },
+    {
+      "level": 3,
+      "audio": "女：报告写完了吗？男：内容写完了，还要检查一下。问：男的接下来要做什么？",
+      "prompt": "男的接下来要做什么？",
+      "answer": "检查报告",
+      "distractors": [
+        "开始写报告",
+        "把报告打印出来"
+      ]
+    }
+  ]
+}

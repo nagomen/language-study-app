@@ -9,15 +9,13 @@ const LEVEL_META = {
 const STORAGE_KEY = "language-app-spanish-progress-v1";
 const CHECKED_KEY = "language-app-spanish-checked-v1";
 const QUIZ_SIZE = 10;
-const $ = (selector) => document.querySelector(selector);
-const $$ = (selector) => [...document.querySelectorAll(selector)];
 
 const state = {
   words: [],
   byLevel: {},
   currentView: "home",
   filter: "all",
-  checked: loadChecked(),
+  checked: loadCheckedIds(CHECKED_KEY),
   checkedOnly: false,
   quiz: [],
   quizIndex: 0,
@@ -139,12 +137,6 @@ function showView(view) {
   window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
-function setMobileMenu(open) {
-  $(".sidebar").classList.toggle("is-open", open);
-  document.body.classList.toggle("nav-open", open);
-  $(".mobile-menu").setAttribute("aria-expanded", String(open));
-  $(".mobile-menu").setAttribute("aria-label", open ? "メニューを閉じる" : "メニューを開く");
-}
 
 function renderLevels() {
   const grid = $("#level-grid");
@@ -300,7 +292,7 @@ function reviewItemHtml(entry) {
   const marks = { correct: "正解", wrong: "まちがい", skipped: "未回答" };
   const yourClass = entry.status === "correct" ? " is-correct" : entry.status === "wrong" ? " is-wrong" : "";
   return `<li class="review-item is-${entry.status}">
-    <div class="review-item-head"><span class="review-index">${entry.number}</span><span class="review-tag">${escapeHtml(entry.tag)}</span><span class="review-mark">${marks[entry.status]}</span>${checkButtonHtml(entry.wordId)}</div>
+    <div class="review-item-head"><span class="review-index">${entry.number}</span><span class="review-tag">${escapeHtml(entry.tag)}</span><span class="review-mark">${marks[entry.status]}</span>${checkButtonHtml(entry.wordId, state.checked.has(entry.wordId))}</div>
     ${entry.lines.filter((line) => line.text).map((line) => `<p class="review-line"><span>${escapeHtml(line.label)}</span><b>${escapeHtml(line.text)}</b></p>`).join("")}
     <div class="review-answers">
       <div class="review-answer${yourClass}"><span>あなたの回答</span><strong>${escapeHtml(entry.your || "未回答")}</strong></div>
@@ -347,34 +339,20 @@ function renderWords() {
     const category = document.createElement("div"); category.className = "word-category"; category.textContent = word.category;
     const speak = document.createElement("button"); speak.className = "speak-mini"; speak.type = "button"; speak.dataset.speakId = word.id; speak.setAttribute("aria-label", `${word.word}の発音を聞く`); speak.textContent = "▶";
     const actions = document.createElement("div"); actions.className = "row-actions";
-    actions.innerHTML = checkButtonHtml(word.id);
+    actions.innerHTML = checkButtonHtml(word.id, state.checked.has(word.id));
     actions.append(speak);
     row.append(term, meaning, pos, category, actions);
     list.append(row);
   });
 }
 
-function loadChecked() {
-  try {
-    const saved = JSON.parse(localStorage.getItem(CHECKED_KEY) || "[]");
-    return new Set(Array.isArray(saved) ? saved : []);
-  } catch { return new Set(); }
-}
 
-function saveChecked() {
-  try { localStorage.setItem(CHECKED_KEY, JSON.stringify([...state.checked])); } catch {}
-}
 
-function checkButtonHtml(id) {
-  const checked = state.checked.has(id);
-  const label = checked ? "チェックを外す" : "チェックを付ける";
-  return `<button class="check-toggle${checked ? " is-checked" : ""}" type="button" data-check-id="${escapeHtml(id)}" aria-pressed="${checked}" aria-label="${label}" title="${label}"><span aria-hidden="true">✓</span></button>`;
-}
 
 function toggleChecked(id) {
   if (!state.words.some((word) => word.id === id)) return;
   if (state.checked.has(id)) state.checked.delete(id); else state.checked.add(id);
-  saveChecked();
+  saveCheckedIds(CHECKED_KEY, state.checked);
   const checked = state.checked.has(id);
   const label = checked ? "チェックを外す" : "チェックを付ける";
   $$(`[data-check-id="${id}"]`).forEach((button) => {
@@ -404,7 +382,7 @@ function renderChecked() {
         <span class="mini-level">${escapeHtml(word.level)}</span>
         <div class="example-word"><strong>${escapeHtml(word.word)}</strong><span>${escapeHtml(word.pos)} · ${escapeHtml(word.category)}</span><small>${escapeHtml(word.meaning)}</small></div>
         <div class="row-actions">
-          ${checkButtonHtml(word.id)}
+          ${checkButtonHtml(word.id, state.checked.has(word.id))}
           <button class="checked-speak" type="button" data-checked-audio="${escapeHtml(word.id)}" aria-label="${escapeHtml(word.word)}の発音を聞く">▶</button>
         </div>
       </header>
@@ -416,44 +394,27 @@ function renderChecked() {
   $("#checked-quiz").disabled = words.length === 0;
 }
 
-function updateCheckedSummary() {
-  const count = state.checked.size;
-  const label = $("#checked-count-label");
-  if (label) label.textContent = count ? `${count}語からテスト` : "気になる単語に✓を付けましょう";
-  const badge = $("#checked-nav-count");
-  if (badge) {
-    badge.textContent = count;
-    badge.classList.toggle("is-hidden", count === 0);
-  }
+
+function clearChecked() {
+  if (!state.checked.size || !window.confirm("チェックをすべて解除しますか？")) return;
+  state.checked.clear();
+  saveCheckedIds(CHECKED_KEY, state.checked);
+  resetCheckButtons();
+  renderChecked();
+  updateCheckedSummary();
 }
 
-function startCheckedQuiz() {
-  const words = getCheckedWords();
-  if (!words.length) return;
-  startQuiz(words, "checked");
+function updateCheckedSummary() {
+  updateCheckedBadge(state.checked.size, "気になる単語に✓を付けましょう", (count) => `${count}語からテスト`);
 }
 
 function exportChecked() {
   const ids = getCheckedWords().map((word) => word.id);
-  if (!ids.length) return;
-  const payload = { app: "language-study-app", type: "checked", language: "spanish", exportedAt: new Date().toISOString(), ids };
-  const blob = new Blob([`${JSON.stringify(payload, null, 2)}\n`], { type: "application/json" });
-  const url = URL.createObjectURL(blob);
-  const link = document.createElement("a");
-  link.href = url;
-  link.download = `checked-spanish-${localDateKey(new Date())}.json`;
-  document.body.append(link);
-  link.click();
-  link.remove();
-  window.setTimeout(() => URL.revokeObjectURL(url), 1000);
+  if (ids.length) downloadCheckedFile("spanish", ids);
 }
 
 function importCheckedFile(file) {
-  if (!file) return;
-  const reader = new FileReader();
-  reader.onerror = () => window.alert("ファイルを読み込めませんでした。");
-  reader.onload = () => {
-    const ids = parseCheckedFile(String(reader.result));
+  readCheckedFile(file, (ids) => {
     if (!ids) return window.alert("チェックの書き出しファイルとして読み込めませんでした。");
     const known = ids.filter((id) => state.words.some((word) => word.id === id));
     if (!known.length) return window.alert("この単語データに一致するIDがありませんでした。スペイン語用の書き出しファイルか確認してください。");
@@ -463,35 +424,22 @@ function importCheckedFile(file) {
       + (ignored ? `\n一致しないID ${ignored}件は無視します。` : "");
     if (!window.confirm(message)) return;
     added.forEach((id) => state.checked.add(id));
-    saveChecked();
+    saveCheckedIds(CHECKED_KEY, state.checked);
     renderChecked();
     updateCheckedSummary();
     window.alert(added.length ? `${added.length}語を追加しました。` : "すべて登録済みでした。");
-  };
-  reader.readAsText(file);
-}
-
-function parseCheckedFile(text) {
-  try {
-    const parsed = JSON.parse(text);
-    const ids = Array.isArray(parsed) ? parsed : parsed?.ids;
-    return Array.isArray(ids) ? [...new Set(ids.filter((id) => typeof id === "string"))] : null;
-  } catch { return null; }
-}
-
-function clearChecked() {
-  if (!state.checked.size || !window.confirm("チェックをすべて解除しますか？")) return;
-  state.checked.clear();
-  saveChecked();
-  $$("[data-check-id]").forEach((button) => {
-    button.classList.remove("is-checked");
-    button.setAttribute("aria-pressed", "false");
-    button.setAttribute("aria-label", "チェックを付ける");
-    button.title = "チェックを付ける";
   });
-  renderChecked();
-  updateCheckedSummary();
 }
+
+function startCheckedQuiz() {
+  const words = getCheckedWords();
+  if (!words.length) return;
+  startQuiz(words, "checked");
+}
+
+
+
+
 
 function renderProgress() {
   const progress = state.progress;
@@ -565,9 +513,6 @@ function loadProgress() {
 }
 
 function saveProgress() { localStorage.setItem(STORAGE_KEY, JSON.stringify(state.progress)); }
-function localDateKey(date) { return `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, "0")}-${String(date.getDate()).padStart(2, "0")}`; }
-function shuffle(items) { const result = [...items]; for (let i = result.length - 1; i > 0; i -= 1) { const j = Math.floor(Math.random() * (i + 1)); [result[i], result[j]] = [result[j], result[i]]; } return result; }
 function sample(items, count) { return shuffle(items).slice(0, count); }
 function uniqueBy(items, key) { const seen = new Set(); return items.filter((item) => { const value = key(item); if (seen.has(value)) return false; seen.add(value); return true; }); }
 function normalize(value) { return value.toLocaleLowerCase("es").normalize("NFD").replace(/[\u0300-\u036f]/g, ""); }
-function escapeHtml(value) { return value.replace(/[&<>"]/g, (character) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[character]); }

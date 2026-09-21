@@ -32,86 +32,14 @@ const CATEGORY_QUIZ_MIN_POOL = 10;
 // 分類ページから開ける解説ページ。分類ID → ガイドID。
 const CATEGORY_GUIDES = { particle: "de", degree: "bi", preposition: "ba", conjunction: "conjunction", direction: "complement", verb: "complement" };
 
-const WRITING_BANK = [
-  { type: "reorder", tokens: ["我", "每天", "学习", "汉语"], answer: "我每天学习汉语。", meaning: "私は毎日中国語を勉強します。" },
-  { type: "reorder", tokens: ["他", "正在", "看", "报纸"], answer: "他正在看报纸。", meaning: "彼は新聞を読んでいます。" },
-  { type: "reorder", tokens: ["明天", "可能", "下雨"], answer: "明天可能下雨。", meaning: "明日は雨かもしれません。" },
-  { type: "reorder", tokens: ["我家", "离", "学校", "很近"], answer: "我家离学校很近。", meaning: "私の家は学校から近いです。" },
-  { type: "reorder", tokens: ["她", "比", "我", "高"], answer: "她比我高。", meaning: "彼女は私より背が高いです。" },
-  { type: "reorder", tokens: ["我们", "一起", "去", "公园", "吧"], answer: "我们一起去公园吧。", meaning: "一緒に公園へ行きましょう。" },
-  { type: "reorder", tokens: ["你", "为什么", "迟到"], answer: "你为什么迟到？", meaning: "なぜ遅刻したのですか？" },
-  { type: "reorder", tokens: ["这件", "衣服", "太贵", "了"], answer: "这件衣服太贵了。", meaning: "この服は高すぎます。" },
-  { type: "reorder", tokens: ["我", "已经", "完成", "作业", "了"], answer: "我已经完成作业了。", meaning: "私はもう宿題を終えました。" },
-  { type: "reorder", tokens: ["妈妈", "在", "厨房", "做饭"], answer: "妈妈在厨房做饭。", meaning: "母は台所で料理しています。" },
-  { type: "input", pinyin: "qǐ", answer: "起", meaning: "私は毎日7時に起きます。", sentence: "我每天七点（qǐ）床。" },
-  { type: "input", pinyin: "rè", answer: "热", meaning: "今日はとても暑いです。", sentence: "今天天气很（rè）。" },
-  { type: "input", pinyin: "shū", answer: "书", meaning: "私は本を1冊買いたいです。", sentence: "我想买一本（shū）。" },
-  { type: "input", pinyin: "bēi", answer: "杯", meaning: "お茶を1杯どうぞ。", sentence: "请喝一（bēi）茶。" },
-  { type: "input", pinyin: "yǒu", answer: "友", meaning: "彼は私の親しい友達です。", sentence: "他是我的好朋（yǒu）。" },
-  { type: "input", pinyin: "suì", answer: "岁", meaning: "彼女は今年20歳です。", sentence: "她今年二十（suì）。" },
-  { type: "input", pinyin: "chē", answer: "车", meaning: "私たちはバスで行きます。", sentence: "我们坐公共汽（chē）去。" },
-  { type: "input", pinyin: "chī", answer: "吃", meaning: "妹はリンゴを食べるのが好きです。", sentence: "妹妹喜欢（chī）苹果。" },
-  { type: "input", pinyin: "mén", answer: "门", meaning: "ドアを開けてください。", sentence: "请打开（mén）。" },
-  { type: "input", pinyin: "yǔ", answer: "雨", meaning: "外は雨が降っています。", sentence: "外面下（yǔ）了。" },
-];
-
-// 作文トレーニングの正解音声。並びが変わるとファイルとずれるので、元の並び順の番号で固定する。
-const WRITING_ITEMS = WRITING_BANK.map((item, index) => ({ ...item, answerAudioFile: `audio/sentences/writing-bank-${String(index + 1).padStart(3, "0")}.m4a` }));
-
-const MOCK_RESPONSE_BANK = [
-  { level: 1, prompt: "你好吗？", answer: "我很好。" },
-  { level: 1, prompt: "你叫什么名字？", answer: "我叫王明。" },
-  { level: 1, prompt: "你是哪国人？", answer: "我是日本人。" },
-  { level: 1, prompt: "你家有几口人？", answer: "我家有三口人。" },
-  { level: 1, prompt: "现在几点？", answer: "现在三点。" },
-  { level: 1, prompt: "今天天气怎么样？", answer: "今天天气很好。" },
-  { level: 1, prompt: "你想喝什么？", answer: "我想喝茶。" },
-  { level: 1, prompt: "你在哪儿工作？", answer: "我在学校工作。" },
-  { level: 1, prompt: "这是谁的书？", answer: "这是我的书。" },
-  { level: 1, prompt: "你会说汉语吗？", answer: "我会说一点儿。" },
-  { level: 1, prompt: "谢谢你。", answer: "不客气。" },
-  { level: 2, prompt: "你为什么迟到了？", answer: "因为路上很堵。" },
-  { level: 2, prompt: "你怎么去公司？", answer: "我坐地铁去。" },
-  { level: 2, prompt: "这件衣服怎么样？", answer: "很好看，就是有点儿贵。" },
-  { level: 2, prompt: "你什么时候回来？", answer: "我晚上八点回来。" },
-  { level: 2, prompt: "你觉得这本书怎么样？", answer: "很有意思。" },
-  { level: 2, prompt: "请问，洗手间在哪儿？", answer: "在前面左边。" },
-  { level: 2, prompt: "你最喜欢什么运动？", answer: "我最喜欢游泳。" },
-  { level: 2, prompt: "你身体不舒服吗？", answer: "我有点儿头疼。" },
-  { level: 2, prompt: "周末你打算做什么？", answer: "我打算和朋友一起看电影。" },
-  { level: 3, prompt: "你为什么换工作？", answer: "因为我想有更多的发展机会。" },
-  { level: 3, prompt: "会议什么时候开始？", answer: "还有十分钟就开始。" },
-  { level: 3, prompt: "这次考试你准备得怎么样？", answer: "我已经复习得差不多了。" },
-  { level: 3, prompt: "你对这个城市的印象怎么样？", answer: "这里很方便，人也很热情。" },
-  { level: 3, prompt: "你的护照找到了吗？", answer: "找到了，在书包里。" },
-  { level: 3, prompt: "你能帮我打印这份材料吗？", answer: "没问题，我现在就去。" },
-  { level: 3, prompt: "医生怎么说？", answer: "他说我要多休息。" },
-  { level: 3, prompt: "你习惯这里的生活了吗？", answer: "基本上已经习惯了。" },
-];
-
-const MOCK_DIALOGUE_BANK = [
-  { level: 1, audio: "男：你喝茶吗？女：不，我喝水。问：女的喝什么？", prompt: "女的喝什么？", answer: "水", distractors: ["茶", "咖啡"] },
-  { level: 1, audio: "女：现在几点？男：三点。问：现在几点？", prompt: "现在几点？", answer: "三点", distractors: ["两点", "四点"] },
-  { level: 1, audio: "男：你去哪儿？女：我去学校。问：女的去哪儿？", prompt: "女的去哪儿？", answer: "学校", distractors: ["医院", "商店"] },
-  { level: 1, audio: "女：这是谁的猫？男：是小王的。问：猫是谁的？", prompt: "猫是谁的？", answer: "小王的", distractors: ["小李的", "老师的"] },
-  { level: 1, audio: "男：你会做饭吗？女：不会。问：女的会做饭吗？", prompt: "女的会做饭吗？", answer: "不会", distractors: ["会", "不知道"] },
-  { level: 2, audio: "男：今天冷吗？女：不冷，但是下雨了。问：今天天气怎么样？", prompt: "今天天气怎么样？", answer: "下雨了", distractors: ["很冷", "下雪了"] },
-  { level: 2, audio: "女：你怎么还没吃饭？男：我刚下班。问：男的为什么没吃饭？", prompt: "男的为什么没吃饭？", answer: "他刚下班", distractors: ["他不饿", "他在等朋友"] },
-  { level: 2, audio: "男：这件红色的怎么样？女：颜色不错，但是太大了。问：女的觉得衣服怎么样？", prompt: "女的觉得衣服怎么样？", answer: "太大了", distractors: ["太小了", "颜色不好"] },
-  { level: 2, audio: "女：明天一起去跑步吧。男：好，早上七点见。问：他们明天做什么？", prompt: "他们明天做什么？", answer: "跑步", distractors: ["游泳", "打篮球"] },
-  { level: 2, audio: "男：去机场坐出租车要多久？女：大概四十分钟。问：去机场要多长时间？", prompt: "去机场要多长时间？", answer: "四十分钟", distractors: ["十四分钟", "一个小时"] },
-  { level: 3, audio: "女：你的自行车修好了吗？男：还没有，师傅说明天下午才能修好。问：自行车什么时候能修好？", prompt: "自行车什么时候能修好？", answer: "明天下午", distractors: ["今天下午", "明天上午"] },
-  { level: 3, audio: "男：你怎么不坐电梯？女：我住三楼，走楼梯还能锻炼身体。问：女的为什么走楼梯？", prompt: "女的为什么走楼梯？", answer: "想锻炼身体", distractors: ["电梯坏了", "她住一楼"] },
-  { level: 3, audio: "女：这家饭店的菜怎么样？男：味道不错，就是服务有点儿慢。问：男的对什么不满意？", prompt: "男的对什么不满意？", answer: "服务", distractors: ["味道", "环境"] },
-  { level: 3, audio: "男：听说你要搬家？女：对，新家离公司更近。问：女的为什么搬家？", prompt: "女的为什么搬家？", answer: "新家离公司近", distractors: ["现在的房子太小", "她换了公司"] },
-  { level: 3, audio: "女：报告写完了吗？男：内容写完了，还要检查一下。问：男的接下来要做什么？", prompt: "男的接下来要做什么？", answer: "检查报告", distractors: ["开始写报告", "把报告打印出来"] },
-];
 
 const state = {
   words: [],
   categories: [],
   guides: [],
   measure: null,
+  // 作文・聴解の問題文（data/practice-banks.json）。配列の順番が音声ファイルの連番に対応する。
+  banks: { writing: [], listeningResponses: [], listeningDialogues: [] },
   selectedGuide: null,
   mockForms: {},
   audioSpeed: loadAudioSpeed(),
@@ -122,7 +50,7 @@ const state = {
   wordHideMeaning: false,
   categoryFilter: "all",
   selectedCategory: null,
-  checked: loadChecked(),
+  checked: loadCheckedIds(CHECKED_KEY),
   checkedOnly: { words: false, categories: false },
   daily: loadDaily(),
   dailyDays: [],
@@ -134,8 +62,6 @@ const state = {
 let activeAudio = null;
 let speechRunId = 0;
 
-const $ = (selector) => document.querySelector(selector);
-const $$ = (selector) => [...document.querySelectorAll(selector)];
 
 document.addEventListener("DOMContentLoaded", init);
 
@@ -157,22 +83,25 @@ async function init() {
 async function loadWords() {
   try {
     const responses = await Promise.all([1, 2, 3].map((level) => fetch(`data/hsk${level}.json`)));
-    const [tagResponse, guideResponse, measureResponse, ...mockResponses] = await Promise.all([
+    const [tagResponse, guideResponse, measureResponse, bankResponse, ...mockResponses] = await Promise.all([
       fetch("data/word-tags.json"),
       fetch("data/guides.json"),
       fetch("data/measure-words.json"),
+      fetch("data/practice-banks.json"),
       ...[1, 2, 3].map((level) => fetch(`data/mock-hsk${level}.json`)),
     ]);
     if (responses.some((response) => !response.ok)) throw new Error("JSONの読み込みに失敗しました");
     if (mockResponses.some((response) => !response.ok)) throw new Error("模試データの読み込みに失敗しました");
     if (!tagResponse.ok) throw new Error("分類データの読み込みに失敗しました");
     if (!guideResponse.ok || !measureResponse.ok) throw new Error("解説データの読み込みに失敗しました");
+    if (!bankResponse.ok) throw new Error("練習問題データの読み込みに失敗しました");
     const groups = await Promise.all(responses.map((response) => response.json()));
     const mockGroups = await Promise.all(mockResponses.map((response) => response.json()));
     const tagData = await tagResponse.json();
     state.categories = tagData.categories || [];
     state.guides = (await guideResponse.json()).guides || [];
     state.measure = await measureResponse.json();
+    state.banks = await bankResponse.json();
     state.words = groups.flatMap((group, index) => group.map((word, wordIndex) => {
       const id = word.id || `hsk${index + 1}-${wordIndex + 1}`;
       return { ...word, level: index + 1, id, tags: tagData.words?.[id] || [] };
@@ -374,12 +303,6 @@ function showView(view) {
   window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
-function setMobileMenu(open) {
-  $(".sidebar").classList.toggle("is-open", open);
-  document.body.classList.toggle("nav-open", open);
-  $(".mobile-menu").setAttribute("aria-expanded", String(open));
-  $(".mobile-menu").setAttribute("aria-label", open ? "メニューを閉じる" : "メニューを開く");
-}
 
 function renderLevels() {
   const grid = $("#level-grid");
@@ -614,7 +537,7 @@ function wordCardHtml(word) {
       </div>` : `<div class="entry-example is-empty"></div>`}
       <p class="entry-cover">タップして意味と例文を見る</p>
       <div class="entry-actions">
-        ${checkButtonHtml(word.id)}
+        ${checkButtonHtml(word.id, state.checked.has(word.id))}
         <button class="speak-mini" type="button" data-word-id="${escapeHtml(word.id)}" aria-label="${escapeHtml(word.hanzi)}の中国語発音を聞く"><span aria-hidden="true">声</span></button>
       </div>
     </article>`;
@@ -639,7 +562,7 @@ function wordRowHtml(word, { showExample = false } = {}) {
         ${wordTagsHtml(word)}
       </div>
       <div class="row-actions">
-        ${checkButtonHtml(word.id)}
+        ${checkButtonHtml(word.id, state.checked.has(word.id))}
         <button class="speak-mini" type="button" data-word-id="${escapeHtml(word.id)}" aria-label="${escapeHtml(word.hanzi)}の中国語発音を聞く"><span aria-hidden="true">声</span></button>
       </div>
       ${hasExample ? `<div class="word-example">
@@ -855,7 +778,7 @@ function guideSectionHtml(section) {
     return `<article class="guide-word">
       <header class="guide-word-head">
         <div><strong>${escapeHtml(word.hanzi)}</strong><span>${escapeHtml(word.pinyin)}</span><small>${escapeHtml(word.meaning)}</small></div>
-        <div class="row-actions">${checkButtonHtml(word.id)}<button class="speak-mini" type="button" data-word-id="${escapeHtml(word.id)}" aria-label="${escapeHtml(word.hanzi)}の発音を聞く"><span aria-hidden="true">声</span></button></div>
+        <div class="row-actions">${checkButtonHtml(word.id, state.checked.has(word.id))}<button class="speak-mini" type="button" data-word-id="${escapeHtml(word.id)}" aria-label="${escapeHtml(word.hanzi)}の発音を聞く"><span aria-hidden="true">声</span></button></div>
       </header>
       ${phraseBlockHtml(entry.phrase)}
     </article>`;
@@ -922,7 +845,7 @@ function measureCardHtml(item) {
     <header class="measure-card-head">
       <div class="measure-hanzi"><strong>${escapeHtml(word.hanzi)}</strong><span>${escapeHtml(word.pinyin)}</span></div>
       <span class="mini-level">HSK ${word.level}</span>
-      <div class="row-actions">${checkButtonHtml(word.id)}<button class="speak-mini" type="button" data-word-id="${escapeHtml(word.id)}" aria-label="${escapeHtml(word.hanzi)}の発音を聞く"><span aria-hidden="true">声</span></button></div>
+      <div class="row-actions">${checkButtonHtml(word.id, state.checked.has(word.id))}<button class="speak-mini" type="button" data-word-id="${escapeHtml(word.id)}" aria-label="${escapeHtml(word.hanzi)}の発音を聞く"><span aria-hidden="true">声</span></button></div>
     </header>
     <p class="measure-use">${escapeHtml(item.use)}</p>
     <p class="measure-phrase"><b>${escapeHtml(item.phrase.cn)}</b><span>${escapeHtml(item.phrase.pinyin)}</span><span>${escapeHtml(item.phrase.ja)}</span>${speakButtonHtml(item.phrase.cn, `${item.phrase.cn}を聞く`)}</p>
@@ -1130,7 +1053,7 @@ function dailySnapshot() {
   const index = state.daily.day - 1;
   const finished = index >= days.length;
   // 今日テストを終えたら、次の20語は翌日まで開かない（1日1セット）。
-  const locked = state.daily.lastDate === todayString() && !finished;
+  const locked = state.daily.lastDate === localDateKey() && !finished;
   const shownIndex = locked ? index - 1 : index;
   return {
     days,
@@ -1244,9 +1167,9 @@ function completeDailySession() {
   // 出題して正解した語は外す。ただし、まちがえた語と「気になる」を付けた語は残す。
   daily.pendingReview = [...new Set([...daily.pendingReview.filter((id) => !asked.has(id) || wrong.includes(id) || marked.has(id)), ...wrong])];
   if (source === "daily") {
-    daily.history.unshift({ day: daily.day, date: todayString(), total: questions.length, correct: state.quiz.correct, wrong: wrong.length });
+    daily.history.unshift({ day: daily.day, date: localDateKey(), total: questions.length, correct: state.quiz.correct, wrong: wrong.length });
     daily.history = daily.history.slice(0, 30);
-    daily.lastDate = todayString();
+    daily.lastDate = localDateKey();
     daily.day = Math.min(daily.day + 1, state.dailyDays.length + 1);
   }
   saveDaily();
@@ -1260,28 +1183,14 @@ function resetDaily() {
   renderDaily();
 }
 
-function loadChecked() {
-  try {
-    const saved = JSON.parse(localStorage.getItem(CHECKED_KEY) || "[]");
-    return new Set(Array.isArray(saved) ? saved : []);
-  } catch { return new Set(); }
-}
 
-function saveChecked() {
-  try { localStorage.setItem(CHECKED_KEY, JSON.stringify([...state.checked])); } catch {}
-}
 
-function checkButtonHtml(id) {
-  const checked = state.checked.has(id);
-  const label = checked ? "チェックを外す" : "チェックを付ける";
-  return `<button class="check-toggle${checked ? " is-checked" : ""}" type="button" data-check-id="${escapeHtml(id)}" aria-pressed="${checked}" aria-label="${label}" title="${label}"><span aria-hidden="true">✓</span></button>`;
-}
 
 function toggleChecked(id) {
   const word = state.words.find((item) => item.id === id);
   if (!word) return;
   if (state.checked.has(id)) state.checked.delete(id); else state.checked.add(id);
-  saveChecked();
+  saveCheckedIds(CHECKED_KEY, state.checked);
   const checked = state.checked.has(id);
   const label = checked ? "チェックを外す" : "チェックを付ける";
   $$(`[data-check-id="${id}"]`).forEach((button) => {
@@ -1332,7 +1241,7 @@ function renderChecked() {
         <span class="mini-level">HSK ${word.level}</span>
         <div class="example-word"><strong>${escapeHtml(word.hanzi)}</strong><span>${escapeHtml(word.pinyin)}</span><small>${escapeHtml(word.meaning)}</small></div>
         <div class="row-actions">
-          ${checkButtonHtml(word.id)}
+          ${checkButtonHtml(word.id, state.checked.has(word.id))}
           <button class="checked-speak" type="button" data-checked-audio="${escapeHtml(word.id)}" aria-label="${escapeHtml(word.hanzi)}の発音を聞く"><span aria-hidden="true">声</span></button>
         </div>
       </header>
@@ -1348,38 +1257,31 @@ function renderChecked() {
   $$("#checked-view [data-checked-action]").forEach((button) => { button.disabled = words.length === 0; });
 }
 
+
+
+
+
+function clearChecked() {
+  if (!state.checked.size || !confirm("チェックをすべて解除しますか？")) return;
+  state.checked.clear();
+  saveCheckedIds(CHECKED_KEY, state.checked);
+  resetCheckButtons();
+  renderChecked();
+  updateCheckedSummary();
+}
+
 function updateCheckedSummary() {
-  const count = state.checked.size;
-  const label = $("#checked-count-label");
-  if (label) label.textContent = count ? `${count}語をまとめて復習` : "気になる単語に✓を付けましょう";
-  const badge = $("#checked-nav-count");
-  if (badge) {
-    badge.textContent = count;
-    badge.classList.toggle("is-hidden", count === 0);
-  }
+  updateCheckedBadge(state.checked.size, "気になる単語に✓を付けましょう", (count) => `${count}語をまとめて復習`);
 }
 
 function exportChecked() {
   const ids = getCheckedWords().map((word) => word.id);
   if (!ids.length) return alert("チェックした単語がありません。");
-  const payload = { app: "language-study-app", type: "checked", language: "chinese", exportedAt: new Date().toISOString(), ids };
-  const blob = new Blob([`${JSON.stringify(payload, null, 2)}\n`], { type: "application/json" });
-  const url = URL.createObjectURL(blob);
-  const link = document.createElement("a");
-  link.href = url;
-  link.download = `checked-chinese-${todayString()}.json`;
-  document.body.append(link);
-  link.click();
-  link.remove();
-  window.setTimeout(() => URL.revokeObjectURL(url), 1000);
+  downloadCheckedFile("chinese", ids);
 }
 
 function importCheckedFile(file) {
-  if (!file) return;
-  const reader = new FileReader();
-  reader.onerror = () => alert("ファイルを読み込めませんでした。");
-  reader.onload = () => {
-    const ids = parseCheckedFile(String(reader.result));
+  readCheckedFile(file, (ids) => {
     if (!ids) return alert("チェックの書き出しファイルとして読み込めませんでした。");
     const known = ids.filter((id) => state.words.some((word) => word.id === id));
     if (!known.length) return alert("この単語データに一致するIDがありませんでした。中国語用の書き出しファイルか確認してください。");
@@ -1389,34 +1291,11 @@ function importCheckedFile(file) {
       + (ignored ? `\n一致しないID ${ignored}件は無視します。` : "");
     if (!confirm(message)) return;
     added.forEach((id) => state.checked.add(id));
-    saveChecked();
+    saveCheckedIds(CHECKED_KEY, state.checked);
     renderChecked();
     updateCheckedSummary();
     alert(added.length ? `${added.length}語を追加しました。` : "すべて登録済みでした。");
-  };
-  reader.readAsText(file);
-}
-
-function parseCheckedFile(text) {
-  try {
-    const parsed = JSON.parse(text);
-    const ids = Array.isArray(parsed) ? parsed : parsed?.ids;
-    return Array.isArray(ids) ? [...new Set(ids.filter((id) => typeof id === "string"))] : null;
-  } catch { return null; }
-}
-
-function clearChecked() {
-  if (!state.checked.size || !confirm("チェックをすべて解除しますか？")) return;
-  state.checked.clear();
-  saveChecked();
-  $$("[data-check-id]").forEach((button) => {
-    button.classList.remove("is-checked");
-    button.setAttribute("aria-pressed", "false");
-    button.setAttribute("aria-label", "チェックを付ける");
-    button.title = "チェックを付ける";
   });
-  renderChecked();
-  updateCheckedSummary();
 }
 
 function startCheckedQuiz() {
@@ -1627,7 +1506,7 @@ const LISTENING_MIX = {
 };
 
 function makeListeningQuestions(level, count, source = null) {
-  const banked = MOCK_DIALOGUE_BANK
+  const banked = state.banks.listeningDialogues
     .map((item, index) => ({ ...item, audioFile: `audio/sentences/mock-dialogue-${String(index + 1).padStart(3, "0")}.m4a` }))
     .filter((item) => item.level <= level);
   // 対話も選んだ級のものを先に使い、足りないときだけ下の級から出す。
@@ -1654,44 +1533,6 @@ function makeListeningDialogueQuestion(item) {
   };
 }
 
-function makeMockListeningQuestions(level, count) {
-  const responsePool = MOCK_RESPONSE_BANK.map((item, index) => ({ ...item, audioFile: `audio/sentences/mock-response-${String(index + 1).padStart(3, "0")}.m4a` })).filter((item) => item.level <= level);
-  const dialoguePool = MOCK_DIALOGUE_BANK.map((item, index) => ({ ...item, audioFile: `audio/sentences/mock-dialogue-${String(index + 1).padStart(3, "0")}.m4a` })).filter((item) => item.level <= level);
-  const examplePool = getLevelPool(level).filter((word) => word.example);
-  const responseItems = shuffle([...responsePool]);
-  const dialogueItems = shuffle([...dialoguePool]);
-  const exampleItems = shuffle([...examplePool]);
-  return Array.from({ length: count }, (_, index) => {
-    const type = level === 3 ? (index < 10 ? 2 : 1) : (level === 2 ? (index % 5 === 0 ? 0 : 1) : index % 2);
-    if (type === 0) {
-      const item = responseItems[index % responseItems.length];
-      const otherAnswers = shuffle(responsePool.filter((candidate) => candidate.answer !== item.answer)).slice(0, 2).map((candidate) => candidate.answer);
-      return {
-        skill: "listening", kind: "audio-response", audioText: item.prompt, audioFile: item.audioFile,
-        choices: shuffle([item.answer, ...otherAnswers]).map((label) => ({ value: label, label })), correct: item.answer,
-        instruction: "请听问题，选择正确的回答。", explanation: `${item.prompt} — ${item.answer}`, audioPlays: 0,
-      };
-    }
-    if (type === 1) {
-      const item = dialogueItems[index % dialogueItems.length];
-      const choices = shuffle([item.answer, ...item.distractors]).map((label) => ({ value: label, label }));
-      return {
-        skill: "listening", kind: "audio-dialogue", audioText: item.audio, audioFile: item.audioFile,
-        choices, correct: item.answer, instruction: "请听对话，选择正确答案。",
-        explanation: `${item.prompt} — ${item.answer}`, audioPlays: 0,
-      };
-    }
-    const word = exampleItems[index % exampleItems.length];
-    const isCorrect = index % 2 === 0;
-    const printed = isCorrect ? word : exampleItems[(index + 7) % exampleItems.length];
-    return {
-      skill: "listening", kind: "audio-judge", wordId: word.id, audioText: word.example, audioFile: exampleAudioFile(word), prompt: printed.example,
-      choices: [{ value: "true", label: "对" }, { value: "false", label: "不对" }], correct: String(isCorrect),
-      instruction: "请听录音，判断内容是否与句子一致。", explanation: isCorrect ? "对" : "不对", audioPlays: 0,
-    };
-  });
-}
-
 function makeListeningQuestion(word, level, kind = "word") {
   const pool = sameLevelDistractors(word, getLevelPool(level));
   if (kind === "sentence" && word.example) {
@@ -1716,53 +1557,6 @@ function makeReadingQuestions(level, count, source = null) {
   return words.map((word, index) => makeReadingQuestion(word, level, kinds[index]));
 }
 
-function makeMockReadingQuestions(level, count) {
-  const responsePool = MOCK_RESPONSE_BANK.filter((item) => item.level <= level);
-  const dialoguePool = MOCK_DIALOGUE_BANK.filter((item) => item.level <= level);
-  const examplePool = getLevelPool(level).filter((word) => word.example?.includes(word.hanzi));
-  const responseItems = shuffle([...responsePool]);
-  const dialogueItems = shuffle([...dialoguePool]);
-  const exampleItems = shuffle([...examplePool]);
-  return Array.from({ length: count }, (_, index) => {
-    const pattern = level === 1 ? [0, 1] : (level === 2 ? [0, 0, 0, 1, 2] : [0, 1, 3]);
-    const type = pattern[index % pattern.length];
-    if (type === 0) {
-      const item = responseItems[index % responseItems.length];
-      const otherAnswers = shuffle(responsePool.filter((candidate) => candidate.answer !== item.answer)).slice(0, 2).map((candidate) => candidate.answer);
-      return {
-        skill: "reading", kind: "reading-response", prompt: item.prompt,
-        choices: shuffle([item.answer, ...otherAnswers]).map((label) => ({ value: label, label })), correct: item.answer,
-        instruction: "请选择与问句相对应的回答。", explanation: `${item.prompt} — ${item.answer}`,
-      };
-    }
-    if (type === 1) {
-      const word = exampleItems[index % exampleItems.length];
-      const candidates = shuffle(examplePool.filter((item) => item.id !== word.id && item.hanzi !== word.hanzi)).slice(0, 2);
-      return {
-        skill: "reading", kind: "reading-cloze", wordId: word.id, prompt: word.example.replace(word.hanzi, "＿＿＿"),
-        choices: shuffle([{ value: word.id, label: word.hanzi }, ...candidates.map((item) => ({ value: item.id, label: item.hanzi }))]),
-        correct: word.id, instruction: "请选择合适的词语填空。", explanation: word.example,
-      };
-    }
-    if (type === 2) {
-      const first = exampleItems[index % exampleItems.length];
-      const isCorrect = index % 8 === 2;
-      const second = isCorrect ? first : exampleItems[(index + 5) % exampleItems.length];
-      return {
-        skill: "reading", kind: "reading-judge", wordId: first.id, prompt: first.example,
-        subPrompt: second.example, choices: [{ value: "true", label: "对" }, { value: "false", label: "不对" }],
-        correct: String(isCorrect), instruction: "请判断下面两句话的意思是否一致。", explanation: isCorrect ? "对" : "不对",
-      };
-    }
-    const item = dialogueItems[index % dialogueItems.length];
-    return {
-      skill: "reading", kind: "reading-comprehension", prompt: item.audio.replace(/问：.*$/, ""), subPrompt: item.prompt,
-      choices: shuffle([item.answer, ...item.distractors]).map((label) => ({ value: label, label })), correct: item.answer,
-      instruction: "请阅读短文，选择正确答案。", explanation: `${item.prompt} — ${item.answer}`,
-    };
-  });
-}
-
 function makeReadingQuestion(word, level, kind = "meaning") {
   const pool = sameLevelDistractors(word, getLevelPool(level));
   if (kind === "pinyin") {
@@ -1778,8 +1572,10 @@ function makeReadingQuestion(word, level, kind = "meaning") {
 }
 
 function makeWritingQuestions(count, isMock = false) {
-  const reorder = shuffle(WRITING_ITEMS.filter((item) => item.type === "reorder"));
-  const input = shuffle(WRITING_ITEMS.filter((item) => item.type === "input"));
+  // 正解音声のファイル名は元の並び順の番号で決まるので、絞り込む前に付ける。
+  const items = state.banks.writing.map((item, index) => ({ ...item, answerAudioFile: `audio/sentences/writing-bank-${String(index + 1).padStart(3, "0")}.m4a` }));
+  const reorder = shuffle(items.filter((item) => item.type === "reorder"));
+  const input = shuffle(items.filter((item) => item.type === "input"));
   const half = Math.ceil(count / 2);
   return [...reorder.slice(0, half), ...input.slice(0, count - half)].map((item) => ({
     ...item, skill: "writing", kind: item.type, mockFormat: isMock,
@@ -2171,7 +1967,7 @@ function finishPractice(timedOut = Boolean(state.practice.timedOutSections?.leng
     $("#practice-result-subtitle").textContent = passed ? "合格ライン到達" : "合格まであと少し";
     $("#practice-result-message").textContent = timedOut ? "時間切れです。振り返りから復習しましょう。" : (passed ? "合格ラインです。太棒了！" : `目安は${passMark}点です。振り返りで弱いところを確認しましょう。`);
     $("#practice-breakdown").innerHTML = skills.map((skill, index) => `<div><span>${SKILL_LABELS[skill]}</span><strong>${scores[index]}</strong><small>/ 100</small></div>`).join("");
-    state.progress.mocks.unshift({ date: todayString(), level: session.level, score: total, maxScore, passed, ...(session.section ? { section: session.section } : {}) });
+    state.progress.mocks.unshift({ date: localDateKey(), level: session.level, score: total, maxScore, passed, ...(session.section ? { section: session.section } : {}) });
     state.progress.mocks = state.progress.mocks.slice(0, 10);
     saveProgress();
   } else {
@@ -2242,7 +2038,7 @@ function reviewItemHtml(entry, index) {
   const marks = { correct: "正解", wrong: "まちがい", skipped: "未回答" };
   const yourClass = entry.status === "correct" ? " is-correct" : entry.status === "wrong" ? " is-wrong" : "";
   return `<li class="review-item is-${entry.status}">
-    <div class="review-item-head"><span class="review-index">${entry.number}</span><span class="review-tag">${escapeHtml(entry.tag)}</span><span class="review-mark">${marks[entry.status]}</span>${entry.wordId ? checkButtonHtml(entry.wordId) : ""}</div>
+    <div class="review-item-head"><span class="review-index">${entry.number}</span><span class="review-tag">${escapeHtml(entry.tag)}</span><span class="review-mark">${marks[entry.status]}</span>${entry.wordId ? checkButtonHtml(entry.wordId, state.checked.has(entry.wordId)) : ""}</div>
     ${entry.lines.filter((line) => line.text).map((line) => `<p class="review-line"><span>${escapeHtml(line.label)}</span><b>${escapeHtml(line.text)}</b></p>`).join("")}
     <div class="review-answers">
       <div class="review-answer${yourClass}"><span>あなたの回答</span><strong>${escapeHtml(entry.your || "未回答")}</strong></div>
@@ -2372,7 +2168,7 @@ function updatePracticeTimer() {
 }
 
 function recordStudy(word, isCorrect, skill) {
-  const today = todayString();
+  const today = localDateKey();
   state.progress.lastStudyDate = today;
   state.progress.weekCount += 1;
   state.progress.dailyCounts[today] = (state.progress.dailyCounts[today] || 0) + 1;
@@ -2392,27 +2188,24 @@ function recordStudy(word, isCorrect, skill) {
 }
 
 function getDueWords() {
-  const today = todayString();
+  const today = localDateKey();
   return state.words.filter((word) => state.progress.srs[word.id] && state.progress.srs[word.id].due <= today);
 }
 
 function masteryScore(word) { return state.progress.srs[word.id]?.repetitions || 0; }
-function todayString(date = new Date()) {
-  return `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, "0")}-${String(date.getDate()).padStart(2, "0")}`;
-}
 function startOfCurrentWeek() {
   const date = new Date();
   const day = date.getDay() || 7;
   date.setDate(date.getDate() - day + 1);
-  return todayString(date);
+  return localDateKey(date);
 }
 function calculateStreak() {
   const dates = new Set(state.progress.studyDates || []);
   if (!dates.size) return 0;
   const cursor = new Date();
-  if (!dates.has(todayString(cursor))) cursor.setDate(cursor.getDate() - 1);
+  if (!dates.has(localDateKey(cursor))) cursor.setDate(cursor.getDate() - 1);
   let streak = 0;
-  while (dates.has(todayString(cursor))) {
+  while (dates.has(localDateKey(cursor))) {
     streak += 1;
     cursor.setDate(cursor.getDate() - 1);
   }
@@ -2556,14 +2349,4 @@ function cleanSpeechText(text) {
   return String(text || "").replace(/^[男女问]：/, "").replace(/＿＿＿/g, "什么").trim();
 }
 
-function shuffle(items) {
-  for (let i = items.length - 1; i > 0; i -= 1) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [items[i], items[j]] = [items[j], items[i]];
-  }
-  return items;
-}
 
-function escapeHtml(value) {
-  return String(value).replace(/[&<>'"]/g, (char) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", "'": "&#39;", '"': "&quot;" })[char]);
-}
