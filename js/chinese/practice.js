@@ -254,7 +254,7 @@ function renderPracticeAnswers(question) {
   } else if (question.kind === "reorder") {
     question.selected = [];
     const shuffledTokens = shuffle(question.tokens.map((token, index) => ({ token, index })));
-    area.innerHTML = `<div class="token-bank" aria-label="並べ替える語句">${shuffledTokens.map((item) => `<button type="button" class="word-token" draggable="true" data-token-index="${item.index}">${escapeHtml(item.token)}</button>`).join("")}</div><p class="drag-help">クリックで追加／ドラッグで順番を入れ替え</p><div class="writing-actions"><button id="reset-order" class="secondary-button" type="button">${question.mockFormat ? "重新排列" : "やり直す"}</button><button id="submit-order" class="primary-button" type="button">${question.mockFormat ? "提交答案" : "解答する"}</button></div>`;
+    area.innerHTML = `<div class="token-bank" aria-label="並べ替える語句">${shuffledTokens.map((item) => `<button type="button" class="word-token" data-token-index="${item.index}">${escapeHtml(item.token)}</button>`).join("")}</div><p class="drag-help"><b>タップ</b>で文に入れる／<b>ドラッグ</b>で順番を入れ替え・候補に戻す</p><div class="writing-actions"><button id="reset-order" class="secondary-button" type="button">${question.mockFormat ? "重新排列" : "やり直す"}</button><button id="submit-order" class="primary-button" type="button">${question.mockFormat ? "提交答案" : "解答する"}</button></div>`;
     setupReorderInteraction(question);
     $("#reset-order").addEventListener("click", () => renderPracticeQuestion());
     $("#submit-order").addEventListener("click", () => {
@@ -272,11 +272,14 @@ function reorderAnswer(question) {
   return question.selected.map((index) => question.tokens[index]).join("");
 }
 
+// 並べ替えは、タップで出し入れ、ドラッグで順番の入れ替え。
+// HTML5のドラッグはスマホで動かないので、ポインタイベントで自前に持つ。
 function setupReorderInteraction(question) {
   const bank = $(".token-bank");
   const answer = $("#ordered-answer");
   if (!bank || !answer) return;
-  let draggedElement = null;
+  const DRAG_START_PX = 6;
+  let drag = null;
 
   const render = () => {
     const selected = new Set(question.selected);
@@ -285,80 +288,132 @@ function setupReorderInteraction(question) {
     });
     answer.classList.toggle("has-tokens", question.selected.length > 0);
     answer.innerHTML = question.selected.length
-      ? question.selected.map((index) => `<button type="button" class="word-token selected-token" draggable="true" data-token-index="${index}" aria-label="${escapeHtml(question.tokens[index])}を移動または候補に戻す">${escapeHtml(question.tokens[index])}</button>`).join("")
+      ? question.selected.map((index, position) => `<button type="button" class="word-token selected-token" data-token-index="${index}" aria-label="${position + 1}番目 ${escapeHtml(question.tokens[index])}。押すと候補に戻ります。ドラッグで順番を変えられます">${escapeHtml(question.tokens[index])}</button>`).join("")
       : `<span class="ordered-placeholder">${question.mockFormat ? "请在这里排列句子" : "ここに語順を作ります"}</span>`;
   };
 
-  const addToken = (index) => {
-    if (!question.selected.includes(index)) question.selected.push(index);
+  const addToken = (index, position = null) => {
+    const next = question.selected.filter((selectedIndex) => selectedIndex !== index);
+    next.splice(position === null ? next.length : position, 0, index);
+    question.selected = next;
     render();
   };
   const removeToken = (index) => {
     question.selected = question.selected.filter((selectedIndex) => selectedIndex !== index);
     render();
   };
-  const moveToken = (index, beforeIndex = null) => {
-    if (index === beforeIndex) return;
-    const next = question.selected.filter((selectedIndex) => selectedIndex !== index);
-    const position = beforeIndex === null ? next.length : next.indexOf(beforeIndex);
-    next.splice(position < 0 ? next.length : position, 0, index);
-    question.selected = next;
-    render();
-  };
-  const clearDragState = () => {
-    draggedElement?.classList.remove("is-dragging");
-    draggedElement = null;
-    bank.classList.remove("is-drag-over");
-    answer.classList.remove("is-drag-over");
-  };
-  const beginDrag = (event) => {
-    const token = event.target.closest(".word-token");
-    if (!token || token.disabled || state.practice.answered) return;
-    draggedElement = token;
-    token.classList.add("is-dragging");
-    event.dataTransfer.effectAllowed = "move";
-    event.dataTransfer.setData("text/plain", token.dataset.tokenIndex);
+
+  // 落とす位置（解答欄の何番目に入るか）を、置かれている語句の中心と比べて決める。
+  const dropPosition = (x, y) => {
+    const tokens = [...answer.querySelectorAll(".selected-token")].filter((element) => element !== drag?.source);
+    for (let i = 0; i < tokens.length; i += 1) {
+      const box = tokens[i].getBoundingClientRect();
+      if (y < box.bottom && (y > box.top ? x < box.left + box.width / 2 : true)) return i;
+    }
+    return tokens.length;
   };
 
+  const showMarker = (position) => {
+    let marker = answer.querySelector(".drop-marker");
+    if (!marker) {
+      marker = document.createElement("span");
+      marker.className = "drop-marker";
+      marker.setAttribute("aria-hidden", "true");
+    }
+    const tokens = [...answer.querySelectorAll(".selected-token")].filter((element) => element !== drag?.source);
+    if (position >= tokens.length) answer.append(marker);
+    else tokens[position].before(marker);
+  };
+  const clearMarker = () => answer.querySelector(".drop-marker")?.remove();
+
+  const endDrag = (commit) => {
+    if (!drag) return;
+    const { index, over, position, moved } = drag;
+    drag.ghost?.remove();
+    drag.source?.classList.remove("is-dragging");
+    clearMarker();
+    answer.classList.remove("is-drag-over");
+    bank.classList.remove("is-drag-over");
+    drag = null;
+    if (!moved) return;                 // 動かしていなければ、続けて出るクリックに任せる
+    swallowNextClick();                 // ドラッグの直後に出るクリックだけ捨てる
+    if (!commit) return;
+    if (over === "answer") addToken(index, position);
+    else if (over === "bank") removeToken(index);
+  };
+
+  // タップ（とキーボードのEnter）はクリックで受ける。
   bank.addEventListener("click", (event) => {
     const token = event.target.closest(".word-token");
-    if (token && !token.disabled && !state.practice.answered) addToken(Number(token.dataset.tokenIndex));
+    if (!token || token.disabled || state.practice.answered) return;
+    addToken(Number(token.dataset.tokenIndex));
   });
   answer.addEventListener("click", (event) => {
     const token = event.target.closest(".selected-token");
-    if (token && !state.practice.answered) removeToken(Number(token.dataset.tokenIndex));
+    if (!token || state.practice.answered) return;
+    removeToken(Number(token.dataset.tokenIndex));
   });
-  bank.addEventListener("dragstart", beginDrag);
-  answer.addEventListener("dragstart", beginDrag);
-  [bank, answer].forEach((container) => container.addEventListener("dragend", clearDragState));
-  answer.addEventListener("dragover", (event) => {
-    if (state.practice.answered) return;
-    event.preventDefault();
-    event.dataTransfer.dropEffect = "move";
-    answer.classList.add("is-drag-over");
-  });
-  answer.addEventListener("drop", (event) => {
-    event.preventDefault();
-    const index = Number(event.dataTransfer.getData("text/plain"));
-    const target = event.target.closest(".selected-token");
-    const beforeIndex = target ? Number(target.dataset.tokenIndex) : null;
-    if (Number.isInteger(index)) moveToken(index, beforeIndex);
-    clearDragState();
-  });
-  bank.addEventListener("dragover", (event) => {
-    if (state.practice.answered) return;
-    event.preventDefault();
-    event.dataTransfer.dropEffect = "move";
-    bank.classList.add("is-drag-over");
-  });
-  bank.addEventListener("drop", (event) => {
-    event.preventDefault();
-    const index = Number(event.dataTransfer.getData("text/plain"));
-    if (Number.isInteger(index)) removeToken(index);
-    clearDragState();
-  });
+
+  bank.addEventListener("pointerdown", (event) => beginDrag(event, "bank"));
+  answer.addEventListener("pointerdown", (event) => beginDrag(event, "answer"));
+
+  function beginDrag(event, from) {
+    if (state.practice.answered || event.button > 0) return;
+    const token = event.target.closest(".word-token");
+    if (!token || token.disabled) return;
+    token.setPointerCapture?.(event.pointerId);
+    drag = {
+      index: Number(token.dataset.tokenIndex), source: from === "answer" ? token : null,
+      startX: event.clientX, startY: event.clientY, moved: false, pointerId: event.pointerId,
+      over: from === "bank" ? "outside" : "answer", position: null, ghost: null, label: token.textContent,
+    };
+  }
+
+  const onMove = (event) => {
+    if (!drag || event.pointerId !== drag.pointerId) return;
+    if (!drag.moved) {
+      if (Math.hypot(event.clientX - drag.startX, event.clientY - drag.startY) < DRAG_START_PX) return;
+      drag.moved = true;
+      event.preventDefault();
+      drag.source?.classList.add("is-dragging");
+      drag.ghost = document.createElement("span");
+      drag.ghost.className = "token-ghost";
+      drag.ghost.textContent = drag.label;
+      document.body.append(drag.ghost);
+    }
+    // 指の少し上に出す（指で隠れないように）。
+    drag.ghost.style.transform = `translate(${event.clientX}px, ${event.clientY}px) translate(-50%, -150%)`;
+    const box = answer.getBoundingClientRect();
+    const inAnswer = event.clientX >= box.left && event.clientX <= box.right && event.clientY >= box.top - 20 && event.clientY <= box.bottom + 20;
+    answer.classList.toggle("is-drag-over", inAnswer);
+    bank.classList.toggle("is-drag-over", !inAnswer && drag.over !== "bankToken");
+    if (inAnswer) {
+      drag.over = "answer";
+      drag.position = dropPosition(event.clientX, event.clientY);
+      showMarker(drag.position);
+    } else {
+      drag.over = drag.source ? "bank" : "outside";   // 候補から出した語句は、外で離すと元のまま
+      clearMarker();
+    }
+  };
+
+  // 画面全体で拾うリスナーは1組だけ置き、いま並べ替え中の問題に流す。
+  activeReorder = { onMove, endDrag };
   render();
 }
+
+// ドラッグを離した直後にブラウザが出すクリックだけを捨てる。
+// このクリックは pointerup の直後に来るので、待つのはごく短くてよい（次の操作を巻き込まない）。
+function swallowNextClick() {
+  const swallow = (event) => { event.stopPropagation(); event.preventDefault(); };
+  document.addEventListener("click", swallow, { capture: true, once: true });
+  window.setTimeout(() => document.removeEventListener("click", swallow, { capture: true }), 80);
+}
+
+let activeReorder = null;
+document.addEventListener("pointermove", (event) => activeReorder?.onMove(event));
+document.addEventListener("pointerup", () => activeReorder?.endDrag(true));
+document.addEventListener("pointercancel", () => activeReorder?.endDrag(false));
 
 function answerPractice(value, selectedButton) {
   const session = state.practice;
@@ -452,8 +507,8 @@ function revealWritingAnswer(question) {
   if (!panel || !body) return;
   $("#practice-script-title").textContent = "正解と日本語の意味";
   $("#practice-script-audio-label").textContent = "正解を聞く";
-  body.innerHTML = `<div class="writing-result-answer"><span>正解</span><strong lang="zh-CN">${escapeHtml(writingAnswerSentence(question))}</strong></div>
-    <div class="writing-result-meaning"><span>意味</span><p>${escapeHtml(question.meaning || "日本語訳はありません")}</p></div>`;
+  body.innerHTML = `<div class="writing-result-answer"><span>正解</span><div><strong lang="zh-CN">${escapeHtml(writingAnswerSentence(question))}</strong>${question.answerPinyin ? `<p class="writing-result-pinyin">${escapeHtml(question.answerPinyin)}</p>` : ""}</div></div>
+    ${question.meaning ? `<div class="writing-result-meaning"><span>意味</span><p>${escapeHtml(question.meaning)}</p></div>` : ""}`;
   panel.classList.add("writing-result-panel");
   panel.classList.remove("is-hidden");
 }

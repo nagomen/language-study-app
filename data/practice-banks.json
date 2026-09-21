@@ -10,7 +10,8 @@
         "汉语"
       ],
       "answer": "我每天学习汉语。",
-      "meaning": "私は毎日中国語を勉強します。"
+      "meaning": "私は毎日中国語を勉強します。",
+      "answerPinyin": "Wǒ měitiān xuéxí Hànyǔ."
     },
     {
       "type": "reorder",
@@ -21,7 +22,8 @@
         "报纸"
       ],
       "answer": "他正在看报纸。",
-      "meaning": "彼は新聞を読んでいます。"
+      "meaning": "彼は新聞を読んでいます。",
+      "answerPinyin": "Tā zhèngzài kàn bàozhǐ."
     },
     {
       "type": "reorder",
@@ -31,7 +33,8 @@
         "下雨"
       ],
       "answer": "明天可能下雨。",
-      "meaning": "明日は雨かもしれません。"
+      "meaning": "明日は雨かもしれません。",
+      "answerPinyin": "Míngtiān kěnéng xià yǔ."
     },
     {
       "type": "reorder",
@@ -42,7 +45,8 @@
         "很近"
       ],
       "answer": "我家离学校很近。",
-      "meaning": "私の家は学校から近いです。"
+      "meaning": "私の家は学校から近いです。",
+      "answerPinyin": "Wǒ jiā lí xuéxiào hěn jìn."
     },
     {
       "type": "reorder",
@@ -53,7 +57,8 @@
         "高"
       ],
       "answer": "她比我高。",
-      "meaning": "彼女は私より背が高いです。"
+      "meaning": "彼女は私より背が高いです。",
+      "answerPinyin": "Tā bǐ wǒ gāo."
     },
     {
       "type": "reorder",
@@ -65,7 +70,8 @@
         "吧"
       ],
       "answer": "我们一起去公园吧。",
-      "meaning": "一緒に公園へ行きましょう。"
+      "meaning": "一緒に公園へ行きましょう。",
+      "answerPinyin": "Wǒmen yìqǐ qù gōngyuán ba."
     },
     {
       "type": "reorder",
@@ -75,7 +81,8 @@
         "迟到"
       ],
       "answer": "你为什么迟到？",
-      "meaning": "なぜ遅刻したのですか？"
+      "meaning": "なぜ遅刻したのですか？",
+      "answerPinyin": "Nǐ wèishénme chídào?"
     },
     {
       "type": "reorder",
@@ -86,7 +93,8 @@
         "了"
       ],
       "answer": "这件衣服太贵了。",
-      "meaning": "この服は高すぎます。"
+      "meaning": "この服は高すぎます。",
+      "answerPinyin": "Zhè jiàn yīfu tài guì le."
     },
     {
       "type": "reorder",
@@ -98,7 +106,8 @@
         "了"
       ],
       "answer": "我已经完成作业了。",
-      "meaning": "私はもう宿題を終えました。"
+      "meaning": "私はもう宿題を終えました。",
+      "answerPinyin": "Wǒ yǐjīng wánchéng zuòyè le."
     },
     {
       "type": "reorder",
@@ -109,77 +118,88 @@
         "做饭"
       ],
       "answer": "妈妈在厨房做饭。",
-      "meaning": "母は台所で料理しています。"
+      "meaning": "母は台所で料理しています。",
+      "answerPinyin": "Māma zài chúfáng zuò fàn."
     },
     {
       "type": "input",
       "pinyin": "qǐ",
       "answer": "起",
       "meaning": "私は毎日7時に起きます。",
-      "sentence": "我每天七点（qǐ）床。"
+      "sentence": "我每天七点（qǐ）床。",
+      "answerPinyin": "Wǒ měitiān qī diǎn qǐchuáng."
     },
     {
       "type": "input",
       "pinyin": "rè",
       "answer": "热",
       "meaning": "今日はとても暑いです。",
-      "sentence": "今天天气很（rè）。"
+      "sentence": "今天天气很（rè）。",
+      "answerPinyin": "Jīntiān tiānqì hěn rè."
     },
     {
       "type": "input",
       "pinyin": "shū",
       "answer": "书",
       "meaning": "私は本を1冊買いたいです。",
-      "sentence": "我想买一本（shū）。"
+      "sentence": "我想买一本（shū）。",
+      "answerPinyin": "Wǒ xiǎng mǎi yì běn shū."
     },
     {
       "type": "input",
       "pinyin": "bēi",
       "answer": "杯",
       "meaning": "お茶を1杯どうぞ。",
-      "sentence": "请喝一（bēi）茶。"
+      "sentence": "请喝一（bēi）茶。",
+      "answerPinyin": "Qǐng hē yì bēi chá."
     },
     {
       "type": "input",
       "pinyin": "yǒu",
       "answer": "友",
       "meaning": "彼は私の親しい友達です。",
-      "sentence": "他是我的好朋（yǒu）。"
+      "sentence": "他是我的好朋（yǒu）。",
+      "answerPinyin": "Tā shì wǒ de hǎo péngyou."
     },
     {
       "type": "input",
       "pinyin": "suì",
       "answer": "岁",
       "meaning": "彼女は今年20歳です。",
-      "sentence": "她今年二十（suì）。"
+      "sentence": "她今年二十（suì）。",
+      "answerPinyin": "Tā jīnnián èrshí suì."
     },
     {
       "type": "input",
       "pinyin": "chē",
       "answer": "车",
       "meaning": "私たちはバスで行きます。",
-      "sentence": "我们坐公共汽（chē）去。"
+      "sentence": "我们坐公共汽（chē）去。",
+      "answerPinyin": "Wǒmen zuò gōnggòng qìchē qù."
     },
     {
       "type": "input",
       "pinyin": "chī",
       "answer": "吃",
       "meaning": "妹はリンゴを食べるのが好きです。",
-      "sentence": "妹妹喜欢（chī）苹果。"
+      "sentence": "妹妹喜欢（chī）苹果。",
+      "answerPinyin": "Mèimei xǐhuan chī píngguǒ."
     },
     {
       "type": "input",
       "pinyin": "mén",
       "answer": "门",
       "meaning": "ドアを開けてください。",
-      "sentence": "请打开（mén）。"
+      "sentence": "请打开（mén）。",
+      "answerPinyin": "Qǐng dǎkāi mén."
     },
     {
       "type": "input",
       "pinyin": "yǔ",
       "answer": "雨",
       "meaning": "外は雨が降っています。",
-      "sentence": "外面下（yǔ）了。"
+      "sentence": "外面下（yǔ）了。",
+      "answerPinyin": "Wàimiàn xià yǔ le."
     }
   ],
   "listeningResponses": [

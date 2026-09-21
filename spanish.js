@@ -33,7 +33,8 @@ document.addEventListener("DOMContentLoaded", init);
 
 async function init() {
   try {
-    const lists = await Promise.all(LEVELS.map((level) => fetch(`data/dele-${level.toLowerCase()}.json`).then(checkResponse).then((response) => response.json())));
+    // データを更新したときに古いJSONを掴まないよう、毎回サーバーに確認させる。
+    const lists = await Promise.all(LEVELS.map((level) => fetch(`data/dele-${level.toLowerCase()}.json`, { cache: "no-cache" }).then(checkResponse).then((response) => response.json())));
     LEVELS.forEach((level, index) => { state.byLevel[level] = lists[index]; });
     state.words = lists.flat();
     bindEvents();

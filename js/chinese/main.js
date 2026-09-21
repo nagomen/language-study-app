@@ -31,13 +31,16 @@ async function init() {
 
 async function loadWords() {
   try {
-    const responses = await Promise.all([1, 2, 3].map((level) => fetch(`data/hsk${level}.json`)));
+    // データを更新したときに古いJSONを掴まないよう、毎回サーバーに確認させる
+    // （変わっていなければ304で返るので通信量はほとんど増えない）。
+    const loadJson = (file) => fetch(file, { cache: "no-cache" });
+    const responses = await Promise.all([1, 2, 3].map((level) => loadJson(`data/hsk${level}.json`)));
     const [tagResponse, guideResponse, measureResponse, bankResponse, ...mockResponses] = await Promise.all([
-      fetch("data/word-tags.json"),
-      fetch("data/guides.json"),
-      fetch("data/measure-words.json"),
-      fetch("data/practice-banks.json"),
-      ...[1, 2, 3].map((level) => fetch(`data/mock-hsk${level}.json`)),
+      loadJson("data/word-tags.json"),
+      loadJson("data/guides.json"),
+      loadJson("data/measure-words.json"),
+      loadJson("data/practice-banks.json"),
+      ...[1, 2, 3].map((level) => loadJson(`data/mock-hsk${level}.json`)),
     ]);
     if (responses.some((response) => !response.ok)) throw new Error("JSONの読み込みに失敗しました");
     if (mockResponses.some((response) => !response.ok)) throw new Error("模試データの読み込みに失敗しました");

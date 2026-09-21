@@ -167,17 +167,22 @@ const HSK3_PASSAGES = [
 ];
 
 // 書写はHSK3の文法・漢字で出題する。
+// [語句, 正解の文, 和訳, 正解のピンイン]
 const HSK3_REORDER = [
-  [["他", "把", "那本", "字典", "放在", "桌子上"], "他把那本字典放在桌子上。", "彼はその辞書を机の上に置きました。"],
-  [["这里", "的", "环境", "越来越", "好了"], "这里的环境越来越好了。", "ここの環境はますます良くなりました。"],
-  [["她", "一边", "听音乐", "一边", "做作业"], "她一边听音乐一边做作业。", "彼女は音楽を聴きながら宿題をします。"],
-  [["我", "的", "自行车", "被", "朋友", "骑走了"], "我的自行车被朋友骑走了。", "私の自転車は友達に乗って行かれました。"],
-  [["这个", "问题", "比", "那个", "容易"], "这个问题比那个容易。", "この問題はあの問題より簡単です。"],
+  [["他", "把", "那本", "字典", "放在", "桌子上"], "他把那本字典放在桌子上。", "彼はその辞書を机の上に置きました。", "Tā bǎ nà běn zìdiǎn fàng zài zhuōzi shàng."],
+  [["这里", "的", "环境", "越来越", "好了"], "这里的环境越来越好了。", "ここの環境はますます良くなりました。", "Zhèlǐ de huánjìng yuè lái yuè hǎo le."],
+  [["她", "一边", "听音乐", "一边", "做作业"], "她一边听音乐一边做作业。", "彼女は音楽を聴きながら宿題をします。", "Tā yìbiān tīng yīnyuè yìbiān zuò zuòyè."],
+  [["我", "的", "自行车", "被", "朋友", "骑走了"], "我的自行车被朋友骑走了。", "私の自転車は友達に乗って行かれました。", "Wǒ de zìxíngchē bèi péngyou qí zǒu le."],
+  [["这个", "问题", "比", "那个", "容易"], "这个问题比那个容易。", "この問題はあの問題より簡単です。", "Zhège wèntí bǐ nàge róngyì."],
 ];
 
+// [問題文, 入る漢字, 和訳, 完成した文のピンイン]
 const HSK3_INPUT = [
-  ["我的腿有点儿（téng）。", "疼", "私の脚は少し痛いです。"], ["她穿了一条（lán）色的裙子。", "蓝", "彼女は青いスカートをはいています。"], ["今天下午有雨，出门要带（sǎn）。", "伞", "今日の午後は雨なので、出かけるときは傘を持っていく必要があります。"],
-  ["妹妹的（liǎn）红了。", "脸", "妹の顔が赤くなりました。"], ["天黑了，请把（dēng）打开。", "灯", "暗くなったので、明かりをつけてください。"],
+  ["我的腿有点儿（téng）。", "疼", "私の脚は少し痛いです。", "Wǒ de tuǐ yǒu diǎnr téng."],
+  ["她穿了一条（lán）色的裙子。", "蓝", "彼女は青いスカートをはいています。", "Tā chuān le yì tiáo lánsè de qúnzi."],
+  ["今天下午有雨，出门要带（sǎn）。", "伞", "今日の午後は雨なので、出かけるときは傘を持っていく必要があります。", "Jīntiān xiàwǔ yǒu yǔ, chūmén yào dài sǎn."],
+  ["妹妹的（liǎn）红了。", "脸", "妹の顔が赤くなりました。", "Mèimei de liǎn hóng le."],
+  ["天黑了，请把（dēng）打开。", "灯", "暗くなったので、明かりをつけてください。", "Tiān hēi le, qǐng bǎ dēng dǎkāi."],
 ];
 
 const HSK3_STATEMENTS = [
@@ -556,11 +561,11 @@ function buildLevel3() {
   const reading3 = HSK3_PASSAGES.map((item, index) => q(`hsk3-r3-${String(index + 1).padStart(2, "0")}`, "reading", 3, "reading-comprehension", { prompt: item[0], subPrompt: item[1], choices: choices(item[2], item[3], 3), correct: item[2], instruction: "请阅读短文，选择正确答案。", explanation: `${item[1]} — ${item[2]}` }));
   const reorder = HSK3_REORDER.map((item, index) => {
     const id = `hsk3-w1-${String(index + 1).padStart(2, "0")}`;
-    return q(id, "writing", 1, "reorder", { tokens: item[0], answer: item[1], meaning: item[2], answerAudioFile: audioFile(`${id}-answer`), instruction: "请把下面的词语排列成正确的句子。", selected: [] });
+    return q(id, "writing", 1, "reorder", { tokens: item[0], answer: item[1], meaning: item[2], answerPinyin: item[3], answerAudioFile: audioFile(`${id}-answer`), instruction: "请把下面的词语排列成正确的句子。", selected: [] });
   });
   const input = HSK3_INPUT.map((item, index) => {
     const id = `hsk3-w2-${String(index + 1).padStart(2, "0")}`;
-    return q(id, "writing", 2, "input", { sentence: item[0], answer: item[1], meaning: item[2], answerAudioFile: audioFile(`${id}-answer`), instruction: "请根据拼音在空格上写汉字。" });
+    return q(id, "writing", 2, "input", { sentence: item[0], answer: item[1], meaning: item[2], answerPinyin: item[3], answerAudioFile: audioFile(`${id}-answer`), instruction: "请根据拼音在空格上写汉字。" });
   });
   return [...listening, ...reading1, ...reading2, ...reading3, ...reorder, ...input];
 }

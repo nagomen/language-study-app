@@ -2,7 +2,7 @@
   "version": 3,
   "level": 3,
   "format": "HSK 2.0（日本実施形式）・写真問題は記号イラストで代替",
-  "generatedAt": "2026-09-21T05:14:24.662Z",
+  "generatedAt": "2026-09-21T10:10:50.883Z",
   "questionSelection": {
     "listening": {
       "1": 10,
@@ -2128,6 +2128,7 @@
       ],
       "answer": "他把那本字典放在桌子上。",
       "meaning": "彼はその辞書を机の上に置きました。",
+      "answerPinyin": "Tā bǎ nà běn zìdiǎn fàng zài zhuōzi shàng.",
       "answerAudioFile": "audio/sentences/hsk3-w1-01-answer.m4a",
       "instruction": "请把下面的词语排列成正确的句子。",
       "selected": []
@@ -2147,6 +2148,7 @@
       ],
       "answer": "这里的环境越来越好了。",
       "meaning": "ここの環境はますます良くなりました。",
+      "answerPinyin": "Zhèlǐ de huánjìng yuè lái yuè hǎo le.",
       "answerAudioFile": "audio/sentences/hsk3-w1-02-answer.m4a",
       "instruction": "请把下面的词语排列成正确的句子。",
       "selected": []
@@ -2166,6 +2168,7 @@
       ],
       "answer": "她一边听音乐一边做作业。",
       "meaning": "彼女は音楽を聴きながら宿題をします。",
+      "answerPinyin": "Tā yìbiān tīng yīnyuè yìbiān zuò zuòyè.",
       "answerAudioFile": "audio/sentences/hsk3-w1-03-answer.m4a",
       "instruction": "请把下面的词语排列成正确的句子。",
       "selected": []
@@ -2186,6 +2189,7 @@
       ],
       "answer": "我的自行车被朋友骑走了。",
       "meaning": "私の自転車は友達に乗って行かれました。",
+      "answerPinyin": "Wǒ de zìxíngchē bèi péngyou qí zǒu le.",
       "answerAudioFile": "audio/sentences/hsk3-w1-04-answer.m4a",
       "instruction": "请把下面的词语排列成正确的句子。",
       "selected": []
@@ -2205,6 +2209,7 @@
       ],
       "answer": "这个问题比那个容易。",
       "meaning": "この問題はあの問題より簡単です。",
+      "answerPinyin": "Zhège wèntí bǐ nàge róngyì.",
       "answerAudioFile": "audio/sentences/hsk3-w1-05-answer.m4a",
       "instruction": "请把下面的词语排列成正确的句子。",
       "selected": []
@@ -2218,6 +2223,7 @@
       "sentence": "我的腿有点儿（téng）。",
       "answer": "疼",
       "meaning": "私の脚は少し痛いです。",
+      "answerPinyin": "Wǒ de tuǐ yǒu diǎnr téng.",
       "answerAudioFile": "audio/sentences/hsk3-w2-01-answer.m4a",
       "instruction": "请根据拼音在空格上写汉字。"
     },
@@ -2230,6 +2236,7 @@
       "sentence": "她穿了一条（lán）色的裙子。",
       "answer": "蓝",
       "meaning": "彼女は青いスカートをはいています。",
+      "answerPinyin": "Tā chuān le yì tiáo lánsè de qúnzi.",
       "answerAudioFile": "audio/sentences/hsk3-w2-02-answer.m4a",
       "instruction": "请根据拼音在空格上写汉字。"
     },
@@ -2242,6 +2249,7 @@
       "sentence": "今天下午有雨，出门要带（sǎn）。",
       "answer": "伞",
       "meaning": "今日の午後は雨なので、出かけるときは傘を持っていく必要があります。",
+      "answerPinyin": "Jīntiān xiàwǔ yǒu yǔ, chūmén yào dài sǎn.",
       "answerAudioFile": "audio/sentences/hsk3-w2-03-answer.m4a",
       "instruction": "请根据拼音在空格上写汉字。"
     },
@@ -2254,6 +2262,7 @@
       "sentence": "妹妹的（liǎn）红了。",
       "answer": "脸",
       "meaning": "妹の顔が赤くなりました。",
+      "answerPinyin": "Mèimei de liǎn hóng le.",
       "answerAudioFile": "audio/sentences/hsk3-w2-04-answer.m4a",
       "instruction": "请根据拼音在空格上写汉字。"
     },
@@ -2266,6 +2275,7 @@
       "sentence": "天黑了，请把（dēng）打开。",
       "answer": "灯",
       "meaning": "暗くなったので、明かりをつけてください。",
+      "answerPinyin": "Tiān hēi le, qǐng bǎ dēng dǎkāi.",
       "answerAudioFile": "audio/sentences/hsk3-w2-05-answer.m4a",
       "instruction": "请根据拼音在空格上写汉字。"
     }
