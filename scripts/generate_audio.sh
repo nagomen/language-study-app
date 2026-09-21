@@ -18,7 +18,7 @@ generated_count=0
 node -e '
   const fs = require("fs");
   for (const level of [1, 2, 3]) {
-    const words = JSON.parse(fs.readFileSync(`data/hsk${level}.json`, "utf8"));
+    const words = JSON.parse(fs.readFileSync(`data/chinese/hsk${level}.json`, "utf8"));
     for (const word of words) {
       const spoken = word.hanzi.replaceAll("（", "、").replaceAll("）", "");
       process.stdout.write(`${word.id}\t${spoken}\n`);

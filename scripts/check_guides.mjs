@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// 文法ガイド（data/guides.json）と量詞ページ（data/measure-words.json）を検証する。
+// 文法ガイド（data/chinese/guides.json）と量詞ページ（data/chinese/measure-words.json）を検証する。
 //   node scripts/check_guides.mjs
 // 参照している単語IDが実在するか、量詞ページが measure ラベルの語を漏れなく扱っているか、
 // 例文のピンインの音節数が漢字数と一致するか、練習問題の正解が選択肢に含まれるかを確認する。
@@ -12,7 +12,7 @@ const HANZI = /[一-鿿]/u;
 const errors = [];
 const warnings = [];
 
-const load = async (file) => JSON.parse(await readFile(new URL(`../data/${file}`, import.meta.url), "utf8"));
+const load = async (file) => JSON.parse(await readFile(new URL(`../data/chinese/${file}`, import.meta.url), "utf8"));
 const groups = await Promise.all([1, 2, 3].map((level) => load(`hsk${level}.json`)));
 const words = new Map(groups.flatMap((group, index) => group.map((word) => [word.id, { ...word, level: index + 1 }])));
 const vocabularyChars = new Set([...words.values()].flatMap((word) => [...word.hanzi]));

@@ -28,19 +28,32 @@ git push
 
 ビルド工程はなく、HTMLが直接スクリプトを読みます。
 
-| ファイル | 役割 |
+```
+/                HTMLと設定だけ（index / chinese / spanish、README、スタート.command）
+css/             app.css（共通）・spanish.css（色の上書き）・portal.css（入口）
+js/              shared.js ＋ chinese/ ＋ spanish/
+data/            chinese/ ＋ spanish/ ＋ source/（生成元のTSV）
+audio/           単語600 ＋ sentences/812
+scripts/         生成・検証・音声のスクリプト
+docs/            調べた記録
+```
+
+| 場所 | 役割 |
 |---|---|
-| `index.html` / `portal.css` | 言語を選ぶ入口 |
-| `chinese.html` / `styles.css` | 中国語のページ |
-| `js/chinese/*.js` | 中国語ページのスクリプト（機能ごとのESモジュール） |
-| `spanish.html` / `spanish.js` / `spanish.css` | スペイン語のページ一式 |
+| `index.html` / `css/portal.css` | 言語を選ぶ入口 |
+| `chinese.html` / `js/chinese/*.js` | 中国語のページ |
+| `spanish.html` / `js/spanish/*.js` / `css/spanish.css` | スペイン語のページ |
+| `css/app.css` | 両方のページの見た目 |
 | `js/shared.js` | 両方のページで使う共通処理 |
-| `data/*.json` | 単語・分類・解説・模試・練習問題のデータ |
+| `data/chinese/*.json` / `data/spanish/*.json` | 出題データ |
+| `data/source/*.tsv` | 分類とスペイン語語彙の生成元（人が編集する原本） |
 | `scripts/*` | データの生成と検証、音声の生成 |
+
+`css/app.css` は中国語ページとスペイン語ページで共有します。ページごとに分けることも試しましたが、`@media` の上書きが「後に書いてあるほうが勝つ」順番に依存していて、分けると順序が入れ替わってモバイル表示が崩れました（実測で9画面）。安全に分けるには共通部分を両方へ複製するか生成スクリプトを足すことになり、得られるのはスペイン語ページの−6KB（gzip）だけなので、1つのままにしています。
 
 `js/shared.js` には、`$`・`escapeHtml`・`shuffle`・日付キー、チェック（気になる単語）の保存と書き出し／読み込み、モバイルメニューの開閉が入ります。言語ごとの状態は持たないので、必要な値は呼び出し側が引数で渡します（保存キー・ラベル・言語名など）。
 
-中国語ページは `js/chinese/main.js` を入口に、機能ごとのモジュールへ分かれています。
+中国語ページは `js/chinese/main.js`、スペイン語ページは `js/spanish/main.js` を入口に、どちらも機能ごとのモジュールへ分かれています（スペイン語は `config` `state` `storage` `util` `audio` `words` `quiz` `checked` `progress` `review` `main` の11本）。中国語側の内訳はこちらです。
 
 | モジュール | 中身 |
 |---|---|
@@ -176,20 +189,20 @@ HSK1〜3の全600語に用途のラベルを付け、検定のレベルとは別
 
 ## データファイル
 
-- 中国語：`data/hsk1.json`、`data/hsk2.json`、`data/hsk3.json`、分類は `data/word-tags.json`、解説ページは `data/guides.json`、量詞ページは `data/measure-words.json`、作文と聴解の問題文は `data/practice-banks.json`
-- スペイン語：`data/dele-a1.json`、`data/dele-a2.json`、`data/dele-b1.json`
+- 中国語：`data/chinese/` に `hsk1〜3.json`、分類は `word-tags.json`、解説ページは `guides.json`、量詞ページは `measure-words.json`、作文と聴解の問題文は `practice-banks.json`、模試は `mock-hsk1〜3.json`
+- スペイン語：`data/spanish/dele-a1.json`、`dele-a2.json`、`dele-b1.json`
 
-スペイン語データは `scripts/spanish_vocab/*.tsv` を編集し、`node scripts/build_spanish_vocab.mjs` でJSONを再生成できます。生成時に件数と全レベル間の重複を検証します。
+スペイン語データは `data/source/spanish-vocab/*.tsv` を編集し、`node scripts/build_spanish_vocab.mjs` でJSONを再生成できます。生成時に件数と全レベル間の重複を検証します。
 
-分類データは `scripts/word_tags/categories.tsv`（分類の定義）と `scripts/word_tags/hsk1〜3.tsv`（単語ごとのラベル）を編集し、`node scripts/build_word_tags.mjs` で `data/word-tags.json` を再生成します。生成時に、行数と単語データの並びが一致するか、見出し語がずれていないか、未定義のラベルや無ラベルの単語がないかを検証し、分類ごとの語数を表示します。
+分類データは `data/source/word-tags/categories.tsv`（分類の定義）と `data/source/word-tags/hsk1〜3.tsv`（単語ごとのラベル）を編集し、`node scripts/build_word_tags.mjs` で `data/chinese/word-tags.json` を再生成します。生成時に、行数と単語データの並びが一致するか、見出し語がずれていないか、未定義のラベルや無ラベルの単語がないかを検証し、分類ごとの語数を表示します。
 
-解説ページと量詞ページは `data/guides.json`・`data/measure-words.json` を直接編集し、`node scripts/check_guides.mjs` で検証します。参照している単語IDが実在するか、量詞ページが measure ラベルの27語を漏れなく扱っているか、例文のピンインの音節数が漢字数と一致するか、練習問題の正解が選択肢に1つだけ入っているかを確認し、HSK1〜3にない漢字を警告します。
+解説ページと量詞ページは `data/chinese/guides.json`・`data/chinese/measure-words.json` を直接編集し、`node scripts/check_guides.mjs` で検証します。参照している単語IDが実在するか、量詞ページが measure ラベルの27語を漏れなく扱っているか、例文のピンインの音節数が漢字数と一致するか、練習問題の正解が選択肢に1つだけ入っているかを確認し、HSK1〜3にない漢字を警告します。
 
 中国語の例文を追加・編集したら `node scripts/check_hsk_examples.mjs` で検証できます。例文・ピンイン・和訳が揃っているか、例文に見出し語が含まれるか、ピンインの音節数が漢字数と一致するか、文末記号が対応しているかを確認し、例文の重複とHSK1〜3の語彙にない漢字を警告として表示します。
 
-`data/practice-banks.json` は作文トレーニングの20問（`writing`）と、聴解の会話・応答問題（`listeningDialogues`・`listeningResponses`）です。作文には正解の文のピンイン（`answerPinyin`）を持たせます（模試側は `scripts/build_hsk_mock_data.mjs` の表に書きます）。**配列の順番が音声ファイルの連番（`writing-bank-NNN` / `mock-dialogue-NNN` / `mock-response-NNN`）に対応する**ので、並べ替えると音声とずれます。追加するときは末尾に足して `node scripts/generate_sentence_audio.mjs` を実行してください。
+`data/chinese/practice-banks.json` は作文トレーニングの20問（`writing`）と、聴解の会話・応答問題（`listeningDialogues`・`listeningResponses`）です。作文には正解の文のピンイン（`answerPinyin`）を持たせます（模試側は `scripts/build_hsk_mock_data.mjs` の表に書きます）。**配列の順番が音声ファイルの連番（`writing-bank-NNN` / `mock-dialogue-NNN` / `mock-response-NNN`）に対応する**ので、並べ替えると音声とずれます。追加するときは末尾に足して `node scripts/generate_sentence_audio.mjs` を実行してください。
 
-`listeningResponses`（28問）と対応する `mock-response-*.m4a` は、模試が `data/mock-hsk*.json` に移ったあと出題に使われていません。聴解トレーニングに戻すか、削除するかは未決です。
+`listeningResponses`（28問）と対応する `mock-response-*.m4a` は、模試が `data/chinese/mock-hsk*.json` に移ったあと出題に使われていません。聴解トレーニングに戻すか、削除するかは未決です。
 
 学習記録はブラウザのローカルストレージに言語別で保存され、外部へ送信されません。
 

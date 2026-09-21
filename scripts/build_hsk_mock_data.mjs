@@ -5,7 +5,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const vocab = Object.fromEntries([1, 2, 3].map((level) => [level, JSON.parse(fs.readFileSync(path.join(root, "data", `hsk${level}.json`), "utf8"))]));
+const vocab = Object.fromEntries([1, 2, 3].map((level) => [level, JSON.parse(fs.readFileSync(path.join(root, "data", "chinese", `hsk${level}.json`), "utf8"))]));
 const allWords = Object.values(vocab).flat();
 const byHanzi = new Map(allWords.map((word) => [word.hanzi.replace(/[（）].*?[）]/g, ""), word]));
 const levelByHanzi = new Map([1, 2, 3].flatMap((level) => vocab[level].map((word) => [word.hanzi.replace(/[（）].*?[）]/g, ""), level])));
@@ -21,9 +21,9 @@ const STRICT_VOCAB_LEVELS = new Set([1, 3]);
 const DUPLICATE_NGRAM = 6;
 // 同じ場面の語が1回の模試で何問まで出てよいかの目安。
 const TOPIC_LIMIT = 4;
-// 場面を表すラベル（data/word-tags.json）が付いた語を「題材」とみなす。
+// 場面を表すラベル（data/chinese/word-tags.json）が付いた語を「題材」とみなす。
 // 時間・気持ち・考えなどの語はどの問題にも自然に出るので数えない。
-const wordTagData = JSON.parse(fs.readFileSync(path.join(root, "data", "word-tags.json"), "utf8"));
+const wordTagData = JSON.parse(fs.readFileSync(path.join(root, "data", "chinese", "word-tags.json"), "utf8"));
 const wordTags = wordTagData.words;
 const TOPIC_TAGS = new Set(["travel", "food", "shopping", "school", "work", "home", "body", "weather", "hobby", "tech", "animal", "clothes", "people", "family"]);
 
@@ -731,6 +731,6 @@ for (const level of [1, 2, 3]) {
     ...(MOCK_SELECTION[level] ? { questionSelection: MOCK_SELECTION[level] } : {}),
     questions,
   };
-  fs.writeFileSync(path.join(root, "data", `mock-hsk${level}.json`), `${JSON.stringify(payload, null, 2)}\n`);
+  fs.writeFileSync(path.join(root, "data", "chinese", `mock-hsk${level}.json`), `${JSON.stringify(payload, null, 2)}\n`);
   console.log(`HSK ${level}: ${questions.length}問（聴解${counts.listening}・読解${counts.reading}・作文${counts.writing}）`);
 }

@@ -15,7 +15,7 @@ const HANZI = /[一-鿿]/u;
 const errors = [];
 const warnings = [];
 
-const dataFile = (level) => new URL(`../data/hsk${level}.json`, import.meta.url);
+const dataFile = (level) => new URL(`../data/chinese/hsk${level}.json`, import.meta.url);
 const groups = await Promise.all(LEVELS.map(async (level) => JSON.parse(await readFile(dataFile(level), "utf8"))));
 const words = groups.flatMap((group, index) => group.map((word) => ({ ...word, level: LEVELS[index] })));
 

@@ -26,7 +26,7 @@ export const DAILY_SIZE = 20;
 
 export const DAILY_SEED = 20260913;
 
-// 分類ページのグループ見出し。data/word-tags.json の group と対応する。
+// 分類ページのグループ見出し。data/chinese/word-tags.json の group と対応する。
 export const CATEGORY_GROUP_META = {
   pos: { eyebrow: "PARTS OF SPEECH", label: "品詞でさがす", description: "数詞・量詞・形容詞など、ことばの種類ごとにまとめています。" },
   topic: { eyebrow: "TOPICS & SCENES", label: "場面・テーマでさがす", description: "旅行・食事・仕事など、使う場面ごとにまとめています。" },

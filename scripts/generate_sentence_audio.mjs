@@ -26,11 +26,11 @@ const GAPS = { beforeCue: 1.2, afterCue: 0.45, betweenSpeakers: 0.45 };
 
 fs.mkdirSync(outputDir, { recursive: true });
 
-const banks = JSON.parse(fs.readFileSync(path.join(appDir, "data", "practice-banks.json"), "utf8"));
+const banks = JSON.parse(fs.readFileSync(path.join(appDir, "data", "chinese", "practice-banks.json"), "utf8"));
 
-const words = [1, 2, 3].flatMap((level) => JSON.parse(fs.readFileSync(path.join(appDir, "data", `hsk${level}.json`), "utf8")).map((word) => ({ ...word, level })));
+const words = [1, 2, 3].flatMap((level) => JSON.parse(fs.readFileSync(path.join(appDir, "data", "chinese", `hsk${level}.json`), "utf8")).map((word) => ({ ...word, level })));
 const mockForms = [1, 2, 3].map((level) => {
-  const form = JSON.parse(fs.readFileSync(path.join(appDir, "data", `mock-hsk${level}.json`), "utf8"));
+  const form = JSON.parse(fs.readFileSync(path.join(appDir, "data", "chinese", `mock-hsk${level}.json`), "utf8"));
   return form.questions.map((question) => ({ ...question, level }));
 });
 const mockQuestions = mockForms.flat().filter((question) => question.skill === "listening");

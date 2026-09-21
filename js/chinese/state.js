@@ -11,7 +11,7 @@ export const state = {
   categories: [],
   guides: [],
   measure: null,
-  // 作文・聴解の問題文（data/practice-banks.json）。配列の順番が音声ファイルの連番に対応する。
+  // 作文・聴解の問題文（data/chinese/practice-banks.json）。配列の順番が音声ファイルの連番に対応する。
   banks: { writing: [], listeningResponses: [], listeningDialogues: [] },
   selectedGuide: null,
   mockForms: {},

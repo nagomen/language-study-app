@@ -1,12 +1,12 @@
 #!/usr/bin/env node
-// scripts/word_tags/*.tsv から data/word-tags.json を生成し、単語データとの整合性を検証する。
+// data/source/word-tags/*.tsv から data/chinese/word-tags.json を生成し、単語データとの整合性を検証する。
 
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 const appDir = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const tagsDir = path.join(appDir, "scripts", "word_tags");
+const tagsDir = path.join(appDir, "data", "source", "word-tags");
 const GROUPS = new Set(["pos", "topic"]);
 const MIN_WORDS_PER_CATEGORY = 3;
 
@@ -31,7 +31,7 @@ const words = {};
 const usage = new Map([...categoryIds].map((id) => [id, []]));
 for (const level of [1, 2, 3]) {
   const file = `hsk${level}.tsv`;
-  const vocabulary = JSON.parse(fs.readFileSync(path.join(appDir, "data", `hsk${level}.json`), "utf8"));
+  const vocabulary = JSON.parse(fs.readFileSync(path.join(appDir, "data", "chinese", `hsk${level}.json`), "utf8"));
   const rows = readRows(file);
   if (rows.length !== vocabulary.length) throw new Error(`${file} は ${vocabulary.length}行必要ですが、${rows.length}行です`);
   rows.forEach(({ columns, number }, index) => {
@@ -53,7 +53,7 @@ for (const level of [1, 2, 3]) {
 const unused = [...usage].filter(([, ids]) => ids.length === 0).map(([id]) => id);
 if (unused.length) throw new Error(`単語が1つも付いていないカテゴリ: ${unused.join(", ")}`);
 
-fs.writeFileSync(path.join(appDir, "data", "word-tags.json"), `${JSON.stringify({ categories, words }, null, 2)}\n`);
+fs.writeFileSync(path.join(appDir, "data", "chinese", "word-tags.json"), `${JSON.stringify({ categories, words }, null, 2)}\n`);
 
 const byGroup = (group) => categories.filter((category) => category.group === group);
 for (const group of ["pos", "topic"]) {
@@ -62,4 +62,4 @@ for (const group of ["pos", "topic"]) {
 }
 const thin = categories.filter((category) => usage.get(category.id).length < MIN_WORDS_PER_CATEGORY);
 if (thin.length) console.warn(`\n警告: ${MIN_WORDS_PER_CATEGORY}語未満のカテゴリがあります → ${thin.map((category) => category.label).join(", ")}`);
-console.log(`\nカテゴリ ${categories.length}件 / 単語 ${Object.keys(words).length}語 → data/word-tags.json`);
+console.log(`\nカテゴリ ${categories.length}件 / 単語 ${Object.keys(words).length}語 → data/chinese/word-tags.json`);
