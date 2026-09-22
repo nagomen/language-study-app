@@ -15,9 +15,9 @@
 | 例文音声 | `audio/sentences/example-*` | 600 | 81.8MB | 8.3MB | 例文集・テスト後の例文再生 |
 | 模試の聴解 | `audio/sentences/hskN-lX-NN` | 139 | 80.4MB | 5.6MB | 模試（自動で2回再生） |
 | 聴解練習 | `audio/sentences/mock-response-*`<br>`audio/sentences/mock-dialogue-*` | 43 | 13.7MB | 1.0MB | 聴解トレーニング |
-| 作文の正解（模試） | `audio/sentences/hsk3-wN-NN-answer` | 10 | — | 0.2MB | 作文を解答したあとの読み上げ（2026-09-21 追加） |
+| 作文の正解（模試） | `audio/sentences/hsk3-wN-NN-answer` | 60 | — | 1.1MB | 作文を解答したあとの読み上げ（2026-09-21 追加、09-22に60問へ） |
 | 作文の正解（練習） | `audio/sentences/writing-bank-NNN` | 20 | — | 0.3MB | 同上・作文トレーニング（2026-09-21 追加） |
-| **合計** | | **1,412** | **203MB** | **19.7MB** | |
+| **合計** | | **1,462** | **203MB** | **20.8MB** | |
 
 - 形式：WAV / 44.1kHz / 16bit / モノラル（= 705kbps）
 - 最大ファイル：`hsk3-l4-04.wav` 1.4MB（17秒の長い対話）

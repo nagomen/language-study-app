@@ -5,10 +5,10 @@
   "format": "m4a",
   "codec": "aac",
   "bitrate": 48000,
-  "generatedAt": "2026-09-21T12:44:31.384Z",
+  "generatedAt": "2026-09-22T04:02:31.139Z",
   "counts": {
-    "total": 812,
-    "generated": 0,
+    "total": 862,
+    "generated": 50,
     "reused": 812
   },
   "items": {
@@ -8867,6 +8867,281 @@
         "Tingting"
       ]
     },
+    "hsk3-w1-06-answer": {
+      "id": "hsk3-w1-06-answer",
+      "type": "writing-answer",
+      "level": 3,
+      "text": "我们下个星期一起去爬山。",
+      "checksum": "cd6e22f460fe6c8f800e16b13a2827010ef1b1453b3fa0ed24c3d5310e05d5db",
+      "file": "audio/sentences/hsk3-w1-06-answer.m4a",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk3-w1-07-answer": {
+      "id": "hsk3-w1-07-answer",
+      "type": "writing-answer",
+      "level": 3,
+      "text": "你最好早点儿休息。",
+      "checksum": "875e63305567196b336fb44cf97004da4674c46f4e9f581538705d2d9abbbe96",
+      "file": "audio/sentences/hsk3-w1-07-answer.m4a",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk3-w1-08-answer": {
+      "id": "hsk3-w1-08-answer",
+      "type": "writing-answer",
+      "level": 3,
+      "text": "这件事我已经忘记了。",
+      "checksum": "d53bedc088cbfe9d37cc72550af41934e327b21ac4693ea5f5791cba82831090",
+      "file": "audio/sentences/hsk3-w1-08-answer.m4a",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk3-w1-09-answer": {
+      "id": "hsk3-w1-09-answer",
+      "type": "writing-answer",
+      "level": 3,
+      "text": "他的汉语说得非常好。",
+      "checksum": "fb60ba9611f1f792bcc26a009ee2dfcbe69e298398b74fb17b26a5d7355a2aa9",
+      "file": "audio/sentences/hsk3-w1-09-answer.m4a",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk3-w1-10-answer": {
+      "id": "hsk3-w1-10-answer",
+      "type": "writing-answer",
+      "level": 3,
+      "text": "请你把门关上。",
+      "checksum": "e5d892c7d226f9e0229d5028e30c69fc0377ee04e8414392cf307f6d90f6fc5b",
+      "file": "audio/sentences/hsk3-w1-10-answer.m4a",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk3-w1-11-answer": {
+      "id": "hsk3-w1-11-answer",
+      "type": "writing-answer",
+      "level": 3,
+      "text": "我昨天在超市买了水果。",
+      "checksum": "33690ec617db6a6c4f6c3fcb4327ab168fb8fe5c5cffd0c2fbae330c22ad2739",
+      "file": "audio/sentences/hsk3-w1-11-answer.m4a",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk3-w1-12-answer": {
+      "id": "hsk3-w1-12-answer",
+      "type": "writing-answer",
+      "level": 3,
+      "text": "这个城市的冬天很冷。",
+      "checksum": "8c18cac6dd6ed735295c488d451a7b65ab6d3ab6ddc3cffe38e0bbdad84318aa",
+      "file": "audio/sentences/hsk3-w1-12-answer.m4a",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk3-w1-13-answer": {
+      "id": "hsk3-w1-13-answer",
+      "type": "writing-answer",
+      "level": 3,
+      "text": "我们班有二十个学生。",
+      "checksum": "bb4fdaa0b58bbee12c0318cb6bc20c9d4139a058c32030d40c8b018ca0fc360b",
+      "file": "audio/sentences/hsk3-w1-13-answer.m4a",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk3-w1-14-answer": {
+      "id": "hsk3-w1-14-answer",
+      "type": "writing-answer",
+      "level": 3,
+      "text": "他每天骑自行车上班。",
+      "checksum": "da949d33fe16ff3bca473d75078820be21c6565603de7a3cb8ac155bcc5360e6",
+      "file": "audio/sentences/hsk3-w1-14-answer.m4a",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk3-w1-15-answer": {
+      "id": "hsk3-w1-15-answer",
+      "type": "writing-answer",
+      "level": 3,
+      "text": "妈妈让我早点儿回家。",
+      "checksum": "f95f2def5356a0f16c5d3f7d24573ffbc44a37cfc167282385724be00ca9e219",
+      "file": "audio/sentences/hsk3-w1-15-answer.m4a",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk3-w1-16-answer": {
+      "id": "hsk3-w1-16-answer",
+      "type": "writing-answer",
+      "level": 3,
+      "text": "这条裤子有点儿短。",
+      "checksum": "010a48f55d171847ea79e39ed2d763cfc8815c279a1e4a47416be689eb046d76",
+      "file": "audio/sentences/hsk3-w1-16-answer.m4a",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk3-w1-17-answer": {
+      "id": "hsk3-w1-17-answer",
+      "type": "writing-answer",
+      "level": 3,
+      "text": "他因为感冒没来上课。",
+      "checksum": "753e5a4fb8e74717f118a4252b027fa8b6f39f5d9d1dd85333d06f5fa19bf206",
+      "file": "audio/sentences/hsk3-w1-17-answer.m4a",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk3-w1-18-answer": {
+      "id": "hsk3-w1-18-answer",
+      "type": "writing-answer",
+      "level": 3,
+      "text": "老师希望我们认真学习。",
+      "checksum": "46118e5c0f57043a2205aa4234e016f2eb371f2b11f0859040c5b4c384217b6e",
+      "file": "audio/sentences/hsk3-w1-18-answer.m4a",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk3-w1-19-answer": {
+      "id": "hsk3-w1-19-answer",
+      "type": "writing-answer",
+      "level": 3,
+      "text": "图书馆里不能大声说话。",
+      "checksum": "28cb99a7b70a07b5c02bf4962625b6d74f6de8dc8470ac0e5324e714aa834887",
+      "file": "audio/sentences/hsk3-w1-19-answer.m4a",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk3-w1-20-answer": {
+      "id": "hsk3-w1-20-answer",
+      "type": "writing-answer",
+      "level": 3,
+      "text": "请你帮我拿一下行李。",
+      "checksum": "7e899ecb5ec4a7d5dc53a10642cf9a614bd413a02e288949eedf4b4dc7d7d100",
+      "file": "audio/sentences/hsk3-w1-20-answer.m4a",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk3-w1-21-answer": {
+      "id": "hsk3-w1-21-answer",
+      "type": "writing-answer",
+      "level": 3,
+      "text": "我们的会议九点半开始。",
+      "checksum": "9c2a1e8dfe25c8ba94928d489b340463264b086628068eb53ffbb8e0553d25db",
+      "file": "audio/sentences/hsk3-w1-21-answer.m4a",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk3-w1-22-answer": {
+      "id": "hsk3-w1-22-answer",
+      "type": "writing-answer",
+      "level": 3,
+      "text": "他把杯子里的水喝完了。",
+      "checksum": "c054041e385a2eb1509a638f2d4fb42c3845ff262c8e8261812d18d71ed91821",
+      "file": "audio/sentences/hsk3-w1-22-answer.m4a",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk3-w1-23-answer": {
+      "id": "hsk3-w1-23-answer",
+      "type": "writing-answer",
+      "level": 3,
+      "text": "这个电影比那个有意思。",
+      "checksum": "b4a3a66f875e43e987ca4ff4aba1e200320df9e66ca7bd76c9a95791e7afe3cf",
+      "file": "audio/sentences/hsk3-w1-23-answer.m4a",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk3-w1-24-answer": {
+      "id": "hsk3-w1-24-answer",
+      "type": "writing-answer",
+      "level": 3,
+      "text": "我们先吃饭然后去看电影。",
+      "checksum": "a0734934de53615cdb834623ffaeb777dea878c7093b8fd92f8779b6246fbf3c",
+      "file": "audio/sentences/hsk3-w1-24-answer.m4a",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk3-w1-25-answer": {
+      "id": "hsk3-w1-25-answer",
+      "type": "writing-answer",
+      "level": 3,
+      "text": "虽然很累但是他很快乐。",
+      "checksum": "2aeff471679eb712c5c3c9a195c67a4e8b3e3fc44138cbd3838463a530ab67c1",
+      "file": "audio/sentences/hsk3-w1-25-answer.m4a",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk3-w1-26-answer": {
+      "id": "hsk3-w1-26-answer",
+      "type": "writing-answer",
+      "level": 3,
+      "text": "如果明天下雨我就不去了。",
+      "checksum": "74b1f7f6c3964a112202f4c44f3698a7fed36edc8894d1d73942e29e2ea1a008",
+      "file": "audio/sentences/hsk3-w1-26-answer.m4a",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk3-w1-27-answer": {
+      "id": "hsk3-w1-27-answer",
+      "type": "writing-answer",
+      "level": 3,
+      "text": "他的房间打扫得很干净。",
+      "checksum": "130edf4496b2155fa8ebb9c027c5c3229f1c6b1610525450b3048a11f3a097b4",
+      "file": "audio/sentences/hsk3-w1-27-answer.m4a",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk3-w1-28-answer": {
+      "id": "hsk3-w1-28-answer",
+      "type": "writing-answer",
+      "level": 3,
+      "text": "爷爷的身体一直很健康。",
+      "checksum": "806af96e9d2a88703e2547ce2f9c54b597cede3943394e482d50a3095f3bd34a",
+      "file": "audio/sentences/hsk3-w1-28-answer.m4a",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk3-w1-29-answer": {
+      "id": "hsk3-w1-29-answer",
+      "type": "writing-answer",
+      "level": 3,
+      "text": "我们应该每天努力学习。",
+      "checksum": "d25241486814e04facdee280cd47f319aa5d8f05939ff7cd2046560fa81efd89",
+      "file": "audio/sentences/hsk3-w1-29-answer.m4a",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk3-w1-30-answer": {
+      "id": "hsk3-w1-30-answer",
+      "type": "writing-answer",
+      "level": 3,
+      "text": "他终于找到了那个地方。",
+      "checksum": "8fd7ff26a1ce69ce419ed2ebb754647c794871528b4fbf84eeccdfc7d591daf2",
+      "file": "audio/sentences/hsk3-w1-30-answer.m4a",
+      "voices": [
+        "Tingting"
+      ]
+    },
     "hsk3-w2-01-answer": {
       "id": "hsk3-w2-01-answer",
       "type": "writing-answer",
@@ -8918,6 +9193,281 @@
       "text": "天黑了，请把灯打开。",
       "checksum": "5360968441636f4c107ad6a28c0f5f52b61eb8502258c224ed5d244773b64e47",
       "file": "audio/sentences/hsk3-w2-05-answer.m4a",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk3-w2-06-answer": {
+      "id": "hsk3-w2-06-answer",
+      "type": "writing-answer",
+      "level": 3,
+      "text": "我每天早上喝一杯牛奶。",
+      "checksum": "ab67cc60f4fef9cdd3d1bfe90f669be08e6572e0c65a574774ff3d53d60f63a7",
+      "file": "audio/sentences/hsk3-w2-06-answer.m4a",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk3-w2-07-answer": {
+      "id": "hsk3-w2-07-answer",
+      "type": "writing-answer",
+      "level": 3,
+      "text": "这个蛋糕很甜。",
+      "checksum": "132ddf2976d35e81fc0c914457b82efd0026d67dae13277d3bcf413ce067110b",
+      "file": "audio/sentences/hsk3-w2-07-answer.m4a",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk3-w2-08-answer": {
+      "id": "hsk3-w2-08-answer",
+      "type": "writing-answer",
+      "level": 3,
+      "text": "我的眼睛很累。",
+      "checksum": "4082d644c666b234229258d4c825a755991258b6eaea2617424b491684ac56bc",
+      "file": "audio/sentences/hsk3-w2-08-answer.m4a",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk3-w2-09-answer": {
+      "id": "hsk3-w2-09-answer",
+      "type": "writing-answer",
+      "level": 3,
+      "text": "他在银行工作。",
+      "checksum": "39c52582f3b73f582aec2cbfa5d5b81b82756473e070b7f9f18e926c1402b69c",
+      "file": "audio/sentences/hsk3-w2-09-answer.m4a",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk3-w2-10-answer": {
+      "id": "hsk3-w2-10-answer",
+      "type": "writing-answer",
+      "level": 3,
+      "text": "我想喝一杯茶。",
+      "checksum": "75d8c122096b3a3f6641deb37f14896ba03a9742372984fc47fb2142190d428f",
+      "file": "audio/sentences/hsk3-w2-10-answer.m4a",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk3-w2-11-answer": {
+      "id": "hsk3-w2-11-answer",
+      "type": "writing-answer",
+      "level": 3,
+      "text": "明天是我妹妹的生日。",
+      "checksum": "485510978e18acc19fefdb75a1b66ee0f33cfd1bd65a08ffdd63c3b728830d4e",
+      "file": "audio/sentences/hsk3-w2-11-answer.m4a",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk3-w2-12-answer": {
+      "id": "hsk3-w2-12-answer",
+      "type": "writing-answer",
+      "level": 3,
+      "text": "这里的街道很干净。",
+      "checksum": "37a3b28b84018a143f252296972fa84ab6b043291ed7f2c1437fd7008b315be6",
+      "file": "audio/sentences/hsk3-w2-12-answer.m4a",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk3-w2-13-answer": {
+      "id": "hsk3-w2-13-answer",
+      "type": "writing-answer",
+      "level": 3,
+      "text": "他把药吃完了。",
+      "checksum": "b7463332157204515ff5a16bfeadb4e6195b32793db4f6d192fdbb9abfcbac5b",
+      "file": "audio/sentences/hsk3-w2-13-answer.m4a",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk3-w2-14-answer": {
+      "id": "hsk3-w2-14-answer",
+      "type": "writing-answer",
+      "level": 3,
+      "text": "我们坐电梯上楼。",
+      "checksum": "f9704a5e282591d984f77fe9248aab8ae404f6f43b714df0dba581ffbe3e315e",
+      "file": "audio/sentences/hsk3-w2-14-answer.m4a",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk3-w2-15-answer": {
+      "id": "hsk3-w2-15-answer",
+      "type": "writing-answer",
+      "level": 3,
+      "text": "那只鸟飞走了。",
+      "checksum": "29dbed2e8c22edbdc66ddb9c287ac2693c0fa8731d52875af5b67eef1fb23e36",
+      "file": "audio/sentences/hsk3-w2-15-answer.m4a",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk3-w2-16-answer": {
+      "id": "hsk3-w2-16-answer",
+      "type": "writing-answer",
+      "level": 3,
+      "text": "我忘了带护照。",
+      "checksum": "7628e68e0a0f6f2ccd06f3ebad5e7d852a3f503b7dfd836cb4db6ac217e77ee1",
+      "file": "audio/sentences/hsk3-w2-16-answer.m4a",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk3-w2-17-answer": {
+      "id": "hsk3-w2-17-answer",
+      "type": "writing-answer",
+      "level": 3,
+      "text": "他的成绩很好。",
+      "checksum": "53e5dd70cc2c946b200743dcadbe98815b31de1dafc5b0c6cf6d08fd4b58b915",
+      "file": "audio/sentences/hsk3-w2-17-answer.m4a",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk3-w2-18-answer": {
+      "id": "hsk3-w2-18-answer",
+      "type": "writing-answer",
+      "level": 3,
+      "text": "这个房间很安静。",
+      "checksum": "e7b58f2f0418f4f328a93505fd369370e12f3bb88e4fa8719e4d5834f0cb91e2",
+      "file": "audio/sentences/hsk3-w2-18-answer.m4a",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk3-w2-19-answer": {
+      "id": "hsk3-w2-19-answer",
+      "type": "writing-answer",
+      "level": 3,
+      "text": "我买了两张票。",
+      "checksum": "1b67c67545460980d3ca9f7fa0945e57826ffb4ae8be2b90a0dacf1f76c7b1d7",
+      "file": "audio/sentences/hsk3-w2-19-answer.m4a",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk3-w2-20-answer": {
+      "id": "hsk3-w2-20-answer",
+      "type": "writing-answer",
+      "level": 3,
+      "text": "外面的风很大。",
+      "checksum": "80af4ebec9fe07ab079fa1e978d18e43d3870e731131b6a605e255c5626d437b",
+      "file": "audio/sentences/hsk3-w2-20-answer.m4a",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk3-w2-21-answer": {
+      "id": "hsk3-w2-21-answer",
+      "type": "writing-answer",
+      "level": 3,
+      "text": "他笑着说欢迎你。",
+      "checksum": "799867fb3104a7616b55fe60dd6fa73c7c199b0ca0c2a22b9e5eba55e27b59d5",
+      "file": "audio/sentences/hsk3-w2-21-answer.m4a",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk3-w2-22-answer": {
+      "id": "hsk3-w2-22-answer",
+      "type": "writing-answer",
+      "level": 3,
+      "text": "请在这里写你的名字。",
+      "checksum": "8e9404b61d64f01fdc3e32a27cc8eb153c97ca080a972bf008c2985fc82802c0",
+      "file": "audio/sentences/hsk3-w2-22-answer.m4a",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk3-w2-23-answer": {
+      "id": "hsk3-w2-23-answer",
+      "type": "writing-answer",
+      "level": 3,
+      "text": "我的手机没电了。",
+      "checksum": "7ce7739a3ff888ef8952a1b48d8d45ef811cb4bae54c7a9ae4ee1545d0d5512f",
+      "file": "audio/sentences/hsk3-w2-23-answer.m4a",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk3-w2-24-answer": {
+      "id": "hsk3-w2-24-answer",
+      "type": "writing-answer",
+      "level": 3,
+      "text": "冰箱里有很多水果。",
+      "checksum": "462b1bd9846341c63daedd113be9a1274b560ac05bf367b487b9a13ed107fd18",
+      "file": "audio/sentences/hsk3-w2-24-answer.m4a",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk3-w2-25-answer": {
+      "id": "hsk3-w2-25-answer",
+      "type": "writing-answer",
+      "level": 3,
+      "text": "他是一名医生。",
+      "checksum": "0772ceddcd62d949bc32ebff5b2acf8b66424be23aec98310759a76ac46363e6",
+      "file": "audio/sentences/hsk3-w2-25-answer.m4a",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk3-w2-26-answer": {
+      "id": "hsk3-w2-26-answer",
+      "type": "writing-answer",
+      "level": 3,
+      "text": "我们一起去公园玩。",
+      "checksum": "600ffb8b4b5baa0134c4209510980eb66ef126cd13f458c18822fbde3e61e05e",
+      "file": "audio/sentences/hsk3-w2-26-answer.m4a",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk3-w2-27-answer": {
+      "id": "hsk3-w2-27-answer",
+      "type": "writing-answer",
+      "level": 3,
+      "text": "请关上电视。",
+      "checksum": "efdb3716e6790a6585b2c7476173ef3262f310796573676c75d540652de1a7aa",
+      "file": "audio/sentences/hsk3-w2-27-answer.m4a",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk3-w2-28-answer": {
+      "id": "hsk3-w2-28-answer",
+      "type": "writing-answer",
+      "level": 3,
+      "text": "这件衣服太贵了。",
+      "checksum": "0539aab4f484dd1cf5681352a566a0c33715b1df73606225dc6a4a4597aca61e",
+      "file": "audio/sentences/hsk3-w2-28-answer.m4a",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk3-w2-29-answer": {
+      "id": "hsk3-w2-29-answer",
+      "type": "writing-answer",
+      "level": 3,
+      "text": "我在厨房做饭。",
+      "checksum": "c91db3eaff4e4748d00edd25271966cdddfa5f9147b2ef884fd21f787ac498ec",
+      "file": "audio/sentences/hsk3-w2-29-answer.m4a",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "hsk3-w2-30-answer": {
+      "id": "hsk3-w2-30-answer",
+      "type": "writing-answer",
+      "level": 3,
+      "text": "他学了三年汉语。",
+      "checksum": "a7270919d5176cc771b01ccae13fcda6a9d02d82befa19ad79a627c730cfafc8",
+      "file": "audio/sentences/hsk3-w2-30-answer.m4a",
       "voices": [
         "Tingting"
       ]
