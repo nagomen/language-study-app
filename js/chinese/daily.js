@@ -57,6 +57,8 @@ function dailySnapshot() {
     // ロック中は「今日学んだ20語」を見せる。
     shownDay: shownIndex + 1,
     words: finished ? [] : (days[shownIndex] || []),
+    // 余力があるときに、その日のうちに進める次の20語。
+    upcoming: finished ? [] : (days[index] || []),
     review: state.daily.pendingReview.map((id) => state.words.find((word) => word.id === id)).filter(Boolean),
     learned: Math.min(index, days.length) * DAILY_SIZE,
     total: days.reduce((sum, day) => sum + day.length, 0),
@@ -76,7 +78,7 @@ export function renderDailyBanner() {
   const note = $("#daily-banner-note");
   note.textContent = daily.finished
     ? `まちがえた${daily.review.length}語の復習か、リセットして最初からやり直せます。`
-    : (daily.locked ? `次の DAY ${state.daily.day} の20語は明日から始められます。`
+    : (daily.locked ? `余力があれば、DAY ${state.daily.day} の20語へ今日のうちに進めます（復習はまとめて明日）。`
       : (daily.review.length ? `今日の${daily.words.length}語に、もう一度出す${daily.review.length}語を加えた${dailySessionPool(daily).length}問です。` : `今日の${daily.words.length}語を1問ずつ出題します。`));
   $("#daily-open").textContent = daily.finished ? "復習ページを開く" : (daily.locked ? "今日の20語を見直す" : "今日の学習を開く");
 }
@@ -89,7 +91,9 @@ export function renderDaily() {
   $("#daily-page-progress-bar").style.width = `${Math.round((daily.learned / daily.total) * 100)}%`;
   $("#daily-title").textContent = daily.finished ? "300語を一周しました" : (daily.locked ? `DAY ${daily.shownDay} は完了しました` : "今日の20語");
   const status = [];
-  if (daily.locked) status.push(`<p class="daily-note"><strong>今日の分は完了しています。</strong>次の DAY ${state.daily.day} の20語は明日から始められます。今日はこのまま見直すか、まちがえた単語を復習しましょう。</p>`);
+  if (daily.locked) status.push(`<p class="daily-note"><strong>今日の分は完了しています。</strong>`
+    + `余力があれば「もう20語進む」で DAY ${state.daily.day} の${daily.upcoming.length}語に進めます。`
+    + `この回には復習を混ぜません。今日まちがえた語は、まとめて明日の出題に入ります。</p>`);
   if (daily.finished) status.push(`<p class="daily-note"><strong>全${daily.total}語の学習が終わりました。</strong>まちがえた単語の復習を続けるか、下のボタンでリセットして最初から回せます。</p>`);
   const last = state.daily.history[0];
   if (last) status.push(`<p class="daily-note">前回（DAY ${last.day}・${last.date}）は ${last.correct} / ${last.total} 問正解でした。`
@@ -98,6 +102,8 @@ export function renderDaily() {
   const questionCount = dailySessionPool(daily).length;
   $("#daily-start").classList.toggle("is-hidden", daily.finished || daily.locked);
   $("#daily-start").textContent = `今日のテストを始める（${questionCount}問）`;
+  $("#daily-next-set").classList.toggle("is-hidden", !daily.locked || !daily.upcoming.length);
+  $("#daily-next-set").innerHTML = `もう20語進む（DAY ${state.daily.day}・${daily.upcoming.length}問） <span>→</span>`;
   $("#daily-retry").classList.toggle("is-hidden", !daily.locked);
   $("#daily-retry").textContent = `今日の20語をもう一度テストする（${questionCount}問）`;
   $("#daily-review-quiz").classList.toggle("is-hidden", daily.review.length === 0);
@@ -145,6 +151,14 @@ export function startDailyRetry() {
   startQuiz(pool, "daily-retry", state.vocabularyDirection, state.words, { limit: pool.length, keepOrder: true });
 }
 
+// 余力があるときは、その日のうちに次の20語へ進める。
+// この回には復習を混ぜない（今日ぶんの復習は、まとめて翌日に出す）。
+export function startDailyNextSet() {
+  const daily = dailySnapshot();
+  if (daily.finished || !daily.locked || !daily.upcoming.length) return;
+  startQuiz(shuffle(daily.upcoming), "daily-extra", state.vocabularyDirection, state.words, { limit: daily.upcoming.length, keepOrder: true });
+}
+
 export function startDailyReview() {
   const daily = dailySnapshot();
   if (!daily.review.length) return alert("復習する単語はありません。");
@@ -160,7 +174,8 @@ export function completeDailySession() {
   const daily = state.daily;
   // 出題して正解した語は外す。ただし、まちがえた語と「気になる」を付けた語は残す。
   daily.pendingReview = [...new Set([...daily.pendingReview.filter((id) => !asked.has(id) || wrong.includes(id) || marked.has(id)), ...wrong])];
-  if (source === "daily") {
+  // 先へ進んだ回も1セットとして数える（日付は今日のまま、DAYだけ進む）。
+  if (source === "daily" || source === "daily-extra") {
     daily.history.unshift({ day: daily.day, date: localDateKey(), total: questions.length, correct: state.quiz.correct, wrong: wrong.length });
     daily.history = daily.history.slice(0, 30);
     daily.lastDate = localDateKey();

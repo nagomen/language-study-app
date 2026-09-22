@@ -3,7 +3,7 @@ import { $, $$, setMobileMenu } from "../shared.js";
 import { activeAudio, exampleAudioFile, playAudioFile, speak, speakWithBrowser, stopAudio } from "./audio.js";
 import { categoryById, closeCategoryDetail, openCategory, renderCategories, renderWordCategoryOptions, startCategoryPractice, startCategoryQuiz } from "./categories.js";
 import { clearChecked, exportChecked, importCheckedFile, renderChecked, startCheckedPractice, startCheckedQuiz, toggleChecked } from "./checked.js";
-import { buildDailyDays, renderDaily, resetDaily, startDailyRetry, startDailyReview, startDailySession } from "./daily.js";
+import { buildDailyDays, renderDaily, resetDaily, startDailyNextSet, startDailyRetry, startDailyReview, startDailySession } from "./daily.js";
 import { guideById, openGuide, renderGuide, startGuidePractice, startMeasurePractice } from "./guide.js";
 import { renderExamHub, startMockExam } from "./mock.js";
 import { closePractice, nextPracticeQuestion, playPracticeAudio, playPracticeReviewAudio, retryPractice, startPractice } from "./practice.js";
@@ -80,6 +80,7 @@ function bindEvents() {
   $("#open-categories").addEventListener("click", () => closeCategoryDetail());
   $("#daily-open").addEventListener("click", () => navigate("daily"));
   $("#daily-start").addEventListener("click", startDailySession);
+  $("#daily-next-set").addEventListener("click", startDailyNextSet);
   $("#daily-retry").addEventListener("click", startDailyRetry);
   $("#daily-review-quiz").addEventListener("click", startDailyReview);
   $("#daily-reset").addEventListener("click", resetDaily);
