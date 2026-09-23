@@ -419,7 +419,9 @@ function answerPractice(value, selectedButton) {
   const session = state.practice;
   if (session.answered) return;
   const question = session.questions[session.index];
-  const correct = normalizeAnswer(value) === normalizeAnswer(question.correct ?? question.answer);
+  // 完成句子は語順が複数ありうる（時間詞の位置など）ので、別解も正解として扱う。
+  const accepted = [question.correct ?? question.answer, ...(question.accept || [])].map(normalizeAnswer);
+  const correct = accepted.includes(normalizeAnswer(value));
   session.answered = true;
   question.userAnswer = value;
   question.isCorrect = correct;

@@ -167,42 +167,45 @@ const HSK3_PASSAGES = [
 ];
 
 // 書写はHSK3の文法・漢字で出題する。
-// [語句, 正解の文, 和訳, 正解のピンイン]
+// [語句, 正解の文, 和訳, 正解のピンイン, 別解（省略可）]
+// 本番の完成句子に合わせ、語句は1〜3字に割る（難しいところを組み上げた状態で渡さない）。
+// 各問が文法点をひとつ狙う。語順が複数ありうるものは別解を持たせる。
 // 1回の模試では、ここから5問を抽選して出す。
 const HSK3_REORDER = [
   [["他", "把", "那本", "字典", "放在", "桌子上"], "他把那本字典放在桌子上。", "彼はその辞書を机の上に置きました。", "Tā bǎ nà běn zìdiǎn fàng zài zhuōzi shàng."],
   [["这里", "的", "环境", "越来越", "好了"], "这里的环境越来越好了。", "ここの環境はますます良くなりました。", "Zhèlǐ de huánjìng yuè lái yuè hǎo le."],
   [["她", "一边", "听音乐", "一边", "做作业"], "她一边听音乐一边做作业。", "彼女は音楽を聴きながら宿題をします。", "Tā yìbiān tīng yīnyuè yìbiān zuò zuòyè."],
-  [["我", "的", "自行车", "被", "朋友", "骑走了"], "我的自行车被朋友骑走了。", "私の自転車は友達に乗って行かれました。", "Wǒ de zìxíngchē bèi péngyou qí zǒu le."],
+  [["我的", "自行车", "被", "朋友", "骑走了"], "我的自行车被朋友骑走了。", "私の自転車は友達に乗って行かれました。", "Wǒ de zìxíngchē bèi péngyou qí zǒu le."],
   [["这个", "问题", "比", "那个", "容易"], "这个问题比那个容易。", "この問題はあの問題より簡単です。", "Zhège wèntí bǐ nàge róngyì."],
-  [["我们", "下个星期", "一起", "去爬山"], "我们下个星期一起去爬山。", "私たちは来週一緒に山へ登ります。", "Wǒmen xià ge xīngqī yìqǐ qù pá shān."],
-  [["你", "最好", "早点儿", "休息"], "你最好早点儿休息。", "あなたは早めに休んだほうがいいです。", "Nǐ zuìhǎo zǎo diǎnr xiūxi."],
-  [["这件事", "我", "已经", "忘记了"], "这件事我已经忘记了。", "このことを私はもう忘れてしまいました。", "Zhè jiàn shì wǒ yǐjīng wàngjì le."],
-  [["他的汉语", "说得", "非常", "好"], "他的汉语说得非常好。", "彼の中国語はとても上手です。", "Tā de Hànyǔ shuō de fēicháng hǎo."],
-  [["请你", "把", "门", "关上"], "请你把门关上。", "ドアを閉めてください。", "Qǐng nǐ bǎ mén guān shàng."],
-  [["我", "昨天", "在超市", "买了", "水果"], "我昨天在超市买了水果。", "私は昨日スーパーで果物を買いました。", "Wǒ zuótiān zài chāoshì mǎi le shuǐguǒ."],
-  [["这个城市", "的", "冬天", "很冷"], "这个城市的冬天很冷。", "この街の冬はとても寒いです。", "Zhège chéngshì de dōngtiān hěn lěng."],
-  [["我们班", "有", "二十个", "学生"], "我们班有二十个学生。", "私たちのクラスには20人の学生がいます。", "Wǒmen bān yǒu èrshí ge xuésheng."],
-  [["他", "每天", "骑自行车", "上班"], "他每天骑自行车上班。", "彼は毎日自転車で通勤します。", "Tā měitiān qí zìxíngchē shàngbān."],
-  [["妈妈", "让我", "早点儿", "回家"], "妈妈让我早点儿回家。", "母は私に早く帰るように言いました。", "Māma ràng wǒ zǎo diǎnr huí jiā."],
-  [["这条", "裤子", "有点儿", "短"], "这条裤子有点儿短。", "このズボンは少し短いです。", "Zhè tiáo kùzi yǒu diǎnr duǎn."],
-  [["他", "因为感冒", "没来", "上课"], "他因为感冒没来上课。", "彼は風邪のため授業に来ませんでした。", "Tā yīnwèi gǎnmào méi lái shàngkè."],
-  [["老师", "希望", "我们", "认真学习"], "老师希望我们认真学习。", "先生は私たちに真面目に勉強してほしいと思っています。", "Lǎoshī xīwàng wǒmen rènzhēn xuéxí."],
-  [["图书馆里", "不能", "大声", "说话"], "图书馆里不能大声说话。", "図書館では大きな声で話してはいけません。", "Túshūguǎn lǐ bù néng dà shēng shuōhuà."],
-  [["请你", "帮我", "拿一下", "行李"], "请你帮我拿一下行李。", "荷物を少し持つのを手伝ってください。", "Qǐng nǐ bāng wǒ ná yíxià xíngli."],
-  [["我们的", "会议", "九点半", "开始"], "我们的会议九点半开始。", "私たちの会議は9時半に始まります。", "Wǒmen de huìyì jiǔ diǎn bàn kāishǐ."],
-  [["他", "把", "杯子里的水", "喝完了"], "他把杯子里的水喝完了。", "彼はコップの水を飲み干しました。", "Tā bǎ bēizi lǐ de shuǐ hē wán le."],
-  [["这个电影", "比", "那个", "有意思"], "这个电影比那个有意思。", "この映画はあの映画よりおもしろいです。", "Zhège diànyǐng bǐ nàge yǒu yìsi."],
-  [["我们", "先吃饭", "然后", "去看电影"], "我们先吃饭然后去看电影。", "私たちはまず食事をして、それから映画を見に行きます。", "Wǒmen xiān chī fàn ránhòu qù kàn diànyǐng."],
-  [["虽然", "很累", "但是", "他很快乐"], "虽然很累但是他很快乐。", "疲れてはいますが、彼はとても楽しそうです。", "Suīrán hěn lèi dànshì tā hěn kuàilè."],
-  [["如果", "明天下雨", "我就", "不去了"], "如果明天下雨我就不去了。", "もし明日雨なら、私は行きません。", "Rúguǒ míngtiān xià yǔ wǒ jiù bú qù le."],
-  [["他的房间", "打扫得", "很", "干净"], "他的房间打扫得很干净。", "彼の部屋はきれいに掃除されています。", "Tā de fángjiān dǎsǎo de hěn gānjìng."],
-  [["爷爷的身体", "一直", "很", "健康"], "爷爷的身体一直很健康。", "祖父の体はずっと健康です。", "Yéye de shēntǐ yìzhí hěn jiànkāng."],
-  [["我们", "应该", "每天", "努力学习"], "我们应该每天努力学习。", "私たちは毎日努力して勉強すべきです。", "Wǒmen yīnggāi měitiān nǔlì xuéxí."],
-  [["他", "终于", "找到了", "那个地方"], "他终于找到了那个地方。", "彼はついにその場所を見つけました。", "Tā zhōngyú zhǎodào le nàge dìfang."],
+  [["请", "你", "把", "这些", "盘子", "洗干净"], "请你把这些盘子洗干净。", "これらのお皿をきれいに洗ってください。", "Qǐng nǐ bǎ zhèxiē pánzi xǐ gānjìng."],
+  [["他", "把", "杯子", "里的", "水", "喝完了"], "他把杯子里的水喝完了。", "彼はコップの水を飲み干しました。", "Tā bǎ bēizi lǐ de shuǐ hē wán le."],
+  [["我", "把", "那本", "书", "还给", "他了"], "我把那本书还给他了。", "私はその本を彼に返しました。", "Wǒ bǎ nà běn shū huán gěi tā le."],
+  [["因为", "感冒", "所以", "他", "没来", "上课"], "因为感冒所以他没来上课。", "風邪をひいたので、彼は授業に来ませんでした。", "Yīnwèi gǎnmào suǒyǐ tā méi lái shàngkè."],
+  [["虽然", "很累", "但是", "他", "很", "快乐"], "虽然很累但是他很快乐。", "疲れてはいますが、彼はとても楽しそうです。", "Suīrán hěn lèi dànshì tā hěn kuàilè."],
+  [["如果", "明天", "下雨", "我", "就", "不去了"], "如果明天下雨我就不去了。", "もし明日雨なら、私は行きません。", "Rúguǒ míngtiān xià yǔ wǒ jiù bú qù le.", ["明天如果下雨我就不去了。"]],
+  [["我们", "先", "吃饭", "然后", "去", "看电影"], "我们先吃饭然后去看电影。", "私たちはまず食事をして、それから映画を見に行きます。", "Wǒmen xiān chī fàn ránhòu qù kàn diànyǐng."],
+  [["他", "一", "下课", "就", "回家了"], "他一下课就回家了。", "彼は授業が終わるとすぐ家に帰りました。", "Tā yí xiàkè jiù huí jiā le."],
+  [["这里", "不但", "安静", "而且", "很", "干净"], "这里不但安静而且很干净。", "ここは静かなだけでなく、とてもきれいです。", "Zhèlǐ búdàn ānjìng érqiě hěn gānjìng."],
+  [["我", "是", "坐", "飞机", "来", "的"], "我是坐飞机来的。", "私は飛行機で来たのです。", "Wǒ shì zuò fēijī lái de."],
+  [["这些", "帽子", "是", "在北京", "买", "的"], "这些帽子是在北京买的。", "これらの帽子は北京で買ったのです。", "Zhèxiē màozi shì zài Běijīng mǎi de."],
+  [["桌子上", "放着", "一本", "新", "词典"], "桌子上放着一本新词典。", "机の上に新しい辞書が1冊置いてあります。", "Zhuōzi shàng fàng zhe yì běn xīn cídiǎn."],
+  [["他", "每天", "坐", "地铁", "去", "上班"], "他每天坐地铁去上班。", "彼は毎日地下鉄で通勤します。", "Tā měitiān zuò dìtiě qù shàngbān.", ["每天他坐地铁去上班。"]],
+  [["我家", "离", "学校", "不", "太", "远"], "我家离学校不太远。", "私の家は学校からそれほど遠くありません。", "Wǒ jiā lí xuéxiào bú tài yuǎn."],
+  [["老师", "说", "的话", "我", "听不懂"], "老师说的话我听不懂。", "先生の話は聞いても分かりません。", "Lǎoshī shuō de huà wǒ tīng bu dǒng."],
+  [["他", "从", "房间里", "走", "出来", "了"], "他从房间里走出来了。", "彼は部屋から歩いて出て来ました。", "Tā cóng fángjiān lǐ zǒu chū lái le."],
+  [["我", "比", "他", "早", "来了", "十分钟"], "我比他早来了十分钟。", "私は彼より10分早く来ました。", "Wǒ bǐ tā zǎo lái le shí fēnzhōng."],
+  [["这个", "跟", "那个", "一样", "便宜"], "这个跟那个一样便宜。", "これはあれと同じくらい安いです。", "Zhège gēn nàge yíyàng piányi."],
+  [["今天", "没有", "昨天", "那么", "热"], "今天没有昨天那么热。", "今日は昨日ほど暑くありません。", "Jīntiān méiyǒu zuótiān nàme rè."],
+  [["妈妈", "让", "我", "早点儿", "回家"], "妈妈让我早点儿回家。", "母は私に早く帰るように言いました。", "Māma ràng wǒ zǎo diǎnr huí jiā."],
+  [["这个", "菜", "又", "好吃", "又", "便宜"], "这个菜又好吃又便宜。", "この料理はおいしくて、しかも安いです。", "Zhège cài yòu hǎochī yòu piányi."],
+  [["我", "以前", "来过", "这个", "地方"], "我以前来过这个地方。", "私は以前この場所に来たことがあります。", "Wǒ yǐqián lái guo zhège dìfang.", ["以前我来过这个地方。"]],
+  [["我们的", "会议", "快要", "开始", "了"], "我们的会议快要开始了。", "私たちの会議はもうすぐ始まります。", "Wǒmen de huìyì kuài yào kāishǐ le."],
+  [["他", "的", "房间", "打扫", "得", "很干净"], "他的房间打扫得很干净。", "彼の部屋はきれいに掃除されています。", "Tā de fángjiān dǎsǎo de hěn gānjìng."],
+  [["图书馆", "里", "不能", "大声", "说话"], "图书馆里不能大声说话。", "図書館では大きな声で話してはいけません。", "Túshūguǎn lǐ bù néng dà shēng shuōhuà."],
 ];
 
 // [問題文, 入る漢字, 和訳, 完成した文のピンイン]
+// 書かせるのはHSK2〜3相当の漢字にする（1級の字は易しすぎる）。
 // 1回の模試では、ここから5問を抽選して出す。
 const HSK3_INPUT = [
   ["我的腿有点儿（téng）。", "疼", "私の脚は少し痛いです。", "Wǒ de tuǐ yǒu diǎnr téng."],
@@ -213,9 +216,13 @@ const HSK3_INPUT = [
   ["我每天早上喝一杯牛（nǎi）。", "奶", "私は毎朝牛乳を1杯飲みます。", "Wǒ měitiān zǎoshang hē yì bēi niúnǎi."],
   ["这个蛋（gāo）很甜。", "糕", "このケーキはとても甘いです。", "Zhège dàngāo hěn tián."],
   ["我的（yǎn）睛很累。", "眼", "私の目はとても疲れています。", "Wǒ de yǎnjing hěn lèi."],
-  ["他在银（háng）工作。", "行", "彼は銀行で働いています。", "Tā zài yínháng gōngzuò."],
-  ["我想喝一（bēi）茶。", "杯", "私はお茶を1杯飲みたいです。", "Wǒ xiǎng hē yì bēi chá."],
-  ["明天是我妹妹的生（rì）。", "日", "明日は妹の誕生日です。", "Míngtiān shì wǒ mèimei de shēngrì."],
+  ["妹妹买了一条新（qún）子。", "裙", "妹は新しいスカートを1着買いました。", "Mèimei mǎi le yì tiáo xīn qúnzi."],
+  ["医生给他（jiǎn）查身体。", "检", "医者は彼の体を検査します。", "Yīshēng gěi tā jiǎnchá shēntǐ."],
+  ["他每天早上（duàn）炼身体。", "锻", "彼は毎朝体を鍛えます。", "Tā měitiān zǎoshang duànliàn shēntǐ."],
+  ["我今天不太（shū）服。", "舒", "私は今日あまり体調が良くありません。", "Wǒ jīntiān bú tài shūfu."],
+  ["请给我一个（wǎn）。", "碗", "お椀を1つください。", "Qǐng gěi wǒ yí ge wǎn."],
+  ["我的（lín）居很热情。", "邻", "私の隣人はとても親切です。", "Wǒ de línjū hěn rèqíng."],
+  ["房间里的空（tiáo）坏了。", "调", "部屋のエアコンが壊れました。", "Fángjiān lǐ de kōngtiáo huài le."],
   ["这里的（jiē）道很干净。", "街", "ここの通りはとてもきれいです。", "Zhèlǐ de jiēdào hěn gānjìng."],
   ["他把（yào）吃完了。", "药", "彼は薬を飲み終えました。", "Tā bǎ yào chī wán le."],
   ["我们坐电（tī）上楼。", "梯", "私たちはエレベーターで上の階へ行きます。", "Wǒmen zuò diàntī shàng lóu."],
@@ -226,15 +233,11 @@ const HSK3_INPUT = [
   ["我买了两（zhāng）票。", "张", "私はチケットを2枚買いました。", "Wǒ mǎi le liǎng zhāng piào."],
   ["外面的（fēng）很大。", "风", "外は風がとても強いです。", "Wàimiàn de fēng hěn dà."],
   ["他（xiào）着说欢迎你。", "笑", "彼は笑いながら「ようこそ」と言いました。", "Tā xiào zhe shuō huānyíng nǐ."],
-  ["请在这里写你的名（zì）。", "字", "ここにあなたの名前を書いてください。", "Qǐng zài zhèlǐ xiě nǐ de míngzi."],
-  ["我的手（jī）没电了。", "机", "私の携帯は電池が切れました。", "Wǒ de shǒujī méi diàn le."],
   ["冰（xiāng）里有很多水果。", "箱", "冷蔵庫の中に果物がたくさんあります。", "Bīngxiāng lǐ yǒu hěnduō shuǐguǒ."],
-  ["他是一名医（shēng）。", "生", "彼は医者です。", "Tā shì yì míng yīshēng."],
-  ["我们一起去公（yuán）玩。", "园", "私たちは一緒に公園へ遊びに行きます。", "Wǒmen yìqǐ qù gōngyuán wán."],
-  ["请（guān）上电视。", "关", "テレビを消してください。", "Qǐng guān shàng diànshì."],
-  ["这件衣服太（guì）了。", "贵", "この服は高すぎます。", "Zhè jiàn yīfu tài guì le."],
   ["我在（chú）房做饭。", "厨", "私は台所で料理をします。", "Wǒ zài chúfáng zuò fàn."],
-  ["他学了三年（hàn）语。", "汉", "彼は3年間中国語を学びました。", "Tā xué le sān nián Hànyǔ."],
+  ["这个季（jié）很舒服。", "节", "この季節はとても快適です。", "Zhège jìjié hěn shūfu."],
+  ["这个孩子很（cōng）明。", "聪", "この子はとても賢いです。", "Zhège háizi hěn cōngming."],
+  ["他每天晚上洗（zǎo）。", "澡", "彼は毎晩お風呂に入ります。", "Tā měitiān wǎnshang xǐzǎo."],
 ];
 
 const HSK3_STATEMENTS = [
@@ -613,7 +616,7 @@ function buildLevel3() {
   const reading3 = HSK3_PASSAGES.map((item, index) => q(`hsk3-r3-${String(index + 1).padStart(2, "0")}`, "reading", 3, "reading-comprehension", { prompt: item[0], subPrompt: item[1], choices: choices(item[2], item[3], 3), correct: item[2], instruction: "请阅读短文，选择正确答案。", explanation: `${item[1]} — ${item[2]}` }));
   const reorder = HSK3_REORDER.map((item, index) => {
     const id = `hsk3-w1-${String(index + 1).padStart(2, "0")}`;
-    return q(id, "writing", 1, "reorder", { tokens: item[0], answer: item[1], meaning: item[2], answerPinyin: item[3], answerAudioFile: audioFile(`${id}-answer`), instruction: "请把下面的词语排列成正确的句子。", selected: [] });
+    return q(id, "writing", 1, "reorder", { tokens: item[0], answer: item[1], meaning: item[2], answerPinyin: item[3], ...(item[4] ? { accept: item[4] } : {}), answerAudioFile: audioFile(`${id}-answer`), instruction: "请把下面的词语排列成正确的句子。", selected: [] });
   });
   const input = HSK3_INPUT.map((item, index) => {
     const id = `hsk3-w2-${String(index + 1).padStart(2, "0")}`;
@@ -777,10 +780,42 @@ for (const level of [1, 2, 3]) {
       exposure.set(word.hanzi, (exposure.get(word.hanzi) || 0) + weightOf(item));
     }
   }
-  // 作文の正解ピンインは、音節数が漢字数と合っていること（儿化は1音節ぶん少なくてよい）。
+  // 完成句子の品質を保つための検査。
+// ・語句は3字以内（難しいところを組み上げた状態で渡さない）
+// ・各問が文法点をひとつ以上ねらう
+// ・語句を並べ替えると正解の文になる
+const GRAMMAR_POINTS = [
+  ["把構文", /把/], ["被構文", /被/], ["比較", /比|越来越|一样|没有.*那么/],
+  ["様態補語", /得[很非真好不]/], ["結果・方向補語", /完了|到了|走了|出来|回来|进去|上。|不懂|不了/],
+  ["複文", /因为|虽然|如果|然后|一边|又.*又|不但|一.*就/], ["兼語", /让|请/],
+  ["能願・副詞", /应该|可以|能|快要|最好|一定/], ["連動文", /(坐|骑|走|开|带)[^，。]*?(去|来)/], ["是…的", /是.*的。/], ["存現・着", /着/],
+  ["離・従", /离|从/], ["経験の过", /过/],
+];
+for (const item of forms[level].filter((question) => question.skill === "writing" && question.kind === "reorder")) {
+  const oversized = item.tokens.filter((token) => [...token].filter((char) => /[一-鿿]/u.test(char)).length > 3);
+  if (oversized.length) flag(`${item.id}: 語句が3字を超えています「${oversized.join("・")}」→ ${item.answer}`);
+  if (item.tokens.join("") !== item.answer.replace(/[。！？]/g, "")) flag(`${item.id}: 語句を並べても正解になりません → ${item.tokens.join("/")}`);
+  if (!GRAMMAR_POINTS.some(([, pattern]) => pattern.test(item.answer))) flag(`${item.id}: 文法点が見当たりません（ふつうのSVO）→ ${item.answer}`);
+  for (const alternative of item.accept || []) {
+    if ([...alternative.replace(/[。！？]/g, "")].sort().join("") !== [...item.answer.replace(/[。！？]/g, "")].sort().join("")) {
+      flag(`${item.id}: 別解の文字が正解と違います → ${alternative}`);
+    }
+  }
+}
+// 看拼音写汉字で書かせるのは、HSK1だけの字ではなく2〜3級相当の字にする。
+const charLevel = new Map();
+for (const word of [...allWords].sort((left, right) => right.level - left.level)) {
+  for (const char of word.hanzi) charLevel.set(char, Math.min(charLevel.get(char) ?? 9, word.level));
+}
+for (const item of forms[level].filter((question) => question.skill === "writing" && question.kind === "input")) {
+  if ((charLevel.get(item.answer) ?? 3) < 2) flag(`${item.id}: 「${item.answer}」はHSK1相当の字で、3級の書き取りには易しすぎます`);
+  if (!item.sentence.includes("（")) flag(`${item.id}: 問題文にピンインの空欄がありません`);
+}
+
+// 作文の正解ピンインは、音節数が漢字数と合っていること（儿化は1音節ぶん少なくてよい）。
 const VOWELS = "aāáǎàeēéěèiīíǐìoōóǒòuūúǔùüǖǘǚǜ";
-for (const level of [1, 2, 3]) {
-  for (const item of forms[level].filter((question) => question.skill === "writing")) {
+for (const item of forms[level].filter((question) => question.skill === "writing")) {
+  {
     const sentence = item.kind === "input" ? item.sentence.replace(/（[^）]+）/, item.answer) : item.answer;
     if (!item.answerPinyin) { flag(`${item.id}: 正解のピンインがありません`); continue; }
     const hanzi = [...sentence].filter((char) => /[一-鿿]/u.test(char)).length;
