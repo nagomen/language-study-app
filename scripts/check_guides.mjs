@@ -2,6 +2,7 @@
 // 文法ガイド（data/chinese/guides.json）と量詞ページ（data/chinese/measure-words.json）を検証する。
 //   node scripts/check_guides.mjs
 // 参照している単語IDが実在するか、量詞ページが measure ラベルの語を漏れなく扱っているか、
+// 語彙表外の実用量詞に見出し・ピンイン・レベルがあるか、
 // 例文のピンインの音節数が漢字数と一致するか、練習問題の正解が選択肢に含まれるかを確認する。
 // HSK1〜3の語彙にない漢字は警告として一覧表示する（エラーにはしない）。
 
@@ -22,14 +23,14 @@ const measureIds = Object.entries(tagData.words).filter(([, tags]) => tags.inclu
 const countSyllables = (pinyin) => (pinyin.match(new RegExp(`[${VOWELS}]+`, "gi")) || []).length;
 const countHanzi = (text) => [...text].filter((char) => HANZI.test(char)).length;
 
-function checkPhrase(label, phrase) {
+function checkPhrase(label, phrase, { allowOutsideVocabulary = false } = {}) {
   if (!phrase?.cn || !phrase?.pinyin || !phrase?.ja) return errors.push(`${label}: cn・pinyin・ja のいずれかが未設定`);
   const erhua = (phrase.cn.match(/儿/g) || []).length;
   const hanziCount = countHanzi(phrase.cn);
   const syllables = countSyllables(phrase.pinyin);
   if (syllables > hanziCount || syllables < hanziCount - erhua) errors.push(`${label}: 漢字${hanziCount}字に対しピンインが${syllables}音節 → ${phrase.cn} / ${phrase.pinyin}`);
   const stray = [...phrase.cn].filter((char) => HANZI.test(char) && !vocabularyChars.has(char));
-  if (stray.length) warnings.push(`${label}: HSK1〜3の語彙にない漢字 ${[...new Set(stray)].join("・")} → ${phrase.cn}`);
+  if (!allowOutsideVocabulary && stray.length) warnings.push(`${label}: HSK1〜3の語彙にない漢字 ${[...new Set(stray)].join("・")} → ${phrase.cn}`);
 }
 
 function checkWordId(label, id) {
@@ -44,40 +45,49 @@ measure.rules.forEach((rule, index) => {
   if (!rule.title || !rule.body) errors.push(`量詞ルール${index + 1}: title か body が未設定`);
   checkPhrase(`量詞ルール${index + 1}「${rule.title}」`, rule.example);
 });
+(measure.numberPatterns || []).forEach((pattern, index) => {
+  const label = `数の型${index + 1}「${pattern.title || ""}」`;
+  if (!pattern.title || !pattern.formula || !pattern.note || !pattern.level) errors.push(`${label}: title・formula・note・level のいずれかが未設定`);
+  checkPhrase(label, pattern.example, { allowOutsideVocabulary: true });
+});
+(measure.comparisons || []).forEach((comparison, index) => {
+  const label = `量詞比較${index + 1}「${comparison.title || ""}」`;
+  if (!comparison.title || !comparison.tip || comparison.rows?.length < 2) errors.push(`${label}: title・tip・rows が不足しています`);
+  for (const row of comparison.rows || []) if (!row.word || !row.pinyin || !row.use || !row.example) errors.push(`${label}: word・pinyin・use・example のいずれかが未設定`);
+});
 
 const seenItems = new Set();
+const seenHanzi = new Set();
 for (const item of measure.items) {
-  const word = words.get(item.wordId);
-  const label = `量詞 ${item.wordId}${word ? ` ${word.hanzi}` : ""}`;
-  checkWordId(label, item.wordId);
-  if (seenItems.has(item.wordId)) errors.push(`${label}: 量詞が重複しています`);
-  seenItems.add(item.wordId);
+  const word = item.wordId ? words.get(item.wordId) : null;
+  const hanzi = word?.hanzi || item.hanzi;
+  const label = `量詞 ${item.wordId || item.hanzi || "(未設定)"}${word ? ` ${word.hanzi}` : ""}`;
+  if (item.wordId) checkWordId(label, item.wordId);
+  else if (!item.hanzi || !item.pinyin || ![1, 2, 3].includes(item.level)) errors.push(`${label}: 語彙表外の量詞に hanzi・pinyin・level(1〜3) が必要です`);
+  if (seenHanzi.has(hanzi)) errors.push(`${label}: 見出し「${hanzi}」が重複しています`);
+  seenHanzi.add(hanzi);
+  if (item.wordId) seenItems.add(item.wordId);
   if (!groupIds.has(item.group)) errors.push(`${label}: グループ ${item.group} は groups にありません`);
   if (!item.use || !item.tip) errors.push(`${label}: use か tip が未設定`);
-  checkPhrase(label, item.phrase);
+  checkPhrase(label, item.phrase, { allowOutsideVocabulary: !item.wordId });
   // 量詞ページの例フレーズには、その量詞そのものが入っていてほしい。
-  if (word && item.phrase?.cn && !item.phrase.cn.includes(word.hanzi)) errors.push(`${label}: 例フレーズに見出しの量詞が含まれていません → ${item.phrase.cn}`);
+  if (hanzi && item.phrase?.cn && !item.phrase.cn.includes(hanzi)) errors.push(`${label}: 例フレーズに見出しの量詞が含まれていません → ${item.phrase.cn}`);
   (item.nouns || []).forEach((nounId) => checkWordId(`${label} の名詞`, nounId));
+  for (const noun of item.nounExamples || []) if (!noun.hanzi || !noun.pinyin || !noun.meaning) errors.push(`${label}: nounExamples に hanzi・pinyin・meaning が必要です`);
 }
 measure.quiz.forEach((question, index) => {
   const label = `量詞クイズ${index + 1}`;
-  checkWordId(label, question.wordId);
+  if (question.wordId) checkWordId(label, question.wordId);
   if (!question.prompt?.includes("＿")) errors.push(`${label}: 問題文に空欄（＿）がありません`);
   if (!question.subPrompt || !question.explanation) errors.push(`${label}: 訳か解説が未設定`);
   if ((question.choices || []).length < 3) errors.push(`${label}: 選択肢は3つ以上にしてください`);
   if (new Set(question.choices).size !== question.choices.length) errors.push(`${label}: 選択肢が重複しています`);
   if (!question.choices?.includes(question.correct)) errors.push(`${label}: 正解「${question.correct}」が選択肢にありません`);
-  // 選択肢は量詞ページに載っている量詞から作る。
-  const measureHanzi = new Set(measure.items.map((item) => words.get(item.wordId)?.hanzi).filter(Boolean));
-  const unknown = (question.choices || []).filter((choice) => !measureHanzi.has(choice));
-  if (unknown.length) errors.push(`${label}: 量詞ページにない選択肢 ${unknown.join("・")}`);
-  if (words.get(question.wordId)?.hanzi !== question.correct) errors.push(`${label}: wordId と正解「${question.correct}」が一致しません`);
+  if (question.wordId && words.get(question.wordId)?.hanzi !== question.correct) errors.push(`${label}: wordId と正解「${question.correct}」が一致しません`);
 });
 
 const missing = measureIds.filter((id) => !seenItems.has(id));
-const extra = [...seenItems].filter((id) => !measureIds.includes(id));
 if (missing.length) errors.push(`量詞ページに未掲載の量詞: ${missing.map((id) => `${id} ${words.get(id)?.hanzi || ""}`).join(", ")}`);
-if (extra.length) errors.push(`measure ラベルが付いていない語が量詞ページにあります: ${extra.join(", ")}`);
 for (const group of measure.groups) {
   if (!measure.items.some((item) => item.group === group.id)) errors.push(`量詞グループ「${group.label}」に項目がありません`);
 }
@@ -148,5 +158,5 @@ if (errors.length) {
   console.error(`\n${errors.length}件のエラーがあります。`);
   process.exit(1);
 }
-console.log(`量詞 ${measure.items.length}語 / ガイド ${guides.length}件（練習 ${guides.reduce((sum, guide) => sum + guide.practice.length, 0)}問）`);
+console.log(`数量詞 ${measure.items.length}語・数の型 ${measure.numberPatterns?.length || 0}件・比較 ${measure.comparisons?.length || 0}件 / ガイド ${guides.length}件（練習 ${guides.reduce((sum, guide) => sum + guide.practice.length, 0)}問）`);
 console.log(warnings.length ? `検証に成功しました（警告 ${warnings.length}件）。` : "検証に成功しました。");

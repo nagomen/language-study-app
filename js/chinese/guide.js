@@ -45,6 +45,8 @@ export function renderGuide() {
   $("#guide-title").textContent = guide.title;
   $("#guide-summary").textContent = guide.summary;
   $("#guide-level").textContent = guide.level || "HSK";
+  const practiceCount = Math.max(10, Number(guide.practiceCount) || 10);
+  $("#guide-practice").innerHTML = `文法ドリル${practiceCount}問 <span>→</span>`;
   $("#guide-related").innerHTML = (guide.relatedCategories || []).map((id) => categoryById(id)).filter(Boolean)
     .map((category) => `<button class="tag-chip" type="button" data-category-open="${escapeHtml(category.id)}">${escapeHtml(category.label)}の単語を見る</button>`).join("");
   $("#guide-sections").innerHTML = (guide.sections || []).map(guideSectionHtml).join("");
@@ -97,11 +99,46 @@ function phraseBlockHtml(phrase) {
   </div>`;
 }
 
-// 量詞は「数＋量詞＋名詞」の形と、数える対象をセットで見せる。
-export function renderMeasureGuide(words) {
+function measureHeadword(item) {
+  const word = item.wordId ? state.words.find((entry) => entry.id === item.wordId) : null;
+  return word || { id: "", hanzi: item.hanzi, pinyin: item.pinyin, level: item.level, meaning: item.use };
+}
+
+function measureNouns(item) {
+  const linked = (item.nouns || []).map((id) => state.words.find((entry) => entry.id === id)).filter(Boolean);
+  return [...linked, ...(item.nounExamples || [])];
+}
+
+function measureItemHaystack(item) {
+  const word = measureHeadword(item);
+  return [word.hanzi, word.pinyin, item.use, item.tip, item.phrase?.cn, item.phrase?.pinyin, item.phrase?.ja,
+    ...measureNouns(item).flatMap((noun) => [noun.hanzi, noun.pinyin, noun.meaning])].filter(Boolean).join(" ").toLowerCase();
+}
+
+function visibleMeasureItems() {
+  const query = $("#category-search").value.trim().toLowerCase();
+  return state.measure.items.filter((item) => {
+    const word = measureHeadword(item);
+    if (state.categoryFilter !== "all" && word.level !== Number(state.categoryFilter)) return false;
+    if (state.checkedOnly.categories && (!word.id || !state.checked.has(word.id))) return false;
+    return !query || measureItemHaystack(item).includes(query);
+  });
+}
+
+// 数の作り方、使い分け、名詞からの逆引き、量詞カードを1ページにまとめる。
+export function renderMeasureGuide() {
   const data = state.measure;
   const container = $("#measure-guide");
-  const visible = new Set(words.map((word) => word.id));
+  const items = visibleMeasureItems();
+  const nounPairs = items.flatMap((item) => {
+    const measure = measureHeadword(item);
+    return measureNouns(item).map((noun) => ({ noun, measure }));
+  }).sort((a, b) => String(a.noun.pinyin || a.noun.hanzi).localeCompare(String(b.noun.pinyin || b.noun.hanzi)));
+  const overview = `<section class="measure-overview">
+    <div><p class="eyebrow">NUMBERS &amp; MEASURE WORDS</p><h2>数量詞を「数・量詞・名詞」でつなげる</h2><p>数の組み立てから、ものに合う量詞の選び方まで、HSK 1〜3級で使う形をひとつにまとめました。</p></div>
+    <div class="measure-overview-stats"><span><strong>${data.items.length}</strong>量詞</span><span><strong>${data.numberPatterns?.length || 0}</strong>数の型</span><span><strong>20</strong>練習問</span></div>
+    <nav class="measure-jump" aria-label="数量詞ページの目次"><a href="#measure-number-patterns">数の作り方</a><a href="#measure-comparisons">似た量詞</a><a href="#measure-noun-index">名詞から探す</a><a href="#measure-list">量詞一覧</a></nav>
+  </section>`;
   const slot = `<section class="measure-slot">
     <h2>${escapeHtml(data.slot.title)}</h2>
     <div class="slot-row">${data.slot.cells.map((cell, index) => `
@@ -109,48 +146,63 @@ export function renderMeasureGuide(words) {
       ${index < data.slot.cells.length - 1 ? `<span class="slot-plus" aria-hidden="true">＋</span>` : ""}`).join("")}</div>
     <p class="slot-reading">${escapeHtml(data.slot.reading)}<span>${escapeHtml(data.slot.meaning)}</span>${speakButtonHtml(data.slot.cells.map((cell) => cell.value).join(""), "例を聞く")}</p>
   </section>`;
+  const numberPatterns = `<section id="measure-number-patterns" class="measure-number-patterns">
+    <header class="measure-group-head"><h2>数の作り方<small>${data.numberPatterns?.length || 0}つの型</small></h2><p>数自体の読み方と、数量詞で間違えやすい形を先に整理します。</p></header>
+    <div class="measure-pattern-grid">${(data.numberPatterns || []).map((pattern) => `<article class="measure-pattern-card">
+      <span class="mini-level">${escapeHtml(pattern.level || "HSK 1–3")}</span><h3>${escapeHtml(pattern.title)}</h3><p class="pattern-formula">${escapeHtml(pattern.formula)}</p>
+      ${phraseBlockHtml(pattern.example)}<p class="measure-tip"><span aria-hidden="true">◎</span>${escapeHtml(pattern.note)}</p>
+    </article>`).join("")}</div>
+  </section>`;
   const rules = `<section class="measure-rules">
-    <h2>使うときの4つのきまり</h2>
+    <h2>量詞を使う5つのきまり</h2>
     <div class="measure-rule-grid">${data.rules.map((rule) => `
-      <article class="measure-rule">
-        <strong>${escapeHtml(rule.title)}</strong>
-        <p>${escapeHtml(rule.body)}</p>
-        <p class="measure-rule-example"><b>${escapeHtml(rule.example.cn)}</b><span>${escapeHtml(rule.example.pinyin)}</span><span>${escapeHtml(rule.example.ja)}</span>${speakButtonHtml(rule.example.cn, `${rule.example.cn}を聞く`)}</p>
-      </article>`).join("")}</div>
+      <article class="measure-rule"><strong>${escapeHtml(rule.title)}</strong><p>${escapeHtml(rule.body)}</p>
+        <p class="measure-rule-example"><b>${escapeHtml(rule.example.cn)}</b><span>${escapeHtml(rule.example.pinyin)}</span><span>${escapeHtml(rule.example.ja)}</span>${speakButtonHtml(rule.example.cn, `${rule.example.cn}を聞く`)}</p></article>`).join("")}</div>
+  </section>`;
+  const comparisons = `<section id="measure-comparisons" class="measure-comparisons">
+    <header class="measure-group-head"><h2>似た量詞の使い分け<small>${data.comparisons?.length || 0}セット</small></h2><p>意味の近い量詞を、対象と例を並べて見分けます。</p></header>
+    <div class="measure-compare-grid">${(data.comparisons || []).map((comparison) => `<article class="measure-compare-card"><h3>${escapeHtml(comparison.title)}</h3>
+      ${comparison.rows.map((row) => `<div class="measure-compare-row"><b>${escapeHtml(row.word)}</b><span>${escapeHtml(row.pinyin)}</span><p>${escapeHtml(row.use)}<small>${escapeHtml(row.example)}</small></p></div>`).join("")}
+      <p class="measure-tip"><span aria-hidden="true">◎</span>${escapeHtml(comparison.tip)}</p></article>`).join("")}</div>
+  </section>`;
+  const nounIndex = `<section id="measure-noun-index" class="measure-noun-index">
+    <header class="measure-group-head"><h2>名詞から量詞を探す<small>${nounPairs.length}組</small></h2><p>数えたい名詞を先に見つけ、右側の量詞とセットで覚えます。</p></header>
+    <div class="measure-noun-grid">${nounPairs.map(({ noun, measure }) => `<div class="measure-noun-pair"><span><b>${escapeHtml(noun.hanzi)}</b><small>${escapeHtml(noun.pinyin || "")} · ${escapeHtml(noun.meaning || "")}</small></span><strong>${escapeHtml(measure.hanzi)}</strong></div>`).join("")}</div>
   </section>`;
   const groups = data.groups.map((group) => {
-    const items = data.items.filter((item) => item.group === group.id && visible.has(item.wordId));
-    if (!items.length) return "";
-    return `<section class="measure-group">
-      <header class="measure-group-head"><h2>${escapeHtml(group.label)}<small>${items.length}語</small></h2><p>${escapeHtml(group.description)}</p></header>
-      <div class="measure-grid">${items.map(measureCardHtml).join("")}</div>
-    </section>`;
+    const groupItems = items.filter((item) => item.group === group.id);
+    if (!groupItems.length) return "";
+    return `<section class="measure-group"><header class="measure-group-head"><h2>${escapeHtml(group.label)}<small>${groupItems.length}語</small></h2><p>${escapeHtml(group.description)}</p></header>
+      <div class="measure-grid">${groupItems.map(measureCardHtml).join("")}</div></section>`;
   }).join("");
-  container.innerHTML = slot + rules + groups;
+  container.innerHTML = overview + slot + numberPatterns + rules + comparisons + nounIndex + `<div id="measure-list" class="measure-groups">${groups}</div>`;
   bindWordRowAudio(container);
+  return items.length;
 }
 
 function measureCardHtml(item) {
-  const word = state.words.find((entry) => entry.id === item.wordId);
-  if (!word) return "";
-  const nouns = (item.nouns || []).map((id) => state.words.find((entry) => entry.id === id)).filter(Boolean);
-  return `<article class="measure-card">
-    <header class="measure-card-head">
+  const word = measureHeadword(item);
+  if (!word?.hanzi) return "";
+  const nouns = measureNouns(item);
+  const actions = word.id
+    ? `${checkButtonHtml(word.id, state.checked.has(word.id))}<button class="speak-mini" type="button" data-word-id="${escapeHtml(word.id)}" aria-label="${escapeHtml(word.hanzi)}の発音を聞く"><span aria-hidden="true">声</span></button>`
+    : speakButtonHtml(word.hanzi, `${word.hanzi}の発音を聞く`);
+  return `<article class="measure-card"><header class="measure-card-head">
       <div class="measure-hanzi"><strong>${escapeHtml(word.hanzi)}</strong><span>${escapeHtml(word.pinyin)}</span></div>
-      <span class="mini-level">HSK ${word.level}</span>
-      <div class="row-actions">${checkButtonHtml(word.id, state.checked.has(word.id))}<button class="speak-mini" type="button" data-word-id="${escapeHtml(word.id)}" aria-label="${escapeHtml(word.hanzi)}の発音を聞く"><span aria-hidden="true">声</span></button></div>
-    </header>
+      <span class="mini-level">HSK ${word.level}</span><div class="row-actions">${actions}</div></header>
     <p class="measure-use">${escapeHtml(item.use)}</p>
     <p class="measure-phrase"><b>${escapeHtml(item.phrase.cn)}</b><span>${escapeHtml(item.phrase.pinyin)}</span><span>${escapeHtml(item.phrase.ja)}</span>${speakButtonHtml(item.phrase.cn, `${item.phrase.cn}を聞く`)}</p>
-    ${nouns.length ? `<div class="measure-nouns"><small>よく数えるもの</small><div class="word-tags">${nouns.map((noun) => `<button class="tag-chip" type="button" data-word-id="${escapeHtml(noun.id)}" title="${escapeHtml(noun.meaning)}">${escapeHtml(noun.hanzi)}<small>${escapeHtml(noun.meaning)}</small></button>`).join("")}</div></div>` : ""}
+    ${nouns.length ? `<div class="measure-nouns"><small>よく数えるもの</small><div class="word-tags">${nouns.map((noun) => noun.id
+      ? `<button class="tag-chip" type="button" data-word-id="${escapeHtml(noun.id)}" title="${escapeHtml(noun.meaning)}">${escapeHtml(noun.hanzi)}<small>${escapeHtml(noun.meaning)}</small></button>`
+      : `<button class="tag-chip" type="button" data-speak="${escapeHtml(noun.hanzi)}" title="${escapeHtml(noun.meaning || "")}">${escapeHtml(noun.hanzi)}<small>${escapeHtml(noun.meaning || "")}</small></button>`).join("")}</div></div>` : ""}
     ${word.example ? `<div class="measure-example"><div><p class="example-chinese">${escapeHtml(word.example)}</p><p class="example-pinyin">${escapeHtml(word.examplePinyin || "")}</p><p class="example-japanese">${escapeHtml(word.exampleMeaning || "")}</p></div><button class="speak-mini example-mini" type="button" data-example-id="${escapeHtml(word.id)}" aria-label="例文を聞く"><span aria-hidden="true">▶</span></button></div>` : ""}
-    <p class="measure-tip"><span aria-hidden="true">◎</span>${escapeHtml(item.tip)}</p>
-  </article>`;
+    <p class="measure-tip"><span aria-hidden="true">◎</span>${escapeHtml(item.tip)}</p></article>`;
 }
 
 export function startGuidePractice(id = state.selectedGuide) {
   const guide = guideById(id);
   if (!guide) return;
+  const targetCount = Math.max(10, Number(guide.practiceCount) || 10);
   const authored = guide.practice.map((item) => {
     if (item.kind === "reorder") {
       return { skill: "writing", kind: "reorder", wordId: item.wordId, tokens: [...item.tokens], slots: item.slots, answer: item.answer, meaning: item.meaning, instruction: item.instruction || "語句を並べ替えて文を作ってください", explanation: item.explanation };
@@ -178,18 +230,18 @@ export function startGuidePractice(id = state.selectedGuide) {
       explanation: `${pair.note}正しくは「${pair.right}」。`,
     };
   });
-  // 3つの形式が必ず混ざるようにする（de選び5・語順2・○×3）。
+  // 3つの形式が必ず混ざるようにする。まとめページだけは語順問題を4問入れる。
   const reorders = authored.filter((question) => question.kind === "reorder");
   const rest = authored.filter((question) => question.kind !== "reorder");
-  const orderCount = Math.min(2, reorders.length);
-  const questions = [...shuffle(rest).slice(0, 10 - judges.length - orderCount), ...shuffle(reorders).slice(0, orderCount), ...judges];
+  const orderCount = Math.min(guide.id === "hsk3-grammar" ? 4 : 2, reorders.length);
+  const questions = [...shuffle(rest).slice(0, targetCount - judges.length - orderCount), ...shuffle(reorders).slice(0, orderCount), ...judges];
   startCustomPractice(shuffle(questions), { label: guide.title, modeLabel: "文法ドリル", level: 3, guideId: guide.id });
 }
 
 export function startMeasurePractice() {
-  const questions = measurePracticeQuestions();
+  const questions = measurePracticeQuestions(20);
   if (!questions.length) return alert("量詞の問題を作れませんでした。");
-  startCustomPractice(questions, { label: "量詞（助数詞）", modeLabel: "量詞クイズ", level: 2, guideId: "measure" });
+  startCustomPractice(questions, { label: "数量詞・量詞", modeLabel: "数量詞トレーニング", level: 3, guideId: "measure" });
 }
 
 export function multiAnswerValue(question, picked) {
@@ -197,32 +249,31 @@ export function multiAnswerValue(question, picked) {
   return [...new Set(picked)].sort((left, right) => order.indexOf(left) - order.indexOf(right)).join("、");
 }
 
-// 量詞クイズは「数詞＋量詞＋名詞」の形に合わせて3種類を混ぜる。
-//   スロット穴埋め … 三＋□＋书 の□を選ぶ
-//   仕分け … その量詞で数えるものを全部選ぶ
-//   時間・お金 … 引っかかりやすい手作りの問題
-function measurePracticeQuestions(count = 10) {
+// 20問の中に「名詞→量詞」「量詞→名詞」「数の型」を必ず混ぜる。
+function measurePracticeQuestions(count = 20) {
   const data = state.measure;
   if (!data) return [];
-  const wordOf = (id) => state.words.find((word) => word.id === id);
+  const level = state.categoryFilter === "all" ? null : Number(state.categoryFilter);
+  const practiceItems = data.items.filter((item) => {
+    const word = measureHeadword(item);
+    return item.practice !== false && measureNouns(item).length && (!level || word.level === level);
+  });
   const nounOwners = new Map();
-  data.items.forEach((item) => (item.nouns || []).forEach((nounId) => {
-    if (!nounOwners.has(nounId)) nounOwners.set(nounId, new Set());
-    nounOwners.get(nounId).add(item.wordId);
+  practiceItems.forEach((item) => measureNouns(item).forEach((noun) => {
+    if (!nounOwners.has(noun.hanzi)) nounOwners.set(noun.hanzi, new Set());
+    nounOwners.get(noun.hanzi).add(measureHeadword(item).hanzi);
   }));
-  const drills = data.items.filter((item) => item.drill && item.nouns?.length);
   const explain = (item, measureWord) => `${measureWord.hanzi}（${measureWord.pinyin}）は${item.use}。${item.phrase.cn}＝${item.phrase.ja}`;
 
-  // 数詞は声調が変わらない「三」にそろえ、量詞だけを考えさせる。
-  const slots = shuffle(drills.flatMap((item) => item.nouns.map((nounId) => ({ item, nounId })))).flatMap(({ item, nounId }) => {
-    const measureWord = wordOf(item.wordId);
-    const noun = wordOf(nounId);
-    if (!measureWord || !noun) return [];
-    const distractors = shuffle(drills.filter((other) => other.wordId !== item.wordId && !nounOwners.get(nounId).has(other.wordId)))
-      .slice(0, 3).map((other) => wordOf(other.wordId)).filter(Boolean);
+  const slots = shuffle(practiceItems.flatMap((item) => measureNouns(item).map((noun) => ({ item, noun })))).flatMap(({ item, noun }) => {
+    const measureWord = measureHeadword(item);
+    const distractors = shuffle(practiceItems.filter((other) => {
+      const otherWord = measureHeadword(other);
+      return otherWord.hanzi !== measureWord.hanzi && !nounOwners.get(noun.hanzi)?.has(otherWord.hanzi);
+    })).slice(0, 3).map(measureHeadword).filter(Boolean);
     if (distractors.length < 3) return [];
     return [{
-      skill: "reading", kind: "slot", wordId: item.wordId,
+      skill: "reading", kind: "slot", ...(measureWord.id ? { wordId: measureWord.id } : {}),
       slot: { number: "三", numberPinyin: "sān", noun: noun.hanzi, nounPinyin: noun.pinyin, meaning: `${noun.meaning}を3つ` },
       choices: shuffle([measureWord, ...distractors].map((word) => ({ value: word.hanzi, label: word.hanzi, pinyin: word.pinyin }))),
       correct: measureWord.hanzi, instruction: "空いているところに入る量詞を選んでください",
@@ -230,16 +281,17 @@ function measurePracticeQuestions(count = 10) {
     }];
   });
 
-  const multis = shuffle(drills.filter((item) => (item.nouns || []).length >= 3)).flatMap((item) => {
-    const measureWord = wordOf(item.wordId);
-    const answers = item.nouns.map((id) => wordOf(id)).filter(Boolean).slice(0, 3);
-    const others = [...new Set(data.items.filter((other) => other.wordId !== item.wordId).flatMap((other) => other.nouns || []))]
-      .filter((id) => !nounOwners.get(id)?.has(item.wordId));
-    const distractors = shuffle(others).slice(0, 6 - answers.length).map((id) => wordOf(id)).filter(Boolean);
-    if (!measureWord || answers.length < 2 || distractors.length < 2) return [];
+  const multis = shuffle(practiceItems.filter((item) => measureNouns(item).length >= 3)).flatMap((item) => {
+    const measureWord = measureHeadword(item);
+    const answers = measureNouns(item).slice(0, 3);
+    const others = practiceItems.filter((other) => measureHeadword(other).hanzi !== measureWord.hanzi).flatMap(measureNouns)
+      .filter((noun, index, all) => all.findIndex((itemNoun) => itemNoun.hanzi === noun.hanzi) === index)
+      .filter((noun) => !nounOwners.get(noun.hanzi)?.has(measureWord.hanzi));
+    const distractors = shuffle(others).slice(0, 6 - answers.length);
+    if (answers.length < 2 || distractors.length < 2) return [];
     const choices = shuffle([...answers, ...distractors]).map((word) => ({ value: word.hanzi, label: word.hanzi, pinyin: word.pinyin, meaning: word.meaning }));
     const question = {
-      skill: "reading", kind: "multi", wordId: item.wordId,
+      skill: "reading", kind: "multi", ...(measureWord.id ? { wordId: measureWord.id } : {}),
       prompt: measureWord.hanzi, promptPinyin: measureWord.pinyin, subPrompt: item.use,
       choices, correctCount: answers.length,
       instruction: `「${measureWord.hanzi}」で数えるものをすべて選んでください`,
@@ -249,14 +301,14 @@ function measurePracticeQuestions(count = 10) {
     return [question];
   });
 
-  const authored = shuffle([...(data.quiz || [])]).map((item) => ({
-    skill: "reading", kind: "grammar", wordId: item.wordId,
+  const authored = shuffle((data.quiz || []).filter((item) => !level || item.level === level)).map((item) => ({
+    skill: "reading", kind: "grammar", ...(item.wordId ? { wordId: item.wordId } : {}),
     prompt: item.prompt, subPrompt: item.subPrompt,
     choices: shuffle(item.choices.map((label) => ({ value: label, label, pinyin: state.words.find((word) => word.hanzi === label)?.pinyin }))),
     correct: item.correct, instruction: "空欄に入る量詞を選んでください", explanation: item.explanation,
   }));
 
-  const picked = [...slots.slice(0, 5), ...multis.slice(0, 2), ...authored.slice(0, 3)];
+  const picked = [...slots.slice(0, 10), ...multis.slice(0, 5), ...authored.slice(0, 5)];
   return shuffle(picked).slice(0, count);
 }
 

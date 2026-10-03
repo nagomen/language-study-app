@@ -3,8 +3,8 @@ import { $, $$, setMobileMenu } from "../shared.js";
 import { activeAudio, exampleAudioFile, playAudioFile, speak, speakWithBrowser, stopAudio } from "./audio.js";
 import { categoryById, closeCategoryDetail, openCategory, renderCategories, renderWordCategoryOptions, startCategoryPractice, startCategoryQuiz } from "./categories.js";
 import { clearChecked, exportChecked, importCheckedFile, renderChecked, startCheckedPractice, startCheckedQuiz, toggleChecked } from "./checked.js";
-import { buildDailyDays, renderDaily, resetDaily, startDailyNextSet, startDailyRetry, startDailyReview, startDailySession } from "./daily.js";
-import { guideById, openGuide, renderGuide, startGuidePractice, startMeasurePractice } from "./guide.js";
+import { buildDailyDays, getDailyListeningSet, renderDaily, resetDaily, startDailyNextSet, startDailyRetry, startDailyReview, startDailySession } from "./daily.js";
+import { guideById, openGuide, renderGuide, startGuidePractice, startMeasurePractice } from "./guide.js?v=20261003-grammar12";
 import { renderExamHub, startMockExam } from "./mock.js";
 import { closePractice, nextPracticeQuestion, playPracticeAudio, playPracticeReviewAudio, retryPractice, startPractice } from "./practice.js";
 import { renderProgress, updateSummary } from "./progress.js";
@@ -33,7 +33,7 @@ async function loadWords() {
   try {
     // データを更新したときに古いJSONを掴まないよう、毎回サーバーに確認させる
     // （変わっていなければ304で返るので通信量はほとんど増えない）。
-    const loadJson = (file) => fetch(file, { cache: "no-cache" });
+    const loadJson = (file) => fetch(`${file}?v=20261003-grammar12`, { cache: "no-store" });
     const responses = await Promise.all([1, 2, 3].map((level) => loadJson(`data/chinese/hsk${level}.json`)));
     const [tagResponse, guideResponse, measureResponse, bankResponse, ...mockResponses] = await Promise.all([
       loadJson("data/chinese/word-tags.json"),
@@ -79,6 +79,8 @@ function bindEvents() {
   $("#review-quiz").addEventListener("click", () => startReviewQuiz(state.vocabularyDirection));
   $("#open-categories").addEventListener("click", () => closeCategoryDetail());
   $("#daily-open").addEventListener("click", () => navigate("daily"));
+  $("#daily-listening-open").addEventListener("click", startDailyListening);
+  $("#daily-listening-start").addEventListener("click", startDailyListening);
   $("#daily-start").addEventListener("click", startDailySession);
   $("#daily-next-set").addEventListener("click", startDailyNextSet);
   $("#daily-retry").addEventListener("click", startDailyRetry);
@@ -104,7 +106,8 @@ function bindEvents() {
   $("#practice-home").addEventListener("click", () => {
     // 分類・解説から始めた練習は、元のページへ戻れるほうが続けやすい。
     const last = state.practice.lastStart;
-    if (last?.guideId === "measure") openCategory("measure");
+    if (last?.returnView === "daily") navigate("daily");
+    else if (last?.guideId === "measure") openCategory("measure");
     else if (last?.guideId) openGuide(last.guideId);
     else if (last?.categoryId) openCategory(last.categoryId);
     else navigate("exam");
@@ -220,6 +223,20 @@ function bindEvents() {
     reviewSessions[key].scope = button.dataset.reviewScope;
     renderReview(key);
   }));
+}
+
+function startDailyListening() {
+  const listening = getDailyListeningSet();
+  if (!listening.words.length) return alert("今日のリスニングに出題できる例文がありません。");
+  startPractice("listening", 3, listening.words, {
+    label: `DAY ${listening.day} · 今日の${listening.words.length}リスニング`,
+    modeLabel: `今日の${listening.words.length}リスニング`,
+    count: listening.words.length,
+    sentenceOnly: true,
+    dailyListening: true,
+    returnView: "daily",
+    returnLabel: `今日の${listening.words.length}語へ`,
+  });
 }
 
 export function navigate(view) {

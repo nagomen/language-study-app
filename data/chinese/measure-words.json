@@ -2,9 +2,21 @@
   "slot": {
     "title": "量詞は「数」と「名詞」の間に入る",
     "cells": [
-      { "label": "数詞", "value": "三", "pinyin": "sān" },
-      { "label": "量詞", "value": "本", "pinyin": "běn" },
-      { "label": "名詞", "value": "书", "pinyin": "shū" }
+      {
+        "label": "数詞",
+        "value": "三",
+        "pinyin": "sān"
+      },
+      {
+        "label": "量詞",
+        "value": "本",
+        "pinyin": "běn"
+      },
+      {
+        "label": "名詞",
+        "value": "书",
+        "pinyin": "shū"
+      }
     ],
     "reading": "sān běn shū",
     "meaning": "3冊の本"
@@ -13,78 +25,649 @@
     {
       "title": "数字と名詞は直接つながらない",
       "body": "「3冊の本」は数字のあとに必ず量詞を入れます。量詞を抜かすのがいちばん多い間違いです。",
-      "example": { "cn": "三本书", "pinyin": "sān běn shū", "ja": "3冊の本" }
+      "example": {
+        "cn": "三本书",
+        "pinyin": "sān běn shū",
+        "ja": "3冊の本"
+      }
     },
     {
       "title": "这・那・几・每のあとにも入る",
       "body": "「この・あの・いくつ」のあとにも量詞が必要です。数字がなくても省けません。",
-      "example": { "cn": "这张票", "pinyin": "zhè zhāng piào", "ja": "このチケット" }
+      "example": {
+        "cn": "这张票",
+        "pinyin": "zhè zhāng piào",
+        "ja": "このチケット"
+      }
     },
     {
       "title": "「2つ」は二ではなく两",
       "body": "量詞の前に来る2は两を使います。二を使うのは番号や順番を言うときです。",
-      "example": { "cn": "两个人", "pinyin": "liǎng ge rén", "ja": "2人" }
+      "example": {
+        "cn": "两个人",
+        "pinyin": "liǎng ge rén",
+        "ja": "2人"
+      }
     },
     {
       "title": "迷ったら个でだいたい通じる",
       "body": "正しい量詞が出てこないときは个で代用できます。そのうえで、よく使う組み合わせから覚えていきましょう。",
-      "example": { "cn": "一个问题", "pinyin": "yí ge wèntí", "ja": "1つの問題" }
+      "example": {
+        "cn": "一个问题",
+        "pinyin": "yí ge wèntí",
+        "ja": "1つの問題"
+      }
+    },
+    {
+      "title": "一は後ろの声調で読みが変わる",
+      "body": "一は、4声の前で yí、1・2・3声の前で yì と読みます。漢字はいつも一のままです。",
+      "example": {
+        "cn": "一本书",
+        "pinyin": "yì běn shū",
+        "ja": "1冊の本"
+      }
+    }
+  ],
+  "numberPatterns": [
+    {
+      "level": "HSK 1",
+      "title": "11〜99は十の前後に数を置く",
+      "formula": "（十の位）＋ 十 ＋（一の位）",
+      "example": {
+        "cn": "二十五",
+        "pinyin": "èrshíwǔ",
+        "ja": "25"
+      },
+      "note": "10は十、11は十一、20は二十。日本語とほぼ同じ組み立てです。"
+    },
+    {
+      "level": "HSK 2",
+      "title": "百・千の途中の0は零でつなぐ",
+      "formula": "百の位 ＋ 零 ＋ 一の位",
+      "example": {
+        "cn": "一百零五",
+        "pinyin": "yìbǎi líng wǔ",
+        "ja": "105"
+      },
+      "note": "105のように途中の位が抜けるときだけ零を入れます。120は一百二十です。"
+    },
+    {
+      "level": "HSK 1",
+      "title": "量詞の前の2は两",
+      "formula": "两 ＋ 量詞 ＋ 名詞",
+      "example": {
+        "cn": "两个人",
+        "pinyin": "liǎng ge rén",
+        "ja": "2人"
+      },
+      "note": "番号・計算・十の位は二（第二、二十）、数量詞ではふつう两を使います。"
+    },
+    {
+      "level": "HSK 2",
+      "title": "順番は第を前に置く",
+      "formula": "第 ＋ 数 ＋（量詞）＋ 名詞",
+      "example": {
+        "cn": "第三课",
+        "pinyin": "dì sān kè",
+        "ja": "第3課"
+      },
+      "note": "第一次（初めて）、第二层（2階）のように使います。この場合は第二です。"
+    },
+    {
+      "level": "HSK 1",
+      "title": "少ない数は几、広くたずねるときは多少",
+      "formula": "几 ＋ 量詞 ＋ 名詞 / 多少 ＋（量詞）＋ 名詞",
+      "example": {
+        "cn": "你有几本书？",
+        "pinyin": "Nǐ yǒu jǐ běn shū?",
+        "ja": "本を何冊持っていますか。"
+      },
+      "note": "几の後ろは量詞を省けません。多少では量詞を省くことがあります。"
+    },
+    {
+      "level": "HSK 3",
+      "title": "「〜余り」と「〜ぐらい」",
+      "formula": "数量 ＋ 多 / 数量 ＋ 左右",
+      "example": {
+        "cn": "三个多小时",
+        "pinyin": "sān ge duō xiǎoshí",
+        "ja": "3時間余り"
+      },
+      "note": "多は数を少し超える意味、左右は前後の幅を持たせる言い方です。"
+    },
+    {
+      "level": "HSK 3",
+      "title": "分数は分母を先に言う",
+      "formula": "分母 ＋ 分之 ＋ 分子",
+      "example": {
+        "cn": "三分之一",
+        "pinyin": "sān fēn zhī yī",
+        "ja": "3分の1"
+      },
+      "note": "日本語と同じく分母が先です。百分之八十は80パーセントです。"
+    },
+    {
+      "level": "HSK 3",
+      "title": "小数は点の後ろを1桁ずつ読む",
+      "formula": "整数 ＋ 点 ＋ 各桁の数",
+      "example": {
+        "cn": "二点五",
+        "pinyin": "èr diǎn wǔ",
+        "ja": "2.5"
+      },
+      "note": "小数点の後ろは二十五のようにまとめず、一字ずつ読みます。"
+    }
+  ],
+  "comparisons": [
+    {
+      "title": "人を数える：个・位・名・口",
+      "rows": [
+        {
+          "word": "个",
+          "pinyin": "ge",
+          "use": "日常的で一番広い",
+          "example": "三个人"
+        },
+        {
+          "word": "位",
+          "pinyin": "wèi",
+          "use": "先生・客などに敬意",
+          "example": "两位老师"
+        },
+        {
+          "word": "名",
+          "pinyin": "míng",
+          "use": "名簿・発表などの改まった言い方",
+          "example": "三名学生"
+        },
+        {
+          "word": "口",
+          "pinyin": "kǒu",
+          "use": "家族の人数",
+          "example": "四口人"
+        }
+      ],
+      "tip": "普通の会話なら个、丁寧に言うなら位、家族だけは口です。"
+    },
+    {
+      "title": "形で選ぶ：本・张・条・支",
+      "rows": [
+        {
+          "word": "本",
+          "pinyin": "běn",
+          "use": "本・ノート",
+          "example": "一本书"
+        },
+        {
+          "word": "张",
+          "pinyin": "zhāng",
+          "use": "紙・切符・机など平たいもの",
+          "example": "两张票"
+        },
+        {
+          "word": "条",
+          "pinyin": "tiáo",
+          "use": "道・川・ズボン・魚など細長いもの",
+          "example": "一条路"
+        },
+        {
+          "word": "支",
+          "pinyin": "zhī",
+          "use": "ペンなど棒状の小物",
+          "example": "三支笔"
+        }
+      ],
+      "tip": "名詞の「形」を思い浮かべると選びやすくなります。"
+    },
+    {
+      "title": "回数と移動：次・遍・趟",
+      "rows": [
+        {
+          "word": "次",
+          "pinyin": "cì",
+          "use": "動作の回数全般",
+          "example": "去过两次"
+        },
+        {
+          "word": "遍",
+          "pinyin": "biàn",
+          "use": "最初から最後まで通して",
+          "example": "请再说一遍"
+        },
+        {
+          "word": "趟",
+          "pinyin": "tàng",
+          "use": "往復やひと行程の移動",
+          "example": "去一趟北京"
+        }
+      ],
+      "tip": "数だけなら次、一通りやり切るなら遍、場所へ行って戻るなら趟です。"
+    },
+    {
+      "title": "乗り物・機械・作品：辆・台・部・架",
+      "rows": [
+        {
+          "word": "辆",
+          "pinyin": "liàng",
+          "use": "車輪のある乗り物",
+          "example": "一辆出租车"
+        },
+        {
+          "word": "台",
+          "pinyin": "tái",
+          "use": "テレビ・パソコンなどの機械",
+          "example": "一台电脑"
+        },
+        {
+          "word": "部",
+          "pinyin": "bù",
+          "use": "映画・小説などの作品",
+          "example": "两部电影"
+        },
+        {
+          "word": "架",
+          "pinyin": "jià",
+          "use": "飛行機などの大型機械",
+          "example": "一架飞机"
+        }
+      ],
+      "tip": "日本語の「台」だけでひとまとめにせず、対象で分けます。"
+    },
+    {
+      "title": "建物・施設：家・间・所・座",
+      "rows": [
+        {
+          "word": "家",
+          "pinyin": "jiā",
+          "use": "店・会社・病院などの事業体",
+          "example": "一家公司"
+        },
+        {
+          "word": "间",
+          "pinyin": "jiān",
+          "use": "部屋",
+          "example": "两间教室"
+        },
+        {
+          "word": "所",
+          "pinyin": "suǒ",
+          "use": "学校・病院などの施設",
+          "example": "一所学校"
+        },
+        {
+          "word": "座",
+          "pinyin": "zuò",
+          "use": "山・橋・大きな建物",
+          "example": "一座桥"
+        }
+      ],
+      "tip": "家は組織、间は部屋、所は施設、座は大きく動かないものです。"
+    },
+    {
+      "title": "文章・作品：封・篇・首・份",
+      "rows": [
+        {
+          "word": "封",
+          "pinyin": "fēng",
+          "use": "手紙・メール",
+          "example": "一封信"
+        },
+        {
+          "word": "篇",
+          "pinyin": "piān",
+          "use": "文章・作文",
+          "example": "一篇文章"
+        },
+        {
+          "word": "首",
+          "pinyin": "shǒu",
+          "use": "歌・詩",
+          "example": "两首歌"
+        },
+        {
+          "word": "份",
+          "pinyin": "fèn",
+          "use": "書類・仕事・食事の1人前",
+          "example": "一份工作"
+        }
+      ],
+      "tip": "封は封をする通信、篇はひとまとまりの文章、首は歌や詩に使います。"
     }
   ],
   "groups": [
-    { "id": "thing", "label": "もの・人を数える", "description": "形やまとまりで使い分けます。名詞とセットで覚えるのが近道です。" },
-    { "id": "time", "label": "時間・日づけ", "description": "時刻と時間の長さでは使う語が変わります。" },
-    { "id": "money", "label": "お金", "description": "話し言葉と書き言葉で言い方が変わります。" },
-    { "id": "unit", "label": "単位・回数", "description": "重さ・長さ・回数を数えます。" }
+    {
+      "id": "thing",
+      "label": "もの・人を数える",
+      "description": "形やまとまりで使い分けます。名詞とセットで覚えるのが近道です。"
+    },
+    {
+      "id": "container",
+      "label": "容器・食べ物",
+      "description": "カップ・瓶・茶碗など、容器や包装を1単位として数えます。"
+    },
+    {
+      "id": "building",
+      "label": "建物・施設",
+      "description": "部屋、店、学校、大きな建造物で量詞が変わります。"
+    },
+    {
+      "id": "device",
+      "label": "乗り物・機械・作品",
+      "description": "車両、電化製品、映画などを対象に応じて数え分けます。"
+    },
+    {
+      "id": "event",
+      "label": "動作・文章・ひとまとまり",
+      "description": "回数、移動、行事、文章、セットなどのまとまりを数えます。"
+    },
+    {
+      "id": "time",
+      "label": "時間・日づけ",
+      "description": "時刻と時間の長さでは使う語が変わります。"
+    },
+    {
+      "id": "money",
+      "label": "お金",
+      "description": "話し言葉と書き言葉で言い方が変わります。"
+    },
+    {
+      "id": "unit",
+      "label": "単位・回数",
+      "description": "重さ・長さ・回数を数えます。"
+    }
   ],
   "quiz": [
     {
+      "level": 1,
       "wordId": "hsk1-032",
       "prompt": "我每天学习两＿＿小时。",
       "subPrompt": "私は毎日2時間勉強します。",
-      "choices": ["个", "次", "点", "张"],
+      "choices": [
+        "个",
+        "次",
+        "点",
+        "张"
+      ],
       "correct": "个",
       "explanation": "小时の前には个が必要です（两个小时）。分钟には个を付けません。"
     },
     {
+      "level": 1,
       "wordId": "hsk1-030",
       "prompt": "请等十＿＿。",
       "subPrompt": "10分待ってください。",
-      "choices": ["分钟", "小时", "点", "次"],
+      "choices": [
+        "分钟",
+        "小时",
+        "点",
+        "次"
+      ],
       "correct": "分钟",
       "explanation": "時間の長さは分钟。時刻の「10分」は十分と言います。"
     },
     {
+      "level": 2,
       "wordId": "hsk2-164",
       "prompt": "我去过两＿＿北京。",
       "subPrompt": "私は北京へ2回行ったことがあります。",
-      "choices": ["次", "个", "条", "张"],
+      "choices": [
+        "次",
+        "个",
+        "条",
+        "张"
+      ],
       "correct": "次",
       "explanation": "動作の回数は次。動詞（去过）のあとに置きます。"
     },
     {
+      "level": 2,
       "wordId": "hsk2-191",
       "prompt": "今天是八＿＿。",
       "subPrompt": "今日は8日です。",
-      "choices": ["号", "岁", "年", "点"],
+      "choices": [
+        "号",
+        "岁",
+        "年",
+        "点"
+      ],
       "correct": "号",
       "explanation": "日づけは号。書き言葉では日を使います。"
     },
     {
+      "level": 1,
       "wordId": "hsk1-105",
       "prompt": "我女儿八＿＿。",
       "subPrompt": "私の娘は8歳です。",
-      "choices": ["岁", "号", "年", "次"],
+      "choices": [
+        "岁",
+        "号",
+        "年",
+        "次"
+      ],
       "correct": "岁",
       "explanation": "年齢は岁。子どもの年齢は你几岁？とたずねます。"
     },
     {
+      "level": 1,
       "wordId": "hsk1-016",
       "prompt": "现在三＿＿一刻。",
       "subPrompt": "今は3時15分です。",
-      "choices": ["点", "分", "号", "次"],
+      "choices": [
+        "点",
+        "分",
+        "号",
+        "次"
+      ],
       "correct": "点",
       "explanation": "時刻の「〜時」は点。一刻＝15分なので、三点一刻＝3時15分。"
+    },
+    {
+      "level": 1,
+      "prompt": "我有＿＿本书。",
+      "subPrompt": "私は本を2冊持っています。",
+      "choices": [
+        "两",
+        "二",
+        "第二",
+        "双"
+      ],
+      "correct": "两",
+      "explanation": "量詞の前で数量の2を表すときは两を使い、两本书と言います。"
+    },
+    {
+      "level": 1,
+      "prompt": "今天是＿＿月二号。",
+      "subPrompt": "今日は2月2日です。",
+      "choices": [
+        "二",
+        "两",
+        "第二",
+        "双"
+      ],
+      "correct": "二",
+      "explanation": "月・日・番号や二十のような数の中では二を使います。"
+    },
+    {
+      "level": 2,
+      "prompt": "这是我＿＿一次来北京。",
+      "subPrompt": "私が北京に来るのは初めてです。",
+      "choices": [
+        "第",
+        "个",
+        "遍",
+        "趟"
+      ],
+      "correct": "第",
+      "explanation": "順番は数の前に第を置きます。第一次で「初めて」です。"
+    },
+    {
+      "level": 2,
+      "prompt": "一百＿＿五",
+      "subPrompt": "105",
+      "choices": [
+        "零",
+        "十",
+        "百",
+        "点"
+      ],
+      "correct": "零",
+      "explanation": "百の位と一の位の間が空くので、零を入れて一百零五と読みます。"
+    },
+    {
+      "level": 1,
+      "prompt": "你有＿＿本书？",
+      "subPrompt": "本を何冊持っていますか。",
+      "choices": [
+        "几",
+        "多少个",
+        "什么",
+        "谁"
+      ],
+      "correct": "几",
+      "explanation": "几の後ろには量詞が必要です。几本书で「何冊の本」となります。"
+    },
+    {
+      "level": 3,
+      "prompt": "三＿＿之一",
+      "subPrompt": "3分の1",
+      "choices": [
+        "分",
+        "点",
+        "百",
+        "倍"
+      ],
+      "correct": "分",
+      "explanation": "分数は「分母＋分之＋分子」の順なので、3分の1は三分之一です。"
+    },
+    {
+      "level": 3,
+      "prompt": "二＿＿五",
+      "subPrompt": "2.5",
+      "choices": [
+        "点",
+        "分",
+        "十",
+        "零"
+      ],
+      "correct": "点",
+      "explanation": "小数点は点で表し、後ろの数字を1桁ずつ読みます。"
+    },
+    {
+      "level": 3,
+      "prompt": "请再说一＿＿。",
+      "subPrompt": "もう1回、最初から最後まで言ってください。",
+      "choices": [
+        "遍",
+        "次",
+        "趟",
+        "场"
+      ],
+      "correct": "遍",
+      "explanation": "動作を最初から最後まで一通り行うときは遍を使います。"
+    },
+    {
+      "level": 3,
+      "prompt": "我去了一＿＿北京。",
+      "subPrompt": "私は北京へひと行きしました。",
+      "choices": [
+        "趟",
+        "遍",
+        "次",
+        "场"
+      ],
+      "correct": "趟",
+      "explanation": "場所への移動を1回の行程として数えるときは趟を使います。"
+    },
+    {
+      "level": 2,
+      "prompt": "我们看了一＿＿电影。",
+      "subPrompt": "私たちは映画を1本見ました。",
+      "choices": [
+        "部",
+        "台",
+        "辆",
+        "架"
+      ],
+      "correct": "部",
+      "explanation": "映画や小説などの作品を数えるときは部を使います。"
+    },
+    {
+      "level": 1,
+      "prompt": "请给我一＿＿咖啡。",
+      "subPrompt": "コーヒーを1杯ください。",
+      "choices": [
+        "杯",
+        "瓶",
+        "碗",
+        "盘"
+      ],
+      "correct": "杯",
+      "explanation": "カップやグラスに入った飲み物は杯で数えます。"
+    },
+    {
+      "level": 1,
+      "prompt": "桌子上有三＿＿笔。",
+      "subPrompt": "テーブルの上にペンが3本あります。",
+      "choices": [
+        "支",
+        "条",
+        "本",
+        "张"
+      ],
+      "correct": "支",
+      "explanation": "ペンや鉛筆のような棒状の小物は支で数えます。"
+    },
+    {
+      "level": 1,
+      "prompt": "学校有两＿＿教室。",
+      "subPrompt": "学校には教室が2室あります。",
+      "choices": [
+        "间",
+        "家",
+        "所",
+        "座"
+      ],
+      "correct": "间",
+      "explanation": "壁で区切られた部屋は间で数えます。"
+    },
+    {
+      "level": 2,
+      "prompt": "他收到了一＿＿信。",
+      "subPrompt": "彼は手紙を1通受け取りました。",
+      "choices": [
+        "封",
+        "篇",
+        "首",
+        "份"
+      ],
+      "correct": "封",
+      "explanation": "手紙やメールは封で数えます。"
+    },
+    {
+      "level": 2,
+      "prompt": "今天有两＿＿考试。",
+      "subPrompt": "今日は試験が2つあります。",
+      "choices": [
+        "场",
+        "次",
+        "节",
+        "套"
+      ],
+      "correct": "场",
+      "explanation": "試験・試合・演出など、1つの場面として行われることは场で数えます。"
+    },
+    {
+      "level": 3,
+      "prompt": "这次考试我答对了＿＿。",
+      "subPrompt": "今回の試験で私は80パーセント正解しました。",
+      "choices": [
+        "百分之八十",
+        "八十分之百",
+        "八十点",
+        "八十左右"
+      ],
+      "correct": "百分之八十",
+      "explanation": "パーセントは「百分之＋数」で表し、80パーセントは百分之八十です。"
     }
   ],
   "items": [
@@ -92,8 +675,17 @@
       "wordId": "hsk1-032",
       "group": "thing",
       "use": "人でも物でも使える、いちばん広い量詞",
-      "nouns": ["hsk1-086", "hsk1-077", "hsk1-079", "hsk2-259"],
-      "phrase": { "cn": "三个人", "pinyin": "sān ge rén", "ja": "3人" },
+      "nouns": [
+        "hsk1-086",
+        "hsk1-077",
+        "hsk1-079",
+        "hsk2-259"
+      ],
+      "phrase": {
+        "cn": "三个人",
+        "pinyin": "sān ge rén",
+        "ja": "3人"
+      },
       "tip": "书は本、票は张のように決まった組み合わせだけ覚えて、あとは个で乗り切れます。"
     },
     {
@@ -101,16 +693,31 @@
       "group": "thing",
       "drill": true,
       "use": "人を敬って数える",
-      "nouns": ["hsk1-055", "hsk1-133", "hsk3-441"],
-      "phrase": { "cn": "两位老师", "pinyin": "liǎng wèi lǎoshī", "ja": "2人の先生" },
+      "nouns": [
+        "hsk1-055",
+        "hsk1-133",
+        "hsk3-441"
+      ],
+      "phrase": {
+        "cn": "两位老师",
+        "pinyin": "liǎng wèi lǎoshī",
+        "ja": "2人の先生"
+      },
       "tip": "友達や子どもには个、先生・お客様・目上の人には位を使います。"
     },
     {
       "wordId": "hsk3-443",
       "group": "thing",
       "use": "家族の人数を数える",
-      "nouns": ["hsk1-086", "hsk1-045"],
-      "phrase": { "cn": "四口人", "pinyin": "sì kǒu rén", "ja": "4人家族" },
+      "nouns": [
+        "hsk1-086",
+        "hsk1-045"
+      ],
+      "phrase": {
+        "cn": "四口人",
+        "pinyin": "sì kǒu rén",
+        "ja": "4人家族"
+      },
       "tip": "「何人家族ですか」は你家有几口人？。家族以外の人数には使いません。"
     },
     {
@@ -118,8 +725,15 @@
       "group": "thing",
       "drill": true,
       "use": "本・ノートなど冊子になっているもの",
-      "nouns": ["hsk1-098", "hsk3-595"],
-      "phrase": { "cn": "一本书", "pinyin": "yì běn shū", "ja": "1冊の本" },
+      "nouns": [
+        "hsk1-098",
+        "hsk3-603"
+      ],
+      "phrase": {
+        "cn": "一本书",
+        "pinyin": "yì běn shū",
+        "ja": "1冊の本"
+      },
       "tip": "読むもの・めくるものは本。新聞（报纸）は张で数えます。"
     },
     {
@@ -127,8 +741,17 @@
       "group": "thing",
       "drill": true,
       "use": "紙や机など、平らな面のあるもの",
-      "nouns": ["hsk2-232", "hsk1-146", "hsk3-583", "hsk3-356"],
-      "phrase": { "cn": "两张票", "pinyin": "liǎng zhāng piào", "ja": "チケット2枚" },
+      "nouns": [
+        "hsk2-232",
+        "hsk1-146",
+        "hsk3-583",
+        "hsk3-356"
+      ],
+      "phrase": {
+        "cn": "两张票",
+        "pinyin": "liǎng zhāng piào",
+        "ja": "チケット2枚"
+      },
       "tip": "「面」で数えるイメージ。切符・写真・地図・机・ベッドが代表です。"
     },
     {
@@ -136,8 +759,16 @@
       "group": "thing",
       "drill": true,
       "use": "上に着る服、そして「事がら」",
-      "nouns": ["hsk1-132", "hsk3-335", "hsk2-244"],
-      "phrase": { "cn": "一件衣服", "pinyin": "yí jiàn yīfu", "ja": "服1着" },
+      "nouns": [
+        "hsk1-132",
+        "hsk3-335",
+        "hsk2-244"
+      ],
+      "phrase": {
+        "cn": "一件衣服",
+        "pinyin": "yí jiàn yīfu",
+        "ja": "服1着"
+      },
       "tip": "上半身の服は件、ズボンやスカートは条。用事も一件事情と数えます。"
     },
     {
@@ -145,17 +776,33 @@
       "group": "thing",
       "drill": true,
       "use": "細長い形のもの",
-      "nouns": ["hsk3-445", "hsk2-283", "hsk2-218", "hsk3-395"],
-      "phrase": { "cn": "一条鱼", "pinyin": "yì tiáo yú", "ja": "魚1匹" },
-      "tip": "ズボン・道・川・魚など、細長いものは条でまとめて覚えられます。"
+      "nouns": [
+        "hsk3-445",
+        "hsk2-283",
+        "hsk2-218",
+        "hsk3-489"
+      ],
+      "phrase": {
+        "cn": "一条鱼",
+        "pinyin": "yì tiáo yú",
+        "ja": "魚1匹"
+      },
+      "tip": "ズボン・スカート・道・魚など、細長いものは条でまとめて覚えられます。"
     },
     {
       "wordId": "hsk3-508",
       "group": "thing",
       "drill": true,
       "use": "2つで1組になるもの",
-      "nouns": ["hsk3-546", "hsk3-446"],
-      "phrase": { "cn": "一双鞋", "pinyin": "yì shuāng xié", "ja": "靴1足" },
+      "nouns": [
+        "hsk3-613",
+        "hsk3-446"
+      ],
+      "phrase": {
+        "cn": "一双皮鞋",
+        "pinyin": "yì shuāng píxié",
+        "ja": "革靴1足"
+      },
       "tip": "靴・箸・手袋のようにペアで使うものは双です。"
     },
     {
@@ -163,40 +810,79 @@
       "group": "thing",
       "drill": true,
       "use": "車輪のついた乗り物",
-      "nouns": ["hsk1-012", "hsk2-297", "hsk2-184"],
-      "phrase": { "cn": "一辆自行车", "pinyin": "yí liàng zìxíngchē", "ja": "自転車1台" },
+      "nouns": [
+        "hsk1-012",
+        "hsk2-297",
+        "hsk2-184"
+      ],
+      "phrase": {
+        "cn": "一辆自行车",
+        "pinyin": "yí liàng zìxíngchē",
+        "ja": "自転車1台"
+      },
       "tip": "車・自転車・バスは辆。飛行機や船は別の量詞を使います。"
     },
     {
       "wordId": "hsk3-588",
       "group": "thing",
       "use": "種類を数える",
-      "nouns": ["hsk1-101", "hsk2-270", "hsk3-309"],
-      "phrase": { "cn": "两种颜色", "pinyin": "liǎng zhǒng yánsè", "ja": "2種類の色" },
+      "nouns": [
+        "hsk1-101",
+        "hsk2-270",
+        "hsk3-309"
+      ],
+      "phrase": {
+        "cn": "两种颜色",
+        "pinyin": "liǎng zhǒng yánsè",
+        "ja": "2種類の色"
+      },
       "tip": "「〜種類」と言いたいときは种。数ではなくバリエーションを数えます。"
     },
     {
       "wordId": "hsk1-124",
       "group": "thing",
       "use": "はっきりしない数量（いくつか）",
-      "nouns": ["hsk1-020", "hsk1-101", "hsk1-077"],
-      "phrase": { "cn": "一些水果", "pinyin": "yìxiē shuǐguǒ", "ja": "少しの果物" },
+      "nouns": [
+        "hsk1-020",
+        "hsk1-101",
+        "hsk1-077"
+      ],
+      "phrase": {
+        "cn": "一些水果",
+        "pinyin": "yìxiē shuǐguǒ",
+        "ja": "少しの果物"
+      },
       "tip": "一些・这些・那些の形で使います。二些・三些とは言えません。"
     },
     {
       "wordId": "hsk3-331",
       "group": "thing",
       "use": "建物の階",
-      "nouns": ["hsk3-457", "hsk1-090"],
-      "phrase": { "cn": "五层楼", "pinyin": "wǔ céng lóu", "ja": "5階建て" },
+      "nouns": [
+        "hsk3-457",
+        "hsk1-090"
+      ],
+      "phrase": {
+        "cn": "五层楼",
+        "pinyin": "wǔ céng lóu",
+        "ja": "5階建て"
+      },
       "tip": "「5階に住む」は住在五层。階数をたずねるときは几层。"
     },
     {
       "wordId": "hsk3-363",
       "group": "thing",
       "use": "道のり・時間・話のひと区切り",
-      "nouns": ["hsk2-218", "hsk2-243", "hsk3-385"],
-      "phrase": { "cn": "一段时间", "pinyin": "yí duàn shíjiān", "ja": "しばらくの間" },
+      "nouns": [
+        "hsk2-218",
+        "hsk2-243",
+        "hsk3-385"
+      ],
+      "phrase": {
+        "cn": "一段时间",
+        "pinyin": "yí duàn shíjiān",
+        "ja": "しばらくの間"
+      },
       "tip": "長さのあるものを区切って数えます。一段路・一段故事もよく使います。"
     },
     {
@@ -204,7 +890,11 @@
       "group": "time",
       "use": "時刻の「〜時」",
       "nouns": [],
-      "phrase": { "cn": "三点", "pinyin": "sān diǎn", "ja": "3時" },
+      "phrase": {
+        "cn": "三点",
+        "pinyin": "sān diǎn",
+        "ja": "3時"
+      },
       "tip": "「何時ですか」は现在几点？。2時は两点で、二点とは言いません。"
     },
     {
@@ -212,7 +902,11 @@
       "group": "time",
       "use": "時刻の「〜分」",
       "nouns": [],
-      "phrase": { "cn": "九点十分", "pinyin": "jiǔ diǎn shí fēn", "ja": "9時10分" },
+      "phrase": {
+        "cn": "九点十分",
+        "pinyin": "jiǔ diǎn shí fēn",
+        "ja": "9時10分"
+      },
       "tip": "お金の単位（五分钱）やテストの点数（一百分）にも使う字です。"
     },
     {
@@ -220,7 +914,11 @@
       "group": "time",
       "use": "15分をひとかたまりで言う",
       "nouns": [],
-      "phrase": { "cn": "三点一刻", "pinyin": "sān diǎn yí kè", "ja": "3時15分" },
+      "phrase": {
+        "cn": "三点一刻",
+        "pinyin": "sān diǎn yí kè",
+        "ja": "3時15分"
+      },
       "tip": "一刻＝15分、三刻＝45分。三点半（3時半）とセットで覚えましょう。"
     },
     {
@@ -228,7 +926,11 @@
       "group": "time",
       "use": "時間の長さの「〜分間」",
       "nouns": [],
-      "phrase": { "cn": "十分钟", "pinyin": "shí fēnzhōng", "ja": "10分間" },
+      "phrase": {
+        "cn": "十分钟",
+        "pinyin": "shí fēnzhōng",
+        "ja": "10分間"
+      },
       "tip": "時刻の「10分」は十分、長さの「10分間」は十分钟と使い分けます。"
     },
     {
@@ -236,7 +938,11 @@
       "group": "time",
       "use": "時間の長さの「〜時間」",
       "nouns": [],
-      "phrase": { "cn": "两个小时", "pinyin": "liǎng ge xiǎoshí", "ja": "2時間" },
+      "phrase": {
+        "cn": "两个小时",
+        "pinyin": "liǎng ge xiǎoshí",
+        "ja": "2時間"
+      },
       "tip": "小时の前には个が必要です。分钟には个を付けません。"
     },
     {
@@ -244,7 +950,11 @@
       "group": "time",
       "use": "年数を数える",
       "nouns": [],
-      "phrase": { "cn": "三年", "pinyin": "sān nián", "ja": "3年間" },
+      "phrase": {
+        "cn": "三年",
+        "pinyin": "sān nián",
+        "ja": "3年間"
+      },
       "tip": "年はそれ自体が量詞なので、三个年とは言いません。"
     },
     {
@@ -252,7 +962,11 @@
       "group": "time",
       "use": "年齢を数える",
       "nouns": [],
-      "phrase": { "cn": "八岁", "pinyin": "bā suì", "ja": "8歳" },
+      "phrase": {
+        "cn": "八岁",
+        "pinyin": "bā suì",
+        "ja": "8歳"
+      },
       "tip": "子どもには你几岁？、大人には你多大？とたずねます。"
     },
     {
@@ -260,39 +974,69 @@
       "group": "time",
       "use": "日づけ・番号",
       "nouns": [],
-      "phrase": { "cn": "八号", "pinyin": "bā hào", "ja": "8日" },
+      "phrase": {
+        "cn": "八号",
+        "pinyin": "bā hào",
+        "ja": "8日"
+      },
       "tip": "話し言葉は号、書き言葉は日。部屋番号や靴のサイズにも使います。"
     },
     {
       "wordId": "hsk1-053",
       "group": "money",
       "use": "お金の「〜元」（話し言葉）",
-      "nouns": ["hsk1-082"],
-      "phrase": { "cn": "十块钱", "pinyin": "shí kuài qián", "ja": "10元" },
+      "nouns": [
+        "hsk1-082"
+      ],
+      "phrase": {
+        "cn": "十块钱",
+        "pinyin": "shí kuài qián",
+        "ja": "10元"
+      },
       "tip": "買い物の会話ではほとんど块。多少钱？への答えもふつう块です。"
     },
     {
       "wordId": "hsk2-284",
       "group": "money",
       "use": "お金の「〜元」（書き言葉）",
-      "nouns": ["hsk1-082"],
-      "phrase": { "cn": "二十元", "pinyin": "èrshí yuán", "ja": "20元" },
+      "nouns": [
+        "hsk1-082"
+      ],
+      "phrase": {
+        "cn": "二十元",
+        "pinyin": "èrshí yuán",
+        "ja": "20元"
+      },
       "tip": "値札やレシート、試験の文章では元が使われます。金額は块と同じです。"
     },
     {
       "wordId": "hsk3-419",
       "group": "money",
       "use": "1元の10分の1",
-      "nouns": ["hsk1-082"],
-      "phrase": { "cn": "五角钱", "pinyin": "wǔ jiǎo qián", "ja": "5角" },
+      "nouns": [
+        "hsk1-082"
+      ],
+      "phrase": {
+        "cn": "五角钱",
+        "pinyin": "wǔ jiǎo qián",
+        "ja": "5角"
+      },
       "tip": "話し言葉では毛とも言います。一块五角＝1.5元。"
     },
     {
       "wordId": "hsk2-185",
       "group": "unit",
       "use": "重さ（キログラム）",
-      "nouns": ["hsk1-079", "hsk2-272", "hsk3-480"],
-      "phrase": { "cn": "一公斤苹果", "pinyin": "yì gōngjīn píngguǒ", "ja": "リンゴ1キロ" },
+      "nouns": [
+        "hsk1-079",
+        "hsk2-272",
+        "hsk3-542"
+      ],
+      "phrase": {
+        "cn": "一公斤苹果",
+        "pinyin": "yì gōngjīn píngguǒ",
+        "ja": "リンゴ1キロ"
+      },
       "tip": "市場では半公斤を一斤と言うことが多く、値段も斤で示されます。"
     },
     {
@@ -300,7 +1044,11 @@
       "group": "unit",
       "use": "長さ（メートル）",
       "nouns": [],
-      "phrase": { "cn": "一百米", "pinyin": "yìbǎi mǐ", "ja": "100メートル" },
+      "phrase": {
+        "cn": "一百米",
+        "pinyin": "yìbǎi mǐ",
+        "ja": "100メートル"
+      },
       "tip": "米饭の米と同じ字ですが、ここでは長さの単位です。"
     },
     {
@@ -308,8 +1056,788 @@
       "group": "unit",
       "use": "動作の回数",
       "nouns": [],
-      "phrase": { "cn": "两次", "pinyin": "liǎng cì", "ja": "2回" },
+      "phrase": {
+        "cn": "两次",
+        "pinyin": "liǎng cì",
+        "ja": "2回"
+      },
       "tip": "動詞のあとに置きます（去过两次＝2回行ったことがある）。"
+    },
+    {
+      "hanzi": "名",
+      "pinyin": "míng",
+      "level": 2,
+      "group": "thing",
+      "use": "名簿・発表などで人数を改まって数える",
+      "nounExamples": [
+        {
+          "hanzi": "学生",
+          "pinyin": "xuésheng",
+          "meaning": "学生"
+        },
+        {
+          "hanzi": "医生",
+          "pinyin": "yīshēng",
+          "meaning": "医師"
+        },
+        {
+          "hanzi": "参加者",
+          "pinyin": "cānjiāzhě",
+          "meaning": "参加者"
+        }
+      ],
+      "phrase": {
+        "cn": "两名学生",
+        "pinyin": "liǎng míng xuésheng",
+        "ja": "学生2名"
+      },
+      "tip": "普通の会話では个、敬意を示すときは位、公式な人数は名を使います。"
+    },
+    {
+      "hanzi": "杯",
+      "pinyin": "bēi",
+      "level": 1,
+      "group": "container",
+      "use": "カップやグラスに入った飲み物",
+      "nounExamples": [
+        {
+          "hanzi": "茶",
+          "pinyin": "chá",
+          "meaning": "お茶"
+        },
+        {
+          "hanzi": "咖啡",
+          "pinyin": "kāfēi",
+          "meaning": "コーヒー"
+        },
+        {
+          "hanzi": "水",
+          "pinyin": "shuǐ",
+          "meaning": "水"
+        }
+      ],
+      "phrase": {
+        "cn": "一杯茶",
+        "pinyin": "yì bēi chá",
+        "ja": "お茶1杯"
+      },
+      "tip": "容器の杯自体ではなく、その中に入った飲み物の量も表します。"
+    },
+    {
+      "hanzi": "瓶",
+      "pinyin": "píng",
+      "level": 1,
+      "group": "container",
+      "use": "瓶やペットボトルに入った飲み物",
+      "nounExamples": [
+        {
+          "hanzi": "水",
+          "pinyin": "shuǐ",
+          "meaning": "水"
+        },
+        {
+          "hanzi": "牛奶",
+          "pinyin": "niúnǎi",
+          "meaning": "牛乳"
+        },
+        {
+          "hanzi": "啤酒",
+          "pinyin": "píjiǔ",
+          "meaning": "ビール"
+        }
+      ],
+      "phrase": {
+        "cn": "一瓶水",
+        "pinyin": "yì píng shuǐ",
+        "ja": "水1本"
+      },
+      "tip": "日本語では「1本」ですが、中国語では容器をそのまま量詞にして瓶と言います。"
+    },
+    {
+      "hanzi": "碗",
+      "pinyin": "wǎn",
+      "level": 2,
+      "group": "container",
+      "use": "茶碗やボウルに入った食べ物",
+      "nounExamples": [
+        {
+          "hanzi": "米饭",
+          "pinyin": "mǐfàn",
+          "meaning": "ご飯"
+        },
+        {
+          "hanzi": "面条",
+          "pinyin": "miàntiáo",
+          "meaning": "麺"
+        },
+        {
+          "hanzi": "汤",
+          "pinyin": "tāng",
+          "meaning": "スープ"
+        }
+      ],
+      "phrase": {
+        "cn": "一碗米饭",
+        "pinyin": "yì wǎn mǐfàn",
+        "ja": "ご飯1膳"
+      },
+      "tip": "米饭・麺・スープのように、茶碗から食べるものに使います。"
+    },
+    {
+      "hanzi": "盘",
+      "pinyin": "pán",
+      "level": 2,
+      "group": "container",
+      "use": "皿に盛った料理や食べ物",
+      "nounExamples": [
+        {
+          "hanzi": "菜",
+          "pinyin": "cài",
+          "meaning": "料理"
+        },
+        {
+          "hanzi": "水果",
+          "pinyin": "shuǐguǒ",
+          "meaning": "果物"
+        },
+        {
+          "hanzi": "饺子",
+          "pinyin": "jiǎozi",
+          "meaning": "ギョーザ"
+        }
+      ],
+      "phrase": {
+        "cn": "一盘菜",
+        "pinyin": "yì pán cài",
+        "ja": "料理1皿"
+      },
+      "tip": "料理の品数を数えるときは一个菜よりも一盘菜が具体的です。"
+    },
+    {
+      "hanzi": "盒",
+      "pinyin": "hé",
+      "level": 2,
+      "group": "container",
+      "use": "箱・ボックス入りのもの",
+      "nounExamples": [
+        {
+          "hanzi": "牛奶",
+          "pinyin": "niúnǎi",
+          "meaning": "牛乳"
+        },
+        {
+          "hanzi": "药",
+          "pinyin": "yào",
+          "meaning": "薬"
+        },
+        {
+          "hanzi": "巧克力",
+          "pinyin": "qiǎokèlì",
+          "meaning": "チョコレート"
+        }
+      ],
+      "phrase": {
+        "cn": "一盒牛奶",
+        "pinyin": "yì hé niúnǎi",
+        "ja": "牛乳1パック"
+      },
+      "tip": "方形の箱や容器に入ったものを1箱ずつ数えます。"
+    },
+    {
+      "hanzi": "支",
+      "pinyin": "zhī",
+      "level": 1,
+      "group": "thing",
+      "use": "ペン・鉛筆などの棒状の小物",
+      "nounExamples": [
+        {
+          "hanzi": "笔",
+          "pinyin": "bǐ",
+          "meaning": "ペン"
+        },
+        {
+          "hanzi": "铅笔",
+          "pinyin": "qiānbǐ",
+          "meaning": "鉛筆"
+        },
+        {
+          "hanzi": "牙刷",
+          "pinyin": "yáshuā",
+          "meaning": "歯ブラシ"
+        }
+      ],
+      "phrase": {
+        "cn": "一支笔",
+        "pinyin": "yì zhī bǐ",
+        "ja": "ペン1本"
+      },
+      "tip": "条も細長いものに使いますが、ペンのような手に持つ棒状の小物は支です。"
+    },
+    {
+      "hanzi": "把",
+      "pinyin": "bǎ",
+      "level": 2,
+      "group": "thing",
+      "use": "持ち手のある道具、いす、傘など",
+      "nounExamples": [
+        {
+          "hanzi": "伞",
+          "pinyin": "sǎn",
+          "meaning": "傘"
+        },
+        {
+          "hanzi": "刀",
+          "pinyin": "dāo",
+          "meaning": "刀"
+        },
+        {
+          "hanzi": "椅子",
+          "pinyin": "yǐzi",
+          "meaning": "いす"
+        },
+        {
+          "hanzi": "钥匙",
+          "pinyin": "yàoshi",
+          "meaning": "鍵"
+        }
+      ],
+      "phrase": {
+        "cn": "一把伞",
+        "pinyin": "yì bǎ sǎn",
+        "ja": "傘1本"
+      },
+      "tip": "把構文の把と同じ字ですが、数の後ろにある把は量詞です。"
+    },
+    {
+      "hanzi": "台",
+      "pinyin": "tái",
+      "level": 2,
+      "group": "device",
+      "use": "パソコン・テレビ・エアコンなどの機械",
+      "nounExamples": [
+        {
+          "hanzi": "电脑",
+          "pinyin": "diànnǎo",
+          "meaning": "パソコン"
+        },
+        {
+          "hanzi": "电视",
+          "pinyin": "diànshì",
+          "meaning": "テレビ"
+        },
+        {
+          "hanzi": "空调",
+          "pinyin": "kōngtiáo",
+          "meaning": "エアコン"
+        }
+      ],
+      "phrase": {
+        "cn": "一台电脑",
+        "pinyin": "yì tái diànnǎo",
+        "ja": "パソコン1台"
+      },
+      "tip": "車やバスは辆、飛行機は架、室内で使う機械は台と覚えると整理できます。"
+    },
+    {
+      "hanzi": "部",
+      "pinyin": "bù",
+      "level": 2,
+      "group": "device",
+      "use": "映画・小説・ドラマなどの作品",
+      "nounExamples": [
+        {
+          "hanzi": "电影",
+          "pinyin": "diànyǐng",
+          "meaning": "映画"
+        },
+        {
+          "hanzi": "小说",
+          "pinyin": "xiǎoshuō",
+          "meaning": "小説"
+        },
+        {
+          "hanzi": "电视剧",
+          "pinyin": "diànshìjù",
+          "meaning": "テレビドラマ"
+        }
+      ],
+      "phrase": {
+        "cn": "一部电影",
+        "pinyin": "yí bù diànyǐng",
+        "ja": "映画1本"
+      },
+      "tip": "本は製本された本、部は映画や小説という作品全体を数えます。"
+    },
+    {
+      "hanzi": "架",
+      "pinyin": "jià",
+      "level": 2,
+      "group": "device",
+      "use": "飛行機などの大型機械",
+      "nounExamples": [
+        {
+          "hanzi": "飞机",
+          "pinyin": "fēijī",
+          "meaning": "飛行機"
+        },
+        {
+          "hanzi": "相机",
+          "pinyin": "xiàngjī",
+          "meaning": "カメラ"
+        },
+        {
+          "hanzi": "钢琴",
+          "pinyin": "gāngqín",
+          "meaning": "ピアノ"
+        }
+      ],
+      "phrase": {
+        "cn": "一架飞机",
+        "pinyin": "yí jià fēijī",
+        "ja": "飛行機1機"
+      },
+      "tip": "飛行機のほか、脚や枠のあるカメラ・ピアノなどにも使います。"
+    },
+    {
+      "hanzi": "家",
+      "pinyin": "jiā",
+      "level": 1,
+      "group": "building",
+      "use": "会社・店・病院などの事業体",
+      "nounExamples": [
+        {
+          "hanzi": "公司",
+          "pinyin": "gōngsī",
+          "meaning": "会社"
+        },
+        {
+          "hanzi": "商店",
+          "pinyin": "shāngdiàn",
+          "meaning": "店"
+        },
+        {
+          "hanzi": "饭店",
+          "pinyin": "fàndiàn",
+          "meaning": "レストラン・ホテル"
+        },
+        {
+          "hanzi": "银行",
+          "pinyin": "yínháng",
+          "meaning": "銀行"
+        }
+      ],
+      "phrase": {
+        "cn": "一家公司",
+        "pinyin": "yì jiā gōngsī",
+        "ja": "会社1社"
+      },
+      "tip": "家庭の家から、1つの経営主体としての店や会社を数えます。"
+    },
+    {
+      "hanzi": "间",
+      "pinyin": "jiān",
+      "level": 1,
+      "group": "building",
+      "use": "部屋や室内の空間",
+      "nounExamples": [
+        {
+          "hanzi": "房间",
+          "pinyin": "fángjiān",
+          "meaning": "部屋"
+        },
+        {
+          "hanzi": "教室",
+          "pinyin": "jiàoshì",
+          "meaning": "教室"
+        },
+        {
+          "hanzi": "办公室",
+          "pinyin": "bàngōngshì",
+          "meaning": "オフィス"
+        }
+      ],
+      "phrase": {
+        "cn": "一间教室",
+        "pinyin": "yì jiān jiàoshì",
+        "ja": "教室1室"
+      },
+      "tip": "建物全体ではなく、壁で区切られた1つの部屋を数えます。"
+    },
+    {
+      "hanzi": "所",
+      "pinyin": "suǒ",
+      "level": 2,
+      "group": "building",
+      "use": "学校・病院などの施設",
+      "nounExamples": [
+        {
+          "hanzi": "学校",
+          "pinyin": "xuéxiào",
+          "meaning": "学校"
+        },
+        {
+          "hanzi": "医院",
+          "pinyin": "yīyuàn",
+          "meaning": "病院"
+        },
+        {
+          "hanzi": "大学",
+          "pinyin": "dàxué",
+          "meaning": "大学"
+        }
+      ],
+      "phrase": {
+        "cn": "一所学校",
+        "pinyin": "yì suǒ xuéxiào",
+        "ja": "学校1校"
+      },
+      "tip": "個人が住む家ではなく、一定の機能を持つ施設を数える改まった量詞です。"
+    },
+    {
+      "hanzi": "座",
+      "pinyin": "zuò",
+      "level": 2,
+      "group": "building",
+      "use": "山・橋・大きな建物など動かない大型のもの",
+      "nounExamples": [
+        {
+          "hanzi": "山",
+          "pinyin": "shān",
+          "meaning": "山"
+        },
+        {
+          "hanzi": "桥",
+          "pinyin": "qiáo",
+          "meaning": "橋"
+        },
+        {
+          "hanzi": "楼",
+          "pinyin": "lóu",
+          "meaning": "建物"
+        }
+      ],
+      "phrase": {
+        "cn": "一座桥",
+        "pinyin": "yí zuò qiáo",
+        "ja": "橋1本"
+      },
+      "tip": "地面にどっしりと固定された大きなものをイメージします。"
+    },
+    {
+      "hanzi": "封",
+      "pinyin": "fēng",
+      "level": 2,
+      "group": "event",
+      "use": "手紙やメール",
+      "nounExamples": [
+        {
+          "hanzi": "信",
+          "pinyin": "xìn",
+          "meaning": "手紙"
+        },
+        {
+          "hanzi": "电子邮件",
+          "pinyin": "diànzǐ yóujiàn",
+          "meaning": "電子メール"
+        },
+        {
+          "hanzi": "感谢信",
+          "pinyin": "gǎnxièxìn",
+          "meaning": "お礼の手紙"
+        }
+      ],
+      "phrase": {
+        "cn": "一封信",
+        "pinyin": "yì fēng xìn",
+        "ja": "手紙1通"
+      },
+      "tip": "紙の手紙だけでなく、電子メールも1通ずつ封で数えられます。"
+    },
+    {
+      "hanzi": "篇",
+      "pinyin": "piān",
+      "level": 2,
+      "group": "event",
+      "use": "文章・作文・論文などひとまとまりの文",
+      "nounExamples": [
+        {
+          "hanzi": "文章",
+          "pinyin": "wénzhāng",
+          "meaning": "文章"
+        },
+        {
+          "hanzi": "作文",
+          "pinyin": "zuòwén",
+          "meaning": "作文"
+        },
+        {
+          "hanzi": "日记",
+          "pinyin": "rìjì",
+          "meaning": "日記"
+        }
+      ],
+      "phrase": {
+        "cn": "一篇文章",
+        "pinyin": "yì piān wénzhāng",
+        "ja": "文章1本"
+      },
+      "tip": "本は本自体、篇はその中にある1本の文章を数えます。"
+    },
+    {
+      "hanzi": "首",
+      "pinyin": "shǒu",
+      "level": 2,
+      "group": "event",
+      "use": "歌や詩",
+      "nounExamples": [
+        {
+          "hanzi": "歌",
+          "pinyin": "gē",
+          "meaning": "歌"
+        },
+        {
+          "hanzi": "诗",
+          "pinyin": "shī",
+          "meaning": "詩"
+        },
+        {
+          "hanzi": "儿歌",
+          "pinyin": "érgē",
+          "meaning": "児童歌"
+        }
+      ],
+      "phrase": {
+        "cn": "一首歌",
+        "pinyin": "yì shǒu gē",
+        "ja": "歌1曲"
+      },
+      "tip": "音楽の1曲と、ひとまとまりの詩1篇を同じ首で数えます。"
+    },
+    {
+      "hanzi": "场",
+      "pinyin": "chǎng",
+      "level": 2,
+      "group": "event",
+      "use": "試合・試験・演出・雨など、1つの場面として起こること",
+      "nounExamples": [
+        {
+          "hanzi": "比赛",
+          "pinyin": "bǐsài",
+          "meaning": "試合"
+        },
+        {
+          "hanzi": "考试",
+          "pinyin": "kǎoshì",
+          "meaning": "試験"
+        },
+        {
+          "hanzi": "雨",
+          "pinyin": "yǔ",
+          "meaning": "雨"
+        }
+      ],
+      "phrase": {
+        "cn": "一场比赛",
+        "pinyin": "yì chǎng bǐsài",
+        "ja": "1試合"
+      },
+      "tip": "人が集まる行事だけでなく、一场雨のように一つの天候現象にも使います。"
+    },
+    {
+      "hanzi": "遍",
+      "pinyin": "biàn",
+      "level": 3,
+      "group": "event",
+      "use": "動作を最初から最後まで通して行う回数",
+      "nounExamples": [
+        {
+          "hanzi": "说",
+          "pinyin": "shuō",
+          "meaning": "言う"
+        },
+        {
+          "hanzi": "看",
+          "pinyin": "kàn",
+          "meaning": "見る"
+        },
+        {
+          "hanzi": "读",
+          "pinyin": "dú",
+          "meaning": "読む"
+        }
+      ],
+      "phrase": {
+        "cn": "读一遍",
+        "pinyin": "dú yí biàn",
+        "ja": "最初から最後まで1回読む"
+      },
+      "tip": "単に回数を数えるのは次、内容を1通り終わらせることを強調するのが遍です。"
+    },
+    {
+      "hanzi": "趟",
+      "pinyin": "tàng",
+      "level": 3,
+      "group": "event",
+      "use": "場所への移動や往復の回数",
+      "nounExamples": [
+        {
+          "hanzi": "北京",
+          "pinyin": "Běijīng",
+          "meaning": "北京"
+        },
+        {
+          "hanzi": "银行",
+          "pinyin": "yínháng",
+          "meaning": "銀行"
+        },
+        {
+          "hanzi": "旅行",
+          "pinyin": "lǚ xíng",
+          "meaning": "旅行"
+        }
+      ],
+      "phrase": {
+        "cn": "去一趟北京",
+        "pinyin": "qù yí tàng Běijīng",
+        "ja": "北京へひと行きする"
+      },
+      "tip": "行って戻る、または1つの移動行程をひとまとまりとして数えます。"
+    },
+    {
+      "hanzi": "份",
+      "pinyin": "fèn",
+      "level": 2,
+      "group": "event",
+      "use": "書類・仕事・食事などの1部・1人前",
+      "nounExamples": [
+        {
+          "hanzi": "工作",
+          "pinyin": "gōngzuò",
+          "meaning": "仕事"
+        },
+        {
+          "hanzi": "礼物",
+          "pinyin": "lǐwù",
+          "meaning": "プレゼント"
+        },
+        {
+          "hanzi": "饭",
+          "pinyin": "fàn",
+          "meaning": "食事"
+        }
+      ],
+      "phrase": {
+        "cn": "一份工作",
+        "pinyin": "yí fèn gōngzuò",
+        "ja": "1つの仕事"
+      },
+      "tip": "分けられた1人分、1部分という感覚で、抽象的な仕事にも使います。"
+    },
+    {
+      "hanzi": "套",
+      "pinyin": "tào",
+      "level": 2,
+      "group": "event",
+      "use": "複数の物がそろった1セット",
+      "nounExamples": [
+        {
+          "hanzi": "衣服",
+          "pinyin": "yīfu",
+          "meaning": "衣服"
+        },
+        {
+          "hanzi": "房子",
+          "pinyin": "fángzi",
+          "meaning": "住宅"
+        },
+        {
+          "hanzi": "书",
+          "pinyin": "shū",
+          "meaning": "本のセット"
+        }
+      ],
+      "phrase": {
+        "cn": "一套衣服",
+        "pinyin": "yí tào yīfu",
+        "ja": "衣1セット"
+      },
+      "tip": "単品を数える量詞ではなく、組み合わせ一式を1つと数えます。"
+    },
+    {
+      "hanzi": "群",
+      "pinyin": "qún",
+      "level": 2,
+      "group": "event",
+      "use": "人や動物が集まった群れ",
+      "nounExamples": [
+        {
+          "hanzi": "人",
+          "pinyin": "rén",
+          "meaning": "人々"
+        },
+        {
+          "hanzi": "鸟",
+          "pinyin": "niǎo",
+          "meaning": "鳥"
+        },
+        {
+          "hanzi": "羊",
+          "pinyin": "yáng",
+          "meaning": "羊"
+        }
+      ],
+      "phrase": {
+        "cn": "一群人",
+        "pinyin": "yì qún rén",
+        "ja": "一群の人々"
+      },
+      "tip": "一人ずつではなく、複数の人や動物が集まったひと固まりを数えます。"
+    },
+    {
+      "hanzi": "节",
+      "pinyin": "jié",
+      "level": 2,
+      "group": "event",
+      "use": "授業、列車の車両、電池などの区切り",
+      "nounExamples": [
+        {
+          "hanzi": "课",
+          "pinyin": "kè",
+          "meaning": "授業"
+        },
+        {
+          "hanzi": "车厢",
+          "pinyin": "chēxiāng",
+          "meaning": "車両"
+        },
+        {
+          "hanzi": "电池",
+          "pinyin": "diànchí",
+          "meaning": "電池"
+        }
+      ],
+      "phrase": {
+        "cn": "一节课",
+        "pinyin": "yì jié kè",
+        "ja": "授業1コマ"
+      },
+      "tip": "長いものの中の1区切りというイメージで、授業の時間にも使います。"
+    },
+    {
+      "wordId": "hsk3-621",
+      "group": "thing",
+      "drill": true,
+      "use": "動物（鳥・猫・犬など）や、対になっている物の片方",
+      "nouns": [
+        "hsk3-474",
+        "hsk1-064"
+      ],
+      "phrase": {
+        "cn": "一只小猫",
+        "pinyin": "yì zhī xiǎo māo",
+        "ja": "子猫1匹"
+      },
+      "tip": "動物は基本的に只で数えます。馬のように専用の量詞を持つものだけ例外です。"
     }
   ]
 }

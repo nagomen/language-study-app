@@ -94,8 +94,16 @@ function renderCategoryDetail(category) {
       <span class="guide-card-body"><strong>解説ページ：${escapeHtml(guide.title)}</strong><small>${escapeHtml(guide.blurb || "")}</small></span>
       <span class="guide-card-go" aria-hidden="true">→</span>`;
   }
-  if (isMeasure) renderMeasureGuide(words);
-  else {
+  if (isMeasure) {
+    const visibleCount = renderMeasureGuide();
+    $("#category-detail-count").textContent = visibleCount;
+    $("#category-detail-count").nextElementSibling.textContent = "量詞";
+    $("#empty-category-words").classList.toggle("is-hidden", visibleCount > 0);
+    $("#measure-quiz").disabled = visibleCount === 0;
+    $$("#category-quiz, [data-category-practice]").forEach((button) => { button.disabled = words.length === 0; });
+    return;
+  } else {
+    $("#category-detail-count").nextElementSibling.textContent = "単語";
     $("#category-word-list").innerHTML = words.map((word) => wordRowHtml(word, { showExample: true })).join("");
     bindWordRowAudio($("#category-word-list"));
   }

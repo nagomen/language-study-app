@@ -2,7 +2,7 @@
   "version": 3,
   "level": 2,
   "format": "HSK 2.0（日本実施形式）・写真問題は記号イラストで代替",
-  "generatedAt": "2026-09-23T04:49:15.311Z",
+  "generatedAt": "2026-10-03T07:31:04.914Z",
   "questionSelection": {
     "listening": {
       "1": 10,
@@ -2196,9 +2196,9 @@
           "pinyin": "shuìjiào"
         },
         {
-          "value": "回答",
-          "label": "回答",
-          "pinyin": "huídá"
+          "value": "休息",
+          "label": "休息",
+          "pinyin": "xiūxi"
         }
       ],
       "correct": "起床",
@@ -2256,9 +2256,9 @@
           "pinyin": "jièshào"
         },
         {
-          "value": "欢迎",
-          "label": "欢迎",
-          "pinyin": "huānyíng"
+          "value": "帮助",
+          "label": "帮助",
+          "pinyin": "bāngzhù"
         }
       ],
       "correct": "告诉",

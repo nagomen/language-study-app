@@ -17,7 +17,7 @@ export function startQuiz(pool, source, direction = "cn-ja", distractorPool = nu
   }
   // 出題数が少ない復習・チェックでは、選択肢が足りなくならないよう全単語から誤答を作る。
   const choicePool = distractorPool?.length ? [...distractorPool] : [...pool];
-  // 毎日20語は順番（復習→新出）を保ったまま全問出す。ふだんの単語テストは10問までランダム。
+  // 毎日40語は順番（復習→新出）を保ったまま全問出す。ふだんの単語テストは10問までランダム。
   const ordered = options.keepOrder ? [...pool] : shuffle([...pool]);
   const questions = ordered.slice(0, Math.min(options.limit || 10, pool.length));
   state.quiz = { questions, choicePool, index: 0, correct: 0, answered: false, source, direction, answers: [], markedForReview: new Set() };
@@ -159,9 +159,9 @@ export function nextQuestion() {
 function finishQuiz() {
   const isDaily = String(state.quiz.source).startsWith("daily");
   if (isDaily) completeDailySession();
-  // 毎日20語は終えると次の日に進むので、「もう一度」ではなく次に進むボタンにする。
+  // 毎日40語は終えると次の日に進むので、「もう一度」ではなく次に進むボタンにする。
   $("#retry-quiz").textContent = isDaily
-    ? (state.quiz.source === "daily-review" ? "もう一度復習する" : "今日の20語をもう一度")
+    ? (state.quiz.source === "daily-review" ? "もう一度復習する" : "今日の単語をもう一度")
     : "もう一度挑戦";
   $("#result-correct").textContent = state.quiz.correct;
   $("#result-total").textContent = state.quiz.questions.length;
@@ -177,7 +177,7 @@ export function retryQuiz() {
   const direction = state.quiz.direction || "cn-ja";
   if (source === "review") return startReviewQuiz(direction);
   if (source === "checked") return startCheckedQuiz();
-  if (source === "daily") return startDailySession();
+  if (source === "daily" || source === "daily-extra") return startDailyRetry();
   if (source === "daily-retry") return startDailyRetry();
   if (source === "daily-review") return startDailyReview();
   if (typeof source === "string" && source.startsWith("category:")) return startCategoryQuiz(source.slice("category:".length));

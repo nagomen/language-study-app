@@ -74,7 +74,7 @@ export function wordHaystack(word) {
   return `${word.hanzi} ${word.pinyin} ${word.meaning} ${word.example || ""} ${word.examplePinyin || ""} ${word.exampleMeaning || ""}`.toLowerCase();
 }
 
-// 毎日20語・分類ページの一覧行。例文つきでも表示できる。
+// 毎日40語・分類ページの一覧行。例文つきでも表示できる。
 export function wordRowHtml(word, { showExample = false } = {}) {
   const hasExample = showExample && Boolean(word.example);
   return `

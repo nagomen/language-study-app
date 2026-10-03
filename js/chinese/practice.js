@@ -59,7 +59,7 @@ export function startPractice(mode, level, source = null, sourceMeta = null) {
     $("#practice-level").value = "3";
     questions = makeWritingQuestions(10);
   } else if (mode === "listening") {
-    questions = makeListeningQuestions(actualLevel, 10, source);
+    questions = makeListeningQuestions(actualLevel, sourceMeta?.count || 10, source, { sentenceOnly: sourceMeta?.sentenceOnly });
   } else if (mode === "reading") {
     questions = makeReadingQuestions(actualLevel, 10, source);
   } else if (mode === "srs") {
@@ -72,20 +72,30 @@ export function startPractice(mode, level, source = null, sourceMeta = null) {
   }
   if (!questions.length) return alert("出題できる問題がありません。");
   const categoryId = sourceMeta?.categoryId || null;
+  const dailyListening = Boolean(sourceMeta?.dailyListening);
   state.practice = {
     ...emptyPractice(),
     mode,
     level: actualLevel,
     questions,
     sourceLabel: source ? sourceMeta?.label || "チェックした単語" : "",
-    lastStart: { mode, level: actualLevel, isMock: false, checked: Boolean(source) && !categoryId, categoryId },
+    modeLabel: sourceMeta?.modeLabel || "",
+    lastStart: {
+      mode, level: actualLevel, isMock: false,
+      checked: Boolean(source) && !categoryId && !dailyListening,
+      categoryId, dailyListening,
+      sourceIds: dailyListening ? (source || []).map((word) => word.id) : [],
+      sourceMeta: dailyListening ? { ...sourceMeta } : null,
+      returnView: sourceMeta?.returnView || "exam",
+    },
     sectionStats: {},
   };
+  $("#practice-home").textContent = sourceMeta?.returnLabel || "試験対策へ";
   showView("practice");
   renderPracticeQuestion();
 }
 
-function makeListeningQuestions(level, count, source = null) {
+function makeListeningQuestions(level, count, source = null, options = {}) {
   const banked = state.banks.listeningDialogues
     .map((item, index) => ({ ...item, audioFile: `audio/sentences/mock-dialogue-${String(index + 1).padStart(3, "0")}.m4a` }))
     .filter((item) => item.level <= level);
@@ -93,8 +103,10 @@ function makeListeningQuestions(level, count, source = null) {
   const dialogues = [...shuffle(banked.filter((item) => item.level === level)), ...shuffle(banked.filter((item) => item.level < level))];
   // 分類・チェックの練習では、その語と関係のない対話は出さない。
   const canUseDialogue = dialogues.length > 0 && !source?.length;
-  const kinds = mixedKinds(LISTENING_MIX[level] || LISTENING_MIX[3], count)
-    .map((kind) => (kind === "dialogue" && !canUseDialogue ? "sentence" : kind));
+  const kinds = options.sentenceOnly
+    ? Array(count).fill("sentence")
+    : mixedKinds(LISTENING_MIX[level] || LISTENING_MIX[3], count)
+      .map((kind) => (kind === "dialogue" && !canUseDialogue ? "sentence" : kind));
   const words = drawPracticeWords(level, kinds.filter((kind) => kind !== "dialogue").length, source);
   if (!words.length) return [];
   let wordIndex = 0;
@@ -118,7 +130,13 @@ function makeListeningQuestion(word, level, kind = "word") {
   if (kind === "sentence" && word.example) {
     const candidates = pool.filter((item) => item.exampleMeaning && item.id !== word.id);
     const choices = uniqueChoices([{ value: word.id, label: word.exampleMeaning }, ...shuffle(candidates).slice(0, 3).map((item) => ({ value: item.id, label: item.exampleMeaning }))]);
-    return { skill: "listening", kind: "audio-sentence", wordId: word.id, audioText: word.example, audioFile: exampleAudioFile(word), choices: shuffle(choices), correct: word.id, instruction: "音声の内容として正しいものを選んでください", explanation: `${word.example}（${word.exampleMeaning}）`, audioPlays: 0 };
+    return {
+      skill: "listening", kind: "audio-sentence", wordId: word.id,
+      audioText: word.example, audioPinyin: word.examplePinyin, audioMeaning: word.exampleMeaning,
+      audioFile: exampleAudioFile(word), choices: shuffle(choices), correct: word.id,
+      instruction: "音声の内容として正しいものを選んでください",
+      explanation: `${word.example}（${word.exampleMeaning}）`, audioPlays: 0,
+    };
   }
   const choices = uniqueChoices([{ value: word.id, label: word.meaning }, ...shuffle(pool.filter((item) => item.id !== word.id && item.meaning !== word.meaning)).slice(0, 3).map((item) => ({ value: item.id, label: item.meaning }))]);
   return { skill: "listening", kind: "audio-word", wordId: word.id, audioWord: word, choices: shuffle(choices), correct: word.id, instruction: "音声で聞こえた単語の意味を選んでください", explanation: `${word.hanzi}（${word.pinyin}）— ${word.meaning}`, audioPlays: 0 };
@@ -467,7 +485,7 @@ function answerPractice(value, selectedButton) {
   } else if (!session.isMock) {
     $("#practice-feedback").textContent = correct ? `正解！ ${question.explanation || question.answer}` : `正解：${question.explanation || question.answer}`;
     $("#practice-feedback").classList.add(correct ? "correct" : "wrong");
-    if (question.skill === "listening") enableListeningReplay(question);
+    if (question.skill === "listening") revealListeningScript(question);
   } else if (question.skill === "listening") {
     revealListeningScript(question);
   }
@@ -493,7 +511,11 @@ function revealListeningScript(question) {
   if (!panel || !body) return;
   body.innerHTML = question.audioWord
     ? `<p class="script-line"><span class="script-role">単</span>${escapeHtml(question.audioWord.hanzi)}（${escapeHtml(question.audioWord.pinyin)}）</p>`
-    : scriptLinesHtml(question.audioText || "");
+    : question.kind === "audio-sentence"
+      ? `<p class="script-line" lang="zh-CN">${escapeHtml(question.audioText || "")}</p>
+        ${question.audioPinyin ? `<p class="script-pinyin">${escapeHtml(question.audioPinyin)}</p>` : ""}
+        ${question.audioMeaning ? `<p class="script-meaning">${escapeHtml(question.audioMeaning)}</p>` : ""}`
+      : scriptLinesHtml(question.audioText || "");
   panel.classList.remove("is-hidden");
   enableListeningReplay(question);
 }
@@ -612,6 +634,10 @@ export function retryPractice() {
   const last = state.practice.lastStart;
   if (!last) return navigate("exam");
   if (last.isMock) startMockExam(last.level, last.section);
+  else if (last.dailyListening) {
+    const words = last.sourceIds.map((id) => state.words.find((word) => word.id === id)).filter(Boolean);
+    startPractice(last.mode, last.level, words, last.sourceMeta);
+  }
   else if (last.guideId === "measure") startMeasurePractice();
   else if (last.guideId) startGuidePractice(last.guideId);
   else if (last.categoryId) startCategoryPractice(last.mode, last.categoryId);
@@ -622,7 +648,7 @@ export function retryPractice() {
 export function closePractice() {
   clearPracticeTimer();
   stopAudio();
-  navigate("exam");
+  navigate(state.practice.lastStart?.returnView || "exam");
 }
 
 export function clearPracticeTimer() {
