@@ -8,7 +8,7 @@ hsk3-308|搬|verb,home
 hsk2026-0508|班级|daily
 hsk2026-0509|搬家|verb
 hsk2026-0510|办|verb
-hsk3-309|办法|thinking
+hsk3-309|办法|daily
 hsk3-310|办公室|work
 hsk2026-0513|半天|number,measure
 hsk2-154|帮助|verb,people
@@ -134,7 +134,7 @@ hsk3-375|附近|direction,travel
 hsk3-376|复习|verb,school
 hsk2026-0635|该|verb
 hsk3-377|干净|adjective
-hsk3-605|感兴趣|verb,thinking
+hsk3-605|感兴趣|verb
 hsk2026-0638|感到|verb
 hsk3-379|感冒|verb,body
 hsk2026-0640|干|verb
@@ -186,7 +186,7 @@ hsk2026-0685|或|adverb,conjunction
 hsk3-408|或者|conjunction
 hsk2026-0687|鸡|daily
 hsk3-411|几乎|adverb,degree
-hsk3-409|机会|work,thinking
+hsk3-409|机会|work
 hsk3-410|极|adverb,degree
 hsk2026-0691|急|verb,adjective
 hsk2026-0692|记|verb,cognition
@@ -314,7 +314,7 @@ hsk3-490|然后|conjunction,time
 hsk3-491|热情|adjective,emotion
 hsk2026-0815|认得|verb,cognition
 hsk3-492|认为|verb,thinking,cognition
-hsk3-493|认真|adjective
+hsk3-493|认真|adjective,cognition
 hsk3-494|容易|adjective
 hsk3-495|如果|conjunction
 hsk3-496|伞|clothes,weather
@@ -411,7 +411,7 @@ hsk2026-0910|兴趣|daily
 hsk2026-0911|休假|verb
 hsk3-553|需要|verb
 hsk2026-0913|选|verb
-hsk3-554|选择|verb,thinking
+hsk3-554|选择|verb
 hsk2026-0915|学期|daily
 hsk2026-0916|牙|daily
 hsk2026-0917|牙刷|daily
