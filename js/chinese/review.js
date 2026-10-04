@@ -1,9 +1,9 @@
 // app.js から機能ごとに切り出したモジュール。生成物ではなく、以降はこのファイルを直接編集する。
-import { $, escapeHtml, checkButtonHtml } from "../shared.js";
+import { $, escapeHtml, renderReviewPanel, reviewEntryHtml } from "../shared.js";
 import { playAudioFile, speak } from "./audio.js";
 import { REVIEW_SUB_LABELS, SKILL_LABELS } from "./config.js";
 import { reviewSessions, state } from "./state.js";
-import { normalizeAnswer } from "./util.js";
+import { normalizeAnswer, wordLevelLabel } from "./util.js";
 
 export function setReview(key, entries) {
   reviewSessions[key] = { entries, scope: "all" };
@@ -13,41 +13,17 @@ export function setReview(key, entries) {
 export function renderReview(key) {
   const panel = $(`#${key}-review`);
   const session = reviewSessions[key];
-  if (!panel || !session) return;
-  const { entries, scope } = session;
-  panel.classList.toggle("is-hidden", !entries.length);
-  if (!entries.length) return;
-  const missed = entries.filter((entry) => entry.status !== "correct");
-  panel.querySelector(".review-count-total").textContent = entries.length;
-  panel.querySelector(".review-count-missed").textContent = missed.length;
-  panel.querySelectorAll("[data-review-scope]").forEach((button) => {
-    const isActive = button.dataset.reviewScope === scope;
-    button.classList.toggle("is-active", isActive);
-    button.setAttribute("aria-pressed", String(isActive));
-  });
-  const shown = scope === "wrong" ? missed : entries;
-  panel.querySelector(".review-list").innerHTML = shown.map((entry) => reviewItemHtml(entry, entries.indexOf(entry))).join("");
-  const empty = panel.querySelector(".review-empty");
-  empty.textContent = "まちがいはありません。全問正解です。";
-  empty.classList.toggle("is-hidden", shown.length > 0);
-  panel.querySelectorAll("[data-review-audio]").forEach((button) => {
-    button.addEventListener("click", () => playReviewAudio(entries[Number(button.dataset.reviewAudio)], button));
+  renderReviewPanel(panel, session, {
+    itemHtml: reviewItemHtml,
+    emptyText: "まちがいはありません。全問正解です。",
+    audioSelector: "[data-review-audio]",
+    onAudio: (button, entries) => playReviewAudio(entries[Number(button.dataset.reviewAudio)], button),
   });
 }
 
 function reviewItemHtml(entry, index) {
-  const marks = { correct: "正解", wrong: "まちがい", skipped: "未回答" };
-  const yourClass = entry.status === "correct" ? " is-correct" : entry.status === "wrong" ? " is-wrong" : "";
-  return `<li class="review-item is-${entry.status}">
-    <div class="review-item-head"><span class="review-index">${entry.number}</span><span class="review-tag">${escapeHtml(entry.tag)}</span><span class="review-mark">${marks[entry.status]}</span>${entry.wordId ? checkButtonHtml(entry.wordId, state.checked.has(entry.wordId)) : ""}</div>
-    ${entry.lines.filter((line) => line.text).map((line) => `<p class="review-line"><span>${escapeHtml(line.label)}</span><b>${escapeHtml(line.text)}</b></p>`).join("")}
-    <div class="review-answers">
-      <div class="review-answer${yourClass}"><span>あなたの回答</span><strong>${escapeHtml(entry.your || "未回答")}</strong></div>
-      <div class="review-answer is-correct"><span>正解</span><strong>${escapeHtml(entry.answer || "—")}</strong></div>
-    </div>
-    ${entry.note ? `<p class="review-note">${escapeHtml(entry.note)}</p>` : ""}
-    ${entry.audio ? `<button class="review-audio" type="button" data-review-audio="${index}"><span aria-hidden="true">▶</span> 音声をもう一度聞く</button>` : ""}
-  </li>`;
+  const audioHtml = entry.audio ? `<button class="review-audio" type="button" data-review-audio="${index}"><span aria-hidden="true">▶</span> 音声をもう一度聞く</button>` : "";
+  return reviewEntryHtml(entry, { checkedIds: state.checked, audioHtml });
 }
 
 function playReviewAudio(entry, button) {
@@ -66,7 +42,7 @@ export function buildQuizReview() {
     return {
       number: index + 1,
       status: !answer ? "skipped" : answer.correct ? "correct" : "wrong",
-      tag: `HSK ${word.level} · 単語（${isReverse ? "日 → 中" : "中 → 日"}）`,
+      tag: `${wordLevelLabel(word)} · 単語（${isReverse ? "日 → 中" : "中 → 日"}）`,
       lines: [{ label: "問題", text: isReverse ? word.meaning : `${word.hanzi}（${word.pinyin}）` }],
       your: chosen ? (isReverse ? `${chosen.hanzi}（${chosen.pinyin}）` : chosen.meaning) : "",
       answer: isReverse ? `${word.hanzi}（${word.pinyin}）` : word.meaning,

@@ -185,7 +185,7 @@ export function renderPracticeQuestion() {
   stopAudio();
   $("#practice-level-label").textContent = session.sourceLabel || `HSK ${session.level}`;
   $("#practice-mode-label").textContent = session.isMock
-    ? `${session.section ? "セクション練習" : "写真なし模試"} · ${SKILL_LABELS[question.skill]} 第${question.part || 1}部分`
+    ? `${session.mockVersion === "3.0" ? "HSK 3.0" : "HSK 2.0"} · ${session.section ? "セクション練習" : "写真なし模試"} · ${SKILL_LABELS[question.skill]} 第${question.part || 1}部分`
     : (session.modeLabel || (session.mode === "srs" ? `間隔反復 · ${SKILL_LABELS[question.skill]}` : SKILL_LABELS[question.skill]));
   $("#practice-step").textContent = `${session.index + 1} / ${session.questions.length}`;
   $("#practice-progress-bar").style.width = `${(session.index / session.questions.length) * 100}%`;
@@ -216,6 +216,7 @@ export function renderPracticeQuestion() {
   else if (question.kind === "reading-visual-choice") prompt.innerHTML = `<h2 class="mock-reading-prompt">${escapeHtml(question.prompt)}</h2>${question.promptPinyin ? `<p class="mock-pinyin">${escapeHtml(question.promptPinyin)}</p>` : ""}`;
   else if (question.kind === "audio-judge") prompt.innerHTML = `<div class="listening-symbol" aria-hidden="true">听</div><p class="audio-judge-prompt">${escapeHtml(question.prompt)}</p>`;
   else if (question.skill === "listening") prompt.innerHTML = `<div class="listening-symbol" aria-hidden="true">听</div><p class="hidden-prompt">${session.isMock ? "请听录音后选择答案" : "文字を見ずに聞き取りましょう"}</p>`;
+  else if (question.kind === "compose") prompt.innerHTML = `<div class="mock-compose-visual" role="img" aria-label="${escapeHtml(question.visual.alt)}"><span>${escapeHtml(question.visual.symbol)}</span></div><p class="mock-compose-word">指定語：<strong lang="zh-CN">${escapeHtml(question.requiredWord)}</strong></p>`;
   else if (question.kind === "input") prompt.innerHTML = question.mockFormat
     ? `<h2 class="mock-writing-sentence">${escapeHtml(question.sentence)}</h2>`
     : `<p class="writing-hint">${escapeHtml(question.meaning)}</p><h2 class="pinyin-prompt">${escapeHtml(question.pinyin)}</h2>`;
@@ -280,7 +281,8 @@ function renderPracticeAnswers(question) {
       answerPractice(reorderAnswer(question), $("#submit-order"));
     });
   } else {
-    area.innerHTML = `<form id="writing-form" class="writing-form"><label for="writing-input">${question.mockFormat ? "请写一个汉字" : "漢字で入力"}</label><input id="writing-input" type="text" lang="zh-CN" autocomplete="off" placeholder="${question.mockFormat ? "输入汉字" : "答えを入力"}" /><button class="primary-button" type="submit">${question.mockFormat ? "提交答案" : "解答する"}</button></form>`;
+    const isCompose = question.kind === "compose";
+    area.innerHTML = `<form id="writing-form" class="writing-form"><label for="writing-input">${isCompose ? "图と指定語を使って1文作ってください" : (question.mockFormat ? "请写一个汉字" : "漢字で入力")}</label><input id="writing-input" type="text" lang="zh-CN" autocomplete="off" placeholder="${isCompose ? "请写一个句子" : (question.mockFormat ? "输入汉字" : "答えを入力")}" /><button class="primary-button" type="submit">${question.mockFormat ? "提交答案" : "解答する"}</button></form>`;
     $("#writing-form").addEventListener("submit", (event) => { event.preventDefault(); answerPractice($("#writing-input").value, $("#writing-form button")); });
     $("#writing-input").focus();
   }
@@ -439,7 +441,10 @@ function answerPractice(value, selectedButton) {
   const question = session.questions[session.index];
   // 完成句子は語順が複数ありうる（時間詞の位置など）ので、別解も正解として扱う。
   const accepted = [question.correct ?? question.answer, ...(question.accept || [])].map(normalizeAnswer);
-  const correct = accepted.includes(normalizeAnswer(value));
+  const normalizedValue = normalizeAnswer(value);
+  const correct = question.kind === "compose"
+    ? normalizedValue.includes(normalizeAnswer(question.requiredWord)) && normalizedValue.length >= normalizeAnswer(question.requiredWord).length + 2
+    : accepted.includes(normalizedValue);
   session.answered = true;
   question.userAnswer = value;
   question.isCorrect = correct;
@@ -522,6 +527,7 @@ function revealListeningScript(question) {
 
 function writingAnswerSentence(question) {
   if (question.kind === "input") return String(question.sentence || "").replace(/（[^）]+）/, question.answer || "");
+  if (question.kind === "compose") return question.answer || "";
   return question.answer || "";
 }
 
@@ -600,7 +606,7 @@ export function finishPractice(timedOut = Boolean(state.practice.timedOutSection
   $("#practice-result-mark").textContent = timedOut ? "時" : (session.isMock ? "試" : "成");
   $("#practice-result-title").textContent = "トレーニング完了";
   if (session.isMock) {
-    const config = EXAM_CONFIG[session.level];
+    const config = EXAM_CONFIG[session.mockKey || session.level];
     const skills = session.section ? [session.section] : ["listening", "reading", ...(session.level === 3 ? ["writing"] : [])];
     // 模試では未回答も不正解として扱い、各技能を100点満点に換算する。
     const scores = skills.map((skill) => Math.round(((session.sectionStats[skill]?.correct || 0) / config[skill]) * 100));
@@ -609,13 +615,14 @@ export function finishPractice(timedOut = Boolean(state.practice.timedOutSection
     // 合格基準は全体で6割。セクション別練習も同じ6割を目安にする。
     const passMark = session.section ? 60 : config.passScore;
     const passed = total >= passMark;
-    $("#practice-result-title").textContent = session.section ? `HSK ${session.level} ${SKILL_LABELS[session.section]}の結果` : `HSK ${session.level} 模試結果`;
+    const versionLabel = session.mockVersion === "3.0" ? " 3.0" : "";
+    $("#practice-result-title").textContent = session.section ? `HSK ${session.level}${versionLabel} ${SKILL_LABELS[session.section]}の結果` : `HSK ${session.level}${versionLabel} 模試結果`;
     $("#practice-result-score").textContent = total;
     $("#practice-result-unit").textContent = `/ ${maxScore} 点`;
     $("#practice-result-subtitle").textContent = passed ? "合格ライン到達" : "合格まであと少し";
     $("#practice-result-message").textContent = timedOut ? "時間切れです。振り返りから復習しましょう。" : (passed ? "合格ラインです。太棒了！" : `目安は${passMark}点です。振り返りで弱いところを確認しましょう。`);
     $("#practice-breakdown").innerHTML = skills.map((skill, index) => `<div><span>${SKILL_LABELS[skill]}</span><strong>${scores[index]}</strong><small>/ 100</small></div>`).join("");
-    state.progress.mocks.unshift({ date: localDateKey(), level: session.level, score: total, maxScore, passed, ...(session.section ? { section: session.section } : {}) });
+    state.progress.mocks.unshift({ date: localDateKey(), level: session.level, version: session.mockVersion || "2.0", score: total, maxScore, passed, ...(session.section ? { section: session.section } : {}) });
     state.progress.mocks = state.progress.mocks.slice(0, 10);
     saveProgress();
   } else {
@@ -633,7 +640,7 @@ export function finishPractice(timedOut = Boolean(state.practice.timedOutSection
 export function retryPractice() {
   const last = state.practice.lastStart;
   if (!last) return navigate("exam");
-  if (last.isMock) startMockExam(last.level, last.section);
+  if (last.isMock) startMockExam(last.level, last.section, last.mockVersion || "2.0");
   else if (last.dailyListening) {
     const words = last.sourceIds.map((id) => state.words.find((word) => word.id === id)).filter(Boolean);
     startPractice(last.mode, last.level, words, last.sourceMeta);

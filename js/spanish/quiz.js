@@ -1,5 +1,5 @@
 // spanish.js から機能ごとに切り出したモジュール。
-import { $, $$, shuffle } from "../shared.js";
+import { $, $$, createAnswerButton, shuffle } from "../shared.js";
 import { LEVELS, QUIZ_SIZE } from "./config.js";
 import { showView } from "./main.js";
 import { recordAnswer, renderHomeStats } from "./progress.js";
@@ -50,10 +50,7 @@ function renderQuestion() {
   const list = $("#answer-list");
   list.innerHTML = "";
   options.forEach((option, index) => {
-    const button = document.createElement("button");
-    button.className = "answer-button";
-    button.type = "button";
-    button.dataset.key = String.fromCharCode(65 + index);
+    const button = createAnswerButton(index);
     button.dataset.id = option.id;
     button.textContent = option.meaning;
     button.addEventListener("click", () => answerQuestion(button, option));

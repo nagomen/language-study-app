@@ -2,7 +2,7 @@
   "version": 3,
   "level": 3,
   "format": "HSK 2.0（日本実施形式）・写真問題は記号イラストで代替",
-  "generatedAt": "2026-10-03T07:31:04.920Z",
+  "generatedAt": "2026-10-04T08:35:33.498Z",
   "questionSelection": {
     "listening": {
       "1": 10,
@@ -2437,15 +2437,15 @@
       "hint": "示された語句を並べ替えて、正しい文を作ります。",
       "tokens": [
         "这些",
-        "帽子",
+        "鞋",
         "是",
         "在北京",
         "买",
         "的"
       ],
-      "answer": "这些帽子是在北京买的。",
-      "meaning": "これらの帽子は北京で買ったのです。",
-      "answerPinyin": "Zhèxiē màozi shì zài Běijīng mǎi de.",
+      "answer": "这些鞋是在北京买的。",
+      "meaning": "これらの靴は北京で買ったのです。",
+      "answerPinyin": "Zhèxiē xié shì zài Běijīng mǎi de.",
       "answerAudioFile": "audio/sentences/hsk3-w1-16-answer.m4a",
       "instruction": "请把下面的词语排列成正确的句子。",
       "selected": []

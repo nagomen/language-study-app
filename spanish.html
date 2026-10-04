@@ -65,13 +65,7 @@
             <strong>チェックした単語はまだありません</strong>
             <p>単語一覧やテストの振り返りにある ✓ ボタンで追加できます。</p>
           </div>
-          <div class="checked-tools">
-            <button id="export-checked" class="text-button is-hidden" type="button">チェックを書き出す（JSON）</button>
-            <button id="import-checked" class="text-button" type="button">チェックを読み込む</button>
-            <button id="clear-checked" class="text-button is-hidden" type="button">チェックをすべて解除</button>
-            <input id="import-checked-file" class="is-hidden" type="file" accept="application/json,.json" aria-label="チェックの書き出しファイルを選ぶ" />
-          </div>
-          <p class="checked-tools-note">別の端末やGitHub Pages版とチェックを共有するときは、書き出したJSONを読み込んでください。読み込みは追加なので、今あるチェックは消えません。</p>
+          <div class="checked-file-tools"></div>
         </section>
 
         <section id="progress-view" class="view" aria-labelledby="progress-title">
@@ -82,17 +76,7 @@
         </section>
 
         <section id="result-view" class="view result-view" aria-labelledby="result-title"><div class="result-burst">¡Sí!</div><p class="eyebrow">SESIÓN COMPLETADA</p><h1 id="result-title">¡Buen trabajo!</h1><p>今回の結果</p><div class="result-score"><strong id="result-correct">0</strong><span>/ <b id="result-total">0</b> 問</span></div><p id="result-message" class="result-message"></p>
-          <section id="quiz-review" class="review-panel is-hidden" data-review-key="quiz" aria-labelledby="quiz-review-title">
-            <div class="review-head">
-              <div><p class="eyebrow">REVIEW</p><h2 id="quiz-review-title">振り返り</h2></div>
-              <div class="review-filter" role="group" aria-label="振り返りの表示切り替え">
-                <button class="review-chip is-active" type="button" data-review-scope="all" aria-pressed="true">すべて <b class="review-count-total">0</b></button>
-                <button class="review-chip" type="button" data-review-scope="wrong" aria-pressed="false">まちがい <b class="review-count-missed">0</b></button>
-              </div>
-            </div>
-            <ol class="review-list"></ol>
-            <p class="review-empty empty-inline is-hidden"></p>
-          </section>
+          <section id="quiz-review" class="review-panel is-hidden" data-review-key="quiz" aria-label="振り返り"></section>
           <div class="result-actions"><button id="retry-quiz" class="primary-button" type="button">もう一度挑戦</button><button id="back-home" class="secondary-button" type="button">ホームへ戻る</button></div></section>
       </main>
       <nav class="mobile-bottom-nav spanish-mobile-nav" aria-label="スマートフォン用ナビゲーション"><button class="nav-item is-active" data-view="home" type="button"><span>⌂</span><small>ホーム</small></button><button class="nav-item" data-view="words" type="button"><span>Ab</span><small>単語</small></button><button class="nav-item" data-view="checked" type="button"><span>✓</span><small>チェック</small></button><button class="nav-item" data-view="progress" type="button"><span>↗</span><small>記録</small></button></nav>

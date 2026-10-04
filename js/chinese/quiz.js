@@ -1,5 +1,5 @@
 // app.js から機能ごとに切り出したモジュール。生成物ではなく、以降はこのファイルを直接編集する。
-import { $, $$, escapeHtml, shuffle } from "../shared.js";
+import { $, $$, createAnswerButton, escapeHtml, shuffle } from "../shared.js";
 import { speak } from "./audio.js";
 import { startCategoryQuiz } from "./categories.js";
 import { startCheckedQuiz } from "./checked.js";
@@ -9,6 +9,7 @@ import { recordStudy, updateSummary } from "./progress.js";
 import { buildQuizReview, setReview } from "./review.js";
 import { state } from "./state.js";
 import { saveProgress } from "./storage.js";
+import { wordLevelLabel } from "./util.js";
 
 export function startQuiz(pool, source, direction = "cn-ja", distractorPool = null, options = {}) {
   if (!pool.length) {
@@ -30,13 +31,18 @@ export function startReviewQuiz(direction = state.vocabularyDirection) {
   startQuiz(state.words.filter((word) => ids.includes(word.id)), "review", direction, state.words);
 }
 
+export function startNewWordsQuiz(direction = state.vocabularyDirection) {
+  const words = state.words.filter((word) => word.newIn2026);
+  startQuiz(words, "new-2026", direction, words);
+}
+
 function renderQuestion() {
   const { questions, index } = state.quiz;
   const word = questions[index];
   if (!word) return finishQuiz();
   const isReverse = state.quiz.direction === "ja-cn";
   state.quiz.answered = false;
-  $("#quiz-level").textContent = `HSK ${word.level}`;
+  $("#quiz-level").textContent = wordLevelLabel(word);
   $("#quiz-step").textContent = `${index + 1} / ${questions.length}`;
   $("#quiz-progress-bar").style.width = `${(index / questions.length) * 100}%`;
   $("#quiz-kind").textContent = isReverse ? "中国語を選んでください" : "意味を選んでください";
@@ -56,10 +62,7 @@ function renderQuestion() {
   const answerList = $("#answer-list");
   answerList.innerHTML = "";
   choices.forEach((choice, index) => {
-    const button = document.createElement("button");
-    button.className = "answer-button";
-    button.type = "button";
-    button.dataset.key = String.fromCharCode(65 + index);
+    const button = createAnswerButton(index);
     button.dataset.wordId = choice.id;
     if (isReverse) {
       button.classList.add("reverse-choice");
@@ -176,6 +179,7 @@ export function retryQuiz() {
   const source = state.quiz.source;
   const direction = state.quiz.direction || "cn-ja";
   if (source === "review") return startReviewQuiz(direction);
+  if (source === "new-2026") return startNewWordsQuiz(direction);
   if (source === "checked") return startCheckedQuiz();
   if (source === "daily" || source === "daily-extra") return startDailyRetry();
   if (source === "daily-retry") return startDailyRetry();

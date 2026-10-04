@@ -1,10 +1,10 @@
 // app.js から機能ごとに切り出したモジュール。生成物ではなく、以降はこのファイルを直接編集する。
-import { $, $$ } from "../shared.js";
+import { $, $$, filterCheckedWords } from "../shared.js";
 import { renderProgress, updateSummary } from "./progress.js";
 import { state } from "./state.js";
 
 export function getCheckedWords() {
-  return state.words.filter((word) => state.checked.has(word.id));
+  return filterCheckedWords(state.words, state.checked);
 }
 
 export function loadProgress() {

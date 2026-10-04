@@ -50,6 +50,18 @@ for (const level of [1, 2, 3]) {
   });
 }
 
+const supplement = JSON.parse(fs.readFileSync(path.join(appDir, "data", "chinese", "hsk-legacy-supplement.json"), "utf8"));
+for (const word of supplement) {
+  if (words[word.id]) throw new Error(`旧HSK補完語「${word.hanzi}」のID「${word.id}」が公式語彙と重複しています`);
+  if (!Array.isArray(word.tags) || !word.tags.length) throw new Error(`旧HSK補完語「${word.hanzi}」にラベルがありません`);
+  if (new Set(word.tags).size !== word.tags.length) throw new Error(`旧HSK補完語「${word.hanzi}」に同じラベルが重複しています`);
+  for (const tag of word.tags) {
+    if (!categoryIds.has(tag)) throw new Error(`旧HSK補完語「${word.hanzi}」のラベル「${tag}」は categories.tsv にありません`);
+    usage.get(tag).push(word.id);
+  }
+  words[word.id] = word.tags;
+}
+
 const unused = [...usage].filter(([, ids]) => ids.length === 0).map(([id]) => id);
 if (unused.length) throw new Error(`単語が1つも付いていないカテゴリ: ${unused.join(", ")}`);
 
@@ -62,4 +74,4 @@ for (const group of ["pos", "topic"]) {
 }
 const thin = categories.filter((category) => usage.get(category.id).length < MIN_WORDS_PER_CATEGORY);
 if (thin.length) console.warn(`\n警告: ${MIN_WORDS_PER_CATEGORY}語未満のカテゴリがあります → ${thin.map((category) => category.label).join(", ")}`);
-console.log(`\nカテゴリ ${categories.length}件 / 単語 ${Object.keys(words).length}語 → data/chinese/word-tags.json`);
+console.log(`\nカテゴリ ${categories.length}件 / 単語 ${Object.keys(words).length}語（公式1,000 + 旧版補完${supplement.length}）→ data/chinese/word-tags.json`);

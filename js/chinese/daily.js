@@ -1,7 +1,7 @@
 // app.js から機能ごとに切り出したモジュール。生成物ではなく、以降はこのファイルを直接編集する。
 import { $, escapeHtml, shuffle, localDateKey } from "../shared.js";
 import { bindWordRowAudio } from "./audio.js";
-import { DAILY_KEY, DAILY_LEGACY_KEY, DAILY_LEVEL, DAILY_SEED, DAILY_SIZE } from "./config.js";
+import { DAILY_KEY, DAILY_LEGACY_KEY, DAILY_LEVEL, DAILY_SEED, DAILY_SIZE } from "./config.js?v=20261004-hsk3-full";
 import { startQuiz } from "./quiz.js";
 import { state } from "./state.js";
 import { wordRowHtml } from "./words.js";
@@ -11,7 +11,7 @@ export function loadDaily() {
   try {
     const saved = JSON.parse(localStorage.getItem(DAILY_KEY) || "null");
     if (!saved || typeof saved !== "object") {
-      // 20語版から40語版へは、持ち越しの復習語だけを引き継いでDAY 1から始める。
+      // 旧600語版から2026年版へは、持ち越しの復習語だけを引き継いでDAY 1から始める。
       const legacy = JSON.parse(localStorage.getItem(DAILY_LEGACY_KEY) || "null");
       return legacy && typeof legacy === "object" && Array.isArray(legacy.pendingReview)
         ? { ...empty, pendingReview: [...new Set(legacy.pendingReview)] }
@@ -32,7 +32,7 @@ function saveDaily() {
 
 // 固定の種から並べ替えるので、何度開いても同じ順番になり、日をまたいで単語が重複しない。
 export function buildDailyDays() {
-  const pool = state.words.filter((word) => word.level === DAILY_LEVEL);
+  const pool = state.words.filter((word) => word.level === DAILY_LEVEL && word.syllabus === "HSK3.0-2026");
   let seed = DAILY_SEED;
   const random = () => {
     seed = (seed * 1664525 + 1013904223) % 4294967296;
@@ -88,7 +88,7 @@ export function renderDailyBanner() {
   $("#daily-progress-label").textContent = daily.finished
     ? `全${daily.total}語を学習しました`
     : `DAY ${state.daily.day} / ${daily.days.length}　（学習済み ${daily.learned}語 / ${daily.total}語）`;
-  banner.textContent = daily.finished ? "300語を一周しました" : (daily.locked ? "今日の分は終わりました" : `今日の${daily.words.length}語`);
+  banner.textContent = daily.finished ? `${daily.total}語を一周しました` : (daily.locked ? "今日の分は終わりました" : `今日の${daily.words.length}語`);
   const note = $("#daily-banner-note");
   note.textContent = daily.finished
     ? `まちがえた${daily.review.length}語の復習か、リセットして最初からやり直せます。`
@@ -108,12 +108,12 @@ export function renderDaily() {
   if (!state.dailyDays.length) return;
   const daily = dailySnapshot();
   $("#daily-lead").textContent = daily.finished
-    ? "HSK3の300語を一周しました。持ち越した単語は、ここから続けて復習できます。"
+    ? `2026年版HSK3の${daily.total}語を一周しました。持ち越した単語は、ここから続けて復習できます。`
     : `その日の${daily.words.length}語と、前回まちがえた単語をまとめて出題します。最後まで解かずにやめた回は完了にならず、同じ問題がもう一度出ます。`;
   $("#daily-day-label").textContent = daily.finished ? `全${daily.days.length}日 完了` : `DAY ${state.daily.day} / ${daily.days.length}`;
   $("#daily-learned-label").textContent = `学習済み ${daily.learned}語 / ${daily.total}語`;
   $("#daily-page-progress-bar").style.width = `${Math.round((daily.learned / daily.total) * 100)}%`;
-  $("#daily-title").textContent = daily.finished ? "300語を一周しました" : (daily.locked ? `DAY ${daily.shownDay} は完了しました` : `今日の${daily.words.length}語`);
+  $("#daily-title").textContent = daily.finished ? `${daily.total}語を一周しました` : (daily.locked ? `DAY ${daily.shownDay} は完了しました` : `今日の${daily.words.length}語`);
   const status = [];
   if (daily.locked) status.push(`<p class="daily-note"><strong>今日の分は完了しています。</strong>`
     + `余力があれば「もう${daily.upcoming.length}語進む」で DAY ${state.daily.day} に進めます。`

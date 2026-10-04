@@ -1,0 +1,1282 @@
+{
+  "hsk2026-0503": {
+    "example": "这是我的爱人。",
+    "examplePinyin": "Zhè shì wǒ de àiren.",
+    "exampleMeaning": "この人は私の配偶者です。"
+  },
+  "hsk2026-0505": {
+    "example": "这件事很安全。",
+    "examplePinyin": "Zhè jiàn shì hěn ānquán.",
+    "exampleMeaning": "この件は安全だです。"
+  },
+  "hsk2026-0508": {
+    "example": "我第一次听说班级。",
+    "examplePinyin": "Wǒ dì yī cì tīngshuō bānjí.",
+    "exampleMeaning": "私はクラス、学級を初めて聞きました。"
+  },
+  "hsk2026-0509": {
+    "example": "我们明天要搬家。",
+    "examplePinyin": "Wǒmen míngtiān yào bānjiā.",
+    "exampleMeaning": "私たちは明日引っ越す予定です。"
+  },
+  "hsk2026-0510": {
+    "example": "这件事今天就办。",
+    "examplePinyin": "Zhè jiàn shì jīntiān jiù bàn.",
+    "exampleMeaning": "この件は今日すぐ処理します。"
+  },
+  "hsk2026-0513": {
+    "example": "我等了他半天。",
+    "examplePinyin": "Wǒ děng le tā bàntiān.",
+    "exampleMeaning": "私は彼を長い間待ちました。"
+  },
+  "hsk2026-0517": {
+    "example": "我第一次听说北。",
+    "examplePinyin": "Wǒ dì yī cì tīngshuō běi.",
+    "exampleMeaning": "私は北を初めて聞きました。"
+  },
+  "hsk2026-0520": {
+    "example": "我第一次听说笔记。",
+    "examplePinyin": "Wǒ dì yī cì tīngshuō bǐjì.",
+    "exampleMeaning": "私はノート、メモを初めて聞きました。"
+  },
+  "hsk2026-0523": {
+    "example": "比如，我们可以坐地铁去。",
+    "examplePinyin": "Bǐrú, wǒmen kěyǐ zuò dìtiě qù.",
+    "exampleMeaning": "例えば、地下鉄で行けます。"
+  },
+  "hsk2026-0526": {
+    "example": "天气变冷了。",
+    "examplePinyin": "Tiānqì biàn lěng le.",
+    "exampleMeaning": "天気が寒くなりました。"
+  },
+  "hsk2026-0527": {
+    "example": "这篇课文我读了两遍。",
+    "examplePinyin": "Zhè piān kèwén wǒ dú le liǎng biàn.",
+    "exampleMeaning": "この本文を2回通して読みました。"
+  },
+  "hsk2026-0528": {
+    "example": "雨变成了雪。",
+    "examplePinyin": "Yǔ biànchéng le xuě.",
+    "exampleMeaning": "雨が雪に変わりました。"
+  },
+  "hsk2026-0530": {
+    "example": "我们明天要表演。",
+    "examplePinyin": "Wǒmen míngtiān yào biǎoyǎn.",
+    "exampleMeaning": "私たちは明日演じる、上演する予定です。"
+  },
+  "hsk2026-0531": {
+    "example": "你还有别的问题吗？",
+    "examplePinyin": "Nǐ hái yǒu biéde wèntí ma?",
+    "exampleMeaning": "ほかに質問はありますか。"
+  },
+  "hsk2026-0534": {
+    "example": "水变成冰了。",
+    "examplePinyin": "Shuǐ biànchéng bīng le.",
+    "exampleMeaning": "水が氷になりました。"
+  },
+  "hsk2026-0535": {
+    "example": "我昨天买了冰激凌。",
+    "examplePinyin": "Wǒ zuótiān mǎi le bīngjīlíng.",
+    "exampleMeaning": "私は昨日アイスクリームを買いました。"
+  },
+  "hsk2026-0537": {
+    "example": "他是一位病人。",
+    "examplePinyin": "Tā shì yí wèi bìngrén.",
+    "exampleMeaning": "彼は病人、患者です。"
+  },
+  "hsk2026-0539": {
+    "example": "我的手机不见了。",
+    "examplePinyin": "Wǒ de shǒujī bújiàn le.",
+    "exampleMeaning": "私の携帯電話がなくなりました。"
+  },
+  "hsk2026-0540": {
+    "example": "你不用担心。",
+    "examplePinyin": "Nǐ búyòng dānxīn.",
+    "exampleMeaning": "心配する必要はありません。"
+  },
+  "hsk2026-0541": {
+    "example": "这件事很不同。",
+    "examplePinyin": "Zhè jiàn shì hěn bù tóng.",
+    "exampleMeaning": "この件は異なる、違うです。"
+  },
+  "hsk2026-0542": {
+    "example": "他不久就会回来。",
+    "examplePinyin": "Tā bùjiǔ jiù huì huílai.",
+    "exampleMeaning": "彼はまもなく戻ります。"
+  },
+  "hsk2026-0543": {
+    "example": "今天不行，明天再来吧。",
+    "examplePinyin": "Jīntiān bù xíng, míngtiān zài lái ba.",
+    "exampleMeaning": "今日はだめなので、明日また来ましょう。"
+  },
+  "hsk2026-0548": {
+    "example": "我们今天去草地。",
+    "examplePinyin": "Wǒmen jīntiān qù cǎodì.",
+    "exampleMeaning": "私たちは今日芝生、草地へ行きます。"
+  },
+  "hsk2026-0550": {
+    "example": "请你先查。",
+    "examplePinyin": "Qǐng nǐ xiān chá.",
+    "exampleMeaning": "まず調べるしてください。"
+  },
+  "hsk2026-0552": {
+    "example": "我们走了差不多两个小时。",
+    "examplePinyin": "Wǒmen zǒu le chàbuduō liǎng ge xiǎoshí.",
+    "exampleMeaning": "私たちはほぼ2時間歩きました。"
+  },
+  "hsk2026-0553": {
+    "example": "他已经尝了。",
+    "examplePinyin": "Tā yǐjīng cháng le.",
+    "exampleMeaning": "彼はすでに味わう、味見するしました。"
+  },
+  "hsk2026-0554": {
+    "example": "他常在这里学习。",
+    "examplePinyin": "Tā cháng zài zhèli xuéxí.",
+    "exampleMeaning": "彼はよく、しばしばここで勉強します。"
+  },
+  "hsk2026-0555": {
+    "example": "这件事很常见。",
+    "examplePinyin": "Zhè jiàn shì hěn cháng jiàn.",
+    "exampleMeaning": "この件はよく見られる、ありふれたです。"
+  },
+  "hsk2026-0556": {
+    "example": "这件事很常用。",
+    "examplePinyin": "Zhè jiàn shì hěn cháng yòng.",
+    "exampleMeaning": "この件はよく使われる、常用のです。"
+  },
+  "hsk2026-0557": {
+    "example": "他常常在这里学习。",
+    "examplePinyin": "Tā chángcháng zài zhèli xuéxí.",
+    "exampleMeaning": "彼はよく、しばしばここで勉強します。"
+  },
+  "hsk2026-0562": {
+    "example": "我们明天要出发。",
+    "examplePinyin": "Wǒmen míngtiān yào chūfā.",
+    "exampleMeaning": "私たちは明日出発する予定です。"
+  },
+  "hsk2026-0563": {
+    "example": "他已经出生了。",
+    "examplePinyin": "Tā yǐjīng chūshēng le.",
+    "exampleMeaning": "彼はすでに生まれるしました。"
+  },
+  "hsk2026-0564": {
+    "example": "请你先出院。",
+    "examplePinyin": "Qǐng nǐ xiān chūyuàn.",
+    "exampleMeaning": "まず退院するしてください。"
+  },
+  "hsk2026-0565": {
+    "example": "我们今天去初中。",
+    "examplePinyin": "Wǒmen jīntiān qù chūzhōng.",
+    "exampleMeaning": "私たちは今日中学校へ行きます。"
+  },
+  "hsk2026-0568": {
+    "example": "我们春天再见。",
+    "examplePinyin": "Wǒmen chūntiān zàijiàn.",
+    "exampleMeaning": "春にまた会いましょう。"
+  },
+  "hsk2026-0573": {
+    "example": "他大概十点到。",
+    "examplePinyin": "Tā dàgài shí diǎn dào.",
+    "exampleMeaning": "彼はたぶん10時に着きます。"
+  },
+  "hsk2026-0574": {
+    "example": "他是一位大人。",
+    "examplePinyin": "Tā shì yí wèi dàren.",
+    "exampleMeaning": "彼は大人です。"
+  },
+  "hsk2026-0575": {
+    "example": "我第一次听说大小。",
+    "examplePinyin": "Wǒ dì yī cì tīngshuō dàxiǎo.",
+    "exampleMeaning": "私は大きさを初めて聞きました。"
+  },
+  "hsk2026-0576": {
+    "example": "我第一次听说大熊猫。",
+    "examplePinyin": "Wǒ dì yī cì tīngshuō dàxióngmāo.",
+    "exampleMeaning": "私はパンダを初めて聞きました。"
+  },
+  "hsk2026-0577": {
+    "example": "我昨天买了大衣。",
+    "examplePinyin": "Wǒ zuótiān mǎi le dàyī.",
+    "exampleMeaning": "私は昨日コート、オーバーを買いました。"
+  },
+  "hsk2026-0582": {
+    "example": "春天到处都是花。",
+    "examplePinyin": "Chūntiān dàochù dōu shì huā.",
+    "exampleMeaning": "春はいたるところ花だらけです。"
+  },
+  "hsk2026-0583": {
+    "example": "他得到了一个机会。",
+    "examplePinyin": "Tā dédào le yí ge jīhuì.",
+    "exampleMeaning": "彼は機会を一つ得ました。"
+  },
+  "hsk2026-0584": {
+    "example": "我们明天要得到。",
+    "examplePinyin": "Wǒmen míngtiān yào dédào.",
+    "exampleMeaning": "私たちは明日得る、獲得する予定です。"
+  },
+  "hsk2026-0585": {
+    "example": "他已经得分了。",
+    "examplePinyin": "Tā yǐjīng défēn le.",
+    "exampleMeaning": "彼はすでに得点するしました。"
+  },
+  "hsk2026-0586": {
+    "example": "你有时间的话，我们一起去吧。",
+    "examplePinyin": "Nǐ yǒu shíjiān dehuà, wǒmen yìqǐ qù ba.",
+    "exampleMeaning": "時間があるなら、一緒に行きましょう。"
+  },
+  "hsk2026-0587": {
+    "example": "今天我得早点儿回家。",
+    "examplePinyin": "Jīntiān wǒ děi zǎodiǎnr huí jiā.",
+    "exampleMeaning": "今日は少し早く家に帰らなければなりません。"
+  },
+  "hsk2026-0589": {
+    "example": "他认真地写作业。",
+    "examplePinyin": "Tā rènzhēn de xiě zuòyè.",
+    "exampleMeaning": "彼は真剣に宿題をします。"
+  },
+  "hsk2026-0590": {
+    "example": "我第一次听说地点。",
+    "examplePinyin": "Wǒ dì yī cì tīngshuō dìdiǎn.",
+    "exampleMeaning": "私は場所、地点を初めて聞きました。"
+  },
+  "hsk2026-0593": {
+    "example": "今天家里停电了。",
+    "examplePinyin": "Jīntiān jiāli tíngdiàn le.",
+    "exampleMeaning": "今日、家は停電しました。"
+  },
+  "hsk2026-0595": {
+    "example": "我昨天买了电子书。",
+    "examplePinyin": "Wǒ zuótiān mǎi le diànzǐshū.",
+    "exampleMeaning": "私は昨日電子書籍を買いました。"
+  },
+  "hsk2026-0596": {
+    "example": "请你先丢。",
+    "examplePinyin": "Qǐng nǐ xiān diū.",
+    "exampleMeaning": "まずなくすしてください。"
+  },
+  "hsk2026-0598": {
+    "example": "我第一次听说东北。",
+    "examplePinyin": "Wǒ dì yī cì tīngshuō dōngběi.",
+    "exampleMeaning": "私は東北、北東を初めて聞きました。"
+  },
+  "hsk2026-0599": {
+    "example": "我第一次听说东方。",
+    "examplePinyin": "Wǒ dì yī cì tīngshuō dōngfāng.",
+    "exampleMeaning": "私は東方、東洋を初めて聞きました。"
+  },
+  "hsk2026-0600": {
+    "example": "我第一次听说东南。",
+    "examplePinyin": "Wǒ dì yī cì tīngshuō dōngnán.",
+    "exampleMeaning": "私は東南、南東を初めて聞きました。"
+  },
+  "hsk2026-0601": {
+    "example": "我们冬天再见。",
+    "examplePinyin": "Wǒmen dōngtiān zàijiàn.",
+    "exampleMeaning": "冬にまた会いましょう。"
+  },
+  "hsk2026-0602": {
+    "example": "他懂得怎么帮助别人。",
+    "examplePinyin": "Tā dǒngde zěnme bāngzhù biéren.",
+    "exampleMeaning": "彼はどのように人を助けるか分かっています。"
+  },
+  "hsk2026-0604": {
+    "example": "我们今天去动物园。",
+    "examplePinyin": "Wǒmen jīntiān qù dòngwùyuán.",
+    "exampleMeaning": "私たちは今日動物園へ行きます。"
+  },
+  "hsk2026-0606": {
+    "example": "我昨天买了短裤。",
+    "examplePinyin": "Wǒ zuótiān mǎi le duǎnkù.",
+    "exampleMeaning": "私は昨日半ズボン、ショートパンツを買いました。"
+  },
+  "hsk2026-0609": {
+    "example": "他已经对话了。",
+    "examplePinyin": "Tā yǐjīng duìhuà le.",
+    "exampleMeaning": "彼はすでに対話するしました。"
+  },
+  "hsk2026-0613": {
+    "example": "我昨天买了耳机。",
+    "examplePinyin": "Wǒ zuótiān mǎi le ěrjī.",
+    "exampleMeaning": "私は昨日イヤホン、ヘッドホンを買いました。"
+  },
+  "hsk2026-0616": {
+    "example": "昨天发生了一件大事。",
+    "examplePinyin": "Zuótiān fāshēng le yí jiàn dàshì.",
+    "exampleMeaning": "昨日、大きな出来事が起きました。"
+  },
+  "hsk2026-0618": {
+    "example": "他已经发展了。",
+    "examplePinyin": "Tā yǐjīng fāzhǎn le.",
+    "exampleMeaning": "彼はすでに発展するしました。"
+  },
+  "hsk2026-0620": {
+    "example": "我昨天买了方便面。",
+    "examplePinyin": "Wǒ zuótiān mǎi le fāngbiànmiàn.",
+    "exampleMeaning": "私は昨日インスタントラーメンを買いました。"
+  },
+  "hsk2026-0621": {
+    "example": "我第一次听说方法。",
+    "examplePinyin": "Wǒ dì yī cì tīngshuō fāngfǎ.",
+    "exampleMeaning": "私は方法を初めて聞きました。"
+  },
+  "hsk2026-0622": {
+    "example": "我第一次听说方向。",
+    "examplePinyin": "Wǒ dì yī cì tīngshuō fāngxiàng.",
+    "exampleMeaning": "私は方向を初めて聞きました。"
+  },
+  "hsk2026-0623": {
+    "example": "我第一次听说房子。",
+    "examplePinyin": "Wǒ dì yī cì tīngshuō fángzi.",
+    "exampleMeaning": "私は家を初めて聞きました。"
+  },
+  "hsk2026-0625": {
+    "example": "我们明天要放假。",
+    "examplePinyin": "Wǒmen míngtiān yào fàngjià.",
+    "exampleMeaning": "私たちは明日休みになる、休暇を取る予定です。"
+  },
+  "hsk2026-0627": {
+    "example": "他已经放学了。",
+    "examplePinyin": "Tā yǐjīng fàngxué le.",
+    "exampleMeaning": "彼はすでに学校が終わる、下校するしました。"
+  },
+  "hsk2026-0628": {
+    "example": "请你先分开。",
+    "examplePinyin": "Qǐng nǐ xiān fēnkāi.",
+    "exampleMeaning": "まず分ける、別れるしてください。"
+  },
+  "hsk2026-0629": {
+    "example": "我第一次听说风。",
+    "examplePinyin": "Wǒ dì yī cì tīngshuō fēng.",
+    "exampleMeaning": "私は風を初めて聞きました。"
+  },
+  "hsk2026-0630": {
+    "example": "我收到了一封信。",
+    "examplePinyin": "Wǒ shōudào le yì fēng xìn.",
+    "exampleMeaning": "私は手紙を1通受け取りました。"
+  },
+  "hsk2026-0631": {
+    "example": "我第一次听说夫妻。",
+    "examplePinyin": "Wǒ dì yī cì tīngshuō fūqī.",
+    "exampleMeaning": "私は夫婦を初めて聞きました。"
+  },
+  "hsk2026-0632": {
+    "example": "我们明天要服务。",
+    "examplePinyin": "Wǒmen míngtiān yào fúwù.",
+    "exampleMeaning": "私たちは明日サービスする予定です。"
+  },
+  "hsk2026-0635": {
+    "example": "我们该出发了。",
+    "examplePinyin": "Wǒmen gāi chūfā le.",
+    "exampleMeaning": "そろそろ出発すべきです。"
+  },
+  "hsk2026-0638": {
+    "example": "我感到很高兴。",
+    "examplePinyin": "Wǒ gǎndào hěn gāoxìng.",
+    "exampleMeaning": "私はとてもうれしく感じます。"
+  },
+  "hsk2026-0640": {
+    "example": "你在干什么？",
+    "examplePinyin": "Nǐ zài gàn shénme?",
+    "exampleMeaning": "何をしているのですか。"
+  },
+  "hsk2026-0641": {
+    "example": "我刚到家。",
+    "examplePinyin": "Wǒ gāng dào jiā.",
+    "exampleMeaning": "私はたった今家に着きました。"
+  },
+  "hsk2026-0643": {
+    "example": "他刚刚出去。",
+    "examplePinyin": "Tā gānggāng chūqu.",
+    "exampleMeaning": "彼はたった今出て行きました。"
+  },
+  "hsk2026-0644": {
+    "example": "我第一次听说高铁。",
+    "examplePinyin": "Wǒ dì yī cì tīngshuō gāotiě.",
+    "exampleMeaning": "私は高速鉄道を初めて聞きました。"
+  },
+  "hsk2026-0649": {
+    "example": "我们工作日再见。",
+    "examplePinyin": "Wǒmen gōngzuòrì zàijiàn.",
+    "exampleMeaning": "平日、勤務日にまた会いましょう。"
+  },
+  "hsk2026-0651": {
+    "example": "请你先刮。",
+    "examplePinyin": "Qǐng nǐ xiān guā.",
+    "exampleMeaning": "まず吹くしてください。"
+  },
+  "hsk2026-0653": {
+    "example": "我们明天要关机。",
+    "examplePinyin": "Wǒmen míngtiān yào guānjī.",
+    "exampleMeaning": "私たちは明日電源を切る予定です。"
+  },
+  "hsk2026-0657": {
+    "example": "他已经关注了。",
+    "examplePinyin": "Tā yǐjīng guānzhù le.",
+    "exampleMeaning": "彼はすでに注目する、フォローするしました。"
+  },
+  "hsk2026-0659": {
+    "example": "我们一起过节。",
+    "examplePinyin": "Wǒmen yìqǐ guòjié.",
+    "exampleMeaning": "私たちは一緒に祝日を祝います。"
+  },
+  "hsk2026-0660": {
+    "example": "我第一次听说过去。",
+    "examplePinyin": "Wǒ dì yī cì tīngshuō guòqù.",
+    "exampleMeaning": "私は過去を初めて聞きました。"
+  },
+  "hsk2026-0661": {
+    "example": "我第一次听说海。",
+    "examplePinyin": "Wǒ dì yī cì tīngshuō hǎi.",
+    "exampleMeaning": "私は海を初めて聞きました。"
+  },
+  "hsk2026-0663": {
+    "example": "公园里有好多人。",
+    "examplePinyin": "Gōngyuán li yǒu hǎoduō rén.",
+    "exampleMeaning": "公園にはとても大勢の人がいます。"
+  },
+  "hsk2026-0664": {
+    "example": "好久不见。",
+    "examplePinyin": "Hǎojiǔ bújiàn.",
+    "exampleMeaning": "お久しぶりです。"
+  },
+  "hsk2026-0665": {
+    "example": "他好像不在家。",
+    "examplePinyin": "Tā hǎoxiàng bú zài jiā.",
+    "exampleMeaning": "彼は家にいないようです。"
+  },
+  "hsk2026-0666": {
+    "example": "我第一次听说号码。",
+    "examplePinyin": "Wǒ dì yī cì tīngshuō hàomǎ.",
+    "exampleMeaning": "私は番号を初めて聞きました。"
+  },
+  "hsk2026-0667": {
+    "example": "我第一次听说河。",
+    "examplePinyin": "Wǒ dì yī cì tīngshuō hé.",
+    "exampleMeaning": "私は川を初めて聞きました。"
+  },
+  "hsk2026-0668": {
+    "example": "这件事很合适。",
+    "examplePinyin": "Zhè jiàn shì hěn héshì.",
+    "exampleMeaning": "この件はふさわしい、適切だです。"
+  },
+  "hsk2026-0670": {
+    "example": "我第一次听说红绿灯。",
+    "examplePinyin": "Wǒ dì yī cì tīngshuō hóng-lǜdēng.",
+    "exampleMeaning": "私は信号機を初めて聞きました。"
+  },
+  "hsk2026-0672": {
+    "example": "我们后年再见。",
+    "examplePinyin": "Wǒmen hòunián zàijiàn.",
+    "exampleMeaning": "再来年にまた会いましょう。"
+  },
+  "hsk2026-0673": {
+    "example": "我们后天再见。",
+    "examplePinyin": "Wǒmen hòutiān zàijiàn.",
+    "exampleMeaning": "明後日にまた会いましょう。"
+  },
+  "hsk2026-0675": {
+    "example": "我们今天去花园。",
+    "examplePinyin": "Wǒmen jīntiān qù huāyuán.",
+    "exampleMeaning": "私たちは今日庭園、花園へ行きます。"
+  },
+  "hsk2026-0676": {
+    "example": "他是一位画家。",
+    "examplePinyin": "Tā shì yí wèi huàjiā.",
+    "exampleMeaning": "彼は画家です。"
+  },
+  "hsk2026-0681": {
+    "example": "我第一次听说黄色。",
+    "examplePinyin": "Wǒ dì yī cì tīngshuō huángsè.",
+    "exampleMeaning": "私は黄色を初めて聞きました。"
+  },
+  "hsk2026-0683": {
+    "example": "我第一次听说会。",
+    "examplePinyin": "Wǒ dì yī cì tīngshuō huì.",
+    "exampleMeaning": "私は会、集まりを初めて聞きました。"
+  },
+  "hsk2026-0685": {
+    "example": "你可以打电话或发邮件。",
+    "examplePinyin": "Nǐ kěyǐ dǎ diànhuà huò fā yóujiàn.",
+    "exampleMeaning": "電話するかメールを送れます。"
+  },
+  "hsk2026-0687": {
+    "example": "我昨天买了鸡。",
+    "examplePinyin": "Wǒ zuótiān mǎi le jī.",
+    "exampleMeaning": "私は昨日鶏、ニワトリを買いました。"
+  },
+  "hsk2026-0691": {
+    "example": "别急，慢慢来。",
+    "examplePinyin": "Bié jí, mànmān lái.",
+    "exampleMeaning": "焦らず、ゆっくりやりましょう。"
+  },
+  "hsk2026-0692": {
+    "example": "我们明天要记。",
+    "examplePinyin": "Wǒmen míngtiān yào jì.",
+    "exampleMeaning": "私たちは明日覚える予定です。"
+  },
+  "hsk2026-0693": {
+    "example": "我第一次听说季。",
+    "examplePinyin": "Wǒ dì yī cì tīngshuō jì.",
+    "exampleMeaning": "私は季節を初めて聞きました。"
+  },
+  "hsk2026-0695": {
+    "example": "请你先加。",
+    "examplePinyin": "Qǐng nǐ xiān jiā.",
+    "exampleMeaning": "まず加える、足すしてください。"
+  },
+  "hsk2026-0696": {
+    "example": "我们假期再见。",
+    "examplePinyin": "Wǒmen jiàqī zàijiàn.",
+    "exampleMeaning": "休暇、休みにまた会いましょう。"
+  },
+  "hsk2026-0697": {
+    "example": "他已经坚持了。",
+    "examplePinyin": "Tā yǐjīng jiānchí le.",
+    "exampleMeaning": "彼はすでに頑張り続ける、堅持するしました。"
+  },
+  "hsk2026-0700": {
+    "example": "请你先检票。",
+    "examplePinyin": "Qǐng nǐ xiān jiǎnpiào.",
+    "exampleMeaning": "まず改札する、切符を確認するしてください。"
+  },
+  "hsk2026-0707": {
+    "example": "我们今天去街。",
+    "examplePinyin": "Wǒmen jīntiān qù jiē.",
+    "exampleMeaning": "私たちは今日通り、街へ行きます。"
+  },
+  "hsk2026-0708": {
+    "example": "他已经节了。",
+    "examplePinyin": "Tā yǐjīng jié le.",
+    "exampleMeaning": "彼はすでに～時限、～区切りしました。"
+  },
+  "hsk2026-0714": {
+    "example": "我第一次听说姐妹。",
+    "examplePinyin": "Wǒ dì yī cì tīngshuō jiěmèi.",
+    "exampleMeaning": "私は姉妹を初めて聞きました。"
+  },
+  "hsk2026-0716": {
+    "example": "我买了两斤苹果。",
+    "examplePinyin": "Wǒ mǎi le liǎng jīn píngguǒ.",
+    "exampleMeaning": "私はリンゴを1キロ買いました。"
+  },
+  "hsk2026-0720": {
+    "example": "我昨天买了酒。",
+    "examplePinyin": "Wǒ zuótiān mǎi le jiǔ.",
+    "exampleMeaning": "私は昨日酒を買いました。"
+  },
+  "hsk2026-0722": {
+    "example": "请再说一句。",
+    "examplePinyin": "Qǐng zài shuō yí jù.",
+    "exampleMeaning": "もう一言言ってください。"
+  },
+  "hsk2026-0725": {
+    "example": "我昨天买了卡。",
+    "examplePinyin": "Wǒ zuótiān mǎi le kǎ.",
+    "exampleMeaning": "私は昨日カードを買いました。"
+  },
+  "hsk2026-0726": {
+    "example": "他已经开花了。",
+    "examplePinyin": "Tā yǐjīng kāihuā le.",
+    "exampleMeaning": "彼はすでに花が咲くしました。"
+  },
+  "hsk2026-0727": {
+    "example": "请你先开会。",
+    "examplePinyin": "Qǐng nǐ xiān kāihuì.",
+    "exampleMeaning": "まず会議を開く、会議に出るしてください。"
+  },
+  "hsk2026-0728": {
+    "example": "我们明天要开机。",
+    "examplePinyin": "Wǒmen míngtiān yào kāijī.",
+    "exampleMeaning": "私たちは明日電源を入れる予定です。"
+  },
+  "hsk2026-0729": {
+    "example": "收到礼物，我很开心。",
+    "examplePinyin": "Shōudào lǐwù, wǒ hěn kāixīn.",
+    "exampleMeaning": "プレゼントをもらい、私はとてもうれしいです。"
+  },
+  "hsk2026-0730": {
+    "example": "看来今天要下雨。",
+    "examplePinyin": "Kànlai jīntiān yào xiàyǔ.",
+    "exampleMeaning": "どうやら今日は雨が降りそうです。"
+  },
+  "hsk2026-0731": {
+    "example": "这个办法可有用了。",
+    "examplePinyin": "Zhège bànfǎ kě yǒuyòng le.",
+    "exampleMeaning": "この方法は本当に役立ちます。"
+  },
+  "hsk2026-0734": {
+    "example": "我想去，可是今天没时间。",
+    "examplePinyin": "Wǒ xiǎng qù, kěshì jīntiān méi shíjiān.",
+    "exampleMeaning": "行きたいですが、今日は時間がありません。"
+  },
+  "hsk2026-0736": {
+    "example": "我昨天买了课本。",
+    "examplePinyin": "Wǒ zuótiān mǎi le kèběn.",
+    "exampleMeaning": "私は昨日教科書を買いました。"
+  },
+  "hsk2026-0738": {
+    "example": "我第一次听说课文。",
+    "examplePinyin": "Wǒ dì yī cì tīngshuō kèwén.",
+    "exampleMeaning": "私は本文、教材文を初めて聞きました。"
+  },
+  "hsk2026-0742": {
+    "example": "我昨天买了矿泉水。",
+    "examplePinyin": "Wǒ zuótiān mǎi le kuàngquánshuǐ.",
+    "exampleMeaning": "私は昨日ミネラルウォーターを買いました。"
+  },
+  "hsk2026-0743": {
+    "example": "她来自日本。",
+    "examplePinyin": "Tā láizì Rìběn.",
+    "exampleMeaning": "彼女は日本出身です。"
+  },
+  "hsk2026-0746": {
+    "example": "他是一位老人。",
+    "examplePinyin": "Tā shì yí wèi lǎorén.",
+    "exampleMeaning": "彼はお年寄り、老人です。"
+  },
+  "hsk2026-0751": {
+    "example": "他已经练了。",
+    "examplePinyin": "Tā yǐjīng liàn le.",
+    "exampleMeaning": "彼はすでに練習するしました。"
+  },
+  "hsk2026-0753": {
+    "example": "这件事很凉快。",
+    "examplePinyin": "Zhè jiàn shì hěn liángkuai.",
+    "exampleMeaning": "この件は涼しいです。"
+  },
+  "hsk2026-0755": {
+    "example": "我们明天要聊。",
+    "examplePinyin": "Wǒmen míngtiān yào liáo.",
+    "exampleMeaning": "私たちは明日おしゃべりする予定です。"
+  },
+  "hsk2026-0756": {
+    "example": "他已经聊天儿了。",
+    "examplePinyin": "Tā yǐjīng liáotiānr le.",
+    "exampleMeaning": "彼はすでにおしゃべりする、雑談するしました。"
+  },
+  "hsk2026-0760": {
+    "example": "他是一位留学生。",
+    "examplePinyin": "Tā shì yí wèi liúxuéshēng.",
+    "exampleMeaning": "彼は留学生です。"
+  },
+  "hsk2026-0761": {
+    "example": "我第一次听说楼梯。",
+    "examplePinyin": "Wǒ dì yī cì tīngshuō lóutī.",
+    "exampleMeaning": "私は階段を初めて聞きました。"
+  },
+  "hsk2026-0762": {
+    "example": "我第一次听说路边。",
+    "examplePinyin": "Wǒ dì yī cì tīngshuō lùbiān.",
+    "exampleMeaning": "私は道端を初めて聞きました。"
+  },
+  "hsk2026-0763": {
+    "example": "我第一次听说路口。",
+    "examplePinyin": "Wǒ dì yī cì tīngshuō lùkǒu.",
+    "exampleMeaning": "私は交差点を初めて聞きました。"
+  },
+  "hsk2026-0765": {
+    "example": "我第一次听说马路。",
+    "examplePinyin": "Wǒ dì yī cì tīngshuō mǎlù.",
+    "exampleMeaning": "私は道路を初めて聞きました。"
+  },
+  "hsk2026-0768": {
+    "example": "这支笔五毛钱。",
+    "examplePinyin": "Zhè zhī bǐ wǔ máo qián.",
+    "exampleMeaning": "このペンは0.5元です。"
+  },
+  "hsk2026-0770": {
+    "example": "我第一次听说面前。",
+    "examplePinyin": "Wǒ dì yī cì tīngshuō miànqián.",
+    "exampleMeaning": "私は目の前、面前を初めて聞きました。"
+  },
+  "hsk2026-0772": {
+    "example": "我第一次听说名单。",
+    "examplePinyin": "Wǒ dì yī cì tīngshuō míngdān.",
+    "exampleMeaning": "私は名簿、リストを初めて聞きました。"
+  },
+  "hsk2026-0773": {
+    "example": "他是一位名人。",
+    "examplePinyin": "Tā shì yí wèi míngrén.",
+    "exampleMeaning": "彼は有名人です。"
+  },
+  "hsk2026-0776": {
+    "example": "我第一次听说南方。",
+    "examplePinyin": "Wǒ dì yī cì tīngshuō nánfāng.",
+    "exampleMeaning": "私は南方、南部を初めて聞きました。"
+  },
+  "hsk2026-0778": {
+    "example": "这件事很难看。",
+    "examplePinyin": "Zhè jiàn shì hěn nánkàn.",
+    "exampleMeaning": "この件は醜い、見苦しいです。"
+  },
+  "hsk2026-0779": {
+    "example": "他是一位男人。",
+    "examplePinyin": "Tā shì yí wèi nánrén.",
+    "exampleMeaning": "彼は男性、男の人です。"
+  },
+  "hsk2026-0780": {
+    "example": "他是一位男生。",
+    "examplePinyin": "Tā shì yí wèi nánshēng.",
+    "exampleMeaning": "彼は男子学生、男の子です。"
+  },
+  "hsk2026-0781": {
+    "example": "我第一次听说难题。",
+    "examplePinyin": "Wǒ dì yī cì tīngshuō nántí.",
+    "exampleMeaning": "私は難問を初めて聞きました。"
+  },
+  "hsk2026-0782": {
+    "example": "这件事很难听。",
+    "examplePinyin": "Zhè jiàn shì hěn nántīng.",
+    "exampleMeaning": "この件は聞き苦しいです。"
+  },
+  "hsk2026-0785": {
+    "example": "草地上有三头牛。",
+    "examplePinyin": "Cǎodì shàng yǒu sān tóu niú.",
+    "exampleMeaning": "草地に牛が3頭います。"
+  },
+  "hsk2026-0787": {
+    "example": "他是一位女人。",
+    "examplePinyin": "Tā shì yí wèi nǚrén.",
+    "exampleMeaning": "彼は女性、女の人です。"
+  },
+  "hsk2026-0788": {
+    "example": "他是一位女生。",
+    "examplePinyin": "Tā shì yí wèi nǚshēng.",
+    "exampleMeaning": "彼は女子学生、女の子です。"
+  },
+  "hsk2026-0789": {
+    "example": "请你先爬。",
+    "examplePinyin": "Qǐng nǐ xiān pá.",
+    "exampleMeaning": "まず登るしてください。"
+  },
+  "hsk2026-0790": {
+    "example": "我很怕黑。",
+    "examplePinyin": "Wǒ hěn pà hēi.",
+    "exampleMeaning": "私は暗闇がとても怖いです。"
+  },
+  "hsk2026-0791": {
+    "example": "他已经拍照了。",
+    "examplePinyin": "Tā yǐjīng pāizhào le.",
+    "exampleMeaning": "彼はすでに写真を撮るしました。"
+  },
+  "hsk2026-0795": {
+    "example": "我第一次听说平时。",
+    "examplePinyin": "Wǒ dì yī cì tīngshuō píngshí.",
+    "exampleMeaning": "私はふだん、平素を初めて聞きました。"
+  },
+  "hsk2026-0801": {
+    "example": "我们明天要起。",
+    "examplePinyin": "Wǒmen míngtiān yào qǐ.",
+    "exampleMeaning": "私たちは明日起きる、立ち上がる予定です。"
+  },
+  "hsk2026-0803": {
+    "example": "我第一次听说汽车。",
+    "examplePinyin": "Wǒ dì yī cì tīngshuō qìchē.",
+    "exampleMeaning": "私は自動車を初めて聞きました。"
+  },
+  "hsk2026-0805": {
+    "example": "那是前年的事。",
+    "examplePinyin": "Nà shì qiánnián de shì.",
+    "exampleMeaning": "それは一昨年のことです。"
+  },
+  "hsk2026-0806": {
+    "example": "那是前天的事。",
+    "examplePinyin": "Nà shì qiántiān de shì.",
+    "exampleMeaning": "それは一昨日のことです。"
+  },
+  "hsk2026-0809": {
+    "example": "他已经请客了。",
+    "examplePinyin": "Tā yǐjīng qǐngkè le.",
+    "exampleMeaning": "彼はすでにご馳走する、おごるしました。"
+  },
+  "hsk2026-0810": {
+    "example": "我们秋天再见。",
+    "examplePinyin": "Wǒmen qiūtiān zàijiàn.",
+    "exampleMeaning": "秋にまた会いましょう。"
+  },
+  "hsk2026-0811": {
+    "example": "我们今天去球场。",
+    "examplePinyin": "Wǒmen jīntiān qù qiúchǎng.",
+    "exampleMeaning": "私たちは今日球場、コートへ行きます。"
+  },
+  "hsk2026-0815": {
+    "example": "我认得那个人。",
+    "examplePinyin": "Wǒ rènde nàge rén.",
+    "exampleMeaning": "私はあの人を見知っています。"
+  },
+  "hsk2026-0821": {
+    "example": "请你先扫。",
+    "examplePinyin": "Qǐng nǐ xiān sǎo.",
+    "exampleMeaning": "まず掃くしてください。"
+  },
+  "hsk2026-0822": {
+    "example": "我昨天买了沙发。",
+    "examplePinyin": "Wǒ zuótiān mǎi le shāfā.",
+    "exampleMeaning": "私は昨日ソファーを買いました。"
+  },
+  "hsk2026-0823": {
+    "example": "我第一次听说山。",
+    "examplePinyin": "Wǒ dì yī cì tīngshuō shān.",
+    "exampleMeaning": "私は山を初めて聞きました。"
+  },
+  "hsk2026-0824": {
+    "example": "我昨天买了上衣。",
+    "examplePinyin": "Wǒ zuótiān mǎi le shàngyī.",
+    "exampleMeaning": "私は昨日上着を買いました。"
+  },
+  "hsk2026-0825": {
+    "example": "我昨天买了勺子。",
+    "examplePinyin": "Wǒ zuótiān mǎi le sháozi.",
+    "exampleMeaning": "私は昨日スプーンを買いました。"
+  },
+  "hsk2026-0826": {
+    "example": "我第一次听说身边。",
+    "examplePinyin": "Wǒ dì yī cì tīngshuō shēnbiān.",
+    "exampleMeaning": "私はそば、身の回りを初めて聞きました。"
+  },
+  "hsk2026-0827": {
+    "example": "我第一次听说身高。",
+    "examplePinyin": "Wǒ dì yī cì tīngshuō shēngāo.",
+    "exampleMeaning": "私は身長を初めて聞きました。"
+  },
+  "hsk2026-0828": {
+    "example": "他大叫了一声。",
+    "examplePinyin": "Tā dà jiào le yì shēng.",
+    "exampleMeaning": "彼は大声で一声叫びました。"
+  },
+  "hsk2026-0829": {
+    "example": "他已经生活了。",
+    "examplePinyin": "Tā yǐjīng shēnghuó le.",
+    "exampleMeaning": "彼はすでに生活するしました。"
+  },
+  "hsk2026-0832": {
+    "example": "我第一次听说市。",
+    "examplePinyin": "Wǒ dì yī cì tīngshuō shì.",
+    "exampleMeaning": "私は市を初めて聞きました。"
+  },
+  "hsk2026-0834": {
+    "example": "我第一次听说室。",
+    "examplePinyin": "Wǒ dì yī cì tīngshuō shì.",
+    "exampleMeaning": "私は室、部屋を初めて聞きました。"
+  },
+  "hsk2026-0836": {
+    "example": "他已经收了。",
+    "examplePinyin": "Tā yǐjīng shōu le.",
+    "exampleMeaning": "彼はすでに受け取る、集めるしました。"
+  },
+  "hsk2026-0837": {
+    "example": "我收到了你的邮件。",
+    "examplePinyin": "Wǒ shōudào le nǐ de yóujiàn.",
+    "exampleMeaning": "あなたのメールを受け取りました。"
+  },
+  "hsk2026-0838": {
+    "example": "他受了伤。",
+    "examplePinyin": "Tā shòu le shāng.",
+    "exampleMeaning": "彼はけがをしました。"
+  },
+  "hsk2026-0840": {
+    "example": "这部电影受到大家的喜爱。",
+    "examplePinyin": "Zhè bù diàn yǐng shòu dào dà jiā de xǐ ài.",
+    "exampleMeaning": "この映画はみんなに愛されています。"
+  },
+  "hsk2026-0844": {
+    "example": "请你先刷。",
+    "examplePinyin": "Qǐng nǐ xiān shuā.",
+    "exampleMeaning": "まず磨く、ブラシをかけるしてください。"
+  },
+  "hsk2026-0848": {
+    "example": "我第一次听说四季。",
+    "examplePinyin": "Wǒ dì yī cì tīngshuō sìjì.",
+    "exampleMeaning": "私は四季を初めて聞きました。"
+  },
+  "hsk2026-0850": {
+    "example": "我昨天买了糖。",
+    "examplePinyin": "Wǒ zuótiān mǎi le táng.",
+    "exampleMeaning": "私は昨日砂糖を買いました。"
+  },
+  "hsk2026-0854": {
+    "example": "我们今天去体育馆。",
+    "examplePinyin": "Wǒmen jīntiān qù tǐyùguǎn.",
+    "exampleMeaning": "私たちは今日体育館へ行きます。"
+  },
+  "hsk2026-0856": {
+    "example": "我们明天要跳。",
+    "examplePinyin": "Wǒmen míngtiān yào tiào.",
+    "exampleMeaning": "私たちは明日跳ぶ予定です。"
+  },
+  "hsk2026-0857": {
+    "example": "我听说他明天来。",
+    "examplePinyin": "Wǒ tīngshuō tā míngtiān lái.",
+    "exampleMeaning": "彼は明日来るそうです。"
+  },
+  "hsk2026-0858": {
+    "example": "这件衣服挺好看的。",
+    "examplePinyin": "Zhè jiàn yīfu tǐng hǎokàn de.",
+    "exampleMeaning": "この服はなかなかきれいです。"
+  },
+  "hsk2026-0865": {
+    "example": "我第一次听说外地。",
+    "examplePinyin": "Wǒ dì yī cì tīngshuō wàidì.",
+    "exampleMeaning": "私はよその土地、他地方を初めて聞きました。"
+  },
+  "hsk2026-0866": {
+    "example": "我昨天买了外卖。",
+    "examplePinyin": "Wǒ zuótiān mǎi le wàimài.",
+    "exampleMeaning": "私は昨日出前、テイクアウトを買いました。"
+  },
+  "hsk2026-0867": {
+    "example": "我第一次听说外语。",
+    "examplePinyin": "Wǒ dì yī cì tīngshuō wàiyǔ.",
+    "exampleMeaning": "私は外国語を初めて聞きました。"
+  },
+  "hsk2026-0870": {
+    "example": "我们晚点再见。",
+    "examplePinyin": "Wǒmen wǎndiǎn zàijiàn.",
+    "exampleMeaning": "遅れるにまた会いましょう。"
+  },
+  "hsk2026-0871": {
+    "example": "我第一次听说晚会。",
+    "examplePinyin": "Wǒ dì yī cì tīngshuō wǎnhuì.",
+    "exampleMeaning": "私は夜会、パーティーを初めて聞きました。"
+  },
+  "hsk2026-0872": {
+    "example": "我第一次听说网球。",
+    "examplePinyin": "Wǒ dì yī cì tīngshuō wǎngqiú.",
+    "exampleMeaning": "私はテニスを初めて聞きました。"
+  },
+  "hsk2026-0873": {
+    "example": "我第一次听说网站。",
+    "examplePinyin": "Wǒ dì yī cì tīngshuō wǎngzhàn.",
+    "exampleMeaning": "私はウェブサイトを初めて聞きました。"
+  },
+  "hsk2026-0877": {
+    "example": "我们今天去卫生间。",
+    "examplePinyin": "Wǒmen jīntiān qù wèishēngjiān.",
+    "exampleMeaning": "私たちは今日トイレ、洗面所へ行きます。"
+  },
+  "hsk2026-0879": {
+    "example": "我第一次听说屋子。",
+    "examplePinyin": "Wǒ dì yī cì tīngshuō wūzi.",
+    "exampleMeaning": "私は部屋を初めて聞きました。"
+  },
+  "hsk2026-0881": {
+    "example": "我第一次听说西北。",
+    "examplePinyin": "Wǒ dì yī cì tīngshuō xīběi.",
+    "exampleMeaning": "私は北西を初めて聞きました。"
+  },
+  "hsk2026-0882": {
+    "example": "我第一次听说西方。",
+    "examplePinyin": "Wǒ dì yī cì tīngshuō xīfāng.",
+    "exampleMeaning": "私は西洋、西方を初めて聞きました。"
+  },
+  "hsk2026-0884": {
+    "example": "我第一次听说西南。",
+    "examplePinyin": "Wǒ dì yī cì tīngshuō xīnán.",
+    "exampleMeaning": "私は南西を初めて聞きました。"
+  },
+  "hsk2026-0886": {
+    "example": "她很喜爱中国文化。",
+    "examplePinyin": "Tā hěn xǐ ài Zhōng guó wén huà.",
+    "exampleMeaning": "彼女は中国文化が大好きです。"
+  },
+  "hsk2026-0887": {
+    "example": "我第一次听说洗衣机。",
+    "examplePinyin": "Wǒ dì yī cì tīngshuō xǐyījī.",
+    "exampleMeaning": "私は洗濯機を初めて聞きました。"
+  },
+  "hsk2026-0889": {
+    "example": "我们夏天再见。",
+    "examplePinyin": "Wǒmen xiàtiān zàijiàn.",
+    "exampleMeaning": "夏にまた会いましょう。"
+  },
+  "hsk2026-0893": {
+    "example": "我昨天买了箱子。",
+    "examplePinyin": "Wǒ zuótiān mǎi le xiāngzi.",
+    "exampleMeaning": "私は昨日箱、スーツケースを買いました。"
+  },
+  "hsk2026-0896": {
+    "example": "我昨天买了相机。",
+    "examplePinyin": "Wǒ zuótiān mǎi le xiàngjī.",
+    "exampleMeaning": "私は昨日カメラを買いました。"
+  },
+  "hsk2026-0897": {
+    "example": "我们今天去小区。",
+    "examplePinyin": "Wǒmen jīntiān qù xiǎoqū.",
+    "exampleMeaning": "私たちは今日団地、住宅地へ行きます。"
+  },
+  "hsk2026-0899": {
+    "example": "我们今天去校园。",
+    "examplePinyin": "Wǒmen jīntiān qù xiàoyuán.",
+    "exampleMeaning": "私たちは今日キャンパス、校庭へ行きます。"
+  },
+  "hsk2026-0901": {
+    "example": "我昨天买了鞋。",
+    "examplePinyin": "Wǒ zuótiān mǎi le xié.",
+    "exampleMeaning": "私は昨日靴を買いました。"
+  },
+  "hsk2026-0902": {
+    "example": "我第一次听说心里。",
+    "examplePinyin": "Wǒ dì yī cì tīngshuō xīnlǐ.",
+    "exampleMeaning": "私は心の中を初めて聞きました。"
+  },
+  "hsk2026-0903": {
+    "example": "我们新年再见。",
+    "examplePinyin": "Wǒmen xīnnián zàijiàn.",
+    "exampleMeaning": "新年にまた会いましょう。"
+  },
+  "hsk2026-0906": {
+    "example": "他已经信了。",
+    "examplePinyin": "Tā yǐjīng xìn le.",
+    "exampleMeaning": "彼はすでに手紙しました。"
+  },
+  "hsk2026-0908": {
+    "example": "这样做也行。",
+    "examplePinyin": "Zhèyàng zuò yě xíng.",
+    "exampleMeaning": "このようにしても大丈夫です。"
+  },
+  "hsk2026-0909": {
+    "example": "我昨天买了行李。",
+    "examplePinyin": "Wǒ zuótiān mǎi le xíngli.",
+    "exampleMeaning": "私は昨日荷物を買いました。"
+  },
+  "hsk2026-0910": {
+    "example": "我第一次听说兴趣。",
+    "examplePinyin": "Wǒ dì yī cì tīngshuō xìngqù.",
+    "exampleMeaning": "私は興味を初めて聞きました。"
+  },
+  "hsk2026-0911": {
+    "example": "请你先休假。",
+    "examplePinyin": "Qǐng nǐ xiān xiūjià.",
+    "exampleMeaning": "まず休暇を取るしてください。"
+  },
+  "hsk2026-0913": {
+    "example": "我们明天要选。",
+    "examplePinyin": "Wǒmen míngtiān yào xuǎn.",
+    "exampleMeaning": "私たちは明日選ぶ予定です。"
+  },
+  "hsk2026-0915": {
+    "example": "我们学期再见。",
+    "examplePinyin": "Wǒmen xuéqī zàijiàn.",
+    "exampleMeaning": "学期にまた会いましょう。"
+  },
+  "hsk2026-0916": {
+    "example": "我第一次听说牙。",
+    "examplePinyin": "Wǒ dì yī cì tīngshuō yá.",
+    "exampleMeaning": "私は歯を初めて聞きました。"
+  },
+  "hsk2026-0917": {
+    "example": "我昨天买了牙刷。",
+    "examplePinyin": "Wǒ zuótiān mǎi le yáshuā.",
+    "exampleMeaning": "私は昨日歯ブラシを買いました。"
+  },
+  "hsk2026-0918": {
+    "example": "我第一次听说羊。",
+    "examplePinyin": "Wǒ dì yī cì tīngshuō yáng.",
+    "exampleMeaning": "私は羊、ヤギを初めて聞きました。"
+  },
+  "hsk2026-0919": {
+    "example": "请你先养。",
+    "examplePinyin": "Qǐng nǐ xiān yǎng.",
+    "exampleMeaning": "まず飼う、育てるしてください。"
+  },
+  "hsk2026-0921": {
+    "example": "请打开第十页。",
+    "examplePinyin": "Qǐng dǎkāi dì shí yè.",
+    "exampleMeaning": "10ページ目を開いてください。"
+  },
+  "hsk2026-0924": {
+    "example": "咱们一块儿去吧。",
+    "examplePinyin": "Zánmen yíkuàir qù ba.",
+    "exampleMeaning": "一緒に行きましょう。"
+  },
+  "hsk2026-0926": {
+    "example": "以后我每天运动。",
+    "examplePinyin": "Yǐhòu wǒ měitiān yùndòng.",
+    "exampleMeaning": "これから毎日運動します。"
+  },
+  "hsk2026-0928": {
+    "example": "十八岁以上的人可以参加。",
+    "examplePinyin": "Shíbā suì yǐshàng de rén kěyǐ cānjiā.",
+    "exampleMeaning": "18歳以上の人が参加できます。"
+  },
+  "hsk2026-0929": {
+    "example": "除了他以外，大家都来了。",
+    "examplePinyin": "Chúle tā yǐwài, dàjiā dōu lái le.",
+    "exampleMeaning": "彼以外はみんな来ました。"
+  },
+  "hsk2026-0930": {
+    "example": "我以为他不来了。",
+    "examplePinyin": "Wǒ yǐwéi tā bù lái le.",
+    "exampleMeaning": "私は彼が来ないと思い込んでいました。"
+  },
+  "hsk2026-0931": {
+    "example": "三岁以下的孩子免费。",
+    "examplePinyin": "Sān suì yǐxià de háizi miǎnfèi.",
+    "exampleMeaning": "3歳以下の子どもは無料です。"
+  },
+  "hsk2026-0937": {
+    "example": "我第一次听说银行卡。",
+    "examplePinyin": "Wǒ dì yī cì tīngshuō yínhángkǎ.",
+    "exampleMeaning": "私は銀行カード、キャッシュカードを初めて聞きました。"
+  },
+  "hsk2026-0942": {
+    "example": "我第一次听说邮件。",
+    "examplePinyin": "Wǒ dì yī cì tīngshuō yóujiàn.",
+    "exampleMeaning": "私はメール、郵便物を初めて聞きました。"
+  },
+  "hsk2026-0943": {
+    "example": "他是一位游客。",
+    "examplePinyin": "Tā shì yí wèi yóukè.",
+    "exampleMeaning": "彼は観光客です。"
+  },
+  "hsk2026-0945": {
+    "example": "我第一次听说邮箱。",
+    "examplePinyin": "Wǒ dì yī cì tīngshuō yóuxiāng.",
+    "exampleMeaning": "私は郵便受け、メールボックスを初めて聞きました。"
+  },
+  "hsk2026-0946": {
+    "example": "我想问一个有关考试的问题。",
+    "examplePinyin": "Wǒ xiǎng wèn yí ge yǒuguān kǎoshì de wèntí.",
+    "exampleMeaning": "試験に関する質問を一つしたいです。"
+  },
+  "hsk2026-0948": {
+    "example": "这件事很有用。",
+    "examplePinyin": "Zhè jiàn shì hěn yǒuyòng.",
+    "exampleMeaning": "この件は役に立つです。"
+  },
+  "hsk2026-0950": {
+    "example": "我昨天买了羽毛球。",
+    "examplePinyin": "Wǒ zuótiān mǎi le yǔmáoqiú.",
+    "exampleMeaning": "私は昨日バドミントンを買いました。"
+  },
+  "hsk2026-0951": {
+    "example": "我第一次听说语言。",
+    "examplePinyin": "Wǒ dì yī cì tīngshuō yǔyán.",
+    "exampleMeaning": "私は言語を初めて聞きました。"
+  },
+  "hsk2026-0952": {
+    "example": "我昨天买了雨衣。",
+    "examplePinyin": "Wǒ zuótiān mǎi le yǔyī.",
+    "exampleMeaning": "私は昨日レインコートを買いました。"
+  },
+  "hsk2026-0954": {
+    "example": "我在路上遇见了老师。",
+    "examplePinyin": "Wǒ zài lùshang yùjiàn le lǎoshī.",
+    "exampleMeaning": "道で先生に会いました。"
+  },
+  "hsk2026-0955": {
+    "example": "我第一次听说园。",
+    "examplePinyin": "Wǒ dì yī cì tīngshuō yuán.",
+    "exampleMeaning": "私は園、庭園を初めて聞きました。"
+  },
+  "hsk2026-0956": {
+    "example": "运动员们开始比赛了。",
+    "examplePinyin": "Yùndòngyuán men kāishǐ bǐsài le.",
+    "exampleMeaning": "選手たちが試合を始めました。"
+  },
+  "hsk2026-0960": {
+    "example": "我第一次听说运动会。",
+    "examplePinyin": "Wǒ dì yī cì tīngshuō yùndònghuì.",
+    "exampleMeaning": "私は運動会を初めて聞きました。"
+  },
+  "hsk2026-0961": {
+    "example": "他是一位运动员。",
+    "examplePinyin": "Tā shì yí wèi yùndòngyuán.",
+    "exampleMeaning": "彼は選手、運動選手です。"
+  },
+  "hsk2026-0962": {
+    "example": "咱们一起出发吧。",
+    "examplePinyin": "Zánmen yìqǐ chūfā ba.",
+    "exampleMeaning": "私たち一緒に出発しましょう。"
+  },
+  "hsk2026-0963": {
+    "example": "这件事很脏。",
+    "examplePinyin": "Zhè jiàn shì hěn zāng.",
+    "exampleMeaning": "この件は汚いです。"
+  },
+  "hsk2026-0964": {
+    "example": "我忘了带钱，怎么办？",
+    "examplePinyin": "Wǒ wàng le dài qián, zěnme bàn?",
+    "exampleMeaning": "お金を持ってくるのを忘れました。どうしましょう。"
+  },
+  "hsk2026-0965": {
+    "example": "这件事应该怎样做？",
+    "examplePinyin": "Zhè jiàn shì yīnggāi zěnyàng zuò?",
+    "exampleMeaning": "この件はどのようにすべきですか。"
+  },
+  "hsk2026-0966": {
+    "example": "他已经站了。",
+    "examplePinyin": "Tā yǐjīng zhàn le.",
+    "exampleMeaning": "彼はすでに立つしました。"
+  },
+  "hsk2026-0970": {
+    "example": "请你先照。",
+    "examplePinyin": "Qǐng nǐ xiān zhào.",
+    "exampleMeaning": "まず照らすしてください。"
+  },
+  "hsk2026-0973": {
+    "example": "我们明天要照相。",
+    "examplePinyin": "Wǒmen míngtiān yào zhàoxiàng.",
+    "exampleMeaning": "私たちは明日写真を撮る予定です。"
+  },
+  "hsk2026-0974": {
+    "example": "我一直等，直到他回来。",
+    "examplePinyin": "Wǒ yì zhí děng, zhí dào tā huí lai.",
+    "exampleMeaning": "彼が戻るまでずっと待ちました。"
+  },
+  "hsk2026-0976": {
+    "example": "我昨天买了纸。",
+    "examplePinyin": "Wǒ zuótiān mǎi le zhǐ.",
+    "exampleMeaning": "私は昨日紙を買いました。"
+  },
+  "hsk2026-0977": {
+    "example": "今天只能坐公共汽车去。",
+    "examplePinyin": "Jīntiān zhǐnéng zuò gōnggòng qìchē qù.",
+    "exampleMeaning": "今日はバスで行くしかありません。"
+  },
+  "hsk2026-0978": {
+    "example": "我只是有点儿累。",
+    "examplePinyin": "Wǒ zhǐshì yǒudiǎnr lèi.",
+    "exampleMeaning": "私はただ少し疲れているだけです。"
+  },
+  "hsk2026-0979": {
+    "example": "只要努力，就会进步。",
+    "examplePinyin": "Zhǐyào nǔlì, jiù huì jìnbù.",
+    "exampleMeaning": "努力さえすれば上達します。"
+  },
+  "hsk2026-0981": {
+    "example": "他正在会议中。",
+    "examplePinyin": "Tā zhèngzài huìyì zhōng.",
+    "exampleMeaning": "彼は会議中です。"
+  },
+  "hsk2026-0989": {
+    "example": "他已经住院了。",
+    "examplePinyin": "Tā yǐjīng zhùyuàn le.",
+    "exampleMeaning": "彼はすでに入院するしました。"
+  },
+  "hsk2026-0990": {
+    "example": "我昨天买了字典。",
+    "examplePinyin": "Wǒ zuótiān mǎi le zìdiǎn.",
+    "exampleMeaning": "私は昨日辞典、字引を買いました。"
+  },
+  "hsk2026-0992": {
+    "example": "“子”常放在名词后面。",
+    "examplePinyin": "Zi cháng fàng zài míngcí hòumian.",
+    "exampleMeaning": "「子」はよく名詞の後ろに置かれます。"
+  },
+  "hsk2026-0993": {
+    "example": "他总是来得很早。",
+    "examplePinyin": "Tā zǒngshì lái de hěn zǎo.",
+    "exampleMeaning": "彼はいつもとても早く来ます。"
+  },
+  "hsk2026-0996": {
+    "example": "他最好在这里学习。",
+    "examplePinyin": "Tā zuìhǎo zài zhèli xuéxí.",
+    "exampleMeaning": "彼はできれば、～したほうがいいここで勉強します。"
+  },
+  "hsk2026-0999": {
+    "example": "我们明天要做客。",
+    "examplePinyin": "Wǒmen míngtiān yào zuòkè.",
+    "exampleMeaning": "私たちは明日客として訪れる、訪問する予定です。"
+  }
+}

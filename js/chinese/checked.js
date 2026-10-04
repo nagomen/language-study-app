@@ -1,5 +1,5 @@
 // app.js から機能ごとに切り出したモジュール。生成物ではなく、以降はこのファイルを直接編集する。
-import { $, $$, escapeHtml, saveCheckedIds, checkButtonHtml, resetCheckButtons, updateCheckedBadge, downloadCheckedFile, readCheckedFile } from "../shared.js";
+import { $, checkButtonHtml, clearCheckedState, downloadCheckedFile, escapeHtml, importCheckedIds, renderCheckedControls, toggleCheckedState, updateCheckedBadge } from "../shared.js";
 import { speak } from "./audio.js";
 import { renderCategories } from "./categories.js";
 import { CHECKED_KEY } from "./config.js";
@@ -8,21 +8,13 @@ import { startPractice } from "./practice.js";
 import { startQuiz } from "./quiz.js";
 import { state } from "./state.js";
 import { getCheckedWords } from "./storage.js";
+import { wordLevelLabel } from "./util.js";
 import { renderWords } from "./words.js";
 
 export function toggleChecked(id) {
-  const word = state.words.find((item) => item.id === id);
-  if (!word) return;
-  if (state.checked.has(id)) state.checked.delete(id); else state.checked.add(id);
-  saveCheckedIds(CHECKED_KEY, state.checked);
-  const checked = state.checked.has(id);
-  const label = checked ? "チェックを外す" : "チェックを付ける";
-  $$(`[data-check-id="${id}"]`).forEach((button) => {
-    button.classList.toggle("is-checked", checked);
-    button.setAttribute("aria-pressed", String(checked));
-    button.setAttribute("aria-label", label);
-    button.title = label;
-  });
+  const result = toggleCheckedState(id, { words: state.words, checkedIds: state.checked, storageKey: CHECKED_KEY });
+  if (!result) return;
+  const { word, checked } = result;
   if (checked) markWordForDailyReview(word);
   updateCheckedSummary();
   if (state.currentView === "checked") renderChecked();
@@ -34,7 +26,6 @@ export function renderChecked() {
   const list = $("#checked-list");
   if (!list) return;
   const words = getCheckedWords();
-  $("#checked-total-count").textContent = words.length;
   list.innerHTML = words.map((word) => {
     const srs = state.progress.srs[word.id];
     const stats = [];
@@ -43,7 +34,7 @@ export function renderChecked() {
     if (srs?.due) stats.push(`次の復習 ${srs.due}`);
     return `<article class="checked-card">
       <header class="example-card-head">
-        <span class="mini-level">HSK ${word.level}</span>
+        <span class="mini-level">${wordLevelLabel(word)}</span>
         <div class="example-word"><strong>${escapeHtml(word.hanzi)}</strong><span>${escapeHtml(word.pinyin)}</span><small>${escapeHtml(word.meaning)}</small></div>
         <div class="row-actions">
           ${checkButtonHtml(word.id, state.checked.has(word.id))}
@@ -56,19 +47,11 @@ export function renderChecked() {
       </div>
     </article>`;
   }).join("");
-  $("#empty-checked").classList.toggle("is-hidden", words.length > 0);
-  $("#clear-checked").classList.toggle("is-hidden", words.length === 0);
-  $("#export-checked").classList.toggle("is-hidden", words.length === 0);
-  $$("#checked-view [data-checked-action]").forEach((button) => { button.disabled = words.length === 0; });
+  renderCheckedControls(words.length, "#checked-view [data-checked-action]");
 }
 
 export function clearChecked() {
-  if (!state.checked.size || !confirm("チェックをすべて解除しますか？")) return;
-  state.checked.clear();
-  saveCheckedIds(CHECKED_KEY, state.checked);
-  resetCheckButtons();
-  renderChecked();
-  updateCheckedSummary();
+  clearCheckedState(state.checked, CHECKED_KEY, "チェックをすべて解除しますか？", () => { renderChecked(); updateCheckedSummary(); });
 }
 
 export function updateCheckedSummary() {
@@ -82,20 +65,12 @@ export function exportChecked() {
 }
 
 export function importCheckedFile(file) {
-  readCheckedFile(file, (ids) => {
-    if (!ids) return alert("チェックの書き出しファイルとして読み込めませんでした。");
-    const known = ids.filter((id) => state.words.some((word) => word.id === id));
-    if (!known.length) return alert("この単語データに一致するIDがありませんでした。中国語用の書き出しファイルか確認してください。");
-    const added = known.filter((id) => !state.checked.has(id));
-    const ignored = ids.length - known.length;
-    const message = `${known.length}語のチェックを読み込みます。\n新しく追加: ${added.length}語（現在のチェック${state.checked.size}語はそのまま残ります）`
-      + (ignored ? `\n一致しないID ${ignored}件は無視します。` : "");
-    if (!confirm(message)) return;
-    added.forEach((id) => state.checked.add(id));
-    saveCheckedIds(CHECKED_KEY, state.checked);
-    renderChecked();
-    updateCheckedSummary();
-    alert(added.length ? `${added.length}語を追加しました。` : "すべて登録済みでした。");
+  importCheckedIds(file, {
+    words: state.words,
+    checkedIds: state.checked,
+    storageKey: CHECKED_KEY,
+    languageLabel: "中国語",
+    onChange: () => { renderChecked(); updateCheckedSummary(); },
   });
 }
 

@@ -6,6 +6,7 @@ import os from "node:os";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { spawn } from "node:child_process";
+import { parseDialogue } from "../js/chinese/dialogue.js";
 
 const appDir = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const outputDir = path.join(appDir, "audio", "sentences");
@@ -40,17 +41,6 @@ const pad = (value) => String(value).padStart(3, "0");
 const writingAnswerText = (question) => (question.kind || question.type) === "input"
   ? question.sentence.replace(/（[^）]+）/, question.answer)
   : question.answer;
-const parseDialogue = (text) => {
-  const segments = [];
-  const pattern = /([男女问])：([\s\S]*?)(?=(?:男|女|问)：|$)/g;
-  let match;
-  while ((match = pattern.exec(text)) !== null) {
-    if (match[1] === "问") segments.push({ role: "cue", text: "Question" });
-    segments.push({ role: match[1] === "男" ? "male" : (match[1] === "女" ? "female" : "narrator"), text: match[2].trim() });
-  }
-  return segments;
-};
-
 const catalog = [
   ...words.filter((word) => word.example).map((word) => ({
     id: `example-${word.id}`, type: "example", level: word.level, text: word.example,

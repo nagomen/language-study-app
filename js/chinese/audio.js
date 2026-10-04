@@ -1,10 +1,13 @@
 // app.js から機能ごとに切り出したモジュール。生成物ではなく、以降はこのファイルを直接編集する。
 import { $, $$, escapeHtml } from "../shared.js";
+import { parseDialogue } from "./dialogue.js";
 import { state } from "./state.js";
 
 export let activeAudio = null;
 
 let speechRunId = 0;
+
+function wordAudioExtension(word) { return word?.exampleKind === "context" ? "wav" : "m4a"; }
 
 export function bindWordRowAudio(container) {
   if (!container) return;
@@ -21,18 +24,21 @@ export function speakButtonHtml(text, label) {
   return `<button class="phrase-audio" type="button" data-speak="${escapeHtml(text)}" aria-label="${escapeHtml(label)}"><span aria-hidden="true">▶</span></button>`;
 }
 
-export function exampleAudioFile(word) { return word?.id ? `audio/sentences/example-${word.id}.m4a` : ""; }
+export function exampleAudioFile(word) {
+  if (word?.exampleAudio === "browser") return "";
+  return word?.id ? `audio/sentences/example-${word.id}.${wordAudioExtension(word)}` : "";
+}
 
 export function speak(word, button) {
   if (!word?.hanzi) return;
-  playAudioFile(`audio/${encodeURIComponent(word.id)}.m4a`, button, { fallbackText: word.hanzi, role: "female" });
+  playAudioFile(`audio/${encodeURIComponent(word.id)}.${wordAudioExtension(word)}`, button, { fallbackText: word.hanzi, role: "female" });
 }
 
 export function playAudioFile(file, button, options = {}) {
   if (!file) return speakWithBrowser(options.fallbackText, button, { rate: options.fallbackRate || .78, role: options.role || "female" });
   stopAudio();
   button?.classList.add("is-playing");
-  const audio = new Audio(`${file}?v=aac48`);
+  const audio = new Audio(`${file}?v=audio-20261004`);
   const playbackRate = options.lockRate ? (options.baseRate || 1) : Math.max(.7, Math.min(1.3, (options.baseRate || 1) * state.audioSpeed));
   audio.playbackRate = playbackRate;
   audio.preservesPitch = true;
@@ -74,13 +80,7 @@ export function speakWithBrowser(text, button, options = {}) {
 }
 
 export function speakDialogue(text, button, rate = .78) {
-  const segments = [];
-  const pattern = /([男女问])：([\s\S]*?)(?=(?:男|女|问)：|$)/g;
-  let match;
-  while ((match = pattern.exec(text)) !== null) {
-    if (match[1] === "问") segments.push({ text: "Question", role: "cue" });
-    segments.push({ text: match[2].trim(), role: match[1] === "男" ? "male" : (match[1] === "女" ? "female" : "narrator") });
-  }
+  const segments = parseDialogue(text);
   speakSegments(segments.length ? segments : [{ text, role: "narrator" }], button, rate);
 }
 

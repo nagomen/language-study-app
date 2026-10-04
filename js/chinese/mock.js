@@ -6,16 +6,20 @@ import { clearPracticeTimer, finishPractice, renderPracticeQuestion } from "./pr
 import { getDueWords } from "./progress.js";
 import { emptyPractice, state } from "./state.js";
 
+function mockKeyFor(level, version) { return level === 3 && version === "3.0" ? "3-v3" : level; }
+
 export function renderExamHub() {
   $("#due-word-count").textContent = getDueWords().length;
   // セクション別練習のボタンは、模試の構成（問数・持ち時間）から作る。
   $$("[data-mock-sections]").forEach((container) => {
     const level = Number(container.dataset.mockSections);
-    const config = EXAM_CONFIG[level];
+    const version = container.dataset.mockVersion || "2.0";
+    const mockKey = mockKeyFor(level, version);
+    const config = EXAM_CONFIG[mockKey];
     container.innerHTML = ["listening", "reading", "writing"].filter((skill) => config[skill] > 0).map((skill) => {
-      const poolSize = state.mockForms[level]?.questions?.filter((question) => question.skill === skill).length || config[skill];
+      const poolSize = state.mockForms[mockKey]?.questions?.filter((question) => question.skill === skill).length || config[skill];
       const poolLabel = poolSize > config[skill] ? `・全${poolSize}問から抽選` : "";
-      return `<button class="mock-section-button" type="button" data-mock-level="${level}" data-mock-section="${skill}">${SKILL_LABELS[skill]}だけ<small>${config[skill]}問・${config.sectionMinutes[skill]}分${poolLabel}</small></button>`;
+      return `<button class="mock-section-button" type="button" data-mock-level="${level}" data-mock-version="${version}" data-mock-section="${skill}">${SKILL_LABELS[skill]}だけ<small>${config[skill]}問・${config.sectionMinutes[skill]}分${poolLabel}</small></button>`;
     }).join("");
   });
 }
@@ -32,8 +36,9 @@ function drawMockQuestions(form, section = null) {
   });
 }
 
-export function startMockExam(level, section = null) {
-  const form = state.mockForms[level];
+export function startMockExam(level, section = null, version = "2.0") {
+  const mockKey = mockKeyFor(level, version);
+  const form = state.mockForms[mockKey];
   const sourceQuestions = form?.questions?.length ? drawMockQuestions(form, section) : [];
   if (!sourceQuestions?.length) return alert("模試データを読み込めませんでした。");
   // 模試データは正解を先頭に持つため、受けるたびに選択肢を並べ替える（对／不对は順序を保つ）。
@@ -44,8 +49,8 @@ export function startMockExam(level, section = null) {
     selected: [],
   }));
   state.practice = {
-    ...emptyPractice(), mode: "mock", level, questions, isMock: true, section,
-    lastStart: { mode: "mock", level, isMock: true, section }, sectionStats: {},
+    ...emptyPractice(), mode: "mock", level, mockKey, mockVersion: version, questions, isMock: true, section,
+    lastStart: { mode: "mock", level, mockKey, mockVersion: version, isMock: true, section }, sectionStats: {},
   };
   showView("practice");
   $("#practice-timer").classList.remove("is-hidden");
@@ -60,7 +65,7 @@ export function startMockSectionTimer(skill) {
   const session = state.practice;
   clearPracticeTimer();
   session.currentSection = skill;
-  session.remainingSeconds = (EXAM_CONFIG[session.level].sectionMinutes[skill] || 1) * 60;
+  session.remainingSeconds = (EXAM_CONFIG[session.mockKey || session.level].sectionMinutes[skill] || 1) * 60;
   updatePracticeTimer();
   session.timerId = window.setInterval(() => {
     session.remainingSeconds -= 1;

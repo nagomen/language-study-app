@@ -1,9 +1,10 @@
 // spanish.js から機能ごとに切り出したモジュール。
+import { filterCheckedWords } from "../shared.js";
 import { STORAGE_KEY } from "./config.js";
 import { state } from "./state.js";
 
 export function getCheckedWords() {
-  return state.words.filter((word) => state.checked.has(word.id));
+  return filterCheckedWords(state.words, state.checked);
 }
 
 export function defaultProgress() {

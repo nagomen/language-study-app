@@ -9,6 +9,7 @@ export const EXAM_CONFIG = {
   1: { listening: 20, reading: 20, writing: 0, minutes: 35, sectionMinutes: { listening: 18, reading: 17 }, maxScore: 200, passScore: 120 },
   2: { listening: 35, reading: 25, writing: 0, minutes: 50, sectionMinutes: { listening: 28, reading: 22 }, maxScore: 200, passScore: 120 },
   3: { listening: 40, reading: 30, writing: 10, minutes: 85, sectionMinutes: { listening: 40, reading: 30, writing: 15 }, maxScore: 300, passScore: 180 },
+  "3-v3": { listening: 30, reading: 30, writing: 10, minutes: 73, totalMinutes: 83, sectionMinutes: { listening: 23, reading: 30, writing: 20 }, maxScore: 300, passScore: 180 },
 };
 
 export const SKILL_LABELS = { vocabulary: "単語", listening: "聴解", reading: "読解", writing: "作文" };
@@ -17,10 +18,10 @@ export const REVIEW_SUB_LABELS = { "reading-comprehension": "設問", "reading-j
 
 export const CHECKED_KEY = "hsk-checked-words";
 
-// HSK3を毎日40語ずつ。旧20語版とは別の周回としてDAY 1から始める。
-export const DAILY_KEY = "hsk3-daily-40-v1";
+// 2026年版HSK3の新出500語を毎日40語ずつ。旧600語版とは別の周回として始める。
+export const DAILY_KEY = "hsk3-daily-40-2026-v1";
 
-export const DAILY_LEGACY_KEY = "hsk3-daily-v1";
+export const DAILY_LEGACY_KEY = "hsk3-daily-40-v1";
 
 export const DAILY_LEVEL = 3;
 
@@ -38,7 +39,7 @@ export const CATEGORY_GROUP_META = {
 export const CATEGORY_QUIZ_MIN_POOL = 10;
 
 // 分類ページから開ける解説ページ。分類ID → ガイドID。
-export const CATEGORY_GUIDES = { particle: "de", degree: "bi", preposition: "ba", conjunction: "conjunction", direction: "complement", verb: "complement" };
+export const CATEGORY_GUIDES = { particle: "de", degree: "bi", preposition: "ba", conjunction: "conjunction", direction: "complement", verb: "complement", cognition: "cognition" };
 
 export const MEASURE_CARD = { attr: 'data-category-open="measure"', mark: "量", title: "数量詞・量詞の使い分け", note: "数の作り方、似た量詞、名詞からの逆引きをまとめて学べます" };
 

@@ -2,7 +2,7 @@
   "version": 3,
   "level": 2,
   "format": "HSK 2.0（日本実施形式）・写真問題は記号イラストで代替",
-  "generatedAt": "2026-10-03T07:31:04.914Z",
+  "generatedAt": "2026-10-04T08:35:33.492Z",
   "questionSelection": {
     "listening": {
       "1": 10,
@@ -1503,7 +1503,8 @@
         },
         {
           "value": "今年",
-          "label": "今年"
+          "label": "今年",
+          "pinyin": "jīnnián"
         },
         {
           "value": "上个月",
@@ -1842,7 +1843,8 @@
       "choices": [
         {
           "value": "做饭",
-          "label": "做饭"
+          "label": "做饭",
+          "pinyin": "zuò fàn"
         },
         {
           "value": "洗衣服",
@@ -2136,9 +2138,9 @@
           "pinyin": "lǚyóu"
         },
         {
-          "value": "唱歌",
-          "label": "唱歌",
-          "pinyin": "chànggē"
+          "value": "唱",
+          "label": "唱",
+          "pinyin": "chàng"
         }
       ],
       "correct": "准备",
@@ -2256,9 +2258,9 @@
           "pinyin": "jièshào"
         },
         {
-          "value": "帮助",
-          "label": "帮助",
-          "pinyin": "bāngzhù"
+          "value": "问",
+          "label": "问",
+          "pinyin": "wèn"
         }
       ],
       "correct": "告诉",

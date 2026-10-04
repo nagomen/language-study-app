@@ -668,6 +668,110 @@
       ],
       "correct": "百分之八十",
       "explanation": "パーセントは「百分之＋数」で表し、80パーセントは百分之八十です。"
+    },
+    {
+      "level": 3,
+      "prompt": "请打开第三＿＿。",
+      "subPrompt": "3ページ目を開いてください。",
+      "choices": [
+        "页",
+        "句",
+        "张",
+        "篇"
+      ],
+      "correct": "页",
+      "explanation": "本のページは页で数えます。"
+    },
+    {
+      "level": 3,
+      "prompt": "今天还有两＿＿飞机。",
+      "subPrompt": "今日はまだ飛行機が2便あります。",
+      "choices": [
+        "班",
+        "辆",
+        "架",
+        "趟"
+      ],
+      "correct": "班",
+      "explanation": "定時運行の便は班で数えます。"
+    },
+    {
+      "level": 3,
+      "prompt": "山上有三＿＿牛。",
+      "subPrompt": "山に牛が3頭います。",
+      "choices": [
+        "头",
+        "只",
+        "群",
+        "个"
+      ],
+      "correct": "头",
+      "explanation": "牛などの家畜は头で数えられます。"
+    },
+    {
+      "level": 3,
+      "prompt": "老师说了一＿＿话。",
+      "subPrompt": "先生は一言言いました。",
+      "choices": [
+        "句",
+        "页",
+        "篇",
+        "声"
+      ],
+      "correct": "句",
+      "explanation": "ひとまとまりの言葉は句です。"
+    },
+    {
+      "level": 3,
+      "prompt": "我买了两＿＿苹果。",
+      "subPrompt": "私はリンゴを1キロ買いました。",
+      "choices": [
+        "斤",
+        "公斤",
+        "盘",
+        "份"
+      ],
+      "correct": "斤",
+      "explanation": "2斤は1キログラムです。"
+    },
+    {
+      "level": 3,
+      "prompt": "这支笔五＿＿钱。",
+      "subPrompt": "このペンは0.5元です。",
+      "choices": [
+        "毛",
+        "元",
+        "斤",
+        "角钱两"
+      ],
+      "correct": "毛",
+      "explanation": "話し言葉の毛は、書き言葉の角と同じです。"
+    },
+    {
+      "level": 3,
+      "prompt": "这一＿＿他终于成功了。",
+      "subPrompt": "今回、彼はついに成功しました。",
+      "choices": [
+        "回",
+        "遍",
+        "趟",
+        "声"
+      ],
+      "correct": "回",
+      "explanation": "ひとつの出来事として数えるときは回を使えます。"
+    },
+    {
+      "level": 3,
+      "prompt": "他大叫了一＿＿。",
+      "subPrompt": "彼は大声で一声叫びました。",
+      "choices": [
+        "声",
+        "句",
+        "回",
+        "次"
+      ],
+      "correct": "声",
+      "explanation": "声や音の一回は声で数えます。"
     }
   ],
   "items": [
@@ -795,7 +899,7 @@
       "drill": true,
       "use": "2つで1組になるもの",
       "nouns": [
-        "hsk3-613",
+        "hsk2026-0901",
         "hsk3-446"
       ],
       "phrase": {
@@ -813,7 +917,7 @@
       "nouns": [
         "hsk1-012",
         "hsk2-297",
-        "hsk2-184"
+        "hsk2026-0346"
       ],
       "phrase": {
         "cn": "一辆自行车",
@@ -1029,7 +1133,7 @@
       "use": "重さ（キログラム）",
       "nouns": [
         "hsk1-079",
-        "hsk2-272",
+        "hsk2026-0423",
         "hsk3-542"
       ],
       "phrase": {
@@ -1838,6 +1942,178 @@
         "ja": "子猫1匹"
       },
       "tip": "動物は基本的に只で数えます。馬のように専用の量詞を持つものだけ例外です。"
+    },
+    {
+      "wordId": "hsk2026-0921",
+      "hanzi": "页",
+      "pinyin": "yè",
+      "level": 3,
+      "group": "event",
+      "use": "本・ノート・資料のページ",
+      "phrase": {
+        "cn": "两页书",
+        "pinyin": "liǎng yè shū",
+        "ja": "本の2ページ"
+      },
+      "tip": "紙そのものは张、本の中のページは页で数えます。",
+      "nounExamples": [
+        {
+          "hanzi": "书",
+          "pinyin": "shū",
+          "meaning": "本"
+        },
+        {
+          "hanzi": "课本",
+          "pinyin": "kèběn",
+          "meaning": "教科書"
+        }
+      ]
+    },
+    {
+      "wordId": "hsk3-307",
+      "hanzi": "班",
+      "pinyin": "bān",
+      "level": 3,
+      "group": "event",
+      "use": "交通機関の便、勤務のシフト",
+      "phrase": {
+        "cn": "一班飞机",
+        "pinyin": "yì bān fēijī",
+        "ja": "飛行機1便"
+      },
+      "tip": "人のクラスだけでなく、定時運行の便や勤務単位も数えます。",
+      "nounExamples": [
+        {
+          "hanzi": "飞机",
+          "pinyin": "fēijī",
+          "meaning": "飛行機の便"
+        },
+        {
+          "hanzi": "火车",
+          "pinyin": "huǒchē",
+          "meaning": "列車"
+        }
+      ]
+    },
+    {
+      "wordId": "hsk2026-0445",
+      "hanzi": "头",
+      "pinyin": "tóu",
+      "level": 3,
+      "group": "thing",
+      "use": "牛・豚などの家畜や大きな動物",
+      "phrase": {
+        "cn": "三头牛",
+        "pinyin": "sān tóu niú",
+        "ja": "牛3頭"
+      },
+      "tip": "牛や豚などの家畜を頭数でとらえて数えます。",
+      "nounExamples": [
+        {
+          "hanzi": "牛",
+          "pinyin": "niú",
+          "meaning": "牛"
+        },
+        {
+          "hanzi": "猪",
+          "pinyin": "zhū",
+          "meaning": "豚"
+        }
+      ]
+    },
+    {
+      "wordId": "hsk2026-0722",
+      "hanzi": "句",
+      "pinyin": "jù",
+      "level": 3,
+      "group": "event",
+      "use": "文、言葉、発言",
+      "phrase": {
+        "cn": "一句话",
+        "pinyin": "yí jù huà",
+        "ja": "一言・一文"
+      },
+      "tip": "ひとまとまりの言葉を数えます。文章全体は篇です。",
+      "nounExamples": [
+        {
+          "hanzi": "话",
+          "pinyin": "huà",
+          "meaning": "言葉"
+        },
+        {
+          "hanzi": "话语",
+          "pinyin": "huàyǔ",
+          "meaning": "発言"
+        }
+      ]
+    },
+    {
+      "wordId": "hsk2026-0716",
+      "hanzi": "斤",
+      "pinyin": "jīn",
+      "level": 3,
+      "group": "unit",
+      "use": "重さ500グラムの市場単位",
+      "phrase": {
+        "cn": "两斤苹果",
+        "pinyin": "liǎng jīn píngguǒ",
+        "ja": "リンゴ1キロ"
+      },
+      "tip": "1斤は500グラム。市場で食材の重さを言うときによく使います。"
+    },
+    {
+      "wordId": "hsk2026-0768",
+      "hanzi": "毛",
+      "pinyin": "máo",
+      "level": 3,
+      "group": "money",
+      "use": "1元の10分の1（話し言葉）",
+      "phrase": {
+        "cn": "五毛钱",
+        "pinyin": "wǔ máo qián",
+        "ja": "0.5元（5角）"
+      },
+      "tip": "毛は話し言葉、角は書き言葉。1元＝10毛＝100分です。"
+    },
+    {
+      "wordId": "hsk1-041",
+      "hanzi": "回",
+      "pinyin": "huí",
+      "level": 3,
+      "group": "unit",
+      "use": "出来事や動作の回数（独立した一件）",
+      "phrase": {
+        "cn": "这一回",
+        "pinyin": "zhè yì huí",
+        "ja": "今回"
+      },
+      "tip": "次に近い回数表現。物語や出来事をひとまとまりとして数える響きがあります。"
+    },
+    {
+      "wordId": "hsk2026-0828",
+      "hanzi": "声",
+      "pinyin": "shēng",
+      "level": 3,
+      "group": "event",
+      "use": "声・音・鳴き声",
+      "phrase": {
+        "cn": "大叫一声",
+        "pinyin": "dà jiào yì shēng",
+        "ja": "大声で一声叫ぶ"
+      },
+      "tip": "耳に聞こえる一回の声や音を数えます。",
+      "nounExamples": [
+        {
+          "hanzi": "叫",
+          "pinyin": "jiào",
+          "meaning": "叫び声"
+        },
+        {
+          "hanzi": "哭",
+          "pinyin": "kū",
+          "meaning": "泣き声"
+        }
+      ]
     }
   ]
 }

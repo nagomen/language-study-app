@@ -5,6 +5,7 @@ import { categoryById } from "./categories.js";
 import { LEVEL_META } from "./config.js";
 import { startQuiz } from "./quiz.js";
 import { state } from "./state.js";
+import { wordLevelLabel } from "./util.js";
 
 export function renderLevels() {
   const grid = $("#level-grid");
@@ -12,12 +13,14 @@ export function renderLevels() {
   [1, 2, 3].forEach((level) => {
     const card = $("#level-card-template").content.firstElementChild.cloneNode(true);
     const words = state.words.filter((word) => word.level === level);
+    const officialCount = words.filter((word) => !word.legacySupplement).length;
+    const supplementCount = words.length - officialCount;
     card.dataset.level = level;
     card.querySelector(".level-number strong").textContent = level;
     card.querySelector(".level-name").textContent = LEVEL_META[level].name;
     card.querySelector("h3").textContent = LEVEL_META[level].title;
     card.querySelector("p").textContent = LEVEL_META[level].description;
-    card.querySelector(".word-count").textContent = `${words.length}語を収録`;
+    card.querySelector(".word-count").textContent = `${officialCount}語 + 旧版補完${supplementCount}語`;
     card.querySelector(".start-level").addEventListener("click", () => startQuiz(words, level, state.vocabularyDirection));
     grid.append(card);
   });
@@ -26,9 +29,11 @@ export function renderLevels() {
 export function renderWords() {
   const query = $("#word-search").value.trim().toLowerCase();
   const filtered = state.words.filter((word) => {
-    const matchesLevel = state.wordFilter === "all" || word.level === Number(state.wordFilter);
+    const matchesLevel = state.wordFilter === "all"
+      || (state.wordFilter === "legacy" ? word.legacySupplement : word.level === Number(state.wordFilter));
     const matchesCategory = state.wordCategory === "all" || (word.tags || []).includes(state.wordCategory);
-    return matchesLevel && matchesCategory && wordHaystack(word).includes(query) && (!state.checkedOnly.words || state.checked.has(word.id));
+    const matchesFilter = state.wordFilter === "new-2026" ? word.newIn2026 : matchesLevel;
+    return matchesFilter && matchesCategory && wordHaystack(word).includes(query) && (!state.checkedOnly.words || state.checked.has(word.id));
   });
   const list = $("#word-list");
   list.classList.toggle("is-quiz-mode", state.wordHideMeaning);
@@ -48,7 +53,7 @@ function wordCardHtml(word) {
           <span class="hanzi">${escapeHtml(word.hanzi)}</span>
           <span class="pinyin">${escapeHtml(word.pinyin)}</span>
         </div>
-        <span class="mini-level">HSK ${word.level}</span>
+        <span class="mini-level">${wordLevelLabel(word)}</span>
       </div>
       <div class="entry-body">
         <p class="meaning">${escapeHtml(word.meaning)}</p>
@@ -83,7 +88,7 @@ export function wordRowHtml(word, { showExample = false } = {}) {
         <div class="word-headline">
           <span class="hanzi">${escapeHtml(word.hanzi)}</span>
           <span class="pinyin">${escapeHtml(word.pinyin)}</span>
-          <span class="mini-level">HSK ${word.level}</span>
+          <span class="mini-level">${wordLevelLabel(word)}</span>
         </div>
         <p class="meaning">${escapeHtml(word.meaning)}</p>
         ${wordTagsHtml(word)}

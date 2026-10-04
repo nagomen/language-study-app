@@ -3,18 +3,21 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { countHanzi, countPinyinSyllables } from "./chinese-data-utils.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const vocab = Object.fromEntries([1, 2, 3].map((level) => [level, JSON.parse(fs.readFileSync(path.join(root, "data", "chinese", `hsk${level}.json`), "utf8"))]));
+const officialVocab = Object.fromEntries([1, 2, 3].map((level) => [level, JSON.parse(fs.readFileSync(path.join(root, "data", "chinese", `hsk${level}.json`), "utf8"))]));
+const legacySupplement = JSON.parse(fs.readFileSync(path.join(root, "data", "chinese", "hsk-legacy-supplement.json"), "utf8"));
+const vocab = Object.fromEntries([1, 2, 3].map((level) => [level, [...officialVocab[level], ...legacySupplement.filter((word) => word.level === level)]]));
 const allWords = Object.values(vocab).flat();
 const byHanzi = new Map(allWords.map((word) => [word.hanzi.replace(/[（）].*?[）]/g, ""), word]));
 const levelByHanzi = new Map([1, 2, 3].flatMap((level) => vocab[level].map((word) => [word.hanzi.replace(/[（）].*?[）]/g, ""), level])));
 const levelChars = Object.fromEntries([1, 2, 3].map((level) => [level, new Set([1, 2, 3].filter((item) => item <= level).flatMap((item) => vocab[item].flatMap((word) => [...word.hanzi])))]));
 
 // 本番でも固有名詞は級外の字を使うので、人名・地名の字だけは語彙チェックの対象外にする。
-const PROPER_NOUN_CHARS = new Set(["王", "李", "海"]);
+const PROPER_NOUN_CHARS = new Set(["王", "李", "海", "北", "京"]);
 // 字はHSK1〜3にあるがHSK4以上の語。字面のチェックでは拾えないため語として弾く。
-const BLOCKED_WORDS = ["楼梯", "味道", "本来", "只好", "提前", "差点儿", "差不多", "左右", "放学", "马路", "办事", "直接", "内容", "日语", "试一试"];
+const BLOCKED_WORDS = ["味道", "本来", "只好", "提前", "差点儿", "左右", "办事", "直接", "内容", "日语", "试一试"];
 // 語彙の基準を満たしている級。HSK2は本文の整理が済むまで警告のみ。
 const STRICT_VOCAB_LEVELS = new Set([1, 3]);
 // 別の問題と丸ごと重なってはいけない文字数。
@@ -26,6 +29,35 @@ const TOPIC_LIMIT = 4;
 const wordTagData = JSON.parse(fs.readFileSync(path.join(root, "data", "chinese", "word-tags.json"), "utf8"));
 const wordTags = wordTagData.words;
 const TOPIC_TAGS = new Set(["travel", "food", "shopping", "school", "work", "home", "body", "weather", "hobby", "tech", "animal", "clothes", "people", "family"]);
+const TOPIC_WORDS = allWords.filter((word) => (wordTags[word.id] || []).some((tag) => TOPIC_TAGS.has(tag)) && word.hanzi.length >= 2);
+
+const GRAMMAR_POINTS = [
+  ["把構文", /把/], ["被構文", /被/], ["比較", /比|越来越|一样|没有.*那么/],
+  ["様態補語", /得[很非真好不]/], ["結果・方向補語", /完了|到了|走了|出来|回来|进去|上。|不懂|不了/],
+  ["複文", /因为|虽然|如果|然后|一边|又.*又|不但|一.*就/], ["兼語", /让|请/],
+  ["能願・副詞", /应该|可以|能|快要|最好|一定/], ["連動文", /(坐|骑|走|开|带)[^，。]*?(去|来)/], ["是…的", /是.*的。/], ["存現・着", /着/],
+  ["離・従", /离|从/], ["経験の过", /过/],
+];
+
+const charLevel = new Map();
+for (const word of [...allWords].sort((left, right) => right.level - left.level)) {
+  for (const char of word.hanzi) charLevel.set(char, Math.min(charLevel.get(char) ?? 9, word.level));
+}
+
+function countBySkill(questions) {
+  return Object.fromEntries(["listening", "reading", "writing"].map((skill) => [skill, questions.filter((question) => question.skill === skill).length]));
+}
+
+function textSimilarity(a, b) {
+  const bigrams = (text) => new Set(Array.from({ length: Math.max(0, text.length - 1) }, (_, index) => text.slice(index, index + 2)));
+  const [left, right] = [bigrams(a), bigrams(b)];
+  const shared = [...left].filter((gram) => right.has(gram)).length;
+  return shared / Math.max(1, new Set([...left, ...right]).size);
+}
+
+function dialogueTurns(text) {
+  return (text.match(/[男女]：/g) || []).length;
+}
 
 const SCENES = {
   1: [
@@ -187,7 +219,7 @@ const HSK3_REORDER = [
   [["他", "一", "下课", "就", "回家了"], "他一下课就回家了。", "彼は授業が終わるとすぐ家に帰りました。", "Tā yí xiàkè jiù huí jiā le."],
   [["这里", "不但", "安静", "而且", "很", "干净"], "这里不但安静而且很干净。", "ここは静かなだけでなく、とてもきれいです。", "Zhèlǐ búdàn ānjìng érqiě hěn gānjìng."],
   [["我", "是", "坐", "飞机", "来", "的"], "我是坐飞机来的。", "私は飛行機で来たのです。", "Wǒ shì zuò fēijī lái de."],
-  [["这些", "帽子", "是", "在北京", "买", "的"], "这些帽子是在北京买的。", "これらの帽子は北京で買ったのです。", "Zhèxiē màozi shì zài Běijīng mǎi de."],
+  [["这些", "鞋", "是", "在北京", "买", "的"], "这些鞋是在北京买的。", "これらの靴は北京で買ったのです。", "Zhèxiē xié shì zài Běijīng mǎi de."],
   [["桌子上", "放着", "一本", "新", "词典"], "桌子上放着一本新词典。", "机の上に新しい辞書が1冊置いてあります。", "Zhuōzi shàng fàng zhe yì běn xīn cídiǎn."],
   [["他", "每天", "坐", "地铁", "去", "上班"], "他每天坐地铁去上班。", "彼は毎日地下鉄で通勤します。", "Tā měitiān zuò dìtiě qù shàngbān.", ["每天他坐地铁去上班。"]],
   [["我家", "离", "学校", "不", "太", "远"], "我家离学校不太远。", "私の家は学校からそれほど遠くありません。", "Wǒ jiā lí xuéxiào bú tài yuǎn."],
@@ -344,11 +376,11 @@ const HSK1_CLOZE = [
 ];
 
 const HSK2_CLOZE_P2 = [
-  ["明天有考试，我要在家＿＿＿。", "准备", ["旅游", "唱歌"], "Míngtiān yǒu kǎoshì, wǒ yào zài jiā ____."],
+  ["明天有考试，我要在家＿＿＿。", "准备", ["旅游", "唱"], "Míngtiān yǒu kǎoshì, wǒ yào zài jiā ____."],
   ["这个西瓜三块钱，非常＿＿＿。", "便宜", ["贵", "远"], "Zhège xīguā sān kuài qián, fēicháng ____."],
   ["我每天早上七点＿＿＿，八点上班。", "起床", ["睡觉", "休息"], "Wǒ měitiān zǎoshang qī diǎn ____, bā diǎn shàngbān."],
   ["今天很冷，你＿＿＿这件衣服吧。", "穿", ["洗", "卖"], "Jīntiān hěn lěng, nǐ ____ zhè jiàn yīfu ba."],
-  ["我不知道他的电话，你能＿＿＿我吗？", "告诉", ["介绍", "帮助"], "Wǒ bù zhīdào tā de diànhuà, nǐ néng ____ wǒ ma?"],
+  ["我不知道他的电话，你能＿＿＿我吗？", "告诉", ["介绍", "问"], "Wǒ bù zhīdào tā de diànhuà, nǐ néng ____ wǒ ma?"],
 ];
 
 // 句子匹配（本番形式）。左の文に対応する受け答えを選ぶ。[文, ピンイン, [[正解, ピンイン], [誤答, ピンイン] …]]
@@ -632,7 +664,7 @@ const MOCK_SELECTION = { 2: { listening: { 1: 10, 2: 10, 3: 10, 4: 5 } }, 3: { l
 const expected = { 1: { total: 40, listening: 20, reading: 20, writing: 0 }, 2: { listening: 35, reading: 25, writing: 0 }, 3: { total: 80, listening: 40, reading: 30, writing: 10 } };
 for (const level of [1, 2, 3]) {
   const questions = forms[level];
-  const counts = Object.fromEntries(["listening", "reading", "writing"].map((skill) => [skill, questions.filter((question) => question.skill === skill).length]));
+  const counts = countBySkill(questions);
   const selection = MOCK_SELECTION[level];
   if (selection) {
     // プール制の技能は、部分ごとに出題数以上そろっていること。
@@ -660,17 +692,11 @@ for (const level of [1, 2, 3]) {
     if (!values.includes(item.correct)) throw new Error(`${item.id}: 聴解の正解が選択肢にありません`);
   }
   // 似たような問題ばかりにならないよう、同じ部分の中で言い回しが近すぎる組を弾く。
-  const bigrams = (text) => new Set(Array.from({ length: Math.max(0, text.length - 1) }, (_, index) => text.slice(index, index + 2)));
-  const similarity = (a, b) => {
-    const [left, right] = [bigrams(a), bigrams(b)];
-    const shared = [...left].filter((gram) => right.has(gram)).length;
-    return shared / Math.max(1, new Set([...left, ...right]).size);
-  };
   for (const part of [1, 2, 3, 4]) {
     const items = questions.filter((question) => question.skill === "listening" && question.part === part && question.audioText);
     for (let i = 0; i < items.length; i += 1) {
       for (let j = i + 1; j < items.length; j += 1) {
-        const score = similarity(items[i].audioText, items[j].audioText);
+        const score = textSimilarity(items[i].audioText, items[j].audioText);
         if (score > 0.6) throw new Error(`${items[i].id} と ${items[j].id} の言い回しが近すぎます（類似度${score.toFixed(2)}）`);
       }
     }
@@ -683,14 +709,13 @@ for (const level of [1, 2, 3]) {
     if (shared) throw new Error(`${item.id}: 聴解と同じ素材を読解でも使っています → ${shared.slice(0, 24)}`);
   }
   // HSK3第4部分の対話は第3部分より長いこと（本番は較長対話）。
-  const turns = (text) => (text.match(/[男女]：/g) || []).length;
   const shortDialogues = questions.filter((question) => question.kind === "audio-dialogue");
   const longDialogues = questions.filter((question) => question.kind === "audio-long-dialogue");
   if (level === 3 && longDialogues.length) {
-    const average = (items) => items.reduce((sum, item) => sum + turns(item.audioText), 0) / items.length;
+    const average = (items) => items.reduce((sum, item) => sum + dialogueTurns(item.audioText), 0) / items.length;
     if (average(longDialogues) <= average(shortDialogues)) throw new Error(`HSK ${level}: 第4部分の対話が第3部分より長くありません`);
-    const tooShort = longDialogues.find((item) => turns(item.audioText) < 3);
-    if (tooShort) throw new Error(`${tooShort.id}: 較長対話の発話が3つ未満です（${turns(tooShort.audioText)}）`);
+    const tooShort = longDialogues.find((item) => dialogueTurns(item.audioText) < 3);
+    if (tooShort) throw new Error(`${tooShort.id}: 較長対話の発話が3つ未満です（${dialogueTurns(tooShort.audioText)}）`);
   }
   // 穴埋め問題は、空欄・選択肢・級の範囲を検査する。
   for (const item of questions.filter((question) => question.kind === "reading-cloze")) {
@@ -771,61 +796,44 @@ for (const level of [1, 2, 3]) {
     const available = questions.filter((other) => other.skill === item.skill && other.part === item.part).length;
     return available ? count / available : 1;
   };
-  const topicWords = allWords.filter((word) => (wordTags[word.id] || []).some((tag) => TOPIC_TAGS.has(tag)) && word.hanzi.length >= 2);
   const exposure = new Map();
   for (const item of questions) {
     const text = [item.audioText, item.prompt, item.subPrompt, item.sentence, item.answer].filter(Boolean).join("");
-    for (const word of topicWords) {
+    for (const word of TOPIC_WORDS) {
       if (!text.includes(word.hanzi)) continue;
       exposure.set(word.hanzi, (exposure.get(word.hanzi) || 0) + weightOf(item));
     }
   }
-  // 完成句子の品質を保つための検査。
-// ・語句は3字以内（難しいところを組み上げた状態で渡さない）
-// ・各問が文法点をひとつ以上ねらう
-// ・語句を並べ替えると正解の文になる
-const GRAMMAR_POINTS = [
-  ["把構文", /把/], ["被構文", /被/], ["比較", /比|越来越|一样|没有.*那么/],
-  ["様態補語", /得[很非真好不]/], ["結果・方向補語", /完了|到了|走了|出来|回来|进去|上。|不懂|不了/],
-  ["複文", /因为|虽然|如果|然后|一边|又.*又|不但|一.*就/], ["兼語", /让|请/],
-  ["能願・副詞", /应该|可以|能|快要|最好|一定/], ["連動文", /(坐|骑|走|开|带)[^，。]*?(去|来)/], ["是…的", /是.*的。/], ["存現・着", /着/],
-  ["離・従", /离|从/], ["経験の过", /过/],
-];
-for (const item of forms[level].filter((question) => question.skill === "writing" && question.kind === "reorder")) {
-  const oversized = item.tokens.filter((token) => [...token].filter((char) => /[一-鿿]/u.test(char)).length > 3);
-  if (oversized.length) flag(`${item.id}: 語句が3字を超えています「${oversized.join("・")}」→ ${item.answer}`);
-  if (item.tokens.join("") !== item.answer.replace(/[。！？]/g, "")) flag(`${item.id}: 語句を並べても正解になりません → ${item.tokens.join("/")}`);
-  if (!GRAMMAR_POINTS.some(([, pattern]) => pattern.test(item.answer))) flag(`${item.id}: 文法点が見当たりません（ふつうのSVO）→ ${item.answer}`);
-  for (const alternative of item.accept || []) {
-    if ([...alternative.replace(/[。！？]/g, "")].sort().join("") !== [...item.answer.replace(/[。！？]/g, "")].sort().join("")) {
-      flag(`${item.id}: 別解の文字が正解と違います → ${alternative}`);
+  // 完成句子の語句は3字以内とし、文法点があり、並べ替えると正解になること。
+  for (const item of questions.filter((question) => question.skill === "writing" && question.kind === "reorder")) {
+    const oversized = item.tokens.filter((token) => countHanzi(token) > 3);
+    if (oversized.length) flag(`${item.id}: 語句が3字を超えています「${oversized.join("・")}」→ ${item.answer}`);
+    if (item.tokens.join("") !== item.answer.replace(/[。！？]/g, "")) flag(`${item.id}: 語句を並べても正解になりません → ${item.tokens.join("/")}`);
+    if (!GRAMMAR_POINTS.some(([, pattern]) => pattern.test(item.answer))) flag(`${item.id}: 文法点が見当たりません（ふつうのSVO）→ ${item.answer}`);
+    for (const alternative of item.accept || []) {
+      if ([...alternative.replace(/[。！？]/g, "")].sort().join("") !== [...item.answer.replace(/[。！？]/g, "")].sort().join("")) {
+        flag(`${item.id}: 別解の文字が正解と違います → ${alternative}`);
+      }
     }
   }
-}
-// 看拼音写汉字で書かせるのは、HSK1だけの字ではなく2〜3級相当の字にする。
-const charLevel = new Map();
-for (const word of [...allWords].sort((left, right) => right.level - left.level)) {
-  for (const char of word.hanzi) charLevel.set(char, Math.min(charLevel.get(char) ?? 9, word.level));
-}
-for (const item of forms[level].filter((question) => question.skill === "writing" && question.kind === "input")) {
-  if ((charLevel.get(item.answer) ?? 3) < 2) flag(`${item.id}: 「${item.answer}」はHSK1相当の字で、3級の書き取りには易しすぎます`);
-  if (!item.sentence.includes("（")) flag(`${item.id}: 問題文にピンインの空欄がありません`);
-}
 
-// 作文の正解ピンインは、音節数が漢字数と合っていること（儿化は1音節ぶん少なくてよい）。
-const VOWELS = "aāáǎàeēéěèiīíǐìoōóǒòuūúǔùüǖǘǚǜ";
-for (const item of forms[level].filter((question) => question.skill === "writing")) {
-  {
+  // 看拼音写汉字で書かせるのは、HSK1だけの字ではなく2〜3級相当の字にする。
+  for (const item of questions.filter((question) => question.skill === "writing" && question.kind === "input")) {
+    if ((charLevel.get(item.answer) ?? 3) < 2) flag(`${item.id}: 「${item.answer}」はHSK1相当の字で、3級の書き取りには易しすぎます`);
+    if (!item.sentence.includes("（")) flag(`${item.id}: 問題文にピンインの空欄がありません`);
+  }
+
+  // 作文の正解ピンインは、音節数が漢字数と合っていること（儿化は1音節ぶん少なくてよい）。
+  for (const item of questions.filter((question) => question.skill === "writing")) {
     const sentence = item.kind === "input" ? item.sentence.replace(/（[^）]+）/, item.answer) : item.answer;
     if (!item.answerPinyin) { flag(`${item.id}: 正解のピンインがありません`); continue; }
-    const hanzi = [...sentence].filter((char) => /[一-鿿]/u.test(char)).length;
-    const syllables = (item.answerPinyin.match(new RegExp(`[${VOWELS}]+`, "gi")) || []).length;
+    const hanzi = countHanzi(sentence);
+    const syllables = countPinyinSyllables(item.answerPinyin);
     const erhua = (sentence.match(/儿/g) || []).length;
     if (syllables > hanzi || syllables < hanzi - erhua) flag(`${item.id}: 漢字${hanzi}字に対しピンインが${syllables}音節 → ${sentence} / ${item.answerPinyin}`);
   }
-}
 
-const crowded = [...exposure].filter(([, count]) => count > TOPIC_LIMIT).sort((left, right) => right[1] - left[1]);
+  const crowded = [...exposure].filter(([, count]) => count > TOPIC_LIMIT).sort((left, right) => right[1] - left[1]);
   for (const [word, count] of crowded) console.warn(`  警告 HSK ${level}: 「${word}」が1回の模試で約${count.toFixed(1)}問に出ます（目安${TOPIC_LIMIT}問）`);
 
   if (issues.length) throw new Error(`HSK ${level} の作問に問題があります:\n  - ${issues.join("\n  - ")}`);
@@ -841,3 +849,50 @@ const crowded = [...exposure].filter(([, count]) => count > TOPIC_LIMIT).sort((l
   fs.writeFileSync(path.join(root, "data", "chinese", `mock-hsk${level}.json`), `${JSON.stringify(payload, null, 2)}\n`);
   console.log(`HSK ${level}: ${questions.length}問（聴解${counts.listening}・読解${counts.reading}・作文${counts.writing}）`);
 }
+
+// HSK3.0は旧式と共通の自作問題を、公式サンプルの30/30/10問に再構成する。
+// 作文後半の「図＋指定語」だけは新形式専用の問題。
+function buildLevel3V3(source) {
+  const listening = [
+    ...source.filter((item) => item.skill === "listening" && item.part === 1).slice(0, 10),
+    ...source.filter((item) => item.skill === "listening" && item.part === 3).slice(0, 10),
+    ...source.filter((item) => item.skill === "listening" && item.part === 4).slice(0, 10),
+  ].map((item, index) => ({ ...item, id: `hsk3v3-l-${String(index + 1).padStart(2, "0")}`, part: Math.floor(index / 10) + 1 }));
+  const reading = source.filter((item) => item.skill === "reading").slice(0, 30)
+    .map((item, index) => ({ ...item, id: `hsk3v3-r-${String(index + 1).padStart(2, "0")}`, part: Math.floor(index / 10) + 1 }));
+  const characters = source.filter((item) => item.skill === "writing" && item.kind === "input").slice(0, 5)
+    .map((item, index) => ({
+      ...item, id: `hsk3v3-w-${String(index + 1).padStart(2, "0")}`, part: 1,
+      instruction: "请根据拼音在空格上写汉字。", hint: "文中のピンインを、正しい漢字1字にします。",
+    }));
+  const compose = [
+    { symbol: "🏃", alt: "公園で走る人", requiredWord: "跑步", answer: "他正在公园里跑步。", answerPinyin: "Tā zhèngzài gōngyuán li pǎobù.", meaning: "彼は公園でジョギングしています。" },
+    { symbol: "🌧️", alt: "雨の中の傘", requiredWord: "下雨", answer: "外面正在下雨。", answerPinyin: "Wàimian zhèngzài xiàyǔ.", meaning: "外は雨が降っています。" },
+    { symbol: "🎂", alt: "誕生日ケーキ", requiredWord: "生日", answer: "今天是我的生日。", answerPinyin: "Jīntiān shì wǒ de shēngrì.", meaning: "今日は私の誕生日です。" },
+    { symbol: "🚇", alt: "駅に到着する地下鉄", requiredWord: "地铁", answer: "我每天坐地铁上班。", answerPinyin: "Wǒ měitiān zuò dìtiě shàngbān.", meaning: "私は毎日地下鉄で通勤します。" },
+    { symbol: "📚", alt: "本を読む学生", requiredWord: "认真", answer: "她在认真地看书。", answerPinyin: "Tā zài rènzhēn de kàn shū.", meaning: "彼女は真剣に本を読んでいます。" },
+  ].map((item, index) => ({
+    ...item, id: `hsk3v3-w-${String(index + 6).padStart(2, "0")}`, skill: "writing", part: 2, kind: "compose",
+    instruction: "请结合图片和所给词语写一个句子。",
+    hint: "図の内容に合わせ、指定語を必ず使って1文作ります。語句と文の長さを自動確認します。",
+    visual: { symbol: item.symbol, alt: item.alt },
+  }));
+  return [...listening, ...reading, ...characters, ...compose];
+}
+
+const hsk3V3Questions = buildLevel3V3(forms[3]);
+const hsk3V3Expected = { listening: 30, reading: 30, writing: 10 };
+const hsk3V3Counts = countBySkill(hsk3V3Questions);
+for (const [skill, expectedCount] of Object.entries(hsk3V3Expected)) {
+  const actual = hsk3V3Counts[skill];
+  if (actual !== expectedCount) throw new Error(`HSK3.0 ${skill}: ${actual}問（期待値${expectedCount}問）`);
+}
+const hsk3V3 = {
+  version: 1, key: "3-v3", level: 3,
+  format: "HSK 3.0・2026年公式サンプル構成（写真は記号イラストで代替）",
+  generatedAt: new Date().toISOString(),
+  questionSelection: { listening: { 1: 10, 2: 10, 3: 10 }, reading: { 1: 10, 2: 10, 3: 10 }, writing: { 1: 5, 2: 5 } },
+  questions: hsk3V3Questions,
+};
+fs.writeFileSync(path.join(root, "data/chinese/mock-hsk3-v3.json"), `${JSON.stringify(hsk3V3, null, 2)}\n`);
+console.log("HSK 3.0 3級: 70問（聴解30・読解30・作文10）");

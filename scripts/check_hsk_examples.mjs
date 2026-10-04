@@ -5,26 +5,21 @@
 // ピンインの音節数が漢字数と一致するか、例文が重複していないかを確認する。
 // HSK1〜3の語彙に無い漢字は警告として一覧表示する（エラーにはしない）。
 
-import { readFile } from "node:fs/promises";
+import { countHanzi, countPinyinSyllables, HANZI, loadChineseData, PINYIN_VOWELS } from "./chinese-data-utils.mjs";
 
 const LEVELS = [1, 2, 3];
 const SENTENCE_END = { "。": ".", "？": "?", "！": "!" };
-const VOWELS = "aāáǎàeēéěèiīíǐìoōóǒòuūúǔùüǖǘǚǜ";
-const HANZI = /[一-鿿]/u;
 
 const errors = [];
 const warnings = [];
 
-const dataFile = (level) => new URL(`../data/chinese/hsk${level}.json`, import.meta.url);
-const groups = await Promise.all(LEVELS.map(async (level) => JSON.parse(await readFile(dataFile(level), "utf8"))));
-const words = groups.flatMap((group, index) => group.map((word) => ({ ...word, level: LEVELS[index] })));
+const groups = await Promise.all(LEVELS.map((level) => loadChineseData(`hsk${level}.json`)));
+const officialWords = groups.flatMap((group, index) => group.map((word) => ({ ...word, level: LEVELS[index] })));
+const supplement = await loadChineseData("hsk-legacy-supplement.json");
+const words = [...officialWords, ...supplement];
 
 const vocabularyChars = new Set(words.flatMap((word) => [...word.hanzi]));
 const seenExamples = new Map();
-
-// ピンインは1音節につき母音の連続がちょうど1回現れる。
-const countSyllables = (pinyin) => (pinyin.match(new RegExp(`[${VOWELS}]+`, "gi")) || []).length;
-const countHanzi = (text) => [...text].filter((char) => HANZI.test(char)).length;
 
 for (const word of words) {
   const label = `${word.id} ${word.hanzi}`;
@@ -44,12 +39,12 @@ for (const word of words) {
 
   const erhua = (example.match(/儿/g) || []).length;
   const hanziCount = countHanzi(example);
-  const syllables = countSyllables(examplePinyin);
+  const syllables = countPinyinSyllables(examplePinyin);
   if (syllables > hanziCount || syllables < hanziCount - erhua) {
     errors.push(`${label}: 漢字${hanziCount}字に対しピンインが${syllables}音節 → ${example} / ${examplePinyin}`);
   }
 
-  const strayPinyin = examplePinyin.replace(new RegExp(`[a-z${VOWELS}ńňǹ',.?! -]`, "gi"), "");
+  const strayPinyin = examplePinyin.replace(new RegExp(`[a-z${PINYIN_VOWELS}ńňǹ'’,.?! “”-]`, "gi"), "");
   if (strayPinyin) errors.push(`${label}: ピンインに使えない文字 "${strayPinyin}" → ${examplePinyin}`);
 
   if (!/[。！？]$/.test(exampleMeaning)) errors.push(`${label}: 和訳が 。！？ で終わっていない → ${exampleMeaning}`);
@@ -64,7 +59,7 @@ for (const word of words) {
 }
 
 const withExample = words.filter((word) => word.example && word.exampleMeaning).length;
-console.log(`単語 ${words.length}語（HSK1 ${groups[0].length} / HSK2 ${groups[1].length} / HSK3 ${groups[2].length}）`);
+console.log(`単語 ${words.length}語（2026年版公式1,000語: HSK1 ${groups[0].length} / HSK2 ${groups[1].length} / HSK3 ${groups[2].length}、旧版補完 ${supplement.length}語）`);
 console.log(`例文あり ${withExample}語 / 例文なし ${words.length - withExample}語`);
 
 if (warnings.length) {

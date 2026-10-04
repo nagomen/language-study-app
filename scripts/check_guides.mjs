@@ -6,28 +6,26 @@
 // 例文のピンインの音節数が漢字数と一致するか、練習問題の正解が選択肢に含まれるかを確認する。
 // HSK1〜3の語彙にない漢字は警告として一覧表示する（エラーにはしない）。
 
-import { readFile } from "node:fs/promises";
+import { countHanzi, countPinyinSyllables, HANZI, loadChineseData } from "./chinese-data-utils.mjs";
 
-const VOWELS = "aāáǎàeēéěèiīíǐìoōóǒòuūúǔùüǖǘǚǜ";
-const HANZI = /[一-鿿]/u;
 const errors = [];
 const warnings = [];
 
-const load = async (file) => JSON.parse(await readFile(new URL(`../data/chinese/${file}`, import.meta.url), "utf8"));
-const groups = await Promise.all([1, 2, 3].map((level) => load(`hsk${level}.json`)));
-const words = new Map(groups.flatMap((group, index) => group.map((word) => [word.id, { ...word, level: index + 1 }])));
+const groups = await Promise.all([1, 2, 3].map((level) => loadChineseData(`hsk${level}.json`)));
+const supplement = await loadChineseData("hsk-legacy-supplement.json");
+const words = new Map([
+  ...groups.flatMap((group, index) => group.map((word) => [word.id, { ...word, level: index + 1 }])),
+  ...supplement.map((word) => [word.id, word]),
+]);
 const vocabularyChars = new Set([...words.values()].flatMap((word) => [...word.hanzi]));
-const tagData = await load("word-tags.json");
+const tagData = await loadChineseData("word-tags.json");
 const measureIds = Object.entries(tagData.words).filter(([, tags]) => tags.includes("measure")).map(([id]) => id);
-
-const countSyllables = (pinyin) => (pinyin.match(new RegExp(`[${VOWELS}]+`, "gi")) || []).length;
-const countHanzi = (text) => [...text].filter((char) => HANZI.test(char)).length;
 
 function checkPhrase(label, phrase, { allowOutsideVocabulary = false } = {}) {
   if (!phrase?.cn || !phrase?.pinyin || !phrase?.ja) return errors.push(`${label}: cn・pinyin・ja のいずれかが未設定`);
   const erhua = (phrase.cn.match(/儿/g) || []).length;
   const hanziCount = countHanzi(phrase.cn);
-  const syllables = countSyllables(phrase.pinyin);
+  const syllables = countPinyinSyllables(phrase.pinyin);
   if (syllables > hanziCount || syllables < hanziCount - erhua) errors.push(`${label}: 漢字${hanziCount}字に対しピンインが${syllables}音節 → ${phrase.cn} / ${phrase.pinyin}`);
   const stray = [...phrase.cn].filter((char) => HANZI.test(char) && !vocabularyChars.has(char));
   if (!allowOutsideVocabulary && stray.length) warnings.push(`${label}: HSK1〜3の語彙にない漢字 ${[...new Set(stray)].join("・")} → ${phrase.cn}`);
@@ -38,7 +36,7 @@ function checkWordId(label, id) {
 }
 
 // --- 量詞ページ ---
-const measure = await load("measure-words.json");
+const measure = await loadChineseData("measure-words.json");
 const groupIds = new Set(measure.groups.map((group) => group.id));
 checkPhrase("量詞ページ: スロット例", { cn: measure.slot.cells.map((cell) => cell.value).join(""), pinyin: measure.slot.reading, ja: measure.slot.meaning });
 measure.rules.forEach((rule, index) => {
@@ -87,13 +85,15 @@ measure.quiz.forEach((question, index) => {
 });
 
 const missing = measureIds.filter((id) => !seenItems.has(id));
-if (missing.length) errors.push(`量詞ページに未掲載の量詞: ${missing.map((id) => `${id} ${words.get(id)?.hanzi || ""}`).join(", ")}`);
+// 新大綱では「日・天・時」のように名詞としても使う語まで量詞に分類される。
+// 特設ページは実際に数え分ける語を優先するため、未掲載は警告として追跡する。
+if (missing.length) warnings.push(`量詞ページに未掲載の量詞用法: ${missing.map((id) => `${id} ${words.get(id)?.hanzi || ""}`).join(", ")}`);
 for (const group of measure.groups) {
   if (!measure.items.some((item) => item.group === group.id)) errors.push(`量詞グループ「${group.label}」に項目がありません`);
 }
 
 // --- 文法ガイド ---
-const { guides } = await load("guides.json");
+const { guides } = await loadChineseData("guides.json");
 const guideIds = new Set();
 for (const guide of guides) {
   const label = `ガイド ${guide.id}`;

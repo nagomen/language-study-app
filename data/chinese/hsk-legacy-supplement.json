@@ -1,0 +1,486 @@
+[
+  {
+    "id": "hsk1-005",
+    "hanzi": "北京",
+    "pinyin": "Běijīng",
+    "meaning": "北京",
+    "level": 1,
+    "syllabus": "HSK2.0-supplement",
+    "tags": [
+      "travel"
+    ],
+    "example": "我住在北京。",
+    "examplePinyin": "Wǒ zhù zài Běijīng.",
+    "exampleMeaning": "私は北京に住んでいます。"
+  },
+  {
+    "id": "hsk1-123",
+    "hanzi": "小姐",
+    "pinyin": "xiǎojie",
+    "meaning": "お嬢さん・〜さん（女性）",
+    "level": 1,
+    "syllabus": "HSK2.0-supplement",
+    "tags": [
+      "people",
+      "greeting"
+    ],
+    "example": "李小姐，你好。",
+    "examplePinyin": "Lǐ xiǎojie, nǐ hǎo.",
+    "exampleMeaning": "李さん、こんにちは。"
+  },
+  {
+    "id": "hsk2-152",
+    "hanzi": "白",
+    "pinyin": "bái",
+    "meaning": "白い",
+    "level": 2,
+    "syllabus": "HSK2.0-supplement",
+    "tags": [
+      "adjective",
+      "color"
+    ],
+    "example": "这件衣服是白的。",
+    "examplePinyin": "Zhè jiàn yīfu shì bái de.",
+    "exampleMeaning": "この服は白いです。"
+  },
+  {
+    "id": "hsk2-160",
+    "hanzi": "唱歌",
+    "pinyin": "chànggē",
+    "meaning": "歌う",
+    "level": 2,
+    "syllabus": "HSK2.0-supplement",
+    "tags": [
+      "verb",
+      "hobby"
+    ],
+    "example": "妹妹喜欢唱歌。",
+    "examplePinyin": "Mèimei xǐhuan chànggē.",
+    "exampleMeaning": "妹は歌うのが好きです。"
+  },
+  {
+    "id": "hsk2-167",
+    "hanzi": "打篮球",
+    "pinyin": "dǎ lánqiú",
+    "meaning": "バスケットボールをする",
+    "level": 2,
+    "syllabus": "HSK2.0-supplement",
+    "tags": [
+      "verb",
+      "hobby"
+    ],
+    "example": "我和朋友打篮球。",
+    "examplePinyin": "Wǒ hé péngyou dǎ lánqiú.",
+    "exampleMeaning": "私は友達とバスケットボールをします。"
+  },
+  {
+    "id": "hsk2-174",
+    "hanzi": "第一",
+    "pinyin": "dì yī",
+    "meaning": "第一・1番目",
+    "level": 2,
+    "syllabus": "HSK2.0-supplement",
+    "tags": [
+      "number"
+    ],
+    "example": "这是第一题。",
+    "examplePinyin": "Zhè shì dì yī tí.",
+    "exampleMeaning": "これは第1問です。"
+  },
+  {
+    "id": "hsk2-179",
+    "hanzi": "服务员",
+    "pinyin": "fúwùyuán",
+    "meaning": "店員・ウェイター",
+    "level": 2,
+    "syllabus": "HSK2.0-supplement",
+    "tags": [
+      "people",
+      "food"
+    ],
+    "example": "服务员，请给我水。",
+    "examplePinyin": "Fúwùyuán, qǐng gěi wǒ shuǐ.",
+    "exampleMeaning": "店員さん、水をください。"
+  },
+  {
+    "id": "hsk2-184",
+    "hanzi": "公共汽车",
+    "pinyin": "gōnggòng qìchē",
+    "meaning": "路線バス",
+    "level": 2,
+    "syllabus": "HSK2.0-supplement",
+    "tags": [
+      "travel"
+    ],
+    "example": "我坐公共汽车上班。",
+    "examplePinyin": "Wǒ zuò gōnggòng qìchē shàngbān.",
+    "exampleMeaning": "私はバスで出勤します。"
+  },
+  {
+    "id": "hsk2-192",
+    "hanzi": "黑",
+    "pinyin": "hēi",
+    "meaning": "黒い",
+    "level": 2,
+    "syllabus": "HSK2.0-supplement",
+    "tags": [
+      "adjective",
+      "color"
+    ],
+    "example": "这只猫是黑的。",
+    "examplePinyin": "Zhè zhī māo shì hēi de.",
+    "exampleMeaning": "この猫は黒いです。"
+  },
+  {
+    "id": "hsk2-193",
+    "hanzi": "红",
+    "pinyin": "hóng",
+    "meaning": "赤い",
+    "level": 2,
+    "syllabus": "HSK2.0-supplement",
+    "tags": [
+      "adjective",
+      "color"
+    ],
+    "example": "我喜欢红苹果。",
+    "examplePinyin": "Wǒ xǐhuan hóng píngguǒ.",
+    "exampleMeaning": "私は赤いリンゴが好きです。"
+  },
+  {
+    "id": "hsk1-043",
+    "hanzi": "火车站",
+    "pinyin": "huǒchēzhàn",
+    "meaning": "駅・鉄道駅",
+    "level": 2,
+    "syllabus": "HSK2.0-supplement",
+    "tags": [
+      "travel"
+    ],
+    "example": "火车站在哪儿？",
+    "examplePinyin": "Huǒchēzhàn zài nǎr?",
+    "exampleMeaning": "駅はどこですか？"
+  },
+  {
+    "id": "hsk3-465",
+    "hanzi": "面条",
+    "pinyin": "miàntiáo",
+    "meaning": "麺・めん類",
+    "level": 2,
+    "syllabus": "HSK2.0-supplement",
+    "tags": [
+      "food"
+    ],
+    "example": "我想吃面条。",
+    "examplePinyin": "Wǒ xiǎng chī miàntiáo.",
+    "exampleMeaning": "私は麺が食べたいです。"
+  },
+  {
+    "id": "hsk2-250",
+    "hanzi": "踢足球",
+    "pinyin": "tī zúqiú",
+    "meaning": "サッカーをする",
+    "level": 2,
+    "syllabus": "HSK2.0-supplement",
+    "tags": [
+      "verb",
+      "hobby"
+    ],
+    "example": "弟弟喜欢踢足球。",
+    "examplePinyin": "Dìdi xǐhuan tī zúqiú.",
+    "exampleMeaning": "弟はサッカーをするのが好きです。"
+  },
+  {
+    "id": "hsk2-272",
+    "hanzi": "羊肉",
+    "pinyin": "yángròu",
+    "meaning": "羊肉",
+    "level": 2,
+    "syllabus": "HSK2.0-supplement",
+    "tags": [
+      "food"
+    ],
+    "example": "我不吃羊肉。",
+    "examplePinyin": "Wǒ bù chī yángròu.",
+    "exampleMeaning": "私は羊肉を食べません。"
+  },
+  {
+    "id": "hsk3-317",
+    "hanzi": "鼻子",
+    "pinyin": "bízi",
+    "meaning": "鼻",
+    "level": 3,
+    "syllabus": "HSK2.0-supplement",
+    "tags": [
+      "body"
+    ],
+    "example": "他的鼻子很大。",
+    "examplePinyin": "Tā de bízi hěn dà.",
+    "exampleMeaning": "彼の鼻は大きいです。"
+  },
+  {
+    "id": "hsk3-342",
+    "hanzi": "春",
+    "pinyin": "chūn",
+    "meaning": "春",
+    "level": 3,
+    "syllabus": "HSK2.0-supplement",
+    "tags": [
+      "weather",
+      "time"
+    ],
+    "example": "春天来了，花开了。",
+    "examplePinyin": "Chūntiān lái le, huā kāi le.",
+    "exampleMeaning": "春が来て、花が咲きました。"
+  },
+  {
+    "id": "hsk3-358",
+    "hanzi": "电子邮件",
+    "pinyin": "diànzǐ yóujiàn",
+    "meaning": "電子メール",
+    "level": 3,
+    "syllabus": "HSK2.0-supplement",
+    "tags": [
+      "tech"
+    ],
+    "example": "我给他发了电子邮件。",
+    "examplePinyin": "Wǒ gěi tā fā le diànzǐ yóujiàn.",
+    "exampleMeaning": "私は彼に電子メールを送りました。"
+  },
+  {
+    "id": "hsk3-360",
+    "hanzi": "冬",
+    "pinyin": "dōng",
+    "meaning": "冬",
+    "level": 3,
+    "syllabus": "HSK2.0-supplement",
+    "tags": [
+      "weather",
+      "time"
+    ],
+    "example": "冬天下雪了。",
+    "examplePinyin": "Dōngtiān xià xuě le.",
+    "exampleMeaning": "冬に雪が降りました。"
+  },
+  {
+    "id": "hsk3-365",
+    "hanzi": "多么",
+    "pinyin": "duōme",
+    "meaning": "なんと・どんなに",
+    "level": 3,
+    "syllabus": "HSK2.0-supplement",
+    "tags": [
+      "adverb",
+      "degree"
+    ],
+    "example": "你看，天气多么好！",
+    "examplePinyin": "Nǐ kàn, tiānqì duōme hǎo!",
+    "exampleMeaning": "見てください、なんて良い天気でしょう！"
+  },
+  {
+    "id": "hsk3-386",
+    "hanzi": "刮风",
+    "pinyin": "guāfēng",
+    "meaning": "風が吹く",
+    "level": 3,
+    "syllabus": "HSK2.0-supplement",
+    "tags": [
+      "verb",
+      "weather"
+    ],
+    "example": "外面刮风了。",
+    "examplePinyin": "Wàimiàn guāfēng le.",
+    "exampleMeaning": "外は風が吹いています。"
+  },
+  {
+    "id": "hsk3-610",
+    "hanzi": "黄河",
+    "pinyin": "Huáng Hé",
+    "meaning": "黄河",
+    "level": 3,
+    "syllabus": "HSK2.0-supplement",
+    "tags": [
+      "weather"
+    ],
+    "example": "我们一起去看黄河吧。",
+    "examplePinyin": "Wǒmen yìqǐ qù kàn Huáng Hé ba.",
+    "exampleMeaning": "一緒に黄河を見に行きましょう。"
+  },
+  {
+    "id": "hsk3-423",
+    "hanzi": "街道",
+    "pinyin": "jiēdào",
+    "meaning": "街路・通り",
+    "level": 3,
+    "syllabus": "HSK2.0-supplement",
+    "tags": [
+      "travel",
+      "direction"
+    ],
+    "example": "街道两边有很多商店。",
+    "examplePinyin": "Jiēdào liǎngbiān yǒu hěn duō shāngdiàn.",
+    "exampleMeaning": "通りの両側にたくさんの店があります。"
+  },
+  {
+    "id": "hsk3-611",
+    "hanzi": "聊天",
+    "pinyin": "liáotiān",
+    "meaning": "おしゃべりをする",
+    "level": 3,
+    "syllabus": "HSK2.0-supplement",
+    "tags": [
+      "verb",
+      "daily",
+      "language"
+    ],
+    "example": "我们一边喝茶一边聊天。",
+    "examplePinyin": "Wǒmen yìbiān hē chá yìbiān liáotiān.",
+    "exampleMeaning": "私たちはお茶を飲みながらおしゃべりします。"
+  },
+  {
+    "id": "hsk3-458",
+    "hanzi": "绿",
+    "pinyin": "lǜ",
+    "meaning": "緑色の",
+    "level": 3,
+    "syllabus": "HSK2.0-supplement",
+    "tags": [
+      "adjective",
+      "color"
+    ],
+    "example": "春天的树是绿的。",
+    "examplePinyin": "Chūntiān de shù shì lǜ de.",
+    "exampleMeaning": "春の木は緑です。"
+  },
+  {
+    "id": "hsk3-462",
+    "hanzi": "帽子",
+    "pinyin": "màozi",
+    "meaning": "帽子",
+    "level": 3,
+    "syllabus": "HSK2.0-supplement",
+    "tags": [
+      "clothes"
+    ],
+    "example": "这个帽子是我的。",
+    "examplePinyin": "Zhège màozi shì wǒ de.",
+    "exampleMeaning": "この帽子は私のです。"
+  },
+  {
+    "id": "hsk3-476",
+    "hanzi": "爬山",
+    "pinyin": "páshān",
+    "meaning": "山に登る",
+    "level": 3,
+    "syllabus": "HSK2.0-supplement",
+    "tags": [
+      "verb",
+      "hobby"
+    ],
+    "example": "周末我们去爬山吧。",
+    "examplePinyin": "Zhōumò wǒmen qù páshān ba.",
+    "exampleMeaning": "週末は山登りに行きましょう。"
+  },
+  {
+    "id": "hsk3-613",
+    "hanzi": "皮鞋",
+    "pinyin": "píxié",
+    "meaning": "革靴",
+    "level": 3,
+    "syllabus": "HSK2.0-supplement",
+    "tags": [
+      "clothes",
+      "shopping"
+    ],
+    "example": "这双皮鞋很舒服。",
+    "examplePinyin": "Zhè shuāng píxié hěn shūfu.",
+    "exampleMeaning": "この革靴はとてもはき心地が良いです。"
+  },
+  {
+    "id": "hsk3-488",
+    "hanzi": "秋",
+    "pinyin": "qiū",
+    "meaning": "秋",
+    "level": 3,
+    "syllabus": "HSK2.0-supplement",
+    "tags": [
+      "weather",
+      "time"
+    ],
+    "example": "秋天的天气很舒服。",
+    "examplePinyin": "Qiūtiān de tiānqì hěn shūfu.",
+    "exampleMeaning": "秋の天気はとても快適です。"
+  },
+  {
+    "id": "hsk3-507",
+    "hanzi": "刷牙",
+    "pinyin": "shuāyá",
+    "meaning": "歯を磨く",
+    "level": 3,
+    "syllabus": "HSK2.0-supplement",
+    "tags": [
+      "verb",
+      "daily"
+    ],
+    "example": "我每天早晚刷牙。",
+    "examplePinyin": "Wǒ měitiān zǎowǎn shuāyá.",
+    "exampleMeaning": "私は毎日朝晩歯を磨きます。"
+  },
+  {
+    "id": "hsk3-538",
+    "hanzi": "夏",
+    "pinyin": "xià",
+    "meaning": "夏",
+    "level": 3,
+    "syllabus": "HSK2.0-supplement",
+    "tags": [
+      "weather",
+      "time"
+    ],
+    "example": "夏天的天气很热。",
+    "examplePinyin": "Xiàtiān de tiānqì hěn rè.",
+    "exampleMeaning": "夏の天気はとても暑いです。"
+  },
+  {
+    "id": "hsk3-551",
+    "hanzi": "行李箱",
+    "pinyin": "xínglixiāng",
+    "meaning": "スーツケース",
+    "level": 3,
+    "syllabus": "HSK2.0-supplement",
+    "tags": [
+      "travel"
+    ],
+    "example": "我的行李箱很重。",
+    "examplePinyin": "Wǒ de xínglixiāng hěn zhòng.",
+    "exampleMeaning": "私のスーツケースはとても重いです。"
+  },
+  {
+    "id": "hsk3-552",
+    "hanzi": "熊猫",
+    "pinyin": "xióngmāo",
+    "meaning": "パンダ",
+    "level": 3,
+    "syllabus": "HSK2.0-supplement",
+    "tags": [
+      "animal"
+    ],
+    "example": "我在动物园看到了熊猫。",
+    "examplePinyin": "Wǒ zài dòngwùyuán kàndào le xióngmāo.",
+    "exampleMeaning": "私は動物園でパンダを見ました。"
+  },
+  {
+    "id": "hsk3-584",
+    "hanzi": "照相机",
+    "pinyin": "zhàoxiàngjī",
+    "meaning": "カメラ",
+    "level": 3,
+    "syllabus": "HSK2.0-supplement",
+    "tags": [
+      "tech",
+      "hobby"
+    ],
+    "example": "我带了照相机去旅游。",
+    "examplePinyin": "Wǒ dài le zhàoxiàngjī qù lǚyóu.",
+    "exampleMeaning": "私はカメラを持って旅行に行きました。"
+  }
+]

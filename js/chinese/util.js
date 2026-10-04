@@ -16,3 +16,8 @@ export function startOfCurrentWeek() {
 export function addDays(dateString, days) { const date = new Date(`${dateString}T12:00:00`); date.setDate(date.getDate() + days); return date.toISOString().slice(0, 10); }
 
 export function normalizeAnswer(value) { return String(value || "").replace(/[\s。！？,.，?!]/g, "").toLowerCase(); }
+
+export function wordLevelLabel(word) {
+  if (word?.legacySupplement) return `旧HSK ${word.level}補完`;
+  return `HSK ${word?.level || ""}${word?.newIn2026 ? " · 2026新出" : ""}`;
+}
