@@ -1,11 +1,10 @@
 // spanish.js から機能ごとに切り出したモジュール。
-import { $, $$, setMobileMenu } from "../shared.js";
+import { $, $$, activateView, bindCheckedFileActions, bindMobileNavigation } from "../shared.js";
 import { speakSpanish } from "./audio.js";
 import { clearChecked, exportChecked, importCheckedFile, renderChecked, toggleChecked } from "./checked.js";
 import { LEVELS, STORAGE_KEY } from "./config.js";
 import { renderHomeStats, renderProgress } from "./progress.js";
 import { nextQuestion, retryQuiz, startCheckedQuiz, startQuiz, startReviewQuiz } from "./quiz.js";
-import { renderReview } from "./review.js";
 import { state } from "./state.js";
 import { defaultProgress } from "./storage.js";
 import { checkResponse } from "./util.js";
@@ -32,12 +31,7 @@ async function init() {
 }
 
 function bindEvents() {
-  $$(".nav-item").forEach((button) => button.addEventListener("click", () => navigate(button.dataset.view)));
-  $(".mobile-menu").addEventListener("click", () => setMobileMenu(!$(".sidebar").classList.contains("is-open")));
-  $(".mobile-backdrop").addEventListener("click", () => setMobileMenu(false));
-  window.addEventListener("keydown", (event) => {
-    if (event.key === "Escape") setMobileMenu(false);
-  });
+  bindMobileNavigation(navigate);
   $("#random-quiz").addEventListener("click", () => startQuiz(state.words, "all"));
   $("#review-quiz").addEventListener("click", startReviewQuiz);
   $("#quiz-close").addEventListener("click", () => navigate("home"));
@@ -63,10 +57,6 @@ function bindEvents() {
     renderProgress();
     renderHomeStats();
   });
-  $$("[data-review-scope]").forEach((button) => button.addEventListener("click", () => {
-    state.review.scope = button.dataset.reviewScope;
-    renderReview();
-  }));
   document.addEventListener("click", (event) => {
     const button = event.target.closest("[data-check-id]");
     if (button) toggleChecked(button.dataset.checkId);
@@ -79,13 +69,7 @@ function bindEvents() {
     renderWords();
   });
   $("#checked-quiz").addEventListener("click", startCheckedQuiz);
-  $("#clear-checked").addEventListener("click", clearChecked);
-  $("#export-checked").addEventListener("click", exportChecked);
-  $("#import-checked").addEventListener("click", () => $("#import-checked-file").click());
-  $("#import-checked-file").addEventListener("change", (event) => {
-    importCheckedFile(event.target.files[0]);
-    event.target.value = "";
-  });
+  bindCheckedFileActions({ clearChecked, exportChecked, importCheckedFile });
   $("#checked-list").addEventListener("click", (event) => {
     const button = event.target.closest("[data-checked-audio]");
     if (!button) return;
@@ -107,12 +91,14 @@ function routeFromHash() {
 
 export function showView(view) {
   state.currentView = view;
-  $$(".view").forEach((section) => section.classList.toggle("is-visible", section.id === `${view}-view`));
-  $$(".nav-item").forEach((button) => button.classList.toggle("is-active", button.dataset.view === view));
-  setMobileMenu(false);
+  activateView(view);
   if (view === "progress") renderProgress();
   if (view === "checked") renderChecked();
   window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
-document.addEventListener("DOMContentLoaded", init);
+document.addEventListener("DOMContentLoaded", () => {
+  if (window.__spanishAppStarted) return;
+  window.__spanishAppStarted = true;
+  init();
+});

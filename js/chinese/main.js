@@ -1,16 +1,15 @@
 // app.js から機能ごとに切り出したモジュール。生成物ではなく、以降はこのファイルを直接編集する。
-import { $, $$, setMobileMenu } from "../shared.js";
+import { $, $$, activateView, bindCheckedFileActions, bindMobileNavigation } from "../shared.js";
 import { activeAudio, exampleAudioFile, playAudioFile, speak, speakWithBrowser, stopAudio } from "./audio.js";
 import { categoryById, closeCategoryDetail, openCategory, renderCategories, renderWordCategoryOptions, startCategoryPractice, startCategoryQuiz } from "./categories.js";
 import { clearChecked, exportChecked, importCheckedFile, renderChecked, startCheckedPractice, startCheckedQuiz, toggleChecked } from "./checked.js";
-import { buildDailyDays, getDailyListeningSet, renderDaily, resetDaily, startDailyNextSet, startDailyRetry, startDailyReview, startDailySession } from "./daily.js";
-import { guideById, openGuide, renderGuide, startGuidePractice, startMeasurePractice } from "./guide.js?v=20261003-grammar12";
+import { buildDailyDays, getDailyListeningSet, renderDaily, resetDaily, startDailyNextSet, startDailyRetry, startDailyReview, startDailySession } from "./daily.js?v=20261004-hsk3-full";
+import { guideById, openGuide, renderGuide, startGuidePractice, startMeasurePractice } from "./guide.js?v=20261004-hsk3-full";
 import { renderExamHub, startMockExam } from "./mock.js";
 import { closePractice, nextPracticeQuestion, playPracticeAudio, playPracticeReviewAudio, retryPractice, startPractice } from "./practice.js";
 import { renderProgress, updateSummary } from "./progress.js";
-import { nextQuestion, retryQuiz, revealQuizExample, startQuiz, startReviewQuiz } from "./quiz.js";
-import { renderReview } from "./review.js";
-import { reviewSessions, state } from "./state.js";
+import { nextQuestion, retryQuiz, revealQuizExample, startNewWordsQuiz, startQuiz, startReviewQuiz } from "./quiz.js";
+import { state } from "./state.js";
 import { resetProgress, setVocabularyDirection } from "./storage.js";
 import { renderLevels, renderWords } from "./words.js";
 
@@ -26,6 +25,8 @@ async function init() {
   renderDaily();
   renderProgress();
   updateSummary();
+  const newWordsCount = state.words.filter((word) => word.newIn2026).length;
+  $("#new-words-count-label").textContent = `2026年版で加わった${newWordsCount}語から10問`;
   routeFromHash();
 }
 
@@ -33,32 +34,44 @@ async function loadWords() {
   try {
     // データを更新したときに古いJSONを掴まないよう、毎回サーバーに確認させる
     // （変わっていなければ304で返るので通信量はほとんど増えない）。
-    const loadJson = (file) => fetch(`${file}?v=20261003-grammar12`, { cache: "no-store" });
-    const responses = await Promise.all([1, 2, 3].map((level) => loadJson(`data/chinese/hsk${level}.json`)));
+    const loadJson = (file) => fetch(`${file}?v=20261004-hsk3-full`, { cache: "no-store" });
+    const vocabularyResponses = await Promise.all([
+      ...[1, 2, 3].map((level) => loadJson(`data/chinese/hsk${level}.json`)),
+      loadJson("data/chinese/hsk-legacy-supplement.json"),
+    ]);
+    const responses = vocabularyResponses.slice(0, 3);
+    const supplementResponse = vocabularyResponses[3];
     const [tagResponse, guideResponse, measureResponse, bankResponse, ...mockResponses] = await Promise.all([
       loadJson("data/chinese/word-tags.json"),
       loadJson("data/chinese/guides.json"),
       loadJson("data/chinese/measure-words.json"),
       loadJson("data/chinese/practice-banks.json"),
       ...[1, 2, 3].map((level) => loadJson(`data/chinese/mock-hsk${level}.json`)),
+      loadJson("data/chinese/mock-hsk3-v3.json"),
     ]);
-    if (responses.some((response) => !response.ok)) throw new Error("JSONの読み込みに失敗しました");
+    if (responses.some((response) => !response.ok) || !supplementResponse.ok) throw new Error("JSONの読み込みに失敗しました");
     if (mockResponses.some((response) => !response.ok)) throw new Error("模試データの読み込みに失敗しました");
     if (!tagResponse.ok) throw new Error("分類データの読み込みに失敗しました");
     if (!guideResponse.ok || !measureResponse.ok) throw new Error("解説データの読み込みに失敗しました");
     if (!bankResponse.ok) throw new Error("練習問題データの読み込みに失敗しました");
     const groups = await Promise.all(responses.map((response) => response.json()));
+    const supplement = await supplementResponse.json();
     const mockGroups = await Promise.all(mockResponses.map((response) => response.json()));
     const tagData = await tagResponse.json();
     state.categories = tagData.categories || [];
     state.guides = (await guideResponse.json()).guides || [];
     state.measure = await measureResponse.json();
     state.banks = await bankResponse.json();
-    state.words = groups.flatMap((group, index) => group.map((word, wordIndex) => {
+    const officialWords = groups.flatMap((group, index) => group.map((word, wordIndex) => {
       const id = word.id || `hsk${index + 1}-${wordIndex + 1}`;
       return { ...word, level: index + 1, id, tags: tagData.words?.[id] || [] };
     }));
-    mockGroups.forEach((form) => { state.mockForms[form.level] = form; });
+    state.words = [...officialWords, ...supplement.map((word) => ({
+      ...word,
+      legacySupplement: true,
+      tags: tagData.words?.[word.id] || word.tags || [],
+    }))];
+    mockGroups.forEach((form) => { state.mockForms[form.key || form.level] = form; });
   } catch (error) {
     $("#level-grid").innerHTML = `<p class="empty-state">単語データを読み込めませんでした。<br><code>スタート.command</code> から起動してください。</p>`;
     console.error(error);
@@ -67,15 +80,11 @@ async function loadWords() {
 
 function bindEvents() {
   window.addEventListener("hashchange", routeFromHash);
-  $$(".nav-item").forEach((button) => button.addEventListener("click", () => navigate(button.dataset.view)));
-  $(".mobile-menu").addEventListener("click", () => setMobileMenu(!$(".sidebar").classList.contains("is-open")));
-  $(".mobile-backdrop").addEventListener("click", () => setMobileMenu(false));
-  window.addEventListener("keydown", (event) => {
-    if (event.key === "Escape") setMobileMenu(false);
-  });
+  bindMobileNavigation(navigate);
   $$("[data-vocabulary-direction]").forEach((button) => button.addEventListener("click", () => setVocabularyDirection(button.dataset.vocabularyDirection)));
   setVocabularyDirection(state.vocabularyDirection);
   $("#random-quiz").addEventListener("click", () => startQuiz(state.words, "all", state.vocabularyDirection));
+  $("#new-words-quiz").addEventListener("click", () => startNewWordsQuiz(state.vocabularyDirection));
   $("#review-quiz").addEventListener("click", () => startReviewQuiz(state.vocabularyDirection));
   $("#open-categories").addEventListener("click", () => closeCategoryDetail());
   $("#daily-open").addEventListener("click", () => navigate("daily"));
@@ -96,7 +105,7 @@ function bindEvents() {
   $$('[data-practice]').forEach((button) => button.addEventListener("click", () => startPractice(button.dataset.practice, Number($("#practice-level").value))));
   $(".mock-grid").addEventListener("click", (event) => {
     const button = event.target.closest("[data-mock-level]");
-    if (button) startMockExam(Number(button.dataset.mockLevel), button.dataset.mockSection || null);
+    if (button) startMockExam(Number(button.dataset.mockLevel), button.dataset.mockSection || null, button.dataset.mockVersion || "2.0");
   });
   $("#practice-close").addEventListener("click", closePractice);
   $("#practice-next").addEventListener("click", nextPracticeQuestion);
@@ -210,19 +219,7 @@ function bindEvents() {
     const action = button.dataset.checkedAction;
     if (action === "quiz") startCheckedQuiz(); else startCheckedPractice(action);
   }));
-  $("#clear-checked").addEventListener("click", clearChecked);
-  $("#export-checked").addEventListener("click", exportChecked);
-  $("#import-checked").addEventListener("click", () => $("#import-checked-file").click());
-  $("#import-checked-file").addEventListener("change", (event) => {
-    importCheckedFile(event.target.files[0]);
-    event.target.value = "";
-  });
-  $$("[data-review-scope]").forEach((button) => button.addEventListener("click", () => {
-    const key = button.closest(".review-panel")?.dataset.reviewKey;
-    if (!reviewSessions[key]) return;
-    reviewSessions[key].scope = button.dataset.reviewScope;
-    renderReview(key);
-  }));
+  bindCheckedFileActions({ clearChecked, exportChecked, importCheckedFile });
 }
 
 function startDailyListening() {
@@ -260,9 +257,7 @@ function routeFromHash() {
 
 export function showView(view) {
   state.currentView = view;
-  $$(".view").forEach((section) => section.classList.toggle("is-visible", section.id === `${view}-view`));
-  $$(".nav-item").forEach((item) => item.classList.toggle("is-active", item.dataset.view === view));
-  setMobileMenu(false);
+  activateView(view);
   if (view === "daily") renderDaily();
   if (view === "words") renderWords();
   if (view === "categories") renderCategories();
@@ -273,4 +268,10 @@ export function showView(view) {
   window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
-document.addEventListener("DOMContentLoaded", init);
+// 何かの拍子にこのモジュールが2回読まれても、初期化は1回だけにする。
+// （2回走るとイベントの登録も倍になり、チェックの付け外しが打ち消し合う）
+document.addEventListener("DOMContentLoaded", () => {
+  if (window.__chineseAppStarted) return;
+  window.__chineseAppStarted = true;
+  init();
+});

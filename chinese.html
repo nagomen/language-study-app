@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <meta name="description" content="言語アプリの中国語・HSK学習ページ" />
     <title>中国語・HSK | 言語アプリ</title>
-    <link rel="stylesheet" href="css/app.css?v=20261003-grammar12" />
+    <link rel="stylesheet" href="css/app.css?v=20261004-hsk3-full" />
   </head>
   <body>
     <div class="app-shell">
@@ -67,9 +67,9 @@
             <div class="daily-hero-copy">
               <span class="hero-kicker">DAILY 40 · HSK 3</span>
               <h2 id="daily-banner-title">今日の40語</h2>
-              <p id="daily-banner-note">1日40語ずつ、300語を8日で一周します（最終日は20語）。</p>
+              <p id="daily-banner-note">1日40語ずつ、2026年版HSK3の500語を13日で一周します（最終日は20語）。</p>
               <div class="daily-progress"><span id="daily-progress-bar"></span></div>
-              <small id="daily-progress-label">DAY 1 / 8</small>
+              <small id="daily-progress-label">DAY 1 / 13</small>
               <button id="daily-open" class="primary-button" type="button">今日の学習を開く <span>→</span></button>
             </div>
             <div class="hero-art" aria-hidden="true">
@@ -110,6 +110,11 @@
           <div id="level-grid" class="level-grid" aria-live="polite"></div>
 
           <div class="quick-row">
+            <button id="new-words-quiz" class="quick-card" type="button">
+              <span class="quick-icon green">新</span>
+              <span><strong>2026年新出語テスト</strong><small id="new-words-count-label">新たに加わった単語だけから10問</small></span>
+              <span aria-hidden="true">→</span>
+            </button>
             <button id="random-quiz" class="quick-card" type="button">
               <span class="quick-icon coral">随</span>
               <span><strong>おまかせ10問</strong><small>全レベルからランダム出題</small></span>
@@ -181,8 +186,8 @@
 
         <section id="words-view" class="view" aria-labelledby="words-title">
           <div class="page-heading examples-heading">
-            <div><p class="eyebrow">VOCABULARY</p><h1 id="words-title">単語帳</h1><p>HSK1〜3の600語を、意味・分類・例文つきで引けます。</p></div>
-            <div class="example-total"><strong id="word-count-label">600語</strong><span>表示中</span></div>
+            <div><p class="eyebrow">VOCABULARY</p><h1 id="words-title">単語帳</h1><p>2026年版の公式1,000語に、旧HSK模試だけに出る33語も補完しています。</p></div>
+            <div class="example-total"><strong id="word-count-label">1,033語</strong><span>表示中</span></div>
           </div>
           <div class="word-toolbar">
             <label class="search-box"><span aria-hidden="true">⌕</span><input id="word-search" type="search" placeholder="漢字・ピンイン・意味・例文で検索" /></label>
@@ -192,6 +197,8 @@
                 <button class="filter-chip" type="button" data-level="1">HSK 1</button>
                 <button class="filter-chip" type="button" data-level="2">HSK 2</button>
                 <button class="filter-chip" type="button" data-level="3">HSK 3</button>
+                <button class="filter-chip" type="button" data-level="new-2026">2026年新出</button>
+                <button class="filter-chip" type="button" data-level="legacy">旧版補完</button>
               </div>
               <label class="category-select">分類<select id="word-category" aria-label="分類で絞り込み"><option value="all">すべての分類</option></select></label>
               <div class="toolbar-toggles">
@@ -208,9 +215,9 @@
           <div class="page-heading examples-heading">
             <div><p class="eyebrow">DAILY 40 · HSK 3</p><h1 id="daily-title">今日の40語</h1><p id="daily-lead">その日の40語と、前回まちがえた単語をまとめて出題します。最後まで解かずにやめた回は完了にならず、同じ問題がもう一度出ます。</p></div>
             <div class="daily-progress-card">
-              <strong id="daily-day-label">DAY 1 / 8</strong>
+              <strong id="daily-day-label">DAY 1 / 13</strong>
               <div class="daily-progress"><span id="daily-page-progress-bar"></span></div>
-              <small id="daily-learned-label">学習済み 0 / 300語</small>
+              <small id="daily-learned-label">学習済み 0 / 500語</small>
             </div>
           </div>
           <div id="daily-status" class="daily-status"></div>
@@ -242,7 +249,7 @@
 
         <section id="categories-view" class="view" aria-labelledby="categories-title">
           <div class="page-heading examples-heading" id="category-page-heading">
-            <div><p class="eyebrow">WORD CATEGORIES</p><h1 id="categories-title">分類から学ぶ</h1><p>数詞・形容詞・旅行など、用途ごとにHSK1〜3の600語をまとめました。一覧で眺めて、そのままテストできます。</p></div>
+            <div><p class="eyebrow">WORD CATEGORIES</p><h1 id="categories-title">分類から学ぶ</h1><p>2026年版の公式1,000語と旧版補完33語を、数詞・形容詞・旅行など用途ごとにまとめました。</p></div>
             <div class="example-total"><strong id="category-total-count">0</strong><span>分類</span></div>
           </div>
           <div id="category-detail-head" class="category-detail-head-wrap is-hidden">
@@ -279,7 +286,7 @@
               <button class="secondary-button" type="button" data-category-practice="listening">聴解の問題を見る</button>
               <button id="category-open-words" class="secondary-button" type="button">単語帳で見る</button>
             </div>
-            <p class="category-quiz-note">出題の向き（中→日／日→中）はホームの設定に従います。10語に満たない分類では、まぎらわしい選択肢を全600語から補います。</p>
+            <p class="category-quiz-note">出題の向き（中→日／日→中）はホームの設定に従います。10語に満たない分類では、まぎらわしい選択肢を全1,033語から補います。</p>
             <div id="measure-guide" class="measure-guide is-hidden"></div>
             <div id="category-word-list" class="word-list"></div>
             <p id="empty-category-words" class="empty-state is-hidden">条件に合う単語がありません。レベルやチェックの絞り込みを外してみてください。</p>
@@ -315,13 +322,7 @@
             <strong>チェックした単語はまだありません</strong>
             <p>単語帳・テストの振り返りにある ✓ ボタンで追加できます。</p>
           </div>
-          <div class="checked-tools">
-            <button id="export-checked" class="text-button is-hidden" type="button">チェックを書き出す（JSON）</button>
-            <button id="import-checked" class="text-button" type="button">チェックを読み込む</button>
-            <button id="clear-checked" class="text-button is-hidden" type="button">チェックをすべて解除</button>
-            <input id="import-checked-file" class="is-hidden" type="file" accept="application/json,.json" aria-label="チェックの書き出しファイルを選ぶ" />
-          </div>
-          <p class="checked-tools-note">別の端末やGitHub Pages版とチェックを共有するときは、書き出したJSONを読み込んでください。読み込みは追加なので、今あるチェックは消えません。</p>
+          <div class="checked-file-tools"></div>
         </section>
 
         <section id="exam-view" class="view" aria-labelledby="exam-title">
@@ -360,6 +361,14 @@
             </article>
           </div>
           <aside class="mock-format-note"><strong>日本で実施中のHSK筆記1〜3級形式に準拠</strong><p>写真問題は簡易イラスト記号で代替しています。聴解は試験速度で自動的に2回再生され、模試中は速度変更できません。表示点は技能ごとの正答率を100点換算した自己採点の目安です。</p></aside>
+          <div class="section-heading"><div><p class="eyebrow">FULL MOCK EXAM · HSK 3.0</p><h2>2026年新形式模試</h2></div><span>聴解30・読解30・作文10。新しい「図＋指定語で作文」も練習できます</span></div>
+          <div class="mock-grid mock-grid-v3">
+            <article class="mock-entry">
+              <button class="mock-card" type="button" data-mock-level="3" data-mock-version="3.0"><span>HSK 3.0 · 3級</span><strong>70問</strong><small>聴解30・読解30・作文10／解答時73分</small><b>新形式模試を開始 →</b></button>
+              <div class="mock-sections" data-mock-sections="3" data-mock-version="3.0" role="group" aria-label="HSK 3.0 3級のセクション別練習"></div>
+            </article>
+          </div>
+          <aside class="mock-format-note"><strong>2026年12月13日の世界同時実施に向けたHSK 3.0形式</strong><p>公式サンプルの70問構成と時間配分に合わせています。総所要時間は情報記入と5分の転記時間を含め約83分です。自由作文は指定語の使用と文の長さを自動確認し、模範解答を表示します。</p></aside>
         </section>
 
         <section id="practice-view" class="view" aria-labelledby="practice-title">
@@ -398,17 +407,7 @@
           <div class="result-score"><strong id="practice-result-score">0</strong><span id="practice-result-unit">/ 10 問</span></div>
           <div id="practice-breakdown" class="result-breakdown"></div>
           <p id="practice-result-message" class="result-message"></p>
-          <section id="practice-review" class="review-panel is-hidden" data-review-key="practice" aria-labelledby="practice-review-title">
-            <div class="review-head">
-              <div><p class="eyebrow">REVIEW</p><h2 id="practice-review-title">振り返り</h2></div>
-              <div class="review-filter" role="group" aria-label="振り返りの表示切り替え">
-                <button class="review-chip is-active" type="button" data-review-scope="all" aria-pressed="true">すべて <b class="review-count-total">0</b></button>
-                <button class="review-chip" type="button" data-review-scope="wrong" aria-pressed="false">まちがい <b class="review-count-missed">0</b></button>
-              </div>
-            </div>
-            <ol class="review-list"></ol>
-            <p class="review-empty empty-inline is-hidden"></p>
-          </section>
+          <section id="practice-review" class="review-panel is-hidden" data-review-key="practice" aria-label="振り返り"></section>
           <div class="result-actions"><button id="practice-retry" class="primary-button" type="button">もう一度</button><button id="practice-home" class="secondary-button" type="button">試験対策へ</button></div>
         </section>
 
@@ -440,17 +439,7 @@
           <p>今回の結果</p>
           <div class="result-score"><strong id="result-correct">0</strong><span>/ <b id="result-total">0</b> 問</span></div>
           <p id="result-message" class="result-message"></p>
-          <section id="quiz-review" class="review-panel is-hidden" data-review-key="quiz" aria-labelledby="quiz-review-title">
-            <div class="review-head">
-              <div><p class="eyebrow">REVIEW</p><h2 id="quiz-review-title">振り返り</h2></div>
-              <div class="review-filter" role="group" aria-label="振り返りの表示切り替え">
-                <button class="review-chip is-active" type="button" data-review-scope="all" aria-pressed="true">すべて <b class="review-count-total">0</b></button>
-                <button class="review-chip" type="button" data-review-scope="wrong" aria-pressed="false">まちがい <b class="review-count-missed">0</b></button>
-              </div>
-            </div>
-            <ol class="review-list"></ol>
-            <p class="review-empty empty-inline is-hidden"></p>
-          </section>
+          <section id="quiz-review" class="review-panel is-hidden" data-review-key="quiz" aria-label="振り返り"></section>
           <div class="result-actions">
             <button id="retry-quiz" class="primary-button" type="button">もう一度挑戦</button>
             <button id="back-home" class="secondary-button" type="button">ホームへ戻る</button>
@@ -475,6 +464,8 @@
       </article>
     </template>
 
-    <script type="module" src="js/chinese/main.js?v=20261003-grammar12"></script>
+    <!-- main.js は categories.js などからも ./main.js として読まれる。ここに ?v= を付けると
+         別URL＝別モジュールになり、初期化が二重に走る（クリックが2回処理される）。付けないこと。 -->
+    <script type="module" src="js/chinese/main.js"></script>
   </body>
 </html>
