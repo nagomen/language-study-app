@@ -69,7 +69,7 @@ hsk2026-0568|春天|daily
 hsk3-603|词典|school,language
 hsk3-344|聪明|adjective
 hsk3-345|打扫|verb,daily,home
-hsk3-346|打算|verb,thinking,cognition
+hsk3-346|打算|verb,thinking
 hsk2026-0573|大概|adjective,adverb
 hsk2026-0574|大人|daily
 hsk2026-0575|大小|daily
@@ -99,7 +99,7 @@ hsk2026-0598|东北|daily
 hsk2026-0599|东方|daily
 hsk2026-0600|东南|daily
 hsk2026-0601|冬天|daily
-hsk2026-0602|懂得|verb
+hsk2026-0602|懂得|verb,cognition
 hsk3-361|动物|animal
 hsk2026-0604|动物园|daily
 hsk3-362|短|adjective
@@ -114,7 +114,7 @@ hsk2026-0613|耳机|daily
 hsk3-604|发|verb,tech
 hsk3-369|发烧|verb,body
 hsk2026-0616|发生|verb
-hsk3-370|发现|verb,cognition
+hsk3-370|发现|verb
 hsk2026-0618|发展|verb
 hsk3-371|方便|adjective
 hsk2026-0620|方便面|daily
@@ -131,11 +131,11 @@ hsk2026-0630|封|measure,verb
 hsk2026-0631|夫妻|daily
 hsk2026-0632|服务|verb
 hsk3-375|附近|direction,travel
-hsk3-376|复习|verb,school,cognition
+hsk3-376|复习|verb,school
 hsk2026-0635|该|verb
 hsk3-377|干净|adjective
-hsk3-605|感兴趣|verb,thinking,cognition
-hsk2026-0638|感到|verb,cognition
+hsk3-605|感兴趣|verb,thinking
+hsk2026-0638|感到|verb
 hsk3-379|感冒|verb,body
 hsk2026-0640|干|verb
 hsk2026-0641|刚|adverb
@@ -221,7 +221,7 @@ hsk2026-0720|酒|daily
 hsk3-434|旧|adjective
 hsk2026-0722|句|measure
 hsk3-436|句子|language
-hsk3-437|决定|verb,thinking,cognition
+hsk3-437|决定|verb,thinking
 hsk2026-0725|卡|daily
 hsk2026-0726|开花|verb
 hsk2026-0727|开会|verb
@@ -304,7 +304,7 @@ hsk2026-0803|汽车|daily
 hsk3-486|铅笔|school
 hsk2026-0805|前年|daily
 hsk2026-0806|前天|daily
-hsk3-487|清楚|adjective,verb
+hsk3-487|清楚|adjective,verb,cognition
 hsk3-617|请假|verb,work
 hsk2026-0809|请客|verb
 hsk2026-0810|秋天|daily
@@ -312,7 +312,7 @@ hsk2026-0811|球场|daily
 hsk3-489|裙子|clothes
 hsk3-490|然后|conjunction,time
 hsk3-491|热情|adjective,emotion
-hsk2026-0815|认得|verb
+hsk2026-0815|认得|verb,cognition
 hsk3-492|认为|verb,thinking,cognition
 hsk3-493|认真|adjective
 hsk3-494|容易|adjective
@@ -357,7 +357,7 @@ hsk2026-0856|跳|verb
 hsk2026-0857|听说|verb
 hsk2026-0858|挺|verb,adverb
 hsk3-520|同事|people,work
-hsk3-521|同意|verb,thinking,cognition
+hsk3-521|同意|verb,thinking
 hsk3-522|头发|body
 hsk3-523|突然|adverb,adjective
 hsk3-524|图书馆|school
@@ -454,7 +454,7 @@ hsk3-576|遇到|verb,people
 hsk2026-0954|遇见|verb
 hsk2026-0955|园|daily
 hsk2026-0956|员|particle
-hsk3-577|愿意|modal,thinking,verb,cognition
+hsk3-577|愿意|modal,thinking,verb
 hsk3-579|越|adverb,degree
 hsk3-578|月亮|weather
 hsk2026-0960|运动会|daily
@@ -485,7 +485,7 @@ hsk3-588|种|measure
 hsk3-589|重要|adjective
 hsk3-590|周末|time
 hsk3-591|主要|adjective,adverb
-hsk3-592|注意|verb,cognition
+hsk3-592|注意|verb
 hsk2026-0989|住院|verb
 hsk2026-0990|字典|daily
 hsk2-297|自行车|travel

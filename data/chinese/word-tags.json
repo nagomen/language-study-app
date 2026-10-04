@@ -76,7 +76,7 @@
       "id": "cognition",
       "group": "pos",
       "label": "知る・考える・覚える",
-      "description": "知道・认识・觉得・记得など、頭のはたらきを表す動詞"
+      "description": "知道・懂・觉得・认为・记得など、知る・分かる・思う・覚えるを表す語"
     },
     {
       "id": "greeting",
@@ -1062,8 +1062,7 @@
       "daily"
     ],
     "hsk2026-0247": [
-      "verb",
-      "cognition"
+      "verb"
     ],
     "hsk1-128": [
       "people",
@@ -1776,8 +1775,7 @@
     ],
     "hsk2-261": [
       "verb",
-      "emotion",
-      "cognition"
+      "emotion"
     ],
     "hsk2-262": [
       "verb",
@@ -2166,8 +2164,7 @@
     ],
     "hsk3-346": [
       "verb",
-      "thinking",
-      "cognition"
+      "thinking"
     ],
     "hsk2026-0573": [
       "adjective",
@@ -2259,7 +2256,8 @@
       "daily"
     ],
     "hsk2026-0602": [
-      "verb"
+      "verb",
+      "cognition"
     ],
     "hsk3-361": [
       "animal"
@@ -2308,8 +2306,7 @@
       "verb"
     ],
     "hsk3-370": [
-      "verb",
-      "cognition"
+      "verb"
     ],
     "hsk2026-0618": [
       "verb"
@@ -2364,8 +2361,7 @@
     ],
     "hsk3-376": [
       "verb",
-      "school",
-      "cognition"
+      "school"
     ],
     "hsk2026-0635": [
       "verb"
@@ -2375,12 +2371,10 @@
     ],
     "hsk3-605": [
       "verb",
-      "thinking",
-      "cognition"
+      "thinking"
     ],
     "hsk2026-0638": [
-      "verb",
-      "cognition"
+      "verb"
     ],
     "hsk3-379": [
       "verb",
@@ -2672,8 +2666,7 @@
     ],
     "hsk3-437": [
       "verb",
-      "thinking",
-      "cognition"
+      "thinking"
     ],
     "hsk2026-0725": [
       "daily"
@@ -2953,7 +2946,8 @@
     ],
     "hsk3-487": [
       "adjective",
-      "verb"
+      "verb",
+      "cognition"
     ],
     "hsk3-617": [
       "verb",
@@ -2980,7 +2974,8 @@
       "emotion"
     ],
     "hsk2026-0815": [
-      "verb"
+      "verb",
+      "cognition"
     ],
     "hsk3-492": [
       "verb",
@@ -3129,8 +3124,7 @@
     ],
     "hsk3-521": [
       "verb",
-      "thinking",
-      "cognition"
+      "thinking"
     ],
     "hsk3-522": [
       "body"
@@ -3451,8 +3445,7 @@
     "hsk3-577": [
       "modal",
       "thinking",
-      "verb",
-      "cognition"
+      "verb"
     ],
     "hsk3-579": [
       "adverb",
@@ -3555,8 +3548,7 @@
       "adverb"
     ],
     "hsk3-592": [
-      "verb",
-      "cognition"
+      "verb"
     ],
     "hsk2026-0989": [
       "verb"
