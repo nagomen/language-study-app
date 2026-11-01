@@ -11,6 +11,10 @@ export const state = {
   categories: [],
   categoryGuides: {},
   guides: [],
+  // 文法（HSK2・3）の単元と公式大綱の項目。selectedUnit は開いている単元。
+  grammar: null,
+  grammarSyllabus: [],
+  selectedUnit: null,
   measure: null,
   // 作文・聴解の問題文（data/chinese/practice-banks.json）。配列の順番が音声ファイルの連番に対応する。
   banks: { writing: [], listeningResponses: [], listeningDialogues: [] },

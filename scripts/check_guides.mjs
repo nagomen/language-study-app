@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// 文法ガイド・分類別学習ページ・量詞ページのデータを検証する。
+// 文法（コラムと単元）・分類別学習ページ・量詞ページのデータを検証する。
 //   node scripts/check_guides.mjs
 // 参照している単語IDが実在するか、量詞ページが measure ラベルの語を漏れなく扱っているか、
 // 語彙表外の実用量詞に見出し・ピンイン・レベルがあるか、
@@ -138,16 +138,9 @@ for (const [categoryId, guide] of Object.entries(categoryGuides || {})) {
   }
 }
 
-// --- 文法ガイド ---
-const { guides } = await loadChineseData("guides.json");
-const guideIds = new Set();
-for (const guide of guides) {
-  const label = `ガイド ${guide.id}`;
-  if (guideIds.has(guide.id)) errors.push(`${label}: IDが重複しています`);
-  guideIds.add(guide.id);
-  if (!guide.title || !guide.summary) errors.push(`${label}: title か summary が未設定`);
-  if (!guide.sections?.length) errors.push(`${label}: セクションがありません`);
-  for (const section of guide.sections || []) {
+// --- 文法：解説の節・よくある間違い・ドリル（コラムのページと単元で共通の基準） ---
+function checkSections(label, sections) {
+  for (const section of sections || []) {
     const sectionLabel = `${label} / ${section.heading}`;
     if (!section.heading) errors.push(`${label}: 見出しのないセクションがあります`);
     for (const pattern of section.patterns || []) {
@@ -160,16 +153,27 @@ for (const guide of guides) {
       const word = words.get(entry.wordId);
       if (word && !entry.phrase?.cn?.includes(word.hanzi)) errors.push(`${sectionLabel}: ${word.hanzi} が例文に含まれていません → ${entry.phrase?.cn}`);
     }
-    for (const pair of section.compare || []) {
-      if (!pair.wrong || !pair.right || !pair.note || !pair.meaning) errors.push(`${sectionLabel}: wrong・right・note・meaning のいずれかが未設定`);
-    }
+    checkCompare(sectionLabel, section.compare);
     for (const row of section.table?.rows || []) {
       if (row.length !== section.table.columns.length) errors.push(`${sectionLabel}: 表の列数が揃っていません → ${row.join(" / ")}`);
     }
   }
+}
 
-  if (!guide.practice?.length) errors.push(`${label}: 練習問題がありません`);
-  guide.practice?.forEach((question, index) => {
+function checkCompare(label, pairs) {
+  for (const pair of pairs || []) {
+    if (!pair.wrong || !pair.right || !pair.note || !pair.meaning) errors.push(`${label}: wrong・right・note・meaning のいずれかが未設定`);
+    // ○×ドリルでは right／wrong をそのまま中国語の文として出すので、日本語（かな）が混ざっていてはいけない。
+    if (/[ぁ-んァ-ン]/.test(`${pair.wrong || ""}${pair.right || ""}`)) errors.push(`${label}: 間違いの文・正しい文に日本語が混ざっています → ${pair.wrong} / ${pair.right}`);
+  }
+  // 同じ正しい文に対して別々の誤り方を並べるのはよいが、誤りの文まで同じものは重複。
+  const keys = (pairs || []).map((pair) => `${pair.wrong} → ${pair.right}`);
+  const duplicated = keys.filter((key, index) => keys.indexOf(key) !== index);
+  if (duplicated.length) errors.push(`${label}: よくある間違いが重複しています → ${[...new Set(duplicated)].join(" / ")}`);
+}
+
+function checkPractice(label, practice) {
+  practice?.forEach((question, index) => {
     const questionLabel = `${label} 練習${index + 1}`;
     if (question.wordId) checkWordId(questionLabel, question.wordId);
     if (!question.explanation) errors.push(`${questionLabel}: 解説が未設定`);
@@ -198,11 +202,40 @@ for (const guide of guides) {
   });
 }
 
+// コラム（了・的得地・知る考える覚える）
+const { guides } = await loadChineseData("guides.json");
+const guideIds = new Set();
+for (const guide of guides) {
+  const label = `コラム ${guide.id}`;
+  if (guideIds.has(guide.id)) errors.push(`${label}: IDが重複しています`);
+  guideIds.add(guide.id);
+  if (!guide.title || !guide.summary) errors.push(`${label}: title か summary が未設定`);
+  if (!guide.sections?.length) errors.push(`${label}: セクションがありません`);
+  if (!guide.practice?.length) errors.push(`${label}: 練習問題がありません`);
+  checkSections(label, guide.sections);
+  checkPractice(label, guide.practice);
+}
+
+// 文法の単元（data/chinese/grammar.json）。構成（大綱との対応など）は scripts/check_grammar.mjs で確認する。
+const grammar = await loadChineseData("grammar.json");
+checkSections("文法トップ", grammar.top?.sections);
+for (const step of grammar.steps) {
+  checkCompare(`ステップ ${step.id} の復習`, step.review?.compare);
+  checkPractice(`ステップ ${step.id} の復習`, step.review?.practice);
+}
+for (const unit of grammar.units) {
+  const label = `単元 ${unit.id}`;
+  checkSections(label, unit.sections);
+  checkCompare(label, unit.compare);
+  checkPractice(label, unit.practice);
+}
+const unitPractice = grammar.units.reduce((sum, unit) => sum + unit.practice.length, 0);
+
 for (const warning of warnings) console.warn(`警告: ${warning}`);
 if (errors.length) {
   for (const error of errors) console.error(`エラー: ${error}`);
   console.error(`\n${errors.length}件のエラーがあります。`);
   process.exit(1);
 }
-console.log(`数量詞 ${measure.items.length}語・数の型 ${measure.numberPatterns?.length || 0}件・比較 ${measure.comparisons?.length || 0}件 / 分類別学習 ${Object.keys(categoryGuides || {}).length}件 / ガイド ${guides.length}件（練習 ${guides.reduce((sum, guide) => sum + guide.practice.length, 0)}問）`);
+console.log(`数量詞 ${measure.items.length}語・数の型 ${measure.numberPatterns?.length || 0}件・比較 ${measure.comparisons?.length || 0}件 / 分類別学習 ${Object.keys(categoryGuides || {}).length}件 / コラム ${guides.length}件（練習 ${guides.reduce((sum, guide) => sum + guide.practice.length, 0)}問） / 文法の単元 ${grammar.units.length}件（練習 ${unitPractice}問）`);
 console.log(warnings.length ? `検証に成功しました（警告 ${warnings.length}件）。` : "検証に成功しました。");

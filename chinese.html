@@ -26,6 +26,9 @@
           <button class="nav-item" data-view="categories" type="button">
             <span aria-hidden="true">類</span>分類から学ぶ
           </button>
+          <button class="nav-item" data-view="grammar" type="button">
+            <span aria-hidden="true">法</span>文法
+          </button>
           <button class="nav-item" data-view="checked" type="button">
             <span aria-hidden="true">✓</span>チェック<b id="checked-nav-count" class="nav-count is-hidden">0</b>
           </button>
@@ -131,9 +134,9 @@
               <span><strong>分類から学ぶ</strong><small id="category-count-label">数詞・形容詞・旅行などの括りで出題</small></span>
               <span aria-hidden="true">→</span>
             </button>
-            <button class="quick-card" type="button" data-guide-open="hsk3-grammar">
+            <button class="quick-card" type="button" data-grammar-open="continue">
               <span class="quick-icon green">法</span>
-              <span><strong>HSK3の必修文法</strong><small>了・比較・把・補語・是…的・複文の解説と文法ドリル</small></span>
+              <span><strong>文法（HSK2・3）</strong><small id="grammar-home-label">易しい順に53単元。解説・確認ドリルつき</small></span>
               <span aria-hidden="true">→</span>
             </button>
             <button id="open-checked" class="quick-card" type="button">
@@ -307,8 +310,14 @@
           </div>
         </section>
 
+        <section id="grammar-view" class="view" aria-labelledby="grammar-title">
+          <!-- 文法の一覧（ステップと単元）と、単元のページ。js/chinese/grammar.js が描画する -->
+          <div id="grammar-map"></div>
+          <div id="grammar-unit" class="is-hidden"></div>
+        </section>
+
         <section id="guide-view" class="view" aria-labelledby="guide-title">
-          <button id="guide-back" class="text-button" type="button">← 分類の一覧へ戻る</button>
+          <button id="guide-back" class="text-button" type="button">← 文法の一覧へ戻る</button>
           <div class="page-heading examples-heading">
             <div><p class="eyebrow" id="guide-eyebrow">GRAMMAR GUIDE</p><h1 id="guide-title">解説</h1><p id="guide-summary"></p></div>
             <div class="example-total level-total"><strong id="guide-level">HSK</strong><span>目安</span></div>
@@ -354,9 +363,9 @@
             <article class="training-card writing-card"><span class="training-kanji">写</span><p class="eyebrow">WRITING · HSK 3</p><h2>作文トレーニング</h2><p>語順の並べ替えと、ピンインから漢字を書く問題を練習します。</p><button type="button" data-practice="writing">10問練習する <span>→</span></button></article>
             <article class="training-card review-card"><span class="training-kanji">复</span><p class="eyebrow">SMART REVIEW</p><h2>今日の間隔反復</h2><p>忘れそうな単語を優先し、1・3・7・14・30日間隔で復習します。</p><div class="training-count"><strong id="due-word-count">0</strong>語が復習対象</div><button type="button" data-practice="srs">復習を始める <span>→</span></button></article>
           </div>
-          <button class="guide-link" type="button" data-guide-open="hsk3-grammar">
+          <button class="guide-link" type="button" data-grammar-open="">
             <span class="guide-card-mark">法</span>
-            <span class="guide-card-body"><strong>HSK3の必修文法</strong><small>了・比較・把・補語・是…的・複文の解説と文法ドリル10問</small></span>
+            <span class="guide-card-body"><strong>文法（HSK2・3）</strong><small>公式大綱の文法を易しい順に8ステップ・53単元で。解説と確認ドリル</small></span>
             <span class="guide-card-go" aria-hidden="true">→</span>
           </button>
           <div class="section-heading"><div><p class="eyebrow">FULL MOCK EXAM · HSK 2.0</p><h2>写真なし本番形式模試</h2></div><span>公式パート比率・セクション別時間／前のセクションには戻れません。聴解・読解・作文だけを本番の時間で受けることもできます</span></div>
@@ -464,6 +473,7 @@
         <button class="nav-item is-active" data-view="home" type="button"><span aria-hidden="true">⌂</span><small>ホーム</small></button>
         <button class="nav-item" data-view="words" type="button"><span aria-hidden="true">字</span><small>単語</small></button>
         <button class="nav-item" data-view="categories" type="button"><span aria-hidden="true">類</span><small>分類</small></button>
+        <button class="nav-item" data-view="grammar" type="button"><span aria-hidden="true">法</span><small>文法</small></button>
         <button class="nav-item" data-view="checked" type="button"><span aria-hidden="true">✓</span><small>チェック</small></button>
         <button class="nav-item" data-view="exam" type="button"><span aria-hidden="true">試</span><small>試験</small></button>
         <button class="nav-item" data-view="progress" type="button"><span aria-hidden="true">↗</span><small>記録</small></button>

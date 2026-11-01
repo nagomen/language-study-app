@@ -1,9 +1,10 @@
 #!/usr/bin/env node
-// 文法セクション改修の単元構成を、公式大綱の項目一覧と突き合わせて検証する。
-//   node scripts/check_grammar_plan.mjs
+// 文法セクション（data/chinese/grammar.json）の構成を、公式大綱の項目一覧と突き合わせて検証する。
+//   node scripts/check_grammar.mjs
+// 解説・ドリルの中身（ピンイン・選択肢など）は scripts/check_guides.mjs で確認する。
 // 大綱の全項目（HSK2・HSK3）がちょうど1つの単元またはコラムに割り当てられているか、
 // 単元の級とステップの級が一致するか、1単元が5項目以内か、先に学ぶ単元（requires）が前に並んでいるか、
-// 改修前のページの内容を移す先がすべて決まっているか、旧URLの転送先が実在するかを確認する。
+// 改修前のページの旧URLがすべて転送され、転送先が実在するかを確認する。
 
 import fs from "node:fs";
 import path from "node:path";
@@ -14,8 +15,11 @@ const read = (file) => JSON.parse(fs.readFileSync(path.join(root, file), "utf8")
 
 const errors = [];
 const syllabus = read("data/source/grammar/hsk-grammar-syllabus.json").items;
-const plan = read("data/source/grammar/unit-plan.json");
-const guides = read("data/chinese/guides.json").guides;
+const plan = read("data/chinese/grammar.json");
+const columnGuides = new Set(read("data/chinese/guides.json").guides.map((guide) => guide.id));
+// 改修前の文法ページのID。旧URL（#guide/〇〇）はすべてどこかへ転送する。
+const OLD_GUIDE_IDS = ["hsk3-grammar", "le", "bi", "ba", "complement", "shi-de", "conjunction", "cognition", "de", "de-functions",
+  "aspect", "passive-causative", "adverb-order", "verb-patterns", "fixed-patterns", "official-patterns", "pronouns-order"];
 
 const items = new Map();
 for (const item of syllabus) {
@@ -27,7 +31,6 @@ for (const item of syllabus) {
 }
 
 const steps = new Map(plan.steps.map((step) => [step.id, step]));
-const guideIds = new Set([...guides.map((guide) => guide.id), "measure"]);
 const owner = new Map();
 const assign = (id, where) => {
   if (!items.has(id)) return errors.push(`${where}: 大綱にない項目ID ${id}`);
@@ -60,22 +63,18 @@ for (const unit of plan.units) {
     assign(id, unit.id);
     if (items.get(id) && items.get(id).level !== step.level) errors.push(`${unit.id}（HSK${step.level}）に HSK${items.get(id).level} の項目 ${id} が入っている`);
   }
-  for (const page of unit.from || []) if (!guideIds.has(page)) errors.push(`${unit.id}: 移行元のページ ${page} がない`);
+  if (!unit.goal) errors.push(`${unit.id}: できるようになること（goal）が未設定`);
+  for (const column of unit.columns || []) if (!plan.columns.some((item) => item.id === column)) errors.push(`${unit.id}: 関連コラム ${column} がない`);
 }
 for (const column of plan.columns) {
   for (const id of column.syllabus || []) assign(id, `コラム:${column.id}`);
-  for (const page of column.from || []) if (!guideIds.has(page)) errors.push(`コラム ${column.id}: 移行元のページ ${page} がない`);
+  if (column.id !== "measure" && !columnGuides.has(column.id)) errors.push(`コラム ${column.id} のページが guides.json にない`);
 }
 
 const unassigned = [...items.keys()].filter((id) => !owner.has(id));
 if (unassigned.length) errors.push(`どの単元にも割り当てられていない項目: ${unassigned.join("、")}`);
 
-// 改修前のページは、すべて移行先か転送先が決まっていること（内容を置き去りにしない）。
-const moved = new Set([...plan.units, ...plan.columns, plan.top || {}].flatMap((entry) => entry.from || []));
-for (const guide of guides) {
-  if (!plan.redirects[guide.id]) errors.push(`改修前のページ ${guide.id} の転送先がない`);
-  if (!moved.has(guide.id)) errors.push(`改修前のページ ${guide.id} の内容の移し先がない`);
-}
+for (const id of OLD_GUIDE_IDS) if (!plan.redirects[id]) errors.push(`改修前のページ ${id} の転送先がない`);
 const columnIds = new Set(plan.columns.map((column) => column.id));
 for (const [from, to] of Object.entries(plan.redirects)) {
   const ok = to === "#grammar" || unitIds.has(to) || (to.startsWith("column:") && columnIds.has(to.slice(7)));
@@ -95,5 +94,7 @@ for (const level of [2, 3]) {
   const unitCounts = levelSteps.map((step) => `${"★".repeat(step.stars)}${step.title} ${plan.units.filter((unit) => unit.step === step.id).length}`).join("・");
   console.log(`HSK${level}: 大綱${list.length}項目（改修前 扱い済み${count("full")}・一部${count("partial")}・未収録${count("none")}） / 単元 ${unitCounts}`);
 }
+const empty = plan.units.filter((unit) => !unit.sections?.length && !unit.practice?.length);
 console.log(`単元${plan.units.length}・コラム${plan.columns.length}・旧URLの転送${Object.keys(plan.redirects).length}件`);
+if (empty.length) console.log(`解説がまだない単元（準備中）: ${empty.length}件（${empty.map((unit) => unit.id).join("・")}）`);
 console.log("検証に成功しました。");

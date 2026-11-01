@@ -27,20 +27,20 @@ function guideCardHtml({ attr, mark, title, note }) {
   </button>`;
 }
 
-// 帯にはまとめのページだけを出す（トピック別はまとめのページの中から開く）。
+// 帯には「文法（HSK2・3）」の入口と、コラム（了・的得地・知る考える覚える）・量詞のページを出す。
 export function renderGuideBand() {
   const band = $("#guide-band");
   if (!band) return;
-  const cards = state.guides.filter((guide) => !guide.parent)
-    .map((guide) => guideCardHtml({ attr: `data-guide-open="${escapeHtml(guide.id)}"`, mark: guide.mark, title: guide.title, note: guide.blurb || guide.summary }));
-  band.innerHTML = [...cards, guideCardHtml(MEASURE_CARD)].join("");
+  const grammarCard = guideCardHtml({ attr: 'data-grammar-open=""', mark: "法", title: "文法（HSK2・3）", note: "公式大綱の文法を易しい順に。解説と確認ドリル" });
+  const cards = state.guides.map((guide) => guideCardHtml({ attr: `data-guide-open="${escapeHtml(guide.id)}"`, mark: guide.mark, title: guide.title, note: guide.blurb || guide.summary }));
+  band.innerHTML = [grammarCard, ...cards, guideCardHtml(MEASURE_CARD)].join("");
 }
 
 export function renderGuide() {
   const guide = guideById(state.selectedGuide) || state.guides[0];
   if (!guide) return;
   state.selectedGuide = guide.id;
-  $("#guide-back").textContent = guide.parent ? `← ${guideById(guide.parent)?.title || "まとめ"}へ戻る` : "← 分類の一覧へ戻る";
+  $("#guide-back").textContent = "← 文法の一覧へ戻る";
   $("#guide-eyebrow").textContent = guide.eyebrow || "GRAMMAR GUIDE";
   $("#guide-title").textContent = guide.title;
   $("#guide-summary").textContent = guide.summary;
@@ -52,7 +52,7 @@ export function renderGuide() {
   bindWordRowAudio($("#guide-sections"));
 }
 
-function guideSectionHtml(section) {
+export function guideSectionHtml(section) {
   const parts = [];
   if (section.body) parts.push(`<p class="guide-body">${escapeHtml(section.body)}</p>`);
   if (section.links) parts.push(`<div class="guide-band guide-links">${section.links.map((link) => guideCardHtml({
@@ -205,37 +205,43 @@ function guidePracticeCount(guide) {
   return Math.min(target, (guide.practice || []).length + judges);
 }
 
+/** 解説データのドリル1問を、練習画面の問題の形にする（単元の確認ドリルでも使う）。 */
+export function authoredQuestion(item) {
+  if (item.kind === "reorder") {
+    return { skill: "writing", kind: "reorder", wordId: item.wordId, tokens: [...item.tokens], slots: item.slots, answer: item.answer, meaning: item.meaning, instruction: item.instruction || "語句を並べ替えて文を作ってください", explanation: item.explanation };
+  }
+  const isDeDrill = item.choices.every((label) => label.length <= 2 && /[的得地]$/.test(label));
+  return {
+    skill: "reading", kind: isDeDrill ? "slot-de" : "grammar", wordId: item.wordId,
+    prompt: item.prompt, subPrompt: item.subPrompt,
+    choices: shuffle(item.choices.map((label) => ({ value: label, label, ...(DE_NOTES[label] ? { note: DE_NOTES[label] } : {}) }))),
+    correct: item.correct, instruction: item.instruction || (isDeDrill ? "空いているところに入るのはどれでしょう" : "正しいものを選んでください"),
+    explanation: item.explanation,
+  };
+}
+
+/** 「よくある間違い」1組から○×問題を作る。index が偶数なら間違った文、奇数なら正しい文を見せる。 */
+export function judgeQuestion(pair, index) {
+  const showWrong = index % 2 === 0;
+  return {
+    skill: "reading", kind: "grammar",
+    prompt: showWrong ? pair.wrong : pair.right,
+    subPrompt: pair.meaning ? `「${pair.meaning}」と言いたいとき、この言い方は正しいでしょうか。` : "この言い方は正しいでしょうか。",
+    choices: [{ value: "true", label: "对（正しい）" }, { value: "false", label: "不对（間違い）" }],
+    correct: String(!showWrong),
+    instruction: "文が正しいかどうかを選んでください",
+    explanation: `${pair.note}正しくは「${pair.right}」。`,
+  };
+}
+
 export function startGuidePractice(id = state.selectedGuide) {
   const guide = guideById(id);
   if (!guide) return;
   const targetCount = guidePracticeCount(guide);
-  const authored = guide.practice.map((item) => {
-    if (item.kind === "reorder") {
-      return { skill: "writing", kind: "reorder", wordId: item.wordId, tokens: [...item.tokens], slots: item.slots, answer: item.answer, meaning: item.meaning, instruction: item.instruction || "語句を並べ替えて文を作ってください", explanation: item.explanation };
-    }
-    const isDeDrill = item.choices.every((label) => label.length <= 2 && /[的得地]$/.test(label));
-    return {
-      skill: "reading", kind: isDeDrill ? "slot-de" : "grammar", wordId: item.wordId,
-      prompt: item.prompt, subPrompt: item.subPrompt,
-      choices: shuffle(item.choices.map((label) => ({ value: label, label, ...(DE_NOTES[label] ? { note: DE_NOTES[label] } : {}) }))),
-      correct: item.correct, instruction: item.instruction || (isDeDrill ? "空いているところに入るのはどれでしょう" : "正しいものを選んでください"),
-      explanation: item.explanation,
-    };
-  });
+  const authored = guide.practice.map(authoredQuestion);
   // 「よくある間違い」は、正しい文と間違った文を交互に見せて○×で判断させる。
   const compare = guide.sections.flatMap((section) => section.compare || []);
-  const judges = shuffle(compare).slice(0, 3).map((pair, index) => {
-    const showWrong = index % 2 === 0;
-    return {
-      skill: "reading", kind: "grammar",
-      prompt: showWrong ? pair.wrong : pair.right,
-      subPrompt: pair.meaning ? `「${pair.meaning}」と言いたいとき、この言い方は正しいでしょうか。` : "この言い方は正しいでしょうか。",
-      choices: [{ value: "true", label: "对（正しい）" }, { value: "false", label: "不对（間違い）" }],
-      correct: String(!showWrong),
-      instruction: "文が正しいかどうかを選んでください",
-      explanation: `${pair.note}正しくは「${pair.right}」。`,
-    };
-  });
+  const judges = shuffle(compare).slice(0, 3).map(judgeQuestion);
   // 3つの形式が必ず混ざるようにする。まとめページだけは語順問題を4問入れる。
   const reorders = authored.filter((question) => question.kind === "reorder");
   const rest = authored.filter((question) => question.kind !== "reorder");
@@ -324,10 +330,10 @@ function measurePracticeQuestions(count = 20) {
   return shuffle(picked).slice(0, count);
 }
 
-function startCustomPractice(questions, { label, modeLabel, level, guideId }) {
+export function startCustomPractice(questions, { label, modeLabel, level, guideId = null, unitId = null }) {
   clearPracticeTimer();
   if (!questions.length) return;
-  $("#practice-home").textContent = guideId === "measure" ? "量詞のページへ" : "解説ページへ";
+  $("#practice-home").textContent = unitId ? "単元のページへ" : (guideId === "measure" ? "量詞のページへ" : "解説ページへ");
   state.practice = {
     ...emptyPractice(),
     mode: "guide",
@@ -335,7 +341,7 @@ function startCustomPractice(questions, { label, modeLabel, level, guideId }) {
     questions,
     sourceLabel: label,
     modeLabel,
-    lastStart: { mode: "guide", level, isMock: false, guideId },
+    lastStart: { mode: "guide", level, isMock: false, guideId, unitId },
     sectionStats: {},
   };
   showView("practice");

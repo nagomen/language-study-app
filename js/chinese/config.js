@@ -43,8 +43,8 @@ export const CATEGORY_GROUP_META = {
 // この語数以上の分類は、まぎらわしい選択肢を同じ分類の中から作る。
 export const CATEGORY_QUIZ_MIN_POOL = 10;
 
-// 分類ページから開ける解説ページ。分類ID → ガイドID。
-export const CATEGORY_GUIDES = { particle: "de", degree: "bi", preposition: "ba", conjunction: "conjunction", direction: "complement", verb: "complement", cognition: "cognition" };
+// 分類ページから開ける解説。分類ID → 文法の単元ID、または "column:コラムID"（data/chinese/guides.json）。
+export const CATEGORY_GUIDES = { particle: "column:de", degree: "g2-18", preposition: "g3-25", conjunction: "g2-21", direction: "g2-16", verb: "g2-15", cognition: "column:cognition" };
 
 export const MEASURE_CARD = { attr: 'data-category-open="measure"', mark: "量", title: "数量詞・量詞の使い分け", note: "数の作り方、似た量詞、名詞からの逆引きをまとめて学べます" };
 

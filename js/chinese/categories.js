@@ -2,6 +2,7 @@
 import { $, $$, checkButtonHtml, escapeHtml } from "../shared.js";
 import { bindWordRowAudio, speakButtonHtml } from "./audio.js";
 import { CATEGORY_GROUP_META, CATEGORY_GUIDES, CATEGORY_QUIZ_MIN_POOL } from "./config.js";
+import { unitById } from "./grammar.js";
 import { guideById, renderGuideBand, renderMeasureGuide } from "./guide.js";
 import { navigate, showView } from "./main.js";
 import { startPractice } from "./practice.js";
@@ -85,14 +86,23 @@ function renderCategoryDetail(category) {
   $("#measure-quiz").classList.toggle("is-hidden", !isMeasure);
   $("#category-word-list").classList.toggle("is-hidden", isMeasure);
   renderCategoryFeature(category, words, { hidden: isMeasure });
-  // その分類に対応する解説ページがあれば、一覧の上から直接開けるようにする。
-  const guide = guideById(CATEGORY_GUIDES[category.id]);
+  // その分類に対応する解説（文法の単元かコラム）があれば、一覧の上から直接開けるようにする。
+  const target = CATEGORY_GUIDES[category.id] || "";
+  const guide = target.startsWith("column:") ? guideById(target.slice(7)) : null;
+  const unit = target.startsWith("column:") ? null : unitById(target);
   const guideLink = $("#category-guide-link");
-  guideLink.classList.toggle("is-hidden", !guide);
+  guideLink.classList.toggle("is-hidden", !guide && !unit);
+  guideLink.removeAttribute("data-guide-open");
+  guideLink.removeAttribute("data-grammar-open");
   if (guide) {
     guideLink.dataset.guideOpen = guide.id;
     guideLink.innerHTML = `<span class="guide-card-mark">${escapeHtml(guide.mark || "文")}</span>
-      <span class="guide-card-body"><strong>解説ページ：${escapeHtml(guide.title)}</strong><small>${escapeHtml(guide.blurb || "")}</small></span>
+      <span class="guide-card-body"><strong>解説：${escapeHtml(guide.title)}</strong><small>${escapeHtml(guide.blurb || "")}</small></span>
+      <span class="guide-card-go" aria-hidden="true">→</span>`;
+  } else if (unit) {
+    guideLink.dataset.grammarOpen = unit.id;
+    guideLink.innerHTML = `<span class="guide-card-mark">法</span>
+      <span class="guide-card-body"><strong>文法の単元：${escapeHtml(unit.title)}</strong><small>${escapeHtml(unit.goal)}</small></span>
       <span class="guide-card-go" aria-hidden="true">→</span>`;
   }
   if (isMeasure) {
