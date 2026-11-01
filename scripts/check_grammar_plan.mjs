@@ -2,8 +2,8 @@
 // 文法セクション改修の単元構成を、公式大綱の項目一覧と突き合わせて検証する。
 //   node scripts/check_grammar_plan.mjs
 // 大綱の全項目（HSK2・HSK3）がちょうど1つの単元またはコラムに割り当てられているか、
-// 単元の級とステップの級が一致するか、改修前のページの内容を移す先がすべて決まっているか、
-// 旧URLの転送先が実在するかを確認する。
+// 単元の級とステップの級が一致するか、1単元が5項目以内か、先に学ぶ単元（requires）が前に並んでいるか、
+// 改修前のページの内容を移す先がすべて決まっているか、旧URLの転送先が実在するかを確認する。
 
 import fs from "node:fs";
 import path from "node:path";
@@ -35,13 +35,27 @@ const assign = (id, where) => {
   owner.set(id, where);
 };
 
+const MAX_ITEMS_PER_UNIT = 5;   // 1単元5〜10分で学べる量に抑える
 const unitIds = new Set();
+const unitIndex = new Map(plan.units.map((unit, index) => [unit.id, index]));
+plan.steps.forEach((step, index) => {
+  const previous = plan.steps[index - 1];
+  if (previous && (step.level < previous.level || (step.level === previous.level && step.stars !== previous.stars + 1)))
+    errors.push(`ステップ ${step.id}: 級の中で★が1つずつ増える順に並んでいない`);
+});
 for (const unit of plan.units) {
   if (unitIds.has(unit.id)) errors.push(`単元IDが重複: ${unit.id}`);
   unitIds.add(unit.id);
   const step = steps.get(unit.step);
   if (!step) { errors.push(`${unit.id}: ステップ ${unit.step} がない`); continue; }
   if (!unit.syllabus?.length) errors.push(`${unit.id}: 扱う大綱の項目がない`);
+  if ((unit.syllabus || []).length > MAX_ITEMS_PER_UNIT) errors.push(`${unit.id}: 項目が${unit.syllabus.length}個（${MAX_ITEMS_PER_UNIT}個まで）`);
+  for (const required of unit.requires || []) {
+    if (!unitIndex.has(required)) errors.push(`${unit.id}: 先に学ぶ単元 ${required} がない`);
+    else if (unitIndex.get(required) >= unitIndex.get(unit.id)) errors.push(`${unit.id}: 先に学ぶ単元 ${required} が後ろに並んでいる`);
+  }
+  if (plan.steps.findIndex((item) => item.id === unit.step) < plan.steps.findIndex((item) => item.id === plan.units[unitIndex.get(unit.id) - 1]?.step))
+    errors.push(`${unit.id}: ステップの順に並んでいない`);
   for (const id of unit.syllabus || []) {
     assign(id, unit.id);
     if (items.get(id) && items.get(id).level !== step.level) errors.push(`${unit.id}（HSK${step.level}）に HSK${items.get(id).level} の項目 ${id} が入っている`);
@@ -57,10 +71,10 @@ const unassigned = [...items.keys()].filter((id) => !owner.has(id));
 if (unassigned.length) errors.push(`どの単元にも割り当てられていない項目: ${unassigned.join("、")}`);
 
 // 改修前のページは、すべて移行先か転送先が決まっていること（内容を置き去りにしない）。
-const moved = new Set([...plan.units, ...plan.columns].flatMap((entry) => entry.from || []));
+const moved = new Set([...plan.units, ...plan.columns, plan.top || {}].flatMap((entry) => entry.from || []));
 for (const guide of guides) {
   if (!plan.redirects[guide.id]) errors.push(`改修前のページ ${guide.id} の転送先がない`);
-  if (guide.id !== "hsk3-grammar" && !moved.has(guide.id)) errors.push(`改修前のページ ${guide.id} の内容の移し先がない`);
+  if (!moved.has(guide.id)) errors.push(`改修前のページ ${guide.id} の内容の移し先がない`);
 }
 const columnIds = new Set(plan.columns.map((column) => column.id));
 for (const [from, to] of Object.entries(plan.redirects)) {
@@ -78,7 +92,7 @@ for (const level of [2, 3]) {
   const list = syllabus.filter((item) => item.level === level);
   const count = (status) => list.filter((item) => item.current.status === status).length;
   const levelSteps = plan.steps.filter((step) => step.level === level);
-  const unitCounts = levelSteps.map((step) => `${step.title} ${plan.units.filter((unit) => unit.step === step.id).length}`).join("・");
+  const unitCounts = levelSteps.map((step) => `${"★".repeat(step.stars)}${step.title} ${plan.units.filter((unit) => unit.step === step.id).length}`).join("・");
   console.log(`HSK${level}: 大綱${list.length}項目（改修前 扱い済み${count("full")}・一部${count("partial")}・未収録${count("none")}） / 単元 ${unitCounts}`);
 }
 console.log(`単元${plan.units.length}・コラム${plan.columns.length}・旧URLの転送${Object.keys(plan.redirects).length}件`);
