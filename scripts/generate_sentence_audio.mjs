@@ -7,6 +7,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { spawn } from "node:child_process";
 import { parseDialogue } from "../js/chinese/dialogue.js";
+import { grammarAudioId, grammarAudioTexts } from "../js/chinese/grammar-audio.js";
 
 const appDir = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const outputDir = path.join(appDir, "audio", "sentences");
@@ -18,6 +19,8 @@ const femaleVoice = process.env.HSK_SENTENCE_FEMALE_VOICE || "Tingting";
 const maleVoice = process.env.HSK_SENTENCE_MALE_VOICE || "Reed (中国語（中国本土）)";
 const cueVoice = process.env.HSK_SENTENCE_CUE_VOICE || "Samantha";
 const force = process.env.HSK_SENTENCE_AUDIO_FORCE === "1";
+// HSK_SENTENCE_ONLY=grammar のように種類を指定すると、その種類だけを作り直す（ほかの音声の一覧はそのまま残す）。
+const only = process.env.HSK_SENTENCE_ONLY || "";
 const engineVersion = "apple-natural-v1";
 // 配信形式。音源は10kHz以下しか含まないため、AAC 48kbpsでWAVと聞き分けられない
 // （詳しくは docs/audio.md）。チェックサムは読み上げ内容を表すもので、形式は含めない。
@@ -28,6 +31,8 @@ const GAPS = { beforeCue: 1.2, afterCue: 0.45, betweenSpeakers: 0.45 };
 fs.mkdirSync(outputDir, { recursive: true });
 
 const banks = JSON.parse(fs.readFileSync(path.join(appDir, "data", "chinese", "practice-banks.json"), "utf8"));
+const grammar = JSON.parse(fs.readFileSync(path.join(appDir, "data", "chinese", "grammar.json"), "utf8"));
+const columnGuides = JSON.parse(fs.readFileSync(path.join(appDir, "data", "chinese", "guides.json"), "utf8")).guides;
 
 const words = [1, 2, 3].flatMap((level) => JSON.parse(fs.readFileSync(path.join(appDir, "data", "chinese", `hsk${level}.json`), "utf8")).map((word) => ({ ...word, level })));
 const mockForms = [1, 2, 3].map((level) => {
@@ -61,6 +66,11 @@ const catalog = [
   ...mockWritingQuestions.map((item) => ({
     id: `${item.id}-answer`, type: "writing-answer", level: item.level, text: writingAnswerText(item),
     segments: [{ role: "female", text: writingAnswerText(item) }],
+  })),
+  // 文法の例文・聞き取り問題（ファイル名は文の中身から作る：js/chinese/grammar-audio.js）
+  ...grammarAudioTexts(grammar, columnGuides).map((item) => ({
+    id: grammarAudioId(item.text), type: "grammar", level: item.level, text: item.text,
+    segments: item.dialogue ? parseDialogue(item.text) : [{ role: "female", text: item.text }],
   })),
   // 作文トレーニングの正解文（並び順の番号でファイル名を決める）
   ...banks.writing.map((item, index) => ({
@@ -162,13 +172,17 @@ async function generate(item) {
   return { ...item, checksum: itemChecksum, file: relativeFile, skipped: false };
 }
 
+const targets = only ? catalog.filter((item) => item.type === only) : catalog;
 const results = [];
 try {
-  for (let index = 0; index < catalog.length; index += 1) {
-    results.push(await generate(catalog[index]));
-    if ((index + 1) % 20 === 0 || index + 1 === catalog.length) console.log(`${index + 1} / ${catalog.length} 音声を処理`);
+  for (let index = 0; index < targets.length; index += 1) {
+    results.push(await generate(targets[index]));
+    if ((index + 1) % 20 === 0 || index + 1 === targets.length) console.log(`${index + 1} / ${targets.length} 音声を処理`);
   }
-  const items = Object.fromEntries(results.map(({ skipped, segments, ...item }) => [item.id, { ...item, voices: [...new Set(segments.map((segment) => voiceForRole(segment.role)))] }]));
+  const fresh = Object.fromEntries(results.map(({ skipped, segments, ...item }) => [item.id, { ...item, voices: [...new Set(segments.map((segment) => voiceForRole(segment.role)))] }]));
+  // 種類を指定したときは、その種類の古い項目だけを入れ替え、ほかの項目は前回のまま残す。
+  const kept = only ? Object.fromEntries(Object.entries(previous.items || {}).filter(([, item]) => item.type !== only)) : {};
+  const items = { ...kept, ...fresh };
   fs.writeFileSync(manifestPath, `${JSON.stringify({ version: 2, engineVersion, sampleRate: 44100, format: AUDIO.ext, codec: AUDIO.codec, bitrate: AUDIO.bitrate, generatedAt: new Date().toISOString(), counts: { total: results.length, generated: results.filter((item) => !item.skipped).length, reused: results.filter((item) => item.skipped).length }, items }, null, 2)}\n`);
   console.log(`完了: ${results.length}件（生成${results.filter((item) => !item.skipped).length} / 再利用${results.filter((item) => item.skipped).length}）`);
 } finally {

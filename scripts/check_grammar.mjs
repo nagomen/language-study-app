@@ -11,6 +11,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { filledSentence, grammarAudioId, grammarAudioTexts } from "../js/chinese/grammar-audio.js";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const read = (file) => JSON.parse(fs.readFileSync(path.join(root, file), "utf8"));
@@ -88,6 +89,12 @@ for (const unit of plan.units) {
     if (step) examplesByLevel[step.level].push(sentence(entry));
   }
   if (drills.length < DRILL_SIZE) gaps.push(`${unit.id}: 確認ドリルの問題が${drills.length}問（${DRILL_SIZE}問必要）`);
+  // 聞き取りチェック：会話・空欄・○×・意味の4形式のうち3つ以上を出題できること
+  const listening = [Boolean(unit.dialogue), unit.practice.some((question) => filledSentence(question)), unit.compare.length > 0, patterns.length >= 3];
+  if (!unit.dialogue) gaps.push(`${unit.id}: 聞き取りチェックの会話がない`);
+  if (listening.filter(Boolean).length < 3) gaps.push(`${unit.id}: 聞き取りチェックの形式が${listening.filter(Boolean).length}種類（3種類必要）`);
+  for (const id of unit.dialogue?.syllabus || []) if (!unit.syllabus.includes(id)) errors.push(`${unit.id}: 会話に単元の項目にない印 ${id}`);
+  if (step && unit.dialogue) examplesByLevel[step.level].push(unit.dialogue.audio);
   for (const id of unit.syllabus) {
     const hasPattern = patterns.some((entry) => (entry.syllabus || []).includes(id));
     const hasDrill = drills.some((entry) => (entry.syllabus || []).includes(id));
@@ -111,6 +118,15 @@ for (const [from, to] of Object.entries(plan.redirects)) {
   const ok = to === "#grammar" || unitIds.has(to) || (to.startsWith("column:") && columnIds.has(to.slice(7)));
   if (!ok) errors.push(`転送先が実在しない: ${from} → ${to}`);
 }
+
+// 録音：文法の例文・聞き取り問題の文は、すべて録音済みであること（scripts/generate_sentence_audio.mjs で作る）。
+const audioManifest = read("audio/manifest.json").items || {};
+const recorded = grammarAudioTexts(plan, read("data/chinese/guides.json").guides || []);
+const unrecorded = recorded.filter((item) => {
+  const id = grammarAudioId(item.text);
+  return audioManifest[id]?.text !== item.text || !fs.existsSync(path.join(root, "audio", "sentences", `${id}.m4a`));
+});
+if (unrecorded.length) errors.push(`録音のない文法の文が${unrecorded.length}件（HSK_SENTENCE_ONLY=grammar node scripts/generate_sentence_audio.mjs で作る）: ${unrecorded.slice(0, 3).map((item) => item.text).join(" / ")}`);
 
 if (errors.length) {
   for (const error of errors) console.error(`エラー: ${error}`);

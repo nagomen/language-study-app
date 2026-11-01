@@ -2,6 +2,7 @@
 // データは data/chinese/grammar.json（単元）と data/source/grammar/hsk-grammar-syllabus.json（公式大綱の項目）。
 import { $, escapeHtml, localDateKey, shuffle } from "../shared.js";
 import { bindWordRowAudio } from "./audio.js";
+import { filledSentence, grammarAudioFile } from "./grammar-audio.js";
 import { authoredQuestion, guideById, guideSectionHtml, judgeQuestion, startCustomPractice } from "./guide.js";
 import { showView } from "./main.js";
 import { state } from "./state.js";
@@ -9,6 +10,7 @@ import { state } from "./state.js";
 const PROGRESS_KEY = "hsk-grammar-progress-v1";
 const DRILL_SIZE = 5;
 const PASS_RATIO = 0.8;   // 5問中4問で合格
+const LISTEN_SIZE = 3;    // 聞き取りチェックの問数（合否には使わない）
 const STATUS_LABEL = { new: "未着手", learning: "学習中", passed: "合格", draft: "準備中" };
 
 // 進み具合は学習記録とは別に保存する（学習記録をリセットしても消えない）。
@@ -167,7 +169,7 @@ function renderGrammarUnit(unit) {
         <p class="grammar-goal"><span>できるようになること</span>${escapeHtml(unit.goal)}</p></div>
       <div class="example-total level-total"><strong>${unit.order}</strong><span>/ ${all.length}単元</span></div>
     </div>
-    <div class="grammar-unit-meta">${statusChip(unit)}${record?.attempts ? `<span>確認ドリルの最高 ${Math.round((record.best || 0) * 100)}%（${record.attempts}回）</span>` : ""}</div>
+    <div class="grammar-unit-meta">${statusChip(unit)}${record?.attempts ? `<span>確認ドリルの最高 ${Math.round((record.best || 0) * 100)}%（${record.attempts}回）</span>` : ""}${record?.listenAttempts ? `<span>聞き取りの最高 ${Math.round((record.listenBest || 0) * 100)}%（${record.listenAttempts}回）</span>` : ""}</div>
     ${requires.length ? `<div class="grammar-requires"><span>先に学ぶ単元</span>${requires.map((item) => `<button class="tag-chip" type="button" data-grammar-open="${escapeHtml(item.id)}">${item.order}. ${escapeHtml(item.title)}（${STATUS_LABEL[unitStatus(item)]}）</button>`).join("")}</div>` : ""}
     <section class="grammar-syllabus">
       <h2>この単元で学ぶ文法（公式大綱）</h2>
@@ -179,6 +181,10 @@ function renderGrammarUnit(unit) {
       <div><h2>確認ドリル ${count}問</h2><p>8割以上の正解で合格です。${status === "passed" ? "この単元は合格済みです。" : ""}</p></div>
       <button id="grammar-drill-start" class="primary-button" type="button">確認ドリルを始める <span>→</span></button>
     </section>` : ""}
+    ${listeningQuestions(unit).length ? `<section class="grammar-drill grammar-listen">
+      <div><h2>聞き取りチェック ${Math.min(LISTEN_SIZE, listeningQuestions(unit).length)}問</h2><p>この単元の文型を、文字を見ずに音声で聞き取ります。合否には関係しません。</p></div>
+      <button id="grammar-listen-start" class="secondary-button" type="button">聞き取りを始める <span>→</span></button>
+    </section>` : ""}
     ${columns.length ? `<div class="grammar-related"><span>あわせて読む</span>${columns.map((column) => column.id === "measure"
       ? `<button class="tag-chip" type="button" data-category-open="measure">${escapeHtml(column.title)}</button>`
       : `<button class="tag-chip" type="button" data-guide-open="${escapeHtml(column.id)}">${escapeHtml(column.title)}</button>`).join("")}</div>` : ""}
@@ -187,6 +193,7 @@ function renderGrammarUnit(unit) {
       ${next ? `<button class="secondary-button" type="button" data-grammar-open="${escapeHtml(next.id)}">${next.order}. ${escapeHtml(next.title)} →</button>` : "<span></span>"}
     </nav>`;
   $("#grammar-drill-start")?.addEventListener("click", () => startUnitPractice(unit.id));
+  $("#grammar-listen-start")?.addEventListener("click", () => startUnitListening(unit.id));
   bindWordRowAudio(container);
 }
 
@@ -202,6 +209,78 @@ export function startUnitPractice(id = state.selectedUnit) {
   for (const pool of [choices, reorders, judges]) while (picked.length < DRILL_SIZE && pool.length) picked.push(pool.shift());
   if (!picked.length) return alert("この単元の確認ドリルは準備中です。");
   startCustomPractice(shuffle(picked), { label: unit.title, modeLabel: "確認ドリル", level: stepById(unit.step).level, unitId: unit.id });
+}
+
+/**
+ * 聞き取りチェックの候補。形式ごとに1つの配列にまとめ、[会話, 穴埋め, 正誤, 意味] の順で返す。
+ * どれも録音済みの文（js/chinese/grammar-audio.js の grammarAudioTexts）だけを使う。
+ */
+function listeningPools(unit) {
+  const pools = [];
+  const dialogue = unit.dialogue;
+  if (dialogue?.audio) pools.push([{
+    skill: "listening", kind: "audio-dialogue", audioText: dialogue.audio, audioFile: grammarAudioFile(dialogue.audio),
+    choices: shuffle([dialogue.answer, ...dialogue.distractors]).map((label) => ({ value: label, label })), correct: dialogue.answer,
+    instruction: "会話を聞いて、質問の答えを選んでください", explanation: `${dialogue.prompt} — ${dialogue.answer}（${dialogue.ja}）`,
+  }]);
+  // 穴埋め：空欄のある文を見せ、完成した文を聞いて空欄に入る語を選ぶ。
+  pools.push(unit.practice.filter((item) => filledSentence(item)).map((item) => {
+    const text = filledSentence(item);
+    return {
+      ...authoredQuestion(item), skill: "listening", kind: "audio-fill",
+      audioText: text, audioMeaning: item.subPrompt, audioFile: grammarAudioFile(text),
+      instruction: "音声を聞いて、空欄に入る語を選んでください",
+    };
+  }));
+  // 正誤：よくある間違いの、正しい文か誤った文のどちらかを聞いて判定する。
+  pools.push(unit.compare.map((pair) => {
+    const showWrong = Math.random() < 0.5;
+    const text = showWrong ? pair.wrong : pair.right;
+    return {
+      skill: "listening", kind: "audio-judge", audioText: text, audioFile: grammarAudioFile(text), audioMeaning: pair.meaning,
+      prompt: pair.meaning ? `「${pair.meaning}」と言いたいとき、聞こえた文は正しいでしょうか。` : "聞こえた文は正しいでしょうか。",
+      choices: [{ value: "true", label: "对（正しい）" }, { value: "false", label: "不对（間違い）" }], correct: String(!showWrong),
+      instruction: "音声を聞いて、文が正しいかどうかを選んでください", explanation: `${pair.note}正しくは「${pair.right}」。`,
+    };
+  }));
+  // 意味：型カードの例文を聞いて、日本語の意味を選ぶ（選択肢は同じ単元の別の例文の訳）。
+  const examples = unit.sections.flatMap((section) => section.patterns || []).map((pattern) => pattern.example).filter((example) => example?.cn && example.ja);
+  const meanings = [...new Set(examples.map((example) => example.ja))];
+  pools.push(meanings.length < 3 ? [] : examples.map((example) => ({
+    skill: "listening", kind: "audio-sentence", audioText: example.cn, audioPinyin: example.pinyin, audioMeaning: example.ja,
+    audioFile: grammarAudioFile(example.cn), correct: example.ja,
+    choices: shuffle([example.ja, ...shuffle(meanings.filter((ja) => ja !== example.ja)).slice(0, 3)]).map((label) => ({ value: label, label })),
+    instruction: "音声の内容として正しいものを選んでください", explanation: `${example.cn}（${example.ja}）`,
+  })));
+  return pools.filter((pool) => pool.length);
+}
+const listeningQuestions = (unit) => listeningPools(unit).flat();
+
+/** 聞き取りチェック：会話を優先し、なるべく違う形式から1問ずつ選ぶ。 */
+export function startUnitListening(id = state.selectedUnit) {
+  const unit = unitById(id);
+  if (!unit) return;
+  const pools = listeningPools(unit).map((pool) => shuffle(pool));
+  const [first, ...rest] = pools;
+  const ordered = [first, ...shuffle(rest)].filter(Boolean);
+  const picked = [];
+  while (picked.length < LISTEN_SIZE && ordered.some((pool) => pool.length)) {
+    for (const pool of ordered) if (picked.length < LISTEN_SIZE && pool.length) picked.push(pool.shift());
+  }
+  if (!picked.length) return;
+  startCustomPractice(picked.map((question) => ({ ...question, audioPlays: 0 })), {
+    label: unit.title, modeLabel: "聞き取りチェック", level: stepById(unit.step).level, unitId: unit.id, listening: true,
+  });
+}
+
+/** 聞き取りチェックの結果を記録する（単元の合否には使わない）。 */
+export function recordListeningResult(unitId, correct, total) {
+  if (!unitById(unitId) || !total) return;
+  const record = grammarProgress().units[unitId] ||= { passed: false, attempts: 0, best: 0 };
+  record.listenAttempts = (record.listenAttempts || 0) + 1;
+  record.listenBest = Math.max(record.listenBest || 0, correct / total);
+  record.listenLast = correct / total;
+  saveGrammarProgress();
 }
 
 /** 確認ドリルの結果を記録する。8割以上で合格（一度合格したら、その後の結果で取り消さない）。 */

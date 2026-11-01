@@ -207,6 +207,20 @@ function checkPractice(label, practice) {
   });
 }
 
+// 聞き取りチェックの会話（男：…女：…问：…）。问の文が prompt と一致し、正解が誤答と重ならないこと。
+function checkDialogue(label, dialogue) {
+  if (!dialogue) return;
+  const { audio, prompt, answer, distractors, ja } = dialogue;
+  if (!/^[男女]：/.test(audio || "") || !String(audio).includes("问：")) errors.push(`${label}: 会話は「男：」か「女：」で始め、「问：」の問いを含めてください → ${audio}`);
+  const question = String(audio || "").split("问：")[1]?.trim();
+  if (question !== prompt) errors.push(`${label}: 问の文（${question}）と prompt（${prompt}）が一致しません`);
+  if (!answer || (distractors || []).length !== 2) errors.push(`${label}: 正解1つと誤答2つが必要です`);
+  if ((distractors || []).includes(answer)) errors.push(`${label}: 正解「${answer}」が誤答にも入っています`);
+  if (!ja) errors.push(`${label}: 和訳（ja）が未設定`);
+  const stray = [...`${audio}${(distractors || []).join("")}${answer}`].filter((char) => HANZI.test(char) && !vocabularyChars.has(char));
+  if (stray.length) warnings.push(`${label}: HSK1〜3の語彙にない漢字 ${[...new Set(stray)].join("・")}`);
+}
+
 // コラム（了・的得地・知る考える覚える）
 const { guides } = await loadChineseData("guides.json");
 const guideIds = new Set();
@@ -233,6 +247,7 @@ for (const unit of grammar.units) {
   checkSections(label, unit.sections);
   checkCompare(label, unit.compare);
   checkPractice(label, unit.practice);
+  checkDialogue(`${label} 会話`, unit.dialogue);
 }
 const unitPractice = grammar.units.reduce((sum, unit) => sum + unit.practice.length, 0);
 

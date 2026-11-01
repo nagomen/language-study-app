@@ -4,7 +4,7 @@ import { exampleAudioFile, playAudioFile, speak, speakDialogue, speakWithBrowser
 import { startCategoryPractice } from "./categories.js";
 import { startCheckedPractice } from "./checked.js";
 import { EXAM_CONFIG, LISTENING_MIX, PRACTICE_TARGET_RATIO, READING_MIX, SKILL_LABELS } from "./config.js";
-import { recordUnitResult, startUnitPractice } from "./grammar.js";
+import { recordListeningResult, recordUnitResult, startUnitListening, startUnitPractice } from "./grammar.js";
 import { multiAnswerValue, startGuidePractice, startMeasurePractice } from "./guide.js";
 import { navigate, showView } from "./main.js";
 import { startMockExam, startMockSectionTimer } from "./mock.js";
@@ -217,6 +217,8 @@ export function renderPracticeQuestion() {
   else if (question.kind === "visual-choice") prompt.innerHTML = `<div class="listening-symbol" aria-hidden="true">听</div><p class="hidden-prompt">请听录音后选择图示</p>`;
   else if (question.kind === "reading-visual-judge") prompt.innerHTML = `<h2 class="mock-reading-prompt">${escapeHtml(question.prompt)}</h2>${question.promptPinyin ? `<p class="mock-pinyin">${escapeHtml(question.promptPinyin)}</p>` : ""}<div class="mock-visual" role="img" aria-label="${escapeHtml(question.visual.alt)}">${escapeHtml(question.visual.symbol)}</div>`;
   else if (question.kind === "reading-visual-choice") prompt.innerHTML = `<h2 class="mock-reading-prompt">${escapeHtml(question.prompt)}</h2>${question.promptPinyin ? `<p class="mock-pinyin">${escapeHtml(question.promptPinyin)}</p>` : ""}`;
+  // 文法の聞き取り（穴埋め）：空欄のある文と訳を見せ、音声で空欄を聞き取る。
+  else if (question.kind === "audio-fill") prompt.innerHTML = `<div class="listening-symbol is-fill" aria-hidden="true">听</div><h2 class="reading-prompt" lang="zh-CN">${escapeHtml(question.prompt)}</h2>${question.subPrompt ? `<p class="reading-subprompt">${escapeHtml(question.subPrompt)}</p>` : ""}`;
   else if (question.kind === "audio-judge") prompt.innerHTML = `<div class="listening-symbol" aria-hidden="true">听</div><p class="audio-judge-prompt">${escapeHtml(question.prompt)}</p>`;
   else if (question.skill === "listening") prompt.innerHTML = `<div class="listening-symbol" aria-hidden="true">听</div><p class="hidden-prompt">${session.isMock ? "请听录音后选择答案" : "文字を見ずに聞き取りましょう"}</p>`;
   else if (question.kind === "compose") prompt.innerHTML = `<div class="mock-compose-visual" role="img" aria-label="${escapeHtml(question.visual.alt)}"><span>${escapeHtml(question.visual.symbol)}</span></div><p class="mock-compose-word">指定語：<strong lang="zh-CN">${escapeHtml(question.requiredWord)}</strong></p>`;
@@ -519,7 +521,7 @@ function revealListeningScript(question) {
   if (!panel || !body) return;
   body.innerHTML = question.audioWord
     ? `<p class="script-line"><span class="script-role">単</span>${escapeHtml(question.audioWord.hanzi)}（${escapeHtml(question.audioWord.pinyin)}）</p>`
-    : question.kind === "audio-sentence"
+    : ["audio-sentence", "audio-fill", "audio-judge"].includes(question.kind)
       ? `<p class="script-line" lang="zh-CN">${escapeHtml(question.audioText || "")}</p>
         ${question.audioPinyin ? `<p class="script-pinyin">${escapeHtml(question.audioPinyin)}</p>` : ""}
         ${question.audioMeaning ? `<p class="script-meaning">${escapeHtml(question.audioMeaning)}</p>` : ""}`
@@ -634,8 +636,17 @@ export function finishPractice(timedOut = Boolean(state.practice.timedOutSection
     $("#practice-result-subtitle").textContent = "今回の結果";
     $("#practice-result-message").textContent = attempted && session.correct / attempted >= .8 ? "よくできました！次の技能にも挑戦しましょう。" : "間違えた単語は間隔反復に追加しました。";
     $("#practice-breakdown").innerHTML = Object.entries(session.sectionStats).map(([skill, data]) => `<div><span>${SKILL_LABELS[skill]}</span><strong>${data.correct}</strong><small>/ ${data.answered}</small></div>`).join("");
+    // 文法の聞き取りチェック：結果は記録するが、単元の合否には使わない。
+    if (session.lastStart?.unitId && session.lastStart.listening) {
+      recordListeningResult(session.lastStart.unitId, session.correct, session.questions.length);
+      $("#practice-result-title").textContent = "聞き取りチェック完了";
+      $("#practice-result-unit").textContent = `/ ${session.questions.length} 問`;
+      $("#practice-result-message").textContent = session.correct === session.questions.length
+        ? "全問聞き取れました。"
+        : "振り返りでスクリプトを見ながら、もう一度聞いてみましょう。";
+    }
     // 文法の確認ドリル：8割以上で単元を合格にする（未回答は不正解として数える）。
-    if (session.lastStart?.unitId) {
+    else if (session.lastStart?.unitId) {
       const passed = recordUnitResult(session.lastStart.unitId, session.correct, session.questions.length);
       $("#practice-result-title").textContent = passed ? "合格です" : "確認ドリル完了";
       $("#practice-result-unit").textContent = `/ ${session.questions.length} 問`;
@@ -657,6 +668,7 @@ export function retryPractice() {
     const words = last.sourceIds.map((id) => state.words.find((word) => word.id === id)).filter(Boolean);
     startPractice(last.mode, last.level, words, last.sourceMeta);
   }
+  else if (last.unitId && last.listening) startUnitListening(last.unitId);
   else if (last.unitId) startUnitPractice(last.unitId);
   else if (last.guideId === "measure") startMeasurePractice();
   else if (last.guideId) startGuidePractice(last.guideId);

@@ -1,5 +1,6 @@
 // app.js から機能ごとに切り出したモジュール。生成物ではなく、以降はこのファイルを直接編集する。
 import { $, $$, activateView, bindCheckedFileActions, bindMobileNavigation } from "../shared.js";
+import { grammarAudioFile, grammarAudioTexts } from "./grammar-audio.js";
 import { activeAudio, exampleAudioFile, playAudioFile, speak, speakWithBrowser, stopAudio } from "./audio.js";
 import { categoryById, closeCategoryDetail, openCategory, renderCategories, renderWordCategoryOptions, startCategoryPractice, startCategoryQuiz } from "./categories.js";
 import { clearChecked, exportChecked, importCheckedFile, renderChecked, startCheckedPractice, startCheckedQuiz, toggleChecked } from "./checked.js";
@@ -13,6 +14,13 @@ import { nextQuestion, retryQuiz, revealQuizExample, startNewWordsQuiz, startQui
 import { state } from "./state.js";
 import { resetProgress, setVocabularyDirection } from "./storage.js";
 import { getFilteredWords, renderLevels, renderWords } from "./words.js";
+
+// 録音のある文法の文（初回に作って使い回す）
+let grammarTextSet = null;
+function recordedGrammarTexts() {
+  if (!grammarTextSet && state.grammar) grammarTextSet = new Set(grammarAudioTexts(state.grammar, state.guides).map((item) => item.text));
+  return grammarTextSet || new Set();
+}
 
 async function init() {
   bindEvents();
@@ -223,11 +231,15 @@ function bindEvents() {
       if (!target) openGrammarMap();
       else openUnit(target === "continue" ? continueUnit()?.id : target);
     }
-    // 解説・量詞ページの短いフレーズには録音がないので、ブラウザの音声で読み上げる。
+    // 文法の例文は録音を再生する。録音のない短いフレーズ（量詞ページなど）はブラウザの音声で読み上げる。
     const speakButton = event.target.closest("[data-speak]");
     if (speakButton) {
-      stopAudio();
-      speakWithBrowser(speakButton.dataset.speak, speakButton, { rate: Math.max(.6, .75 * state.audioSpeed) });
+      const text = speakButton.dataset.speak;
+      if (recordedGrammarTexts().has(text)) playAudioFile(grammarAudioFile(text), speakButton, { fallbackText: text, role: "female" });
+      else {
+        stopAudio();
+        speakWithBrowser(text, speakButton, { rate: Math.max(.6, .75 * state.audioSpeed) });
+      }
     }
   });
   $("#open-checked").addEventListener("click", () => navigate("checked"));
