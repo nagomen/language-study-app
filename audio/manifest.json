@@ -5,11 +5,11 @@
   "format": "m4a",
   "codec": "aac",
   "bitrate": 48000,
-  "generatedAt": "2026-11-01T07:00:09.933Z",
+  "generatedAt": "2026-11-01T07:33:56.423Z",
   "counts": {
-    "total": 662,
-    "generated": 662,
-    "reused": 0
+    "total": 665,
+    "generated": 21,
+    "reused": 644
   },
   "items": {
     "example-hsk1-001": {
@@ -10995,13 +10995,13 @@
         "Tingting"
       ]
     },
-    "grammar-3b249178": {
-      "id": "grammar-3b249178",
+    "grammar-09262336": {
+      "id": "grammar-09262336",
       "type": "grammar",
       "level": 2,
-      "text": "你看过这部电影吗？",
-      "checksum": "07e7fa26f44c79296121eb01ecfa25fec67bac395bc1084afac19fcd407e7e7d",
-      "file": "audio/sentences/grammar-3b249178.m4a",
+      "text": "你看过这个电影吗？",
+      "checksum": "e752bb17c9bdf263eb4cc9d133953a2bff6e3baabea05ea13e2de3b13aa702fa",
+      "file": "audio/sentences/grammar-09262336.m4a",
       "voices": [
         "Tingting"
       ]
@@ -11059,6 +11059,17 @@
       "text": "我的手机在桌子上。",
       "checksum": "374d3925d790cfae31071796153c0845094b66b08b0949b6aa934e4141a436e6",
       "file": "audio/sentences/grammar-4908887f.m4a",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "grammar-94b52a44": {
+      "id": "grammar-94b52a44",
+      "type": "grammar",
+      "level": 2,
+      "text": "椅子上坐着一个人。",
+      "checksum": "a3e2784a129b9182f4e60068a11265016b0a82257ac5151be874bb4870ad8682",
+      "file": "audio/sentences/grammar-94b52a44.m4a",
       "voices": [
         "Tingting"
       ]
@@ -11162,13 +11173,13 @@
         "Tingting"
       ]
     },
-    "grammar-342ee0d4": {
-      "id": "grammar-342ee0d4",
+    "grammar-b96cb389": {
+      "id": "grammar-b96cb389",
       "type": "grammar",
       "level": 2,
-      "text": "墙上挂着一张照片。",
-      "checksum": "2c1d11bf17041e5200b239addd543333fd1e198b00d60e242dfef3ad06502fc4",
-      "file": "audio/sentences/grammar-342ee0d4.m4a",
+      "text": "门上写着两个字。",
+      "checksum": "0958a00e4f333b9587bb3c54dd0c61691496cf9d2277c94e394167d9579b1ee8",
+      "file": "audio/sentences/grammar-b96cb389.m4a",
       "voices": [
         "Tingting"
       ]
@@ -11575,6 +11586,17 @@
         "Tingting"
       ]
     },
+    "grammar-60131f40": {
+      "id": "grammar-60131f40",
+      "type": "grammar",
+      "level": 2,
+      "text": "你等一下，我就来。",
+      "checksum": "645a69d04d03fb5598bd9d0b496fcf98a2edaac0a076ac7661246ce524b75323",
+      "file": "audio/sentences/grammar-60131f40.m4a",
+      "voices": [
+        "Tingting"
+      ]
+    },
     "grammar-a2aca876": {
       "id": "grammar-a2aca876",
       "type": "grammar",
@@ -11615,6 +11637,17 @@
       "text": "这个问题我没听清楚，请你再说一遍。",
       "checksum": "f5b0837edc482609d4124905165c4dfedeb206927353205334886ef2bf6e4bb2",
       "file": "audio/sentences/grammar-9ddc36fc.m4a",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "grammar-ebc3e38b": {
+      "id": "grammar-ebc3e38b",
+      "type": "grammar",
+      "level": 2,
+      "text": "我们吃完饭再去吧。",
+      "checksum": "2025de02cd3d56edd1603345d6c7d26cf63cbae8cd7f8118783c9e943a60d1a3",
+      "file": "audio/sentences/grammar-ebc3e38b.m4a",
       "voices": [
         "Tingting"
       ]
@@ -12816,13 +12849,13 @@
         "Tingting"
       ]
     },
-    "grammar-c16c3852": {
-      "id": "grammar-c16c3852",
+    "grammar-fa511426": {
+      "id": "grammar-fa511426",
       "type": "grammar",
       "level": 2,
-      "text": "他住在一间小房子里，桌子上有一包茶。",
-      "checksum": "177ef3b92a3536be1192f2ce93ea64da9f71fd6603cf4c5d5eff983191c589f0",
-      "file": "audio/sentences/grammar-c16c3852.m4a",
+      "text": "他住在一间小房间里，桌子上有一包茶。",
+      "checksum": "ef07d07b579e719c55ced90548939cfada75d9243e2953510be7ba24e472c7c6",
+      "file": "audio/sentences/grammar-fa511426.m4a",
       "voices": [
         "Tingting"
       ]
@@ -12882,13 +12915,13 @@
         "Tingting"
       ]
     },
-    "grammar-a7e04e2b": {
-      "id": "grammar-a7e04e2b",
+    "grammar-c68ee34e": {
+      "id": "grammar-c68ee34e",
       "type": "grammar",
       "level": 2,
-      "text": "这件衣服一万块钱。",
-      "checksum": "87ff74b0bd96f1c79b131ce391980a239cc5ee03589d8cc68ab924aee6c53eb0",
-      "file": "audio/sentences/grammar-a7e04e2b.m4a",
+      "text": "这个学校有一万个学生。",
+      "checksum": "d397dc3b3526d98c7afc9e845dea830efaaaf374bc1bc62d6b43478b4eb7594e",
+      "file": "audio/sentences/grammar-c68ee34e.m4a",
       "voices": [
         "Tingting"
       ]
@@ -13240,13 +13273,13 @@
         "Tingting"
       ]
     },
-    "grammar-5a00e852": {
-      "id": "grammar-5a00e852",
+    "grammar-53814661": {
+      "id": "grammar-53814661",
       "type": "grammar",
       "level": 3,
-      "text": "不一会儿，雨就停了。",
-      "checksum": "16a8292c239096b19d927614f82d37dde3e429fb73bf9c380fd845871512efab",
-      "file": "audio/sentences/grammar-5a00e852.m4a",
+      "text": "不一会儿，他就回来了。",
+      "checksum": "1278d3a92ae36f8b381a3bae2e5893903fe552c44b0c826d9d2abb27432e3663",
+      "file": "audio/sentences/grammar-53814661.m4a",
       "voices": [
         "Tingting"
       ]
@@ -13662,13 +13695,13 @@
         "Tingting"
       ]
     },
-    "grammar-b736d335": {
-      "id": "grammar-b736d335",
+    "grammar-b75f006b": {
+      "id": "grammar-b75f006b",
       "type": "grammar",
       "level": 3,
-      "text": "我们都没看过那部电影。",
-      "checksum": "c161fca5e18303d94293f2dfdf1ab25e28ae773758bf05e91a7abb60bde60c04",
-      "file": "audio/sentences/grammar-b736d335.m4a",
+      "text": "我们都没看过那个电影。",
+      "checksum": "653f400227f4804146e6a277df76665cc63d889940673cd4ffa74bf01c4e5cdc",
+      "file": "audio/sentences/grammar-b75f006b.m4a",
       "voices": [
         "Tingting"
       ]
@@ -13998,13 +14031,13 @@
         "Tingting"
       ]
     },
-    "grammar-3427f93d": {
-      "id": "grammar-3427f93d",
+    "grammar-6d20b7f5": {
+      "id": "grammar-6d20b7f5",
       "type": "grammar",
       "level": 3,
-      "text": "请继续说下去，把名字写下来。",
-      "checksum": "8ec9ac6541ff088971d610fe0fa2c3f5eccea154e411a6caf2d8e5f0dd240f21",
-      "file": "audio/sentences/grammar-3427f93d.m4a",
+      "text": "请你说下去，把名字写下来。",
+      "checksum": "7ef5a8a18f42e88b3610c0a53684402ddc93c8b17cd2288165ae1ab739ba44db",
+      "file": "audio/sentences/grammar-6d20b7f5.m4a",
       "voices": [
         "Tingting"
       ]
@@ -14914,13 +14947,13 @@
         "Tingting"
       ]
     },
-    "grammar-9a63ef64": {
-      "id": "grammar-9a63ef64",
+    "grammar-9bddd28a": {
+      "id": "grammar-9bddd28a",
       "type": "grammar",
       "level": 3,
-      "text": "杯子被打破了。",
-      "checksum": "cc7df932cb18b3555024402a064b639de8106827ffadcb3d087288fee60c2b23",
-      "file": "audio/sentences/grammar-9a63ef64.m4a",
+      "text": "我的蛋糕被吃完了。",
+      "checksum": "7449cd559b588371af6fe2af22508149f4a7929e3859a447e94dc425cec368fb",
+      "file": "audio/sentences/grammar-9bddd28a.m4a",
       "voices": [
         "Tingting"
       ]
@@ -15002,13 +15035,13 @@
         "Tingting"
       ]
     },
-    "grammar-a7d593b4": {
-      "id": "grammar-a7d593b4",
+    "grammar-67f1dede": {
+      "id": "grammar-67f1dede",
       "type": "grammar",
       "level": 3,
-      "text": "那封信被风吹走了。",
-      "checksum": "13a7de7f308df98211ce73f5bdfd5ec04e854114f865f24aec03b628ff1dd582",
-      "file": "audio/sentences/grammar-a7d593b4.m4a",
+      "text": "那本书被他借走了。",
+      "checksum": "8993d1472e837b9d867d2ff064180b757a3515f601b731874792b5097454f8e6",
+      "file": "audio/sentences/grammar-67f1dede.m4a",
       "voices": [
         "Tingting"
       ]
@@ -15182,13 +15215,13 @@
         "Tingting"
       ]
     },
-    "grammar-e4982af7": {
-      "id": "grammar-e4982af7",
+    "grammar-bdc5aac4": {
+      "id": "grammar-bdc5aac4",
       "type": "grammar",
       "level": 3,
-      "text": "我的手机跟你的一样。",
-      "checksum": "058bf79e7f656b79ae49ce751f9a7d9ee78950299e6b123398b83fe0beaeff58",
-      "file": "audio/sentences/grammar-e4982af7.m4a",
+      "text": "今天跟昨天一样热。",
+      "checksum": "163040c0df78aa46dca158e77adb286ab8ce142a1e4f3817e8d12328af639213",
+      "file": "audio/sentences/grammar-bdc5aac4.m4a",
       "voices": [
         "Tingting"
       ]
@@ -15250,13 +15283,13 @@
         "Tingting"
       ]
     },
-    "grammar-2ea03e63": {
-      "id": "grammar-2ea03e63",
+    "grammar-f3bf5ab7": {
+      "id": "grammar-f3bf5ab7",
       "type": "grammar",
       "level": 3,
-      "text": "一个人从前面走过来了那个。",
-      "checksum": "23d4e2211a7eb05c52a4f848ee062e400c01f3a722df2134142260429c7fe8ca",
-      "file": "audio/sentences/grammar-2ea03e63.m4a",
+      "text": "前面走过来那个人。",
+      "checksum": "61eac36dac706a2a6d77403f7a61d97bafba5347d6023222a7fa3fd34709eb90",
+      "file": "audio/sentences/grammar-f3bf5ab7.m4a",
       "voices": [
         "Tingting"
       ]
@@ -15397,13 +15430,13 @@
         "Tingting"
       ]
     },
-    "grammar-82bbbed0": {
-      "id": "grammar-82bbbed0",
+    "grammar-3d1ef21c": {
+      "id": "grammar-3d1ef21c",
       "type": "grammar",
       "level": 3,
-      "text": "我昨天见了面。",
-      "checksum": "f7725985f71d62d3ea68bb471e4fddfd2c99b7570b4efefb1c35cf5a2228d48d",
-      "file": "audio/sentences/grammar-82bbbed0.m4a",
+      "text": "我们昨天见了面。",
+      "checksum": "b050a2d14f5658c2f94c7da1d11679c1b397cdc0d521c35b7247d5940c9fa9db",
+      "file": "audio/sentences/grammar-3d1ef21c.m4a",
       "voices": [
         "Tingting"
       ]
@@ -15933,24 +15966,13 @@
         "Tingting"
       ]
     },
-    "grammar-e752c173": {
-      "id": "grammar-e752c173",
+    "grammar-049f794a": {
+      "id": "grammar-049f794a",
       "type": "grammar",
       "level": 3,
-      "text": "只有有时间，才去。",
-      "checksum": "706f3053a5b18d780b4de3d97e4f7ebf6c05ecfbd3c1c3e271e68315fe0fccae",
-      "file": "audio/sentences/grammar-e752c173.m4a",
-      "voices": [
-        "Tingting"
-      ]
-    },
-    "grammar-78a1f5ef": {
-      "id": "grammar-78a1f5ef",
-      "type": "grammar",
-      "level": 3,
-      "text": "只有有时间，就去。",
-      "checksum": "0ea463c98d7eeec00e0e5537241b03b268c53035d8f1c6b8c9caae70e28518c6",
-      "file": "audio/sentences/grammar-78a1f5ef.m4a",
+      "text": "只有多练习，就会进步。",
+      "checksum": "43f7158a03af266a5bf156164ea8640d3d6d304cf58ecccc59c62f8b7e13ac9e",
+      "file": "audio/sentences/grammar-049f794a.m4a",
       "voices": [
         "Tingting"
       ]
@@ -16135,13 +16157,13 @@
         "Samantha"
       ]
     },
-    "grammar-c5da8d95": {
-      "id": "grammar-c5da8d95",
+    "grammar-fa612db4": {
+      "id": "grammar-fa612db4",
       "type": "grammar",
       "level": 3,
-      "text": "除了汉语以外，我还学英语。",
-      "checksum": "e26e58bab705d591d2eb004b3212f5f5bbaeff36a81486c838f31b84935c34a5",
-      "file": "audio/sentences/grammar-c5da8d95.m4a",
+      "text": "除了汉语以外，我还学跳舞。",
+      "checksum": "3de355cf0109f616916c739ff151bd49912c14e12bbea6457f263b1996e003e5",
+      "file": "audio/sentences/grammar-fa612db4.m4a",
       "voices": [
         "Tingting"
       ]
@@ -16234,13 +16256,13 @@
         "Tingting"
       ]
     },
-    "grammar-5777d1be": {
-      "id": "grammar-5777d1be",
+    "grammar-07cf61ed": {
+      "id": "grammar-07cf61ed",
       "type": "grammar",
       "level": 3,
-      "text": "他在工作上很有经验。",
-      "checksum": "4c6de4836b34a81a5020832b2e9939ae644f9ca9577794c438e8acd60da0a0fc",
-      "file": "audio/sentences/grammar-5777d1be.m4a",
+      "text": "他在工作上帮了我很多。",
+      "checksum": "dab5f785a63e96f83d5f5f3b5ef1bdabbab247e8841f699ae278673c7b53a990",
+      "file": "audio/sentences/grammar-07cf61ed.m4a",
       "voices": [
         "Tingting"
       ]
@@ -16403,13 +16425,13 @@
         "Tingting"
       ]
     },
-    "grammar-254c089e": {
-      "id": "grammar-254c089e",
+    "grammar-fd953317": {
+      "id": "grammar-fd953317",
       "type": "grammar",
       "level": 3,
-      "text": "一般来说这里很安静，不过今天不怎么样。",
-      "checksum": "331c320b2b80222f8811784e44cb7f36721fd2136c547b8c3b6feac264481ce0",
-      "file": "audio/sentences/grammar-254c089e.m4a",
+      "text": "一般来说，这家店的菜很好吃，不过今天的菜不怎么样。",
+      "checksum": "c84dfac7f69c5cf2b4c107743a59153de3c3b8cc75ad0cc9f04afd7f593a17eb",
+      "file": "audio/sentences/grammar-fd953317.m4a",
       "voices": [
         "Tingting"
       ]
@@ -16627,13 +16649,13 @@
         "Tingting"
       ]
     },
-    "grammar-44377004": {
-      "id": "grammar-44377004",
+    "grammar-de574092": {
+      "id": "grammar-de574092",
       "type": "grammar",
       "level": 3,
-      "text": "你不是看过这部电影吗？",
-      "checksum": "64e5912a4c1ce9a2b354794c55179c6f272412266f8632031bab713b68bd40b2",
-      "file": "audio/sentences/grammar-44377004.m4a",
+      "text": "你不是看过这个电影吗？",
+      "checksum": "ebd4842581629ad7fc3efd15912544405ea77de368a9c90b06e6970013fd8ff0",
+      "file": "audio/sentences/grammar-de574092.m4a",
       "voices": [
         "Tingting"
       ]
@@ -16834,6 +16856,17 @@
       "text": "我跟朋友见了面。",
       "checksum": "707fe21d014690f646823a544819637d56b34c7b113b5cc41f02981655706faf",
       "file": "audio/sentences/grammar-cbb5b9e8.m4a",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "grammar-64b3294a": {
+      "id": "grammar-64b3294a",
+      "type": "grammar",
+      "level": 3,
+      "text": "除了汉语以外，我还学音乐。",
+      "checksum": "14245dc2eb2f5b6024785d485eff6db769ec7684ef901e55cb44747829cf1fe7",
+      "file": "audio/sentences/grammar-64b3294a.m4a",
       "voices": [
         "Tingting"
       ]

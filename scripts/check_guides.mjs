@@ -201,7 +201,9 @@ function checkPractice(label, practice) {
     }
     // 設問文は日本語で書くこともあるので、中国語部分（空欄付きの問題文・選択肢・答え）だけ字種を見る。
     const prompt = String(question.prompt || "").includes("＿") ? question.prompt : "";
-    const text = `${prompt}${question.choices?.join("") || ""}${question.answer || ""}`;
+    // 日本語の選択肢（意味を選ぶ問題など）は仮名を含むので除く。
+    const chineseChoices = (question.choices || []).filter((choice) => !/[ぁ-んァ-ン]/.test(choice));
+    const text = `${prompt}${chineseChoices.join("")}${question.answer || ""}`;
     const stray = [...text].filter((char) => HANZI.test(char) && !vocabularyChars.has(char) && char !== "＿");
     if (stray.length) warnings.push(`${questionLabel}: HSK1〜3の語彙にない漢字 ${[...new Set(stray)].join("・")}`);
   });
