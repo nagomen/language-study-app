@@ -52,6 +52,7 @@ export function startMockExam(level, section = null, version = "2.0") {
     ...emptyPractice(), mode: "mock", level, mockKey, mockVersion: version, questions, isMock: true, section,
     lastStart: { mode: "mock", level, mockKey, mockVersion: version, isMock: true, section }, sectionStats: {},
   };
+  $("#practice-home").textContent = "試験対策へ";
   showView("practice");
   $("#practice-timer").classList.remove("is-hidden");
   renderPracticeQuestion();
@@ -65,13 +66,17 @@ export function startMockSectionTimer(skill) {
   const session = state.practice;
   clearPracticeTimer();
   session.currentSection = skill;
-  session.remainingSeconds = (EXAM_CONFIG[session.mockKey || session.level].sectionMinutes[skill] || 1) * 60;
-  updatePracticeTimer();
-  session.timerId = window.setInterval(() => {
-    session.remainingSeconds -= 1;
+  // 1秒ごとに引き算すると、タブが裏にある間はブラウザがタイマーを間引くので時計が遅れる。
+  // 締め切りの時刻を持ち、毎回そこから残り時間を計算する。
+  const minutes = EXAM_CONFIG[session.mockKey || session.level].sectionMinutes[skill] || 1;
+  session.deadline = Date.now() + minutes * 60 * 1000;
+  const tick = () => {
+    session.remainingSeconds = Math.max(0, Math.ceil((session.deadline - Date.now()) / 1000));
     updatePracticeTimer();
     if (session.remainingSeconds <= 0) expireMockSection();
-  }, 1000);
+  };
+  tick();
+  session.timerId = window.setInterval(tick, 1000);
 }
 
 function expireMockSection() {

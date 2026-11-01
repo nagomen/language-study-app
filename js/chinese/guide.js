@@ -45,8 +45,7 @@ export function renderGuide() {
   $("#guide-title").textContent = guide.title;
   $("#guide-summary").textContent = guide.summary;
   $("#guide-level").textContent = guide.level || "HSK";
-  const practiceCount = Math.max(10, Number(guide.practiceCount) || 10);
-  $("#guide-practice").innerHTML = `文法ドリル${practiceCount}問 <span>→</span>`;
+  $("#guide-practice").innerHTML = `文法ドリル${guidePracticeCount(guide)}問 <span>→</span>`;
   $("#guide-related").innerHTML = (guide.relatedCategories || []).map((id) => categoryById(id)).filter(Boolean)
     .map((category) => `<button class="tag-chip" type="button" data-category-open="${escapeHtml(category.id)}">${escapeHtml(category.label)}の単語を見る</button>`).join("");
   $("#guide-sections").innerHTML = (guide.sections || []).map(guideSectionHtml).join("");
@@ -199,10 +198,17 @@ function measureCardHtml(item) {
     <p class="measure-tip"><span aria-hidden="true">◎</span>${escapeHtml(item.tip)}</p></article>`;
 }
 
+// ボタンに出す問数＝実際に出題できる問数（作問が目標に足りない解説では少なくなる）。
+function guidePracticeCount(guide) {
+  const target = Math.max(10, Number(guide.practiceCount) || 10);
+  const judges = Math.min(3, (guide.sections || []).flatMap((section) => section.compare || []).length);
+  return Math.min(target, (guide.practice || []).length + judges);
+}
+
 export function startGuidePractice(id = state.selectedGuide) {
   const guide = guideById(id);
   if (!guide) return;
-  const targetCount = Math.max(10, Number(guide.practiceCount) || 10);
+  const targetCount = guidePracticeCount(guide);
   const authored = guide.practice.map((item) => {
     if (item.kind === "reorder") {
       return { skill: "writing", kind: "reorder", wordId: item.wordId, tokens: [...item.tokens], slots: item.slots, answer: item.answer, meaning: item.meaning, instruction: item.instruction || "語句を並べ替えて文を作ってください", explanation: item.explanation };
@@ -223,7 +229,7 @@ export function startGuidePractice(id = state.selectedGuide) {
     return {
       skill: "reading", kind: "grammar",
       prompt: showWrong ? pair.wrong : pair.right,
-      subPrompt: `「${pair.meaning}」と言いたいとき、この言い方は正しいでしょうか。`,
+      subPrompt: pair.meaning ? `「${pair.meaning}」と言いたいとき、この言い方は正しいでしょうか。` : "この言い方は正しいでしょうか。",
       choices: [{ value: "true", label: "对（正しい）" }, { value: "false", label: "不对（間違い）" }],
       correct: String(!showWrong),
       instruction: "文が正しいかどうかを選んでください",
@@ -234,7 +240,13 @@ export function startGuidePractice(id = state.selectedGuide) {
   const reorders = authored.filter((question) => question.kind === "reorder");
   const rest = authored.filter((question) => question.kind !== "reorder");
   const orderCount = Math.min(guide.id === "hsk3-grammar" ? 4 : 2, reorders.length);
-  const questions = [...shuffle(rest).slice(0, targetCount - judges.length - orderCount), ...shuffle(reorders).slice(0, orderCount), ...judges];
+  const restPicked = shuffle(rest);
+  const ordersPicked = shuffle(reorders);
+  const restCount = targetCount - judges.length - orderCount;
+  const questions = [...restPicked.slice(0, restCount), ...ordersPicked.slice(0, orderCount), ...judges];
+  // 選択問題が足りない解説では、残りの語順問題で目標の問数まで埋める。
+  const leftovers = [...restPicked.slice(restCount), ...ordersPicked.slice(orderCount)];
+  while (questions.length < targetCount && leftovers.length) questions.push(leftovers.shift());
   startCustomPractice(shuffle(questions), { label: guide.title, modeLabel: "文法ドリル", level: 3, guideId: guide.id });
 }
 
@@ -315,6 +327,7 @@ function measurePracticeQuestions(count = 20) {
 function startCustomPractice(questions, { label, modeLabel, level, guideId }) {
   clearPracticeTimer();
   if (!questions.length) return;
+  $("#practice-home").textContent = guideId === "measure" ? "量詞のページへ" : "解説ページへ";
   state.practice = {
     ...emptyPractice(),
     mode: "guide",

@@ -6,7 +6,7 @@ hsk2026-0505|安全|adjective
 hsk3-306|把|preposition,measure
 hsk3-308|搬|verb,home
 hsk2026-0508|班级|daily
-hsk2026-0509|搬家|verb
+hsk2026-0509|搬家|verb,home
 hsk2026-0510|办|verb
 hsk3-309|办法|daily
 hsk3-310|办公室|work
@@ -120,7 +120,7 @@ hsk3-371|方便|adjective
 hsk2026-0620|方便面|daily
 hsk2026-0621|方法|daily
 hsk2026-0622|方向|daily
-hsk2026-0623|房子|daily
+hsk2026-0623|房子|daily,home
 hsk3-372|放|verb
 hsk2026-0625|放假|verb
 hsk3-373|放心|verb,emotion
@@ -255,10 +255,10 @@ hsk3-454|辆|measure,travel
 hsk2026-0755|聊|verb
 hsk2026-0756|聊天儿|verb
 hsk3-455|了解|verb,thinking,cognition
-hsk3-456|邻居|people
+hsk3-456|邻居|people,home
 hsk3-612|留学|verb,school
 hsk2026-0760|留学生|daily
-hsk2026-0761|楼梯|daily
+hsk2026-0761|楼梯|daily,home
 hsk2026-0762|路边|daily
 hsk2026-0763|路口|daily
 hsk3-459|马|animal
@@ -318,7 +318,7 @@ hsk3-493|认真|adjective,cognition
 hsk3-494|容易|adjective
 hsk3-495|如果|conjunction
 hsk3-496|伞|clothes,weather
-hsk2026-0821|扫|verb
+hsk2026-0821|扫|verb,home
 hsk2026-0822|沙发|daily
 hsk2026-0823|山|daily
 hsk2026-0824|上衣|daily
@@ -331,7 +331,7 @@ hsk3-498|生气|verb,emotion
 hsk3-499|声音|language
 hsk2026-0832|市|daily
 hsk3-618|试|verb
-hsk2026-0834|室|daily
+hsk2026-0834|室|daily,home
 hsk3-501|世界|travel
 hsk2026-0836|收|verb
 hsk2026-0837|收到|verb
@@ -374,9 +374,9 @@ hsk2026-0873|网站|daily
 hsk3-529|忘记|verb,thinking,cognition
 hsk3-530|为|preposition
 hsk3-531|为了|preposition,conjunction
-hsk2026-0877|卫生间|daily
+hsk2026-0877|卫生间|daily,home
 hsk3-533|文化|school
-hsk2026-0879|屋子|daily
+hsk2026-0879|屋子|daily,home
 hsk3-534|西|direction
 hsk2026-0881|西北|daily
 hsk2026-0882|西方|daily
@@ -384,7 +384,7 @@ hsk2-260|西瓜|food
 hsk2026-0884|西南|daily
 hsk3-535|习惯|verb,daily
 hsk2026-0886|喜爱|verb
-hsk2026-0887|洗衣机|daily
+hsk2026-0887|洗衣机|daily,home
 hsk3-537|洗澡|verb,daily
 hsk2026-0889|夏天|daily
 hsk3-539|先|adverb,time
@@ -394,7 +394,7 @@ hsk2026-0893|箱子|daily
 hsk2-263|向|preposition,direction,verb
 hsk3-543|像|verb,adverb
 hsk2026-0896|相机|daily
-hsk2026-0897|小区|daily
+hsk2026-0897|小区|daily,home
 hsk3-544|小心|verb,adjective
 hsk2026-0899|校园|daily
 hsk3-545|校长|people,school

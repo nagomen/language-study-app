@@ -9,6 +9,7 @@ export const reviewSessions = { quiz: { entries: [], scope: "all" }, practice: {
 export const state = {
   words: [],
   categories: [],
+  categoryGuides: {},
   guides: [],
   measure: null,
   // 作文・聴解の問題文（data/chinese/practice-banks.json）。配列の順番が音声ファイルの連番に対応する。
@@ -19,6 +20,7 @@ export const state = {
   vocabularyDirection: loadVocabularyDirection(),
   currentView: "home",
   wordFilter: "all",
+  wordEditionFilter: "all",
   wordCategory: "all",
   wordHideMeaning: false,
   categoryFilter: "all",
@@ -27,7 +29,7 @@ export const state = {
   checkedOnly: { words: false, categories: false },
   daily: loadDaily(),
   dailyDays: [],
-  quiz: { questions: [], index: 0, correct: 0, answered: false, source: null, direction: "cn-ja", answers: [] },
+  quiz: { questions: [], sourcePool: [], index: 0, correct: 0, answered: false, source: null, direction: "cn-ja", answers: [] },
   practice: emptyPractice(),
   progress: loadProgress(),
 };

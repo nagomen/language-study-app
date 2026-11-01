@@ -58,9 +58,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "形",
     "newIn2026": true,
-    "example": "这件事很安全。",
-    "examplePinyin": "Zhè jiàn shì hěn ānquán.",
-    "exampleMeaning": "この件は安全だです。",
+    "example": "晚上一个人走这条路不安全。",
+    "exampleMeaning": "夜に一人でこの道を歩くのは安全ではありません。",
+    "examplePinyin": "Wǎnshang yī gè rén zǒu zhè tiáo lù bù ānquán.",
     "exampleKind": "context"
   },
   {
@@ -96,9 +96,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "名",
     "newIn2026": true,
-    "example": "我第一次听说班级。",
-    "examplePinyin": "Wǒ dì yī cì tīngshuō bānjí.",
-    "exampleMeaning": "私はクラス、学級を初めて聞きました。",
+    "example": "这个班级一共有三十名学生。",
+    "exampleMeaning": "このクラスには全部で30人の学生がいます。",
+    "examplePinyin": "Zhège bānjí yígòng yǒu sān shí míng xuéshēng.",
     "exampleKind": "context"
   },
   {
@@ -110,9 +110,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "动",
     "newIn2026": true,
-    "example": "我们明天要搬家。",
-    "examplePinyin": "Wǒmen míngtiān yào bānjiā.",
-    "exampleMeaning": "私たちは明日引っ越す予定です。",
+    "example": "我们下个月要搬家。",
+    "exampleMeaning": "私たちは来月引っ越します。",
+    "examplePinyin": "Wǒmen xià gè yuè yào bānjiā.",
     "exampleKind": "context"
   },
   {
@@ -212,9 +212,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "名",
     "newIn2026": true,
-    "example": "我第一次听说北。",
-    "examplePinyin": "Wǒ dì yī cì tīngshuō běi.",
-    "exampleMeaning": "私は北を初めて聞きました。",
+    "example": "火车站在城市北边。",
+    "exampleMeaning": "駅は町の北側にあります。",
+    "examplePinyin": "Huǒchēzhàn zài chéngshì běi biān.",
     "exampleKind": "context"
   },
   {
@@ -250,9 +250,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "名",
     "newIn2026": true,
-    "example": "我第一次听说笔记。",
-    "examplePinyin": "Wǒ dì yī cì tīngshuō bǐjì.",
-    "exampleMeaning": "私はノート、メモを初めて聞きました。",
+    "example": "请把老师说的话记在笔记本上。",
+    "exampleMeaning": "先生の話をノートに書き留めてください。",
+    "examplePinyin": "Qǐng bǎ lǎoshī shuō dehuà jì zài bǐjìběn shàng.",
     "exampleKind": "context"
   },
   {
@@ -380,9 +380,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "动",
     "newIn2026": true,
-    "example": "我们明天要表演。",
-    "examplePinyin": "Wǒmen míngtiān yào biǎoyǎn.",
-    "exampleMeaning": "私たちは明日演じる、上演する予定です。",
+    "example": "孩子们正在台上表演。",
+    "exampleMeaning": "子供たちは舞台で公演しています。",
+    "examplePinyin": "Háizi men zhèngzài tái shàng biǎoyǎn.",
     "exampleKind": "context"
   },
   {
@@ -446,9 +446,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "名",
     "newIn2026": true,
-    "example": "我昨天买了冰激凌。",
-    "examplePinyin": "Wǒ zuótiān mǎi le bīngjīlíng.",
-    "exampleMeaning": "私は昨日アイスクリームを買いました。",
+    "example": "夏天我喜欢吃冰激凌。",
+    "exampleMeaning": "夏はアイスクリームを食べるのが好きです。",
+    "examplePinyin": "Xiàtiān wǒ xǐhuan chī bīngjīlíng.",
     "exampleKind": "context"
   },
   {
@@ -472,9 +472,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "名",
     "newIn2026": true,
-    "example": "他是一位病人。",
-    "examplePinyin": "Tā shì yí wèi bìngrén.",
-    "exampleMeaning": "彼は病人、患者です。",
+    "example": "医生正在给病人看病。",
+    "exampleMeaning": "医師が患者を診察しています。",
+    "examplePinyin": "Yīshēng zhèngzài gěi bìngrén kànbìng.",
     "exampleKind": "context"
   },
   {
@@ -526,9 +526,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "",
     "newIn2026": true,
-    "example": "这件事很不同。",
-    "examplePinyin": "Zhè jiàn shì hěn bù tóng.",
-    "exampleMeaning": "この件は異なる、違うです。",
+    "example": "这两种方法有什么不同？",
+    "exampleMeaning": "この二つの方法にはどんな違いがありますか。",
+    "examplePinyin": "Zhè liǎng zhǒng fāngfǎ yǒu shénme bù tóng?",
     "exampleKind": "context"
   },
   {
@@ -616,9 +616,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "名",
     "newIn2026": true,
-    "example": "我们今天去草地。",
-    "examplePinyin": "Wǒmen jīntiān qù cǎodì.",
-    "exampleMeaning": "私たちは今日芝生、草地へ行きます。",
+    "example": "孩子们在草地上踢足球。",
+    "exampleMeaning": "子供たちは芝生でサッカーをしています。",
+    "examplePinyin": "Háizi men zài cǎodì shàng tī zúqiú.",
     "exampleKind": "context"
   },
   {
@@ -642,9 +642,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "动",
     "newIn2026": true,
-    "example": "请你先查。",
-    "examplePinyin": "Qǐng nǐ xiān chá.",
-    "exampleMeaning": "まず調べるしてください。",
+    "example": "这个字不会读，你查一下字典吧。",
+    "exampleMeaning": "この字が読めないなら、辞書で調べてください。",
+    "examplePinyin": "Zhège zì bù huì dú, nǐ chá yíxià zìdiǎn ba.",
     "exampleKind": "context"
   },
   {
@@ -682,9 +682,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "动",
     "newIn2026": true,
-    "example": "他已经尝了。",
-    "examplePinyin": "Tā yǐjīng cháng le.",
-    "exampleMeaning": "彼はすでに味わう、味見するしました。",
+    "example": "你先尝一尝这个菜。",
+    "exampleMeaning": "まずこの料理を味見してみてください。",
+    "examplePinyin": "Nǐ xiān cháng yī cháng zhège cài.",
     "exampleKind": "context"
   },
   {
@@ -710,9 +710,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "",
     "newIn2026": true,
-    "example": "这件事很常见。",
-    "examplePinyin": "Zhè jiàn shì hěn cháng jiàn.",
-    "exampleMeaning": "この件はよく見られる、ありふれたです。",
+    "example": "这种问题很常见。",
+    "exampleMeaning": "この種の問題はよく見られます。",
+    "examplePinyin": "Zhè zhǒng wèntí hěn cháng jiàn.",
     "exampleKind": "context"
   },
   {
@@ -724,9 +724,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "",
     "newIn2026": true,
-    "example": "这件事很常用。",
-    "examplePinyin": "Zhè jiàn shì hěn cháng yòng.",
-    "exampleMeaning": "この件はよく使われる、常用のです。",
+    "example": "这是生活中常用的词。",
+    "exampleMeaning": "これは日常生活でよく使う単語です。",
+    "examplePinyin": "Zhè shì shēnghuó zhōng cháng yòng de cí.",
     "exampleKind": "context"
   },
   {
@@ -800,9 +800,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "动",
     "newIn2026": true,
-    "example": "我们明天要出发。",
-    "examplePinyin": "Wǒmen míngtiān yào chūfā.",
-    "exampleMeaning": "私たちは明日出発する予定です。",
+    "example": "我们早上八点从酒店出发。",
+    "exampleMeaning": "私たちは朝8時にホテルを出発します。",
+    "examplePinyin": "Wǒmen zǎoshang bā diǎn cóng jiǔdiàn chūfā.",
     "exampleKind": "context"
   },
   {
@@ -814,9 +814,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "动",
     "newIn2026": true,
-    "example": "他已经出生了。",
-    "examplePinyin": "Tā yǐjīng chūshēng le.",
-    "exampleMeaning": "彼はすでに生まれるしました。",
+    "example": "我出生在一个小城市。",
+    "exampleMeaning": "私は小さな町で生まれました。",
+    "examplePinyin": "Wǒ chūshēng zài yī gè xiǎo chéngshì.",
     "exampleKind": "context"
   },
   {
@@ -828,9 +828,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "动",
     "newIn2026": true,
-    "example": "请你先出院。",
-    "examplePinyin": "Qǐng nǐ xiān chūyuàn.",
-    "exampleMeaning": "まず退院するしてください。",
+    "example": "医生说他明天可以出院。",
+    "exampleMeaning": "医師は彼が明日退院できると言いました。",
+    "examplePinyin": "Yīshēng shuō tā míngtiān kěyǐ chūyuàn.",
     "exampleKind": "context"
   },
   {
@@ -842,9 +842,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "名",
     "newIn2026": true,
-    "example": "我们今天去初中。",
-    "examplePinyin": "Wǒmen jīntiān qù chūzhōng.",
-    "exampleMeaning": "私たちは今日中学校へ行きます。",
+    "example": "我在这所初中学习了三年。",
+    "exampleMeaning": "私はこの中学校で3年間学びました。",
+    "examplePinyin": "Wǒ zài zhè suǒ chūzhōng xuéxí le sān nián.",
     "exampleKind": "context"
   },
   {
@@ -880,9 +880,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "名",
     "newIn2026": true,
-    "example": "我们春天再见。",
-    "examplePinyin": "Wǒmen chūntiān zàijiàn.",
-    "exampleMeaning": "春にまた会いましょう。",
+    "example": "春天公园里的花都开了。",
+    "exampleMeaning": "春になり、公園の花がすべて咲きました。",
+    "examplePinyin": "Chūntiān gōngyuán lǐ de huā dōu kāi le.",
     "exampleKind": "context"
   },
   {
@@ -956,9 +956,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "名",
     "newIn2026": true,
-    "example": "他是一位大人。",
-    "examplePinyin": "Tā shì yí wèi dàren.",
-    "exampleMeaning": "彼は大人です。",
+    "example": "小朋友要听大人的话。",
+    "exampleMeaning": "子供は大人の言うことを聞かなければなりません。",
+    "examplePinyin": "Xiǎopéngyǒu yào tīng dàren dehuà.",
     "exampleKind": "context"
   },
   {
@@ -970,9 +970,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "名",
     "newIn2026": true,
-    "example": "我第一次听说大小。",
-    "examplePinyin": "Wǒ dì yī cì tīngshuō dàxiǎo.",
-    "exampleMeaning": "私は大きさを初めて聞きました。",
+    "example": "这两个箱子的大小一样。",
+    "exampleMeaning": "この二つの箱は同じ大きさです。",
+    "examplePinyin": "Zhè liǎng gè xiāngzi de dàxiǎo yíyàng.",
     "exampleKind": "context"
   },
   {
@@ -984,9 +984,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "名",
     "newIn2026": true,
-    "example": "我第一次听说大熊猫。",
-    "examplePinyin": "Wǒ dì yī cì tīngshuō dàxióngmāo.",
-    "exampleMeaning": "私はパンダを初めて聞きました。",
+    "example": "动物园里有两只大熊猫。",
+    "exampleMeaning": "動物園にはパンダが2頭います。",
+    "examplePinyin": "Dòngwùyuán lǐ yǒu liǎng zhī dàxióngmāo.",
     "exampleKind": "context"
   },
   {
@@ -998,9 +998,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "名",
     "newIn2026": true,
-    "example": "我昨天买了大衣。",
-    "examplePinyin": "Wǒ zuótiān mǎi le dàyī.",
-    "exampleMeaning": "私は昨日コート、オーバーを買いました。",
+    "example": "外面很冷，穿上大衣吧。",
+    "exampleMeaning": "外は寒いので、コートを着てください。",
+    "examplePinyin": "Wàimiàn hěn lěng, chuān shàng dàyī ba.",
     "exampleKind": "context"
   },
   {
@@ -1088,9 +1088,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "动",
     "newIn2026": true,
-    "example": "我们明天要得到。",
-    "examplePinyin": "Wǒmen míngtiān yào dédào.",
-    "exampleMeaning": "私たちは明日得る、獲得する予定です。",
+    "example": "她的努力得到了大家的认可。",
+    "exampleMeaning": "彼女の努力は皆に認められました。",
+    "examplePinyin": "Tā de nǔlì dédào le dàjiā de rènkě.",
     "exampleKind": "context"
   },
   {
@@ -1102,9 +1102,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "动、名",
     "newIn2026": true,
-    "example": "他已经得分了。",
-    "examplePinyin": "Tā yǐjīng défēn le.",
-    "exampleMeaning": "彼はすでに得点するしました。",
+    "example": "他在比赛的最后一分钟得分了。",
+    "exampleMeaning": "彼は試合終了間際に得点しました。",
+    "examplePinyin": "Tā zài bǐsài de zuìhòu yī fēnzhōng défēn le.",
     "exampleKind": "context"
   },
   {
@@ -1170,9 +1170,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "名",
     "newIn2026": true,
-    "example": "我第一次听说地点。",
-    "examplePinyin": "Wǒ dì yī cì tīngshuō dìdiǎn.",
-    "exampleMeaning": "私は場所、地点を初めて聞きました。",
+    "example": "见面的时间和地点都定好了。",
+    "exampleMeaning": "会う時間と場所は決まりました。",
+    "examplePinyin": "Jiànmiàn de shíjiān hé dìdiǎn dōu dìng hǎo le.",
     "exampleKind": "context"
   },
   {
@@ -1234,9 +1234,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "名",
     "newIn2026": true,
-    "example": "我昨天买了电子书。",
-    "examplePinyin": "Wǒ zuótiān mǎi le diànzǐshū.",
-    "exampleMeaning": "私は昨日電子書籍を買いました。",
+    "example": "坐地铁时看电子书很方便。",
+    "exampleMeaning": "地下鉄で電子書籍を読むのは便利です。",
+    "examplePinyin": "Zuò dìtiě shí kàn diànzǐshū hěn fāngbiàn.",
     "exampleKind": "context"
   },
   {
@@ -1248,9 +1248,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "动",
     "newIn2026": true,
-    "example": "请你先丢。",
-    "examplePinyin": "Qǐng nǐ xiān diū.",
-    "exampleMeaning": "まずなくすしてください。",
+    "example": "不要乱丢垃圾。",
+    "exampleMeaning": "ごみをむやみに捨てないでください。",
+    "examplePinyin": "Búyào luàn diū lājī.",
     "exampleKind": "context"
   },
   {
@@ -1274,9 +1274,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "名",
     "newIn2026": true,
-    "example": "我第一次听说东北。",
-    "examplePinyin": "Wǒ dì yī cì tīngshuō dōngběi.",
-    "exampleMeaning": "私は東北、北東を初めて聞きました。",
+    "example": "冬天东北非常冷。",
+    "exampleMeaning": "冬の東北地方はとても寒いです。",
+    "examplePinyin": "Dōngtiān dōngběi fēicháng lěng.",
     "exampleKind": "context"
   },
   {
@@ -1288,9 +1288,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "名",
     "newIn2026": true,
-    "example": "我第一次听说东方。",
-    "examplePinyin": "Wǒ dì yī cì tīngshuō dōngfāng.",
-    "exampleMeaning": "私は東方、東洋を初めて聞きました。",
+    "example": "太阳从东方升起。",
+    "exampleMeaning": "太陽は東から昇ります。",
+    "examplePinyin": "Tàiyáng cóng dōngfāng shēng qǐ.",
     "exampleKind": "context"
   },
   {
@@ -1302,9 +1302,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "名",
     "newIn2026": true,
-    "example": "我第一次听说东南。",
-    "examplePinyin": "Wǒ dì yī cì tīngshuō dōngnán.",
-    "exampleMeaning": "私は東南、南東を初めて聞きました。",
+    "example": "风从东南方向吹来。",
+    "exampleMeaning": "風が南東から吹いてきます。",
+    "examplePinyin": "Fēng cóng dōngnán fāngxiàng chuī lái.",
     "exampleKind": "context"
   },
   {
@@ -1316,9 +1316,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "名",
     "newIn2026": true,
-    "example": "我们冬天再见。",
-    "examplePinyin": "Wǒmen dōngtiān zàijiàn.",
-    "exampleMeaning": "冬にまた会いましょう。",
+    "example": "这里冬天常常下雪。",
+    "exampleMeaning": "ここでは冬によく雪が降ります。",
+    "examplePinyin": "Zhèlǐ dōngtiān chángcháng xià xuě.",
     "exampleKind": "context"
   },
   {
@@ -1356,9 +1356,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "名",
     "newIn2026": true,
-    "example": "我们今天去动物园。",
-    "examplePinyin": "Wǒmen jīntiān qù dòngwùyuán.",
-    "exampleMeaning": "私たちは今日動物園へ行きます。",
+    "example": "周末我们带孩子去动物园。",
+    "exampleMeaning": "週末に子供を動物園へ連れていきます。",
+    "examplePinyin": "Zhōumò wǒmen dài háizi qù dòngwùyuán.",
     "exampleKind": "context"
   },
   {
@@ -1382,9 +1382,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "名",
     "newIn2026": true,
-    "example": "我昨天买了短裤。",
-    "examplePinyin": "Wǒ zuótiān mǎi le duǎnkù.",
-    "exampleMeaning": "私は昨日半ズボン、ショートパンツを買いました。",
+    "example": "夏天穿短裤很凉快。",
+    "exampleMeaning": "夏は半ズボンを履くと涼しいです。",
+    "examplePinyin": "Xiàtiān chuān duǎnkù hěn liángkuai.",
     "exampleKind": "context"
   },
   {
@@ -1420,9 +1420,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "动",
     "newIn2026": true,
-    "example": "他已经对话了。",
-    "examplePinyin": "Tā yǐjīng duìhuà le.",
-    "exampleMeaning": "彼はすでに対話するしました。",
+    "example": "请两个人一组练习对话。",
+    "exampleMeaning": "二人一組で会話を練習してください。",
+    "examplePinyin": "Qǐng liǎng gè rén yī zǔ liànxí duìhuà.",
     "exampleKind": "context"
   },
   {
@@ -1470,9 +1470,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "名",
     "newIn2026": true,
-    "example": "我昨天买了耳机。",
-    "examplePinyin": "Wǒ zuótiān mǎi le ěrjī.",
-    "exampleMeaning": "私は昨日イヤホン、ヘッドホンを買いました。",
+    "example": "戴上耳机以后就听不见外面的声音了。",
+    "exampleMeaning": "イヤホンを着けると外の音が聞こえなくなりました。",
+    "examplePinyin": "Dài shàng ěrjī yǐhòu jiù tīng bújiàn wàimiàn de shēngyīn le.",
     "exampleKind": "context"
   },
   {
@@ -1534,9 +1534,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "动",
     "newIn2026": true,
-    "example": "他已经发展了。",
-    "examplePinyin": "Tā yǐjīng fāzhǎn le.",
-    "exampleMeaning": "彼はすでに発展するしました。",
+    "example": "这个城市发展得很快。",
+    "exampleMeaning": "この町は急速に発展しています。",
+    "examplePinyin": "Zhège chéngshì fāzhǎn de hěn kuài.",
     "exampleKind": "context"
   },
   {
@@ -1560,9 +1560,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "名",
     "newIn2026": true,
-    "example": "我昨天买了方便面。",
-    "examplePinyin": "Wǒ zuótiān mǎi le fāngbiànmiàn.",
-    "exampleMeaning": "私は昨日インスタントラーメンを買いました。",
+    "example": "我偶尔会吃方便面。",
+    "exampleMeaning": "私はたまにインスタントラーメンを食べます。",
+    "examplePinyin": "Wǒ ǒu'ěr huì chī fāngbiànmiàn.",
     "exampleKind": "context"
   },
   {
@@ -1574,9 +1574,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "名",
     "newIn2026": true,
-    "example": "我第一次听说方法。",
-    "examplePinyin": "Wǒ dì yī cì tīngshuō fāngfǎ.",
-    "exampleMeaning": "私は方法を初めて聞きました。",
+    "example": "这个方法简单又有用。",
+    "exampleMeaning": "この方法は簡単で役に立ちます。",
+    "examplePinyin": "Zhège fāngfǎ jiǎndān yòu yǒuyòng.",
     "exampleKind": "context"
   },
   {
@@ -1588,9 +1588,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "名",
     "newIn2026": true,
-    "example": "我第一次听说方向。",
-    "examplePinyin": "Wǒ dì yī cì tīngshuō fāngxiàng.",
-    "exampleMeaning": "私は方向を初めて聞きました。",
+    "example": "他走错方向了。",
+    "exampleMeaning": "彼は進む方向を間違えました。",
+    "examplePinyin": "Tā zǒu cuò fāngxiàng le.",
     "exampleKind": "context"
   },
   {
@@ -1602,9 +1602,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "名",
     "newIn2026": true,
-    "example": "我第一次听说房子。",
-    "examplePinyin": "Wǒ dì yī cì tīngshuō fángzi.",
-    "exampleMeaning": "私は家を初めて聞きました。",
+    "example": "他们刚买了一套新房子。",
+    "exampleMeaning": "彼らは新しい家を買ったばかりです。",
+    "examplePinyin": "Tāmen gāng mǎi le yī tào xīn fángzi.",
     "exampleKind": "context"
   },
   {
@@ -1628,9 +1628,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "动",
     "newIn2026": true,
-    "example": "我们明天要放假。",
-    "examplePinyin": "Wǒmen míngtiān yào fàngjià.",
-    "exampleMeaning": "私たちは明日休みになる、休暇を取る予定です。",
+    "example": "学校明天开始放假。",
+    "exampleMeaning": "学校は明日から休みです。",
+    "examplePinyin": "Xuéxiào míngtiān kāishǐ fàngjià.",
     "exampleKind": "context"
   },
   {
@@ -1654,9 +1654,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "动",
     "newIn2026": true,
-    "example": "他已经放学了。",
-    "examplePinyin": "Tā yǐjīng fàngxué le.",
-    "exampleMeaning": "彼はすでに学校が終わる、下校するしました。",
+    "example": "放学后我去图书馆。",
+    "exampleMeaning": "放課後、私は図書館へ行きます。",
+    "examplePinyin": "Fàngxué hòu wǒ qù túshūguǎn.",
     "exampleKind": "context"
   },
   {
@@ -1668,9 +1668,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "动",
     "newIn2026": true,
-    "example": "请你先分开。",
-    "examplePinyin": "Qǐng nǐ xiān fēnkāi.",
-    "exampleMeaning": "まず分ける、別れるしてください。",
+    "example": "请把红色的球和白色的球分开。",
+    "exampleMeaning": "赤いボールと白いボールを分けてください。",
+    "examplePinyin": "Qǐng bǎ hóngsè de qiú hé báisè de qiú fēnkāi.",
     "exampleKind": "context"
   },
   {
@@ -1682,9 +1682,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "名",
     "newIn2026": true,
-    "example": "我第一次听说风。",
-    "examplePinyin": "Wǒ dì yī cì tīngshuō fēng.",
-    "exampleMeaning": "私は風を初めて聞きました。",
+    "example": "今天风很大，别忘了关窗户。",
+    "exampleMeaning": "今日は風が強いので、窓を閉め忘れないでください。",
+    "examplePinyin": "Jīntiān fēng hěn dà, bié wàng le guān chuānghu.",
     "exampleKind": "context"
   },
   {
@@ -1710,9 +1710,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "名",
     "newIn2026": true,
-    "example": "我第一次听说夫妻。",
-    "examplePinyin": "Wǒ dì yī cì tīngshuō fūqī.",
-    "exampleMeaning": "私は夫婦を初めて聞きました。",
+    "example": "那对夫妻结婚十年了。",
+    "exampleMeaning": "あの夫婦は結婚して10年です。",
+    "examplePinyin": "Nà duì fūqī jiéhūn shí nián le.",
     "exampleKind": "context"
   },
   {
@@ -1724,9 +1724,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "动",
     "newIn2026": true,
-    "example": "我们明天要服务。",
-    "examplePinyin": "Wǒmen míngtiān yào fúwù.",
-    "exampleMeaning": "私たちは明日サービスする予定です。",
+    "example": "这家酒店的服务很好。",
+    "exampleMeaning": "このホテルはサービスが良いです。",
+    "examplePinyin": "Zhè jiā jiǔdiàn de fúwù hěn hǎo.",
     "exampleKind": "context"
   },
   {
@@ -1880,9 +1880,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "名",
     "newIn2026": true,
-    "example": "我第一次听说高铁。",
-    "examplePinyin": "Wǒ dì yī cì tīngshuō gāotiě.",
-    "exampleMeaning": "私は高速鉄道を初めて聞きました。",
+    "example": "坐高铁去上海只要两个小时。",
+    "exampleMeaning": "高速鉄道なら上海まで2時間です。",
+    "examplePinyin": "Zuò gāotiě qù shàng hǎi zhǐyào liǎng gè xiǎoshí.",
     "exampleKind": "context"
   },
   {
@@ -1942,9 +1942,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "名",
     "newIn2026": true,
-    "example": "我们工作日再见。",
-    "examplePinyin": "Wǒmen gōngzuòrì zàijiàn.",
-    "exampleMeaning": "平日、勤務日にまた会いましょう。",
+    "example": "工作日地铁里人很多。",
+    "exampleMeaning": "平日の地下鉄は人が多いです。",
+    "examplePinyin": "Gōngzuòrì dìtiě lǐ rén hěn duō.",
     "exampleKind": "context"
   },
   {
@@ -1968,9 +1968,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "动",
     "newIn2026": true,
-    "example": "请你先刮。",
-    "examplePinyin": "Qǐng nǐ xiān guā.",
-    "exampleMeaning": "まず吹くしてください。",
+    "example": "外面刮着大风。",
+    "exampleMeaning": "外では強い風が吹いています。",
+    "examplePinyin": "Wàimiàn guā zhe dà fēng.",
     "exampleKind": "context"
   },
   {
@@ -1994,9 +1994,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "动",
     "newIn2026": true,
-    "example": "我们明天要关机。",
-    "examplePinyin": "Wǒmen míngtiān yào guānjī.",
-    "exampleMeaning": "私たちは明日電源を切る予定です。",
+    "example": "飞机起飞前请关机。",
+    "exampleMeaning": "飛行機の離陸前に電源を切ってください。",
+    "examplePinyin": "Fēijī qǐfēi qián qǐng guānjī.",
     "exampleKind": "context"
   },
   {
@@ -2044,9 +2044,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "动",
     "newIn2026": true,
-    "example": "他已经关注了。",
-    "examplePinyin": "Tā yǐjīng guānzhù le.",
-    "exampleMeaning": "彼はすでに注目する、フォローするしました。",
+    "example": "很多人都在关注这场比赛。",
+    "exampleMeaning": "多くの人がこの試合に注目しています。",
+    "examplePinyin": "Hěn duō rén dōu zài guānzhù zhè chǎng bǐsài.",
     "exampleKind": "context"
   },
   {
@@ -2084,9 +2084,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "名",
     "newIn2026": true,
-    "example": "我第一次听说过去。",
-    "examplePinyin": "Wǒ dì yī cì tīngshuō guòqù.",
-    "exampleMeaning": "私は過去を初めて聞きました。",
+    "example": "过去这里没有这么多商店。",
+    "exampleMeaning": "以前ここにはこれほど多くの店はありませんでした。",
+    "examplePinyin": "Guòqù zhèlǐ méiyǒu zhème duō shāngdiàn.",
     "exampleKind": "context"
   },
   {
@@ -2098,9 +2098,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "名",
     "newIn2026": true,
-    "example": "我第一次听说海。",
-    "examplePinyin": "Wǒ dì yī cì tīngshuō hǎi.",
-    "exampleMeaning": "私は海を初めて聞きました。",
+    "example": "我第一次看见这么蓝的海。",
+    "exampleMeaning": "こんなに青い海を初めて見ました。",
+    "examplePinyin": "Wǒ dì yī cì kànjiàn zhème lán de hǎi.",
     "exampleKind": "context"
   },
   {
@@ -2166,9 +2166,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "名",
     "newIn2026": true,
-    "example": "我第一次听说号码。",
-    "examplePinyin": "Wǒ dì yī cì tīngshuō hàomǎ.",
-    "exampleMeaning": "私は番号を初めて聞きました。",
+    "example": "请告诉我你的电话号码。",
+    "exampleMeaning": "電話番号を教えてください。",
+    "examplePinyin": "Qǐng gàosu wǒ nǐ de diànhuà hàomǎ.",
     "exampleKind": "context"
   },
   {
@@ -2180,9 +2180,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "名",
     "newIn2026": true,
-    "example": "我第一次听说河。",
-    "examplePinyin": "Wǒ dì yī cì tīngshuō hé.",
-    "exampleMeaning": "私は川を初めて聞きました。",
+    "example": "这条河的水很清。",
+    "exampleMeaning": "この川の水はとても澄んでいます。",
+    "examplePinyin": "Zhè tiáo hé de shuǐ hěn qīng.",
     "exampleKind": "context"
   },
   {
@@ -2194,9 +2194,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "形",
     "newIn2026": true,
-    "example": "这件事很合适。",
-    "examplePinyin": "Zhè jiàn shì hěn héshì.",
-    "exampleMeaning": "この件はふさわしい、適切だです。",
+    "example": "这件衣服的大小很合适。",
+    "exampleMeaning": "この服は大きさがちょうど良いです。",
+    "examplePinyin": "Zhè jiàn yīfu de dàxiǎo hěn héshì.",
     "exampleKind": "context"
   },
   {
@@ -2220,9 +2220,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "名",
     "newIn2026": true,
-    "example": "我第一次听说红绿灯。",
-    "examplePinyin": "Wǒ dì yī cì tīngshuō hóng-lǜdēng.",
-    "exampleMeaning": "私は信号機を初めて聞きました。",
+    "example": "过马路时要看红绿灯。",
+    "exampleMeaning": "道路を渡るときは信号を見てください。",
+    "examplePinyin": "Guò mǎlù shí yào kàn hóng-lǜdēng.",
     "exampleKind": "context"
   },
   {
@@ -2246,9 +2246,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "名",
     "newIn2026": true,
-    "example": "我们后年再见。",
-    "examplePinyin": "Wǒmen hòunián zàijiàn.",
-    "exampleMeaning": "再来年にまた会いましょう。",
+    "example": "我后年大学毕业。",
+    "exampleMeaning": "私は再来年大学を卒業します。",
+    "examplePinyin": "Wǒ hòunián dàxué bìyè.",
     "exampleKind": "context"
   },
   {
@@ -2260,9 +2260,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "名",
     "newIn2026": true,
-    "example": "我们后天再见。",
-    "examplePinyin": "Wǒmen hòutiān zàijiàn.",
-    "exampleMeaning": "明後日にまた会いましょう。",
+    "example": "我们后天上午见。",
+    "exampleMeaning": "明後日の午前に会いましょう。",
+    "examplePinyin": "Wǒmen hòutiān shàngwǔ jiàn.",
     "exampleKind": "context"
   },
   {
@@ -2286,9 +2286,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "名",
     "newIn2026": true,
-    "example": "我们今天去花园。",
-    "examplePinyin": "Wǒmen jīntiān qù huāyuán.",
-    "exampleMeaning": "私たちは今日庭園、花園へ行きます。",
+    "example": "爷爷在花园里种了很多花。",
+    "exampleMeaning": "祖父は庭にたくさん花を植えました。",
+    "examplePinyin": "Yéye zài huāyuán lǐ zhǒng le hěn duō huā.",
     "exampleKind": "context"
   },
   {
@@ -2300,9 +2300,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "名",
     "newIn2026": true,
-    "example": "他是一位画家。",
-    "examplePinyin": "Tā shì yí wèi huàjiā.",
-    "exampleMeaning": "彼は画家です。",
+    "example": "这幅画是一位年轻画家画的。",
+    "exampleMeaning": "この絵は若い画家が描きました。",
+    "examplePinyin": "Zhè fú huà shì yī wèi niánqīng huàjiā huà de.",
     "exampleKind": "context"
   },
   {
@@ -2362,9 +2362,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "名",
     "newIn2026": true,
-    "example": "我第一次听说黄色。",
-    "examplePinyin": "Wǒ dì yī cì tīngshuō huángsè.",
-    "exampleMeaning": "私は黄色を初めて聞きました。",
+    "example": "她穿着一件黄色的上衣。",
+    "exampleMeaning": "彼女は黄色い上着を着ています。",
+    "examplePinyin": "Tā chuān zhe yī jiàn huángsè de shàngyī.",
     "exampleKind": "context"
   },
   {
@@ -2388,9 +2388,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "名",
     "newIn2026": true,
-    "example": "我第一次听说会。",
-    "examplePinyin": "Wǒ dì yī cì tīngshuō huì.",
-    "exampleMeaning": "私は会、集まりを初めて聞きました。",
+    "example": "下午三点有一个重要的会。",
+    "exampleMeaning": "午後3時に重要な会議があります。",
+    "examplePinyin": "Xiàwǔ sān diǎn yǒu yī gè zhòngyào de huì.",
     "exampleKind": "context"
   },
   {
@@ -2440,9 +2440,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "名",
     "newIn2026": true,
-    "example": "我昨天买了鸡。",
-    "examplePinyin": "Wǒ zuótiān mǎi le jī.",
-    "exampleMeaning": "私は昨日鶏、ニワトリを買いました。",
+    "example": "院子里养了几只鸡。",
+    "exampleMeaning": "庭で鶏を数羽飼っています。",
+    "examplePinyin": "Yuànzi lǐ yǎng le jǐ zhī jī.",
     "exampleKind": "context"
   },
   {
@@ -2504,9 +2504,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "动",
     "newIn2026": true,
-    "example": "我们明天要记。",
-    "examplePinyin": "Wǒmen míngtiān yào jì.",
-    "exampleMeaning": "私たちは明日覚える予定です。",
+    "example": "重要的事情要记下来。",
+    "exampleMeaning": "大切なことは書き留めてください。",
+    "examplePinyin": "Zhòngyào de shìqing yào jì xiàlái.",
     "exampleKind": "context"
   },
   {
@@ -2518,9 +2518,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "名",
     "newIn2026": true,
-    "example": "我第一次听说季。",
-    "examplePinyin": "Wǒ dì yī cì tīngshuō jì.",
-    "exampleMeaning": "私は季節を初めて聞きました。",
+    "example": "一年有四季。",
+    "exampleMeaning": "一年には四つの季節があります。",
+    "examplePinyin": "Yī nián yǒu sìjì.",
     "exampleKind": "context"
   },
   {
@@ -2544,9 +2544,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "动",
     "newIn2026": true,
-    "example": "请你先加。",
-    "examplePinyin": "Qǐng nǐ xiān jiā.",
-    "exampleMeaning": "まず加える、足すしてください。",
+    "example": "请在咖啡里加一点儿牛奶。",
+    "exampleMeaning": "コーヒーに牛乳を少し加えてください。",
+    "examplePinyin": "Qǐng zài kāfēi lǐ jiā yìdiǎnr niúnǎi.",
     "exampleKind": "context"
   },
   {
@@ -2558,9 +2558,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "名",
     "newIn2026": true,
-    "example": "我们假期再见。",
-    "examplePinyin": "Wǒmen jiàqī zàijiàn.",
-    "exampleMeaning": "休暇、休みにまた会いましょう。",
+    "example": "这个假期你打算去哪儿？",
+    "exampleMeaning": "この休暇はどこへ行く予定ですか。",
+    "examplePinyin": "Zhège jiàqī nǐ dǎsuàn qù nǎr?",
     "exampleKind": "context"
   },
   {
@@ -2572,9 +2572,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "动",
     "newIn2026": true,
-    "example": "他已经坚持了。",
-    "examplePinyin": "Tā yǐjīng jiānchí le.",
-    "exampleMeaning": "彼はすでに頑張り続ける、堅持するしました。",
+    "example": "每天坚持练习，汉语一定会进步。",
+    "exampleMeaning": "毎日練習を続ければ、中国語は必ず上達します。",
+    "examplePinyin": "Měi tiān jiānchí liànxí, Hànyǔ yídìng huì jìn bù.",
     "exampleKind": "context"
   },
   {
@@ -2610,9 +2610,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "动",
     "newIn2026": true,
-    "example": "请你先检票。",
-    "examplePinyin": "Qǐng nǐ xiān jiǎnpiào.",
-    "exampleMeaning": "まず改札する、切符を確認するしてください。",
+    "example": "上车以前要先检票。",
+    "exampleMeaning": "乗車前に改札を通る必要があります。",
+    "examplePinyin": "Shàng chē yǐqián yào xiān jiǎnpiào.",
     "exampleKind": "context"
   },
   {
@@ -2696,9 +2696,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "名",
     "newIn2026": true,
-    "example": "我们今天去街。",
-    "examplePinyin": "Wǒmen jīntiān qù jiē.",
-    "exampleMeaning": "私たちは今日通り、街へ行きます。",
+    "example": "这条街上有很多小店。",
+    "exampleMeaning": "この通りには小さな店がたくさんあります。",
+    "examplePinyin": "Zhè tiáo jiē shàng yǒu hěn duō xiǎo diàn.",
     "exampleKind": "context"
   },
   {
@@ -2710,9 +2710,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "量、名、（动）",
     "newIn2026": true,
-    "example": "他已经节了。",
-    "examplePinyin": "Tā yǐjīng jié le.",
-    "exampleMeaning": "彼はすでに～時限、～区切りしました。",
+    "example": "下午第一节是汉语课。",
+    "exampleMeaning": "午後の1時間目は中国語です。",
+    "examplePinyin": "Xiàwǔ dì yī jié shì Hànyǔ kè.",
     "exampleKind": "context"
   },
   {
@@ -2784,9 +2784,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "名",
     "newIn2026": true,
-    "example": "我第一次听说姐妹。",
-    "examplePinyin": "Wǒ dì yī cì tīngshuō jiěmèi.",
-    "exampleMeaning": "私は姉妹を初めて聞きました。",
+    "example": "她们是姐妹，姐姐像妈妈。",
+    "exampleMeaning": "彼女たちは姉妹で、姉は母親似です。",
+    "examplePinyin": "Tāmen shì jiěmèi, jiějie xiàng māma.",
     "exampleKind": "context"
   },
   {
@@ -2860,9 +2860,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "名",
     "newIn2026": true,
-    "example": "我昨天买了酒。",
-    "examplePinyin": "Wǒ zuótiān mǎi le jiǔ.",
-    "exampleMeaning": "私は昨日酒を買いました。",
+    "example": "开车的人不能喝酒。",
+    "exampleMeaning": "運転する人は酒を飲んではいけません。",
+    "examplePinyin": "Kāichē de rén bù néng hē jiǔ.",
     "exampleKind": "context"
   },
   {
@@ -2924,9 +2924,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "名",
     "newIn2026": true,
-    "example": "我昨天买了卡。",
-    "examplePinyin": "Wǒ zuótiān mǎi le kǎ.",
-    "exampleMeaning": "私は昨日カードを買いました。",
+    "example": "我的银行卡找不到了。",
+    "exampleMeaning": "銀行カードが見つかりません。",
+    "examplePinyin": "Wǒ de yínhángkǎ zhǎo bù dào le.",
     "exampleKind": "context"
   },
   {
@@ -2938,9 +2938,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "动",
     "newIn2026": true,
-    "example": "他已经开花了。",
-    "examplePinyin": "Tā yǐjīng kāihuā le.",
-    "exampleMeaning": "彼はすでに花が咲くしました。",
+    "example": "春天一到，这些树就开花。",
+    "exampleMeaning": "春になると、この木々は花を咲かせます。",
+    "examplePinyin": "Chūntiān yī dào, zhèxiē shù jiù kāihuā.",
     "exampleKind": "context"
   },
   {
@@ -2952,9 +2952,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "动",
     "newIn2026": true,
-    "example": "请你先开会。",
-    "examplePinyin": "Qǐng nǐ xiān kāihuì.",
-    "exampleMeaning": "まず会議を開く、会議に出るしてください。",
+    "example": "经理正在会议室开会。",
+    "exampleMeaning": "部長は会議室で会議中です。",
+    "examplePinyin": "Jīnglǐ zhèngzài huìyìshì kāihuì.",
     "exampleKind": "context"
   },
   {
@@ -2966,9 +2966,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "动",
     "newIn2026": true,
-    "example": "我们明天要开机。",
-    "examplePinyin": "Wǒmen míngtiān yào kāijī.",
-    "exampleMeaning": "私たちは明日電源を入れる予定です。",
+    "example": "按这个按钮就可以开机。",
+    "exampleMeaning": "このボタンを押すと電源が入ります。",
+    "examplePinyin": "Àn zhège ànniǔ jiù kěyǐ kāijī.",
     "exampleKind": "context"
   },
   {
@@ -3072,9 +3072,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "名",
     "newIn2026": true,
-    "example": "我昨天买了课本。",
-    "examplePinyin": "Wǒ zuótiān mǎi le kèběn.",
-    "exampleMeaning": "私は昨日教科書を買いました。",
+    "example": "上课时请打开课本。",
+    "exampleMeaning": "授業中は教科書を開いてください。",
+    "examplePinyin": "Shàngkè shí qǐng dǎkāi kèběn.",
     "exampleKind": "context"
   },
   {
@@ -3098,9 +3098,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "名",
     "newIn2026": true,
-    "example": "我第一次听说课文。",
-    "examplePinyin": "Wǒ dì yī cì tīngshuō kèwén.",
-    "exampleMeaning": "私は本文、教材文を初めて聞きました。",
+    "example": "请先读一遍课文。",
+    "exampleMeaning": "まず本文を一度読んでください。",
+    "examplePinyin": "Qǐng xiān dú yī biàn kèwén.",
     "exampleKind": "context"
   },
   {
@@ -3148,9 +3148,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "名",
     "newIn2026": true,
-    "example": "我昨天买了矿泉水。",
-    "examplePinyin": "Wǒ zuótiān mǎi le kuàngquánshuǐ.",
-    "exampleMeaning": "私は昨日ミネラルウォーターを買いました。",
+    "example": "我只买了一瓶矿泉水。",
+    "exampleMeaning": "ミネラルウォーターを一本だけ買いました。",
+    "examplePinyin": "Wǒ zhī mǎi le yī píng kuàngquánshuǐ.",
     "exampleKind": "context"
   },
   {
@@ -3200,9 +3200,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "名",
     "newIn2026": true,
-    "example": "他是一位老人。",
-    "examplePinyin": "Tā shì yí wèi lǎorén.",
-    "exampleMeaning": "彼はお年寄り、老人です。",
+    "example": "我在车上给老人让座了。",
+    "exampleMeaning": "私は車内でお年寄りに席を譲りました。",
+    "examplePinyin": "Wǒ zài chē shàng gěi lǎorén ràng zuò le.",
     "exampleKind": "context"
   },
   {
@@ -3262,9 +3262,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "动",
     "newIn2026": true,
-    "example": "他已经练了。",
-    "examplePinyin": "Tā yǐjīng liàn le.",
-    "exampleMeaning": "彼はすでに練習するしました。",
+    "example": "这个字很难写，我要多练几遍。",
+    "exampleMeaning": "この字は難しいので、何度も練習します。",
+    "examplePinyin": "Zhège zì hěn nán xiě, wǒ yào duō liàn jǐ biàn.",
     "exampleKind": "context"
   },
   {
@@ -3288,9 +3288,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "形",
     "newIn2026": true,
-    "example": "这件事很凉快。",
-    "examplePinyin": "Zhè jiàn shì hěn liángkuai.",
-    "exampleMeaning": "この件は涼しいです。",
+    "example": "下过雨以后，外面很凉快。",
+    "exampleMeaning": "雨上がりの外はとても涼しいです。",
+    "examplePinyin": "Xià guò yǔ yǐhòu, wàimiàn hěn liángkuai.",
     "exampleKind": "context"
   },
   {
@@ -3314,9 +3314,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "动",
     "newIn2026": true,
-    "example": "我们明天要聊。",
-    "examplePinyin": "Wǒmen míngtiān yào liáo.",
-    "exampleMeaning": "私たちは明日おしゃべりする予定です。",
+    "example": "有时间我们再聊。",
+    "exampleMeaning": "時間があるときにまた話しましょう。",
+    "examplePinyin": "Yǒushí jiān wǒmen zài liáo.",
     "exampleKind": "context"
   },
   {
@@ -3328,9 +3328,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "动",
     "newIn2026": true,
-    "example": "他已经聊天儿了。",
-    "examplePinyin": "Tā yǐjīng liáotiānr le.",
-    "exampleMeaning": "彼はすでにおしゃべりする、雑談するしました。",
+    "example": "我们坐下来聊天儿吧。",
+    "exampleMeaning": "座っておしゃべりしましょう。",
+    "examplePinyin": "Wǒmen zuò xiàlái liáotiānr ba.",
     "exampleKind": "context"
   },
   {
@@ -3378,9 +3378,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "名",
     "newIn2026": true,
-    "example": "他是一位留学生。",
-    "examplePinyin": "Tā shì yí wèi liúxuéshēng.",
-    "exampleMeaning": "彼は留学生です。",
+    "example": "他是一名从日本来的留学生。",
+    "exampleMeaning": "彼は日本から来た留学生です。",
+    "examplePinyin": "Tā shì yī míng cóng rì běn lái de liúxuéshēng.",
     "exampleKind": "context"
   },
   {
@@ -3392,9 +3392,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "名",
     "newIn2026": true,
-    "example": "我第一次听说楼梯。",
-    "examplePinyin": "Wǒ dì yī cì tīngshuō lóutī.",
-    "exampleMeaning": "私は階段を初めて聞きました。",
+    "example": "坐电梯吧，别走楼梯了。",
+    "exampleMeaning": "エレベーターに乗りましょう。階段はやめましょう。",
+    "examplePinyin": "Zuò diàntī ba, bié zǒu lóutī le.",
     "exampleKind": "context"
   },
   {
@@ -3406,9 +3406,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "名",
     "newIn2026": true,
-    "example": "我第一次听说路边。",
-    "examplePinyin": "Wǒ dì yī cì tīngshuō lùbiān.",
-    "exampleMeaning": "私は道端を初めて聞きました。",
+    "example": "路边停着一辆白色的车。",
+    "exampleMeaning": "道端に白い車が止まっています。",
+    "examplePinyin": "Lùbiān tíng zhe yī liàng báisè de chē.",
     "exampleKind": "context"
   },
   {
@@ -3420,9 +3420,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "名",
     "newIn2026": true,
-    "example": "我第一次听说路口。",
-    "examplePinyin": "Wǒ dì yī cì tīngshuō lùkǒu.",
-    "exampleMeaning": "私は交差点を初めて聞きました。",
+    "example": "在下一个路口向左转。",
+    "exampleMeaning": "次の交差点を左へ曲がってください。",
+    "examplePinyin": "Zài xià yī gè lùkǒu xiàng zuǒ zhuǎn.",
     "exampleKind": "context"
   },
   {
@@ -3446,9 +3446,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "名",
     "newIn2026": true,
-    "example": "我第一次听说马路。",
-    "examplePinyin": "Wǒ dì yī cì tīngshuō mǎlù.",
-    "exampleMeaning": "私は道路を初めて聞きました。",
+    "example": "过马路时要小心汽车。",
+    "exampleMeaning": "道路を渡るときは車に注意してください。",
+    "examplePinyin": "Guò mǎlù shí yào xiǎoxīn qìchē.",
     "exampleKind": "context"
   },
   {
@@ -3510,9 +3510,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "名",
     "newIn2026": true,
-    "example": "我第一次听说面前。",
-    "examplePinyin": "Wǒ dì yī cì tīngshuō miànqián.",
-    "exampleMeaning": "私は目の前、面前を初めて聞きました。",
+    "example": "他就站在我面前。",
+    "exampleMeaning": "彼は私の目の前に立っています。",
+    "examplePinyin": "Tā jiù zhàn zài wǒ miànqián.",
     "exampleKind": "context"
   },
   {
@@ -3536,9 +3536,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "名",
     "newIn2026": true,
-    "example": "我第一次听说名单。",
-    "examplePinyin": "Wǒ dì yī cì tīngshuō míngdān.",
-    "exampleMeaning": "私は名簿、リストを初めて聞きました。",
+    "example": "名单上没有我的名字。",
+    "exampleMeaning": "名簿に私の名前がありません。",
+    "examplePinyin": "Míngdān shàng méiyǒu wǒ de míngzi.",
     "exampleKind": "context"
   },
   {
@@ -3550,9 +3550,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "名",
     "newIn2026": true,
-    "example": "他是一位名人。",
-    "examplePinyin": "Tā shì yí wèi míngrén.",
-    "exampleMeaning": "彼は有名人です。",
+    "example": "那位画家是当地的名人。",
+    "exampleMeaning": "あの画家は地元の有名人です。",
+    "examplePinyin": "Nà wèi huàjiā shì dāngdì de míngrén.",
     "exampleKind": "context"
   },
   {
@@ -3588,9 +3588,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "名",
     "newIn2026": true,
-    "example": "我第一次听说南方。",
-    "examplePinyin": "Wǒ dì yī cì tīngshuō nánfāng.",
-    "exampleMeaning": "私は南方、南部を初めて聞きました。",
+    "example": "南方的冬天没有北方冷。",
+    "exampleMeaning": "南部の冬は北部ほど寒くありません。",
+    "examplePinyin": "Nánfāng de dōngtiān méiyǒu běifāng lěng.",
     "exampleKind": "context"
   },
   {
@@ -3614,9 +3614,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "形",
     "newIn2026": true,
-    "example": "这件事很难看。",
-    "examplePinyin": "Zhè jiàn shì hěn nánkàn.",
-    "exampleMeaning": "この件は醜い、見苦しいです。",
+    "example": "这件衣服上的颜色太多，看起来有点儿难看。",
+    "exampleMeaning": "この服は色が多すぎて、少し見た目がよくありません。",
+    "examplePinyin": "Zhè jiàn yīfu shàng de yánsè tài duō, kàn qǐlái yǒudiǎnr nánkàn.",
     "exampleKind": "context"
   },
   {
@@ -3628,9 +3628,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "名",
     "newIn2026": true,
-    "example": "他是一位男人。",
-    "examplePinyin": "Tā shì yí wèi nánrén.",
-    "exampleMeaning": "彼は男性、男の人です。",
+    "example": "门口站着一个中年男人。",
+    "exampleMeaning": "入り口に中年の男性が立っています。",
+    "examplePinyin": "Ménkǒu zhàn zhe yī gè zhōng nián nánrén.",
     "exampleKind": "context"
   },
   {
@@ -3642,9 +3642,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "名",
     "newIn2026": true,
-    "example": "他是一位男生。",
-    "examplePinyin": "Tā shì yí wèi nánshēng.",
-    "exampleMeaning": "彼は男子学生、男の子です。",
+    "example": "我们班的男生都喜欢打篮球。",
+    "exampleMeaning": "クラスの男子学生は皆バスケットボールが好きです。",
+    "examplePinyin": "Wǒmen bān de nánshēng dōu xǐhuan dǎ lánqiú.",
     "exampleKind": "context"
   },
   {
@@ -3656,9 +3656,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "名",
     "newIn2026": true,
-    "example": "我第一次听说难题。",
-    "examplePinyin": "Wǒ dì yī cì tīngshuō nántí.",
-    "exampleMeaning": "私は難問を初めて聞きました。",
+    "example": "这个难题我想了半天也不会做。",
+    "exampleMeaning": "この難問は長く考えても解けませんでした。",
+    "examplePinyin": "Zhège nántí wǒ xiǎng le bàntiān yě bù huì zuò.",
     "exampleKind": "context"
   },
   {
@@ -3670,9 +3670,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "形",
     "newIn2026": true,
-    "example": "这件事很难听。",
-    "examplePinyin": "Zhè jiàn shì hěn nántīng.",
-    "exampleMeaning": "この件は聞き苦しいです。",
+    "example": "他说话的声音很难听。",
+    "exampleMeaning": "彼の話し声は聞き苦しいです。",
+    "examplePinyin": "Tā shuōhuà de shēngyīn hěn nántīng.",
     "exampleKind": "context"
   },
   {
@@ -3734,9 +3734,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "名",
     "newIn2026": true,
-    "example": "他是一位女人。",
-    "examplePinyin": "Tā shì yí wèi nǚrén.",
-    "exampleMeaning": "彼は女性、女の人です。",
+    "example": "那个女人是我的汉语老师。",
+    "exampleMeaning": "あの女性は私の中国語の先生です。",
+    "examplePinyin": "Nàge nǚrén shì wǒ de Hànyǔ lǎoshī.",
     "exampleKind": "context"
   },
   {
@@ -3748,9 +3748,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "名",
     "newIn2026": true,
-    "example": "他是一位女生。",
-    "examplePinyin": "Tā shì yí wèi nǚshēng.",
-    "exampleMeaning": "彼は女子学生、女の子です。",
+    "example": "我们班的女生比男生多。",
+    "exampleMeaning": "私たちのクラスは男子より女子が多いです。",
+    "examplePinyin": "Wǒmen bān de nǚshēng bǐ nánshēng duō.",
     "exampleKind": "context"
   },
   {
@@ -3762,9 +3762,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "动",
     "newIn2026": true,
-    "example": "请你先爬。",
-    "examplePinyin": "Qǐng nǐ xiān pá.",
-    "exampleMeaning": "まず登るしてください。",
+    "example": "我们周末去爬山吧。",
+    "exampleMeaning": "週末に山へ登りましょう。",
+    "examplePinyin": "Wǒmen zhōumò qù páshān ba.",
     "exampleKind": "context"
   },
   {
@@ -3790,9 +3790,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "动",
     "newIn2026": true,
-    "example": "他已经拍照了。",
-    "examplePinyin": "Tā yǐjīng pāizhào le.",
-    "exampleMeaning": "彼はすでに写真を撮るしました。",
+    "example": "这里不能拍照。",
+    "exampleMeaning": "ここでは写真を撮れません。",
+    "examplePinyin": "Zhèlǐ bù néng pāizhào.",
     "exampleKind": "context"
   },
   {
@@ -3840,9 +3840,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "名",
     "newIn2026": true,
-    "example": "我第一次听说平时。",
-    "examplePinyin": "Wǒ dì yī cì tīngshuō píngshí.",
-    "exampleMeaning": "私はふだん、平素を初めて聞きました。",
+    "example": "我平时坐地铁上班。",
+    "exampleMeaning": "私は普段地下鉄で通勤します。",
+    "examplePinyin": "Wǒ píngshí zuò dìtiě shàngbān.",
     "exampleKind": "context"
   },
   {
@@ -3914,9 +3914,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "动、（量）",
     "newIn2026": true,
-    "example": "我们明天要起。",
-    "examplePinyin": "Wǒmen míngtiān yào qǐ.",
-    "exampleMeaning": "私たちは明日起きる、立ち上がる予定です。",
+    "example": "他每天早上六点起床。",
+    "exampleMeaning": "彼は毎朝6時に起きます。",
+    "examplePinyin": "Tā měi tiān zǎoshang liù diǎn qǐchuáng.",
     "exampleKind": "context"
   },
   {
@@ -3940,9 +3940,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "名",
     "newIn2026": true,
-    "example": "我第一次听说汽车。",
-    "examplePinyin": "Wǒ dì yī cì tīngshuō qìchē.",
-    "exampleMeaning": "私は自動車を初めて聞きました。",
+    "example": "路上的汽车越来越多了。",
+    "exampleMeaning": "道路の自動車がますます増えています。",
+    "examplePinyin": "Lùshang de qìchē yuè lái yuè duō le.",
     "exampleKind": "context"
   },
   {
@@ -4018,9 +4018,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "动",
     "newIn2026": true,
-    "example": "他已经请客了。",
-    "examplePinyin": "Tā yǐjīng qǐngkè le.",
-    "exampleMeaning": "彼はすでにご馳走する、おごるしました。",
+    "example": "今天我请客，你们想吃什么？",
+    "exampleMeaning": "今日は私がおごります。何を食べたいですか。",
+    "examplePinyin": "Jīntiān wǒ qǐngkè, nǐmen xiǎng chī shénme?",
     "exampleKind": "context"
   },
   {
@@ -4032,9 +4032,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "名",
     "newIn2026": true,
-    "example": "我们秋天再见。",
-    "examplePinyin": "Wǒmen qiūtiān zàijiàn.",
-    "exampleMeaning": "秋にまた会いましょう。",
+    "example": "北京的秋天天气很好。",
+    "exampleMeaning": "北京は秋の気候がとても良いです。",
+    "examplePinyin": "Běijīng de qiūtiān tiānqì hěn hǎo.",
     "exampleKind": "context"
   },
   {
@@ -4046,9 +4046,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "名",
     "newIn2026": true,
-    "example": "我们今天去球场。",
-    "examplePinyin": "Wǒmen jīntiān qù qiúchǎng.",
-    "exampleMeaning": "私たちは今日球場、コートへ行きます。",
+    "example": "他们正在球场上打网球。",
+    "exampleMeaning": "彼らはコートでテニスをしています。",
+    "examplePinyin": "Tāmen zhèngzài qiúchǎng shàng dǎ wǎngqiú.",
     "exampleKind": "context"
   },
   {
@@ -4170,9 +4170,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "动",
     "newIn2026": true,
-    "example": "请你先扫。",
-    "examplePinyin": "Qǐng nǐ xiān sǎo.",
-    "exampleMeaning": "まず掃くしてください。",
+    "example": "请把地扫干净。",
+    "exampleMeaning": "床をきれいに掃いてください。",
+    "examplePinyin": "Qǐng bǎ de sǎo gānjìng.",
     "exampleKind": "context"
   },
   {
@@ -4184,9 +4184,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "名",
     "newIn2026": true,
-    "example": "我昨天买了沙发。",
-    "examplePinyin": "Wǒ zuótiān mǎi le shāfā.",
-    "exampleMeaning": "私は昨日ソファーを買いました。",
+    "example": "爸爸坐在沙发上看电视。",
+    "exampleMeaning": "父はソファーに座ってテレビを見ています。",
+    "examplePinyin": "Bàba zuò zài shāfā shàng kàn diànshì.",
     "exampleKind": "context"
   },
   {
@@ -4198,9 +4198,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "名",
     "newIn2026": true,
-    "example": "我第一次听说山。",
-    "examplePinyin": "Wǒ dì yī cì tīngshuō shān.",
-    "exampleMeaning": "私は山を初めて聞きました。",
+    "example": "那座山不高，很容易爬。",
+    "exampleMeaning": "あの山は高くないので、簡単に登れます。",
+    "examplePinyin": "Nà zuò shān bù gāo, hěn róngyì pá.",
     "exampleKind": "context"
   },
   {
@@ -4212,9 +4212,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "名",
     "newIn2026": true,
-    "example": "我昨天买了上衣。",
-    "examplePinyin": "Wǒ zuótiān mǎi le shàngyī.",
-    "exampleMeaning": "私は昨日上着を買いました。",
+    "example": "这件上衣有点儿小。",
+    "exampleMeaning": "この上着は少し小さいです。",
+    "examplePinyin": "Zhè jiàn shàngyī yǒudiǎnr xiǎo.",
     "exampleKind": "context"
   },
   {
@@ -4226,9 +4226,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "名",
     "newIn2026": true,
-    "example": "我昨天买了勺子。",
-    "examplePinyin": "Wǒ zuótiān mǎi le sháozi.",
-    "exampleMeaning": "私は昨日スプーンを買いました。",
+    "example": "喝汤的时候要用勺子。",
+    "exampleMeaning": "スープを飲むときはスプーンを使います。",
+    "examplePinyin": "Hē tāng de shíhou yào yòng sháozi.",
     "exampleKind": "context"
   },
   {
@@ -4240,9 +4240,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "名",
     "newIn2026": true,
-    "example": "我第一次听说身边。",
-    "examplePinyin": "Wǒ dì yī cì tīngshuō shēnbiān.",
-    "exampleMeaning": "私はそば、身の回りを初めて聞きました。",
+    "example": "感谢一直在我身边的家人。",
+    "exampleMeaning": "いつもそばにいる家族に感謝します。",
+    "examplePinyin": "Gǎnxiè yìzhí zài wǒ shēnbiān de jiārén.",
     "exampleKind": "context"
   },
   {
@@ -4254,9 +4254,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "名",
     "newIn2026": true,
-    "example": "我第一次听说身高。",
-    "examplePinyin": "Wǒ dì yī cì tīngshuō shēngāo.",
-    "exampleMeaning": "私は身長を初めて聞きました。",
+    "example": "请在这里写下你的身高。",
+    "exampleMeaning": "ここに身長を書いてください。",
+    "examplePinyin": "Qǐng zài zhèlǐ xiě xià nǐ de shēngāo.",
     "exampleKind": "context"
   },
   {
@@ -4282,9 +4282,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "名、动",
     "newIn2026": true,
-    "example": "他已经生活了。",
-    "examplePinyin": "Tā yǐjīng shēnghuó le.",
-    "exampleMeaning": "彼はすでに生活するしました。",
+    "example": "我喜欢现在的生活。",
+    "exampleMeaning": "私は今の生活が好きです。",
+    "examplePinyin": "Wǒ xǐhuan xiànzài de shēnghuó.",
     "exampleKind": "context"
   },
   {
@@ -4320,9 +4320,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "名",
     "newIn2026": true,
-    "example": "我第一次听说市。",
-    "examplePinyin": "Wǒ dì yī cì tīngshuō shì.",
-    "exampleMeaning": "私は市を初めて聞きました。",
+    "example": "这个市有三百多万人。",
+    "exampleMeaning": "この市には300万人以上が住んでいます。",
+    "examplePinyin": "Zhège shì yǒu sān bǎi duō wàn rén.",
     "exampleKind": "context"
   },
   {
@@ -4346,9 +4346,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "名",
     "newIn2026": true,
-    "example": "我第一次听说室。",
-    "examplePinyin": "Wǒ dì yī cì tīngshuō shì.",
-    "exampleMeaning": "私は室、部屋を初めて聞きました。",
+    "example": "老师在办公室。",
+    "exampleMeaning": "先生は職員室にいます。",
+    "examplePinyin": "Lǎoshī zài bàngōngshì.",
     "exampleKind": "context"
   },
   {
@@ -4372,9 +4372,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "动",
     "newIn2026": true,
-    "example": "他已经收了。",
-    "examplePinyin": "Tā yǐjīng shōu le.",
-    "exampleMeaning": "彼はすでに受け取る、集めるしました。",
+    "example": "我昨天收到了你的邮件。",
+    "exampleMeaning": "昨日あなたのメールを受け取りました。",
+    "examplePinyin": "Wǒ zuótiān shōudào le nǐ de yóujiàn.",
     "exampleKind": "context"
   },
   {
@@ -4476,9 +4476,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "动",
     "newIn2026": true,
-    "example": "请你先刷。",
-    "examplePinyin": "Qǐng nǐ xiān shuā.",
-    "exampleMeaning": "まず磨く、ブラシをかけるしてください。",
+    "example": "每天早晚都要刷牙。",
+    "exampleMeaning": "毎朝晩、歯を磨かなければなりません。",
+    "examplePinyin": "Měi tiān zǎo wǎn dōu yào shuāyá.",
     "exampleKind": "context"
   },
   {
@@ -4526,9 +4526,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "名",
     "newIn2026": true,
-    "example": "我第一次听说四季。",
-    "examplePinyin": "Wǒ dì yī cì tīngshuō sìjì.",
-    "exampleMeaning": "私は四季を初めて聞きました。",
+    "example": "这里四季都很美。",
+    "exampleMeaning": "ここは四季を通して美しいです。",
+    "examplePinyin": "Zhèlǐ sìjì dōu hěn měi.",
     "exampleKind": "context"
   },
   {
@@ -4552,9 +4552,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "名",
     "newIn2026": true,
-    "example": "我昨天买了糖。",
-    "examplePinyin": "Wǒ zuótiān mǎi le táng.",
-    "exampleMeaning": "私は昨日砂糖を買いました。",
+    "example": "咖啡里不要放太多糖。",
+    "exampleMeaning": "コーヒーに砂糖を入れすぎないでください。",
+    "examplePinyin": "Kāfēi lǐ búyào fàng tài duō táng.",
     "exampleKind": "context"
   },
   {
@@ -4602,9 +4602,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "名",
     "newIn2026": true,
-    "example": "我们今天去体育馆。",
-    "examplePinyin": "Wǒmen jīntiān qù tǐyùguǎn.",
-    "exampleMeaning": "私たちは今日体育館へ行きます。",
+    "example": "学生们正在体育馆里打球。",
+    "exampleMeaning": "学生たちは体育館で球技をしています。",
+    "examplePinyin": "Xuéshēng men zhèngzài tǐyùguǎn lǐ dǎ qiú.",
     "exampleKind": "context"
   },
   {
@@ -4628,9 +4628,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "动",
     "newIn2026": true,
-    "example": "我们明天要跳。",
-    "examplePinyin": "Wǒmen míngtiān yào tiào.",
-    "exampleMeaning": "私たちは明日跳ぶ予定です。",
+    "example": "孩子高兴得跳了起来。",
+    "exampleMeaning": "子供はうれしくて飛び上がりました。",
+    "examplePinyin": "Háizi gāoxìng de tiào le qǐlái.",
     "exampleKind": "context"
   },
   {
@@ -4742,9 +4742,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "名",
     "newIn2026": true,
-    "example": "我第一次听说外地。",
-    "examplePinyin": "Wǒ dì yī cì tīngshuō wàidì.",
-    "exampleMeaning": "私はよその土地、他地方を初めて聞きました。",
+    "example": "他从外地来这里工作。",
+    "exampleMeaning": "彼はよその土地からここへ働きに来ました。",
+    "examplePinyin": "Tā cóng wàidì lái zhèlǐ gōngzuò.",
     "exampleKind": "context"
   },
   {
@@ -4756,9 +4756,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "动、名",
     "newIn2026": true,
-    "example": "我昨天买了外卖。",
-    "examplePinyin": "Wǒ zuótiān mǎi le wàimài.",
-    "exampleMeaning": "私は昨日出前、テイクアウトを買いました。",
+    "example": "今天太累了，我们点外卖吧。",
+    "exampleMeaning": "今日は疲れたので、出前を頼みましょう。",
+    "examplePinyin": "Jīntiān tài lèi le, wǒmen diǎn wàimài ba.",
     "exampleKind": "context"
   },
   {
@@ -4770,9 +4770,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "名",
     "newIn2026": true,
-    "example": "我第一次听说外语。",
-    "examplePinyin": "Wǒ dì yī cì tīngshuō wàiyǔ.",
-    "exampleMeaning": "私は外国語を初めて聞きました。",
+    "example": "学习外语要多听多说。",
+    "exampleMeaning": "外国語の学習ではたくさん聞いて話すことが大切です。",
+    "examplePinyin": "Xuéxí wàiyǔ yào duō tīng duō shuō.",
     "exampleKind": "context"
   },
   {
@@ -4808,9 +4808,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "动",
     "newIn2026": true,
-    "example": "我们晚点再见。",
-    "examplePinyin": "Wǒmen wǎndiǎn zàijiàn.",
-    "exampleMeaning": "遅れるにまた会いましょう。",
+    "example": "火车晚点了二十分钟。",
+    "exampleMeaning": "列車が20分遅れました。",
+    "examplePinyin": "Huǒchē wǎndiǎn le èr shí fēnzhōng.",
     "exampleKind": "context"
   },
   {
@@ -4822,9 +4822,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "名",
     "newIn2026": true,
-    "example": "我第一次听说晚会。",
-    "examplePinyin": "Wǒ dì yī cì tīngshuō wǎnhuì.",
-    "exampleMeaning": "私は夜会、パーティーを初めて聞きました。",
+    "example": "学校明天晚上有新年晚会。",
+    "exampleMeaning": "学校では明晩、新年パーティーがあります。",
+    "examplePinyin": "Xuéxiào míngtiān wǎnshang yǒu xīnnián wǎnhuì.",
     "exampleKind": "context"
   },
   {
@@ -4836,9 +4836,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "名",
     "newIn2026": true,
-    "example": "我第一次听说网球。",
-    "examplePinyin": "Wǒ dì yī cì tīngshuō wǎngqiú.",
-    "exampleMeaning": "私はテニスを初めて聞きました。",
+    "example": "周末我常和朋友打网球。",
+    "exampleMeaning": "週末はよく友達とテニスをします。",
+    "examplePinyin": "Zhōumò wǒ cháng hé péngyou dǎ wǎngqiú.",
     "exampleKind": "context"
   },
   {
@@ -4850,9 +4850,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "名",
     "newIn2026": true,
-    "example": "我第一次听说网站。",
-    "examplePinyin": "Wǒ dì yī cì tīngshuō wǎngzhàn.",
-    "exampleMeaning": "私はウェブサイトを初めて聞きました。",
+    "example": "你可以在这个网站上买票。",
+    "exampleMeaning": "このウェブサイトで切符を買えます。",
+    "examplePinyin": "Nǐ kěyǐ zài zhège wǎngzhàn shàng mǎi piào.",
     "exampleKind": "context"
   },
   {
@@ -4900,9 +4900,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "名",
     "newIn2026": true,
-    "example": "我们今天去卫生间。",
-    "examplePinyin": "Wǒmen jīntiān qù wèishēngjiān.",
-    "exampleMeaning": "私たちは今日トイレ、洗面所へ行きます。",
+    "example": "请问卫生间在哪儿？",
+    "exampleMeaning": "すみません、トイレはどこですか。",
+    "examplePinyin": "Qǐngwèn wèishēngjiān zài nǎr?",
     "exampleKind": "context"
   },
   {
@@ -4926,9 +4926,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "名",
     "newIn2026": true,
-    "example": "我第一次听说屋子。",
-    "examplePinyin": "Wǒ dì yī cì tīngshuō wūzi.",
-    "exampleMeaning": "私は部屋を初めて聞きました。",
+    "example": "这间屋子里没有窗户。",
+    "exampleMeaning": "この部屋には窓がありません。",
+    "examplePinyin": "Zhè jiān wūzi lǐ méiyǒu chuānghu.",
     "exampleKind": "context"
   },
   {
@@ -4952,9 +4952,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "名",
     "newIn2026": true,
-    "example": "我第一次听说西北。",
-    "examplePinyin": "Wǒ dì yī cì tīngshuō xīběi.",
-    "exampleMeaning": "私は北西を初めて聞きました。",
+    "example": "西北地区的冬天很冷。",
+    "exampleMeaning": "北西地域の冬はとても寒いです。",
+    "examplePinyin": "Xīběi dìqū de dōngtiān hěn lěng.",
     "exampleKind": "context"
   },
   {
@@ -4966,9 +4966,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "名",
     "newIn2026": true,
-    "example": "我第一次听说西方。",
-    "examplePinyin": "Wǒ dì yī cì tīngshuō xīfāng.",
-    "exampleMeaning": "私は西洋、西方を初めて聞きました。",
+    "example": "很多人对西方文化感兴趣。",
+    "exampleMeaning": "多くの人が西洋文化に興味を持っています。",
+    "examplePinyin": "Hěn duō rén duì xīfāng wénhuà gǎn xìngqù.",
     "exampleKind": "context"
   },
   {
@@ -4992,9 +4992,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "名",
     "newIn2026": true,
-    "example": "我第一次听说西南。",
-    "examplePinyin": "Wǒ dì yī cì tīngshuō xīnán.",
-    "exampleMeaning": "私は南西を初めて聞きました。",
+    "example": "学校在城市西南方向。",
+    "exampleMeaning": "学校は町の南西方向にあります。",
+    "examplePinyin": "Xuéxiào zài chéngshì xīnán fāngxiàng.",
     "exampleKind": "context"
   },
   {
@@ -5032,9 +5032,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "名",
     "newIn2026": true,
-    "example": "我第一次听说洗衣机。",
-    "examplePinyin": "Wǒ dì yī cì tīngshuō xǐyījī.",
-    "exampleMeaning": "私は洗濯機を初めて聞きました。",
+    "example": "这台洗衣机怎么用？",
+    "exampleMeaning": "この洗濯機はどう使いますか。",
+    "examplePinyin": "Zhè tái xǐyījī zěnme yòng?",
     "exampleKind": "context"
   },
   {
@@ -5058,9 +5058,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "名",
     "newIn2026": true,
-    "example": "我们夏天再见。",
-    "examplePinyin": "Wǒmen xiàtiān zàijiàn.",
-    "exampleMeaning": "夏にまた会いましょう。",
+    "example": "夏天的白天很长。",
+    "exampleMeaning": "夏は昼間が長いです。",
+    "examplePinyin": "Xiàtiān de báitiān hěn cháng.",
     "exampleKind": "context"
   },
   {
@@ -5108,9 +5108,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "名",
     "newIn2026": true,
-    "example": "我昨天买了箱子。",
-    "examplePinyin": "Wǒ zuótiān mǎi le xiāngzi.",
-    "exampleMeaning": "私は昨日箱、スーツケースを買いました。",
+    "example": "请把这些书放进箱子里。",
+    "exampleMeaning": "これらの本を箱に入れてください。",
+    "examplePinyin": "Qǐng bǎ zhèxiē shū fàng jìn xiāngzi lǐ.",
     "exampleKind": "context"
   },
   {
@@ -5146,9 +5146,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "名",
     "newIn2026": true,
-    "example": "我昨天买了相机。",
-    "examplePinyin": "Wǒ zuótiān mǎi le xiàngjī.",
-    "exampleMeaning": "私は昨日カメラを買いました。",
+    "example": "这台相机是我爸爸送的。",
+    "exampleMeaning": "このカメラは父からもらいました。",
+    "examplePinyin": "Zhè tái xiàngjī shì wǒ bàba sòng de.",
     "exampleKind": "context"
   },
   {
@@ -5160,9 +5160,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "名",
     "newIn2026": true,
-    "example": "我们今天去小区。",
-    "examplePinyin": "Wǒmen jīntiān qù xiǎoqū.",
-    "exampleMeaning": "私たちは今日団地、住宅地へ行きます。",
+    "example": "我们小区旁边有一个公园。",
+    "exampleMeaning": "私たちの団地の隣に公園があります。",
+    "examplePinyin": "Wǒmen xiǎoqū pángbiān yǒu yī gè gōngyuán.",
     "exampleKind": "context"
   },
   {
@@ -5186,9 +5186,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "名",
     "newIn2026": true,
-    "example": "我们今天去校园。",
-    "examplePinyin": "Wǒmen jīntiān qù xiàoyuán.",
-    "exampleMeaning": "私たちは今日キャンパス、校庭へ行きます。",
+    "example": "春天的校园里开满了花。",
+    "exampleMeaning": "春のキャンパスは花でいっぱいです。",
+    "examplePinyin": "Chūntiān de xiàoyuán lǐ kāi mǎn le huā.",
     "exampleKind": "context"
   },
   {
@@ -5212,9 +5212,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "名",
     "newIn2026": true,
-    "example": "我昨天买了鞋。",
-    "examplePinyin": "Wǒ zuótiān mǎi le xié.",
-    "exampleMeaning": "私は昨日靴を買いました。",
+    "example": "这双鞋穿着很舒服。",
+    "exampleMeaning": "この靴は履き心地が良いです。",
+    "examplePinyin": "Zhè shuāng xié chuān zhe hěn shūfu.",
     "exampleKind": "context"
   },
   {
@@ -5226,9 +5226,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "名",
     "newIn2026": true,
-    "example": "我第一次听说心里。",
-    "examplePinyin": "Wǒ dì yī cì tīngshuō xīnlǐ.",
-    "exampleMeaning": "私は心の中を初めて聞きました。",
+    "example": "虽然他没说，但心里一定很高兴。",
+    "exampleMeaning": "彼は口にしませんが、心の中ではきっとうれしいでしょう。",
+    "examplePinyin": "Suīrán tā méi shuō, dàn xīnlǐ yídìng hěn gāoxìng.",
     "exampleKind": "context"
   },
   {
@@ -5240,9 +5240,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "名",
     "newIn2026": true,
-    "example": "我们新年再见。",
-    "examplePinyin": "Wǒmen xīnnián zàijiàn.",
-    "exampleMeaning": "新年にまた会いましょう。",
+    "example": "祝大家新年快乐！",
+    "exampleMeaning": "皆さん、明けましておめでとうございます。",
+    "examplePinyin": "Zhù dàjiā xīnnián kuàilè!",
     "exampleKind": "context"
   },
   {
@@ -5278,9 +5278,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "动、名",
     "newIn2026": true,
-    "example": "他已经信了。",
-    "examplePinyin": "Tā yǐjīng xìn le.",
-    "exampleMeaning": "彼はすでに手紙しました。",
+    "example": "我信你的话。",
+    "exampleMeaning": "私はあなたの言葉を信じます。",
+    "examplePinyin": "Wǒ xìn nǐ dehuà.",
     "exampleKind": "context"
   },
   {
@@ -5318,9 +5318,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "名",
     "newIn2026": true,
-    "example": "我昨天买了行李。",
-    "examplePinyin": "Wǒ zuótiān mǎi le xíngli.",
-    "exampleMeaning": "私は昨日荷物を買いました。",
+    "example": "我的行李有点儿重。",
+    "exampleMeaning": "私の荷物は少し重いです。",
+    "examplePinyin": "Wǒ de xíngli yǒudiǎnr zhòng.",
     "exampleKind": "context"
   },
   {
@@ -5332,9 +5332,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "名",
     "newIn2026": true,
-    "example": "我第一次听说兴趣。",
-    "examplePinyin": "Wǒ dì yī cì tīngshuō xìngqù.",
-    "exampleMeaning": "私は興味を初めて聞きました。",
+    "example": "我对中国历史很有兴趣。",
+    "exampleMeaning": "私は中国の歴史にとても興味があります。",
+    "examplePinyin": "Wǒ duì Zhōngguó lìshǐ hěn yǒu xìngqù.",
     "exampleKind": "context"
   },
   {
@@ -5346,9 +5346,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "动",
     "newIn2026": true,
-    "example": "请你先休假。",
-    "examplePinyin": "Qǐng nǐ xiān xiūjià.",
-    "exampleMeaning": "まず休暇を取るしてください。",
+    "example": "他下周要休假三天。",
+    "exampleMeaning": "彼は来週3日間休暇を取ります。",
+    "examplePinyin": "Tā xià zhōu yào xiūjià sān tiān.",
     "exampleKind": "context"
   },
   {
@@ -5372,9 +5372,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "动",
     "newIn2026": true,
-    "example": "我们明天要选。",
-    "examplePinyin": "Wǒmen míngtiān yào xuǎn.",
-    "exampleMeaning": "私たちは明日選ぶ予定です。",
+    "example": "这两件衣服，你选哪一件？",
+    "exampleMeaning": "この二着なら、どちらを選びますか。",
+    "examplePinyin": "Zhè liǎng jiàn yīfu, nǐ xuǎn nǎ yī jiàn?",
     "exampleKind": "context"
   },
   {
@@ -5398,9 +5398,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "名",
     "newIn2026": true,
-    "example": "我们学期再见。",
-    "examplePinyin": "Wǒmen xuéqī zàijiàn.",
-    "exampleMeaning": "学期にまた会いましょう。",
+    "example": "新学期下周开始。",
+    "exampleMeaning": "新学期は来週始まります。",
+    "examplePinyin": "Xīn xuéqī xià zhōu kāishǐ.",
     "exampleKind": "context"
   },
   {
@@ -5412,9 +5412,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "名",
     "newIn2026": true,
-    "example": "我第一次听说牙。",
-    "examplePinyin": "Wǒ dì yī cì tīngshuō yá.",
-    "exampleMeaning": "私は歯を初めて聞きました。",
+    "example": "我的牙有点儿疼。",
+    "exampleMeaning": "歯が少し痛いです。",
+    "examplePinyin": "Wǒ de yá yǒudiǎnr téng.",
     "exampleKind": "context"
   },
   {
@@ -5426,9 +5426,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "名",
     "newIn2026": true,
-    "example": "我昨天买了牙刷。",
-    "examplePinyin": "Wǒ zuótiān mǎi le yáshuā.",
-    "exampleMeaning": "私は昨日歯ブラシを買いました。",
+    "example": "我每三个月换一次牙刷。",
+    "exampleMeaning": "歯ブラシは3か月ごとに交換します。",
+    "examplePinyin": "Wǒ měi sān gè yuè huàn yī cì yáshuā.",
     "exampleKind": "context"
   },
   {
@@ -5440,9 +5440,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "名",
     "newIn2026": true,
-    "example": "我第一次听说羊。",
-    "examplePinyin": "Wǒ dì yī cì tīngshuō yáng.",
-    "exampleMeaning": "私は羊、ヤギを初めて聞きました。",
+    "example": "山上有一群羊。",
+    "exampleMeaning": "山に羊の群れがいます。",
+    "examplePinyin": "Shān shàng yǒu yī qún yáng.",
     "exampleKind": "context"
   },
   {
@@ -5454,9 +5454,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "动",
     "newIn2026": true,
-    "example": "请你先养。",
-    "examplePinyin": "Qǐng nǐ xiān yǎng.",
-    "exampleMeaning": "まず飼う、育てるしてください。",
+    "example": "我想养一只小狗。",
+    "exampleMeaning": "子犬を一匹飼いたいです。",
+    "examplePinyin": "Wǒ xiǎng yǎng yī zhī xiǎo gǒu.",
     "exampleKind": "context"
   },
   {
@@ -5686,9 +5686,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "名",
     "newIn2026": true,
-    "example": "我第一次听说银行卡。",
-    "examplePinyin": "Wǒ dì yī cì tīngshuō yínhángkǎ.",
-    "exampleMeaning": "私は銀行カード、キャッシュカードを初めて聞きました。",
+    "example": "我用银行卡付钱。",
+    "exampleMeaning": "銀行カードで支払います。",
+    "examplePinyin": "Wǒ yòng yínhángkǎ fù qián.",
     "exampleKind": "context"
   },
   {
@@ -5748,9 +5748,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "名",
     "newIn2026": true,
-    "example": "我第一次听说邮件。",
-    "examplePinyin": "Wǒ dì yī cì tīngshuō yóujiàn.",
-    "exampleMeaning": "私はメール、郵便物を初めて聞きました。",
+    "example": "我已经把邮件发给老师了。",
+    "exampleMeaning": "先生にメールを送りました。",
+    "examplePinyin": "Wǒ yǐjīng bǎ yóujiàn fā gěi lǎoshī le.",
     "exampleKind": "context"
   },
   {
@@ -5762,9 +5762,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "名",
     "newIn2026": true,
-    "example": "他是一位游客。",
-    "examplePinyin": "Tā shì yí wèi yóukè.",
-    "exampleMeaning": "彼は観光客です。",
+    "example": "春天来这里的游客最多。",
+    "exampleMeaning": "春はここを訪れる観光客が最も多いです。",
+    "examplePinyin": "Chūntiān lái zhèlǐ de yóukè zuì duō.",
     "exampleKind": "context"
   },
   {
@@ -5788,9 +5788,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "名",
     "newIn2026": true,
-    "example": "我第一次听说邮箱。",
-    "examplePinyin": "Wǒ dì yī cì tīngshuō yóuxiāng.",
-    "exampleMeaning": "私は郵便受け、メールボックスを初めて聞きました。",
+    "example": "我每天早上都会看邮箱。",
+    "exampleMeaning": "毎朝メールボックスを確認します。",
+    "examplePinyin": "Wǒ měi tiān zǎoshang dōu huì kàn yóuxiāng.",
     "exampleKind": "context"
   },
   {
@@ -5828,9 +5828,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "形",
     "newIn2026": true,
-    "example": "这件事很有用。",
-    "examplePinyin": "Zhè jiàn shì hěn yǒuyòng.",
-    "exampleMeaning": "この件は役に立つです。",
+    "example": "这本字典对初学者很有用。",
+    "exampleMeaning": "この辞書は初心者にとても役立ちます。",
+    "examplePinyin": "Zhè běn zìdiǎn duì chūxuézhě hěn yǒuyòng.",
     "exampleKind": "context"
   },
   {
@@ -5854,9 +5854,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "名",
     "newIn2026": true,
-    "example": "我昨天买了羽毛球。",
-    "examplePinyin": "Wǒ zuótiān mǎi le yǔmáoqiú.",
-    "exampleMeaning": "私は昨日バドミントンを買いました。",
+    "example": "体育馆里有人在打羽毛球。",
+    "exampleMeaning": "体育館でバドミントンをしている人がいます。",
+    "examplePinyin": "Tǐyùguǎn lǐ yǒu rén zài dǎ yǔmáoqiú.",
     "exampleKind": "context"
   },
   {
@@ -5868,9 +5868,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "名",
     "newIn2026": true,
-    "example": "我第一次听说语言。",
-    "examplePinyin": "Wǒ dì yī cì tīngshuō yǔyán.",
-    "exampleMeaning": "私は言語を初めて聞きました。",
+    "example": "汉语是世界上很多人使用的语言。",
+    "exampleMeaning": "中国語は世界で多くの人が使う言語です。",
+    "examplePinyin": "Hànyǔ shì shìjiè shàng hěn duō rén shǐyòng de yǔyán.",
     "exampleKind": "context"
   },
   {
@@ -5882,9 +5882,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "名",
     "newIn2026": true,
-    "example": "我昨天买了雨衣。",
-    "examplePinyin": "Wǒ zuótiān mǎi le yǔyī.",
-    "exampleMeaning": "私は昨日レインコートを買いました。",
+    "example": "下雨时别忘了带雨衣。",
+    "exampleMeaning": "雨の日はレインコートを忘れないでください。",
+    "examplePinyin": "Xià yǔ shí bié wàng le dài yǔyī.",
     "exampleKind": "context"
   },
   {
@@ -5922,9 +5922,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "名",
     "newIn2026": true,
-    "example": "我第一次听说园。",
-    "examplePinyin": "Wǒ dì yī cì tīngshuō yuán.",
-    "exampleMeaning": "私は園、庭園を初めて聞きました。",
+    "example": "这个公园以前是一个植物园。",
+    "exampleMeaning": "この公園は以前、植物園でした。",
+    "examplePinyin": "Zhège gōngyuán yǐqián shì yī gè zhíwùyuán.",
     "exampleKind": "context"
   },
   {
@@ -5986,9 +5986,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "名",
     "newIn2026": true,
-    "example": "我第一次听说运动会。",
-    "examplePinyin": "Wǒ dì yī cì tīngshuō yùndònghuì.",
-    "exampleMeaning": "私は運動会を初めて聞きました。",
+    "example": "学校下周要开运动会。",
+    "exampleMeaning": "学校は来週運動会を開きます。",
+    "examplePinyin": "Xuéxiào xià zhōu yào kāi yùndònghuì.",
     "exampleKind": "context"
   },
   {
@@ -6000,9 +6000,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "名",
     "newIn2026": true,
-    "example": "他是一位运动员。",
-    "examplePinyin": "Tā shì yí wèi yùndòngyuán.",
-    "exampleMeaning": "彼は選手、運動選手です。",
+    "example": "她想成为一名运动员。",
+    "exampleMeaning": "彼女はスポーツ選手になりたいです。",
+    "examplePinyin": "Tā xiǎng chéngwéi yī míng yùndòngyuán.",
     "exampleKind": "context"
   },
   {
@@ -6028,9 +6028,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "形",
     "newIn2026": true,
-    "example": "这件事很脏。",
-    "examplePinyin": "Zhè jiàn shì hěn zāng.",
-    "exampleMeaning": "この件は汚いです。",
+    "example": "你的手太脏了，快去洗。",
+    "exampleMeaning": "手が汚いので、早く洗ってください。",
+    "examplePinyin": "Nǐ de shǒu tài zāng le, kuài qù xǐ.",
     "exampleKind": "context"
   },
   {
@@ -6070,9 +6070,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "动",
     "newIn2026": true,
-    "example": "他已经站了。",
-    "examplePinyin": "Tā yǐjīng zhàn le.",
-    "exampleMeaning": "彼はすでに立つしました。",
+    "example": "车还没停，请不要站起来。",
+    "exampleMeaning": "車がまだ止まっていないので、立たないでください。",
+    "examplePinyin": "Chē hái méi tíng, qǐng búyào zhàn qǐlái.",
     "exampleKind": "context"
   },
   {
@@ -6120,9 +6120,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "动",
     "newIn2026": true,
-    "example": "请你先照。",
-    "examplePinyin": "Qǐng nǐ xiān zhào.",
-    "exampleMeaning": "まず照らすしてください。",
+    "example": "阳光照进了屋子。",
+    "exampleMeaning": "日差しが部屋に差し込みました。",
+    "examplePinyin": "Yángguāng zhào jìn le wūzi.",
     "exampleKind": "context"
   },
   {
@@ -6158,9 +6158,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "动",
     "newIn2026": true,
-    "example": "我们明天要照相。",
-    "examplePinyin": "Wǒmen míngtiān yào zhàoxiàng.",
-    "exampleMeaning": "私たちは明日写真を撮る予定です。",
+    "example": "我们在花园里照相吧。",
+    "exampleMeaning": "庭で写真を撮りましょう。",
+    "examplePinyin": "Wǒmen zài huāyuán lǐ zhàoxiàng ba.",
     "exampleKind": "context"
   },
   {
@@ -6198,9 +6198,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "名",
     "newIn2026": true,
-    "example": "我昨天买了纸。",
-    "examplePinyin": "Wǒ zuótiān mǎi le zhǐ.",
-    "exampleMeaning": "私は昨日紙を買いました。",
+    "example": "请在纸上写下你的名字。",
+    "exampleMeaning": "紙に名前を書いてください。",
+    "examplePinyin": "Qǐng zài zhǐ shàng xiě xià nǐ de míngzi.",
     "exampleKind": "context"
   },
   {
@@ -6364,9 +6364,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "动",
     "newIn2026": true,
-    "example": "他已经住院了。",
-    "examplePinyin": "Tā yǐjīng zhùyuàn le.",
-    "exampleMeaning": "彼はすでに入院するしました。",
+    "example": "他病得很重，需要住院。",
+    "exampleMeaning": "彼は重い病気で、入院が必要です。",
+    "examplePinyin": "Tā bìng de hěn zhòng, xūyào zhùyuàn.",
     "exampleKind": "context"
   },
   {
@@ -6378,9 +6378,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "名",
     "newIn2026": true,
-    "example": "我昨天买了字典。",
-    "examplePinyin": "Wǒ zuótiān mǎi le zìdiǎn.",
-    "exampleMeaning": "私は昨日辞典、字引を買いました。",
+    "example": "这个词我不知道，查一下字典吧。",
+    "exampleMeaning": "この単語は分からないので、辞書で調べましょう。",
+    "examplePinyin": "Zhège cí wǒ bù zhīdào, chá yíxià zìdiǎn ba.",
     "exampleKind": "context"
   },
   {
@@ -6494,9 +6494,9 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "动",
     "newIn2026": true,
-    "example": "我们明天要做客。",
-    "examplePinyin": "Wǒmen míngtiān yào zuòkè.",
-    "exampleMeaning": "私たちは明日客として訪れる、訪問する予定です。",
+    "example": "明天我们去老师家做客。",
+    "exampleMeaning": "明日は先生の家を訪問します。",
+    "examplePinyin": "Míngtiān wǒmen qù lǎoshī jiā zuòkè.",
     "exampleKind": "context"
   },
   {

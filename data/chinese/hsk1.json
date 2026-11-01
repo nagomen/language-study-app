@@ -56,10 +56,11 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "名",
     "newIn2026": true,
-    "example": "我今天学了“白天”这个词。",
-    "examplePinyin": "Wǒ jīntiān xué le “báitiān” zhège cí.",
-    "exampleMeaning": "今日は「白天」という単語を学びました。",
-    "exampleKind": "glossary"
+    "example": "我白天上班，晚上学习。",
+    "exampleMeaning": "私は昼間働き、夜は勉強します。",
+    "examplePinyin": "Wǒ báitiān shàngbān, wǎnshang xuéxí.",
+    "exampleKind": "authored",
+    "exampleAudio": "browser"
   },
   {
     "id": "hsk2-153",
@@ -94,10 +95,11 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "名",
     "newIn2026": true,
-    "example": "我今天学了“包子”这个词。",
-    "examplePinyin": "Wǒ jīntiān xué le “bāozi” zhège cí.",
-    "exampleMeaning": "今日は「包子」という単語を学びました。",
-    "exampleKind": "glossary"
+    "example": "这家店的包子很好吃。",
+    "exampleMeaning": "この店の肉まんはとてもおいしいです。",
+    "examplePinyin": "Zhè jiā diàn de bāozi hěn hǎochī.",
+    "exampleKind": "authored",
+    "exampleAudio": "browser"
   },
   {
     "id": "hsk1-004",
@@ -132,10 +134,11 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "名、后缀",
     "newIn2026": true,
-    "example": "我今天学了“边”这个词。",
-    "examplePinyin": "Wǒ jīntiān xué le “biān” zhège cí.",
-    "exampleMeaning": "今日は「边」という単語を学びました。",
-    "exampleKind": "glossary"
+    "example": "请坐在我旁边。",
+    "exampleMeaning": "私の隣に座ってください。",
+    "examplePinyin": "Qǐng zuò zài wǒ pángbiān.",
+    "exampleKind": "authored",
+    "exampleAudio": "browser"
   },
   {
     "id": "hsk2026-0012",
@@ -146,10 +149,11 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "名、动",
     "newIn2026": true,
-    "example": "我今天学了“病”这个词。",
-    "examplePinyin": "Wǒ jīntiān xué le “bìng” zhège cí.",
-    "exampleMeaning": "今日は「病」という単語を学びました。",
-    "exampleKind": "glossary"
+    "example": "他生病了，今天不能来。",
+    "exampleMeaning": "彼は病気になり、今日は来られません。",
+    "examplePinyin": "Tā shēngbìng le, jīntiān bù néng lái.",
+    "exampleKind": "authored",
+    "exampleAudio": "browser"
   },
   {
     "id": "hsk1-007",
@@ -184,10 +188,11 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "副",
     "newIn2026": true,
-    "example": "我今天学了“不要”这个词。",
-    "examplePinyin": "Wǒ jīntiān xué le “búyào” zhège cí.",
-    "exampleMeaning": "今日は「不要」という単語を学びました。",
-    "exampleKind": "glossary"
+    "example": "上课的时候不要说话。",
+    "exampleMeaning": "授業中は話してはいけません。",
+    "examplePinyin": "Shàngkè de shíhou búyào shuōhuà.",
+    "exampleKind": "authored",
+    "exampleAudio": "browser"
   },
   {
     "id": "hsk1-009",
@@ -222,10 +227,11 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "动",
     "newIn2026": true,
-    "example": "我今天学了“唱”这个词。",
-    "examplePinyin": "Wǒ jīntiān xué le “chàng” zhège cí.",
-    "exampleMeaning": "今日は「唱」という単語を学びました。",
-    "exampleKind": "glossary"
+    "example": "她很喜欢唱中文歌。",
+    "exampleMeaning": "彼女は中国語の歌を歌うのが大好きです。",
+    "examplePinyin": "Tā hěn xǐhuan chàng Zhōngwén gē.",
+    "exampleKind": "authored",
+    "exampleAudio": "browser"
   },
   {
     "id": "hsk3-334",
@@ -248,10 +254,11 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "名",
     "newIn2026": true,
-    "example": "我今天学了“车”这个词。",
-    "examplePinyin": "Wǒ jīntiān xué le “chē” zhège cí.",
-    "exampleMeaning": "今日は「车」という単語を学びました。",
-    "exampleKind": "glossary"
+    "example": "我家门口停着一辆车。",
+    "exampleMeaning": "家の入り口に車が一台止まっています。",
+    "examplePinyin": "Wǒ jiā ménkǒu tíng zhe yī liàng chē.",
+    "exampleKind": "authored",
+    "exampleAudio": "browser"
   },
   {
     "id": "hsk1-011",
@@ -334,10 +341,11 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "名",
     "newIn2026": true,
-    "example": "我今天学了“大学”这个词。",
-    "examplePinyin": "Wǒ jīntiān xué le “dàxué” zhège cí.",
-    "exampleMeaning": "今日は「大学」という単語を学びました。",
-    "exampleKind": "glossary"
+    "example": "我姐姐在北京上大学。",
+    "exampleMeaning": "姉は北京の大学に通っています。",
+    "examplePinyin": "Wǒ jiějie zài Běijīng shàng dàxué.",
+    "exampleKind": "authored",
+    "exampleAudio": "browser"
   },
   {
     "id": "hsk2026-0028",
@@ -348,10 +356,11 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "名",
     "newIn2026": true,
-    "example": "我今天学了“大学生”这个词。",
-    "examplePinyin": "Wǒ jīntiān xué le “dàxuéshēng” zhège cí.",
-    "exampleMeaning": "今日は「大学生」という単語を学びました。",
-    "exampleKind": "glossary"
+    "example": "他是大学生，不是老师。",
+    "exampleMeaning": "彼は大学生で、先生ではありません。",
+    "examplePinyin": "Tā shì dàxuéshēng, bù shì lǎoshī.",
+    "exampleKind": "authored",
+    "exampleAudio": "browser"
   },
   {
     "id": "hsk2-170",
@@ -386,10 +395,11 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "前缀",
     "newIn2026": true,
-    "example": "我今天学了“第”这个词。",
-    "examplePinyin": "Wǒ jīntiān xué le “dì” zhège cí.",
-    "exampleMeaning": "今日は「第」という単語を学びました。",
-    "exampleKind": "glossary"
+    "example": "今天是我第一天上班。",
+    "exampleMeaning": "今日は私の初出勤日です。",
+    "examplePinyin": "Jīntiān shì wǒ dì yī tiān shàngbān.",
+    "exampleKind": "authored",
+    "exampleAudio": "browser"
   },
   {
     "id": "hsk2-173",
@@ -424,10 +434,11 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "名",
     "newIn2026": true,
-    "example": "我今天学了“店”这个词。",
-    "examplePinyin": "Wǒ jīntiān xué le “diàn” zhège cí.",
-    "exampleMeaning": "今日は「店」という単語を学びました。",
-    "exampleKind": "glossary"
+    "example": "那家店晚上九点关门。",
+    "exampleMeaning": "あの店は夜9時に閉まります。",
+    "examplePinyin": "Nà jiā diàn wǎnshang jiǔ diǎn guān mén.",
+    "exampleKind": "authored",
+    "exampleAudio": "browser"
   },
   {
     "id": "hsk2026-0035",
@@ -438,10 +449,11 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "名",
     "newIn2026": true,
-    "example": "我今天学了“电话”这个词。",
-    "examplePinyin": "Wǒ jīntiān xué le “diànhuà” zhège cí.",
-    "exampleMeaning": "今日は「电话」という単語を学びました。",
-    "exampleKind": "glossary"
+    "example": "我给妈妈打了一个电话。",
+    "exampleMeaning": "母に一本電話をかけました。",
+    "examplePinyin": "Wǒ gěi māma dǎ le yī gè diànhuà.",
+    "exampleKind": "authored",
+    "exampleAudio": "browser"
   },
   {
     "id": "hsk1-017",
@@ -488,10 +500,11 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "名",
     "newIn2026": true,
-    "example": "我今天学了“电影院”这个词。",
-    "examplePinyin": "Wǒ jīntiān xué le “diànyǐngyuàn” zhège cí.",
-    "exampleMeaning": "今日は「电影院」という単語を学びました。",
-    "exampleKind": "glossary"
+    "example": "我们周末去电影院看电影。",
+    "exampleMeaning": "週末に映画館へ映画を見に行きます。",
+    "examplePinyin": "Wǒmen zhōumò qù diànyǐngyuàn kàn diànyǐng.",
+    "exampleKind": "authored",
+    "exampleAudio": "browser"
   },
   {
     "id": "hsk1-020",
@@ -538,10 +551,11 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "动",
     "newIn2026": true,
-    "example": "我今天学了“读书”这个词。",
-    "examplePinyin": "Wǒ jīntiān xué le “dúshū” zhège cí.",
-    "exampleMeaning": "今日は「读书」という単語を学びました。",
-    "exampleKind": "glossary"
+    "example": "弟弟每天晚上在房间里读书。",
+    "exampleMeaning": "弟は毎晩部屋で勉強します。",
+    "examplePinyin": "Dìdi měi tiān wǎnshang zài fángjiān lǐ dúshū.",
+    "exampleKind": "authored",
+    "exampleAudio": "browser"
   },
   {
     "id": "hsk2-176",
@@ -624,10 +638,11 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "名",
     "newIn2026": true,
-    "example": "我今天学了“饭”这个词。",
-    "examplePinyin": "Wǒ jīntiān xué le “fàn” zhège cí.",
-    "exampleMeaning": "今日は「饭」という単語を学びました。",
-    "exampleKind": "glossary"
+    "example": "饭已经做好了，快来吃吧。",
+    "exampleMeaning": "ご飯ができました。早く食べに来てください。",
+    "examplePinyin": "Fàn yǐjīng zuò hǎo le, kuài lái chī ba.",
+    "exampleKind": "authored",
+    "exampleAudio": "browser"
   },
   {
     "id": "hsk1-151",
@@ -722,10 +737,11 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "名",
     "newIn2026": true,
-    "example": "我今天学了“歌”这个词。",
-    "examplePinyin": "Wǒ jīntiān xué le “gē” zhège cí.",
-    "exampleMeaning": "今日は「歌」という単語を学びました。",
-    "exampleKind": "glossary"
+    "example": "这首歌很好听。",
+    "exampleMeaning": "この歌はとても耳に心地よいです。",
+    "examplePinyin": "Zhè shǒu gē hěn hǎotīng.",
+    "exampleKind": "authored",
+    "exampleAudio": "browser"
   },
   {
     "id": "hsk2-182",
@@ -820,10 +836,11 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "名",
     "newIn2026": true,
-    "example": "我今天学了“国”这个词。",
-    "examplePinyin": "Wǒ jīntiān xué le “guó” zhège cí.",
-    "exampleMeaning": "今日は「国」という単語を学びました。",
-    "exampleKind": "glossary"
+    "example": "你去过哪个国家？",
+    "exampleMeaning": "どの国へ行ったことがありますか。",
+    "examplePinyin": "Nǐ qù guò nǎge guójiā?",
+    "exampleKind": "authored",
+    "exampleAudio": "browser"
   },
   {
     "id": "hsk2-195",
@@ -870,10 +887,11 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "名",
     "newIn2026": true,
-    "example": "我今天学了“汉字”这个词。",
-    "examplePinyin": "Wǒ jīntiān xué le “Hànzì” zhège cí.",
-    "exampleMeaning": "今日は「汉字」という単語を学びました。",
-    "exampleKind": "glossary"
+    "example": "这个汉字怎么读？",
+    "exampleMeaning": "この漢字はどう読みますか。",
+    "examplePinyin": "Zhège Hànzì zěnme dú?",
+    "exampleKind": "authored",
+    "exampleAudio": "browser"
   },
   {
     "id": "hsk1-036",
@@ -908,10 +926,11 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "形",
     "newIn2026": true,
-    "example": "我今天学了“好看”这个词。",
-    "examplePinyin": "Wǒ jīntiān xué le “hǎokàn” zhège cí.",
-    "exampleMeaning": "今日は「好看」という単語を学びました。",
-    "exampleKind": "glossary"
+    "example": "你今天穿的衣服真好看。",
+    "exampleMeaning": "今日着ている服は本当にすてきですね。",
+    "examplePinyin": "Nǐ jīntiān chuān de yīfu zhēn hǎokàn.",
+    "exampleKind": "authored",
+    "exampleAudio": "browser"
   },
   {
     "id": "hsk2026-0074",
@@ -922,10 +941,11 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "形",
     "newIn2026": true,
-    "example": "我今天学了“好听”这个词。",
-    "examplePinyin": "Wǒ jīntiān xué le “hǎotīng” zhège cí.",
-    "exampleMeaning": "今日は「好听」という単語を学びました。",
-    "exampleKind": "glossary"
+    "example": "这首歌很好听，我想再听一次。",
+    "exampleMeaning": "この歌は心地よいので、もう一度聞きたいです。",
+    "examplePinyin": "Zhè shǒu gē hěn hǎotīng, wǒ xiǎng zài tīng yī cì.",
+    "exampleKind": "authored",
+    "exampleAudio": "browser"
   },
   {
     "id": "hsk2026-0075",
@@ -936,10 +956,11 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "形",
     "newIn2026": true,
-    "example": "我今天学了“好玩儿”这个词。",
-    "examplePinyin": "Wǒ jīntiān xué le “hǎowánr” zhège cí.",
-    "exampleMeaning": "今日は「好玩儿」という単語を学びました。",
-    "exampleKind": "glossary"
+    "example": "这个游戏很好玩儿。",
+    "exampleMeaning": "このゲームはとても面白いです。",
+    "examplePinyin": "Zhège yóuxì hěn hǎowánr.",
+    "exampleKind": "authored",
+    "exampleAudio": "browser"
   },
   {
     "id": "hsk2-191",
@@ -998,10 +1019,11 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "名",
     "newIn2026": true,
-    "example": "我今天学了“后”这个词。",
-    "examplePinyin": "Wǒ jīntiān xué le “hòu” zhège cí.",
-    "exampleMeaning": "今日は「后」という単語を学びました。",
-    "exampleKind": "glossary"
+    "example": "学校后面有一家书店。",
+    "exampleMeaning": "学校の後ろに本屋が一軒あります。",
+    "examplePinyin": "Xuéxiào hòumiàn yǒu yī jiā shūdiàn.",
+    "exampleKind": "authored",
+    "exampleAudio": "browser"
   },
   {
     "id": "hsk1-041",
@@ -1036,10 +1058,11 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "名",
     "newIn2026": true,
-    "example": "我今天学了“火车”这个词。",
-    "examplePinyin": "Wǒ jīntiān xué le “huǒchē” zhège cí.",
-    "exampleMeaning": "今日は「火车」という単語を学びました。",
-    "exampleKind": "glossary"
+    "example": "我坐火车去上海。",
+    "exampleMeaning": "私は列車で上海へ行きます。",
+    "examplePinyin": "Wǒ zuò huǒchē qù shàng hǎi.",
+    "exampleKind": "authored",
+    "exampleAudio": "browser"
   },
   {
     "id": "hsk2-198",
@@ -1086,10 +1109,11 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "名",
     "newIn2026": true,
-    "example": "我今天学了“家人”这个词。",
-    "examplePinyin": "Wǒ jīntiān xué le “jiārén” zhège cí.",
-    "exampleMeaning": "今日は「家人」という単語を学びました。",
-    "exampleKind": "glossary"
+    "example": "周末我常常和家人一起吃饭。",
+    "exampleMeaning": "週末はよく家族と一緒に食事をします。",
+    "examplePinyin": "Zhōumò wǒ chángcháng hé jiārén yìqǐ chī fàn.",
+    "exampleKind": "authored",
+    "exampleAudio": "browser"
   },
   {
     "id": "hsk2026-0088",
@@ -1100,10 +1124,11 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "动",
     "newIn2026": true,
-    "example": "我今天学了“见”这个词。",
-    "examplePinyin": "Wǒ jīntiān xué le “jiàn” zhège cí.",
-    "exampleMeaning": "今日は「见」という単語を学びました。",
-    "exampleKind": "glossary"
+    "example": "明天见！",
+    "exampleMeaning": "また明日。",
+    "examplePinyin": "Míngtiān jiàn!",
+    "exampleKind": "authored",
+    "exampleAudio": "browser"
   },
   {
     "id": "hsk2-199",
@@ -1126,10 +1151,11 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "名",
     "newIn2026": true,
-    "example": "我今天学了“饺子”这个词。",
-    "examplePinyin": "Wǒ jīntiān xué le “jiǎozi” zhège cí.",
-    "exampleMeaning": "今日は「饺子」という単語を学びました。",
-    "exampleKind": "glossary"
+    "example": "妈妈包的饺子很好吃。",
+    "exampleMeaning": "母が作った餃子はとてもおいしいです。",
+    "examplePinyin": "Māma bāo de jiǎozi hěn hǎochī.",
+    "exampleKind": "authored",
+    "exampleAudio": "browser"
   },
   {
     "id": "hsk1-046",
@@ -1164,10 +1190,11 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "名",
     "newIn2026": true,
-    "example": "我今天学了“今年”这个词。",
-    "examplePinyin": "Wǒ jīntiān xué le “jīnnián” zhège cí.",
-    "exampleMeaning": "今日は「今年」という単語を学びました。",
-    "exampleKind": "glossary"
+    "example": "我今年二十岁。",
+    "exampleMeaning": "私は今年20歳です。",
+    "examplePinyin": "Wǒ jīnnián èr shí suì.",
+    "exampleKind": "authored",
+    "exampleAudio": "browser"
   },
   {
     "id": "hsk1-048",
@@ -1226,10 +1253,11 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "动",
     "newIn2026": true,
-    "example": "我今天学了“开车”这个词。",
-    "examplePinyin": "Wǒ jīntiān xué le “kāichē” zhège cí.",
-    "exampleMeaning": "今日は「开车」という単語を学びました。",
-    "exampleKind": "glossary"
+    "example": "爸爸每天开车上班。",
+    "exampleMeaning": "父は毎日車を運転して通勤します。",
+    "examplePinyin": "Bàba měi tiān kāichē shàngbān.",
+    "exampleKind": "authored",
+    "exampleAudio": "browser"
   },
   {
     "id": "hsk1-051",
@@ -1252,10 +1280,11 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "动",
     "newIn2026": true,
-    "example": "我今天学了“看病”这个词。",
-    "examplePinyin": "Wǒ jīntiān xué le “kànbìng” zhège cí.",
-    "exampleMeaning": "今日は「看病」という単語を学びました。",
-    "exampleKind": "glossary"
+    "example": "我不舒服，下午去医院看病。",
+    "exampleMeaning": "具合が悪いので、午後病院で診てもらいます。",
+    "examplePinyin": "Wǒ bù shūfu, xiàwǔ qù yīyuàn kànbìng.",
+    "exampleKind": "authored",
+    "exampleAudio": "browser"
   },
   {
     "id": "hsk1-052",
@@ -1506,10 +1535,11 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "动",
     "newIn2026": true,
-    "example": "我今天学了“没事”这个词。",
-    "examplePinyin": "Wǒ jīntiān xué le “méishì” zhège cí.",
-    "exampleMeaning": "今日は「没事」という単語を学びました。",
-    "exampleKind": "glossary"
+    "example": "没事，我可以再等一会儿。",
+    "exampleMeaning": "大丈夫です。もう少し待てます。",
+    "examplePinyin": "Méishì, wǒ kěyǐ zài děng yíhuìr.",
+    "exampleKind": "authored",
+    "exampleAudio": "browser"
   },
   {
     "id": "hsk1-152",
@@ -1544,10 +1574,11 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "后缀",
     "newIn2026": true,
-    "example": "我今天学了“们”这个词。",
-    "examplePinyin": "Wǒ jīntiān xué le “men” zhège cí.",
-    "exampleMeaning": "今日は「们」という単語を学びました。",
-    "exampleKind": "glossary"
+    "example": "我们都是同班同学。",
+    "exampleMeaning": "私たちはみな同じクラスの学生です。",
+    "examplePinyin": "Wǒmen dōu shì tóng bān tóngxué.",
+    "exampleKind": "authored",
+    "exampleAudio": "browser"
   },
   {
     "id": "hsk1-067",
@@ -1582,10 +1613,11 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "名",
     "newIn2026": true,
-    "example": "我今天学了“面条儿”这个词。",
-    "examplePinyin": "Wǒ jīntiān xué le “miàntiáor” zhège cí.",
-    "exampleMeaning": "今日は「面条儿」という単語を学びました。",
-    "exampleKind": "glossary"
+    "example": "我想吃一碗面条儿。",
+    "exampleMeaning": "麺を一杯食べたいです。",
+    "examplePinyin": "Wǒ xiǎng chī yī wǎn miàntiáor.",
+    "exampleKind": "authored",
+    "exampleAudio": "browser"
   },
   {
     "id": "hsk2026-0128",
@@ -1596,10 +1628,11 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "名",
     "newIn2026": true,
-    "example": "我今天学了“明年”这个词。",
-    "examplePinyin": "Wǒ jīntiān xué le “míngnián” zhège cí.",
-    "exampleMeaning": "今日は「明年」という単語を学びました。",
-    "exampleKind": "glossary"
+    "example": "我明年要去中国学习。",
+    "exampleMeaning": "私は来年中国へ留学する予定です。",
+    "examplePinyin": "Wǒ míngnián yào qù Zhōngguó xuéxí.",
+    "exampleKind": "authored",
+    "exampleAudio": "browser"
   },
   {
     "id": "hsk1-069",
@@ -1646,10 +1679,11 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "代",
     "newIn2026": true,
-    "example": "我今天学了“哪个”这个词。",
-    "examplePinyin": "Wǒ jīntiān xué le “nǎge” zhège cí.",
-    "exampleMeaning": "今日は「哪个」という単語を学びました。",
-    "exampleKind": "glossary"
+    "example": "这两个杯子，你要哪个？",
+    "exampleMeaning": "この二つのコップのうち、どちらが欲しいですか。",
+    "examplePinyin": "Zhè liǎng gè bēizi, nǐ yào nǎge?",
+    "exampleKind": "authored",
+    "exampleAudio": "browser"
   },
   {
     "id": "hsk2026-0133",
@@ -1660,10 +1694,11 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "代",
     "newIn2026": true,
-    "example": "我今天学了“哪里”这个词。",
-    "examplePinyin": "Wǒ jīntiān xué le “nǎlǐ” zhège cí.",
-    "exampleMeaning": "今日は「哪里」という単語を学びました。",
-    "exampleKind": "glossary"
+    "example": "洗手间在哪里？",
+    "exampleMeaning": "トイレはどこですか。",
+    "examplePinyin": "Xǐshǒujiān zài nǎlǐ?",
+    "exampleKind": "authored",
+    "exampleAudio": "browser"
   },
   {
     "id": "hsk1-153",
@@ -1686,10 +1721,11 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "代",
     "newIn2026": true,
-    "example": "我今天学了“哪些”这个词。",
-    "examplePinyin": "Wǒ jīntiān xué le “nǎxiē” zhège cí.",
-    "exampleMeaning": "今日は「哪些」という単語を学びました。",
-    "exampleKind": "glossary"
+    "example": "你去过哪些城市？",
+    "exampleMeaning": "どの都市へ行ったことがありますか。",
+    "examplePinyin": "Nǐ qù guò nǎxiē chéngshì?",
+    "exampleKind": "authored",
+    "exampleAudio": "browser"
   },
   {
     "id": "hsk1-071",
@@ -1712,10 +1748,11 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "代",
     "newIn2026": true,
-    "example": "我今天学了“那边”这个词。",
-    "examplePinyin": "Wǒ jīntiān xué le “nàbiān” zhège cí.",
-    "exampleMeaning": "今日は「那边」という単語を学びました。",
-    "exampleKind": "glossary"
+    "example": "车站在那边。",
+    "exampleMeaning": "駅はあちらです。",
+    "examplePinyin": "Chēzhàn zài nàbiān.",
+    "exampleKind": "authored",
+    "exampleAudio": "browser"
   },
   {
     "id": "hsk2026-0138",
@@ -1726,10 +1763,11 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "代",
     "newIn2026": true,
-    "example": "我今天学了“那个”这个词。",
-    "examplePinyin": "Wǒ jīntiān xué le “nàge” zhège cí.",
-    "exampleMeaning": "今日は「那个」という単語を学びました。",
-    "exampleKind": "glossary"
+    "example": "那个穿白衣服的人是我哥哥。",
+    "exampleMeaning": "あの白い服を着た人は私の兄です。",
+    "examplePinyin": "Nàge chuān bái yīfu de rén shì wǒ gēge.",
+    "exampleKind": "authored",
+    "exampleAudio": "browser"
   },
   {
     "id": "hsk2026-0139",
@@ -1740,10 +1778,11 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "代",
     "newIn2026": true,
-    "example": "我今天学了“那里”这个词。",
-    "examplePinyin": "Wǒ jīntiān xué le “nàlǐ” zhège cí.",
-    "exampleMeaning": "今日は「那里」という単語を学びました。",
-    "exampleKind": "glossary"
+    "example": "我以前住在那里。",
+    "exampleMeaning": "私は以前あそこに住んでいました。",
+    "examplePinyin": "Wǒ yǐqián zhù zài nàlǐ.",
+    "exampleKind": "authored",
+    "exampleAudio": "browser"
   },
   {
     "id": "hsk2026-0140",
@@ -1754,10 +1793,11 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "代",
     "newIn2026": true,
-    "example": "我今天学了“那儿”这个词。",
-    "examplePinyin": "Wǒ jīntiān xué le “nàr” zhège cí.",
-    "exampleMeaning": "今日は「那儿」という単語を学びました。",
-    "exampleKind": "glossary"
+    "example": "你在那儿等我吧。",
+    "exampleMeaning": "あそこで私を待っていてください。",
+    "examplePinyin": "Nǐ zài nàr děng wǒ ba.",
+    "exampleKind": "authored",
+    "exampleAudio": "browser"
   },
   {
     "id": "hsk2026-0141",
@@ -1768,10 +1808,11 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "代",
     "newIn2026": true,
-    "example": "我今天学了“那些”这个词。",
-    "examplePinyin": "Wǒ jīntiān xué le “nàxiē” zhège cí.",
-    "exampleMeaning": "今日は「那些」という単語を学びました。",
-    "exampleKind": "glossary"
+    "example": "那些书都是我的。",
+    "exampleMeaning": "あれらの本はすべて私のものです。",
+    "examplePinyin": "Nàxiē shū dōu shì wǒ de.",
+    "exampleKind": "authored",
+    "exampleAudio": "browser"
   },
   {
     "id": "hsk2-302",
@@ -1794,10 +1835,11 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "名",
     "newIn2026": true,
-    "example": "我今天学了“男朋友”这个词。",
-    "examplePinyin": "Wǒ jīntiān xué le “nánpéngyou” zhège cí.",
-    "exampleMeaning": "今日は「男朋友」という単語を学びました。",
-    "exampleKind": "glossary"
+    "example": "这是我姐姐的男朋友。",
+    "exampleMeaning": "こちらは姉の彼氏です。",
+    "examplePinyin": "Zhè shì wǒ jiějie de nánpéngyou.",
+    "exampleKind": "authored",
+    "exampleAudio": "browser"
   },
   {
     "id": "hsk1-072",
@@ -1844,10 +1886,11 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "",
     "newIn2026": true,
-    "example": "我今天学了“你好”这个词。",
-    "examplePinyin": "Wǒ jīntiān xué le “nǐ hǎo” zhège cí.",
-    "exampleMeaning": "今日は「你好」という単語を学びました。",
-    "exampleKind": "glossary"
+    "example": "你好，请问王老师在吗？",
+    "exampleMeaning": "こんにちは、王先生はいらっしゃいますか。",
+    "examplePinyin": "Nǐ hǎo, qǐngwèn wáng lǎoshī zài ma?",
+    "exampleKind": "authored",
+    "exampleAudio": "browser"
   },
   {
     "id": "hsk2026-0148",
@@ -1858,10 +1901,11 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "代",
     "newIn2026": true,
-    "example": "我今天学了“你们”这个词。",
-    "examplePinyin": "Wǒ jīntiān xué le “nǐmen” zhège cí.",
-    "exampleMeaning": "今日は「你们」という単語を学びました。",
-    "exampleKind": "glossary"
+    "example": "你们明天几点出发？",
+    "exampleMeaning": "あなたたちは明日何時に出発しますか。",
+    "examplePinyin": "Nǐmen míngtiān jǐ diǎn chūfā?",
+    "exampleKind": "authored",
+    "exampleAudio": "browser"
   },
   {
     "id": "hsk1-075",
@@ -1932,10 +1976,11 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "名",
     "newIn2026": true,
-    "example": "我今天学了“女朋友”这个词。",
-    "examplePinyin": "Wǒ jīntiān xué le “nǚpéngyou” zhège cí.",
-    "exampleMeaning": "今日は「女朋友」という単語を学びました。",
-    "exampleKind": "glossary"
+    "example": "他周末要和女朋友看电影。",
+    "exampleMeaning": "彼は週末に彼女と映画を見る予定です。",
+    "examplePinyin": "Tā zhōumò yào hé nǚpéngyou kàn diànyǐng.",
+    "exampleKind": "authored",
+    "exampleAudio": "browser"
   },
   {
     "id": "hsk2026-0155",
@@ -1946,10 +1991,11 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "名",
     "newIn2026": true,
-    "example": "我今天学了“女士”这个词。",
-    "examplePinyin": "Wǒ jīntiān xué le “nǚshì” zhège cí.",
-    "exampleMeaning": "今日は「女士」という単語を学びました。",
-    "exampleKind": "glossary"
+    "example": "那位女士是我们的老师。",
+    "exampleMeaning": "あの女性は私たちの先生です。",
+    "examplePinyin": "Nà wèi nǚshì shì wǒmen de lǎoshī.",
+    "exampleKind": "authored",
+    "exampleAudio": "browser"
   },
   {
     "id": "hsk1-077",
@@ -2044,10 +2090,11 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "名",
     "newIn2026": true,
-    "example": "我今天学了“前”这个词。",
-    "examplePinyin": "Wǒ jīntiān xué le “qián” zhège cí.",
-    "exampleMeaning": "今日は「前」という単語を学びました。",
-    "exampleKind": "glossary"
+    "example": "我家前面有一个小公园。",
+    "exampleMeaning": "私の家の前に小さな公園があります。",
+    "examplePinyin": "Wǒ jiā qiánmiàn yǒu yī gè xiǎo gōngyuán.",
+    "exampleKind": "authored",
+    "exampleAudio": "browser"
   },
   {
     "id": "hsk1-082",
@@ -2082,10 +2129,11 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "动",
     "newIn2026": true,
-    "example": "我今天学了“请问”这个词。",
-    "examplePinyin": "Wǒ jīntiān xué le “qǐngwèn” zhège cí.",
-    "exampleMeaning": "今日は「请问」という単語を学びました。",
-    "exampleKind": "glossary"
+    "example": "请问，去火车站怎么走？",
+    "exampleMeaning": "すみません、駅へはどう行けばいいですか。",
+    "examplePinyin": "Qǐngwèn, qù huǒchēzhàn zěnme zǒu?",
+    "exampleKind": "authored",
+    "exampleAudio": "browser"
   },
   {
     "id": "hsk1-084",
@@ -2216,10 +2264,11 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "动",
     "newIn2026": true,
-    "example": "我今天学了“上课”这个词。",
-    "examplePinyin": "Wǒ jīntiān xué le “shàngkè” zhège cí.",
-    "exampleMeaning": "今日は「上课」という単語を学びました。",
-    "exampleKind": "glossary"
+    "example": "我们上午八点开始上课。",
+    "exampleMeaning": "私たちは午前8時に授業が始まります。",
+    "examplePinyin": "Wǒmen shàngwǔ bā diǎn kāishǐ shàngkè.",
+    "exampleKind": "authored",
+    "exampleAudio": "browser"
   },
   {
     "id": "hsk1-092",
@@ -2242,10 +2291,11 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "动",
     "newIn2026": true,
-    "example": "我今天学了“上学”这个词。",
-    "examplePinyin": "Wǒ jīntiān xué le “shàngxué” zhège cí.",
-    "exampleMeaning": "今日は「上学」という単語を学びました。",
-    "exampleKind": "glossary"
+    "example": "孩子们每天七点半上学。",
+    "exampleMeaning": "子供たちは毎日7時半に登校します。",
+    "examplePinyin": "Háizi men měi tiān qī diǎn bàn shàngxué.",
+    "exampleKind": "authored",
+    "exampleAudio": "browser"
   },
   {
     "id": "hsk1-093",
@@ -2340,10 +2390,11 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "名",
     "newIn2026": true,
-    "example": "我今天学了“事”这个词。",
-    "examplePinyin": "Wǒ jīntiān xué le “shì” zhège cí.",
-    "exampleMeaning": "今日は「事」という単語を学びました。",
-    "exampleKind": "glossary"
+    "example": "我下午有点儿事，不能去。",
+    "exampleMeaning": "午後は少し用事があり、行けません。",
+    "examplePinyin": "Wǒ xiàwǔ yǒudiǎnr shì, bù néng qù.",
+    "exampleKind": "authored",
+    "exampleAudio": "browser"
   },
   {
     "id": "hsk1-097",
@@ -2390,10 +2441,11 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "名",
     "newIn2026": true,
-    "example": "我今天学了“书店”这个词。",
-    "examplePinyin": "Wǒ jīntiān xué le “shūdiàn” zhège cí.",
-    "exampleMeaning": "今日は「书店」という単語を学びました。",
-    "exampleKind": "glossary"
+    "example": "我去书店买一本汉语词典。",
+    "exampleMeaning": "本屋へ中国語辞典を一冊買いに行きます。",
+    "examplePinyin": "Wǒ qù shūdiàn mǎi yī běn Hànyǔ cídiǎn.",
+    "exampleKind": "authored",
+    "exampleAudio": "browser"
   },
   {
     "id": "hsk1-100",
@@ -2428,10 +2480,11 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "动",
     "newIn2026": true,
-    "example": "我今天学了“睡”这个词。",
-    "examplePinyin": "Wǒ jīntiān xué le “shuì” zhège cí.",
-    "exampleMeaning": "今日は「睡」という単語を学びました。",
-    "exampleKind": "glossary"
+    "example": "孩子已经睡了。",
+    "exampleMeaning": "子供はもう寝ました。",
+    "examplePinyin": "Háizi yǐjīng shuì le.",
+    "exampleKind": "authored",
+    "exampleAudio": "browser"
   },
   {
     "id": "hsk1-102",
@@ -2538,10 +2591,11 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "代",
     "newIn2026": true,
-    "example": "我今天学了“他们”这个词。",
-    "examplePinyin": "Wǒ jīntiān xué le “tāmen” zhège cí.",
-    "exampleMeaning": "今日は「他们」という単語を学びました。",
-    "exampleKind": "glossary"
+    "example": "他们都是中国人。",
+    "exampleMeaning": "彼らは全員中国人です。",
+    "examplePinyin": "Tāmen dōu shì Zhōngguó rén.",
+    "exampleKind": "authored",
+    "exampleAudio": "browser"
   },
   {
     "id": "hsk2026-0204",
@@ -2552,10 +2606,11 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "代",
     "newIn2026": true,
-    "example": "我今天学了“它们”这个词。",
-    "examplePinyin": "Wǒ jīntiān xué le “tāmen” zhège cí.",
-    "exampleMeaning": "今日は「它们」という単語を学びました。",
-    "exampleKind": "glossary"
+    "example": "这些猫很可爱，我很喜欢它们。",
+    "exampleMeaning": "この猫たちはかわいく、私はとても気に入っています。",
+    "examplePinyin": "Zhèxiē māo hěn kě’ài, wǒ hěn xǐhuan tāmen.",
+    "exampleKind": "authored",
+    "exampleAudio": "browser"
   },
   {
     "id": "hsk2026-0205",
@@ -2566,10 +2621,11 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "代",
     "newIn2026": true,
-    "example": "我今天学了“她们”这个词。",
-    "examplePinyin": "Wǒ jīntiān xué le “tāmen” zhège cí.",
-    "exampleMeaning": "今日は「她们」という単語を学びました。",
-    "exampleKind": "glossary"
+    "example": "她们在教室里学习汉语。",
+    "exampleMeaning": "彼女たちは教室で中国語を勉強しています。",
+    "examplePinyin": "Tāmen zài jiàoshì lǐ xuéxí Hànyǔ.",
+    "exampleKind": "authored",
+    "exampleAudio": "browser"
   },
   {
     "id": "hsk1-107",
@@ -2592,10 +2648,11 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "名、量",
     "newIn2026": true,
-    "example": "我今天学了“天”这个词。",
-    "examplePinyin": "Wǒ jīntiān xué le “tiān” zhège cí.",
-    "exampleMeaning": "今日は「天」という単語を学びました。",
-    "exampleKind": "glossary"
+    "example": "我在北京住了三天。",
+    "exampleMeaning": "私は北京に3日間滞在しました。",
+    "examplePinyin": "Wǒ zài Běijīng zhù le sān tiān.",
+    "exampleKind": "authored",
+    "exampleAudio": "browser"
   },
   {
     "id": "hsk1-108",
@@ -2630,10 +2687,11 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "动",
     "newIn2026": true,
-    "example": "我今天学了“听见”这个词。",
-    "examplePinyin": "Wǒ jīntiān xué le “tīngjiàn” zhège cí.",
-    "exampleMeaning": "今日は「听见」という単語を学びました。",
-    "exampleKind": "glossary"
+    "example": "你听见外面的声音了吗？",
+    "exampleMeaning": "外の音が聞こえましたか。",
+    "examplePinyin": "Nǐ tīngjiàn wàimiàn de shēngyīn le ma?",
+    "exampleKind": "authored",
+    "exampleAudio": "browser"
   },
   {
     "id": "hsk1-110",
@@ -2668,10 +2726,11 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "名",
     "newIn2026": true,
-    "example": "我今天学了“外边”这个词。",
-    "examplePinyin": "Wǒ jīntiān xué le “wàibian” zhège cí.",
-    "exampleMeaning": "今日は「外边」という単語を学びました。",
-    "exampleKind": "glossary"
+    "example": "外边下雨了，带把伞吧。",
+    "exampleMeaning": "外は雨です。傘を持っていきましょう。",
+    "examplePinyin": "Wàibian xià yǔ le, dài bǎ sǎn ba.",
+    "exampleKind": "authored",
+    "exampleAudio": "browser"
   },
   {
     "id": "hsk2-255",
@@ -2694,10 +2753,11 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "形",
     "newIn2026": true,
-    "example": "我今天学了“晚”这个词。",
-    "examplePinyin": "Wǒ jīntiān xué le “wǎn” zhège cí.",
-    "exampleMeaning": "今日は「晚」という単語を学びました。",
-    "exampleKind": "glossary"
+    "example": "现在不晚，我们走吧。",
+    "exampleMeaning": "まだ遅くありません。行きましょう。",
+    "examplePinyin": "Xiànzài bù wǎn, wǒmen zǒu ba.",
+    "exampleKind": "authored",
+    "exampleAudio": "browser"
   },
   {
     "id": "hsk2026-0216",
@@ -2708,10 +2768,11 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "名",
     "newIn2026": true,
-    "example": "我今天学了“晚饭”这个词。",
-    "examplePinyin": "Wǒ jīntiān xué le “wǎnfàn” zhège cí.",
-    "exampleMeaning": "今日は「晚饭」という単語を学びました。",
-    "exampleKind": "glossary"
+    "example": "我们晚上六点吃晚饭。",
+    "exampleMeaning": "私たちは夜6時に夕食を食べます。",
+    "examplePinyin": "Wǒmen wǎnshang liù diǎn chī wǎnfàn.",
+    "exampleKind": "authored",
+    "exampleAudio": "browser"
   },
   {
     "id": "hsk2-256",
@@ -2806,10 +2867,11 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "名",
     "newIn2026": true,
-    "example": "我今天学了“午饭”这个词。",
-    "examplePinyin": "Wǒ jīntiān xué le “wǔfàn” zhège cí.",
-    "exampleMeaning": "今日は「午饭」という単語を学びました。",
-    "exampleKind": "glossary"
+    "example": "我中午和同事一起吃午饭。",
+    "exampleMeaning": "昼に同僚と一緒に昼食を食べます。",
+    "examplePinyin": "Wǒ zhōngwǔ hé tóngshì yìqǐ chī wǔfàn.",
+    "exampleKind": "authored",
+    "exampleAudio": "browser"
   },
   {
     "id": "hsk1-115",
@@ -2856,10 +2918,11 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "动",
     "newIn2026": true,
-    "example": "我今天学了“下班”这个词。",
-    "examplePinyin": "Wǒ jīntiān xué le “xiàbān” zhège cí.",
-    "exampleMeaning": "今日は「下班」という単語を学びました。",
-    "exampleKind": "glossary"
+    "example": "我爸爸每天下午五点下班。",
+    "exampleMeaning": "父は毎日午後5時に退勤します。",
+    "examplePinyin": "Wǒ bàba měi tiān xiàwǔ wǔ diǎn xiàbān.",
+    "exampleKind": "authored",
+    "exampleAudio": "browser"
   },
   {
     "id": "hsk2026-0229",
@@ -2870,10 +2933,11 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "动",
     "newIn2026": true,
-    "example": "我今天学了“下课”这个词。",
-    "examplePinyin": "Wǒ jīntiān xué le “xiàkè” zhège cí.",
-    "exampleMeaning": "今日は「下课」という単語を学びました。",
-    "exampleKind": "glossary"
+    "example": "下课以后，我们去图书馆吧。",
+    "exampleMeaning": "授業が終わったら、図書館へ行きましょう。",
+    "examplePinyin": "Xiàkè yǐhòu, wǒmen qù túshūguǎn ba.",
+    "exampleKind": "authored",
+    "exampleAudio": "browser"
   },
   {
     "id": "hsk1-117",
@@ -2944,10 +3008,11 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "名",
     "newIn2026": true,
-    "example": "我今天学了“小朋友”这个词。",
-    "examplePinyin": "Wǒ jīntiān xué le “xiǎopéngyǒu” zhège cí.",
-    "exampleMeaning": "今日は「小朋友」という単語を学びました。",
-    "exampleKind": "glossary"
+    "example": "那个小朋友叫什么名字？",
+    "exampleMeaning": "あの子供は何という名前ですか。",
+    "examplePinyin": "Nàge xiǎopéngyǒu jiào shénme míngzi?",
+    "exampleKind": "authored",
+    "exampleAudio": "browser"
   },
   {
     "id": "hsk2-264",
@@ -2970,10 +3035,11 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "名",
     "newIn2026": true,
-    "example": "我今天学了“小学”这个词。",
-    "examplePinyin": "Wǒ jīntiān xué le “xiǎoxué” zhège cí.",
-    "exampleMeaning": "今日は「小学」という単語を学びました。",
-    "exampleKind": "glossary"
+    "example": "这所小学离我家很近。",
+    "exampleMeaning": "この小学校は私の家から近いです。",
+    "examplePinyin": "Zhè suǒ xiǎoxué lí wǒ jiā hěn jìn.",
+    "exampleKind": "authored",
+    "exampleAudio": "browser"
   },
   {
     "id": "hsk2026-0238",
@@ -2984,10 +3050,11 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "名",
     "newIn2026": true,
-    "example": "我今天学了“小学生”这个词。",
-    "examplePinyin": "Wǒ jīntiān xué le “xiǎoxuéshēng” zhège cí.",
-    "exampleMeaning": "今日は「小学生」という単語を学びました。",
-    "exampleKind": "glossary"
+    "example": "我妹妹是一名小学生。",
+    "exampleMeaning": "妹は小学生です。",
+    "examplePinyin": "Wǒ mèimei shì yī míng xiǎoxuéshēng.",
+    "exampleKind": "authored",
+    "exampleAudio": "browser"
   },
   {
     "id": "hsk1-124",
@@ -3058,10 +3125,11 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "名",
     "newIn2026": true,
-    "example": "我今天学了“星期日”这个词。",
-    "examplePinyin": "Wǒ jīntiān xué le “xīngqīrì” zhège cí.",
-    "exampleMeaning": "今日は「星期日」という単語を学びました。",
-    "exampleKind": "glossary"
+    "example": "星期日我不用上班。",
+    "exampleMeaning": "日曜日は仕事に行く必要がありません。",
+    "examplePinyin": "Xīngqīrì wǒ búyòng shàngbān.",
+    "exampleKind": "authored",
+    "exampleAudio": "browser"
   },
   {
     "id": "hsk2026-0245",
@@ -3072,10 +3140,11 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "名",
     "newIn2026": true,
-    "example": "我今天学了“星期天”这个词。",
-    "examplePinyin": "Wǒ jīntiān xué le “xīngqītiān” zhège cí.",
-    "exampleMeaning": "今日は「星期天」という単語を学びました。",
-    "exampleKind": "glossary"
+    "example": "这个星期天你有时间吗？",
+    "exampleMeaning": "今度の日曜日は時間がありますか。",
+    "examplePinyin": "Zhège xīngqītiān nǐ yǒushí jiān ma?",
+    "exampleKind": "authored",
+    "exampleAudio": "browser"
   },
   {
     "id": "hsk2-268",
@@ -3098,10 +3167,11 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "动",
     "newIn2026": true,
-    "example": "我今天学了“学”这个词。",
-    "examplePinyin": "Wǒ jīntiān xué le “xué” zhège cí.",
-    "exampleMeaning": "今日は「学」という単語を学びました。",
-    "exampleKind": "glossary"
+    "example": "我在大学学中文。",
+    "exampleMeaning": "私は大学で中国語を学んでいます。",
+    "examplePinyin": "Wǒ zài dàxué xué Zhōngwén.",
+    "exampleKind": "authored",
+    "exampleAudio": "browser"
   },
   {
     "id": "hsk1-128",
@@ -3232,10 +3302,11 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "数",
     "newIn2026": true,
-    "example": "我今天学了“一半”这个词。",
-    "examplePinyin": "Wǒ jīntiān xué le “yíbàn” zhège cí.",
-    "exampleMeaning": "今日は「一半」という単語を学びました。",
-    "exampleKind": "glossary"
+    "example": "这个西瓜，我吃了一半。",
+    "exampleMeaning": "このスイカを私は半分食べました。",
+    "examplePinyin": "Zhège xīguā, wǒ chī le yíbàn.",
+    "exampleKind": "authored",
+    "exampleAudio": "browser"
   },
   {
     "id": "hsk2-305",
@@ -3282,10 +3353,11 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "数量",
     "newIn2026": true,
-    "example": "我今天学了“一些”这个词。",
-    "examplePinyin": "Wǒ jīntiān xué le “yìxiē” zhège cí.",
-    "exampleMeaning": "今日は「一些」という単語を学びました。",
-    "exampleKind": "glossary"
+    "example": "桌子上有一些水果。",
+    "exampleMeaning": "机の上に果物がいくつかあります。",
+    "examplePinyin": "Zhuōzi shàng yǒu yìxiē shuǐguǒ.",
+    "exampleKind": "authored",
+    "exampleAudio": "browser"
   },
   {
     "id": "hsk1-136",
@@ -3308,10 +3380,11 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "代",
     "newIn2026": true,
-    "example": "我今天学了“有的”这个词。",
-    "examplePinyin": "Wǒ jīntiān xué le “yǒude” zhège cí.",
-    "exampleMeaning": "今日は「有的」という単語を学びました。",
-    "exampleKind": "glossary"
+    "example": "有的学生坐公交车上学。",
+    "exampleMeaning": "バスで通学する学生もいます。",
+    "examplePinyin": "Yǒude xuéshēng zuò gōngjiāochē shàngxué.",
+    "exampleKind": "authored",
+    "exampleAudio": "browser"
   },
   {
     "id": "hsk2026-0265",
@@ -3322,10 +3395,11 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "副",
     "newIn2026": true,
-    "example": "我今天学了“有点儿”这个词。",
-    "examplePinyin": "Wǒ jīntiān xué le “yǒudiǎnr” zhège cí.",
-    "exampleMeaning": "今日は「有点儿」という単語を学びました。",
-    "exampleKind": "glossary"
+    "example": "今天有点儿冷。",
+    "exampleMeaning": "今日は少し寒いです。",
+    "examplePinyin": "Jīntiān yǒudiǎnr lěng.",
+    "exampleKind": "authored",
+    "exampleAudio": "browser"
   },
   {
     "id": "hsk2026-0266",
@@ -3336,10 +3410,11 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "代、（副）",
     "newIn2026": true,
-    "example": "我今天学了“有些”这个词。",
-    "examplePinyin": "Wǒ jīntiān xué le “yǒuxiē” zhège cí.",
-    "exampleMeaning": "今日は「有些」という単語を学びました。",
-    "exampleKind": "glossary"
+    "example": "有些问题我还不明白。",
+    "exampleMeaning": "まだ分からない問題がいくつかあります。",
+    "examplePinyin": "Yǒuxiē wèntí wǒ hái bù míngbai.",
+    "exampleKind": "authored",
+    "exampleAudio": "browser"
   },
   {
     "id": "hsk2026-0267",
@@ -3350,10 +3425,11 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "名",
     "newIn2026": true,
-    "example": "我今天学了“雨”这个词。",
-    "examplePinyin": "Wǒ jīntiān xué le “yǔ” zhège cí.",
-    "exampleMeaning": "今日は「雨」という単語を学びました。",
-    "exampleKind": "glossary"
+    "example": "雨下得很大，我们别出门了。",
+    "exampleMeaning": "雨が激しいので、外出するのはやめましょう。",
+    "examplePinyin": "Yǔ xià de hěn dà, wǒmen bié chūmén le.",
+    "exampleKind": "authored",
+    "exampleAudio": "browser"
   },
   {
     "id": "hsk2-284",
@@ -3424,10 +3500,11 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "形",
     "newIn2026": true,
-    "example": "我今天学了“早”这个词。",
-    "examplePinyin": "Wǒ jīntiān xué le “zǎo” zhège cí.",
-    "exampleMeaning": "今日は「早」という単語を学びました。",
-    "exampleKind": "glossary"
+    "example": "今天我来得很早。",
+    "exampleMeaning": "今日はとても早く来ました。",
+    "examplePinyin": "Jīntiān wǒ lái de hěn zǎo.",
+    "exampleKind": "authored",
+    "exampleAudio": "browser"
   },
   {
     "id": "hsk2026-0274",
@@ -3438,10 +3515,11 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "名",
     "newIn2026": true,
-    "example": "我今天学了“早饭”这个词。",
-    "examplePinyin": "Wǒ jīntiān xué le “zǎofàn” zhège cí.",
-    "exampleMeaning": "今日は「早饭」という単語を学びました。",
-    "exampleKind": "glossary"
+    "example": "我每天七点吃早饭。",
+    "exampleMeaning": "私は毎日7時に朝食を食べます。",
+    "examplePinyin": "Wǒ měi tiān qī diǎn chī zǎofàn.",
+    "exampleKind": "authored",
+    "exampleAudio": "browser"
   },
   {
     "id": "hsk2-288",
@@ -3512,10 +3590,11 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "代",
     "newIn2026": true,
-    "example": "我今天学了“这边”这个词。",
-    "examplePinyin": "Wǒ jīntiān xué le “zhèbiān” zhège cí.",
-    "exampleMeaning": "今日は「这边」という単語を学びました。",
-    "exampleKind": "glossary"
+    "example": "请到这边来。",
+    "exampleMeaning": "こちらへ来てください。",
+    "examplePinyin": "Qǐng dào zhèbiān lái.",
+    "exampleKind": "authored",
+    "exampleAudio": "browser"
   },
   {
     "id": "hsk2026-0281",
@@ -3526,10 +3605,11 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "代",
     "newIn2026": true,
-    "example": "我今天学了“这个”这个词。",
-    "examplePinyin": "Wǒ jīntiān xué le “zhège” zhège cí.",
-    "exampleMeaning": "今日は「这个」という単語を学びました。",
-    "exampleKind": "glossary"
+    "example": "这个苹果很甜。",
+    "exampleMeaning": "このリンゴはとても甘いです。",
+    "examplePinyin": "Zhège píngguǒ hěn tián.",
+    "exampleKind": "authored",
+    "exampleAudio": "browser"
   },
   {
     "id": "hsk2026-0282",
@@ -3540,10 +3620,11 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "代",
     "newIn2026": true,
-    "example": "我今天学了“这里”这个词。",
-    "examplePinyin": "Wǒ jīntiān xué le “zhèlǐ” zhège cí.",
-    "exampleMeaning": "今日は「这里」という単語を学びました。",
-    "exampleKind": "glossary"
+    "example": "我在这里等你。",
+    "exampleMeaning": "ここであなたを待っています。",
+    "examplePinyin": "Wǒ zài zhèlǐ děng nǐ.",
+    "exampleKind": "authored",
+    "exampleAudio": "browser"
   },
   {
     "id": "hsk2026-0283",
@@ -3554,10 +3635,11 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "代",
     "newIn2026": true,
-    "example": "我今天学了“这儿”这个词。",
-    "examplePinyin": "Wǒ jīntiān xué le “zhèr” zhège cí.",
-    "exampleMeaning": "今日は「这儿」という単語を学びました。",
-    "exampleKind": "glossary"
+    "example": "这儿可以坐吗？",
+    "exampleMeaning": "ここに座ってもいいですか。",
+    "examplePinyin": "Zhèr kěyǐ zuò ma?",
+    "exampleKind": "authored",
+    "exampleAudio": "browser"
   },
   {
     "id": "hsk2026-0284",
@@ -3568,10 +3650,11 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "代",
     "newIn2026": true,
-    "example": "我今天学了“这些”这个词。",
-    "examplePinyin": "Wǒ jīntiān xué le “zhèxiē” zhège cí.",
-    "exampleMeaning": "今日は「这些」という単語を学びました。",
-    "exampleKind": "glossary"
+    "example": "这些菜都是妈妈做的。",
+    "exampleMeaning": "これらの料理はすべて母が作りました。",
+    "examplePinyin": "Zhèxiē cài dōu shì māma zuò de.",
+    "exampleKind": "authored",
+    "exampleAudio": "browser"
   },
   {
     "id": "hsk2-292",
@@ -3666,10 +3749,11 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "名",
     "newIn2026": true,
-    "example": "我今天学了“中学”这个词。",
-    "examplePinyin": "Wǒ jīntiān xué le “zhōngxué” zhège cí.",
-    "exampleMeaning": "今日は「中学」という単語を学びました。",
-    "exampleKind": "glossary"
+    "example": "我弟弟今年上中学。",
+    "exampleMeaning": "弟は今年中学校に通います。",
+    "examplePinyin": "Wǒ dìdi jīnnián shàng zhōngxué.",
+    "exampleKind": "authored",
+    "exampleAudio": "browser"
   },
   {
     "id": "hsk2026-0293",
@@ -3680,10 +3764,11 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "名",
     "newIn2026": true,
-    "example": "我今天学了“中学生”这个词。",
-    "examplePinyin": "Wǒ jīntiān xué le “zhōngxuéshēng” zhège cí.",
-    "exampleMeaning": "今日は「中学生」という単語を学びました。",
-    "exampleKind": "glossary"
+    "example": "那个中学生是我弟弟。",
+    "exampleMeaning": "あの中学生は私の弟です。",
+    "examplePinyin": "Nàge zhōngxuéshēng shì wǒ dìdi.",
+    "exampleKind": "authored",
+    "exampleAudio": "browser"
   },
   {
     "id": "hsk1-145",
@@ -3766,9 +3851,10 @@
     "syllabus": "HSK3.0-2026",
     "partOfSpeech": "",
     "newIn2026": true,
-    "example": "我今天学了“做饭”这个词。",
-    "examplePinyin": "Wǒ jīntiān xué le “zuò fàn” zhège cí.",
-    "exampleMeaning": "今日は「做饭」という単語を学びました。",
-    "exampleKind": "glossary"
+    "example": "今天我来做饭，你休息吧。",
+    "exampleMeaning": "今日は私が料理を作るので、休んでください。",
+    "examplePinyin": "Jīntiān wǒ lái zuò fàn, nǐ xiūxi ba.",
+    "exampleKind": "authored",
+    "exampleAudio": "browser"
   }
 ]

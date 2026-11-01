@@ -15,6 +15,20 @@ export function startOfCurrentWeek() {
 
 export function addDays(dateString, days) { const date = new Date(`${dateString}T12:00:00`); date.setDate(date.getDate() + days); return date.toISOString().slice(0, 10); }
 
+/**
+ * 誤答の選択肢に使ってよい語か。正解と同じ漢字の別語（会＝できる／会＝集まり）や
+ * 同じ意味の語（会・能＝できる）を混ぜると正解が2つになるので外す。
+ * sameSound: 音声で出す問題では、ピンインが同じ語（聞き分けられない）も外す。
+ */
+export function canBeDistractor(word, item, { sameSound = false } = {}) {
+  if (!item || !word || item.id === word.id) return false;
+  if (item.hanzi === word.hanzi || item.meaning === word.meaning) return false;
+  if (sameSound && plainPinyin(item.pinyin) === plainPinyin(word.pinyin)) return false;
+  return true;
+}
+
+function plainPinyin(value) { return String(value || "").replace(/\s+/g, "").toLowerCase(); }
+
 export function normalizeAnswer(value) { return String(value || "").replace(/[\s。！？,.，?!]/g, "").toLowerCase(); }
 
 export function wordLevelLabel(word) {

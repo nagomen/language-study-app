@@ -39,14 +39,14 @@ Object.assign(extraPinyin, {
   窗户: "chuānghu", 护照: "hùzhào", 历史: "lìshǐ", 当地: "dāngdì", 初学者: "chūxuézhě", 按钮: "ànniǔ",
   地区: "dìqū", 文化: "wénhuà", 植物园: "zhíwùyuán", 认可: "rènkě", 垃圾: "lājī", 阳光: "yángguāng", 公里: "gōnglǐ",
   操场: "cāochǎng", 比赛: "bǐsài", 分钟: "fēnzhōng", 会议室: "huìyìshì", 经理: "jīnglǐ", 电梯: "diàntī",
-  照片: "zhàopiàn", 游戏: "yóuxì", 同事: "tóngshì", 城市: "chéngshì", 衬衫: "chènshān", 答案: "dá'àn", 耳机: "ěrjī", 偶尔: "ǒu'ěr", 方便面: "fāngbiànmiàn", 毕业: "bìyè", 院子: "yuànzi", 勺子: "sháozi", 感谢: "gǎnxiè", 使用: "shǐyòng", 人数: "rénshù", 垃圾: "lājī",
-  按: "àn", 付: "fù", 甜: "tián", 换: "huàn", 倒: "dào", 杯: "bēi", 订: "dìng", 房: "fáng", 定: "dìng", 乱: "luàn", 丢: "diū", 升: "shēng", 吹: "chuī", 组: "zǔ", 场: "chǎng", 戴: "dài", 清: "qīng", 幅: "fú", 养: "yǎng", 鸡: "jī", 步: "bù", 停: "tíng", 转: "zhuǎn", 汤: "tāng", 美: "měi", 满: "mǎn", 但: "dàn", 没: "méi", 祝: "zhù", 重: "zhòng", 垃: "lā", 圾: "jī",
+  照片: "zhàopiàn", 游戏: "yóuxì", 同事: "tóngshì", 城市: "chéngshì", 衬衫: "chènshān", 答案: "dá'àn", 耳机: "ěrjī", 偶尔: "ǒu'ěr", 方便面: "fāngbiànmiàn", 毕业: "bìyè", 院子: "yuànzi", 勺子: "sháozi", 感谢: "gǎnxiè", 使用: "shǐyòng", 人数: "rénshù", 成为: "chéngwéi", 垃圾: "lājī",
+  按: "àn", 付: "fù", 甜: "tián", 换: "huàn", 倒: "dào", 杯: "bēi", 部: "bù", 订: "dìng", 房: "fáng", 定: "dìng", 乱: "luàn", 丢: "diū", 升: "shēng", 吹: "chuī", 组: "zǔ", 场: "chǎng", 戴: "dài", 清: "qīng", 幅: "fú", 养: "yǎng", 鸡: "jī", 步: "bù", 停: "tíng", 转: "zhuǎn", 汤: "tāng", 美: "měi", 满: "mǎn", 但: "dàn", 没: "méi", 祝: "zhù", 重: "zhòng", 谁: "shéi", 垃: "lā", 圾: "jī",
 });
 const pinyinEntries = [
+  ...Object.entries(extraPinyin).map(([hanzi, pinyin]) => ({ hanzi, pinyin })),
   ...Object.values(officialSources).flatMap((source) => source.terms).map((term) => ({ hanzi: term.simplified, pinyin: term.pinyin })),
   ...existingGroups.flat(),
   ...existingSupplement,
-  ...Object.entries(extraPinyin).map(([hanzi, pinyin]) => ({ hanzi, pinyin })),
 ].flatMap((term) => variants(term.hanzi).map((hanzi) => [hanzi, term.pinyin]))
   .sort((left, right) => right[0].length - left[0].length);
 const punctuation = { "，": ",", "。": ".", "？": "?", "！": "!", "、": "," };
@@ -68,10 +68,13 @@ function sentencePinyin(sentence) {
 const existing = existingGroups.flatMap((group, index) => group.map((word) => ({ ...word, previousLevel: index + 1 })));
 const tagData = readJson(path.join(vocabDir, "word-tags.json"));
 const curatedExamples = readJson(path.join(sourceDir, "examples-hsk3.json"));
-const authoredExamples = new Map([
-  ...readExampleRows("examples-new-hsk1-2.tsv"),
-  ...readExampleRows("examples-new-hsk3.tsv"),
-]);
+const authoredHsk12 = readExampleRows("examples-new-hsk1-2.tsv");
+const authoredHsk3 = readExampleRows("examples-new-hsk3.tsv");
+const authoredRows = [...authoredHsk12, ...authoredHsk3];
+const authoredExamples = new Map(authoredRows);
+if (authoredHsk12.length !== 174 || authoredHsk3.length !== 177 || authoredExamples.size !== authoredRows.length) {
+  throw new Error(`個別例文ソースが不正です: HSK1〜2 ${authoredHsk12.length}/174、HSK3 ${authoredHsk3.length}/177、重複 ${authoredRows.length - authoredExamples.size}`);
+}
 const usedIds = new Set();
 
 function findExisting(term) {
@@ -140,7 +143,7 @@ for (const level of [1, 2, 3]) {
       ...(curatedExample ? {
         ...curatedExample,
         exampleKind: level === 3 ? "context" : "authored",
-        ...(authoredExample ? { exampleAudio: "browser" } : {}),
+        ...(authoredExample && level < 3 ? { exampleAudio: "browser" } : {}),
       } : previous?.example ? {
         example: previous.example,
         examplePinyin: previous.examplePinyin,
@@ -166,6 +169,8 @@ const finalIds = allOutput.map((word) => word.id);
 if (new Set(finalIds).size !== finalIds.length) {
   throw new Error("生成後の単語IDに重複があります");
 }
+const unknownExampleIds = authoredRows.map(([id]) => id).filter((id) => !finalIds.includes(id));
+if (unknownExampleIds.length) throw new Error(`個別例文の単語IDが存在しません: ${unknownExampleIds.join(", ")}`);
 
 const supplementRows = fs.readFileSync(path.join(sourceDir, "legacy-hsk2-supplement.tsv"), "utf8")
   .split(/\r?\n/)

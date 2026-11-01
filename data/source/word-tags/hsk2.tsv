@@ -16,9 +16,9 @@ hsk2026-0315|车站|daily
 hsk2-161|出|verb
 hsk2026-0317|出国|verb
 hsk2026-0318|出来|verb
-hsk2026-0319|出门|verb
+hsk2026-0319|出门|verb,home
 hsk2026-0320|出去|verb
-hsk2026-0321|床|daily
+hsk2026-0321|床|daily,home
 hsk2026-0322|词|daily
 hsk2-164|次|measure,adjective
 hsk2-165|从|preposition,adverb
@@ -63,7 +63,7 @@ hsk2026-0362|回去|verb
 hsk2-197|机场|travel
 hsk2026-0364|机票|daily
 hsk3-412|记得|verb,thinking,cognition
-hsk2026-0366|间|measure
+hsk2026-0366|间|measure,home
 hsk3-421|教|verb,school
 hsk2-200|教室|school
 hsk2-202|介绍|verb,greeting
@@ -98,7 +98,7 @@ hsk2-221|慢|adjective
 hsk2026-0398|没意思|daily
 hsk2-223|每|pronoun,adverb
 hsk2-225|门|home
-hsk2026-0401|门口|daily
+hsk2026-0401|门口|daily,home
 hsk2026-0402|门票|daily
 hsk2026-0403|面|measure,verb,particle
 hsk2026-0404|名|measure

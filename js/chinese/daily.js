@@ -1,28 +1,42 @@
 // app.js から機能ごとに切り出したモジュール。生成物ではなく、以降はこのファイルを直接編集する。
 import { $, escapeHtml, shuffle, localDateKey } from "../shared.js";
 import { bindWordRowAudio } from "./audio.js";
-import { DAILY_KEY, DAILY_LEGACY_KEY, DAILY_LEVEL, DAILY_SEED, DAILY_SIZE } from "./config.js?v=20261004-hsk3-full";
+import { DAILY_KEY, DAILY_LEGACY_KEY, DAILY_LEVEL, DAILY_PREVIOUS_KEY, DAILY_PREVIOUS_SIZE, DAILY_SEED, DAILY_SIZE } from "./config.js";
 import { startQuiz } from "./quiz.js";
 import { state } from "./state.js";
 import { wordRowHtml } from "./words.js";
 
+function readSaved(key) {
+  const saved = JSON.parse(localStorage.getItem(key) || "null");
+  return saved && typeof saved === "object" ? saved : null;
+}
+
+function normalizeDaily(saved) {
+  return {
+    day: Math.max(1, Number(saved.day) || 1),
+    lastDate: String(saved.lastDate || ""),
+    pendingReview: Array.isArray(saved.pendingReview) ? saved.pendingReview : [],
+    history: Array.isArray(saved.history) ? saved.history : [],
+  };
+}
+
 export function loadDaily() {
   const empty = { day: 1, lastDate: "", pendingReview: [], history: [] };
   try {
-    const saved = JSON.parse(localStorage.getItem(DAILY_KEY) || "null");
-    if (!saved || typeof saved !== "object") {
-      // 旧600語版から2026年版へは、持ち越しの復習語だけを引き継いでDAY 1から始める。
-      const legacy = JSON.parse(localStorage.getItem(DAILY_LEGACY_KEY) || "null");
-      return legacy && typeof legacy === "object" && Array.isArray(legacy.pendingReview)
-        ? { ...empty, pendingReview: [...new Set(legacy.pendingReview)] }
-        : empty;
+    const saved = readSaved(DAILY_KEY);
+    if (saved) return normalizeDaily(saved);
+    const previous = readSaved(DAILY_PREVIOUS_KEY);
+    if (previous) {
+      const daily = normalizeDaily(previous);
+      // 端数は切り捨てて、学びきっていない語を飛ばさない（数語は二度出る）。
+      const learned = (daily.day - 1) * DAILY_PREVIOUS_SIZE;
+      return { ...daily, day: Math.floor(learned / DAILY_SIZE) + 1 };
     }
-    return {
-      day: Math.max(1, Number(saved.day) || 1),
-      lastDate: String(saved.lastDate || ""),
-      pendingReview: Array.isArray(saved.pendingReview) ? saved.pendingReview : [],
-      history: Array.isArray(saved.history) ? saved.history : [],
-    };
+    // 旧600語版から2026年版へは、持ち越しの復習語だけを引き継いでDAY 1から始める。
+    const legacy = readSaved(DAILY_LEGACY_KEY);
+    return legacy && Array.isArray(legacy.pendingReview)
+      ? { ...empty, pendingReview: [...new Set(legacy.pendingReview)] }
+      : empty;
   } catch { return empty; }
 }
 
@@ -71,7 +85,7 @@ function dailySnapshot() {
   };
 }
 
-// 「今日の40語」と同じDAYの例文を「今日の40リスニング」で使う。
+// 「今日の30語」と同じDAYの例文を「今日の30リスニング」で使う。
 // その日の単語テストが済んだあとは、進んだ先ではなく学習したセットを返す。
 export function getDailyListeningSet() {
   const daily = dailySnapshot();
@@ -216,13 +230,13 @@ export function completeDailySession() {
 }
 
 export function resetDaily() {
-  if (!window.confirm("毎日40語の進み具合をリセットします。DAY 1 からやり直しますか？")) return;
+  if (!window.confirm("毎日30語の進み具合をリセットします。DAY 1 からやり直しますか？")) return;
   state.daily = { day: 1, lastDate: "", pendingReview: [], history: [] };
   saveDaily();
   renderDaily();
 }
 
-// 気になるマークを付けた語は、まちがえたときと同じように次回の毎日40語へ回す。
+// 気になるマークを付けた語は、まちがえたときと同じように次回の毎日30語へ回す。
 export function markWordForDailyReview(word) {
   if (word.level !== DAILY_LEVEL || !state.dailyDays.length) return;
   const index = state.dailyDays.findIndex((day) => day.some((item) => item.id === word.id));

@@ -18,14 +18,19 @@ export const REVIEW_SUB_LABELS = { "reading-comprehension": "設問", "reading-j
 
 export const CHECKED_KEY = "hsk-checked-words";
 
-// 2026年版HSK3の新出500語を毎日40語ずつ。旧600語版とは別の周回として始める。
-export const DAILY_KEY = "hsk3-daily-40-2026-v1";
+// 2026年版HSK3の新出500語を毎日30語ずつ。旧600語版とは別の周回として始める。
+export const DAILY_KEY = "hsk3-daily-30-2026-v1";
+
+// 40語ずつだった頃の2026年版。並べ替えは同じなので、学習済みの語数から DAY を数え直して引き継ぐ。
+export const DAILY_PREVIOUS_KEY = "hsk3-daily-40-2026-v1";
+
+export const DAILY_PREVIOUS_SIZE = 40;
 
 export const DAILY_LEGACY_KEY = "hsk3-daily-40-v1";
 
 export const DAILY_LEVEL = 3;
 
-export const DAILY_SIZE = 40;
+export const DAILY_SIZE = 30;
 
 export const DAILY_SEED = 20261003;
 

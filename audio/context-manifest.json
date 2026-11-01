@@ -2,11 +2,11 @@
   "version": 1,
   "format": "wav",
   "sampleRate": 22050,
-  "generatedAt": "2026-10-04T04:34:29.310Z",
+  "generatedAt": "2026-10-04T09:01:02.956Z",
   "counts": {
     "total": 512,
-    "generated": 1,
-    "reused": 511
+    "generated": 177,
+    "reused": 335
   },
   "items": {
     "hsk2026-0503": {
@@ -34,11 +34,11 @@
       "file": "audio/hsk2026-0505.wav"
     },
     "example-hsk2026-0505": {
-      "text": "这件事很安全。",
+      "text": "晚上一个人走这条路不安全。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "b59923f3bd390209aa437cb933b3155b767bea72f4642ed9edb0a94d978843f5",
+      "checksum": "7becc790462a91355226202de4dd2931943a3a428160009fbf27180ac2c8f703",
       "file": "audio/sentences/example-hsk2026-0505.wav"
     },
     "hsk2026-0508": {
@@ -50,11 +50,11 @@
       "file": "audio/hsk2026-0508.wav"
     },
     "example-hsk2026-0508": {
-      "text": "我第一次听说班级。",
+      "text": "这个班级一共有三十名学生。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "4c48288898eceb87424860715fef759f9fc219e6a39570990d82a7fcb208e249",
+      "checksum": "009c5c53c4671c068216a1db0b631b6ba160e72fa64f18c7dac0b7113c7bb781",
       "file": "audio/sentences/example-hsk2026-0508.wav"
     },
     "hsk2026-0509": {
@@ -66,11 +66,11 @@
       "file": "audio/hsk2026-0509.wav"
     },
     "example-hsk2026-0509": {
-      "text": "我们明天要搬家。",
+      "text": "我们下个月要搬家。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "cfaba46add3c397b6d68c6c8993e6db308431994d283365302b48f2046bd7535",
+      "checksum": "872b6d8a754f0f162f6366e7ac808596418fd7f215497bbf5d25c6b4f3ce8369",
       "file": "audio/sentences/example-hsk2026-0509.wav"
     },
     "hsk2026-0510": {
@@ -114,11 +114,11 @@
       "file": "audio/hsk2026-0517.wav"
     },
     "example-hsk2026-0517": {
-      "text": "我第一次听说北。",
+      "text": "火车站在城市北边。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "67e0be8c32c53bb87d16e332be2010b37e14e2622f116337c1b507bc022b7c41",
+      "checksum": "d077db7d17990220eb5ab7d2887aa83aa09b0ceeb62c6bbdc0cf82dc0d5cd660",
       "file": "audio/sentences/example-hsk2026-0517.wav"
     },
     "hsk2026-0520": {
@@ -130,11 +130,11 @@
       "file": "audio/hsk2026-0520.wav"
     },
     "example-hsk2026-0520": {
-      "text": "我第一次听说笔记。",
+      "text": "请把老师说的话记在笔记本上。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "d5541b9e5de48172e98b045452b269411dfc5680ab3e74280c38acbd93ef73b8",
+      "checksum": "36557a9767f6f74af88060a5afc6d299a54a4c17153eb05cbf84676d1bf2263a",
       "file": "audio/sentences/example-hsk2026-0520.wav"
     },
     "hsk2026-0523": {
@@ -210,11 +210,11 @@
       "file": "audio/hsk2026-0530.wav"
     },
     "example-hsk2026-0530": {
-      "text": "我们明天要表演。",
+      "text": "孩子们正在台上表演。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "26606ce05563d36e0232e6a719d90b2549a2fe2279c311149f0882f782267bd4",
+      "checksum": "404f57688c4ee89cac7fb20affc4627f9a466492e8e6a735c10a2dcb6e46829a",
       "file": "audio/sentences/example-hsk2026-0530.wav"
     },
     "hsk2026-0531": {
@@ -258,11 +258,11 @@
       "file": "audio/hsk2026-0535.wav"
     },
     "example-hsk2026-0535": {
-      "text": "我昨天买了冰激凌。",
+      "text": "夏天我喜欢吃冰激凌。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "587ded7d96cbe7eac50deba10908b6facf0d664483fd2a50f9e1491d00bba2ad",
+      "checksum": "267aa5cf822039cbdd69eb2e54d5707b3be99bbe7c2a4cf8df280a749d892c6c",
       "file": "audio/sentences/example-hsk2026-0535.wav"
     },
     "hsk2026-0537": {
@@ -274,11 +274,11 @@
       "file": "audio/hsk2026-0537.wav"
     },
     "example-hsk2026-0537": {
-      "text": "他是一位病人。",
+      "text": "医生正在给病人看病。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "24576e17c44a400e3e23d60c53c312c6aeabf91c30fd7cf299fc2d1b7628ac9c",
+      "checksum": "bb405b96ad574c4d34d4075b565a01c59e9051042bd30f5a7d0d110027b40a59",
       "file": "audio/sentences/example-hsk2026-0537.wav"
     },
     "hsk2026-0539": {
@@ -322,11 +322,11 @@
       "file": "audio/hsk2026-0541.wav"
     },
     "example-hsk2026-0541": {
-      "text": "这件事很不同。",
+      "text": "这两种方法有什么不同？",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "2367129a2d211b2b4eb9566e00ffea63e9a6c138a23784e4fc566aee20c7e499",
+      "checksum": "83ede107b70841fce58b697c4ef235d83d8809de6cacf39ac8d73e4cecbeca2d",
       "file": "audio/sentences/example-hsk2026-0541.wav"
     },
     "hsk2026-0542": {
@@ -370,11 +370,11 @@
       "file": "audio/hsk2026-0548.wav"
     },
     "example-hsk2026-0548": {
-      "text": "我们今天去草地。",
+      "text": "孩子们在草地上踢足球。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "b72388eb5453764e8637cbe73dcca3d272e833d709e9bafdc5c1c29ded0d2259",
+      "checksum": "828c1d980ed332b9f38be035a5bebf17332fecc2bbdbf2d5cbe7974c6cacf114",
       "file": "audio/sentences/example-hsk2026-0548.wav"
     },
     "hsk2026-0550": {
@@ -386,11 +386,11 @@
       "file": "audio/hsk2026-0550.wav"
     },
     "example-hsk2026-0550": {
-      "text": "请你先查。",
+      "text": "这个字不会读，你查一下字典吧。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "223687ab4e00e7604c75ad4b1e3371f2d91b78454f2054830b1f98a953aa529b",
+      "checksum": "4d1779c550098ebb077755cc1ea354cdaf260b77c4bdc9d4ed5a23eba7cb871d",
       "file": "audio/sentences/example-hsk2026-0550.wav"
     },
     "hsk2026-0552": {
@@ -418,11 +418,11 @@
       "file": "audio/hsk2026-0553.wav"
     },
     "example-hsk2026-0553": {
-      "text": "他已经尝了。",
+      "text": "你先尝一尝这个菜。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "409fe6df75471a09eb2d286bfe117337046aa5c0465499968eb4aa267e918bda",
+      "checksum": "68f8e2e70c0bc838b2c6997a76b2607d264871b927ecaa9c4f0ee2f9daf46672",
       "file": "audio/sentences/example-hsk2026-0553.wav"
     },
     "hsk2026-0554": {
@@ -450,11 +450,11 @@
       "file": "audio/hsk2026-0555.wav"
     },
     "example-hsk2026-0555": {
-      "text": "这件事很常见。",
+      "text": "这种问题很常见。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "d888db0bc0387c81dbdc70ae5bfeebc02c960c36a1ab4caaf568366af3143ef7",
+      "checksum": "0ac0151ecc7be7c6dd34d6cd6962b699cb2d3aacf7d9f3f0e93b87baf3a680a3",
       "file": "audio/sentences/example-hsk2026-0555.wav"
     },
     "hsk2026-0556": {
@@ -466,11 +466,11 @@
       "file": "audio/hsk2026-0556.wav"
     },
     "example-hsk2026-0556": {
-      "text": "这件事很常用。",
+      "text": "这是生活中常用的词。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "d962fb4b619f51a460b034fe533f6318a78f082a6faaa92f34023f1ab3683ac1",
+      "checksum": "ff1951eeb7597fdc612a07350b030a3b977231cbba392526880742a090f91797",
       "file": "audio/sentences/example-hsk2026-0556.wav"
     },
     "hsk2026-0557": {
@@ -498,11 +498,11 @@
       "file": "audio/hsk2026-0562.wav"
     },
     "example-hsk2026-0562": {
-      "text": "我们明天要出发。",
+      "text": "我们早上八点从酒店出发。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "485bd8c3130732165bc7666a7bfbf632e0c1e93ed7402db0069e2800aa05dbe3",
+      "checksum": "266f2c21bb875400456d83d2f43b976b9b915e06ac0b48dfc9c150e772ab917f",
       "file": "audio/sentences/example-hsk2026-0562.wav"
     },
     "hsk2026-0563": {
@@ -514,11 +514,11 @@
       "file": "audio/hsk2026-0563.wav"
     },
     "example-hsk2026-0563": {
-      "text": "他已经出生了。",
+      "text": "我出生在一个小城市。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "727ef21eb73dd4c1ea616899c8d75a56872b33c0eb78b489aee886d2735860d7",
+      "checksum": "aa034a158a4c1af99aa4bbc97a08f5cf621e57a67bf0b5296e4584e29eace9f0",
       "file": "audio/sentences/example-hsk2026-0563.wav"
     },
     "hsk2026-0564": {
@@ -530,11 +530,11 @@
       "file": "audio/hsk2026-0564.wav"
     },
     "example-hsk2026-0564": {
-      "text": "请你先出院。",
+      "text": "医生说他明天可以出院。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "a19e9192053b25318f8d8bc85233c7d2186ec1ee8372e3d76fb3ac5fed090f6b",
+      "checksum": "5bb8095836ec324b1595063d40fe00fc4c2e61f9c8a97d61809a5ac3f939a87c",
       "file": "audio/sentences/example-hsk2026-0564.wav"
     },
     "hsk2026-0565": {
@@ -546,11 +546,11 @@
       "file": "audio/hsk2026-0565.wav"
     },
     "example-hsk2026-0565": {
-      "text": "我们今天去初中。",
+      "text": "我在这所初中学习了三年。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "f065198818f0ae50ef7b7d728f3b220253ed40523527020aaea8492d4f0626ed",
+      "checksum": "55a6126bbe312a4026d8581d6fee7d88eba79d01c49ea18790f7c4edf5dee460",
       "file": "audio/sentences/example-hsk2026-0565.wav"
     },
     "hsk2026-0568": {
@@ -562,11 +562,11 @@
       "file": "audio/hsk2026-0568.wav"
     },
     "example-hsk2026-0568": {
-      "text": "我们春天再见。",
+      "text": "春天公园里的花都开了。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "4cfc8f270772fdf4fdb5da641d408788895e65daeec9194641df43f765cca8df",
+      "checksum": "7fcc480e334d152481b30db5e74bab494317395cd93b31dd4911336b647cc1b6",
       "file": "audio/sentences/example-hsk2026-0568.wav"
     },
     "hsk2026-0573": {
@@ -594,11 +594,11 @@
       "file": "audio/hsk2026-0574.wav"
     },
     "example-hsk2026-0574": {
-      "text": "他是一位大人。",
+      "text": "小朋友要听大人的话。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "e9932087b7f127f9e2f854149482589c7a84d19104fe502651d4a0fdf703c2ac",
+      "checksum": "1584be1837a801183c2688e0260f10e46a0ced4895ea76af91012c121a1dcf7a",
       "file": "audio/sentences/example-hsk2026-0574.wav"
     },
     "hsk2026-0575": {
@@ -610,11 +610,11 @@
       "file": "audio/hsk2026-0575.wav"
     },
     "example-hsk2026-0575": {
-      "text": "我第一次听说大小。",
+      "text": "这两个箱子的大小一样。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "64f4d9086d06345b24f91b18117c77a45b10685e00f1b9fee50e762cc75b0349",
+      "checksum": "7e2030dbb5b6e7209f5b85c96565bd33a9d741252a22ccdab987218a8ba3ce00",
       "file": "audio/sentences/example-hsk2026-0575.wav"
     },
     "hsk2026-0576": {
@@ -626,11 +626,11 @@
       "file": "audio/hsk2026-0576.wav"
     },
     "example-hsk2026-0576": {
-      "text": "我第一次听说大熊猫。",
+      "text": "动物园里有两只大熊猫。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "a4eb9ba975e623490372970b57a74ab72b6f5b0fa6a1ad41ec3beb866e3523da",
+      "checksum": "dbff19258190f77b19d071ad477b37111d4680921ed6bff2322331eea76ab756",
       "file": "audio/sentences/example-hsk2026-0576.wav"
     },
     "hsk2026-0577": {
@@ -642,11 +642,11 @@
       "file": "audio/hsk2026-0577.wav"
     },
     "example-hsk2026-0577": {
-      "text": "我昨天买了大衣。",
+      "text": "外面很冷，穿上大衣吧。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "99dea7a1e28f7621a02abf1a7bdafea35306e50490a83f98477a36804768ad56",
+      "checksum": "14bb06329070cd079cf41af49151dcff20b085df2290147d2ba4a618bd13dcdf",
       "file": "audio/sentences/example-hsk2026-0577.wav"
     },
     "hsk2026-0582": {
@@ -690,11 +690,11 @@
       "file": "audio/hsk2026-0584.wav"
     },
     "example-hsk2026-0584": {
-      "text": "我们明天要得到。",
+      "text": "她的努力得到了大家的认可。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "f1413d51b31993a5676e62d900d5ea71f883270fb814de586e8e29a094c3fb19",
+      "checksum": "5ae08d2063ad1d695686df4010b9189e59cc81888fa78279c50c358e9950af2c",
       "file": "audio/sentences/example-hsk2026-0584.wav"
     },
     "hsk2026-0585": {
@@ -706,11 +706,11 @@
       "file": "audio/hsk2026-0585.wav"
     },
     "example-hsk2026-0585": {
-      "text": "他已经得分了。",
+      "text": "他在比赛的最后一分钟得分了。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "62d1b82371264928859a8ccb59590d81257c3410ea7b7edb1b5f47ba4acb91bf",
+      "checksum": "54b17af4943f9683ac9b5bfe6c4cfc77c3216731508fdb3783ba40e23af62196",
       "file": "audio/sentences/example-hsk2026-0585.wav"
     },
     "hsk2026-0586": {
@@ -770,11 +770,11 @@
       "file": "audio/hsk2026-0590.wav"
     },
     "example-hsk2026-0590": {
-      "text": "我第一次听说地点。",
+      "text": "见面的时间和地点都定好了。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "7f38a81daa89c158958b4317e3e8bb3c352220a355d4e1d3aa5c86f74fb9e7ff",
+      "checksum": "4bf8f362903bdd7f1ee8d8e8e0f06ac666d2cb213d5ce299bf62001571908b96",
       "file": "audio/sentences/example-hsk2026-0590.wav"
     },
     "hsk2026-0593": {
@@ -802,11 +802,11 @@
       "file": "audio/hsk2026-0595.wav"
     },
     "example-hsk2026-0595": {
-      "text": "我昨天买了电子书。",
+      "text": "坐地铁时看电子书很方便。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "e8f2d3faff4b1d1b810e47cd53eb4575fc5f3de1a8c463ea1761064a9c05de3e",
+      "checksum": "fdd8b5c1ba5449fe99cb4d709005baeecf7742e5a799dc18f7de850671565fa1",
       "file": "audio/sentences/example-hsk2026-0595.wav"
     },
     "hsk2026-0596": {
@@ -818,11 +818,11 @@
       "file": "audio/hsk2026-0596.wav"
     },
     "example-hsk2026-0596": {
-      "text": "请你先丢。",
+      "text": "不要乱丢垃圾。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "a2998190bf02f483290b09f2506f0f12c7f7994426e12d3a55f4ab83ad00eed6",
+      "checksum": "8263c4053cd0df71b785c7b6b8cdf12ebf851009c3006cb9f281c556bd802162",
       "file": "audio/sentences/example-hsk2026-0596.wav"
     },
     "hsk2026-0598": {
@@ -834,11 +834,11 @@
       "file": "audio/hsk2026-0598.wav"
     },
     "example-hsk2026-0598": {
-      "text": "我第一次听说东北。",
+      "text": "冬天东北非常冷。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "35d0a7d77142f2eb78b93d9d055722ed3ecfd6cd364032586ac0150def9f965e",
+      "checksum": "0d2708b8b1253ded3903972a8ba2b986ca67f96dbc2b841404d72083edabc283",
       "file": "audio/sentences/example-hsk2026-0598.wav"
     },
     "hsk2026-0599": {
@@ -850,11 +850,11 @@
       "file": "audio/hsk2026-0599.wav"
     },
     "example-hsk2026-0599": {
-      "text": "我第一次听说东方。",
+      "text": "太阳从东方升起。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "90203b485055e74cc1c70abe6fcbc85b526d77747fc371ad23d0cd4cb0a810a5",
+      "checksum": "9b854b6b3fec9535e9a1af3621afaaf5e6319238393e0363c42b4b2b7796c5a8",
       "file": "audio/sentences/example-hsk2026-0599.wav"
     },
     "hsk2026-0600": {
@@ -866,11 +866,11 @@
       "file": "audio/hsk2026-0600.wav"
     },
     "example-hsk2026-0600": {
-      "text": "我第一次听说东南。",
+      "text": "风从东南方向吹来。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "f60bd2d6850d491cb4ab0bce19039c99813a29887a9e200461d0e7b8bb69d393",
+      "checksum": "f569413a41a29e0e30ceb4cb60282dfe4b948469c49f295952761f01f7595ceb",
       "file": "audio/sentences/example-hsk2026-0600.wav"
     },
     "hsk2026-0601": {
@@ -882,11 +882,11 @@
       "file": "audio/hsk2026-0601.wav"
     },
     "example-hsk2026-0601": {
-      "text": "我们冬天再见。",
+      "text": "这里冬天常常下雪。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "f2434f7c1887fe63bb21014e993b0358d29c03212079c486e5b96072f5439ea9",
+      "checksum": "0fe44dedc779c7eb3d3ea0ad7c51872e5921bb72270231113fd2d70896e5202f",
       "file": "audio/sentences/example-hsk2026-0601.wav"
     },
     "hsk2026-0602": {
@@ -914,11 +914,11 @@
       "file": "audio/hsk2026-0604.wav"
     },
     "example-hsk2026-0604": {
-      "text": "我们今天去动物园。",
+      "text": "周末我们带孩子去动物园。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "c48b22ab3d62a52eb1ed61be7ea96dc4225eef6561b085885987b9c68ac84be4",
+      "checksum": "11d0a19294417e270f9785087eef0dd9e04792bfed3fd5691ec864f7330f1f74",
       "file": "audio/sentences/example-hsk2026-0604.wav"
     },
     "hsk2026-0606": {
@@ -930,11 +930,11 @@
       "file": "audio/hsk2026-0606.wav"
     },
     "example-hsk2026-0606": {
-      "text": "我昨天买了短裤。",
+      "text": "夏天穿短裤很凉快。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "e655c5c9149d9b666ce5206314671f2a22c1d3702378e90872bfd74359eb8e8b",
+      "checksum": "bc90d699d4aaa7f19544068718cc188552c9265de1f3481d416777cdced2e4c6",
       "file": "audio/sentences/example-hsk2026-0606.wav"
     },
     "hsk2026-0609": {
@@ -946,11 +946,11 @@
       "file": "audio/hsk2026-0609.wav"
     },
     "example-hsk2026-0609": {
-      "text": "他已经对话了。",
+      "text": "请两个人一组练习对话。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "b2f04dfcdd5f9c880bef6f3ebfb9acb47655ae44291178cc8f7080da21d7e70e",
+      "checksum": "1f04b0c4b69a68eac5c841379e5e81fa8c8269aa4131a99de32be34a809cb9f0",
       "file": "audio/sentences/example-hsk2026-0609.wav"
     },
     "hsk2026-0613": {
@@ -962,11 +962,11 @@
       "file": "audio/hsk2026-0613.wav"
     },
     "example-hsk2026-0613": {
-      "text": "我昨天买了耳机。",
+      "text": "戴上耳机以后就听不见外面的声音了。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "15a0125e86dac5ba421d88dc73393b71a836477dba3d50b7f61f286235f38a3e",
+      "checksum": "c8b2fdf30f4a65228112e9e0b4201eaf3d64c538204f70f9aa59f7d4d549548a",
       "file": "audio/sentences/example-hsk2026-0613.wav"
     },
     "hsk2026-0616": {
@@ -994,11 +994,11 @@
       "file": "audio/hsk2026-0618.wav"
     },
     "example-hsk2026-0618": {
-      "text": "他已经发展了。",
+      "text": "这个城市发展得很快。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "5ac64057e3190192075af74c7232d8640a9440e2e7a151b8300b74f40c511dfe",
+      "checksum": "38e799acae944ed632126677c49a30bb9bd0d57a68d97b610b2e1e4d41eb753c",
       "file": "audio/sentences/example-hsk2026-0618.wav"
     },
     "hsk2026-0620": {
@@ -1010,11 +1010,11 @@
       "file": "audio/hsk2026-0620.wav"
     },
     "example-hsk2026-0620": {
-      "text": "我昨天买了方便面。",
+      "text": "我偶尔会吃方便面。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "c71180933feff8ec876eff3b6c49d199f1243d2156594bb0bc8a54255b9553fd",
+      "checksum": "028923c8152f1bdb8d0b1b2d139d9159d5dc42a39e8d391cf1f842351b76a791",
       "file": "audio/sentences/example-hsk2026-0620.wav"
     },
     "hsk2026-0621": {
@@ -1026,11 +1026,11 @@
       "file": "audio/hsk2026-0621.wav"
     },
     "example-hsk2026-0621": {
-      "text": "我第一次听说方法。",
+      "text": "这个方法简单又有用。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "4434a6a386cfe31e6a74c0165d75c256d9fada82f2c8495386cddd9088972b54",
+      "checksum": "79a7f0b6f217adc781f244edc132a6f2a3d79594e3f4e7b3ff322e4514dcf73c",
       "file": "audio/sentences/example-hsk2026-0621.wav"
     },
     "hsk2026-0622": {
@@ -1042,11 +1042,11 @@
       "file": "audio/hsk2026-0622.wav"
     },
     "example-hsk2026-0622": {
-      "text": "我第一次听说方向。",
+      "text": "他走错方向了。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "45915a715922fbcb0c6ca67158245a7b34b62f473a9a212ad3c7f5ff0d9aef99",
+      "checksum": "7af74fbc687ffb4a77a6d7864de859ff1b6405d9f3e4ccc7dac2bec33b5c3fdb",
       "file": "audio/sentences/example-hsk2026-0622.wav"
     },
     "hsk2026-0623": {
@@ -1058,11 +1058,11 @@
       "file": "audio/hsk2026-0623.wav"
     },
     "example-hsk2026-0623": {
-      "text": "我第一次听说房子。",
+      "text": "他们刚买了一套新房子。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "80a9cd600b4b7549db8fd60f1a3b783f327376469eddba6928dfc14581d20e09",
+      "checksum": "51d800cda7dc07ce885a25cd9507b081f0b7db974c35cd5adb6868544383c36c",
       "file": "audio/sentences/example-hsk2026-0623.wav"
     },
     "hsk2026-0625": {
@@ -1074,11 +1074,11 @@
       "file": "audio/hsk2026-0625.wav"
     },
     "example-hsk2026-0625": {
-      "text": "我们明天要放假。",
+      "text": "学校明天开始放假。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "4054bed8d4607596ae7413a708b95c4d6ab68ea6992ee629950b7b15b0bb6af3",
+      "checksum": "e0dd5fbce30b34a788e5310ec71985f029c32dfa7f71097f13337d1bf51561b8",
       "file": "audio/sentences/example-hsk2026-0625.wav"
     },
     "hsk2026-0627": {
@@ -1090,11 +1090,11 @@
       "file": "audio/hsk2026-0627.wav"
     },
     "example-hsk2026-0627": {
-      "text": "他已经放学了。",
+      "text": "放学后我去图书馆。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "f42dca45e48e7af5becc05fe7c0422655dcbcfa8b6f5ac18cf173fed958d6721",
+      "checksum": "bc792e9cbd8b412d7bd91aea501cc240f40d6df1b517dba1681dda04ab15e54d",
       "file": "audio/sentences/example-hsk2026-0627.wav"
     },
     "hsk2026-0628": {
@@ -1106,11 +1106,11 @@
       "file": "audio/hsk2026-0628.wav"
     },
     "example-hsk2026-0628": {
-      "text": "请你先分开。",
+      "text": "请把红色的球和白色的球分开。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "148c29ef693051903e0dd6b7014328e78ea21e247e6120a1b43b24738135a2ad",
+      "checksum": "682e2aa4bbcd99bccc95b8b71ab6294e4a0c21087207c85f79a51c6d8bf033cc",
       "file": "audio/sentences/example-hsk2026-0628.wav"
     },
     "hsk2026-0629": {
@@ -1122,11 +1122,11 @@
       "file": "audio/hsk2026-0629.wav"
     },
     "example-hsk2026-0629": {
-      "text": "我第一次听说风。",
+      "text": "今天风很大，别忘了关窗户。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "9edefdd47e0b50396f453aa754886dd9baeb67cee77502a28aa4a24e5d52feee",
+      "checksum": "391bc64b08ab9eb83bb164c21979206e1a3b952ca7d79fa04d4444d2f894492b",
       "file": "audio/sentences/example-hsk2026-0629.wav"
     },
     "hsk2026-0630": {
@@ -1154,11 +1154,11 @@
       "file": "audio/hsk2026-0631.wav"
     },
     "example-hsk2026-0631": {
-      "text": "我第一次听说夫妻。",
+      "text": "那对夫妻结婚十年了。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "ece66c8f23a532604ad859daf9196db29cbb0fca1648e7be70adbef1276ce079",
+      "checksum": "2555432998e65a75b436a95e611b37cc56e79d4c4c95f88c04078b5d688aac28",
       "file": "audio/sentences/example-hsk2026-0631.wav"
     },
     "hsk2026-0632": {
@@ -1170,11 +1170,11 @@
       "file": "audio/hsk2026-0632.wav"
     },
     "example-hsk2026-0632": {
-      "text": "我们明天要服务。",
+      "text": "这家酒店的服务很好。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "174ec61734fde5254a4de163de389789f43cf8d67729ca1b83f192e8e45847e9",
+      "checksum": "e6c09e812a1e187476ab475ad98ac8dab9102e08045f4e1fb1e3b66413fedce6",
       "file": "audio/sentences/example-hsk2026-0632.wav"
     },
     "hsk2026-0635": {
@@ -1266,11 +1266,11 @@
       "file": "audio/hsk2026-0644.wav"
     },
     "example-hsk2026-0644": {
-      "text": "我第一次听说高铁。",
+      "text": "坐高铁去上海只要两个小时。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "643833634f19ccbdc95494beaf7d898777df84ba012d8fce99ab7a0e6c9947a8",
+      "checksum": "df38b4a7d40383866f69c94f9e78830648be2c15b171e01e8ac2015be89192c2",
       "file": "audio/sentences/example-hsk2026-0644.wav"
     },
     "hsk2026-0649": {
@@ -1282,11 +1282,11 @@
       "file": "audio/hsk2026-0649.wav"
     },
     "example-hsk2026-0649": {
-      "text": "我们工作日再见。",
+      "text": "工作日地铁里人很多。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "8f32c96519d33bf14331d2138afe44751545decceab732621bfd0cf1c45e484b",
+      "checksum": "6099e49f26fc09f9d29b1dc8b69a4a24e95ecf4b3c0c2542bead02307a1b6e1d",
       "file": "audio/sentences/example-hsk2026-0649.wav"
     },
     "hsk2026-0651": {
@@ -1298,11 +1298,11 @@
       "file": "audio/hsk2026-0651.wav"
     },
     "example-hsk2026-0651": {
-      "text": "请你先刮。",
+      "text": "外面刮着大风。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "59c4e91ff872f25a9441f79046ce026e64ee3224791186b404fbd3afa5bbd905",
+      "checksum": "90372fa7ff52f687b46ea739557c73d3e15216652164e33ce330c5e2210ae371",
       "file": "audio/sentences/example-hsk2026-0651.wav"
     },
     "hsk2026-0653": {
@@ -1314,11 +1314,11 @@
       "file": "audio/hsk2026-0653.wav"
     },
     "example-hsk2026-0653": {
-      "text": "我们明天要关机。",
+      "text": "飞机起飞前请关机。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "3c5d6921bb9cc9c44e09dbefa19abcc53461a521ae9f60f0a079a9221aeec298",
+      "checksum": "6dc8cd80f7adb66a6a46f0ff9ab85ffc510e38d5c0ea23a5fd24141e4712f25b",
       "file": "audio/sentences/example-hsk2026-0653.wav"
     },
     "hsk2026-0657": {
@@ -1330,11 +1330,11 @@
       "file": "audio/hsk2026-0657.wav"
     },
     "example-hsk2026-0657": {
-      "text": "他已经关注了。",
+      "text": "很多人都在关注这场比赛。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "d2d5248604831781cdb225cac066b8d374e746ede2e8ac6ed42cd8812cf910e5",
+      "checksum": "faef6a17e715209bcc027f34fb0f29b17a43e36bf00fa9a49609a13fe6035923",
       "file": "audio/sentences/example-hsk2026-0657.wav"
     },
     "hsk2026-0659": {
@@ -1362,11 +1362,11 @@
       "file": "audio/hsk2026-0660.wav"
     },
     "example-hsk2026-0660": {
-      "text": "我第一次听说过去。",
+      "text": "过去这里没有这么多商店。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "03c7445594fbdd09f6a5456e726205a53d0abe85be91325a838bd2f96dd0eeb3",
+      "checksum": "133669fe676a7e66b753e9d6ad3e234c53abdb7ee003d1c268bd9820dc5f4208",
       "file": "audio/sentences/example-hsk2026-0660.wav"
     },
     "hsk2026-0661": {
@@ -1378,11 +1378,11 @@
       "file": "audio/hsk2026-0661.wav"
     },
     "example-hsk2026-0661": {
-      "text": "我第一次听说海。",
+      "text": "我第一次看见这么蓝的海。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "f91b9a5e2fac64abae2d27e5cab03c78cba174cf92083fc182935487420b7115",
+      "checksum": "98c0d394d89fa413b45063c4ea1a8bb982c596584787c75dfdcde43d188336a1",
       "file": "audio/sentences/example-hsk2026-0661.wav"
     },
     "hsk2026-0663": {
@@ -1442,11 +1442,11 @@
       "file": "audio/hsk2026-0666.wav"
     },
     "example-hsk2026-0666": {
-      "text": "我第一次听说号码。",
+      "text": "请告诉我你的电话号码。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "a1d98a5f6b3148d3537c6dbac79a99c2899e963c56c81e0bab4631fea533e430",
+      "checksum": "dda41f34255409b35a30a86d678233d6d81cbcc8f7280077a0604fc6e9759a6a",
       "file": "audio/sentences/example-hsk2026-0666.wav"
     },
     "hsk2026-0667": {
@@ -1458,11 +1458,11 @@
       "file": "audio/hsk2026-0667.wav"
     },
     "example-hsk2026-0667": {
-      "text": "我第一次听说河。",
+      "text": "这条河的水很清。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "7d7be3de8e960facadfd81d43db11e7cfb71133d37f476f57feea59c7a644298",
+      "checksum": "83475afe925c677e1cdf420241674f0148e8bfad9089301899b17f6a7b3855ae",
       "file": "audio/sentences/example-hsk2026-0667.wav"
     },
     "hsk2026-0668": {
@@ -1474,11 +1474,11 @@
       "file": "audio/hsk2026-0668.wav"
     },
     "example-hsk2026-0668": {
-      "text": "这件事很合适。",
+      "text": "这件衣服的大小很合适。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "9c7c0e41687e31469c730059f62e066d3a02be8fe6a171a23c09b9cef9b2cb18",
+      "checksum": "8e9a9eda953611371c0d440a16b6f53189cc9586a7d41702ff2be504a98eab6f",
       "file": "audio/sentences/example-hsk2026-0668.wav"
     },
     "hsk2026-0670": {
@@ -1490,11 +1490,11 @@
       "file": "audio/hsk2026-0670.wav"
     },
     "example-hsk2026-0670": {
-      "text": "我第一次听说红绿灯。",
+      "text": "过马路时要看红绿灯。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "616d0707598e8cdb292c5506ba0e5d22b8890347df8554da1e06e1c2c3b998dd",
+      "checksum": "b9e4fdcd38b30f46fb3ab573f5a5107e9d3d66d7c509470b9a29eb4a59277bcd",
       "file": "audio/sentences/example-hsk2026-0670.wav"
     },
     "hsk2026-0672": {
@@ -1506,11 +1506,11 @@
       "file": "audio/hsk2026-0672.wav"
     },
     "example-hsk2026-0672": {
-      "text": "我们后年再见。",
+      "text": "我后年大学毕业。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "0e196adad8e762996ea2b5ce881f14eeedf36d696c8f788587d1c7ba89271c08",
+      "checksum": "19853e279aee80b3e2510d2a954add755e7b01b524c4bd63663b1dd54ae4b768",
       "file": "audio/sentences/example-hsk2026-0672.wav"
     },
     "hsk2026-0673": {
@@ -1522,11 +1522,11 @@
       "file": "audio/hsk2026-0673.wav"
     },
     "example-hsk2026-0673": {
-      "text": "我们后天再见。",
+      "text": "我们后天上午见。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "d3d98ac5bfaa119256260deaada9ad381c4a5b9b4c2754c6c6f2b75319dcb270",
+      "checksum": "444da39996d4f1cd400aeeaf939d78569ad23f24b8a7ca5f3b79392db775b597",
       "file": "audio/sentences/example-hsk2026-0673.wav"
     },
     "hsk2026-0675": {
@@ -1538,11 +1538,11 @@
       "file": "audio/hsk2026-0675.wav"
     },
     "example-hsk2026-0675": {
-      "text": "我们今天去花园。",
+      "text": "爷爷在花园里种了很多花。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "98c93fadcf98ec489794ea6d3084efe1febc1898e5cba041c85bdeb91755f687",
+      "checksum": "fc78f6e86df34ef2451adb73051f2da97203546ab593f7913a931eea549cfa65",
       "file": "audio/sentences/example-hsk2026-0675.wav"
     },
     "hsk2026-0676": {
@@ -1554,11 +1554,11 @@
       "file": "audio/hsk2026-0676.wav"
     },
     "example-hsk2026-0676": {
-      "text": "他是一位画家。",
+      "text": "这幅画是一位年轻画家画的。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "eaac0717fae857f30cdbcf192a3e0d33ebc2654bd432fed674e4c598774eba1d",
+      "checksum": "c6a50a49b1aa80abdc64c2b13c29a8ea4dd959cf5d00bd7f805ed235db617576",
       "file": "audio/sentences/example-hsk2026-0676.wav"
     },
     "hsk2026-0681": {
@@ -1570,11 +1570,11 @@
       "file": "audio/hsk2026-0681.wav"
     },
     "example-hsk2026-0681": {
-      "text": "我第一次听说黄色。",
+      "text": "她穿着一件黄色的上衣。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "0ad1f87ee1d1a6dc545ad2b3770bf87566fc824cbe2bc5bd20f0754f557a5537",
+      "checksum": "245ba42715eaf1c74f4dbe9839d76e2df8e8161cfce335f8857ee3c7d961eb17",
       "file": "audio/sentences/example-hsk2026-0681.wav"
     },
     "hsk2026-0683": {
@@ -1586,11 +1586,11 @@
       "file": "audio/hsk2026-0683.wav"
     },
     "example-hsk2026-0683": {
-      "text": "我第一次听说会。",
+      "text": "下午三点有一个重要的会。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "ec3b5b548744b42c2a82b969ca93a1a09a8f0936541fcd1a4432389bc9da09f9",
+      "checksum": "f365bb8eb3b6b72ed8353d45e77e59928f29864ba1bcf9d45bbfc8344a9d639f",
       "file": "audio/sentences/example-hsk2026-0683.wav"
     },
     "hsk2026-0685": {
@@ -1618,11 +1618,11 @@
       "file": "audio/hsk2026-0687.wav"
     },
     "example-hsk2026-0687": {
-      "text": "我昨天买了鸡。",
+      "text": "院子里养了几只鸡。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "0de9bc298ae3556bcd42bc6a7ee74a3239937956a4690441b18880861d3e2c89",
+      "checksum": "e3893052ee91a9dbcb86cc3506e00c25b2b01b91ea3e9e44b0b69ed34b481bde",
       "file": "audio/sentences/example-hsk2026-0687.wav"
     },
     "hsk2026-0691": {
@@ -1650,11 +1650,11 @@
       "file": "audio/hsk2026-0692.wav"
     },
     "example-hsk2026-0692": {
-      "text": "我们明天要记。",
+      "text": "重要的事情要记下来。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "d5e867923c0ad2761b552dc979b3cb4e6bbb4f8863d34b9d0393be18d22b69c4",
+      "checksum": "9731ad4815b30bdcaf772f055a2bf56faed67d134a9b53884ee364c2c6277772",
       "file": "audio/sentences/example-hsk2026-0692.wav"
     },
     "hsk2026-0693": {
@@ -1666,11 +1666,11 @@
       "file": "audio/hsk2026-0693.wav"
     },
     "example-hsk2026-0693": {
-      "text": "我第一次听说季。",
+      "text": "一年有四季。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "057cd7fd4d905fc7fb92d1e9b4bbc77495099271f8f0fec37722b53fb418e548",
+      "checksum": "bd6501cb9007429017e6d418d545ef9efb620f38d9f988ff5c6a1a221986c028",
       "file": "audio/sentences/example-hsk2026-0693.wav"
     },
     "hsk2026-0695": {
@@ -1682,11 +1682,11 @@
       "file": "audio/hsk2026-0695.wav"
     },
     "example-hsk2026-0695": {
-      "text": "请你先加。",
+      "text": "请在咖啡里加一点儿牛奶。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "504c9cafe0a86f747a3c8bda00b494746cf94c4f297931aa1192d4e1635058e0",
+      "checksum": "39ff0d14cdb7c198633eb1c65ab5bcd65c1e3f0020fce65082c3966fafc90e85",
       "file": "audio/sentences/example-hsk2026-0695.wav"
     },
     "hsk2026-0696": {
@@ -1698,11 +1698,11 @@
       "file": "audio/hsk2026-0696.wav"
     },
     "example-hsk2026-0696": {
-      "text": "我们假期再见。",
+      "text": "这个假期你打算去哪儿？",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "962fffe9c1496191516b6abd2e98c05316d2b9fc2c0b0960bc30403e99d3f9ba",
+      "checksum": "2eedd9f98a2b4ff1c76e6dca16560f5a2abbc99a45cb259a9f0d98b879732eee",
       "file": "audio/sentences/example-hsk2026-0696.wav"
     },
     "hsk2026-0697": {
@@ -1714,11 +1714,11 @@
       "file": "audio/hsk2026-0697.wav"
     },
     "example-hsk2026-0697": {
-      "text": "他已经坚持了。",
+      "text": "每天坚持练习，汉语一定会进步。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "61853bfc3ff2431671f14a9192ef2e3910573e17e69206d705a88e2873d69685",
+      "checksum": "aa4646db251105ae9a17e7da908d15dd78b8e9025473a2c8c7123a52f0488f0f",
       "file": "audio/sentences/example-hsk2026-0697.wav"
     },
     "hsk2026-0700": {
@@ -1730,11 +1730,11 @@
       "file": "audio/hsk2026-0700.wav"
     },
     "example-hsk2026-0700": {
-      "text": "请你先检票。",
+      "text": "上车以前要先检票。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "310a87699c38efd607519792d993504ea56d6da2325db1ede7924e1fc6022c30",
+      "checksum": "2ef95a0e04b31cb8468fe780d723cd897b10e82464cb4d096914dd856ef57c59",
       "file": "audio/sentences/example-hsk2026-0700.wav"
     },
     "hsk2026-0707": {
@@ -1746,11 +1746,11 @@
       "file": "audio/hsk2026-0707.wav"
     },
     "example-hsk2026-0707": {
-      "text": "我们今天去街。",
+      "text": "这条街上有很多小店。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "f2e6b74960674ff8af0742f9dc919ed7b89c70b67df20d21d9cda4f5ecfad7c3",
+      "checksum": "a28a2fd4b9fc72e2369ca5aa9bc802ebdf7f593c1d78e11ff3187cb4b605b3b4",
       "file": "audio/sentences/example-hsk2026-0707.wav"
     },
     "hsk2026-0708": {
@@ -1762,11 +1762,11 @@
       "file": "audio/hsk2026-0708.wav"
     },
     "example-hsk2026-0708": {
-      "text": "他已经节了。",
+      "text": "下午第一节是汉语课。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "7f6982e03435bf63ce9ff9af4bb47b1fc7449dd0b41d6482eb21bfb37824b859",
+      "checksum": "e5b0dae11940c3b7eb86e378288a207d6c491b4f2f0622554883cd0f7409852e",
       "file": "audio/sentences/example-hsk2026-0708.wav"
     },
     "hsk2026-0714": {
@@ -1778,11 +1778,11 @@
       "file": "audio/hsk2026-0714.wav"
     },
     "example-hsk2026-0714": {
-      "text": "我第一次听说姐妹。",
+      "text": "她们是姐妹，姐姐像妈妈。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "d4f3c19791f6af53329cf5b01e395232bfb661f51980d892a362e4dfbb3f9cfb",
+      "checksum": "bb34af412af688855c78eb9a7cf26dd00567c97569efae3ded63e6fc4ce8b72f",
       "file": "audio/sentences/example-hsk2026-0714.wav"
     },
     "hsk2026-0716": {
@@ -1810,11 +1810,11 @@
       "file": "audio/hsk2026-0720.wav"
     },
     "example-hsk2026-0720": {
-      "text": "我昨天买了酒。",
+      "text": "开车的人不能喝酒。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "c0582b5be2bf8ee0863c986317975bca801cf416cbc8dec5d262333699f00cbf",
+      "checksum": "1da461a647ec1d1f4f15ec9105e95bb67b791414fcc8b68d5d71caf6d4d290c1",
       "file": "audio/sentences/example-hsk2026-0720.wav"
     },
     "hsk2026-0722": {
@@ -1842,11 +1842,11 @@
       "file": "audio/hsk2026-0725.wav"
     },
     "example-hsk2026-0725": {
-      "text": "我昨天买了卡。",
+      "text": "我的银行卡找不到了。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "5c122292dc75d928d12612e8dea50f0ffc2cf1124caaa467864238de725fb745",
+      "checksum": "2d5451ca97c36652ad1e15cb497c3252752dd63731fb6ebc654c5fa0ef818773",
       "file": "audio/sentences/example-hsk2026-0725.wav"
     },
     "hsk2026-0726": {
@@ -1858,11 +1858,11 @@
       "file": "audio/hsk2026-0726.wav"
     },
     "example-hsk2026-0726": {
-      "text": "他已经开花了。",
+      "text": "春天一到，这些树就开花。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "32c0899edc4cb1e99efaefd4e7af53c9fdb05cdc96518b74e9211f54aa62de68",
+      "checksum": "7e3fdc27c6b83364f8e270470d9626b7d944deaa86ea54bf430968f5323342d5",
       "file": "audio/sentences/example-hsk2026-0726.wav"
     },
     "hsk2026-0727": {
@@ -1874,11 +1874,11 @@
       "file": "audio/hsk2026-0727.wav"
     },
     "example-hsk2026-0727": {
-      "text": "请你先开会。",
+      "text": "经理正在会议室开会。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "b2cea6cccf7fcc7237bb6d0f351605859d9445d0405262c74091e7e4fa618c08",
+      "checksum": "e9802f3b248bf33172e1ab09d65aeaf6d809f04a978f3a061504a8f85227c50c",
       "file": "audio/sentences/example-hsk2026-0727.wav"
     },
     "hsk2026-0728": {
@@ -1890,11 +1890,11 @@
       "file": "audio/hsk2026-0728.wav"
     },
     "example-hsk2026-0728": {
-      "text": "我们明天要开机。",
+      "text": "按这个按钮就可以开机。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "e2938f831219295d283331d7e7e140b00ada5bb7a3b5d9c5f10c53b258f7aaa5",
+      "checksum": "23b0332a16f9da8798887a100111d503ff3ce3a0873ad7209610dcc9c452f373",
       "file": "audio/sentences/example-hsk2026-0728.wav"
     },
     "hsk2026-0729": {
@@ -1970,11 +1970,11 @@
       "file": "audio/hsk2026-0736.wav"
     },
     "example-hsk2026-0736": {
-      "text": "我昨天买了课本。",
+      "text": "上课时请打开课本。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "af4576318e5561e58053fb3db905cf50498bbf0403ea73cea8d2dda57964ec1f",
+      "checksum": "37e17a3992fab17469f00c735aa3e51938f681d99b0db50182815efd6cfce200",
       "file": "audio/sentences/example-hsk2026-0736.wav"
     },
     "hsk2026-0738": {
@@ -1986,11 +1986,11 @@
       "file": "audio/hsk2026-0738.wav"
     },
     "example-hsk2026-0738": {
-      "text": "我第一次听说课文。",
+      "text": "请先读一遍课文。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "a00a5095ca49e43d6acaf2789a6fc45a7d1d9c1ea0fe6d68dbe8fa82e0cf1da5",
+      "checksum": "985332885e6a35dcecc2fc5e13b3acc6009fcd2189173e940b46d8dcc4411034",
       "file": "audio/sentences/example-hsk2026-0738.wav"
     },
     "hsk2026-0742": {
@@ -2002,11 +2002,11 @@
       "file": "audio/hsk2026-0742.wav"
     },
     "example-hsk2026-0742": {
-      "text": "我昨天买了矿泉水。",
+      "text": "我只买了一瓶矿泉水。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "27a614a0e2ad1bf63157b4af90d72bd59391d41c95ace83e0dcf6946f09c3336",
+      "checksum": "ad11888972fa20bd0e1cc439b34244d71db50bf08d806e62d674210d0fb80cc0",
       "file": "audio/sentences/example-hsk2026-0742.wav"
     },
     "hsk2026-0743": {
@@ -2034,11 +2034,11 @@
       "file": "audio/hsk2026-0746.wav"
     },
     "example-hsk2026-0746": {
-      "text": "他是一位老人。",
+      "text": "我在车上给老人让座了。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "72f1894c83fc09ded3816cdf430ed831c0533c60f359d00dab33ce5a95029aae",
+      "checksum": "a770b9553111d0e36e5f34fb2b89a19ecba083d06cde8673cee00ed905c06b89",
       "file": "audio/sentences/example-hsk2026-0746.wav"
     },
     "hsk2026-0751": {
@@ -2050,11 +2050,11 @@
       "file": "audio/hsk2026-0751.wav"
     },
     "example-hsk2026-0751": {
-      "text": "他已经练了。",
+      "text": "这个字很难写，我要多练几遍。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "41caa7314ec51f58a9380e2d3020a3c74dd8df10e17ab9d57c7dc492ab15a98c",
+      "checksum": "09b89a75e484d15a26509456cbb142fd34c4ee4f7cac029e75eed75ec254b84f",
       "file": "audio/sentences/example-hsk2026-0751.wav"
     },
     "hsk2026-0753": {
@@ -2066,11 +2066,11 @@
       "file": "audio/hsk2026-0753.wav"
     },
     "example-hsk2026-0753": {
-      "text": "这件事很凉快。",
+      "text": "下过雨以后，外面很凉快。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "62beacf2950693eedd20abb70bead80b21302e840bad1435bf3848b5b22fffbf",
+      "checksum": "a818b21894f4fb2b73b86b4b88fd1d8a0e344e400984b61dac1f7e6dd8fe38c4",
       "file": "audio/sentences/example-hsk2026-0753.wav"
     },
     "hsk2026-0755": {
@@ -2082,11 +2082,11 @@
       "file": "audio/hsk2026-0755.wav"
     },
     "example-hsk2026-0755": {
-      "text": "我们明天要聊。",
+      "text": "有时间我们再聊。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "2d415a4ade03ad69f63dfcaab9ab0b85e48513a977cae7d351755ed8e4c0a986",
+      "checksum": "8f1a8c913841cc9df8ec4dccfd365b5a7149922f6ebdad61c2ab1a20d2f9dc19",
       "file": "audio/sentences/example-hsk2026-0755.wav"
     },
     "hsk2026-0756": {
@@ -2098,11 +2098,11 @@
       "file": "audio/hsk2026-0756.wav"
     },
     "example-hsk2026-0756": {
-      "text": "他已经聊天儿了。",
+      "text": "我们坐下来聊天儿吧。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "ff70f99620e510aa3547057f44e357e20d81df65cffe482757bbf445344ca39c",
+      "checksum": "1e5c6060aa0414df4ae72f5956248a95fb69ae806c50850dfbf551920381f077",
       "file": "audio/sentences/example-hsk2026-0756.wav"
     },
     "hsk2026-0760": {
@@ -2114,11 +2114,11 @@
       "file": "audio/hsk2026-0760.wav"
     },
     "example-hsk2026-0760": {
-      "text": "他是一位留学生。",
+      "text": "他是一名从日本来的留学生。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "14bffa90e61f8d4361826877c859aca706ca46144aefadafff2396c953d3a249",
+      "checksum": "66e8971fb34c3c1b2adf3ac99400a3c5f2ed80254e2f7c4ed2d07c04f9fab094",
       "file": "audio/sentences/example-hsk2026-0760.wav"
     },
     "hsk2026-0761": {
@@ -2130,11 +2130,11 @@
       "file": "audio/hsk2026-0761.wav"
     },
     "example-hsk2026-0761": {
-      "text": "我第一次听说楼梯。",
+      "text": "坐电梯吧，别走楼梯了。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "ac7e20676d104a01302cd776d2d29b927a8dea5227efd6a5ae6ac30e90690a03",
+      "checksum": "6d3330fbe76a9cce8e50fd772e2302042d5eb366aee8921336c6f98abfc92ab1",
       "file": "audio/sentences/example-hsk2026-0761.wav"
     },
     "hsk2026-0762": {
@@ -2146,11 +2146,11 @@
       "file": "audio/hsk2026-0762.wav"
     },
     "example-hsk2026-0762": {
-      "text": "我第一次听说路边。",
+      "text": "路边停着一辆白色的车。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "6c4c3be06d9c4d9cf46c82f07789805fea0aa4a751c6bc0d16a7dde077ecbd30",
+      "checksum": "7f80bbfdf79e74c1680a51be19bb10a4bcab1b17772484df7886c4a25689e438",
       "file": "audio/sentences/example-hsk2026-0762.wav"
     },
     "hsk2026-0763": {
@@ -2162,11 +2162,11 @@
       "file": "audio/hsk2026-0763.wav"
     },
     "example-hsk2026-0763": {
-      "text": "我第一次听说路口。",
+      "text": "在下一个路口向左转。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "7accf36ad5f546d460a596915c00e82a4b9fe4a6925f62fc87afe94c85e4e325",
+      "checksum": "a240226412c30168111726f292c750f0f7d22de53ad48d2cef5c3b479ed49b3a",
       "file": "audio/sentences/example-hsk2026-0763.wav"
     },
     "hsk2026-0765": {
@@ -2178,11 +2178,11 @@
       "file": "audio/hsk2026-0765.wav"
     },
     "example-hsk2026-0765": {
-      "text": "我第一次听说马路。",
+      "text": "过马路时要小心汽车。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "40014fdf366af0002f9d451a05f1c10413b300197cab54f32d2cfe2e2f2dc5a4",
+      "checksum": "804fffdd681091a564d53363692f5f8373687b3264dd8f864411c755808963b7",
       "file": "audio/sentences/example-hsk2026-0765.wav"
     },
     "hsk2026-0768": {
@@ -2210,11 +2210,11 @@
       "file": "audio/hsk2026-0770.wav"
     },
     "example-hsk2026-0770": {
-      "text": "我第一次听说面前。",
+      "text": "他就站在我面前。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "268df96d4f25c47d0bc488285a0a219a98a1ea0aec0f865f6cda766ead579e16",
+      "checksum": "ae3a120ccb3c9b255b6b18a830b50b4e8c4bcfefb48d430b1261a01b6f23c200",
       "file": "audio/sentences/example-hsk2026-0770.wav"
     },
     "hsk2026-0772": {
@@ -2226,11 +2226,11 @@
       "file": "audio/hsk2026-0772.wav"
     },
     "example-hsk2026-0772": {
-      "text": "我第一次听说名单。",
+      "text": "名单上没有我的名字。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "7542bcd8cfb26ad31aeec2adaf9f947639a1bc7da8c24f08d0d0c4ee514b993f",
+      "checksum": "0a1177b243988fc690147e4c48eb02a9950278a98afa24bfeb387fb21ec1b9fb",
       "file": "audio/sentences/example-hsk2026-0772.wav"
     },
     "hsk2026-0773": {
@@ -2242,11 +2242,11 @@
       "file": "audio/hsk2026-0773.wav"
     },
     "example-hsk2026-0773": {
-      "text": "他是一位名人。",
+      "text": "那位画家是当地的名人。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "e5b0d297643123ab23708fefc873325eb28242309a3087588b3174709f6f6a26",
+      "checksum": "097702344d35690d8ea03112f9fe6749febf1b8c2b8621039982d26d4053f8ea",
       "file": "audio/sentences/example-hsk2026-0773.wav"
     },
     "hsk2026-0776": {
@@ -2258,11 +2258,11 @@
       "file": "audio/hsk2026-0776.wav"
     },
     "example-hsk2026-0776": {
-      "text": "我第一次听说南方。",
+      "text": "南方的冬天没有北方冷。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "673786d1c84d6edee0d5669a9b18cde2914255f857466b1c513bba94ad1a67fe",
+      "checksum": "84f08b719715a9bbe25ca0142e37e52b4c155d64ef4e727e42cd7e54ad33a35a",
       "file": "audio/sentences/example-hsk2026-0776.wav"
     },
     "hsk2026-0778": {
@@ -2274,11 +2274,11 @@
       "file": "audio/hsk2026-0778.wav"
     },
     "example-hsk2026-0778": {
-      "text": "这件事很难看。",
+      "text": "这件衣服上的颜色太多，看起来有点儿难看。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "f6d218b6442c55e7e3f2f0a646c5443737e6e45734b129ef69d77496a3570312",
+      "checksum": "c71e6a3377182b5c8ebf395f60b27883dc854014fbf8b549407f52ee08fb8903",
       "file": "audio/sentences/example-hsk2026-0778.wav"
     },
     "hsk2026-0779": {
@@ -2290,11 +2290,11 @@
       "file": "audio/hsk2026-0779.wav"
     },
     "example-hsk2026-0779": {
-      "text": "他是一位男人。",
+      "text": "门口站着一个中年男人。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "721c6b4aa3a3e998ec83ad769ca7563108bf853f3f8cbfa413b58c6ae947c727",
+      "checksum": "19cfd4f16d85fe283cd14b109f89289555e67d94b4ea915bdf4e81cdec61efad",
       "file": "audio/sentences/example-hsk2026-0779.wav"
     },
     "hsk2026-0780": {
@@ -2306,11 +2306,11 @@
       "file": "audio/hsk2026-0780.wav"
     },
     "example-hsk2026-0780": {
-      "text": "他是一位男生。",
+      "text": "我们班的男生都喜欢打篮球。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "fb7e11e33343c350996e3a8b3ff8eecd6da674c07e3449d6971b792a14755cee",
+      "checksum": "5b743403b141e4d7db5b70e4888bb29a0ef3f1d48a7c865c8162fbb7b765e1b2",
       "file": "audio/sentences/example-hsk2026-0780.wav"
     },
     "hsk2026-0781": {
@@ -2322,11 +2322,11 @@
       "file": "audio/hsk2026-0781.wav"
     },
     "example-hsk2026-0781": {
-      "text": "我第一次听说难题。",
+      "text": "这个难题我想了半天也不会做。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "8fb97062105536a02372343dbc17cbd9191d252770d78bae9eca71d29dab6e3d",
+      "checksum": "64c366c0fd3aebab5a10e205336712d25c74479725e88d6ded39b801b67b8617",
       "file": "audio/sentences/example-hsk2026-0781.wav"
     },
     "hsk2026-0782": {
@@ -2338,11 +2338,11 @@
       "file": "audio/hsk2026-0782.wav"
     },
     "example-hsk2026-0782": {
-      "text": "这件事很难听。",
+      "text": "他说话的声音很难听。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "e6c967dc67cdf3fd2e1d7c65693fe7623f4ae4f9d1119f74693bfc177184a067",
+      "checksum": "0c169be772810226dbda1deb6776502cf0f50533c2b8482560e4fddc5bf4f5ff",
       "file": "audio/sentences/example-hsk2026-0782.wav"
     },
     "hsk2026-0785": {
@@ -2370,11 +2370,11 @@
       "file": "audio/hsk2026-0787.wav"
     },
     "example-hsk2026-0787": {
-      "text": "他是一位女人。",
+      "text": "那个女人是我的汉语老师。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "5fdcd7d6e8a71423d2cc42cc6767aff9f2b22794b0b01f504aea54d51a17a727",
+      "checksum": "944ba6b07df3c806e92abd90e39d86c0c713a1f26f3f6f2b88ea2a7fb0a34384",
       "file": "audio/sentences/example-hsk2026-0787.wav"
     },
     "hsk2026-0788": {
@@ -2386,11 +2386,11 @@
       "file": "audio/hsk2026-0788.wav"
     },
     "example-hsk2026-0788": {
-      "text": "他是一位女生。",
+      "text": "我们班的女生比男生多。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "5ea109515c496dd2e3d4750af1288f39a94acf79e1aa38abe7b87a7c60afe411",
+      "checksum": "7f305a97a78bb08bad4cacea4585d6bc2df6527f6b1120cb4459e5559da99d05",
       "file": "audio/sentences/example-hsk2026-0788.wav"
     },
     "hsk2026-0789": {
@@ -2402,11 +2402,11 @@
       "file": "audio/hsk2026-0789.wav"
     },
     "example-hsk2026-0789": {
-      "text": "请你先爬。",
+      "text": "我们周末去爬山吧。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "cda8ec10c1ce947197ae50a5b2498a77b83e96d731f84377c16bee4e600986de",
+      "checksum": "dc70452d6b57c26df53e60953751fb0a73108a819dce569f3908339e6881a1aa",
       "file": "audio/sentences/example-hsk2026-0789.wav"
     },
     "hsk2026-0790": {
@@ -2434,11 +2434,11 @@
       "file": "audio/hsk2026-0791.wav"
     },
     "example-hsk2026-0791": {
-      "text": "他已经拍照了。",
+      "text": "这里不能拍照。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "40f81cc93d47b299ce2a1bace6da9b832b06c5f71a1bf11251628b69c94632d2",
+      "checksum": "62ec6b618e5fefd078f9b872d53995de03f65bfdffad36d2c3be9f5e76fbf1e5",
       "file": "audio/sentences/example-hsk2026-0791.wav"
     },
     "hsk2026-0795": {
@@ -2450,11 +2450,11 @@
       "file": "audio/hsk2026-0795.wav"
     },
     "example-hsk2026-0795": {
-      "text": "我第一次听说平时。",
+      "text": "我平时坐地铁上班。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "baad6a3de791edf362ef6b992861e8b6b99b91a61c5fcf57fcdeeaaa930b3922",
+      "checksum": "2bcde1d46a18c0d1f8074e3185883fb6e31ba9a062a62d49593433ffda38b1b1",
       "file": "audio/sentences/example-hsk2026-0795.wav"
     },
     "hsk2026-0801": {
@@ -2466,11 +2466,11 @@
       "file": "audio/hsk2026-0801.wav"
     },
     "example-hsk2026-0801": {
-      "text": "我们明天要起。",
+      "text": "他每天早上六点起床。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "d14f755b84ca510097989f521a873a524d43ce4dfa56e7e75035e634e58fb510",
+      "checksum": "56d0baea973dc7e1f77625b541b6924e7a91b10f8f14024f086cca5259917233",
       "file": "audio/sentences/example-hsk2026-0801.wav"
     },
     "hsk2026-0803": {
@@ -2482,11 +2482,11 @@
       "file": "audio/hsk2026-0803.wav"
     },
     "example-hsk2026-0803": {
-      "text": "我第一次听说汽车。",
+      "text": "路上的汽车越来越多了。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "a4a7129c6152cc6f4a3b79038efc62f4d20d2cf3849f04e9690e3628047fbdf0",
+      "checksum": "70c6c8cd92fc12d116b822a6f8caaca3666dd172933b72c8a68388f2550dd2ed",
       "file": "audio/sentences/example-hsk2026-0803.wav"
     },
     "hsk2026-0805": {
@@ -2530,11 +2530,11 @@
       "file": "audio/hsk2026-0809.wav"
     },
     "example-hsk2026-0809": {
-      "text": "他已经请客了。",
+      "text": "今天我请客，你们想吃什么？",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "1b139681d818cbbaee756739052b232d1ad7385ed581cbb82a70d08923faeece",
+      "checksum": "3a662ed82bccdc29478264bf63a20e66ea02c15a2c7c02adf2a93bf8b9b365bc",
       "file": "audio/sentences/example-hsk2026-0809.wav"
     },
     "hsk2026-0810": {
@@ -2546,11 +2546,11 @@
       "file": "audio/hsk2026-0810.wav"
     },
     "example-hsk2026-0810": {
-      "text": "我们秋天再见。",
+      "text": "北京的秋天天气很好。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "db4d255c1d400c6e774d69b1d932800813fd8bdcf97c1804a1fe5a3750652fe2",
+      "checksum": "626e5f428c45affaf7d9721891dc30d04deed75b13e9f62b39039dcd8a4b5574",
       "file": "audio/sentences/example-hsk2026-0810.wav"
     },
     "hsk2026-0811": {
@@ -2562,11 +2562,11 @@
       "file": "audio/hsk2026-0811.wav"
     },
     "example-hsk2026-0811": {
-      "text": "我们今天去球场。",
+      "text": "他们正在球场上打网球。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "088ee70a3a4f5a9cf93a15f550caddd886fc9b6816c53df59b7ce8fea5362fef",
+      "checksum": "f23c198903505d5b232773b993df2548b637309fdcc8433d3db04e175a8299c7",
       "file": "audio/sentences/example-hsk2026-0811.wav"
     },
     "hsk2026-0815": {
@@ -2594,11 +2594,11 @@
       "file": "audio/hsk2026-0821.wav"
     },
     "example-hsk2026-0821": {
-      "text": "请你先扫。",
+      "text": "请把地扫干净。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "f7073b57597851d8998434e9f2dd7f193f4f98c02cd878cd4ccec9747a39c1a0",
+      "checksum": "b7bb218a69df3ff70b11f2372a74f006b0467d400635dce0cb75a008e1234a25",
       "file": "audio/sentences/example-hsk2026-0821.wav"
     },
     "hsk2026-0822": {
@@ -2610,11 +2610,11 @@
       "file": "audio/hsk2026-0822.wav"
     },
     "example-hsk2026-0822": {
-      "text": "我昨天买了沙发。",
+      "text": "爸爸坐在沙发上看电视。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "3633e674ce41687e188ffb88348785de26891743f76453af5a704d74886c0e13",
+      "checksum": "441a7b076c87b7c8c4534d4d8b01a2017b9213ea39c127583bfd83b108ecd71b",
       "file": "audio/sentences/example-hsk2026-0822.wav"
     },
     "hsk2026-0823": {
@@ -2626,11 +2626,11 @@
       "file": "audio/hsk2026-0823.wav"
     },
     "example-hsk2026-0823": {
-      "text": "我第一次听说山。",
+      "text": "那座山不高，很容易爬。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "16b6c8d21b307403835ab0d44c0f4bbf5744c005866eb558d74496fa0d08c396",
+      "checksum": "950bdcd8f64f1f7b687e2adc762fb1e9b3976891cf9655d924063b1129d73ce0",
       "file": "audio/sentences/example-hsk2026-0823.wav"
     },
     "hsk2026-0824": {
@@ -2642,11 +2642,11 @@
       "file": "audio/hsk2026-0824.wav"
     },
     "example-hsk2026-0824": {
-      "text": "我昨天买了上衣。",
+      "text": "这件上衣有点儿小。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "d494b484ec4c2957438b9c63c250ffc7df0eb2a233922acd3daba68d24194381",
+      "checksum": "2c1c27dec132bd7215cccff09a38c2f5903a3e4ee32ef3e57c4fdec0ec541f14",
       "file": "audio/sentences/example-hsk2026-0824.wav"
     },
     "hsk2026-0825": {
@@ -2658,11 +2658,11 @@
       "file": "audio/hsk2026-0825.wav"
     },
     "example-hsk2026-0825": {
-      "text": "我昨天买了勺子。",
+      "text": "喝汤的时候要用勺子。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "c9f1ea06b6872a15103a102d30bfe8595dea43a8154bdff2aeaabb3c8c965140",
+      "checksum": "912217d1430959ec3bd4d907145be5aaddcb360cabc54f93a9de4875aa16295b",
       "file": "audio/sentences/example-hsk2026-0825.wav"
     },
     "hsk2026-0826": {
@@ -2674,11 +2674,11 @@
       "file": "audio/hsk2026-0826.wav"
     },
     "example-hsk2026-0826": {
-      "text": "我第一次听说身边。",
+      "text": "感谢一直在我身边的家人。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "6dae373e5cd940c9c06ab68799202d87153f379a79bc0ebb52d5d09c02b15710",
+      "checksum": "4d42f8e714e74a2d73cb34add9997e06f48b901b4c0a88c0092cad9924c11cf9",
       "file": "audio/sentences/example-hsk2026-0826.wav"
     },
     "hsk2026-0827": {
@@ -2690,11 +2690,11 @@
       "file": "audio/hsk2026-0827.wav"
     },
     "example-hsk2026-0827": {
-      "text": "我第一次听说身高。",
+      "text": "请在这里写下你的身高。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "b41e12af510054264a37afda170e22c17e934909f71e06bb1ad05291c2a74ce9",
+      "checksum": "bbf574a15ccabd7c5abf5ad1d0bf2d60ac0a0206d47cf840c0e2473763a1314b",
       "file": "audio/sentences/example-hsk2026-0827.wav"
     },
     "hsk2026-0828": {
@@ -2722,11 +2722,11 @@
       "file": "audio/hsk2026-0829.wav"
     },
     "example-hsk2026-0829": {
-      "text": "他已经生活了。",
+      "text": "我喜欢现在的生活。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "037e70b8ef13d21fcaf57700339dc3bfff7bf8d4329f450245723fbfc714abaa",
+      "checksum": "f0df3944145b71e11314bd787f1eac88ff20fac4ad727489533eb1a9536c5048",
       "file": "audio/sentences/example-hsk2026-0829.wav"
     },
     "hsk2026-0832": {
@@ -2738,11 +2738,11 @@
       "file": "audio/hsk2026-0832.wav"
     },
     "example-hsk2026-0832": {
-      "text": "我第一次听说市。",
+      "text": "这个市有三百多万人。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "3a261ade18709d12ccbfb75e53c5af18ad22b262c7d654b361b2037fa424bfa8",
+      "checksum": "a503020411863a1d14af4cf70140f4f413ee3205f40098dc6b356649b8f4aa02",
       "file": "audio/sentences/example-hsk2026-0832.wav"
     },
     "hsk2026-0834": {
@@ -2754,11 +2754,11 @@
       "file": "audio/hsk2026-0834.wav"
     },
     "example-hsk2026-0834": {
-      "text": "我第一次听说室。",
+      "text": "老师在办公室。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "eb97e041a071573b820db666a3eed061b192f878a8c62330e8b94f71adc59ddc",
+      "checksum": "704ff936e56a6306c63696b8183e9e0ca26de6344fa720d2e941362532f4652c",
       "file": "audio/sentences/example-hsk2026-0834.wav"
     },
     "hsk2026-0836": {
@@ -2770,11 +2770,11 @@
       "file": "audio/hsk2026-0836.wav"
     },
     "example-hsk2026-0836": {
-      "text": "他已经收了。",
+      "text": "我昨天收到了你的邮件。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "1b2db9d54cec529536b71ab366d3c24196e36796481415ef761a53633908f62d",
+      "checksum": "19de2836530bb277659dad8dd3b26cfc55becbbf735445cf4788dfe06fcd482b",
       "file": "audio/sentences/example-hsk2026-0836.wav"
     },
     "hsk2026-0837": {
@@ -2834,11 +2834,11 @@
       "file": "audio/hsk2026-0844.wav"
     },
     "example-hsk2026-0844": {
-      "text": "请你先刷。",
+      "text": "每天早晚都要刷牙。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "be45b39b3317ce49e047eb8ba97bc0178c5faadec34d2ca39a67a2503bb2b028",
+      "checksum": "c23993bf40d3ad635ddf6e38d210922c71caf5e345c6bc6d55a691185312089d",
       "file": "audio/sentences/example-hsk2026-0844.wav"
     },
     "hsk2026-0848": {
@@ -2850,11 +2850,11 @@
       "file": "audio/hsk2026-0848.wav"
     },
     "example-hsk2026-0848": {
-      "text": "我第一次听说四季。",
+      "text": "这里四季都很美。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "00cefc45e176cfd4811127c0455d800b6602069478586a4fa08e05d4ba3f74b6",
+      "checksum": "32623e5409faf36fe01ed2f366bc0939b5506dbe51827faf4d16715b1553e384",
       "file": "audio/sentences/example-hsk2026-0848.wav"
     },
     "hsk2026-0850": {
@@ -2866,11 +2866,11 @@
       "file": "audio/hsk2026-0850.wav"
     },
     "example-hsk2026-0850": {
-      "text": "我昨天买了糖。",
+      "text": "咖啡里不要放太多糖。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "ac2f056d2a28e61808d58d5a2cf7b3028a297ec6b0c2ab08402ec486c15b11e3",
+      "checksum": "ab86982ba86005e0c1d2da86a1b1aebe160b97995d3f62e00269a27e3827a4e2",
       "file": "audio/sentences/example-hsk2026-0850.wav"
     },
     "hsk2026-0854": {
@@ -2882,11 +2882,11 @@
       "file": "audio/hsk2026-0854.wav"
     },
     "example-hsk2026-0854": {
-      "text": "我们今天去体育馆。",
+      "text": "学生们正在体育馆里打球。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "c369a86994e3f822815dce314968ae903a348e7a15c39f46f9b600b759ed354a",
+      "checksum": "8653fd11c4564316423589b2cba258d7df310b36ca7e3accd78856aa628e0d56",
       "file": "audio/sentences/example-hsk2026-0854.wav"
     },
     "hsk2026-0856": {
@@ -2898,11 +2898,11 @@
       "file": "audio/hsk2026-0856.wav"
     },
     "example-hsk2026-0856": {
-      "text": "我们明天要跳。",
+      "text": "孩子高兴得跳了起来。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "a3c8b339fe7ae4a47f3630de7623fecc1d2a96b2286c99164a501e8d17d27889",
+      "checksum": "ebbbce8628dc2acc7e9b6a698f9037443c8138fa821108e5518d4759e93f24f3",
       "file": "audio/sentences/example-hsk2026-0856.wav"
     },
     "hsk2026-0857": {
@@ -2946,11 +2946,11 @@
       "file": "audio/hsk2026-0865.wav"
     },
     "example-hsk2026-0865": {
-      "text": "我第一次听说外地。",
+      "text": "他从外地来这里工作。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "0757e68cb22f490c52f6a494fa5eb8053944f9969201a79e12730bc6f2d3b56c",
+      "checksum": "c79e82b0eb80461af79715be82ac2eb25eeeaf4c6ac091c6d12bea52d784976d",
       "file": "audio/sentences/example-hsk2026-0865.wav"
     },
     "hsk2026-0866": {
@@ -2962,11 +2962,11 @@
       "file": "audio/hsk2026-0866.wav"
     },
     "example-hsk2026-0866": {
-      "text": "我昨天买了外卖。",
+      "text": "今天太累了，我们点外卖吧。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "f42705b1cce401c35be3fa7102b2511c78715f6423f3ad49f9aaf8b2e49bccfa",
+      "checksum": "7fd540ddc7c8e6030db5661a326fd9a6a1513360cab9768363ad369a5033f99a",
       "file": "audio/sentences/example-hsk2026-0866.wav"
     },
     "hsk2026-0867": {
@@ -2978,11 +2978,11 @@
       "file": "audio/hsk2026-0867.wav"
     },
     "example-hsk2026-0867": {
-      "text": "我第一次听说外语。",
+      "text": "学习外语要多听多说。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "41368ff5e1f79d5ed3b4a1426fb53f976184be565ec0c6d1024296655a7740ce",
+      "checksum": "b2fa76b385bd84b128040e5651d1404e702fdfe5bd3e79557da0e35449e6447e",
       "file": "audio/sentences/example-hsk2026-0867.wav"
     },
     "hsk2026-0870": {
@@ -2994,11 +2994,11 @@
       "file": "audio/hsk2026-0870.wav"
     },
     "example-hsk2026-0870": {
-      "text": "我们晚点再见。",
+      "text": "火车晚点了二十分钟。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "daf4fabef8c76744f2939c1aad79e6492559b1d644f504dde8e47689dd279f41",
+      "checksum": "8975987d0dbf030e3e1ca867ae811c8682a843999c53367e91b1c607b8957c95",
       "file": "audio/sentences/example-hsk2026-0870.wav"
     },
     "hsk2026-0871": {
@@ -3010,11 +3010,11 @@
       "file": "audio/hsk2026-0871.wav"
     },
     "example-hsk2026-0871": {
-      "text": "我第一次听说晚会。",
+      "text": "学校明天晚上有新年晚会。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "e9cc9b76a18932e8d706747b36fd5052dfece8b22211ec39d920bde446954c34",
+      "checksum": "95e21cf0517556823e258a74b6f7a4c72bdef10ce9086b321ab54393e9083f25",
       "file": "audio/sentences/example-hsk2026-0871.wav"
     },
     "hsk2026-0872": {
@@ -3026,11 +3026,11 @@
       "file": "audio/hsk2026-0872.wav"
     },
     "example-hsk2026-0872": {
-      "text": "我第一次听说网球。",
+      "text": "周末我常和朋友打网球。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "842661b0b851ef62bc135686d86812c176b225c8bb52665baef24814ff060070",
+      "checksum": "fd19b886e2c889139f1b03f2cd66b59b6eeb75a543e4f0e937a4d56967418114",
       "file": "audio/sentences/example-hsk2026-0872.wav"
     },
     "hsk2026-0873": {
@@ -3042,11 +3042,11 @@
       "file": "audio/hsk2026-0873.wav"
     },
     "example-hsk2026-0873": {
-      "text": "我第一次听说网站。",
+      "text": "你可以在这个网站上买票。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "55d20f0bc50364c68205d4e958708d5a13e82081b703540962156c051978098b",
+      "checksum": "ac7bc2d554dccddf45953aed97d4abb7a766f0f3631478ee4141056b4b4fc4b7",
       "file": "audio/sentences/example-hsk2026-0873.wav"
     },
     "hsk2026-0877": {
@@ -3058,11 +3058,11 @@
       "file": "audio/hsk2026-0877.wav"
     },
     "example-hsk2026-0877": {
-      "text": "我们今天去卫生间。",
+      "text": "请问卫生间在哪儿？",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "785335362604a2904dc76ceba3e840b037efa4500cefc8a050a8260890950113",
+      "checksum": "e6e4fa74c0549e689026c72242a331e60815407e270ad090feda3f8997a5c6fb",
       "file": "audio/sentences/example-hsk2026-0877.wav"
     },
     "hsk2026-0879": {
@@ -3074,11 +3074,11 @@
       "file": "audio/hsk2026-0879.wav"
     },
     "example-hsk2026-0879": {
-      "text": "我第一次听说屋子。",
+      "text": "这间屋子里没有窗户。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "be9adfdd435bd7c0f22abd3e0f0b380990ff8478a0f009193184a5e1802a46ea",
+      "checksum": "271babdb9b87540913c398275c74b5ef9fd96265690df38fdfb2e6cddea50e66",
       "file": "audio/sentences/example-hsk2026-0879.wav"
     },
     "hsk2026-0881": {
@@ -3090,11 +3090,11 @@
       "file": "audio/hsk2026-0881.wav"
     },
     "example-hsk2026-0881": {
-      "text": "我第一次听说西北。",
+      "text": "西北地区的冬天很冷。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "bd59e89f6bda5fd03254026ff0e0b66adb69e113c0af485d814a124f69a7cb04",
+      "checksum": "2e19ec9975d69c408891027c432714f6ca0675c51e09f7d7b191454dc43e0234",
       "file": "audio/sentences/example-hsk2026-0881.wav"
     },
     "hsk2026-0882": {
@@ -3106,11 +3106,11 @@
       "file": "audio/hsk2026-0882.wav"
     },
     "example-hsk2026-0882": {
-      "text": "我第一次听说西方。",
+      "text": "很多人对西方文化感兴趣。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "01a3d8034de6bae4b0efcd4d2611c308e223c237d73b174b3ed49399e5859c83",
+      "checksum": "a74db2cde0778cfd2847be626f19d4fcbb64b639e02bd22f34203a2ac2f8a189",
       "file": "audio/sentences/example-hsk2026-0882.wav"
     },
     "hsk2026-0884": {
@@ -3122,11 +3122,11 @@
       "file": "audio/hsk2026-0884.wav"
     },
     "example-hsk2026-0884": {
-      "text": "我第一次听说西南。",
+      "text": "学校在城市西南方向。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "604ae40f437da55a408951ba0124501447e73e2cce2c2293c9704e35a8ad26ee",
+      "checksum": "99d3fdb254c119601df18fc05ee2145225baa28c7f284a696868955d7246825e",
       "file": "audio/sentences/example-hsk2026-0884.wav"
     },
     "hsk2026-0886": {
@@ -3154,11 +3154,11 @@
       "file": "audio/hsk2026-0887.wav"
     },
     "example-hsk2026-0887": {
-      "text": "我第一次听说洗衣机。",
+      "text": "这台洗衣机怎么用？",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "591a9a029646f0f477d5dd266a795fc7fe1255334e07a2faedf3c6250ace8e7d",
+      "checksum": "45ce93892961d7d2273cc57c394ed7765d1970a38d638cfd49b7bc3a5a15760d",
       "file": "audio/sentences/example-hsk2026-0887.wav"
     },
     "hsk2026-0889": {
@@ -3170,11 +3170,11 @@
       "file": "audio/hsk2026-0889.wav"
     },
     "example-hsk2026-0889": {
-      "text": "我们夏天再见。",
+      "text": "夏天的白天很长。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "034d76db02b0cb4235f785436ef106793b86a1eaa4bbd4c32dec6057c5145877",
+      "checksum": "8f87c23d5bdf67bef64dd8b8e8f5607061a9532ad1b49aba1a70a9410b3b675f",
       "file": "audio/sentences/example-hsk2026-0889.wav"
     },
     "hsk2026-0893": {
@@ -3186,11 +3186,11 @@
       "file": "audio/hsk2026-0893.wav"
     },
     "example-hsk2026-0893": {
-      "text": "我昨天买了箱子。",
+      "text": "请把这些书放进箱子里。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "543de01c0c543bec6ddab7d9f3e787f2ee8f486112ec7eff52058c711964ceef",
+      "checksum": "cfa3b43b5024a69393442d2f3b5b96504d91acd636908bc54d119a26244f795d",
       "file": "audio/sentences/example-hsk2026-0893.wav"
     },
     "hsk2026-0896": {
@@ -3202,11 +3202,11 @@
       "file": "audio/hsk2026-0896.wav"
     },
     "example-hsk2026-0896": {
-      "text": "我昨天买了相机。",
+      "text": "这台相机是我爸爸送的。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "67724fc3c46adcca42b99e829852ba485db4cc2250f70103eef240b505e3273e",
+      "checksum": "c91a868b296368aca8965dccc74f7a087838a208cf1235a60d83e3a0fd87d72f",
       "file": "audio/sentences/example-hsk2026-0896.wav"
     },
     "hsk2026-0897": {
@@ -3218,11 +3218,11 @@
       "file": "audio/hsk2026-0897.wav"
     },
     "example-hsk2026-0897": {
-      "text": "我们今天去小区。",
+      "text": "我们小区旁边有一个公园。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "64bc2e4836f4ed234d43ff69353415a8a6947e254bd5c005a8c6d09e190238ce",
+      "checksum": "adb6d064f58d729aad96ff6da53852a921883e9762ff0ce9eee3dc38f0d974b3",
       "file": "audio/sentences/example-hsk2026-0897.wav"
     },
     "hsk2026-0899": {
@@ -3234,11 +3234,11 @@
       "file": "audio/hsk2026-0899.wav"
     },
     "example-hsk2026-0899": {
-      "text": "我们今天去校园。",
+      "text": "春天的校园里开满了花。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "f77e479f698e75023e54454ecd1fca4b86294b9083b0f46055b75425d8a521fe",
+      "checksum": "d6d64ae5496e148df34d5dfc527d99335bbfd1c68e10501dbc7be2a7265dbd70",
       "file": "audio/sentences/example-hsk2026-0899.wav"
     },
     "hsk2026-0901": {
@@ -3250,11 +3250,11 @@
       "file": "audio/hsk2026-0901.wav"
     },
     "example-hsk2026-0901": {
-      "text": "我昨天买了鞋。",
+      "text": "这双鞋穿着很舒服。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "50684b877160e4bcd6edf1d37ab0c3cabba849a26c986f5e88a0447bae61ae25",
+      "checksum": "9502b9939d5d3bd1d2a45281c1e55dc78bfab3ead8a6e93b39a053b0bd69adac",
       "file": "audio/sentences/example-hsk2026-0901.wav"
     },
     "hsk2026-0902": {
@@ -3266,11 +3266,11 @@
       "file": "audio/hsk2026-0902.wav"
     },
     "example-hsk2026-0902": {
-      "text": "我第一次听说心里。",
+      "text": "虽然他没说，但心里一定很高兴。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "54c21a67b7b948142cb0af567814862571dc8d41c31a9cb61a84d3735267c39b",
+      "checksum": "48dcaea85a734045e8d2f5092e7686b3f5e6e79b8054695976a62eecac336af5",
       "file": "audio/sentences/example-hsk2026-0902.wav"
     },
     "hsk2026-0903": {
@@ -3282,11 +3282,11 @@
       "file": "audio/hsk2026-0903.wav"
     },
     "example-hsk2026-0903": {
-      "text": "我们新年再见。",
+      "text": "祝大家新年快乐！",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "fa56706d0d6cf63b4bc31c8c5809e841e16633dab92440da9b14144270ac9ce0",
+      "checksum": "bbc07ef100b312b418cdf6bba7461706dd15c3b3a03489c8cd071e60d8b96fb9",
       "file": "audio/sentences/example-hsk2026-0903.wav"
     },
     "hsk2026-0906": {
@@ -3298,11 +3298,11 @@
       "file": "audio/hsk2026-0906.wav"
     },
     "example-hsk2026-0906": {
-      "text": "他已经信了。",
+      "text": "我信你的话。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "8c045e9c44727329780296b49159ee9087c14feb4f420dbdc68311b1c3cb88c2",
+      "checksum": "9d13fd061bf554740f0c17bf67d2bfa59e0f638d5a37bc28ea28ccc31f2057b4",
       "file": "audio/sentences/example-hsk2026-0906.wav"
     },
     "hsk2026-0908": {
@@ -3330,11 +3330,11 @@
       "file": "audio/hsk2026-0909.wav"
     },
     "example-hsk2026-0909": {
-      "text": "我昨天买了行李。",
+      "text": "我的行李有点儿重。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "cafb9b03ff7b9600aaccacdf042f25c5a9d4e6e27e40ad3f7e3be3ebb24e7bec",
+      "checksum": "f676f8135f2f0ff13667a36ba95f7936bf85f99c2545db0ef3b5fe66b978b85c",
       "file": "audio/sentences/example-hsk2026-0909.wav"
     },
     "hsk2026-0910": {
@@ -3346,11 +3346,11 @@
       "file": "audio/hsk2026-0910.wav"
     },
     "example-hsk2026-0910": {
-      "text": "我第一次听说兴趣。",
+      "text": "我对中国历史很有兴趣。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "61eab358e2b39a1b67f1892f7857fe132fb0dc63960c83b00200faa8d689ef3e",
+      "checksum": "bb560c2b85d923ede167ff3fa623bd7600a95eaf00ff42840bea358923c52ebd",
       "file": "audio/sentences/example-hsk2026-0910.wav"
     },
     "hsk2026-0911": {
@@ -3362,11 +3362,11 @@
       "file": "audio/hsk2026-0911.wav"
     },
     "example-hsk2026-0911": {
-      "text": "请你先休假。",
+      "text": "他下周要休假三天。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "bd0bf75a0ee791fc1e8a33ca30a8f9d21721e90f195853572849d8bd844f6b35",
+      "checksum": "d5dc00ca1741985d0746e28c35daf27e28c8f951c4711dd70fbc64d66ec67296",
       "file": "audio/sentences/example-hsk2026-0911.wav"
     },
     "hsk2026-0913": {
@@ -3378,11 +3378,11 @@
       "file": "audio/hsk2026-0913.wav"
     },
     "example-hsk2026-0913": {
-      "text": "我们明天要选。",
+      "text": "这两件衣服，你选哪一件？",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "b23616fdcc1faacc3fe242e68d85a33e0ef6e50346a6021fb6ac09508a248a0e",
+      "checksum": "4b35617bac70ffc826b75084cfc598dfac12307ea8cd6aeb4f737c8c0e993081",
       "file": "audio/sentences/example-hsk2026-0913.wav"
     },
     "hsk2026-0915": {
@@ -3394,11 +3394,11 @@
       "file": "audio/hsk2026-0915.wav"
     },
     "example-hsk2026-0915": {
-      "text": "我们学期再见。",
+      "text": "新学期下周开始。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "2807f3caef18c238ca07a96d7f7429befa265232fc72fe4d9fa24773931ac873",
+      "checksum": "51f6945794662016f612d6d9ec11a5df935a7ef37ddb495a8ab82de7c75f189b",
       "file": "audio/sentences/example-hsk2026-0915.wav"
     },
     "hsk2026-0916": {
@@ -3410,11 +3410,11 @@
       "file": "audio/hsk2026-0916.wav"
     },
     "example-hsk2026-0916": {
-      "text": "我第一次听说牙。",
+      "text": "我的牙有点儿疼。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "b18eded5d9b6c2c46cc3186c8c4e2a516ae0a46d901945b67740499582c7dd66",
+      "checksum": "adaa2ce6dce7db8eb3c381b379e6df3b5e7b8b8f22b2fa14f9ab47d47cb99282",
       "file": "audio/sentences/example-hsk2026-0916.wav"
     },
     "hsk2026-0917": {
@@ -3426,11 +3426,11 @@
       "file": "audio/hsk2026-0917.wav"
     },
     "example-hsk2026-0917": {
-      "text": "我昨天买了牙刷。",
+      "text": "我每三个月换一次牙刷。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "3585470c71123be1b7b5feecf7a504f1d44f1b02328a96f052d5d9e181a62091",
+      "checksum": "f8cf7e23b369bc85eabbdc5c478ad95ec59f1577112b086fd0c7b7f1e51d4e99",
       "file": "audio/sentences/example-hsk2026-0917.wav"
     },
     "hsk2026-0918": {
@@ -3442,11 +3442,11 @@
       "file": "audio/hsk2026-0918.wav"
     },
     "example-hsk2026-0918": {
-      "text": "我第一次听说羊。",
+      "text": "山上有一群羊。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "93aef2cbe1f26d2a665e9b9eca511e8da49c408809aaac2177f9c4d2f08fce50",
+      "checksum": "944df77a5a3bdf39ce58d498e1d2015d71dc6bb934d4fa40b6ea3e07e152e2d4",
       "file": "audio/sentences/example-hsk2026-0918.wav"
     },
     "hsk2026-0919": {
@@ -3458,11 +3458,11 @@
       "file": "audio/hsk2026-0919.wav"
     },
     "example-hsk2026-0919": {
-      "text": "请你先养。",
+      "text": "我想养一只小狗。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "2f968b704ddad3a09c20a49e632c09ea220f95e0bd4c08a7d2b0b1a9292c8b31",
+      "checksum": "6f7f0030706bda41fe103b4cf2b872b9d99bdb0119914fd70be60494f74d42b8",
       "file": "audio/sentences/example-hsk2026-0919.wav"
     },
     "hsk2026-0921": {
@@ -3586,11 +3586,11 @@
       "file": "audio/hsk2026-0937.wav"
     },
     "example-hsk2026-0937": {
-      "text": "我第一次听说银行卡。",
+      "text": "我用银行卡付钱。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "c8c705be416c0ee7b6c23f3516006b6a889e00dd342cf803a5be7650c32810f2",
+      "checksum": "bdbde9898208fbf552d36a070a3e4ed8374c83be6712fffdb198f8c6dd0f8695",
       "file": "audio/sentences/example-hsk2026-0937.wav"
     },
     "hsk2026-0942": {
@@ -3602,11 +3602,11 @@
       "file": "audio/hsk2026-0942.wav"
     },
     "example-hsk2026-0942": {
-      "text": "我第一次听说邮件。",
+      "text": "我已经把邮件发给老师了。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "cbbc31eaa000b6ba2160b7a46d5c8519a1d468578d209ee5891f8384f33d8928",
+      "checksum": "6fc4cb27f47e3e3010d954991cc7c1fecdc8aea6bc8485b9d48c6a01a8265fbd",
       "file": "audio/sentences/example-hsk2026-0942.wav"
     },
     "hsk2026-0943": {
@@ -3618,11 +3618,11 @@
       "file": "audio/hsk2026-0943.wav"
     },
     "example-hsk2026-0943": {
-      "text": "他是一位游客。",
+      "text": "春天来这里的游客最多。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "604ae8ba9458e4d5c504752336885356dab4cf0880ce533e5a953d8dfbdebfbf",
+      "checksum": "55030add9c9c66cc589a685038e6354aa13b4076cc9576d55b3d4aff2d320e18",
       "file": "audio/sentences/example-hsk2026-0943.wav"
     },
     "hsk2026-0945": {
@@ -3634,11 +3634,11 @@
       "file": "audio/hsk2026-0945.wav"
     },
     "example-hsk2026-0945": {
-      "text": "我第一次听说邮箱。",
+      "text": "我每天早上都会看邮箱。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "f8c19c6e67de1cfc13ed36a6923d7c15a1a03eecf9b84c349a014edd34cc2b88",
+      "checksum": "ecbfce3e03cbe86a62078d5f7f10e49960a438acdc29b3b0909e3d4f55e2e9fd",
       "file": "audio/sentences/example-hsk2026-0945.wav"
     },
     "hsk2026-0946": {
@@ -3666,11 +3666,11 @@
       "file": "audio/hsk2026-0948.wav"
     },
     "example-hsk2026-0948": {
-      "text": "这件事很有用。",
+      "text": "这本字典对初学者很有用。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "1de3542591268def7c9cd34ba5659b23da12a8cca2f59904fd42c542ece10c79",
+      "checksum": "1690a64a99b577908a873d0d8b0c0c001d2c54fca289903070b83477527c664b",
       "file": "audio/sentences/example-hsk2026-0948.wav"
     },
     "hsk2026-0950": {
@@ -3682,11 +3682,11 @@
       "file": "audio/hsk2026-0950.wav"
     },
     "example-hsk2026-0950": {
-      "text": "我昨天买了羽毛球。",
+      "text": "体育馆里有人在打羽毛球。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "bb30c56cf9862cd3394345abc6e4d58a5d92f752b7f9eca3cefbca175df40a48",
+      "checksum": "1e1fd8d374a27018a1541dd0beab8baa09adf5275e95664f7616e8bc73075bce",
       "file": "audio/sentences/example-hsk2026-0950.wav"
     },
     "hsk2026-0951": {
@@ -3698,11 +3698,11 @@
       "file": "audio/hsk2026-0951.wav"
     },
     "example-hsk2026-0951": {
-      "text": "我第一次听说语言。",
+      "text": "汉语是世界上很多人使用的语言。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "b63062e073e6dcbcbdb16a235171ea264bfabb51e5a041fd55085ee33a2957e2",
+      "checksum": "721aab9819ca6c3f5104114071873db765de47e85653d00a9c82c153f0d699fa",
       "file": "audio/sentences/example-hsk2026-0951.wav"
     },
     "hsk2026-0952": {
@@ -3714,11 +3714,11 @@
       "file": "audio/hsk2026-0952.wav"
     },
     "example-hsk2026-0952": {
-      "text": "我昨天买了雨衣。",
+      "text": "下雨时别忘了带雨衣。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "59e72b2304abdce9b2752c8e65afd81bd82091cc883f335c64c4de91a8dd18f6",
+      "checksum": "2dba4548b98b8517d18f13c411e6e1b9893204fa84d4418052d530d606196d3c",
       "file": "audio/sentences/example-hsk2026-0952.wav"
     },
     "hsk2026-0954": {
@@ -3746,11 +3746,11 @@
       "file": "audio/hsk2026-0955.wav"
     },
     "example-hsk2026-0955": {
-      "text": "我第一次听说园。",
+      "text": "这个公园以前是一个植物园。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "1324fb3e2092da660c5486c8c1f8da59b5a522a560f4c36aa9e1865f0c3dd010",
+      "checksum": "2bab2086ed370ec9d7f1e4c562fc56fb7b332429b2e6b40d6a02e7e48f023294",
       "file": "audio/sentences/example-hsk2026-0955.wav"
     },
     "hsk2026-0956": {
@@ -3778,11 +3778,11 @@
       "file": "audio/hsk2026-0960.wav"
     },
     "example-hsk2026-0960": {
-      "text": "我第一次听说运动会。",
+      "text": "学校下周要开运动会。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "1ac9d62a45d34ea04aa3dc4bd7a54b335d85d2aed5ce685df7b48758b9cfb814",
+      "checksum": "f651811131037c34ac648d5d8e991aebb6e0762e393497469678e8401313c2a4",
       "file": "audio/sentences/example-hsk2026-0960.wav"
     },
     "hsk2026-0961": {
@@ -3794,11 +3794,11 @@
       "file": "audio/hsk2026-0961.wav"
     },
     "example-hsk2026-0961": {
-      "text": "他是一位运动员。",
+      "text": "她想成为一名运动员。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "ac8ba4b4b2a44aa3258631c647a559d2f7b9ee54099e43e2c5b10a6b859ad83e",
+      "checksum": "239312715214d53f5941d4397dcbb02706bc3c5986813895f02c95f82d130bf0",
       "file": "audio/sentences/example-hsk2026-0961.wav"
     },
     "hsk2026-0962": {
@@ -3826,11 +3826,11 @@
       "file": "audio/hsk2026-0963.wav"
     },
     "example-hsk2026-0963": {
-      "text": "这件事很脏。",
+      "text": "你的手太脏了，快去洗。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "fd08896f29de76f6cba23f44330ad04eaeee223650b36815dc99a7ddbdf5530e",
+      "checksum": "8ade620eb27f4f210346fd18a3d87b099a022155af8ab99462edbc05cba68d5a",
       "file": "audio/sentences/example-hsk2026-0963.wav"
     },
     "hsk2026-0964": {
@@ -3874,11 +3874,11 @@
       "file": "audio/hsk2026-0966.wav"
     },
     "example-hsk2026-0966": {
-      "text": "他已经站了。",
+      "text": "车还没停，请不要站起来。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "fb0a1195f90c4d80ed6bd757a8305b8f657a5ce19b6a71ca32afd289b2252efc",
+      "checksum": "c09ad2d42084ce9d1cd3c6a032514b63ee939648c4538c587e32224b937259b4",
       "file": "audio/sentences/example-hsk2026-0966.wav"
     },
     "hsk2026-0970": {
@@ -3890,11 +3890,11 @@
       "file": "audio/hsk2026-0970.wav"
     },
     "example-hsk2026-0970": {
-      "text": "请你先照。",
+      "text": "阳光照进了屋子。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "68ec19e05fa5dbd2fe3a2110f7d45444cada6ec180ad5cede1b73eae7ad66c81",
+      "checksum": "5050b65a837db495826fbb382991c26b676b5f74be0812735a0322acfe6b8f4d",
       "file": "audio/sentences/example-hsk2026-0970.wav"
     },
     "hsk2026-0973": {
@@ -3906,11 +3906,11 @@
       "file": "audio/hsk2026-0973.wav"
     },
     "example-hsk2026-0973": {
-      "text": "我们明天要照相。",
+      "text": "我们在花园里照相吧。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "c62534c9584cafd675f86a37090ba9ecbddfe53a3bdce12cadf4f3d4c1168a33",
+      "checksum": "441ba3ad626d02f86462a7beb85cc4bf186f34caa8d005894b37f83c3344bcde",
       "file": "audio/sentences/example-hsk2026-0973.wav"
     },
     "hsk2026-0974": {
@@ -3938,11 +3938,11 @@
       "file": "audio/hsk2026-0976.wav"
     },
     "example-hsk2026-0976": {
-      "text": "我昨天买了纸。",
+      "text": "请在纸上写下你的名字。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "6b050e2c585d848cd4820ff7a32e9815be03d6bb7751be26969312bbdd45c001",
+      "checksum": "b2a71478a9b8af45354be0d9215d81f64a71791bdfb5dcb99c371e248387db82",
       "file": "audio/sentences/example-hsk2026-0976.wav"
     },
     "hsk2026-0977": {
@@ -4018,11 +4018,11 @@
       "file": "audio/hsk2026-0989.wav"
     },
     "example-hsk2026-0989": {
-      "text": "他已经住院了。",
+      "text": "他病得很重，需要住院。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "393a8aefb3cb269b86095a18807d5f44e37d54b609ad934e8eb7c8c100a0abd6",
+      "checksum": "97ed46dc2564e2a385e33be7d7692fac1e35f16724726fba715ed6669f1676a1",
       "file": "audio/sentences/example-hsk2026-0989.wav"
     },
     "hsk2026-0990": {
@@ -4034,11 +4034,11 @@
       "file": "audio/hsk2026-0990.wav"
     },
     "example-hsk2026-0990": {
-      "text": "我昨天买了字典。",
+      "text": "这个词我不知道，查一下字典吧。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "41d46a1dc753bc1456ecb329291472c34ee6a22ff2f059b2d895010884455ae0",
+      "checksum": "476b0d9165cfcdd34dc20687c2e1c3e0d11fbe05e12ed3f2597705b9072ed869",
       "file": "audio/sentences/example-hsk2026-0990.wav"
     },
     "hsk2026-0992": {
@@ -4098,11 +4098,11 @@
       "file": "audio/hsk2026-0999.wav"
     },
     "example-hsk2026-0999": {
-      "text": "我们明天要做客。",
+      "text": "明天我们去老师家做客。",
       "type": "example",
       "voice": "Tingting",
       "rate": 158,
-      "checksum": "81abf40c7946dc44cb4c087f2a927095c072cf8f8362fb714e951df01e1c2b7e",
+      "checksum": "f62bda6b9dc56d4aacc2bb5fdfa586692018b3cf61976d1aa4b38d960b0dbb20",
       "file": "audio/sentences/example-hsk2026-0999.wav"
     }
   }

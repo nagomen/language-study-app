@@ -27,20 +27,28 @@ export function renderLevels() {
 }
 
 export function renderWords() {
-  const query = $("#word-search").value.trim().toLowerCase();
-  const filtered = state.words.filter((word) => {
-    const matchesLevel = state.wordFilter === "all"
-      || (state.wordFilter === "legacy" ? word.legacySupplement : word.level === Number(state.wordFilter));
-    const matchesCategory = state.wordCategory === "all" || (word.tags || []).includes(state.wordCategory);
-    const matchesFilter = state.wordFilter === "new-2026" ? word.newIn2026 : matchesLevel;
-    return matchesFilter && matchesCategory && wordHaystack(word).includes(query) && (!state.checkedOnly.words || state.checked.has(word.id));
-  });
+  const filtered = getFilteredWords();
+  const quizButton = $("#word-filter-quiz");
+  quizButton.disabled = filtered.length === 0;
+  quizButton.setAttribute("aria-label", `表示中の${filtered.length}語から単語テストを開始`);
+  quizButton.title = filtered.length ? `表示中の${filtered.length}語から最大10問を出題します` : "この条件に合う単語がありません";
   const list = $("#word-list");
   list.classList.toggle("is-quiz-mode", state.wordHideMeaning);
   list.innerHTML = filtered.map((word) => wordCardHtml(word)).join("");
   bindWordRowAudio(list);
   $("#empty-words").classList.toggle("is-hidden", filtered.length > 0);
   $("#word-count-label").textContent = `${filtered.length}語`;
+}
+
+export function getFilteredWords() {
+  const query = $("#word-search").value.trim().toLowerCase();
+  return state.words.filter((word) => {
+    const matchesLevel = state.wordFilter === "all" || word.level === Number(state.wordFilter);
+    const matchesEdition = state.wordEditionFilter === "all"
+      || (state.wordEditionFilter === "new-2026" ? word.newIn2026 : word.legacySupplement);
+    const matchesCategory = state.wordCategory === "all" || (word.tags || []).includes(state.wordCategory);
+    return matchesLevel && matchesEdition && matchesCategory && wordHaystack(word).includes(query) && (!state.checkedOnly.words || state.checked.has(word.id));
+  });
 }
 
 // 単語帳は1語1行。左に見出しと意味、右に例文を置く。
@@ -79,7 +87,7 @@ export function wordHaystack(word) {
   return `${word.hanzi} ${word.pinyin} ${word.meaning} ${word.example || ""} ${word.examplePinyin || ""} ${word.exampleMeaning || ""}`.toLowerCase();
 }
 
-// 毎日40語・分類ページの一覧行。例文つきでも表示できる。
+// 毎日30語・分類ページの一覧行。例文つきでも表示できる。
 export function wordRowHtml(word, { showExample = false } = {}) {
   const hasExample = showExample && Boolean(word.example);
   return `

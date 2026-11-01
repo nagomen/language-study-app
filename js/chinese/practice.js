@@ -11,7 +11,7 @@ import { getDueWords, masteryScore, recordStudy, updateSummary } from "./progres
 import { buildPracticeReview, findQuestionWord, setReview } from "./review.js";
 import { emptyPractice, state } from "./state.js";
 import { saveProgress } from "./storage.js";
-import { normalizeAnswer, uniqueChoices } from "./util.js";
+import { canBeDistractor, normalizeAnswer, uniqueChoices } from "./util.js";
 
 function getLevelPool(level) {
   return state.words.filter((word) => word.level <= level);
@@ -36,9 +36,10 @@ function repeatToCount(words, count) {
 }
 
 // 誤答の選択肢は正解と同じ級の語から作る（足りないときだけ全体から補う）。
-function sameLevelDistractors(word, pool) {
-  const same = pool.filter((item) => item.level === word.level && item.id !== word.id);
-  return same.length >= 8 ? same : pool.filter((item) => item.id !== word.id);
+function sameLevelDistractors(word, pool, options = {}) {
+  const usable = pool.filter((item) => canBeDistractor(word, item, options));
+  const same = usable.filter((item) => item.level === word.level);
+  return same.length >= 8 ? same : usable;
 }
 
 // 出題形式の比率。級が上がるほど、1語の聞き取りから例文・対話へ比重を移す。
@@ -126,7 +127,8 @@ function makeListeningDialogueQuestion(item) {
 }
 
 function makeListeningQuestion(word, level, kind = "word") {
-  const pool = sameLevelDistractors(word, getLevelPool(level));
+  // 単語を音声で出すときは、同じ音の語も選択肢に入れない。
+  const pool = sameLevelDistractors(word, getLevelPool(level), { sameSound: kind !== "sentence" || !word.example });
   if (kind === "sentence" && word.example) {
     const candidates = pool.filter((item) => item.exampleMeaning && item.id !== word.id);
     const choices = uniqueChoices([{ value: word.id, label: word.exampleMeaning }, ...shuffle(candidates).slice(0, 3).map((item) => ({ value: item.id, label: item.exampleMeaning }))]);
@@ -138,7 +140,7 @@ function makeListeningQuestion(word, level, kind = "word") {
       explanation: `${word.example}（${word.exampleMeaning}）`, audioPlays: 0,
     };
   }
-  const choices = uniqueChoices([{ value: word.id, label: word.meaning }, ...shuffle(pool.filter((item) => item.id !== word.id && item.meaning !== word.meaning)).slice(0, 3).map((item) => ({ value: item.id, label: item.meaning }))]);
+  const choices = uniqueChoices([{ value: word.id, label: word.meaning }, ...shuffle(pool).slice(0, 3).map((item) => ({ value: item.id, label: item.meaning }))]);
   return { skill: "listening", kind: "audio-word", wordId: word.id, audioWord: word, choices: shuffle(choices), correct: word.id, instruction: "音声で聞こえた単語の意味を選んでください", explanation: `${word.hanzi}（${word.pinyin}）— ${word.meaning}`, audioPlays: 0 };
 }
 
@@ -150,16 +152,16 @@ function makeReadingQuestions(level, count, source = null) {
 }
 
 function makeReadingQuestion(word, level, kind = "meaning") {
-  const pool = sameLevelDistractors(word, getLevelPool(level));
+  const pool = sameLevelDistractors(word, getLevelPool(level), { sameSound: kind === "pinyin" });
   if (kind === "pinyin") {
-    const choices = uniqueChoices([{ value: word.id, label: word.pinyin }, ...shuffle(pool.filter((item) => item.id !== word.id && item.pinyin !== word.pinyin)).slice(0, 3).map((item) => ({ value: item.id, label: item.pinyin }))]);
+    const choices = uniqueChoices([{ value: word.id, label: word.pinyin }, ...shuffle(pool).slice(0, 3).map((item) => ({ value: item.id, label: item.pinyin }))]);
     return { skill: "reading", kind: "pinyin", wordId: word.id, prompt: word.hanzi, choices: shuffle(choices), correct: word.id, instruction: "正しいピンインを選んでください", explanation: `${word.hanzi} — ${word.pinyin} — ${word.meaning}` };
   }
   if (kind === "fill" && word.example?.includes(word.hanzi)) {
-    const choices = uniqueChoices([{ value: word.id, label: word.hanzi }, ...shuffle(pool.filter((item) => item.id !== word.id && item.hanzi !== word.hanzi)).slice(0, 3).map((item) => ({ value: item.id, label: item.hanzi }))]);
+    const choices = uniqueChoices([{ value: word.id, label: word.hanzi }, ...shuffle(pool).slice(0, 3).map((item) => ({ value: item.id, label: item.hanzi }))]);
     return { skill: "reading", kind: "fill", wordId: word.id, prompt: word.example.replace(word.hanzi, "＿＿＿"), subPrompt: word.exampleMeaning, choices: shuffle(choices), correct: word.id, instruction: "空欄に入る単語を選んでください", explanation: `${word.example}（${word.exampleMeaning}）` };
   }
-  const choices = uniqueChoices([{ value: word.id, label: word.meaning }, ...shuffle(pool.filter((item) => item.id !== word.id && item.meaning !== word.meaning)).slice(0, 3).map((item) => ({ value: item.id, label: item.meaning }))]);
+  const choices = uniqueChoices([{ value: word.id, label: word.meaning }, ...shuffle(pool).slice(0, 3).map((item) => ({ value: item.id, label: item.meaning }))]);
   return { skill: "reading", kind: "meaning", wordId: word.id, prompt: word.hanzi, subPrompt: word.pinyin, choices: shuffle(choices), correct: word.id, instruction: "単語の意味を選んでください", explanation: `${word.hanzi}（${word.pinyin}）— ${word.meaning}` };
 }
 

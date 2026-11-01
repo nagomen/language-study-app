@@ -19,7 +19,19 @@ export function loadProgress() {
   } catch { return empty; }
 }
 
-export function saveProgress() { localStorage.setItem("hsk-study-progress", JSON.stringify(state.progress)); }
+// 保存に失敗しても（容量超過・プライベートブラウズなど）、解答の流れは止めない。
+let saveWarned = false;
+export function saveProgress() {
+  try {
+    localStorage.setItem("hsk-study-progress", JSON.stringify(state.progress));
+  } catch (error) {
+    console.error(error);
+    if (!saveWarned) {
+      saveWarned = true;
+      alert("学習記録を保存できませんでした（ブラウザの保存容量が足りない可能性があります）。このまま学習は続けられますが、記録は残りません。");
+    }
+  }
+}
 
 export function resetProgress() {
   if (!confirm("学習記録をすべてリセットしますか？")) return;

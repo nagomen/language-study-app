@@ -3,15 +3,15 @@ import { $, $$, activateView, bindCheckedFileActions, bindMobileNavigation } fro
 import { activeAudio, exampleAudioFile, playAudioFile, speak, speakWithBrowser, stopAudio } from "./audio.js";
 import { categoryById, closeCategoryDetail, openCategory, renderCategories, renderWordCategoryOptions, startCategoryPractice, startCategoryQuiz } from "./categories.js";
 import { clearChecked, exportChecked, importCheckedFile, renderChecked, startCheckedPractice, startCheckedQuiz, toggleChecked } from "./checked.js";
-import { buildDailyDays, getDailyListeningSet, renderDaily, resetDaily, startDailyNextSet, startDailyRetry, startDailyReview, startDailySession } from "./daily.js?v=20261004-hsk3-full";
-import { guideById, openGuide, renderGuide, startGuidePractice, startMeasurePractice } from "./guide.js?v=20261004-hsk3-full";
+import { buildDailyDays, getDailyListeningSet, renderDaily, resetDaily, startDailyNextSet, startDailyRetry, startDailyReview, startDailySession } from "./daily.js";
+import { guideById, openGuide, renderGuide, startGuidePractice, startMeasurePractice } from "./guide.js";
 import { renderExamHub, startMockExam } from "./mock.js";
-import { closePractice, nextPracticeQuestion, playPracticeAudio, playPracticeReviewAudio, retryPractice, startPractice } from "./practice.js";
+import { clearPracticeTimer, closePractice, nextPracticeQuestion, playPracticeAudio, playPracticeReviewAudio, retryPractice, startPractice } from "./practice.js";
 import { renderProgress, updateSummary } from "./progress.js";
 import { nextQuestion, retryQuiz, revealQuizExample, startNewWordsQuiz, startQuiz, startReviewQuiz } from "./quiz.js";
 import { state } from "./state.js";
 import { resetProgress, setVocabularyDirection } from "./storage.js";
-import { renderLevels, renderWords } from "./words.js";
+import { getFilteredWords, renderLevels, renderWords } from "./words.js";
 
 async function init() {
   bindEvents();
@@ -41,8 +41,9 @@ async function loadWords() {
     ]);
     const responses = vocabularyResponses.slice(0, 3);
     const supplementResponse = vocabularyResponses[3];
-    const [tagResponse, guideResponse, measureResponse, bankResponse, ...mockResponses] = await Promise.all([
+    const [tagResponse, categoryGuideResponse, guideResponse, measureResponse, bankResponse, ...mockResponses] = await Promise.all([
       loadJson("data/chinese/word-tags.json"),
+      loadJson("data/chinese/category-guides.json"),
       loadJson("data/chinese/guides.json"),
       loadJson("data/chinese/measure-words.json"),
       loadJson("data/chinese/practice-banks.json"),
@@ -52,6 +53,7 @@ async function loadWords() {
     if (responses.some((response) => !response.ok) || !supplementResponse.ok) throw new Error("JSONの読み込みに失敗しました");
     if (mockResponses.some((response) => !response.ok)) throw new Error("模試データの読み込みに失敗しました");
     if (!tagResponse.ok) throw new Error("分類データの読み込みに失敗しました");
+    if (!categoryGuideResponse.ok) throw new Error("分類別学習データの読み込みに失敗しました");
     if (!guideResponse.ok || !measureResponse.ok) throw new Error("解説データの読み込みに失敗しました");
     if (!bankResponse.ok) throw new Error("練習問題データの読み込みに失敗しました");
     const groups = await Promise.all(responses.map((response) => response.json()));
@@ -59,6 +61,7 @@ async function loadWords() {
     const mockGroups = await Promise.all(mockResponses.map((response) => response.json()));
     const tagData = await tagResponse.json();
     state.categories = tagData.categories || [];
+    state.categoryGuides = (await categoryGuideResponse.json()).guides || {};
     state.guides = (await guideResponse.json()).guides || [];
     state.measure = await measureResponse.json();
     state.banks = await bankResponse.json();
@@ -85,6 +88,11 @@ function bindEvents() {
   setVocabularyDirection(state.vocabularyDirection);
   $("#random-quiz").addEventListener("click", () => startQuiz(state.words, "all", state.vocabularyDirection));
   $("#new-words-quiz").addEventListener("click", () => startNewWordsQuiz(state.vocabularyDirection));
+  $("#word-filter-quiz").addEventListener("click", () => {
+    const pool = getFilteredWords();
+    const distractorPool = pool.length >= 4 ? pool : state.words;
+    startQuiz(pool, "word-filter", state.vocabularyDirection, distractorPool);
+  });
   $("#review-quiz").addEventListener("click", () => startReviewQuiz(state.vocabularyDirection));
   $("#open-categories").addEventListener("click", () => closeCategoryDetail());
   $("#daily-open").addEventListener("click", () => navigate("daily"));
@@ -99,7 +107,7 @@ function bindEvents() {
   $("#audio-speed").value = String(state.audioSpeed);
   $("#audio-speed").addEventListener("change", (event) => {
     state.audioSpeed = Number(event.target.value) || 1;
-    localStorage.setItem("hsk-audio-speed", String(state.audioSpeed));
+    try { localStorage.setItem("hsk-audio-speed", String(state.audioSpeed)); } catch {}
     if (activeAudio) activeAudio.playbackRate = state.audioSpeed;
   });
   $$('[data-practice]').forEach((button) => button.addEventListener("click", () => startPractice(button.dataset.practice, Number($("#practice-level").value))));
@@ -179,10 +187,22 @@ function bindEvents() {
     $("#word-category").value = state.wordCategory;
     navigate("words");
   });
-  $$(".filter-chip").forEach((button) => button.addEventListener("click", () => {
-    if (!button.dataset.level) return;
-    state.wordFilter = button.dataset.level;
-    $$(".filter-chip").forEach((chip) => chip.classList.toggle("is-active", chip === button));
+  $$('[data-word-level]').forEach((button) => button.addEventListener("click", () => {
+    state.wordFilter = button.dataset.wordLevel;
+    $$('[data-word-level]').forEach((chip) => {
+      const active = chip === button;
+      chip.classList.toggle("is-active", active);
+      chip.setAttribute("aria-pressed", String(active));
+    });
+    renderWords();
+  }));
+  $$('[data-word-edition]').forEach((button) => button.addEventListener("click", () => {
+    state.wordEditionFilter = button.dataset.wordEdition;
+    $$('[data-word-edition]').forEach((chip) => {
+      const active = chip === button;
+      chip.classList.toggle("is-active", active);
+      chip.setAttribute("aria-pressed", String(active));
+    });
     renderWords();
   }));
   $("#reset-progress").addEventListener("click", resetProgress);
@@ -256,6 +276,11 @@ function routeFromHash() {
 }
 
 export function showView(view) {
+  // 模試の途中でほかの画面へ移ったら、裏でタイマーが進んで結果画面に切り替わらないよう止める。
+  if (view !== "practice" && state.practice.timerId) {
+    clearPracticeTimer();
+    stopAudio();
+  }
   state.currentView = view;
   activateView(view);
   if (view === "daily") renderDaily();

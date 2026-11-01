@@ -1,0 +1,347 @@
+{
+  "guides": {
+    "home": {
+      "eyebrow": "HOME & LIVING",
+      "mark": "家",
+      "title": "家の中を「場所・物・動作」でつなげる",
+      "summary": "単語をばらばらに覚えず、どこに何があり、家で何をするかまで一続きで言えるようにします。",
+      "groupsTitle": "場面ごとに覚える",
+      "groupsDescription": "同じ場面で一緒に使う語をまとめました。レベル・チェック・検索の絞り込みも反映されます。",
+      "patternsTitle": "家の中を説明する6つの型",
+      "patternsDescription": "単語を入れ替えるだけで、自分の家や部屋を説明できます。",
+      "routineEyebrow": "MY ROUTINE",
+      "routineTitle": "一日の流れで仕上げる",
+      "routineDescription": "短い文を順に音読し、家の語を動作と一緒に定着させます。",
+      "groups": [
+        {
+          "title": "住まいと空間",
+          "description": "家全体、部屋、建物の単位を区別する語",
+          "wordIds": ["hsk1-045", "hsk1-145", "hsk2026-0623", "hsk2-177", "hsk2026-0879", "hsk2026-0834", "hsk2026-0897", "hsk3-457", "hsk3-331", "hsk2026-0366", "hsk3-456"]
+        },
+        {
+          "title": "出入りと移動",
+          "description": "家を出入りし、建物の中を移動する語",
+          "wordIds": ["hsk2-225", "hsk2026-0401", "hsk2026-0319", "hsk3-308", "hsk2026-0509", "hsk3-357", "hsk2026-0761"]
+        },
+        {
+          "title": "家具・家電",
+          "description": "部屋の中にある物をまとめて覚える",
+          "wordIds": ["hsk2026-0321", "hsk1-146", "hsk1-135", "hsk3-326", "hsk3-442", "hsk2026-0887", "hsk3-351"]
+        },
+        {
+          "title": "家事と生活動作",
+          "description": "一日の生活を説明するための動作",
+          "wordIds": ["hsk2-234", "hsk3-345", "hsk2026-0821", "hsk3-387"]
+        },
+        {
+          "title": "水回り・食器",
+          "description": "洗面所と食卓でよく使う語",
+          "wordIds": ["hsk3-536", "hsk2026-0877", "hsk1-004", "hsk3-477", "hsk3-527", "hsk3-614"]
+        }
+      ],
+      "patterns": [
+        {
+          "label": "物の場所",
+          "formula": "物 ＋ 在 ＋ 場所 ＋ 方位",
+          "example": {
+            "cn": "杯子在桌子上。",
+            "pinyin": "Bēizi zài zhuōzi shàng.",
+            "ja": "コップは机の上にあります。"
+          },
+          "tip": "「上・下・里・外」を場所の後ろに置きます。"
+        },
+        {
+          "label": "存在を伝える",
+          "formula": "場所 ＋ 有 ＋ 数量 ＋ 物",
+          "example": {
+            "cn": "房间里有一张桌子。",
+            "pinyin": "Fángjiān lǐ yǒu yì zhāng zhuōzi.",
+            "ja": "部屋に机が一つあります。"
+          },
+          "tip": "新しく登場する物を言うときは「場所＋有」が基本です。"
+        },
+        {
+          "label": "置かれた状態",
+          "formula": "場所 ＋ 動詞＋着 ＋ 数量 ＋ 物",
+          "example": {
+            "cn": "门口放着一把椅子。",
+            "pinyin": "Ménkǒu fàngzhe yì bǎ yǐzi.",
+            "ja": "入口に椅子が一脚置いてあります。"
+          },
+          "tip": "「着」は動作ではなく、その結果の状態が続いていることを表します。"
+        },
+        {
+          "label": "物をどうするか",
+          "formula": "把 ＋ 物 ＋ 動詞＋結果",
+          "example": {
+            "cn": "请把门关上。",
+            "pinyin": "Qǐng bǎ mén guānshàng.",
+            "ja": "ドアを閉めてください。"
+          },
+          "tip": "物に変化を与えるときは「把」で対象を動詞の前へ出します。"
+        },
+        {
+          "label": "住む階を言う",
+          "formula": "住在 ＋ 場所／階",
+          "example": {
+            "cn": "我住在三楼。",
+            "pinyin": "Wǒ zhù zài sān lóu.",
+            "ja": "私は3階に住んでいます。"
+          },
+          "tip": "「住」の直後に「在＋場所」を続けます。"
+        },
+        {
+          "label": "引っ越し先",
+          "formula": "从 A 搬到 B",
+          "example": {
+            "cn": "我们下个月搬到新房子。",
+            "pinyin": "Wǒmen xià ge yuè bān dào xīn fángzi.",
+            "ja": "私たちは来月、新しい家へ引っ越します。"
+          },
+          "tip": "出発点も言うなら「从＋場所＋搬到＋場所」にします。"
+        }
+      ],
+      "comparisons": [
+        {
+          "title": "家・房子・房间・屋子・室",
+          "rows": [
+            { "wordId": "hsk1-045", "use": "家庭・自宅という生活の中心", "example": "我回家。" },
+            { "wordId": "hsk2026-0623", "use": "建物としての家・住宅", "example": "这个房子很大。" },
+            { "wordId": "hsk2-177", "use": "用途を問わない一つの部屋", "example": "房间里有一张床。" },
+            { "wordId": "hsk2026-0879", "use": "口語的な部屋・家屋", "example": "屋子很干净。" },
+            { "wordId": "hsk2026-0834", "use": "教室・办公室など複合語で使う「室」", "example": "他在办公室。" }
+          ],
+          "tip": "日本語の「家・部屋」に一対一で当てず、建物・空間・家庭のどれを指すかで選びます。"
+        },
+        {
+          "title": "楼・层・间",
+          "rows": [
+            { "wordId": "hsk3-457", "use": "建物、または口語で階を言う", "example": "我住在三楼。" },
+            { "wordId": "hsk3-331", "use": "建物の層を数える量詞", "example": "这座楼有十层。" },
+            { "wordId": "hsk2026-0366", "use": "部屋を数える量詞", "example": "家里有三间房。" }
+          ],
+          "tip": "住所では「三楼」が自然で、建物の総階数は「十层」と言えます。"
+        },
+        {
+          "title": "打扫・扫",
+          "rows": [
+            { "wordId": "hsk3-345", "use": "部屋などを全体的に掃除する", "example": "我打扫房间。" },
+            { "wordId": "hsk2026-0821", "use": "ほうきなどで掃く動作に焦点を置く", "example": "我扫地。" }
+          ],
+          "tip": "「打扫」は掃除全般、「扫」は掃くという具体的な動作です。"
+        },
+        {
+          "title": "洗手间・卫生间",
+          "rows": [
+            { "wordId": "hsk3-536", "use": "日常会話でよく使う丁寧な言い方", "example": "洗手间在哪儿？" },
+            { "wordId": "hsk2026-0877", "use": "案内表示や住宅の説明でもよく使う", "example": "卫生间在右边。" }
+          ],
+          "tip": "どちらもトイレを指せます。地域や場面によってよく使う形が変わります。"
+        }
+      ],
+      "dialogue": {
+        "title": "部屋について話す",
+        "intro": "質問と答えを一組で音読し、場所表現を会話の中で使います。",
+        "lines": [
+          { "speaker": "A", "cn": "你住在哪儿？", "pinyin": "Nǐ zhù zài nǎr?", "ja": "どこに住んでいますか。" },
+          { "speaker": "B", "cn": "我住在一个小区里，在三楼。", "pinyin": "Wǒ zhù zài yí ge xiǎoqū lǐ, zài sān lóu.", "ja": "団地の中に住んでいて、3階です。" },
+          { "speaker": "A", "cn": "你家有电梯吗？", "pinyin": "Nǐ jiā yǒu diàntī ma?", "ja": "お宅にはエレベーターがありますか。" },
+          { "speaker": "B", "cn": "有，电梯在门口右边。", "pinyin": "Yǒu, diàntī zài ménkǒu yòubian.", "ja": "はい、入口の右側にあります。" },
+          { "speaker": "A", "cn": "你的房间怎么样？", "pinyin": "Nǐ de fángjiān zěnmeyàng?", "ja": "あなたの部屋はどうですか。" },
+          { "speaker": "B", "cn": "不大，但是很干净。我每天都打扫。", "pinyin": "Bú dà, dànshì hěn gānjìng. Wǒ měitiān dōu dǎsǎo.", "ja": "広くはないですが、とてもきれいです。毎日掃除します。" }
+        ]
+      },
+      "routine": [
+        { "step": "1", "title": "朝", "cn": "起床以后，我先开灯。", "pinyin": "Qǐchuáng yǐhòu, wǒ xiān kāi dēng.", "ja": "起きた後、まず明かりをつけます。" },
+        { "step": "2", "title": "外出前", "cn": "出门以前，我关空调。", "pinyin": "Chūmén yǐqián, wǒ guān kōngtiáo.", "ja": "出かける前に、エアコンを切ります。" },
+        { "step": "3", "title": "週末", "cn": "周末我打扫房间。", "pinyin": "Zhōumò wǒ dǎsǎo fángjiān.", "ja": "週末に部屋を掃除します。" },
+        { "step": "4", "title": "来月", "cn": "下个月我们要搬家。", "pinyin": "Xià ge yuè wǒmen yào bānjiā.", "ja": "来月、私たちは引っ越します。" }
+      ]
+    },
+    "conjunction": {
+      "eyebrow": "CONNECTING WORDS",
+      "mark": "连",
+      "title": "接続詞を「働き」と「ペア」で覚える",
+      "summary": "22語を意味の機能ごとに整理し、HSK3で頻出する前半と後半の組み合わせ、語順、似た表現の違いまで一度に確認します。",
+      "groupsTitle": "6つの働きに分ける",
+      "groupsDescription": "まず原因・逆接・条件など、何を伝える接続詞なのかで分類します。レベル・チェック・検索の絞り込みも反映されます。",
+      "patternsTitle": "HSK3で使う8つの接続パターン",
+      "patternsDescription": "片方だけで覚えず、前半と後半を一組の型として音読します。",
+      "comparisonsEyebrow": "CHOOSING CONNECTORS",
+      "comparisonsTitle": "似た接続表現を使い分ける",
+      "comparisonsDescription": "「しかし」「または」など、同じ日本語訳になりやすい語を文の種類と場面で選びます。",
+      "routineEyebrow": "PAIR PRACTICE",
+      "routineTitle": "ペアを一息で言う",
+      "routineDescription": "前半を見たら後半が自然に出るまで、接続詞を含む文全体を音読します。",
+      "groups": [
+        {
+          "title": "並列・追加",
+          "description": "語を並べたり、情報を付け足したりする",
+          "wordIds": ["hsk1-038", "hsk3-382", "hsk3-602", "hsk3-367"]
+        },
+        {
+          "title": "逆接・限定",
+          "description": "予想と反対の内容や、条件の限定を続ける",
+          "wordIds": ["hsk2026-0330", "hsk2-169", "hsk2026-0731", "hsk2026-0734", "hsk3-511", "hsk2026-0978"]
+        },
+        {
+          "title": "原因・結果",
+          "description": "理由と、そこから生じる結果をつなぐ",
+          "wordIds": ["hsk2-279", "hsk2-248"]
+        },
+        {
+          "title": "条件",
+          "description": "もし・さえすれば・してこそを区別する",
+          "wordIds": ["hsk3-495", "hsk2026-0979", "hsk3-622"]
+        },
+        {
+          "title": "選択",
+          "description": "疑問文の選択と、平叙文の選択を分ける",
+          "wordIds": ["hsk3-403", "hsk2026-0685", "hsk3-408"]
+        },
+        {
+          "title": "話の展開・目的",
+          "description": "次の話や動作へ進め、目的を示す",
+          "wordIds": ["hsk1-071", "hsk2026-0406", "hsk3-490", "hsk3-531"]
+        }
+      ],
+      "patterns": [
+        {
+          "label": "原因 → 結果",
+          "formula": "因为 A，所以 B",
+          "example": {
+            "cn": "因为今天有考试，所以我早起了。",
+            "pinyin": "Yīnwèi jīntiān yǒu kǎoshì, suǒyǐ wǒ zǎoqǐ le.",
+            "ja": "今日は試験があるので、早起きしました。"
+          },
+          "tip": "因为で理由を出し、所以で結論を示します。主語は因为の前にも後ろにも置けます。"
+        },
+        {
+          "label": "譲歩 → 逆接",
+          "formula": "虽然 A，但是 B",
+          "example": {
+            "cn": "虽然很累，但是我还要复习。",
+            "pinyin": "Suīrán hěn lèi, dànshì wǒ hái yào fùxí.",
+            "ja": "疲れていますが、それでも復習します。"
+          },
+          "tip": "但是は可是に替えられます。日本語の「が」と違い、虽然と対にして覚えます。"
+        },
+        {
+          "label": "仮定 → 結果",
+          "formula": "如果 A，就 B",
+          "example": {
+            "cn": "如果明天有时间，我们就去看电影。",
+            "pinyin": "Rúguǒ míngtiān yǒu shíjiān, wǒmen jiù qù kàn diànyǐng.",
+            "ja": "明日時間があれば、映画を見に行きます。"
+          },
+          "tip": "就は副詞なので、後半の主語「我们」の後ろに置きます。"
+        },
+        {
+          "label": "追加・強調",
+          "formula": "不但 A，而且 B",
+          "example": {
+            "cn": "他不但会说汉语，而且会写汉字。",
+            "pinyin": "Tā búdàn huì shuō Hànyǔ, érqiě huì xiě Hànzì.",
+            "ja": "彼は中国語を話せるだけでなく、漢字も書けます。"
+          },
+          "tip": "後半をさらに強調するときは「而且还…」も使えます。"
+        },
+        {
+          "label": "十分条件",
+          "formula": "只要 A，就 B",
+          "example": {
+            "cn": "只要每天练习，就会进步。",
+            "pinyin": "Zhǐyào měitiān liànxí, jiù huì jìnbù.",
+            "ja": "毎日練習さえすれば、上達します。"
+          },
+          "tip": "Aを満たせばBになる、という達成しやすい条件を表します。"
+        },
+        {
+          "label": "必要条件",
+          "formula": "只有 A，才 B",
+          "example": {
+            "cn": "只有认真听，才能听懂。",
+            "pinyin": "Zhǐyǒu rènzhēn tīng, cái néng tīngdǒng.",
+            "ja": "真剣に聞いてこそ、聞き取れます。"
+          },
+          "tip": "AでなければBにならない、という限定の強い条件です。後半は才です。"
+        },
+        {
+          "label": "動作の順序",
+          "formula": "先 A，然后 B",
+          "example": {
+            "cn": "我先做作业，然后看电视。",
+            "pinyin": "Wǒ xiān zuò zuòyè, ránhòu kàn diànshì.",
+            "ja": "まず宿題をして、それからテレビを見ます。"
+          },
+          "tip": "然后は単なる追加ではなく、時間的に次の動作へ進むことを示します。"
+        },
+        {
+          "label": "疑問文の選択",
+          "formula": "A 还是 B？",
+          "example": {
+            "cn": "你想喝茶还是咖啡？",
+            "pinyin": "Nǐ xiǎng hē chá háishi kāfēi?",
+            "ja": "お茶とコーヒーのどちらを飲みたいですか。"
+          },
+          "tip": "相手に選ばせる疑問文では还是を使い、或者にはしません。"
+        }
+      ],
+      "comparisons": [
+        {
+          "title": "但・但是・可・可是",
+          "rows": [
+            { "wordId": "hsk2026-0330", "use": "短く引き締まった「しかし」。書き言葉にも多い", "example": "我想去，但没时间。" },
+            { "wordId": "hsk2-169", "use": "最も基本的な「しかし」", "example": "很贵，但是很好。" },
+            { "wordId": "hsk2026-0731", "use": "口語の対比。文脈により強調の「本当に」にもなる", "example": "我想去，可没时间。" },
+            { "wordId": "hsk2026-0734", "use": "口語的で柔らかい「でも」", "example": "我想去，可是没时间。" }
+          ],
+          "tip": "HSKではまず但是を基準にし、短い但、口語的な可是へ広げると整理しやすくなります。"
+        },
+        {
+          "title": "还是・或者・或",
+          "rows": [
+            { "wordId": "hsk3-403", "use": "疑問文で相手にAかBかを選ばせる", "example": "你喝茶还是咖啡？" },
+            { "wordId": "hsk3-408", "use": "平叙文で「AまたはB」という選択肢を示す", "example": "坐车或者走路都可以。" },
+            { "wordId": "hsk2026-0685", "use": "或者の短い形。書き言葉でよく使う", "example": "请打电话或发邮件。" }
+          ],
+          "tip": "質問の選択は还是、説明の中の選択は或者／或、と分けます。"
+        },
+        {
+          "title": "只要・只有",
+          "rows": [
+            { "wordId": "hsk2026-0979", "use": "Aさえ満たせばよい。後半は就", "example": "只要努力，就会进步。" },
+            { "wordId": "hsk3-622", "use": "Aでなければ実現しない。後半は才", "example": "只有努力，才会进步。" }
+          ],
+          "tip": "只要…就…は十分条件、只有…才…は必要条件です。後半の就／才までセットで選びます。"
+        },
+        {
+          "title": "和・跟",
+          "rows": [
+            { "wordId": "hsk1-038", "use": "名詞や語句を並べる基本の「〜と」", "example": "我和他是同学。" },
+            { "wordId": "hsk3-382", "use": "口語的な「〜と」。一緒に行う相手も示す", "example": "我跟朋友一起去。" }
+          ],
+          "tip": "どちらも通常は語と語を結びます。日本語の「そして」のように二つの文をそのまま結ばない点に注意します。"
+        }
+      ],
+      "dialogue": {
+        "title": "接続詞で答えを広げる",
+        "intro": "短い返事で終わらず、理由・逆接・条件・追加を使って一段長い文を作ります。",
+        "lines": [
+          { "speaker": "A", "cn": "你为什么学汉语？", "pinyin": "Nǐ wèishénme xué Hànyǔ?", "ja": "なぜ中国語を勉強しているのですか。" },
+          { "speaker": "B", "cn": "因为我想去中国，所以每天都学习。", "pinyin": "Yīnwèi wǒ xiǎng qù Zhōngguó, suǒyǐ měitiān dōu xuéxí.", "ja": "中国へ行きたいので、毎日勉強しています。" },
+          { "speaker": "A", "cn": "虽然很忙，你还是每天学吗？", "pinyin": "Suīrán hěn máng, nǐ háishi měitiān xué ma?", "ja": "忙しくても、やはり毎日勉強しますか。" },
+          { "speaker": "B", "cn": "对。只要有时间，我就练习。", "pinyin": "Duì. Zhǐyào yǒu shíjiān, wǒ jiù liànxí.", "ja": "はい。時間さえあれば練習します。" },
+          { "speaker": "A", "cn": "你喜欢听，还是喜欢读？", "pinyin": "Nǐ xǐhuan tīng, háishi xǐhuan dú?", "ja": "聞くことと読むことでは、どちらが好きですか。" },
+          { "speaker": "B", "cn": "我不但喜欢听，而且也喜欢读。", "pinyin": "Wǒ búdàn xǐhuan tīng, érqiě yě xǐhuan dú.", "ja": "聞くことだけでなく、読むことも好きです。" }
+        ]
+      },
+      "routine": [
+        { "step": "1", "title": "原因", "cn": "因为今天下雨，所以我在家学习。", "pinyin": "Yīnwèi jīntiān xià yǔ, suǒyǐ wǒ zài jiā xuéxí.", "ja": "今日は雨なので、家で勉強します。" },
+        { "step": "2", "title": "逆接", "cn": "虽然汉字很难，但是我觉得很有意思。", "pinyin": "Suīrán Hànzì hěn nán, dànshì wǒ juéde hěn yǒuyìsi.", "ja": "漢字は難しいですが、とても面白いと思います。" },
+        { "step": "3", "title": "条件", "cn": "只要每天练习，就会进步。", "pinyin": "Zhǐyào měitiān liànxí, jiù huì jìnbù.", "ja": "毎日練習さえすれば、上達します。" },
+        { "step": "4", "title": "追加", "cn": "我不但会读，而且会写。", "pinyin": "Wǒ búdàn huì dú, érqiě huì xiě.", "ja": "私は読めるだけでなく、書くこともできます。" }
+      ]
+    }
+  }
+}

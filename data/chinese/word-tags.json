@@ -142,7 +142,7 @@
       "id": "home",
       "group": "topic",
       "label": "家・住まい",
-      "description": "房间・桌子・厨房など、家の中の語"
+      "description": "部屋・家具家電・家事・位置表現など、住まいで使う語"
     },
     {
       "id": "daily",
@@ -767,7 +767,8 @@
     ],
     "hsk2-234": [
       "verb",
-      "daily"
+      "daily",
+      "home"
     ],
     "hsk2-235": [
       "number"
@@ -1308,13 +1309,15 @@
       "verb"
     ],
     "hsk2026-0319": [
-      "verb"
+      "verb",
+      "home"
     ],
     "hsk2026-0320": [
       "verb"
     ],
     "hsk2026-0321": [
-      "daily"
+      "daily",
+      "home"
     ],
     "hsk2026-0322": [
       "daily"
@@ -1469,7 +1472,8 @@
       "cognition"
     ],
     "hsk2026-0366": [
-      "measure"
+      "measure",
+      "home"
     ],
     "hsk3-421": [
       "verb",
@@ -1591,7 +1595,8 @@
       "home"
     ],
     "hsk2026-0401": [
-      "daily"
+      "daily",
+      "home"
     ],
     "hsk2026-0402": [
       "daily"
@@ -1956,7 +1961,8 @@
       "daily"
     ],
     "hsk2026-0509": [
-      "verb"
+      "verb",
+      "home"
     ],
     "hsk2026-0510": [
       "verb"
@@ -2323,7 +2329,8 @@
       "daily"
     ],
     "hsk2026-0623": [
-      "daily"
+      "daily",
+      "home"
     ],
     "hsk3-372": [
       "verb"
@@ -2778,7 +2785,8 @@
       "cognition"
     ],
     "hsk3-456": [
-      "people"
+      "people",
+      "home"
     ],
     "hsk3-612": [
       "verb",
@@ -2788,7 +2796,8 @@
       "daily"
     ],
     "hsk2026-0761": [
-      "daily"
+      "daily",
+      "home"
     ],
     "hsk2026-0762": [
       "daily"
@@ -2994,7 +3003,8 @@
       "weather"
     ],
     "hsk2026-0821": [
-      "verb"
+      "verb",
+      "home"
     ],
     "hsk2026-0822": [
       "daily"
@@ -3034,7 +3044,8 @@
       "verb"
     ],
     "hsk2026-0834": [
-      "daily"
+      "daily",
+      "home"
     ],
     "hsk3-501": [
       "travel"
@@ -3178,13 +3189,15 @@
       "conjunction"
     ],
     "hsk2026-0877": [
-      "daily"
+      "daily",
+      "home"
     ],
     "hsk3-533": [
       "school"
     ],
     "hsk2026-0879": [
-      "daily"
+      "daily",
+      "home"
     ],
     "hsk3-534": [
       "direction"
@@ -3209,7 +3222,8 @@
       "verb"
     ],
     "hsk2026-0887": [
-      "daily"
+      "daily",
+      "home"
     ],
     "hsk3-537": [
       "verb",
@@ -3246,7 +3260,8 @@
       "daily"
     ],
     "hsk2026-0897": [
-      "daily"
+      "daily",
+      "home"
     ],
     "hsk3-544": [
       "verb",

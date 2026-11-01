@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// 文法ガイド（data/chinese/guides.json）と量詞ページ（data/chinese/measure-words.json）を検証する。
+// 文法ガイド・分類別学習ページ・量詞ページのデータを検証する。
 //   node scripts/check_guides.mjs
 // 参照している単語IDが実在するか、量詞ページが measure ラベルの語を漏れなく扱っているか、
 // 語彙表外の実用量詞に見出し・ピンイン・レベルがあるか、
@@ -92,6 +92,52 @@ for (const group of measure.groups) {
   if (!measure.items.some((item) => item.group === group.id)) errors.push(`量詞グループ「${group.label}」に項目がありません`);
 }
 
+// --- 分類別学習ページ ---
+const { guides: categoryGuides } = await loadChineseData("category-guides.json");
+const categoryIds = new Set(tagData.categories.map((category) => category.id));
+for (const [categoryId, guide] of Object.entries(categoryGuides || {})) {
+  const label = `分類別学習 ${categoryId}`;
+  if (!categoryIds.has(categoryId)) errors.push(`${label}: 分類IDが word-tags.json にありません`);
+  if (!guide.title || !guide.summary) errors.push(`${label}: title か summary が未設定`);
+  if (!guide.groups?.length) errors.push(`${label}: 単語グループがありません`);
+  const groupedIds = guide.groups?.flatMap((group) => group.wordIds || []) || [];
+  const duplicateIds = groupedIds.filter((id, index) => groupedIds.indexOf(id) !== index);
+  if (duplicateIds.length) errors.push(`${label}: 単語グループ内でIDが重複しています → ${[...new Set(duplicateIds)].join(", ")}`);
+  const taggedIds = Object.entries(tagData.words).filter(([, tags]) => tags.includes(categoryId)).map(([id]) => id);
+  const missingFromGuide = taggedIds.filter((id) => !groupedIds.includes(id));
+  if (missingFromGuide.length) errors.push(`${label}: 分類タグはあるのに学習グループにない単語があります → ${missingFromGuide.join(", ")}`);
+  for (const group of guide.groups || []) {
+    if (!group.title || !group.description || !group.wordIds?.length) errors.push(`${label}: title・description・wordIds が不足した単語グループがあります`);
+    for (const id of group.wordIds || []) {
+      checkWordId(`${label} / ${group.title}`, id);
+      if (!tagData.words[id]?.includes(categoryId)) errors.push(`${label}: ${id} に分類タグ「${categoryId}」がありません`);
+    }
+  }
+  for (const [index, pattern] of (guide.patterns || []).entries()) {
+    const patternLabel = `${label} 文型${index + 1}`;
+    if (!pattern.label || !pattern.formula || !pattern.tip) errors.push(`${patternLabel}: label・formula・tip のいずれかが未設定`);
+    checkPhrase(patternLabel, pattern.example);
+  }
+  for (const [index, comparison] of (guide.comparisons || []).entries()) {
+    const comparisonLabel = `${label} 比較${index + 1}`;
+    if (!comparison.title || !comparison.tip || comparison.rows?.length < 2) errors.push(`${comparisonLabel}: title・tip・rows が不足しています`);
+    for (const row of comparison.rows || []) {
+      checkWordId(comparisonLabel, row.wordId);
+      if (!row.use || !row.example) errors.push(`${comparisonLabel}: use か example が未設定`);
+    }
+  }
+  if (!guide.dialogue?.title || !guide.dialogue?.lines?.length) errors.push(`${label}: 会話が未設定`);
+  for (const [index, line] of (guide.dialogue?.lines || []).entries()) {
+    if (!line.speaker) errors.push(`${label} 会話${index + 1}: speaker が未設定`);
+    checkPhrase(`${label} 会話${index + 1}`, line);
+  }
+  if (!guide.routine?.length) errors.push(`${label}: 生活ルーティンが未設定`);
+  for (const [index, item] of (guide.routine || []).entries()) {
+    if (!item.step || !item.title) errors.push(`${label} ルーティン${index + 1}: step か title が未設定`);
+    checkPhrase(`${label} ルーティン${index + 1}`, item);
+  }
+}
+
 // --- 文法ガイド ---
 const { guides } = await loadChineseData("guides.json");
 const guideIds = new Set();
@@ -158,5 +204,5 @@ if (errors.length) {
   console.error(`\n${errors.length}件のエラーがあります。`);
   process.exit(1);
 }
-console.log(`数量詞 ${measure.items.length}語・数の型 ${measure.numberPatterns?.length || 0}件・比較 ${measure.comparisons?.length || 0}件 / ガイド ${guides.length}件（練習 ${guides.reduce((sum, guide) => sum + guide.practice.length, 0)}問）`);
+console.log(`数量詞 ${measure.items.length}語・数の型 ${measure.numberPatterns?.length || 0}件・比較 ${measure.comparisons?.length || 0}件 / 分類別学習 ${Object.keys(categoryGuides || {}).length}件 / ガイド ${guides.length}件（練習 ${guides.reduce((sum, guide) => sum + guide.practice.length, 0)}問）`);
 console.log(warnings.length ? `検証に成功しました（警告 ${warnings.length}件）。` : "検証に成功しました。");

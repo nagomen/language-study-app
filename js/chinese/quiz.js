@@ -9,7 +9,7 @@ import { recordStudy, updateSummary } from "./progress.js";
 import { buildQuizReview, setReview } from "./review.js";
 import { state } from "./state.js";
 import { saveProgress } from "./storage.js";
-import { wordLevelLabel } from "./util.js";
+import { canBeDistractor, wordLevelLabel } from "./util.js";
 
 export function startQuiz(pool, source, direction = "cn-ja", distractorPool = null, options = {}) {
   if (!pool.length) {
@@ -18,10 +18,10 @@ export function startQuiz(pool, source, direction = "cn-ja", distractorPool = nu
   }
   // 出題数が少ない復習・チェックでは、選択肢が足りなくならないよう全単語から誤答を作る。
   const choicePool = distractorPool?.length ? [...distractorPool] : [...pool];
-  // 毎日40語は順番（復習→新出）を保ったまま全問出す。ふだんの単語テストは10問までランダム。
+  // 毎日30語は順番（復習→新出）を保ったまま全問出す。ふだんの単語テストは10問までランダム。
   const ordered = options.keepOrder ? [...pool] : shuffle([...pool]);
   const questions = ordered.slice(0, Math.min(options.limit || 10, pool.length));
-  state.quiz = { questions, choicePool, index: 0, correct: 0, answered: false, source, direction, answers: [], markedForReview: new Set() };
+  state.quiz = { questions, sourcePool: [...pool], choicePool, index: 0, correct: 0, answered: false, source, direction, answers: [], markedForReview: new Set() };
   showView("quiz");
   renderQuestion();
 }
@@ -57,7 +57,7 @@ function renderQuestion() {
   $("#quiz-example").classList.add("is-hidden");
   $("#next-question").classList.add("is-hidden");
 
-  const distractors = shuffle((state.quiz.choicePool || state.words).filter((item) => item.id !== word.id && (isReverse ? item.hanzi !== word.hanzi : item.meaning !== word.meaning))).slice(0, 3);
+  const distractors = shuffle((state.quiz.choicePool || state.words).filter((item) => canBeDistractor(word, item))).slice(0, 3);
   const choices = shuffle([word, ...distractors]);
   const answerList = $("#answer-list");
   answerList.innerHTML = "";
@@ -162,7 +162,7 @@ export function nextQuestion() {
 function finishQuiz() {
   const isDaily = String(state.quiz.source).startsWith("daily");
   if (isDaily) completeDailySession();
-  // 毎日40語は終えると次の日に進むので、「もう一度」ではなく次に進むボタンにする。
+  // 毎日30語は終えると次の日に進むので、「もう一度」ではなく次に進むボタンにする。
   $("#retry-quiz").textContent = isDaily
     ? (state.quiz.source === "daily-review" ? "もう一度復習する" : "今日の単語をもう一度")
     : "もう一度挑戦";
@@ -180,6 +180,10 @@ export function retryQuiz() {
   const direction = state.quiz.direction || "cn-ja";
   if (source === "review") return startReviewQuiz(direction);
   if (source === "new-2026") return startNewWordsQuiz(direction);
+  if (source === "word-filter") {
+    const pool = state.quiz.sourcePool || [];
+    return startQuiz(pool, source, direction, pool.length >= 4 ? pool : state.words);
+  }
   if (source === "checked") return startCheckedQuiz();
   if (source === "daily" || source === "daily-extra") return startDailyRetry();
   if (source === "daily-retry") return startDailyRetry();

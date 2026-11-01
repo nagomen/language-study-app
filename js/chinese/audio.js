@@ -5,6 +5,9 @@ import { state } from "./state.js";
 
 export let activeAudio = null;
 
+// 音声ファイルを作り直したら上げる（ブラウザに残った古い音声を使わせない）。
+const AUDIO_VERSION = "audio-20261101";
+
 let speechRunId = 0;
 
 function wordAudioExtension(word) { return word?.exampleKind === "context" ? "wav" : "m4a"; }
@@ -38,7 +41,7 @@ export function playAudioFile(file, button, options = {}) {
   if (!file) return speakWithBrowser(options.fallbackText, button, { rate: options.fallbackRate || .78, role: options.role || "female" });
   stopAudio();
   button?.classList.add("is-playing");
-  const audio = new Audio(`${file}?v=audio-20261004`);
+  const audio = new Audio(`${file}?v=${AUDIO_VERSION}`);
   const playbackRate = options.lockRate ? (options.baseRate || 1) : Math.max(.7, Math.min(1.3, (options.baseRate || 1) * state.audioSpeed));
   audio.playbackRate = playbackRate;
   audio.preservesPitch = true;
@@ -48,8 +51,10 @@ export function playAudioFile(file, button, options = {}) {
     if (typeof options.onEnded === "function") options.onEnded();
   }, { once: true });
   let fallbackStarted = false;
-  const startFallback = () => {
-    if (fallbackStarted) return;
+  const startFallback = (error) => {
+    // 再生前に次の音声へ切り替えると、この音声の play() は AbortError で失敗する。
+    // そのときに読み上げへ切り替えると、新しい音声と重なって鳴ってしまう。
+    if (fallbackStarted || activeAudio !== audio || error?.name === "AbortError") return;
     fallbackStarted = true;
     finishAudioButton(button);
     if (options.dialogue) speakDialogue(options.fallbackText, button, (options.fallbackRate || .78) * state.audioSpeed);
