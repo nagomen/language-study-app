@@ -4,7 +4,7 @@ import { exampleAudioFile, playAudioFile, speak, speakDialogue, speakWithBrowser
 import { startCategoryPractice } from "./categories.js";
 import { startCheckedPractice } from "./checked.js";
 import { EXAM_CONFIG, LISTENING_MIX, PRACTICE_TARGET_RATIO, READING_MIX, SKILL_LABELS } from "./config.js";
-import { recordListeningResult, recordUnitResult, startUnitListening, startUnitPractice } from "./grammar.js";
+import { recordListeningResult, recordStepResult, recordUnitResult, startStepTest, startUnitListening, startUnitPractice, stepLabel, stepReadyForTest } from "./grammar.js";
 import { multiAnswerValue, startGuidePractice, startMeasurePractice } from "./guide.js";
 import { navigate, showView } from "./main.js";
 import { startMockExam, startMockSectionTimer } from "./mock.js";
@@ -636,8 +636,17 @@ export function finishPractice(timedOut = Boolean(state.practice.timedOutSection
     $("#practice-result-subtitle").textContent = "今回の結果";
     $("#practice-result-message").textContent = attempted && session.correct / attempted >= .8 ? "よくできました！次の技能にも挑戦しましょう。" : "間違えた単語は間隔反復に追加しました。";
     $("#practice-breakdown").innerHTML = Object.entries(session.sectionStats).map(([skill, data]) => `<div><span>${SKILL_LABELS[skill]}</span><strong>${data.correct}</strong><small>/ ${data.answered}</small></div>`).join("");
+    // 文法のまとめテスト：8割以上でステップを合格にする。
+    if (session.lastStart?.stepId) {
+      const { passed, next } = recordStepResult(session.lastStart.stepId, session.correct, session.questions.length);
+      $("#practice-result-title").textContent = passed ? "まとめテスト合格" : "まとめテスト完了";
+      $("#practice-result-unit").textContent = `/ ${session.questions.length} 問`;
+      $("#practice-result-message").textContent = passed
+        ? (next ? `合格です。次は${stepLabel(next)}へ進みましょう。` : "合格です。HSK2・3の文法をすべて学び終えました。")
+        : `合格は${Math.ceil(session.questions.length * 0.8)}問以上です。振り返りで間違えた問題の［単元］を確認して、見直してから再挑戦しましょう。`;
+    }
     // 文法の聞き取りチェック：結果は記録するが、単元の合否には使わない。
-    if (session.lastStart?.unitId && session.lastStart.listening) {
+    else if (session.lastStart?.unitId && session.lastStart.listening) {
       recordListeningResult(session.lastStart.unitId, session.correct, session.questions.length);
       $("#practice-result-title").textContent = "聞き取りチェック完了";
       $("#practice-result-unit").textContent = `/ ${session.questions.length} 問`;
@@ -650,7 +659,10 @@ export function finishPractice(timedOut = Boolean(state.practice.timedOutSection
       const passed = recordUnitResult(session.lastStart.unitId, session.correct, session.questions.length);
       $("#practice-result-title").textContent = passed ? "合格です" : "確認ドリル完了";
       $("#practice-result-unit").textContent = `/ ${session.questions.length} 問`;
-      $("#practice-result-message").textContent = passed
+      const ready = passed ? stepReadyForTest(session.lastStart.unitId) : null;
+      $("#practice-result-message").textContent = ready
+        ? `8割以上できました。${stepLabel(ready)}の単元はすべて合格です。文法の一覧からまとめテストに挑戦しましょう。`
+        : passed
         ? "8割以上できました。次の単元へ進みましょう。"
         : `合格は${Math.ceil(session.questions.length * 0.8)}問以上です。解説とよくある間違いを見直して、もう一度挑戦しましょう。`;
     }
@@ -668,6 +680,7 @@ export function retryPractice() {
     const words = last.sourceIds.map((id) => state.words.find((word) => word.id === id)).filter(Boolean);
     startPractice(last.mode, last.level, words, last.sourceMeta);
   }
+  else if (last.stepId) startStepTest(last.stepId);
   else if (last.unitId && last.listening) startUnitListening(last.unitId);
   else if (last.unitId) startUnitPractice(last.unitId);
   else if (last.guideId === "measure") startMeasurePractice();

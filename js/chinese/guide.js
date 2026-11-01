@@ -330,10 +330,10 @@ function measurePracticeQuestions(count = 20) {
   return shuffle(picked).slice(0, count);
 }
 
-export function startCustomPractice(questions, { label, modeLabel, level, guideId = null, unitId = null, listening = false }) {
+export function startCustomPractice(questions, { label, modeLabel, level, guideId = null, unitId = null, stepId = null, listening = false }) {
   clearPracticeTimer();
   if (!questions.length) return;
-  $("#practice-home").textContent = unitId ? "単元のページへ" : (guideId === "measure" ? "量詞のページへ" : "解説ページへ");
+  $("#practice-home").textContent = unitId ? "単元のページへ" : stepId ? "文法の一覧へ" : (guideId === "measure" ? "量詞のページへ" : "解説ページへ");
   state.practice = {
     ...emptyPractice(),
     mode: "guide",
@@ -341,7 +341,7 @@ export function startCustomPractice(questions, { label, modeLabel, level, guideI
     questions,
     sourceLabel: label,
     modeLabel,
-    lastStart: { mode: "guide", level, isMock: false, guideId, unitId, listening },
+    lastStart: { mode: "guide", level, isMock: false, guideId, unitId, stepId, listening },
     sectionStats: {},
   };
   showView("practice");

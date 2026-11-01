@@ -119,6 +119,18 @@ for (const [from, to] of Object.entries(plan.redirects)) {
   if (!ok) errors.push(`転送先が実在しない: ${from} → ${to}`);
 }
 
+// まとめテスト（15問：聞く4・並べる3・選択と○×で残り）を、ステップごとに作れるだけの問題があること。
+for (const step of plan.steps) {
+  const stepUnits = plan.units.filter((unit) => unit.step === step.id);
+  const practice = [...stepUnits.flatMap((unit) => unit.practice || []), ...(step.review?.practice || [])];
+  const reorders = practice.filter((item) => item.kind === "reorder").length;
+  const reading = practice.length - reorders + stepUnits.reduce((sum, unit) => sum + (unit.compare || []).length, 0) + (step.review?.compare || []).length;
+  const dialogues = stepUnits.filter((unit) => unit.dialogue).length;
+  if (reorders < 3) errors.push(`ステップ ${step.id}: まとめテストの語順問題が${reorders}問（3問必要）`);
+  if (dialogues < 2) errors.push(`ステップ ${step.id}: まとめテストの会話が${dialogues}件（2件必要）`);
+  if (reading < 8) errors.push(`ステップ ${step.id}: まとめテストの選択・○×問題が${reading}問（8問必要）`);
+}
+
 // 録音：文法の例文・聞き取り問題の文は、すべて録音済みであること（scripts/generate_sentence_audio.mjs で作る）。
 const audioManifest = read("audio/manifest.json").items || {};
 const recorded = grammarAudioTexts(plan, read("data/chinese/guides.json").guides || []);

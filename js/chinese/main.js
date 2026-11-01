@@ -5,7 +5,7 @@ import { activeAudio, exampleAudioFile, playAudioFile, speak, speakWithBrowser, 
 import { categoryById, closeCategoryDetail, openCategory, renderCategories, renderWordCategoryOptions, startCategoryPractice, startCategoryQuiz } from "./categories.js";
 import { clearChecked, exportChecked, importCheckedFile, renderChecked, startCheckedPractice, startCheckedQuiz, toggleChecked } from "./checked.js";
 import { buildDailyDays, getDailyListeningSet, renderDaily, resetDaily, startDailyNextSet, startDailyRetry, startDailyReview, startDailySession } from "./daily.js";
-import { continueUnit, grammarRedirect, openGrammarMap, openUnit, renderGrammar, unitById, updateGrammarHome } from "./grammar.js";
+import { grammarRedirect, openContinue, openGrammarMap, openUnit, renderGrammar, unitById, updateGrammarHome } from "./grammar.js";
 import { guideById, openGuide, renderGuide, startGuidePractice, startMeasurePractice } from "./guide.js";
 import { renderExamHub, startMockExam } from "./mock.js";
 import { clearPracticeTimer, closePractice, nextPracticeQuestion, playPracticeAudio, playPracticeReviewAudio, retryPractice, startPractice } from "./practice.js";
@@ -139,6 +139,7 @@ function bindEvents() {
     const last = state.practice.lastStart;
     if (last?.returnView === "daily") navigate("daily");
     else if (last?.unitId) openUnit(last.unitId);
+    else if (last?.stepId) openGrammarMap(last.stepId);
     else if (last?.guideId === "measure") openCategory("measure");
     else if (last?.guideId) openGuide(last.guideId);
     else if (last?.categoryId) openCategory(last.categoryId);
@@ -229,7 +230,8 @@ function bindEvents() {
     if (grammarButton) {
       const target = grammarButton.dataset.grammarOpen;
       if (!target) openGrammarMap();
-      else openUnit(target === "continue" ? continueUnit()?.id : target);
+      else if (target === "continue") openContinue();
+      else openUnit(target);
     }
     // 文法の例文は録音を再生する。録音のない短いフレーズ（量詞ページなど）はブラウザの音声で読み上げる。
     const speakButton = event.target.closest("[data-speak]");
@@ -311,12 +313,13 @@ export function showView(view) {
   if (view === "daily") renderDaily();
   if (view === "words") renderWords();
   if (view === "categories") renderCategories();
-  if (view === "grammar") renderGrammar();
+  // 文法の一覧で「続きから」のまとめテストへ移動したときは、先頭へ戻さない。
+  const keepScroll = view === "grammar" && renderGrammar();
   if (view === "guide") renderGuide();
   if (view === "checked") renderChecked();
   if (view === "exam") renderExamHub();
   if (view === "progress") renderProgress();
-  window.scrollTo({ top: 0, behavior: "smooth" });
+  if (!keepScroll) window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
 // 何かの拍子にこのモジュールが2回読まれても、初期化は1回だけにする。

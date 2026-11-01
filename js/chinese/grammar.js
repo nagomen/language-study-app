@@ -11,6 +11,8 @@ const PROGRESS_KEY = "hsk-grammar-progress-v1";
 const DRILL_SIZE = 5;
 const PASS_RATIO = 0.8;   // 5問中4問で合格
 const LISTEN_SIZE = 3;    // 聞き取りチェックの問数（合否には使わない）
+const STEP_TEST_SIZE = 15;  // ステップのまとめテスト（聞く4・並べる3・残りは選択と○×）
+const STEP_TEST_MIX = { listening: 4, reorder: 3 };
 const STATUS_LABEL = { new: "未着手", learning: "学習中", passed: "合格", draft: "準備中" };
 
 // 進み具合は学習記録とは別に保存する（学習記録をリセットしても消えない）。
@@ -19,8 +21,9 @@ function grammarProgress() {
   if (progress) return progress;
   try {
     const saved = JSON.parse(localStorage.getItem(PROGRESS_KEY) || "{}");
-    progress = { units: saved && typeof saved.units === "object" && saved.units ? saved.units : {} };
-  } catch { progress = { units: {} }; }
+    const object = (value) => (value && typeof value === "object" ? value : {});
+    progress = { units: object(saved?.units), steps: object(saved?.steps) };
+  } catch { progress = { units: {}, steps: {} }; }
   return progress;
 }
 function saveGrammarProgress() {
@@ -41,11 +44,30 @@ export function unitStatus(unit) {
   return record ? "learning" : "new";
 }
 
-/** 「続きから」の単元：解説のある単元のうち、順番がいちばん早い未合格の単元。 */
-export function continueUnit() {
-  return units().find((unit) => hasContent(unit) && unitStatus(unit) !== "passed")
-    || units().find((unit) => unitStatus(unit) !== "passed") || units()[0] || null;
+const stepPassed = (step) => Boolean(grammarProgress().steps[step.id]?.passed);
+const stepUnitsOf = (step) => units().filter((unit) => unit.step === step.id);
+
+/**
+ * 「続きから」：ステップの順に見て、未合格の単元があればその単元、
+ * 単元はすべて合格したのにまとめテストが未合格ならそのステップ（{ step }）。すべて済んでいれば null。
+ */
+export function nextAction() {
+  for (const step of state.grammar?.steps || []) {
+    const unit = stepUnitsOf(step).find((item) => hasContent(item) && unitStatus(item) !== "passed");
+    if (unit) return { unit };
+    if (!stepPassed(step)) return { step };
+  }
+  return null;
 }
+
+/** 「続きから」を開く：単元ならそのページ、まとめテストなら一覧のそのステップの位置。 */
+export function openContinue() {
+  const next = nextAction();
+  if (next?.unit) openUnit(next.unit.id);
+  else openGrammarMap(next?.step?.id || null);
+}
+
+const nextActionLabel = (next) => (next?.unit ? next.unit.title : next?.step ? `STEP ${stepNumber(next.step)}（HSK${next.step.level}）のまとめテスト` : "");
 
 export function openUnit(id) {
   if (!unitById(id)) return;
@@ -54,11 +76,14 @@ export function openUnit(id) {
   else window.location.hash = `grammar/${id}`;
 }
 
-export function openGrammarMap() {
+/** 文法の一覧を開く。stepId を渡すと、そのステップのまとめテストの位置まで移動する。 */
+export function openGrammarMap(stepId = null) {
   state.selectedUnit = null;
+  focusStep = stepId;
   if (window.location.hash === "#grammar") showView("grammar");
   else window.location.hash = "grammar";
 }
+let focusStep = null;
 
 /** 改修前の文法ページのURL（#guide/〇〇）の転送先。コラムとして残したページは null（そのまま開く）。 */
 export function grammarRedirect(guideId) {
@@ -67,11 +92,28 @@ export function grammarRedirect(guideId) {
   return target === "#grammar" ? "grammar" : `grammar/${target}`;
 }
 
+/** 一覧・単元のページを描く。まとめテストの位置へ移動したときは true を返す（呼び出し側で先頭へ戻さない）。 */
 export function renderGrammar() {
   const unit = state.selectedUnit ? unitById(state.selectedUnit) : null;
   $("#grammar-map").classList.toggle("is-hidden", Boolean(unit));
   $("#grammar-unit").classList.toggle("is-hidden", !unit);
   if (unit) renderGrammarUnit(unit); else renderGrammarMap();
+  const target = !unit && focusStep ? document.getElementById(`grammar-test-${focusStep}`) : null;
+  focusStep = null;
+  target?.scrollIntoView({ block: "center" });
+  return Boolean(target);
+}
+
+function stepTestHtml(step) {
+  const record = grammarProgress().steps[step.id];
+  const stepUnits = stepUnitsOf(step);
+  const ready = stepUnits.every((unit) => unitStatus(unit) === "passed");
+  const chip = record?.passed ? `<span class="grammar-status is-passed">合格</span>` : record?.attempts ? `<span class="grammar-status is-learning">最高 ${Math.round((record.best || 0) * 100)}%</span>` : "";
+  return `<div class="grammar-step-test" id="grammar-test-${escapeHtml(step.id)}">
+    <div><strong>まとめテスト ${STEP_TEST_SIZE}問</strong>${chip}
+      <small>このステップの${stepUnits.length}単元から、聞く・読む・並べるを混ぜて出題。8割以上で合格です。${ready || record?.passed ? "" : "単元を合格してから受けると効果的です（いつでも受けられます）。"}</small></div>
+    <button class="${ready && !record?.passed ? "primary-button" : "secondary-button"}" type="button" data-step-test="${escapeHtml(step.id)}">まとめテストを受ける <span>→</span></button>
+  </div>`;
 }
 
 function statusChip(unit) {
@@ -87,17 +129,19 @@ function renderGrammarMap() {
   }
   const all = units();
   const passed = all.filter((unit) => unitStatus(unit) === "passed").length;
-  const next = continueUnit();
+  const next = nextAction();
+  // おすすめ：まとめテストが未合格のうち、いちばん前のステップ
+  const recommended = state.grammar.steps.find((step) => !stepPassed(step));
   const levelHtml = [2, 3].map((level) => {
     const syllabusCount = state.grammarSyllabus.filter((item) => item.level === level).length;
     const steps = state.grammar.steps.filter((step) => step.level === level).map((step) => {
       const stepUnits = all.filter((unit) => unit.step === step.id);
-      const stepPassed = stepUnits.filter((unit) => unitStatus(unit) === "passed").length;
-      return `<section class="grammar-step">
+      const passedCount = stepUnits.filter((unit) => unitStatus(unit) === "passed").length;
+      return `<section class="grammar-step${step === recommended ? " is-recommended" : ""}">
         <header class="grammar-step-head">
-          <div><p class="eyebrow">STEP ${stepNumber(step)} · <span class="grammar-stars" aria-label="難易度${step.stars}">${"★".repeat(step.stars)}</span></p>
+          <div><p class="eyebrow">STEP ${stepNumber(step)} · <span class="grammar-stars" aria-label="難易度${step.stars}">${"★".repeat(step.stars)}</span>${step === recommended ? ` <span class="grammar-recommend">おすすめ</span>` : ""}${stepPassed(step) ? ` <span class="grammar-status is-passed">まとめテスト合格</span>` : ""}</p>
             <h3>${escapeHtml(step.title)}</h3><p>${escapeHtml(step.goal)}</p></div>
-          <span class="grammar-step-count">合格 <strong>${stepPassed}</strong> / ${stepUnits.length}</span>
+          <span class="grammar-step-count">合格 <strong>${passedCount}</strong> / ${stepUnits.length}</span>
         </header>
         <ol class="grammar-unit-list">${stepUnits.map((unit) => `<li>
           <button class="grammar-unit-row" type="button" data-grammar-open="${escapeHtml(unit.id)}">
@@ -105,6 +149,7 @@ function renderGrammarMap() {
             <span class="grammar-unit-title">${escapeHtml(unit.title)}</span>
             ${statusChip(unit)}
           </button></li>`).join("")}</ol>
+        ${stepTestHtml(step)}
       </section>`;
     }).join("");
     return `<section class="grammar-level">
@@ -129,7 +174,7 @@ function renderGrammarMap() {
       <div><strong>合格 ${passed} / ${all.length}単元</strong>
         <div class="daily-progress"><span style="width:${all.length ? Math.round((passed / all.length) * 100) : 0}%"></span></div>
         ${all.some((unit) => !hasContent(unit)) ? `<small>解説のある単元 ${all.filter(hasContent).length} / ${all.length}（準備中の単元は順次追加します）</small>` : `<small>全${all.length}単元に解説と確認ドリルがあります</small>`}</div>
-      ${next ? `<button class="primary-button grammar-continue" type="button" data-grammar-open="${escapeHtml(next.id)}">続きから：${escapeHtml(next.title)} <span>→</span></button>` : ""}
+      ${next ? `<button class="primary-button grammar-continue" type="button" data-grammar-open="continue">続きから：${escapeHtml(nextActionLabel(next))} <span>→</span></button>` : `<p class="grammar-complete">全単元・全ステップのまとめテストに合格しました。</p>`}
     </div>
     ${levelHtml}
     <section class="grammar-level">
@@ -140,6 +185,7 @@ function renderGrammarMap() {
       <header class="grammar-level-head"><h2>見取り図</h2><span>単元をまたいで使う文の骨組み</span></header>
       <div class="guide-sections">${state.grammar.top.sections.map(guideSectionHtml).join("")}</div>
     </section>` : ""}`;
+  container.querySelectorAll("[data-step-test]").forEach((button) => button.addEventListener("click", () => startStepTest(button.dataset.stepTest)));
 }
 
 function renderGrammarUnit(unit) {
@@ -219,7 +265,7 @@ function listeningPools(unit) {
   const pools = [];
   const dialogue = unit.dialogue;
   if (dialogue?.audio) pools.push([{
-    skill: "listening", kind: "audio-dialogue", audioText: dialogue.audio, audioFile: grammarAudioFile(dialogue.audio),
+    source: dialogue.audio, skill: "listening", kind: "audio-dialogue", audioText: dialogue.audio, audioFile: grammarAudioFile(dialogue.audio),
     choices: shuffle([dialogue.answer, ...dialogue.distractors]).map((label) => ({ value: label, label })), correct: dialogue.answer,
     instruction: "会話を聞いて、質問の答えを選んでください", explanation: `${dialogue.prompt} — ${dialogue.answer}（${dialogue.ja}）`,
   }]);
@@ -227,7 +273,7 @@ function listeningPools(unit) {
   pools.push(unit.practice.filter((item) => filledSentence(item)).map((item) => {
     const text = filledSentence(item);
     return {
-      ...authoredQuestion(item), skill: "listening", kind: "audio-fill",
+      ...authoredQuestion(item), source: item.prompt, skill: "listening", kind: "audio-fill",
       audioText: text, audioMeaning: item.subPrompt, audioFile: grammarAudioFile(text),
       instruction: "音声を聞いて、空欄に入る語を選んでください",
     };
@@ -237,7 +283,7 @@ function listeningPools(unit) {
     const showWrong = Math.random() < 0.5;
     const text = showWrong ? pair.wrong : pair.right;
     return {
-      skill: "listening", kind: "audio-judge", audioText: text, audioFile: grammarAudioFile(text), audioMeaning: pair.meaning,
+      source: pair.right, skill: "listening", kind: "audio-judge", audioText: text, audioFile: grammarAudioFile(text), audioMeaning: pair.meaning,
       prompt: pair.meaning ? `「${pair.meaning}」と言いたいとき、聞こえた文は正しいでしょうか。` : "聞こえた文は正しいでしょうか。",
       choices: [{ value: "true", label: "对（正しい）" }, { value: "false", label: "不对（間違い）" }], correct: String(!showWrong),
       instruction: "音声を聞いて、文が正しいかどうかを選んでください", explanation: `${pair.note}正しくは「${pair.right}」。`,
@@ -247,7 +293,7 @@ function listeningPools(unit) {
   const examples = unit.sections.flatMap((section) => section.patterns || []).map((pattern) => pattern.example).filter((example) => example?.cn && example.ja);
   const meanings = [...new Set(examples.map((example) => example.ja))];
   pools.push(meanings.length < 3 ? [] : examples.map((example) => ({
-    skill: "listening", kind: "audio-sentence", audioText: example.cn, audioPinyin: example.pinyin, audioMeaning: example.ja,
+    source: example.cn, skill: "listening", kind: "audio-sentence", audioText: example.cn, audioPinyin: example.pinyin, audioMeaning: example.ja,
     audioFile: grammarAudioFile(example.cn), correct: example.ja,
     choices: shuffle([example.ja, ...shuffle(meanings.filter((ja) => ja !== example.ja)).slice(0, 3)]).map((label) => ({ value: label, label })),
     instruction: "音声の内容として正しいものを選んでください", explanation: `${example.cn}（${example.ja}）`,
@@ -272,6 +318,93 @@ export function startUnitListening(id = state.selectedUnit) {
     label: unit.title, modeLabel: "聞き取りチェック", level: stepById(unit.step).level, unitId: unit.id, listening: true,
   });
 }
+
+/** 単元ごとの候補を、単元を1つずつ巡って並べる（同じ単元ばかり続かないように）。 */
+function roundRobin(lists) {
+  const queues = lists.map((list) => [...list]).filter((list) => list.length);
+  const out = [];
+  while (queues.some((list) => list.length)) queues.forEach((list) => { if (list.length) out.push(list.shift()); });
+  return out;
+}
+
+/** ドリルの1問を、出題の形にして元の単元を添える（間違えたときに戻る単元が分かるように）。 */
+function withUnit(question, unit) {
+  return unit ? { ...question, explanation: `${question.explanation || ""}［単元${unit.order}「${unit.title}」］` } : question;
+}
+
+/**
+ * まとめテストの問題：聞く4問（会話2問＋ほかの形式2問）・並べる3問・選択と○×で残り。
+ * 選択と○×は、ステップの復習問題（単元をまたぐ問題）を先に使い、残りは単元を巡って選ぶ。同じ文は2回出さない。
+ */
+export function stepTestQuestions(step) {
+  const stepUnits = shuffle(stepUnitsOf(step).filter(hasContent));
+  const used = new Set();
+  const take = (pool, count, out) => {
+    for (const question of pool) {
+      if (out.length >= count) break;
+      const key = question.source || question.prompt || question.answer;
+      if (used.has(key)) continue;
+      used.add(key);
+      out.push(question);
+    }
+    return out;
+  };
+  const listenPools = stepUnits.map((unit) => listeningPools(unit).map((pool) => shuffle(pool).map((question) => withUnit(question, unit))));
+  const listening = take(roundRobin(listenPools.map((pools) => pools.filter((pool) => pool[0]?.kind === "audio-dialogue").flat())), 2, []);
+  take(roundRobin(listenPools.map((pools) => shuffle(pools.filter((pool) => pool[0]?.kind !== "audio-dialogue").flat()))), STEP_TEST_MIX.listening, listening);
+  const review = step.review || { practice: [], compare: [] };
+  const fromPractice = (item, unit) => withUnit({ ...authoredQuestion(item), source: item.kind === "reorder" ? item.answer : item.prompt }, unit);
+  const fromCompare = (pair, unit) => withUnit({ ...judgeQuestion(pair, Math.random() < 0.5 ? 0 : 1), source: pair.right }, unit);
+  const reorder = take([
+    ...shuffle(review.practice.filter((item) => item.kind === "reorder")).map((item) => fromPractice(item, null)),
+    ...roundRobin(stepUnits.map((unit) => shuffle(unit.practice.filter((item) => item.kind === "reorder")).map((item) => fromPractice(item, unit)))),
+  ], STEP_TEST_MIX.reorder, []);
+  const restCount = STEP_TEST_SIZE - listening.length - reorder.length;
+  const reading = take([
+    ...shuffle([...review.practice.filter((item) => item.kind !== "reorder").map((item) => fromPractice(item, null)), ...review.compare.map((pair) => fromCompare(pair, null))]),
+    ...roundRobin(stepUnits.map((unit) => shuffle([
+      ...unit.practice.filter((item) => item.kind !== "reorder").map((item) => fromPractice(item, unit)),
+      ...unit.compare.map((pair) => fromCompare(pair, unit)),
+    ]))),
+  ], restCount, []);
+  // 聞く → 読む → 並べる の順（試験と同じ並び）
+  return [...listening.map((question) => ({ ...question, audioPlays: 0 })), ...shuffle(reading), ...shuffle(reorder)];
+}
+
+export function startStepTest(stepId) {
+  const step = stepById(stepId);
+  if (!step) return;
+  const questions = stepTestQuestions(step);
+  if (!questions.length) return;
+  startCustomPractice(questions, { label: `STEP ${stepNumber(step)} ${step.title}`, modeLabel: "まとめテスト", level: step.level, stepId: step.id });
+}
+
+/** まとめテストの結果を記録する。8割以上で合格（一度合格したら取り消さない）。返り値は { passed, next }（next は次のステップ）。 */
+export function recordStepResult(stepId, correct, total) {
+  const step = stepById(stepId);
+  if (!step || !total) return { passed: false, next: null };
+  const ratio = correct / total;
+  const record = grammarProgress().steps[stepId] ||= { passed: false, attempts: 0, best: 0 };
+  record.attempts += 1;
+  record.best = Math.max(record.best || 0, ratio);
+  record.last = ratio;
+  record.lastDate = localDateKey();
+  const passed = ratio >= PASS_RATIO;
+  if (passed) record.passed = true;
+  saveGrammarProgress();
+  updateGrammarHome();
+  const steps = state.grammar.steps;
+  return { passed, next: steps[steps.indexOf(step) + 1] || null };
+}
+
+/** 単元に合格して、そのステップの単元がすべて合格になったら、まとめテストのステップを返す。 */
+export function stepReadyForTest(unitId) {
+  const step = stepById(unitById(unitId)?.step);
+  if (!step || stepPassed(step)) return null;
+  return stepUnitsOf(step).every((unit) => unitStatus(unit) === "passed") ? step : null;
+}
+
+export const stepLabel = (step) => `STEP ${stepNumber(step)}（HSK${step.level}）「${step.title}」`;
 
 /** 聞き取りチェックの結果を記録する（単元の合否には使わない）。 */
 export function recordListeningResult(unitId, correct, total) {
@@ -304,6 +437,6 @@ export function updateGrammarHome() {
   if (!label || !state.grammar) return;
   const all = units();
   const passed = all.filter((unit) => unitStatus(unit) === "passed").length;
-  const next = continueUnit();
-  label.textContent = passed ? `合格 ${passed}/${all.length}単元・続き：${next?.title || "すべて合格"}` : `易しい順に${all.length}単元。最初は「${next?.title || ""}」から`;
+  const next = nextAction();
+  label.textContent = passed ? `合格 ${passed}/${all.length}単元・続き：${nextActionLabel(next) || "すべて合格"}` : `易しい順に${all.length}単元。最初は「${nextActionLabel(next)}」から`;
 }
