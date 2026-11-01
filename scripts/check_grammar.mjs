@@ -11,10 +11,12 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { filledSentence, grammarAudioId, grammarAudioTexts } from "../js/chinese/grammar-audio.js";
+import { choicesSoundAlike, filledSentence, grammarAudioId, grammarAudioTexts, readingIndex } from "../js/chinese/grammar-audio.js";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const read = (file) => JSON.parse(fs.readFileSync(path.join(root, file), "utf8"));
+// 画面と同じ単語データ（hsk1〜3と旧版の補足）の読み
+const readings = readingIndex(["hsk1", "hsk2", "hsk3", "hsk-legacy-supplement"].flatMap((file) => read(`data/chinese/${file}.json`)));
 
 const errors = [];
 const syllabus = read("data/source/grammar/hsk-grammar-syllabus.json").items;
@@ -90,7 +92,8 @@ for (const unit of plan.units) {
   }
   if (drills.length < DRILL_SIZE) gaps.push(`${unit.id}: 確認ドリルの問題が${drills.length}問（${DRILL_SIZE}問必要）`);
   // 聞き取りチェック：会話・空欄・○×・意味の4形式のうち3つ以上を出題できること
-  const listening = [Boolean(unit.dialogue), unit.practice.some((question) => filledSentence(question)), unit.compare.length > 0, patterns.length >= 3];
+  // （空欄は、選択肢が同じ音になる問題を除く。js/chinese/grammar.js の listeningPools と同じ条件）
+  const listening = [Boolean(unit.dialogue), unit.practice.some((question) => filledSentence(question) && !choicesSoundAlike(question.choices, readings)), unit.compare.length > 0, patterns.length >= 3];
   if (!unit.dialogue) gaps.push(`${unit.id}: 聞き取りチェックの会話がない`);
   if (listening.filter(Boolean).length < 3) gaps.push(`${unit.id}: 聞き取りチェックの形式が${listening.filter(Boolean).length}種類（3種類必要）`);
   for (const id of unit.dialogue?.syllabus || []) if (!unit.syllabus.includes(id)) errors.push(`${unit.id}: 会話に単元の項目にない印 ${id}`);

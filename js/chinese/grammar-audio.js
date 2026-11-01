@@ -25,6 +25,47 @@ export function filledSentence(question) {
   return KANA.test(text) || /[A-Z]：/.test(text) ? null : text;
 }
 
+/** 語の一覧（{ hanzi, pinyin }）から、漢字 → 読み（声調記号つき・空白なし）の集合 を作る。 */
+export function readingIndex(words) {
+  const index = new Map();
+  for (const word of words || []) {
+    if (!word?.hanzi || !word?.pinyin) continue;
+    if (!index.has(word.hanzi)) index.set(word.hanzi, new Set());
+    for (const reading of String(word.pinyin).split(/[\/／,，]/)) index.get(word.hanzi).add(reading.toLowerCase().replace(/[\s'’·]/g, ""));
+  }
+  return index;
+}
+
+/** 漢字列の読みの候補（辞書の語で最長一致に区切る）。辞書にない字があれば null。 */
+function readingsOf(text, index) {
+  const hanzi = [...text].filter((char) => /[一-鿿]/u.test(char)).join("");
+  if (!hanzi) return null;
+  let readings = [""];
+  for (let i = 0; i < hanzi.length;) {
+    let length = Math.min(6, hanzi.length - i);
+    while (length > 1 && !index.has(hanzi.slice(i, i + length))) length -= 1;
+    const options = index.get(hanzi.slice(i, i + length));
+    if (!options) return null;
+    readings = readings.flatMap((head) => [...options].map((tail) => head + tail)).slice(0, 64);
+    i += length;
+  }
+  return new Set(readings);
+}
+
+/**
+ * 選択肢に、耳では区別できない（同じ読みになる）組があるか。的／得／地 など。
+ * 選択肢に共通する前後（「做的／做得」の「做」）は除いて比べる。辞書にない字を含む選択肢は比べない。
+ */
+export function choicesSoundAlike(choices, index) {
+  const chars = choices.map((choice) => [...String(choice)]);
+  let head = 0;
+  while (chars.every((list) => head < list.length && list[head] === chars[0][head])) head += 1;
+  let tail = 0;
+  while (chars.every((list) => tail < list.length - head && list[list.length - 1 - tail] === chars[0][chars[0].length - 1 - tail])) tail += 1;
+  const readings = chars.map((list) => readingsOf(list.slice(head, list.length - tail).join(""), index));
+  return readings.some((a, i) => a && readings.slice(i + 1).some((b) => b && [...a].some((reading) => b.has(reading))));
+}
+
 /**
  * 録音する文の一覧。返り値は [{ text, level, dialogue }]。
  * 単元の型カードの例文・よくある間違い（正しい文と誤った文）・選択ドリルの完成文・語順ドリルの答え・会話、

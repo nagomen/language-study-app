@@ -544,7 +544,6 @@ button { color: inherit; -webkit-tap-highlight-color: transparent; }
 .judge-statement .reading-subprompt { margin: 0; }
 .judge-statement .mock-pinyin { margin-top: 5px; }
 .listening-symbol { width: 92px; height: 92px; display: grid; place-items: center; border-radius: 8px; color: var(--blue); background: var(--blue-soft); font: 700 43px/1 "Yu Mincho", serif; }
-.listening-symbol.is-fill { margin: 0 auto 6px; }
 .hidden-prompt { margin: 13px 0 0; color: var(--muted); font-size: 11px; }
 .audio-judge-prompt { max-width: 520px; margin: 17px 0 0; font: 600 19px/1.6 "Yu Mincho", serif; }
 .audio-play-button { margin-top: 20px; padding: 11px 17px; border: 0; border-radius: 6px; color: #fff; background: var(--blue); cursor: pointer; font-size: 12px; font-weight: 700; }

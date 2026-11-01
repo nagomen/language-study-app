@@ -2,7 +2,7 @@
 // データは data/chinese/grammar.json（単元）と data/source/grammar/hsk-grammar-syllabus.json（公式大綱の項目）。
 import { $, escapeHtml, localDateKey, shuffle } from "../shared.js";
 import { bindWordRowAudio } from "./audio.js";
-import { filledSentence, grammarAudioFile } from "./grammar-audio.js";
+import { choicesSoundAlike, filledSentence, grammarAudioFile, readingIndex } from "./grammar-audio.js";
 import { authoredQuestion, guideById, guideSectionHtml, judgeQuestion, startCustomPractice } from "./guide.js";
 import { showView } from "./main.js";
 import { state } from "./state.js";
@@ -130,8 +130,8 @@ function renderGrammarMap() {
   const all = units();
   const passed = all.filter((unit) => unitStatus(unit) === "passed").length;
   const next = nextAction();
-  // おすすめ：まとめテストが未合格のうち、いちばん前のステップ
-  const recommended = state.grammar.steps.find((step) => !stepPassed(step));
+  // おすすめ：「続きから」が指すステップ（未合格の単元か、まとめテストが残っているいちばん前のステップ）
+  const recommended = next?.step || (next?.unit ? stepById(next.unit.step) : null);
   const levelHtml = [2, 3].map((level) => {
     const syllabusCount = state.grammarSyllabus.filter((item) => item.level === level).length;
     const steps = state.grammar.steps.filter((step) => step.level === level).map((step) => {
@@ -257,6 +257,10 @@ export function startUnitPractice(id = state.selectedUnit) {
   startCustomPractice(shuffle(picked), { label: unit.title, modeLabel: "確認ドリル", level: stepById(unit.step).level, unitId: unit.id });
 }
 
+// 単語データの読み（選択肢が同じ音かどうかの判定に使う。初回に作って使い回す）
+let readings = null;
+const wordReadings = () => (readings ||= readingIndex(state.words));
+
 /**
  * 聞き取りチェックの候補。形式ごとに1つの配列にまとめ、[会話, 穴埋め, 正誤, 意味] の順で返す。
  * どれも録音済みの文（js/chinese/grammar-audio.js の grammarAudioTexts）だけを使う。
@@ -269,13 +273,14 @@ function listeningPools(unit) {
     choices: shuffle([dialogue.answer, ...dialogue.distractors]).map((label) => ({ value: label, label })), correct: dialogue.answer,
     instruction: "会話を聞いて、質問の答えを選んでください", explanation: `${dialogue.prompt} — ${dialogue.answer}（${dialogue.ja}）`,
   }]);
-  // 穴埋め：空欄のある文を見せ、完成した文を聞いて空欄に入る語を選ぶ。
-  pools.push(unit.practice.filter((item) => filledSentence(item)).map((item) => {
+  // 穴埋め：文も訳も見せずに完成した文を聞き、文の中で使われていた語句を選ぶ（読むだけでは解けないように）。
+  // 的／得／地 のように選択肢が同じ音になる問題は、耳では区別できないので出さない。
+  pools.push(unit.practice.filter((item) => filledSentence(item) && !choicesSoundAlike(item.choices, wordReadings())).map((item) => {
     const text = filledSentence(item);
     return {
       ...authoredQuestion(item), source: item.prompt, skill: "listening", kind: "audio-fill",
       audioText: text, audioMeaning: item.subPrompt, audioFile: grammarAudioFile(text),
-      instruction: "音声を聞いて、空欄に入る語を選んでください",
+      instruction: "音声を聞いて、文の中で使われていた語句を選んでください",
     };
   }));
   // 正誤：よくある間違いの、正しい文か誤った文のどちらかを聞いて判定する。
@@ -327,14 +332,15 @@ function roundRobin(lists) {
   return out;
 }
 
-/** ドリルの1問を、出題の形にして元の単元を添える（間違えたときに戻る単元が分かるように）。 */
+/** ドリルの1問に元の単元を添える（間違えたときに戻る単元が分かるように）。unit が null ならステップの復習問題。 */
 function withUnit(question, unit) {
-  return unit ? { ...question, explanation: `${question.explanation || ""}［単元${unit.order}「${unit.title}」］` } : question;
+  const tag = unit ? `［単元${unit.order}「${unit.title}」］` : "［ステップの復習問題（単元をまたぐ内容）］";
+  return { ...question, explanation: `${question.explanation || ""}${tag}` };
 }
 
 /**
  * まとめテストの問題：聞く4問（会話2問＋ほかの形式2問）・並べる3問・選択と○×で残り。
- * 選択と○×は、ステップの復習問題（単元をまたぐ問題）を先に使い、残りは単元を巡って選ぶ。同じ文は2回出さない。
+ * ステップの復習問題（単元をまたぐ問題）は「単元の1つ」として巡回に混ぜる（毎回同じ問題ばかりにならないように）。同じ文は2回出さない。
  */
 export function stepTestQuestions(step) {
   const stepUnits = shuffle(stepUnitsOf(step).filter(hasContent));
@@ -355,18 +361,20 @@ export function stepTestQuestions(step) {
   const review = step.review || { practice: [], compare: [] };
   const fromPractice = (item, unit) => withUnit({ ...authoredQuestion(item), source: item.kind === "reorder" ? item.answer : item.prompt }, unit);
   const fromCompare = (pair, unit) => withUnit({ ...judgeQuestion(pair, Math.random() < 0.5 ? 0 : 1), source: pair.right }, unit);
-  const reorder = take([
-    ...shuffle(review.practice.filter((item) => item.kind === "reorder")).map((item) => fromPractice(item, null)),
-    ...roundRobin(stepUnits.map((unit) => shuffle(unit.practice.filter((item) => item.kind === "reorder")).map((item) => fromPractice(item, unit)))),
-  ], STEP_TEST_MIX.reorder, []);
+  const reorderQuestions = (practice, unit) => shuffle(practice.filter((item) => item.kind === "reorder")).map((item) => fromPractice(item, unit));
+  const readingQuestions = (practice, compare, unit) => shuffle([
+    ...practice.filter((item) => item.kind !== "reorder").map((item) => fromPractice(item, unit)),
+    ...compare.map((pair) => fromCompare(pair, unit)),
+  ]);
+  const reorder = take(roundRobin(shuffle([
+    reorderQuestions(review.practice, null),
+    ...stepUnits.map((unit) => reorderQuestions(unit.practice, unit)),
+  ])), STEP_TEST_MIX.reorder, []);
   const restCount = STEP_TEST_SIZE - listening.length - reorder.length;
-  const reading = take([
-    ...shuffle([...review.practice.filter((item) => item.kind !== "reorder").map((item) => fromPractice(item, null)), ...review.compare.map((pair) => fromCompare(pair, null))]),
-    ...roundRobin(stepUnits.map((unit) => shuffle([
-      ...unit.practice.filter((item) => item.kind !== "reorder").map((item) => fromPractice(item, unit)),
-      ...unit.compare.map((pair) => fromCompare(pair, unit)),
-    ]))),
-  ], restCount, []);
+  const reading = take(roundRobin(shuffle([
+    readingQuestions(review.practice, review.compare, null),
+    ...stepUnits.map((unit) => readingQuestions(unit.practice, unit.compare, unit)),
+  ])), restCount, []);
   // 聞く → 読む → 並べる の順（試験と同じ並び）
   return [...listening.map((question) => ({ ...question, audioPlays: 0 })), ...shuffle(reading), ...shuffle(reorder)];
 }
