@@ -126,7 +126,7 @@ function renderGrammarMap() {
     <div class="grammar-progress-card">
       <div><strong>合格 ${passed} / ${all.length}単元</strong>
         <div class="daily-progress"><span style="width:${all.length ? Math.round((passed / all.length) * 100) : 0}%"></span></div>
-        <small>解説のある単元 ${all.filter(hasContent).length} / ${all.length}（準備中の単元は順次追加します）</small></div>
+        ${all.some((unit) => !hasContent(unit)) ? `<small>解説のある単元 ${all.filter(hasContent).length} / ${all.length}（準備中の単元は順次追加します）</small>` : `<small>全${all.length}単元に解説と確認ドリルがあります</small>`}</div>
       ${next ? `<button class="primary-button grammar-continue" type="button" data-grammar-open="${escapeHtml(next.id)}">続きから：${escapeHtml(next.title)} <span>→</span></button>` : ""}
     </div>
     ${levelHtml}

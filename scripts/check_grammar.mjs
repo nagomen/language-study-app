@@ -5,6 +5,8 @@
 // 大綱の全項目（HSK2・HSK3）がちょうど1つの単元またはコラムに割り当てられているか、
 // 単元の級とステップの級が一致するか、1単元が5項目以内か、先に学ぶ単元（requires）が前に並んでいるか、
 // 改修前のページの旧URLがすべて転送され、転送先が実在するかを確認する。
+// 網羅：大綱の各項目に、その項目の印（syllabus）が付いた型カードとドリル（○×にする「よくある間違い」を含む）が
+// 1つ以上あるか、各単元に確認ドリル5問ぶんの問題があるか、大綱の2文字以上の語がその級の例文に出てくるかも確認する。
 
 import fs from "node:fs";
 import path from "node:path";
@@ -70,6 +72,35 @@ for (const column of plan.columns) {
   for (const id of column.syllabus || []) assign(id, `コラム:${column.id}`);
   if (column.id !== "measure" && !columnGuides.has(column.id)) errors.push(`コラム ${column.id} のページが guides.json にない`);
 }
+
+// --- 網羅 ---
+const DRILL_SIZE = 5;
+const sentence = (entry) => entry.example?.cn || entry.answer || entry.right
+  || String(entry.prompt || "").replace(/＿+/, String(entry.correct || "").split("／")[0]);
+const examplesByLevel = { 2: [], 3: [] };
+const gaps = [];
+for (const unit of plan.units) {
+  const step = steps.get(unit.step);
+  const patterns = unit.sections.flatMap((section) => section.patterns || []);
+  const drills = [...unit.practice, ...unit.compare];
+  for (const entry of [...patterns, ...drills]) {
+    for (const id of entry.syllabus || []) if (!unit.syllabus.includes(id)) errors.push(`${unit.id}: 単元の項目にない印 ${id} → ${sentence(entry)}`);
+    if (step) examplesByLevel[step.level].push(sentence(entry));
+  }
+  if (drills.length < DRILL_SIZE) gaps.push(`${unit.id}: 確認ドリルの問題が${drills.length}問（${DRILL_SIZE}問必要）`);
+  for (const id of unit.syllabus) {
+    const hasPattern = patterns.some((entry) => (entry.syllabus || []).includes(id));
+    const hasDrill = drills.some((entry) => (entry.syllabus || []).includes(id));
+    if (!hasPattern || !hasDrill) gaps.push(`${unit.id} ${id}「${items.get(id)?.category}」: ${[!hasPattern && "型カード", !hasDrill && "ドリル"].filter(Boolean).join("・")}がない`);
+  }
+}
+for (const item of syllabus) {
+  if (!item.terms || owner.get(item.id)?.startsWith("コラム")) continue;
+  const text = examplesByLevel[item.level].join("");
+  const missing = item.terms.filter((term) => !text.includes(term));
+  if (missing.length) gaps.push(`${item.id}「${item.category}」: HSK${item.level}の例文に出てこない語 ${missing.join("・")}`);
+}
+for (const gap of gaps) errors.push(`網羅: ${gap}`);
 
 const unassigned = [...items.keys()].filter((id) => !owner.has(id));
 if (unassigned.length) errors.push(`どの単元にも割り当てられていない項目: ${unassigned.join("、")}`);

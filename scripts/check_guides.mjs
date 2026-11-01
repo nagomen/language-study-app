@@ -6,10 +6,11 @@
 // 例文のピンインの音節数が漢字数と一致するか、練習問題の正解が選択肢に含まれるかを確認する。
 // HSK1〜3の語彙にない漢字は警告として一覧表示する（エラーにはしない）。
 
-import { countHanzi, countPinyinSyllables, HANZI, loadChineseData } from "./chinese-data-utils.mjs";
+import { buildPinyinDictionary, countHanzi, countPinyinSyllables, HANZI, loadChineseData, pinyinMismatches } from "./chinese-data-utils.mjs";
 
 const errors = [];
 const warnings = [];
+const pinyinWarnings = [];
 
 const groups = await Promise.all([1, 2, 3].map((level) => loadChineseData(`hsk${level}.json`)));
 const supplement = await loadChineseData("hsk-legacy-supplement.json");
@@ -18,6 +19,7 @@ const words = new Map([
   ...supplement.map((word) => [word.id, word]),
 ]);
 const vocabularyChars = new Set([...words.values()].flatMap((word) => [...word.hanzi]));
+const pinyinDictionary = buildPinyinDictionary([...words.values()]);
 const tagData = await loadChineseData("word-tags.json");
 const measureIds = Object.entries(tagData.words).filter(([, tags]) => tags.includes("measure")).map(([id]) => id);
 
@@ -27,6 +29,9 @@ function checkPhrase(label, phrase, { allowOutsideVocabulary = false } = {}) {
   const hanziCount = countHanzi(phrase.cn);
   const syllables = countPinyinSyllables(phrase.pinyin);
   if (syllables > hanziCount || syllables < hanziCount - erhua) errors.push(`${label}: 漢字${hanziCount}字に対しピンインが${syllables}音節 → ${phrase.cn} / ${phrase.pinyin}`);
+  // 語ごとに辞書のピンインと照合する（多音字・固有名詞があるので警告にとどめる）
+  const mismatches = pinyinMismatches(phrase.cn, phrase.pinyin, pinyinDictionary);
+  if (mismatches.length) pinyinWarnings.push(`${label}: ピンインが辞書と違う語 ${mismatches.join("、")} → ${phrase.cn} / ${phrase.pinyin}`);
   const stray = [...phrase.cn].filter((char) => HANZI.test(char) && !vocabularyChars.has(char));
   if (!allowOutsideVocabulary && stray.length) warnings.push(`${label}: HSK1〜3の語彙にない漢字 ${[...new Set(stray)].join("・")} → ${phrase.cn}`);
 }
@@ -232,10 +237,11 @@ for (const unit of grammar.units) {
 const unitPractice = grammar.units.reduce((sum, unit) => sum + unit.practice.length, 0);
 
 for (const warning of warnings) console.warn(`警告: ${warning}`);
+for (const warning of pinyinWarnings) console.warn(`ピンイン: ${warning}`);
 if (errors.length) {
   for (const error of errors) console.error(`エラー: ${error}`);
   console.error(`\n${errors.length}件のエラーがあります。`);
   process.exit(1);
 }
 console.log(`数量詞 ${measure.items.length}語・数の型 ${measure.numberPatterns?.length || 0}件・比較 ${measure.comparisons?.length || 0}件 / 分類別学習 ${Object.keys(categoryGuides || {}).length}件 / コラム ${guides.length}件（練習 ${guides.reduce((sum, guide) => sum + guide.practice.length, 0)}問） / 文法の単元 ${grammar.units.length}件（練習 ${unitPractice}問）`);
-console.log(warnings.length ? `検証に成功しました（警告 ${warnings.length}件）。` : "検証に成功しました。");
+console.log(warnings.length || pinyinWarnings.length ? `検証に成功しました（警告 ${warnings.length}件・ピンインの確認 ${pinyinWarnings.length}件）。` : "検証に成功しました。");
