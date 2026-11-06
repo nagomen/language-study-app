@@ -6,7 +6,7 @@
     <meta name="description" content="言語アプリの中国語・HSK学習ページ" />
     <title>中国語・HSK | 言語アプリ</title>
     <link rel="icon" href="data:," />
-    <link rel="stylesheet" href="css/app.css?v=20261101-grammar" />
+    <link rel="stylesheet" href="css/app.css?v=20261105-comparisons" />
   </head>
   <body>
     <div class="app-shell">
@@ -25,6 +25,9 @@
           </button>
           <button class="nav-item" data-view="categories" type="button">
             <span aria-hidden="true">類</span>分類から学ぶ
+          </button>
+          <button class="nav-item" data-view="comparisons" type="button">
+            <span aria-hidden="true">近</span>似た語の使い分け
           </button>
           <button class="nav-item" data-view="grammar" type="button">
             <span aria-hidden="true">法</span>文法
@@ -132,6 +135,11 @@
             <button id="open-categories" class="quick-card" type="button">
               <span class="quick-icon plum">類</span>
               <span><strong>分類から学ぶ</strong><small id="category-count-label">数詞・形容詞・旅行などの括りで出題</small></span>
+              <span aria-hidden="true">→</span>
+            </button>
+            <button class="quick-card" type="button" data-view-open="comparisons">
+              <span class="quick-icon plum">近</span>
+              <span><strong>似た語の使い分け</strong><small>知る・程度・可能・伝達・感情・前後を比べる</small></span>
               <span aria-hidden="true">→</span>
             </button>
             <button class="quick-card" type="button" data-grammar-open="continue">
@@ -316,6 +324,11 @@
           <div id="grammar-unit" class="is-hidden"></div>
         </section>
 
+        <section id="comparisons-view" class="view" aria-label="似た語の使い分け">
+          <div id="comparisons-map"></div>
+          <div id="comparison-detail" class="is-hidden"></div>
+        </section>
+
         <section id="guide-view" class="view" aria-labelledby="guide-title">
           <button id="guide-back" class="text-button" type="button">← 文法の一覧へ戻る</button>
           <div class="page-heading examples-heading">
@@ -473,6 +486,7 @@
         <button class="nav-item is-active" data-view="home" type="button"><span aria-hidden="true">⌂</span><small>ホーム</small></button>
         <button class="nav-item" data-view="words" type="button"><span aria-hidden="true">字</span><small>単語</small></button>
         <button class="nav-item" data-view="categories" type="button"><span aria-hidden="true">類</span><small>分類</small></button>
+        <button class="nav-item" data-view="comparisons" type="button"><span aria-hidden="true">近</span><small>使い分け</small></button>
         <button class="nav-item" data-view="grammar" type="button"><span aria-hidden="true">法</span><small>文法</small></button>
         <button class="nav-item" data-view="checked" type="button"><span aria-hidden="true">✓</span><small>チェック</small></button>
         <button class="nav-item" data-view="exam" type="button"><span aria-hidden="true">試</span><small>試験</small></button>

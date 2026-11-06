@@ -54,6 +54,7 @@ export function getFilteredWords() {
 // 単語帳は1語1行。左に見出しと意味、右に例文を置く。
 function wordCardHtml(word) {
   const tags = (word.tags || []).map((id) => categoryById(id)).filter(Boolean).slice(0, 2);
+  const comparisons = comparisonGroupsForWord(word).slice(0, 2);
   return `
     <article class="word-entry" data-level="${word.level}" data-card-id="${escapeHtml(word.id)}">
       <div class="entry-head">
@@ -65,7 +66,7 @@ function wordCardHtml(word) {
       </div>
       <div class="entry-body">
         <p class="meaning">${escapeHtml(word.meaning)}</p>
-        ${tags.length ? `<div class="word-tags">${tags.map((category) => `<button class="tag-chip" type="button" data-category-open="${escapeHtml(category.id)}" title="「${escapeHtml(category.label)}」の分類を開く">${escapeHtml(category.label)}</button>`).join("")}</div>` : ""}
+        ${tags.length || comparisons.length ? `<div class="word-tags">${tags.map((category) => `<button class="tag-chip" type="button" data-category-open="${escapeHtml(category.id)}" title="「${escapeHtml(category.label)}」の分類を開く">${escapeHtml(category.label)}</button>`).join("")}${comparisons.map((group) => comparisonTagHtml(group)).join("")}</div>` : ""}
       </div>
       ${word.example ? `<div class="entry-example">
         <div>
@@ -114,6 +115,15 @@ export function wordRowHtml(word, { showExample = false } = {}) {
 
 function wordTagsHtml(word) {
   const tags = (word.tags || []).map((id) => categoryById(id)).filter(Boolean);
-  if (!tags.length) return "";
-  return `<div class="word-tags">${tags.map((category) => `<button class="tag-chip" type="button" data-category-open="${escapeHtml(category.id)}" title="「${escapeHtml(category.label)}」の分類を開く">${escapeHtml(category.label)}</button>`).join("")}</div>`;
+  const comparisons = comparisonGroupsForWord(word).slice(0, 2);
+  if (!tags.length && !comparisons.length) return "";
+  return `<div class="word-tags">${tags.map((category) => `<button class="tag-chip" type="button" data-category-open="${escapeHtml(category.id)}" title="「${escapeHtml(category.label)}」の分類を開く">${escapeHtml(category.label)}</button>`).join("")}${comparisons.map((group) => comparisonTagHtml(group)).join("")}</div>`;
+}
+
+function comparisonGroupsForWord(word) {
+  return (state.wordComparisons || []).filter((group) => group.wordIds.includes(word.id));
+}
+
+function comparisonTagHtml(group) {
+  return `<button class="tag-chip comparison-tag" type="button" data-comparison-open="${escapeHtml(group.id)}" title="「${escapeHtml(group.title)}」で使い分けを見る">近 ${escapeHtml(group.title)}</button>`;
 }

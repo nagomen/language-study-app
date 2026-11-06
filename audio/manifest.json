@@ -5,11 +5,11 @@
   "format": "m4a",
   "codec": "aac",
   "bitrate": 48000,
-  "generatedAt": "2026-11-01T07:33:56.423Z",
+  "generatedAt": "2026-11-03T07:59:16.785Z",
   "counts": {
-    "total": 665,
-    "generated": 21,
-    "reused": 644
+    "total": 666,
+    "generated": 1,
+    "reused": 665
   },
   "items": {
     "example-hsk1-001": {
@@ -16498,6 +16498,17 @@
       "text": "他看起来很累。",
       "checksum": "be8f11dc0cfb7ae38853e71c1466c1d79a8020ea412a6777ad74bf2b6fe60710",
       "file": "audio/sentences/grammar-4c600ca3.m4a",
+      "voices": [
+        "Tingting"
+      ]
+    },
+    "grammar-af0edd35": {
+      "id": "grammar-af0edd35",
+      "type": "grammar",
+      "level": 3,
+      "text": "看来明天会下雨。",
+      "checksum": "7dc90813cb38de1756cf0bfbe7b44ee28c6ee59184eed25a4dd9a471f01e4086",
+      "file": "audio/sentences/grammar-af0edd35.m4a",
       "voices": [
         "Tingting"
       ]

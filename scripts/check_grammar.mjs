@@ -6,17 +6,25 @@
 // 単元の級とステップの級が一致するか、1単元が5項目以内か、先に学ぶ単元（requires）が前に並んでいるか、
 // 改修前のページの旧URLがすべて転送され、転送先が実在するかを確認する。
 // 網羅：大綱の各項目に、その項目の印（syllabus）が付いた型カードとドリル（○×にする「よくある間違い」を含む）が
-// 1つ以上あるか、各単元に確認ドリル5問ぶんの問題があるか、大綱の2文字以上の語がその級の例文に出てくるかも確認する。
+// 1つ以上あるか、各単元に確認ドリル5問ぶんの並べ替え問題があるか、大綱の2文字以上の語がその級の例文に出てくるかも確認する。
 
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { choicesSoundAlike, filledSentence, grammarAudioId, grammarAudioTexts, readingIndex } from "../js/chinese/grammar-audio.js";
+import { generatedReorders, normalizeSentence, reorderLexicon } from "../js/chinese/grammar-reorder.js";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const read = (file) => JSON.parse(fs.readFileSync(path.join(root, file), "utf8"));
 // 画面と同じ単語データ（hsk1〜3と旧版の補足）の読み
-const readings = readingIndex(["hsk1", "hsk2", "hsk3", "hsk-legacy-supplement"].flatMap((file) => read(`data/chinese/${file}.json`)));
+const words = ["hsk1", "hsk2", "hsk3", "hsk-legacy-supplement"].flatMap((file) => read(`data/chinese/${file}.json`));
+const readings = readingIndex(words);
+const lexicon = reorderLexicon(words);
+// 確認ドリル・まとめテストに出せる並べ替え問題の文（作問した語順問題＋単元の文から作るもの。js/chinese/grammar.js と同じ）
+const reorderSentences = (unit) => [
+  ...(unit.practice || []).filter((item) => item.kind === "reorder").map((item) => item.answer),
+  ...generatedReorders(unit, lexicon).map((question) => question.answer),
+].map(normalizeSentence);
 
 const errors = [];
 const syllabus = read("data/source/grammar/hsk-grammar-syllabus.json").items;
@@ -90,7 +98,8 @@ for (const unit of plan.units) {
     for (const id of entry.syllabus || []) if (!unit.syllabus.includes(id)) errors.push(`${unit.id}: 単元の項目にない印 ${id} → ${sentence(entry)}`);
     if (step) examplesByLevel[step.level].push(sentence(entry));
   }
-  if (drills.length < DRILL_SIZE) gaps.push(`${unit.id}: 確認ドリルの問題が${drills.length}問（${DRILL_SIZE}問必要）`);
+  const reorderCount = reorderSentences(unit).length;
+  if (reorderCount < DRILL_SIZE) gaps.push(`${unit.id}: 確認ドリルの並べ替え問題が${reorderCount}問（${DRILL_SIZE}問必要）`);
   // 聞き取りチェック：会話・空欄・○×・意味の4形式のうち3つ以上を出題できること
   // （空欄は、選択肢が同じ音になる問題を除く。js/chinese/grammar.js の listeningPools と同じ条件）
   const listening = [Boolean(unit.dialogue), unit.practice.some((question) => filledSentence(question) && !choicesSoundAlike(question.choices, readings)), unit.compare.length > 0, patterns.length >= 3];
@@ -122,16 +131,12 @@ for (const [from, to] of Object.entries(plan.redirects)) {
   if (!ok) errors.push(`転送先が実在しない: ${from} → ${to}`);
 }
 
-// まとめテスト（15問：聞く4・並べる3・選択と○×で残り）を、ステップごとに作れるだけの問題があること。
+// まとめテスト（15問・すべて並べ替え）を、ステップごとに作れるだけの文があること（同じ文は1回と数える）。
+const STEP_TEST_SIZE = 15;
 for (const step of plan.steps) {
   const stepUnits = plan.units.filter((unit) => unit.step === step.id);
-  const practice = [...stepUnits.flatMap((unit) => unit.practice || []), ...(step.review?.practice || [])];
-  const reorders = practice.filter((item) => item.kind === "reorder").length;
-  const reading = practice.length - reorders + stepUnits.reduce((sum, unit) => sum + (unit.compare || []).length, 0) + (step.review?.compare || []).length;
-  const dialogues = stepUnits.filter((unit) => unit.dialogue).length;
-  if (reorders < 3) errors.push(`ステップ ${step.id}: まとめテストの語順問題が${reorders}問（3問必要）`);
-  if (dialogues < 2) errors.push(`ステップ ${step.id}: まとめテストの会話が${dialogues}件（2件必要）`);
-  if (reading < 8) errors.push(`ステップ ${step.id}: まとめテストの選択・○×問題が${reading}問（8問必要）`);
+  const sentences = new Set([step.review || {}, ...stepUnits].flatMap(reorderSentences));
+  if (sentences.size < STEP_TEST_SIZE) errors.push(`ステップ ${step.id}: まとめテストの並べ替え問題が${sentences.size}問（${STEP_TEST_SIZE}問必要）`);
 }
 
 // 録音：文法の例文・聞き取り問題の文は、すべて録音済みであること（scripts/generate_sentence_audio.mjs で作る）。

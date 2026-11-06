@@ -5,7 +5,7 @@ import { startCategoryPractice } from "./categories.js";
 import { startCheckedPractice } from "./checked.js";
 import { EXAM_CONFIG, LISTENING_MIX, PRACTICE_TARGET_RATIO, READING_MIX, SKILL_LABELS } from "./config.js";
 import { recordListeningResult, recordStepResult, recordUnitResult, startStepTest, startUnitListening, startUnitPractice, stepLabel, stepReadyForTest } from "./grammar.js";
-import { multiAnswerValue, startGuidePractice, startMeasurePractice } from "./guide.js";
+import { multiAnswerValue, startCustomPractice, startGuidePractice, startMeasurePractice } from "./guide.js";
 import { navigate, showView } from "./main.js";
 import { startMockExam, startMockSectionTimer } from "./mock.js";
 import { getDueWords, masteryScore, recordStudy, updateSummary } from "./progress.js";
@@ -681,6 +681,7 @@ export function retryPractice() {
   else if (last.stepId) startStepTest(last.stepId);
   else if (last.unitId && last.listening) startUnitListening(last.unitId);
   else if (last.unitId) startUnitPractice(last.unitId);
+  else if (last.comparisonId && last.customQuestions?.length) startCustomPractice(shuffle(last.customQuestions.map((question) => ({ ...question, ...(question.choices ? { choices: shuffle([...question.choices]) } : {}) }))), { label: state.wordComparisons.find((group) => group.id === last.comparisonId)?.title || "似た語の使い分け", modeLabel: "使い分けテスト", level: 3, comparisonId: last.comparisonId });
   else if (last.guideId === "measure") startMeasurePractice();
   else if (last.guideId) startGuidePractice(last.guideId);
   else if (last.categoryId) startCategoryPractice(last.mode, last.categoryId);
@@ -691,6 +692,13 @@ export function retryPractice() {
 export function closePractice() {
   clearPracticeTimer();
   stopAudio();
+  if (state.practice.lastStart?.comparisonId) {
+    const comparisonId = state.practice.lastStart.comparisonId;
+    state.selectedComparison = comparisonId;
+    if (window.location.hash === `#comparisons/${comparisonId}`) showView("comparisons");
+    else window.location.hash = `comparisons/${comparisonId}`;
+    return;
+  }
   navigate(state.practice.lastStart?.returnView || "exam");
 }
 

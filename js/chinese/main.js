@@ -3,6 +3,7 @@ import { $, $$, activateView, bindCheckedFileActions, bindMobileNavigation } fro
 import { grammarAudioFile, grammarAudioTexts } from "./grammar-audio.js";
 import { activeAudio, exampleAudioFile, playAudioFile, speak, speakWithBrowser, stopAudio } from "./audio.js";
 import { categoryById, closeCategoryDetail, openCategory, renderCategories, renderWordCategoryOptions, startCategoryPractice, startCategoryQuiz } from "./categories.js";
+import { closeComparison, comparisonById, openComparison, renderComparisons, startComparisonPractice } from "./comparisons.js";
 import { clearChecked, exportChecked, importCheckedFile, renderChecked, startCheckedPractice, startCheckedQuiz, toggleChecked } from "./checked.js";
 import { buildDailyDays, getDailyListeningSet, renderDaily, resetDaily, startDailyNextSet, startDailyRetry, startDailyReview, startDailySession } from "./daily.js";
 import { grammarRedirect, openContinue, openGrammarMap, openUnit, renderGrammar, unitById, updateGrammarHome } from "./grammar.js";
@@ -51,9 +52,10 @@ async function loadWords() {
     ]);
     const responses = vocabularyResponses.slice(0, 3);
     const supplementResponse = vocabularyResponses[3];
-    const [tagResponse, categoryGuideResponse, guideResponse, grammarResponse, syllabusResponse, measureResponse, bankResponse, ...mockResponses] = await Promise.all([
+    const [tagResponse, categoryGuideResponse, comparisonResponse, guideResponse, grammarResponse, syllabusResponse, measureResponse, bankResponse, ...mockResponses] = await Promise.all([
       loadJson("data/chinese/word-tags.json"),
       loadJson("data/chinese/category-guides.json"),
+      loadJson("data/chinese/word-comparisons.json"),
       loadJson("data/chinese/guides.json"),
       loadJson("data/chinese/grammar.json"),
       loadJson("data/source/grammar/hsk-grammar-syllabus.json"),
@@ -66,6 +68,7 @@ async function loadWords() {
     if (mockResponses.some((response) => !response.ok)) throw new Error("模試データの読み込みに失敗しました");
     if (!tagResponse.ok) throw new Error("分類データの読み込みに失敗しました");
     if (!categoryGuideResponse.ok) throw new Error("分類別学習データの読み込みに失敗しました");
+    if (!comparisonResponse.ok) throw new Error("似た語の使い分けデータの読み込みに失敗しました");
     if (!guideResponse.ok || !measureResponse.ok || !grammarResponse.ok || !syllabusResponse.ok) throw new Error("解説データの読み込みに失敗しました");
     if (!bankResponse.ok) throw new Error("練習問題データの読み込みに失敗しました");
     const groups = await Promise.all(responses.map((response) => response.json()));
@@ -74,6 +77,7 @@ async function loadWords() {
     const tagData = await tagResponse.json();
     state.categories = tagData.categories || [];
     state.categoryGuides = (await categoryGuideResponse.json()).guides || {};
+    state.wordComparisons = (await comparisonResponse.json()).groups || [];
     state.guides = (await guideResponse.json()).guides || [];
     state.grammar = await grammarResponse.json();
     state.grammarSyllabus = (await syllabusResponse.json()).items || [];
@@ -140,6 +144,11 @@ function bindEvents() {
     if (last?.returnView === "daily") navigate("daily");
     else if (last?.unitId) openUnit(last.unitId);
     else if (last?.stepId) openGrammarMap(last.stepId);
+    else if (last?.comparisonId) {
+      state.selectedComparison = last.comparisonId;
+      if (window.location.hash === `#comparisons/${last.comparisonId}`) showView("comparisons");
+      else window.location.hash = `comparisons/${last.comparisonId}`;
+    }
     else if (last?.guideId === "measure") openCategory("measure");
     else if (last?.guideId) openGuide(last.guideId);
     else if (last?.categoryId) openCategory(last.categoryId);
@@ -225,6 +234,14 @@ function bindEvents() {
     if (categoryButton) openCategory(categoryButton.dataset.categoryOpen);
     const guideButton = event.target.closest("[data-guide-open]");
     if (guideButton) openGuide(guideButton.dataset.guideOpen);
+    const comparisonButton = event.target.closest("[data-comparison-open]");
+    if (comparisonButton) openComparison(comparisonButton.dataset.comparisonOpen);
+    const comparisonBack = event.target.closest("[data-comparison-back]");
+    if (comparisonBack) closeComparison();
+    const comparisonTest = event.target.closest("[data-comparison-test]");
+    if (comparisonTest) startComparisonPractice(comparisonTest.dataset.comparisonTest);
+    const viewButton = event.target.closest("[data-view-open]");
+    if (viewButton) navigate(viewButton.dataset.viewOpen);
     // 文法：値が空なら一覧、"continue" なら続きの単元、それ以外は単元ID
     const grammarButton = event.target.closest("[data-grammar-open]");
     if (grammarButton) {
@@ -287,11 +304,12 @@ export function navigate(view) {
 
 function routeFromHash() {
   const [requested, param] = (window.location.hash.replace("#", "") || "home").split("/");
-  const publicViews = ["home", "daily", "words", "categories", "grammar", "guide", "checked", "exam", "progress"];
+  const publicViews = ["home", "daily", "words", "categories", "comparisons", "grammar", "guide", "checked", "exam", "progress"];
   if (!publicViews.includes(requested)) return showView(state.currentView);
   // 改修前の文法ページ（#guide/bi など）は、対応する新しい単元へ転送する（コラムはそのまま開く）。
   if (requested === "guide" && grammarRedirect(param)) return window.location.replace(`#${grammarRedirect(param)}`);
   if (requested === "grammar") state.selectedUnit = param && unitById(param) ? param : null;
+  if (requested === "comparisons") state.selectedComparison = param && comparisonById(param) ? param : null;
   // 分類ページは #categories/travel、解説ページは #guide/de の形で、開いている内容まで復元する。
   if (requested === "categories") state.selectedCategory = param && categoryById(param) ? param : null;
   if (requested === "guide") {
@@ -313,6 +331,7 @@ export function showView(view) {
   if (view === "daily") renderDaily();
   if (view === "words") renderWords();
   if (view === "categories") renderCategories();
+  if (view === "comparisons") renderComparisons();
   // 文法の一覧で「続きから」のまとめテストへ移動したときは、先頭へ戻さない。
   const keepScroll = view === "grammar" && renderGrammar();
   if (view === "guide") renderGuide();

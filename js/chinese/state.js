@@ -10,6 +10,8 @@ export const state = {
   words: [],
   categories: [],
   categoryGuides: {},
+  wordComparisons: [],
+  selectedComparison: null,
   guides: [],
   // 文法（HSK2・3）の単元と公式大綱の項目。selectedUnit は開いている単元。
   grammar: null,

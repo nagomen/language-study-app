@@ -3,7 +3,8 @@
 import { $, escapeHtml, localDateKey, shuffle } from "../shared.js";
 import { bindWordRowAudio } from "./audio.js";
 import { choicesSoundAlike, filledSentence, grammarAudioFile, readingIndex } from "./grammar-audio.js";
-import { authoredQuestion, guideById, guideSectionHtml, judgeQuestion, startCustomPractice } from "./guide.js";
+import { generatedReorders, normalizeSentence, reorderLexicon } from "./grammar-reorder.js";
+import { authoredQuestion, guideById, guideSectionHtml, startCustomPractice } from "./guide.js";
 import { showView } from "./main.js";
 import { state } from "./state.js";
 
@@ -11,8 +12,7 @@ const PROGRESS_KEY = "hsk-grammar-progress-v1";
 const DRILL_SIZE = 5;
 const PASS_RATIO = 0.8;   // 5問中4問で合格
 const LISTEN_SIZE = 3;    // 聞き取りチェックの問数（合否には使わない）
-const STEP_TEST_SIZE = 15;  // ステップのまとめテスト（聞く4・並べる3・残りは選択と○×）
-const STEP_TEST_MIX = { listening: 4, reorder: 3 };
+const STEP_TEST_SIZE = 15;  // ステップのまとめテスト（すべて並べ替え）
 const STATUS_LABEL = { new: "未着手", learning: "学習中", passed: "合格", draft: "準備中" };
 
 // 進み具合は学習記録とは別に保存する（学習記録をリセットしても消えない）。
@@ -35,7 +35,7 @@ export const unitById = (id) => units().find((unit) => unit.id === id) || null;
 const stepById = (id) => state.grammar?.steps.find((step) => step.id === id) || null;
 const stepNumber = (step) => state.grammar.steps.filter((item) => item.level === step.level).indexOf(step) + 1;
 const hasContent = (unit) => unit.sections.length > 0 || unit.practice.length > 0;
-const drillCount = (unit) => Math.min(DRILL_SIZE, unit.practice.length + unit.compare.length);
+const drillCount = (unit) => Math.min(DRILL_SIZE, unitReorderQuestions(unit).flat().length);
 
 export function unitStatus(unit) {
   if (!hasContent(unit)) return "draft";
@@ -111,7 +111,7 @@ function stepTestHtml(step) {
   const chip = record?.passed ? `<span class="grammar-status is-passed">合格</span>` : record?.attempts ? `<span class="grammar-status is-learning">最高 ${Math.round((record.best || 0) * 100)}%</span>` : "";
   return `<div class="grammar-step-test" id="grammar-test-${escapeHtml(step.id)}">
     <div><strong>まとめテスト ${STEP_TEST_SIZE}問</strong>${chip}
-      <small>このステップの${stepUnits.length}単元から、聞く・読む・並べるを混ぜて出題。8割以上で合格です。${ready || record?.passed ? "" : "単元を合格してから受けると効果的です（いつでも受けられます）。"}</small></div>
+      <small>このステップの${stepUnits.length}単元から、語句を並べて文を作る問題を出題。8割以上で合格です。${ready || record?.passed ? "" : "単元を合格してから受けると効果的です（いつでも受けられます）。"}</small></div>
     <button class="${ready && !record?.passed ? "primary-button" : "secondary-button"}" type="button" data-step-test="${escapeHtml(step.id)}">まとめテストを受ける <span>→</span></button>
   </div>`;
 }
@@ -243,16 +243,12 @@ function renderGrammarUnit(unit) {
   bindWordRowAudio(container);
 }
 
-/** 確認ドリル：語順問題1問・○×1問を入れ、残りを選択問題で埋める（足りなければある分だけ）。 */
+/** 確認ドリル：すべて並べ替え（文を作る）問題。作問した語順問題を先に入れ、足りない分は単元の文から作る。 */
 export function startUnitPractice(id = state.selectedUnit) {
   const unit = unitById(id);
   if (!unit) return;
-  const authored = unit.practice.map(authoredQuestion);
-  const reorders = shuffle(authored.filter((question) => question.kind === "reorder"));
-  const choices = shuffle(authored.filter((question) => question.kind !== "reorder"));
-  const judges = shuffle(unit.compare).map((pair) => judgeQuestion(pair, Math.random() < 0.5 ? 0 : 1));
-  const picked = [...reorders.splice(0, 1), ...judges.splice(0, 1)];
-  for (const pool of [choices, reorders, judges]) while (picked.length < DRILL_SIZE && pool.length) picked.push(pool.shift());
+  const [authored, generated] = unitReorderQuestions(unit);
+  const picked = [...shuffle(authored), ...shuffle(generated)].slice(0, DRILL_SIZE);
   if (!picked.length) return alert("この単元の確認ドリルは準備中です。");
   startCustomPractice(shuffle(picked), { label: unit.title, modeLabel: "確認ドリル", level: stepById(unit.step).level, unitId: unit.id });
 }
@@ -260,6 +256,16 @@ export function startUnitPractice(id = state.selectedUnit) {
 // 単語データの読み（選択肢が同じ音かどうかの判定に使う。初回に作って使い回す）
 let readings = null;
 const wordReadings = () => (readings ||= readingIndex(state.words));
+
+// 並べ替えの語句に区切るための語の集合（単語データの漢字。初回に作って使い回す）
+let lexicon = null;
+const wordLexicon = () => (lexicon ||= reorderLexicon(state.words));
+
+/** 単元（またはステップの復習問題）の並べ替え問題を [作問したもの, 単元の文から作ったもの] で返す。 */
+function unitReorderQuestions(unit) {
+  const authored = (unit.practice || []).filter((item) => item.kind === "reorder").map(authoredQuestion);
+  return [authored, generatedReorders(unit, wordLexicon())];
+}
 
 /**
  * 聞き取りチェックの候補。形式ごとに1つの配列にまとめ、[会話, 穴埋め, 正誤, 意味] の順で返す。
@@ -339,44 +345,27 @@ function withUnit(question, unit) {
 }
 
 /**
- * まとめテストの問題：聞く4問（会話2問＋ほかの形式2問）・並べる3問・選択と○×で残り。
+ * まとめテストの問題：すべて並べ替え（文を作る）問題。単元ごとに作問した語順問題を先にして、単元を1つずつ巡って選ぶ。
  * ステップの復習問題（単元をまたぐ問題）は「単元の1つ」として巡回に混ぜる（毎回同じ問題ばかりにならないように）。同じ文は2回出さない。
  */
 export function stepTestQuestions(step) {
-  const stepUnits = shuffle(stepUnitsOf(step).filter(hasContent));
-  const used = new Set();
-  const take = (pool, count, out) => {
-    for (const question of pool) {
-      if (out.length >= count) break;
-      const key = question.source || question.prompt || question.answer;
-      if (used.has(key)) continue;
-      used.add(key);
-      out.push(question);
-    }
-    return out;
+  const candidates = (set, unit) => {
+    const [authored, generated] = unitReorderQuestions(set);
+    return [...shuffle(authored), ...shuffle(generated)].map((question) => withUnit(question, unit));
   };
-  const listenPools = stepUnits.map((unit) => listeningPools(unit).map((pool) => shuffle(pool).map((question) => withUnit(question, unit))));
-  const listening = take(roundRobin(listenPools.map((pools) => pools.filter((pool) => pool[0]?.kind === "audio-dialogue").flat())), 2, []);
-  take(roundRobin(listenPools.map((pools) => shuffle(pools.filter((pool) => pool[0]?.kind !== "audio-dialogue").flat()))), STEP_TEST_MIX.listening, listening);
-  const review = step.review || { practice: [], compare: [] };
-  const fromPractice = (item, unit) => withUnit({ ...authoredQuestion(item), source: item.kind === "reorder" ? item.answer : item.prompt }, unit);
-  const fromCompare = (pair, unit) => withUnit({ ...judgeQuestion(pair, Math.random() < 0.5 ? 0 : 1), source: pair.right }, unit);
-  const reorderQuestions = (practice, unit) => shuffle(practice.filter((item) => item.kind === "reorder")).map((item) => fromPractice(item, unit));
-  const readingQuestions = (practice, compare, unit) => shuffle([
-    ...practice.filter((item) => item.kind !== "reorder").map((item) => fromPractice(item, unit)),
-    ...compare.map((pair) => fromCompare(pair, unit)),
-  ]);
-  const reorder = take(roundRobin(shuffle([
-    reorderQuestions(review.practice, null),
-    ...stepUnits.map((unit) => reorderQuestions(unit.practice, unit)),
-  ])), STEP_TEST_MIX.reorder, []);
-  const restCount = STEP_TEST_SIZE - listening.length - reorder.length;
-  const reading = take(roundRobin(shuffle([
-    readingQuestions(review.practice, review.compare, null),
-    ...stepUnits.map((unit) => readingQuestions(unit.practice, unit.compare, unit)),
-  ])), restCount, []);
-  // 聞く → 読む → 並べる の順（試験と同じ並び）
-  return [...listening.map((question) => ({ ...question, audioPlays: 0 })), ...shuffle(reading), ...shuffle(reorder)];
+  const used = new Set();
+  const picked = [];
+  for (const question of roundRobin(shuffle([
+    candidates(step.review || {}, null),
+    ...stepUnitsOf(step).filter(hasContent).map((unit) => candidates(unit, unit)),
+  ]))) {
+    if (picked.length >= STEP_TEST_SIZE) break;
+    const key = normalizeSentence(question.answer);
+    if (used.has(key)) continue;
+    used.add(key);
+    picked.push(question);
+  }
+  return shuffle(picked);
 }
 
 export function startStepTest(stepId) {
